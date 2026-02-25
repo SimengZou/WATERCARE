@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_PORTAL_INSTRUMENT(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            DATALAKE_DELETED boolean, 
+            DATATYPECODE varchar, 
+            DATATYPECODEDESCRIPTION varchar, 
+            INSTRUMENTKEY integer, 
+            LASTSAVE datetime, 
+            MEMBERSHIP integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PROJECTAPPLICATION integer, 
+            SCENARIO integer, 
+            TYPE varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

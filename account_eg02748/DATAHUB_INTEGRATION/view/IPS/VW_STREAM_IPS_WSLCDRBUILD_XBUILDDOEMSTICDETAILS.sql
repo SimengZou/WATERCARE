@@ -1,0 +1,57 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_IPS_WSLCDRBUILD_XBUILDDOEMSTICDETAILS AS SELECT
+                        src:ADDBY::varchar AS ADDBY, 
+                        src:ADDDTTM::datetime AS ADDDTTM, 
+                        src:ADDITIONALDETAILS::varchar AS ADDITIONALDETAILS, 
+                        src:APBLDGAPPLDTLKEY::integer AS APBLDGAPPLDTLKEY, 
+                        src:BILLADDRESS::varchar AS BILLADDRESS, 
+                        src:BILLMETHOD::varchar AS BILLMETHOD, 
+                        src:BILLOWNERORAPPLICANT::varchar AS BILLOWNERORAPPLICANT, 
+                        src:BUILDCONSENTNO::varchar AS BUILDCONSENTNO, 
+                        src:CT::varchar AS CT, 
+                        src:DELETED::boolean AS DELETED, 
+                        src:DEVCONTPAID::varchar AS DEVCONTPAID, 
+                        src:DP::varchar AS DP, 
+                        src:FLOORAREALT65::varchar AS FLOORAREALT65, 
+                        src:INSTALLIN10DAYS::varchar AS INSTALLIN10DAYS, 
+                        src:LOT::varchar AS LOT, 
+                        src:MODBY::varchar AS MODBY, 
+                        src:MODDTTM::datetime AS MODDTTM, 
+                        src:SITECONNECTEDTOWASTEWATER::varchar AS SITECONNECTEDTOWASTEWATER, 
+                        src:SITECONNECTEDTOWATER::varchar AS SITECONNECTEDTOWATER, 
+                        src:VARIATION_ID::integer AS VARIATION_ID, 
+                        src:XBUILDDOEMSTICDETAILSKEY::integer AS XBUILDDOEMSTICDETAILSKEY, src:VARIATION_ID::integer as ETL_SEQUENCE_NUMBER,
+            CASE
+                WHEN 'IPS' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'IPS' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:XBUILDDOEMSTICDETAILSKEY  ORDER BY 
+            src:VARIATION_ID desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_IPS_WSLCDRBUILD_XBUILDDOEMSTICDETAILS as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ADDDTTM), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:APBLDGAPPLDTLKEY), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MODDTTM), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:VARIATION_ID), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:XBUILDDOEMSTICDETAILSKEY), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:VARIATION_ID), '1900-01-01')) is not null

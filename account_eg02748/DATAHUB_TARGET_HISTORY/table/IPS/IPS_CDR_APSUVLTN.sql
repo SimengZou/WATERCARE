@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_CDR_APSUVLTN(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CNSTTYPE varchar, 
+            DELETED boolean, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            MODIFIER varchar, 
+            MULT numeric(38, 10), 
+            SUVLTNKEY integer, 
+            USEGRP varchar, 
+            USESQT varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

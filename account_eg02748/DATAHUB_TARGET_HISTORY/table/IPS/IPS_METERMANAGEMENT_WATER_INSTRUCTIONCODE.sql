@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_METERMANAGEMENT_WATER_INSTRUCTIONCODE(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CHANGEMETERIDENTIFIERFLAG varchar, 
+            CODE varchar, 
+            DELETED boolean, 
+            DESCRIPT varchar, 
+            DUALREGIDENTIFIERFLAG varchar, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            HIGHREGIDENTIFIERFLAG varchar, 
+            LOWREGIDENTIFIERFLAG varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            NEWMETERIDENTIFIERFLAG varchar, 
+            SKIPRECORDIDENTIFIERFLAG varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

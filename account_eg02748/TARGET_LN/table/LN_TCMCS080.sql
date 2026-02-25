@@ -1,0 +1,19 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TCMCS080(
+            cfrw varchar, 
+            compnr integer, 
+            deleted boolean, 
+            dsca object, 
+            scac varchar, 
+            seak object, 
+            sequencenumber integer, 
+            suno varchar, 
+            suno_ref_compnr integer, 
+            timestamp datetime, 
+            trmd integer, 
+            trmd_kw varchar, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

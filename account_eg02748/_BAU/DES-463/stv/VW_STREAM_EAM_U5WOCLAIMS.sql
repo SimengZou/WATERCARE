@@ -1,0 +1,33 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_U5WOCLAIMS AS
+                    SELECT
+                        src:"WCO_EVENT"::varchar(30) AS WCO_EVENT,
+                        src:"WCO_PK"::varchar(30) AS WCO_PK,
+                        src:"WCO_ORG"::varchar(15) AS WCO_ORG,
+                        src:"WCO_SCHEDULE_ITEM"::varchar(80) AS WCO_SCHEDULE_ITEM,
+                        src:"WCO_TRANSID"::varchar(50) AS WCO_TRANSID,
+                        src:"WCO_CONTRACTOR_QTY"::numeric(24, 6) AS WCO_CONTRACTOR_QTY,
+                        src:"WCO_CONTRACTOR_RATE"::numeric(24, 6) AS WCO_CONTRACTOR_RATE,
+                        src:"WCO_CHARGEDATE"::datetime AS WCO_CHARGEDATE,
+                        src:"WCO_COMMENTS"::varchar(80) AS WCO_COMMENTS,
+                        src:"WCO_SCHEDITEM_DESC"::varchar(80) AS WCO_SCHEDITEM_DESC,
+                        src:"WCO_SCHEDITEM_RATE"::numeric(24, 6) AS WCO_SCHEDITEM_RATE,
+                        src:"WCO_LINETOTAL"::numeric(24, 6) AS WCO_LINETOTAL,
+                        src:"WCO_WOSCHEDITEM"::varchar(80) AS WCO_WOSCHEDITEM,
+                        src:"WCO_WOTYPE"::varchar(80) AS WCO_WOTYPE,
+                        src:"WCO_WOPARENT"::varchar(30) AS WCO_WOPARENT,
+                        src:"WCO_CONTRACT_CODE"::varchar(45) AS WCO_CONTRACT_CODE,
+                        src:"WCO_CONTRACTOR"::varchar(50) AS WCO_CONTRACTOR,
+                        src:"WCO_ACTIVITY"::varchar(80) AS WCO_ACTIVITY,
+                        src:"WCO_ACTIVITY_DESC"::varchar(80) AS WCO_ACTIVITY_DESC,
+                        src:"CREATEDBY"::varchar(255) AS CREATEDBY,
+                        src:"CREATED"::datetime AS CREATED,
+                        src:"UPDATEDBY"::varchar(255) AS UPDATEDBY,
+                        src:"UPDATED"::datetime AS UPDATED,
+                        src:"LASTSAVED"::datetime AS LASTSAVED,
+                        src:"UPDATECOUNT"::numeric(38, 0) AS UPDATECOUNT,
+                        src:"WCO_LINE_STATUS"::varchar(30) AS WCO_LINE_STATUS
+                        ,src:"_LASTSAVED"::datetime as ETL_LASTSAVED,
+                        src:"_DELETED"::BOOLEAN as ETL_DELETED,
+                        etl_load_datetime,
+                       etl_load_metadatafilename
+                    FROM DATAHUB_INTEGRATION.STREAM_EAM_U5WOCLAIMS;

@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_BILLING_MAPDEFAULTPREFERENCES(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            DELETED boolean, 
+            MAPDEFAULTPREFERENCESKEY integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            OPTION1 varchar, 
+            OPTION2 varchar, 
+            OPTION3 varchar, 
+            OPTION4 varchar, 
+            VALUE1 integer, 
+            VALUE2 integer, 
+            VALUE3 integer, 
+            VALUE4 integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

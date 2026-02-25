@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLRESOURCES_XEMPLOYEECR(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CAPACITY integer, 
+            CAPACITYRATE numeric(38, 10), 
+            DATALAKE_DELETED boolean, 
+            EMPID varchar, 
+            EMPLOYEEROLE varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            MULTIDOMCAPACITY integer, 
+            ONLEAVE varchar, 
+            REGION varchar, 
+            VARIATION_ID integer, 
+            XEMPLOYEECRKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

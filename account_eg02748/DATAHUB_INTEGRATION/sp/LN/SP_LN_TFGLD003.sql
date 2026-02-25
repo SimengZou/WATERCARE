@@ -1,0 +1,523 @@
+create or replace procedure DATAHUB_INTEGRATION.SP_LN_TFGLD003()
+    returns varchar not null
+                language javascript
+                as
+                $$
+
+//  Variables
+
+var result = "";                                    // return status of this proc call
+const process_name = Object.keys(this)[0];          // name of currently executing process
+var number_of_rows_inserted = 0;                             // track number of rows we have inserted
+var number_of_rows_updated = 0;                             // track number of rows we have updated
+
+
+//  Step 1.
+
+//  Start execution - log start
+
+log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('Insert','" + process_name + "','Running','Started process execution.', 0,0,0);";
+snowflake.execute({sqlText: log_sql_command});
+
+snowflake.execute( {sqlText: "begin transaction;"} );
+try
+    {
+        var sql_command = `
+                            INSERT INTO LANDING_ERROR.LN_RAW_ERROR
+                            SELECT * FROM LANDING_ERROR.VW_STREAM_LN_TFGLD003_ERROR`;
+    var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+    var rs = sqlStmt.execute();
+        
+        var sql_command = ` 
+                            merge into  TARGET_LN.LN_TFGLD003 as target using (SELECT * FROM (SELECT 
+            strm.bcmp, 
+            strm.cfst, 
+            strm.cfst_kw, 
+            strm.compnr, 
+            strm.dcfi, 
+            strm.dcfi_kw, 
+            strm.deleted, 
+            strm.dhcu, 
+            strm.dim1, 
+            strm.dim1_kw, 
+            strm.dim2, 
+            strm.dim2_kw, 
+            strm.dim3, 
+            strm.dim3_kw, 
+            strm.dim4, 
+            strm.dim4_kw, 
+            strm.dim5, 
+            strm.dim5_kw, 
+            strm.dim6, 
+            strm.dim6_kw, 
+            strm.dim7, 
+            strm.dim7_kw, 
+            strm.dim8, 
+            strm.dim8_kw, 
+            strm.dim9, 
+            strm.dim9_kw, 
+            strm.dm10, 
+            strm.dm10_kw, 
+            strm.dm11, 
+            strm.dm11_kw, 
+            strm.dm12, 
+            strm.dm12_kw, 
+            strm.dsca, 
+            strm.gmbi, 
+            strm.gmbi_kw, 
+            strm.indt, 
+            strm.nfpr, 
+            strm.nrpr, 
+            strm.nvpr, 
+            strm.papp, 
+            strm.papp_kw, 
+            strm.psbk, 
+            strm.psbk_kw, 
+            strm.psep, 
+            strm.psic, 
+            strm.psic_kw, 
+            strm.pupt, 
+            strm.pupt_kw, 
+            strm.rper, 
+            strm.rper_kw, 
+            strm.sdat, 
+            strm.sequencenumber, 
+            strm.sgmr, 
+            strm.sgmr_kw, 
+            strm.timestamp, 
+            strm.username, 
+            strm.ETL_SEQUENCE_NUMBER,
+            strm.ETL_DELETED,
+            strm.etl_load_datetime,
+            strm.etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+            strm.compnr,
+            strm.indt ORDER BY strm.ETL_SEQUENCE_NUMBER desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+        FROM DATAHUB_INTEGRATION.VW_STREAM_LN_TFGLD003 as  strm
+                    )   
+            WHERE ROWNUMBER=1  
+            
+                    ) as src on
+            ((target.compnr=src.compnr) OR (target.compnr IS NULL AND src.compnr IS NULL)) AND
+            ((target.indt=src.indt) OR (target.indt IS NULL AND src.indt IS NULL)) 
+                when matched and src.ETL_DELETED=TRUE THEN DELETE
+                when matched then update set
+                    target.bcmp=src.bcmp, 
+                    target.cfst=src.cfst, 
+                    target.cfst_kw=src.cfst_kw, 
+                    target.compnr=src.compnr, 
+                    target.dcfi=src.dcfi, 
+                    target.dcfi_kw=src.dcfi_kw, 
+                    target.deleted=src.deleted, 
+                    target.dhcu=src.dhcu, 
+                    target.dim1=src.dim1, 
+                    target.dim1_kw=src.dim1_kw, 
+                    target.dim2=src.dim2, 
+                    target.dim2_kw=src.dim2_kw, 
+                    target.dim3=src.dim3, 
+                    target.dim3_kw=src.dim3_kw, 
+                    target.dim4=src.dim4, 
+                    target.dim4_kw=src.dim4_kw, 
+                    target.dim5=src.dim5, 
+                    target.dim5_kw=src.dim5_kw, 
+                    target.dim6=src.dim6, 
+                    target.dim6_kw=src.dim6_kw, 
+                    target.dim7=src.dim7, 
+                    target.dim7_kw=src.dim7_kw, 
+                    target.dim8=src.dim8, 
+                    target.dim8_kw=src.dim8_kw, 
+                    target.dim9=src.dim9, 
+                    target.dim9_kw=src.dim9_kw, 
+                    target.dm10=src.dm10, 
+                    target.dm10_kw=src.dm10_kw, 
+                    target.dm11=src.dm11, 
+                    target.dm11_kw=src.dm11_kw, 
+                    target.dm12=src.dm12, 
+                    target.dm12_kw=src.dm12_kw, 
+                    target.dsca=src.dsca, 
+                    target.gmbi=src.gmbi, 
+                    target.gmbi_kw=src.gmbi_kw, 
+                    target.indt=src.indt, 
+                    target.nfpr=src.nfpr, 
+                    target.nrpr=src.nrpr, 
+                    target.nvpr=src.nvpr, 
+                    target.papp=src.papp, 
+                    target.papp_kw=src.papp_kw, 
+                    target.psbk=src.psbk, 
+                    target.psbk_kw=src.psbk_kw, 
+                    target.psep=src.psep, 
+                    target.psic=src.psic, 
+                    target.psic_kw=src.psic_kw, 
+                    target.pupt=src.pupt, 
+                    target.pupt_kw=src.pupt_kw, 
+                    target.rper=src.rper, 
+                    target.rper_kw=src.rper_kw, 
+                    target.sdat=src.sdat, 
+                    target.sequencenumber=src.sequencenumber, 
+                    target.sgmr=src.sgmr, 
+                    target.sgmr_kw=src.sgmr_kw, 
+                    target.timestamp=src.timestamp, 
+                    target.username=src.username, 
+                    target.ETL_SEQUENCE_NUMBER=src.ETL_SEQUENCE_NUMBER,
+                    target.etl_load_datetime=CURRENT_TIMESTAMP,
+                    target.etl_load_metadatafilename=src.etl_load_metadatafilename
+        when not matched and (src.ETL_DELETED=FALSE OR src.ETL_DELETED IS NULL)  then insert ( 
+                    bcmp, 
+                    cfst, 
+                    cfst_kw, 
+                    compnr, 
+                    dcfi, 
+                    dcfi_kw, 
+                    deleted, 
+                    dhcu, 
+                    dim1, 
+                    dim1_kw, 
+                    dim2, 
+                    dim2_kw, 
+                    dim3, 
+                    dim3_kw, 
+                    dim4, 
+                    dim4_kw, 
+                    dim5, 
+                    dim5_kw, 
+                    dim6, 
+                    dim6_kw, 
+                    dim7, 
+                    dim7_kw, 
+                    dim8, 
+                    dim8_kw, 
+                    dim9, 
+                    dim9_kw, 
+                    dm10, 
+                    dm10_kw, 
+                    dm11, 
+                    dm11_kw, 
+                    dm12, 
+                    dm12_kw, 
+                    dsca, 
+                    gmbi, 
+                    gmbi_kw, 
+                    indt, 
+                    nfpr, 
+                    nrpr, 
+                    nvpr, 
+                    papp, 
+                    papp_kw, 
+                    psbk, 
+                    psbk_kw, 
+                    psep, 
+                    psic, 
+                    psic_kw, 
+                    pupt, 
+                    pupt_kw, 
+                    rper, 
+                    rper_kw, 
+                    sdat, 
+                    sequencenumber, 
+                    sgmr, 
+                    sgmr_kw, 
+                    timestamp, 
+                    username, 
+                    ETL_SEQUENCE_NUMBER,                       
+                    etl_load_datetime,
+                    etl_load_metadatafilename) 
+            values (
+                    src.bcmp, 
+                    src.cfst, 
+                    src.cfst_kw, 
+                    src.compnr, 
+                    src.dcfi, 
+                    src.dcfi_kw, 
+                    src.deleted, 
+                    src.dhcu, 
+                    src.dim1, 
+                    src.dim1_kw, 
+                    src.dim2, 
+                    src.dim2_kw, 
+                    src.dim3, 
+                    src.dim3_kw, 
+                    src.dim4, 
+                    src.dim4_kw, 
+                    src.dim5, 
+                    src.dim5_kw, 
+                    src.dim6, 
+                    src.dim6_kw, 
+                    src.dim7, 
+                    src.dim7_kw, 
+                    src.dim8, 
+                    src.dim8_kw, 
+                    src.dim9, 
+                    src.dim9_kw, 
+                    src.dm10, 
+                    src.dm10_kw, 
+                    src.dm11, 
+                    src.dm11_kw, 
+                    src.dm12, 
+                    src.dm12_kw, 
+                    src.dsca, 
+                    src.gmbi, 
+                    src.gmbi_kw, 
+                    src.indt, 
+                    src.nfpr, 
+                    src.nrpr, 
+                    src.nvpr, 
+                    src.papp, 
+                    src.papp_kw, 
+                    src.psbk, 
+                    src.psbk_kw, 
+                    src.psep, 
+                    src.psic, 
+                    src.psic_kw, 
+                    src.pupt, 
+                    src.pupt_kw, 
+                    src.rper, 
+                    src.rper_kw, 
+                    src.sdat, 
+                    src.sequencenumber, 
+                    src.sgmr, 
+                    src.sgmr_kw, 
+                    src.timestamp, 
+                    src.username,     
+                    src.ETL_SEQUENCE_NUMBER,
+                    CURRENT_TIMESTAMP,
+                    src.etl_load_metadatafilename);`;
+
+    var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+    var rs = sqlStmt.execute();
+
+    snowflake.execute( {sqlText: `merge into TARGET_HISTORY_LN.LN_TFGLD003_DELETED as target using (
+                SELECT * FROM (SELECT 
+            strm.bcmp, 
+            strm.cfst, 
+            strm.cfst_kw, 
+            strm.compnr, 
+            strm.dcfi, 
+            strm.dcfi_kw, 
+            strm.deleted, 
+            strm.dhcu, 
+            strm.dim1, 
+            strm.dim1_kw, 
+            strm.dim2, 
+            strm.dim2_kw, 
+            strm.dim3, 
+            strm.dim3_kw, 
+            strm.dim4, 
+            strm.dim4_kw, 
+            strm.dim5, 
+            strm.dim5_kw, 
+            strm.dim6, 
+            strm.dim6_kw, 
+            strm.dim7, 
+            strm.dim7_kw, 
+            strm.dim8, 
+            strm.dim8_kw, 
+            strm.dim9, 
+            strm.dim9_kw, 
+            strm.dm10, 
+            strm.dm10_kw, 
+            strm.dm11, 
+            strm.dm11_kw, 
+            strm.dm12, 
+            strm.dm12_kw, 
+            strm.dsca, 
+            strm.gmbi, 
+            strm.gmbi_kw, 
+            strm.indt, 
+            strm.nfpr, 
+            strm.nrpr, 
+            strm.nvpr, 
+            strm.papp, 
+            strm.papp_kw, 
+            strm.psbk, 
+            strm.psbk_kw, 
+            strm.psep, 
+            strm.psic, 
+            strm.psic_kw, 
+            strm.pupt, 
+            strm.pupt_kw, 
+            strm.rper, 
+            strm.rper_kw, 
+            strm.sdat, 
+            strm.sequencenumber, 
+            strm.sgmr, 
+            strm.sgmr_kw, 
+            strm.timestamp, 
+            strm.username, 
+            strm.ETL_SEQUENCE_NUMBER,
+            strm.ETL_DELETED,
+            strm.etl_load_datetime,
+            strm.etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+            strm.compnr,
+            strm.indt ORDER BY strm.ETL_SEQUENCE_NUMBER desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+        FROM DATAHUB_INTEGRATION.VW_STREAM_LN_TFGLD003 as  strm
+        WHERE strm.ETL_DELETED=TRUE
+                    )   
+            WHERE ROWNUMBER=1  
+            
+                    ) as src on
+            ((target.compnr=src.compnr) OR (target.compnr IS NULL AND src.compnr IS NULL)) AND
+            ((target.indt=src.indt) OR (target.indt IS NULL AND src.indt IS NULL)) 
+                when matched then update set
+                    target.bcmp=src.bcmp, 
+                    target.cfst=src.cfst, 
+                    target.cfst_kw=src.cfst_kw, 
+                    target.compnr=src.compnr, 
+                    target.dcfi=src.dcfi, 
+                    target.dcfi_kw=src.dcfi_kw, 
+                    target.deleted=src.deleted, 
+                    target.dhcu=src.dhcu, 
+                    target.dim1=src.dim1, 
+                    target.dim1_kw=src.dim1_kw, 
+                    target.dim2=src.dim2, 
+                    target.dim2_kw=src.dim2_kw, 
+                    target.dim3=src.dim3, 
+                    target.dim3_kw=src.dim3_kw, 
+                    target.dim4=src.dim4, 
+                    target.dim4_kw=src.dim4_kw, 
+                    target.dim5=src.dim5, 
+                    target.dim5_kw=src.dim5_kw, 
+                    target.dim6=src.dim6, 
+                    target.dim6_kw=src.dim6_kw, 
+                    target.dim7=src.dim7, 
+                    target.dim7_kw=src.dim7_kw, 
+                    target.dim8=src.dim8, 
+                    target.dim8_kw=src.dim8_kw, 
+                    target.dim9=src.dim9, 
+                    target.dim9_kw=src.dim9_kw, 
+                    target.dm10=src.dm10, 
+                    target.dm10_kw=src.dm10_kw, 
+                    target.dm11=src.dm11, 
+                    target.dm11_kw=src.dm11_kw, 
+                    target.dm12=src.dm12, 
+                    target.dm12_kw=src.dm12_kw, 
+                    target.dsca=src.dsca, 
+                    target.gmbi=src.gmbi, 
+                    target.gmbi_kw=src.gmbi_kw, 
+                    target.indt=src.indt, 
+                    target.nfpr=src.nfpr, 
+                    target.nrpr=src.nrpr, 
+                    target.nvpr=src.nvpr, 
+                    target.papp=src.papp, 
+                    target.papp_kw=src.papp_kw, 
+                    target.psbk=src.psbk, 
+                    target.psbk_kw=src.psbk_kw, 
+                    target.psep=src.psep, 
+                    target.psic=src.psic, 
+                    target.psic_kw=src.psic_kw, 
+                    target.pupt=src.pupt, 
+                    target.pupt_kw=src.pupt_kw, 
+                    target.rper=src.rper, 
+                    target.rper_kw=src.rper_kw, 
+                    target.sdat=src.sdat, 
+                    target.sequencenumber=src.sequencenumber, 
+                    target.sgmr=src.sgmr, 
+                    target.sgmr_kw=src.sgmr_kw, 
+                    target.timestamp=src.timestamp, 
+                    target.username=src.username, 
+                    target.ETL_SEQUENCE_NUMBER=src.ETL_SEQUENCE_NUMBER,
+                    target.etl_load_datetime=CURRENT_TIMESTAMP,
+                    target.etl_load_metadatafilename=src.etl_load_metadatafilename,
+                    target.ETL_DELETED=src.ETL_DELETED
+        when not matched   then insert ( bcmp, cfst, cfst_kw, compnr, dcfi, dcfi_kw, deleted, dhcu, dim1, dim1_kw, dim2, dim2_kw, dim3, dim3_kw, dim4, dim4_kw, dim5, dim5_kw, dim6, dim6_kw, dim7, dim7_kw, dim8, dim8_kw, dim9, dim9_kw, dm10, dm10_kw, dm11, dm11_kw, dm12, dm12_kw, dsca, gmbi, gmbi_kw, indt, nfpr, nrpr, nvpr, papp, papp_kw, psbk, psbk_kw, psep, psic, psic_kw, pupt, pupt_kw, rper, rper_kw, sdat, sequencenumber, sgmr, sgmr_kw, timestamp, username, 
+                    ETL_SEQUENCE_NUMBER,                       
+                    etl_load_datetime,
+                    etl_load_metadatafilename,
+                    etl_is_deleted,
+                    ETL_DELETED) 
+            values (
+                    src.bcmp, 
+                    src.cfst, 
+                    src.cfst_kw, 
+                    src.compnr, 
+                    src.dcfi, 
+                    src.dcfi_kw, 
+                    src.deleted, 
+                    src.dhcu, 
+                    src.dim1, 
+                    src.dim1_kw, 
+                    src.dim2, 
+                    src.dim2_kw, 
+                    src.dim3, 
+                    src.dim3_kw, 
+                    src.dim4, 
+                    src.dim4_kw, 
+                    src.dim5, 
+                    src.dim5_kw, 
+                    src.dim6, 
+                    src.dim6_kw, 
+                    src.dim7, 
+                    src.dim7_kw, 
+                    src.dim8, 
+                    src.dim8_kw, 
+                    src.dim9, 
+                    src.dim9_kw, 
+                    src.dm10, 
+                    src.dm10_kw, 
+                    src.dm11, 
+                    src.dm11_kw, 
+                    src.dm12, 
+                    src.dm12_kw, 
+                    src.dsca, 
+                    src.gmbi, 
+                    src.gmbi_kw, 
+                    src.indt, 
+                    src.nfpr, 
+                    src.nrpr, 
+                    src.nvpr, 
+                    src.papp, 
+                    src.papp_kw, 
+                    src.psbk, 
+                    src.psbk_kw, 
+                    src.psep, 
+                    src.psic, 
+                    src.psic_kw, 
+                    src.pupt, 
+                    src.pupt_kw, 
+                    src.rper, 
+                    src.rper_kw, 
+                    src.sdat, 
+                    src.sequencenumber, 
+                    src.sgmr, 
+                    src.sgmr_kw, 
+                    src.timestamp, 
+                    src.username,     
+                    src.ETL_SEQUENCE_NUMBER,
+                    CURRENT_TIMESTAMP,
+                    src.etl_load_metadatafilename,
+                    case when ETL_DELETED=TRUE then TRUE else FALSE end,
+                    ETL_DELETED);
+    `
+} );
+
+                    
+//  Get number of rows inserted
+        
+        var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+        var rs = sqlStmt.execute();
+        var number_of_rows_inserted = sqlStmt.getNumRowsInserted();
+        var number_of_rows_updated =  sqlStmt.getNumRowsUpdated();
+                    
+
+        
+    snowflake.execute ({sqlText: "commit"});
+
+    log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('UpdateEnd','" + process_name + "','Success','Completed process execution.', 0 ," + number_of_rows_inserted.toString()+ "," +  number_of_rows_updated.toString() + ");";
+    snowflake.execute({sqlText: log_sql_command});
+
+    result = "Success"; 
+
+    }       
+
+    catch (err)  {
+        snowflake.execute( {sqlText: "rollback;"} )
+        var clean_error_msg = err.message.replace(/[^\w\s]/gi, '');
+    //  Create a log entry to say INSERT STATEMENT failed
+    
+    log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('UpdateEnd','" + process_name + "','Failed','MERGE Failed. Error:" + err.code.toString()+" : "+ clean_error_msg  + "', 0 ,0,0);";
+    snowflake.execute({sqlText: log_sql_command});
+        ;
+        throw "Failed: " + err.message;   // Return a success/error indicator.
+        }
+    return result;
+    $$;

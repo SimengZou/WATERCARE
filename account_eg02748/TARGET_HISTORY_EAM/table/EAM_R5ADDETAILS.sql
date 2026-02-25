@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_R5ADDETAILS_DELETED(
+            ADD_CODE varchar, 
+            ADD_CREATED datetime, 
+            ADD_ENTITY varchar, 
+            ADD_LANG varchar, 
+            ADD_LASTSAVED datetime, 
+            ADD_LINE numeric(38, 10), 
+            ADD_PRINT varchar, 
+            ADD_RENTITY varchar, 
+            ADD_RTYPE varchar, 
+            ADD_TEXT varchar, 
+            ADD_TYPE varchar, 
+            ADD_UPDATECOUNT numeric(38, 10), 
+            ADD_UPDATED datetime, 
+            ADD_UPDUSER varchar, 
+            ADD_USER varchar, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

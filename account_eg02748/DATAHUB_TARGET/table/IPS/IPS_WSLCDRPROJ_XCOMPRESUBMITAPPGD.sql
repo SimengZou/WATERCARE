@@ -1,0 +1,19 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCDRPROJ_XCOMPRESUBMITAPPGD(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPROJPROBKEY integer, 
+            APPROJREVIEWKEY integer, 
+            DATALAKE_DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            ONHOLDCODE varchar, 
+            ONHOLDCOMMENTS varchar, 
+            ONHOLDDESCRIPTION varchar, 
+            VARIATION_ID integer, 
+            XCOMPRESUBMITAPPDPKEY integer, 
+            XCOMPRESUBMITAPPGDKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_U5JOBPRRESPTIME_DELETED(
+                "CREATED" datetime, 
+                "CREATEDBY" varchar, 
+                "JBP_BUSINESSDAYS" varchar, 
+                "JBP_CONTRACTOR" varchar, 
+                "JBP_ORGANIZATION" varchar, 
+                "JBP_WOCOMPLETIONTIME" numeric(38, 10), 
+                "JBP_WOPRIORITY" varchar, 
+                "JBP_WOPRIORITY_DESC" varchar, 
+                "JBP_WORESOLUTIONTIME" numeric(38, 10), 
+                "JBP_WORESPONSETIME" numeric(38, 10), 
+                "JBP_WOTYPE" varchar, 
+                "LASTSAVED" datetime, 
+                "UPDATECOUNT" numeric(38, 10), 
+                "UPDATED" datetime, 
+                "UPDATEDBY" varchar, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar,
+                ETL_IS_DELETED boolean default false
+                ); 

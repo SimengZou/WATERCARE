@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_PORTAL_SCENARIO(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CONFIGURATIONID varchar, 
+            DATALAKE_DELETED boolean, 
+            LASTSAVE datetime, 
+            MEMBERSHIP integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            NAME varchar, 
+            PROCESSID varchar, 
+            PROJECTAPPLICATION integer, 
+            REQRECCOUNT integer, 
+            SCENARIOKEY integer, 
+            STATUS varchar, 
+            SUBRECCOUNT integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

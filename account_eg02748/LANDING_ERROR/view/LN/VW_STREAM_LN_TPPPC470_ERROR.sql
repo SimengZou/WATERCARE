@@ -1,0 +1,236 @@
+CREATE OR REPLACE VIEW LANDING_ERROR.VW_STREAM_LN_TPPPC470_ERROR AS SELECT src, 'LN_TPPPC470' as TABLE_OBJECT, CASE WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amac_1), '0'), 38, 10) is null and 
+                    src:amac_1 is not null) THEN
+                    'amac_1 contains a non-numeric value : \'' || AS_VARCHAR(src:amac_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amac_2), '0'), 38, 10) is null and 
+                    src:amac_2 is not null) THEN
+                    'amac_2 contains a non-numeric value : \'' || AS_VARCHAR(src:amac_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amac_3), '0'), 38, 10) is null and 
+                    src:amac_3 is not null) THEN
+                    'amac_3 contains a non-numeric value : \'' || AS_VARCHAR(src:amac_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amac_4), '0'), 38, 10) is null and 
+                    src:amac_4 is not null) THEN
+                    'amac_4 contains a non-numeric value : \'' || AS_VARCHAR(src:amac_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amap_1), '0'), 38, 10) is null and 
+                    src:amap_1 is not null) THEN
+                    'amap_1 contains a non-numeric value : \'' || AS_VARCHAR(src:amap_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amap_2), '0'), 38, 10) is null and 
+                    src:amap_2 is not null) THEN
+                    'amap_2 contains a non-numeric value : \'' || AS_VARCHAR(src:amap_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amap_3), '0'), 38, 10) is null and 
+                    src:amap_3 is not null) THEN
+                    'amap_3 contains a non-numeric value : \'' || AS_VARCHAR(src:amap_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amap_4), '0'), 38, 10) is null and 
+                    src:amap_4 is not null) THEN
+                    'amap_4 contains a non-numeric value : \'' || AS_VARCHAR(src:amap_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ambg_1), '0'), 38, 10) is null and 
+                    src:ambg_1 is not null) THEN
+                    'ambg_1 contains a non-numeric value : \'' || AS_VARCHAR(src:ambg_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ambg_2), '0'), 38, 10) is null and 
+                    src:ambg_2 is not null) THEN
+                    'ambg_2 contains a non-numeric value : \'' || AS_VARCHAR(src:ambg_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ambg_3), '0'), 38, 10) is null and 
+                    src:ambg_3 is not null) THEN
+                    'ambg_3 contains a non-numeric value : \'' || AS_VARCHAR(src:ambg_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ambg_4), '0'), 38, 10) is null and 
+                    src:ambg_4 is not null) THEN
+                    'ambg_4 contains a non-numeric value : \'' || AS_VARCHAR(src:ambg_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amep_1), '0'), 38, 10) is null and 
+                    src:amep_1 is not null) THEN
+                    'amep_1 contains a non-numeric value : \'' || AS_VARCHAR(src:amep_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amep_2), '0'), 38, 10) is null and 
+                    src:amep_2 is not null) THEN
+                    'amep_2 contains a non-numeric value : \'' || AS_VARCHAR(src:amep_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amep_3), '0'), 38, 10) is null and 
+                    src:amep_3 is not null) THEN
+                    'amep_3 contains a non-numeric value : \'' || AS_VARCHAR(src:amep_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amep_4), '0'), 38, 10) is null and 
+                    src:amep_4 is not null) THEN
+                    'amep_4 contains a non-numeric value : \'' || AS_VARCHAR(src:amep_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amex_1), '0'), 38, 10) is null and 
+                    src:amex_1 is not null) THEN
+                    'amex_1 contains a non-numeric value : \'' || AS_VARCHAR(src:amex_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amex_2), '0'), 38, 10) is null and 
+                    src:amex_2 is not null) THEN
+                    'amex_2 contains a non-numeric value : \'' || AS_VARCHAR(src:amex_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amex_3), '0'), 38, 10) is null and 
+                    src:amex_3 is not null) THEN
+                    'amex_3 contains a non-numeric value : \'' || AS_VARCHAR(src:amex_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amex_4), '0'), 38, 10) is null and 
+                    src:amex_4 is not null) THEN
+                    'amex_4 contains a non-numeric value : \'' || AS_VARCHAR(src:amex_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampm_1), '0'), 38, 10) is null and 
+                    src:ampm_1 is not null) THEN
+                    'ampm_1 contains a non-numeric value : \'' || AS_VARCHAR(src:ampm_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampm_2), '0'), 38, 10) is null and 
+                    src:ampm_2 is not null) THEN
+                    'ampm_2 contains a non-numeric value : \'' || AS_VARCHAR(src:ampm_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampm_3), '0'), 38, 10) is null and 
+                    src:ampm_3 is not null) THEN
+                    'ampm_3 contains a non-numeric value : \'' || AS_VARCHAR(src:ampm_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampm_4), '0'), 38, 10) is null and 
+                    src:ampm_4 is not null) THEN
+                    'ampm_4 contains a non-numeric value : \'' || AS_VARCHAR(src:ampm_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampp_1), '0'), 38, 10) is null and 
+                    src:ampp_1 is not null) THEN
+                    'ampp_1 contains a non-numeric value : \'' || AS_VARCHAR(src:ampp_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampp_2), '0'), 38, 10) is null and 
+                    src:ampp_2 is not null) THEN
+                    'ampp_2 contains a non-numeric value : \'' || AS_VARCHAR(src:ampp_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampp_3), '0'), 38, 10) is null and 
+                    src:ampp_3 is not null) THEN
+                    'ampp_3 contains a non-numeric value : \'' || AS_VARCHAR(src:ampp_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampp_4), '0'), 38, 10) is null and 
+                    src:ampp_4 is not null) THEN
+                    'ampp_4 contains a non-numeric value : \'' || AS_VARCHAR(src:ampp_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrp_1), '0'), 38, 10) is null and 
+                    src:amrp_1 is not null) THEN
+                    'amrp_1 contains a non-numeric value : \'' || AS_VARCHAR(src:amrp_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrp_2), '0'), 38, 10) is null and 
+                    src:amrp_2 is not null) THEN
+                    'amrp_2 contains a non-numeric value : \'' || AS_VARCHAR(src:amrp_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrp_3), '0'), 38, 10) is null and 
+                    src:amrp_3 is not null) THEN
+                    'amrp_3 contains a non-numeric value : \'' || AS_VARCHAR(src:amrp_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrp_4), '0'), 38, 10) is null and 
+                    src:amrp_4 is not null) THEN
+                    'amrp_4 contains a non-numeric value : \'' || AS_VARCHAR(src:amrp_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrs_1), '0'), 38, 10) is null and 
+                    src:amrs_1 is not null) THEN
+                    'amrs_1 contains a non-numeric value : \'' || AS_VARCHAR(src:amrs_1) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrs_2), '0'), 38, 10) is null and 
+                    src:amrs_2 is not null) THEN
+                    'amrs_2 contains a non-numeric value : \'' || AS_VARCHAR(src:amrs_2) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrs_3), '0'), 38, 10) is null and 
+                    src:amrs_3 is not null) THEN
+                    'amrs_3 contains a non-numeric value : \'' || AS_VARCHAR(src:amrs_3) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrs_4), '0'), 38, 10) is null and 
+                    src:amrs_4 is not null) THEN
+                    'amrs_4 contains a non-numeric value : \'' || AS_VARCHAR(src:amrs_4) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:compnr), '0'), 38, 10) is null and 
+                    src:compnr is not null) THEN
+                    'compnr contains a non-numeric value : \'' || AS_VARCHAR(src:compnr) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:cprj_cstl_ref_compnr), '0'), 38, 10) is null and 
+                    src:cprj_cstl_ref_compnr is not null) THEN
+                    'cprj_cstl_ref_compnr contains a non-numeric value : \'' || AS_VARCHAR(src:cprj_cstl_ref_compnr) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:cprj_ref_compnr), '0'), 38, 10) is null and 
+                    src:cprj_ref_compnr is not null) THEN
+                    'cprj_ref_compnr contains a non-numeric value : \'' || AS_VARCHAR(src:cprj_ref_compnr) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:sequencenumber), '0'), 38, 10) is null and 
+                    src:sequencenumber is not null) THEN
+                    'sequencenumber contains a non-numeric value : \'' || AS_VARCHAR(src:sequencenumber) || '\'' WHEN 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:timestamp), '1900-01-01')) is null and 
+                    src:timestamp is not null) THEN
+                    'timestamp contains a non-timestamp value : \'' || AS_VARCHAR(src:timestamp) || '\'' WHEN 
+                (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:sequencenumber), '1900-01-01')) is null and 
+                src:sequencenumber is not null) THEN
+                'sequencenumber contains a non-timestamp value : \'' || AS_VARCHAR(src:sequencenumber) || '\'' END as COMMENT,  CURRENT_TIMESTAMP() as ETL_LANDING_LOAD_DATETIME,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                FROM 
+                (
+                select 
+                    src,
+                    etl_load_datetime,
+                    etl_load_metadatafilename
+                    from
+                    (
+                        SELECT
+        
+                            
+            src,
+            etl_load_datetime,
+            etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+                                    
+                src:compnr,
+                src:cstl,
+                src:cprj  ORDER BY 
+            src:sequencenumber desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_LN_TPPPC470 as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amac_1), '0'), 38, 10) is null and 
+                    src:amac_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amac_2), '0'), 38, 10) is null and 
+                    src:amac_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amac_3), '0'), 38, 10) is null and 
+                    src:amac_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amac_4), '0'), 38, 10) is null and 
+                    src:amac_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amap_1), '0'), 38, 10) is null and 
+                    src:amap_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amap_2), '0'), 38, 10) is null and 
+                    src:amap_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amap_3), '0'), 38, 10) is null and 
+                    src:amap_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amap_4), '0'), 38, 10) is null and 
+                    src:amap_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ambg_1), '0'), 38, 10) is null and 
+                    src:ambg_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ambg_2), '0'), 38, 10) is null and 
+                    src:ambg_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ambg_3), '0'), 38, 10) is null and 
+                    src:ambg_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ambg_4), '0'), 38, 10) is null and 
+                    src:ambg_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amep_1), '0'), 38, 10) is null and 
+                    src:amep_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amep_2), '0'), 38, 10) is null and 
+                    src:amep_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amep_3), '0'), 38, 10) is null and 
+                    src:amep_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amep_4), '0'), 38, 10) is null and 
+                    src:amep_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amex_1), '0'), 38, 10) is null and 
+                    src:amex_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amex_2), '0'), 38, 10) is null and 
+                    src:amex_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amex_3), '0'), 38, 10) is null and 
+                    src:amex_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amex_4), '0'), 38, 10) is null and 
+                    src:amex_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampm_1), '0'), 38, 10) is null and 
+                    src:ampm_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampm_2), '0'), 38, 10) is null and 
+                    src:ampm_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampm_3), '0'), 38, 10) is null and 
+                    src:ampm_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampm_4), '0'), 38, 10) is null and 
+                    src:ampm_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampp_1), '0'), 38, 10) is null and 
+                    src:ampp_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampp_2), '0'), 38, 10) is null and 
+                    src:ampp_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampp_3), '0'), 38, 10) is null and 
+                    src:ampp_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ampp_4), '0'), 38, 10) is null and 
+                    src:ampp_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrp_1), '0'), 38, 10) is null and 
+                    src:amrp_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrp_2), '0'), 38, 10) is null and 
+                    src:amrp_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrp_3), '0'), 38, 10) is null and 
+                    src:amrp_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrp_4), '0'), 38, 10) is null and 
+                    src:amrp_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrs_1), '0'), 38, 10) is null and 
+                    src:amrs_1 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrs_2), '0'), 38, 10) is null and 
+                    src:amrs_2 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrs_3), '0'), 38, 10) is null and 
+                    src:amrs_3 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:amrs_4), '0'), 38, 10) is null and 
+                    src:amrs_4 is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:compnr), '0'), 38, 10) is null and 
+                    src:compnr is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:cprj_cstl_ref_compnr), '0'), 38, 10) is null and 
+                    src:cprj_cstl_ref_compnr is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:cprj_ref_compnr), '0'), 38, 10) is null and 
+                    src:cprj_ref_compnr is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:sequencenumber), '0'), 38, 10) is null and 
+                    src:sequencenumber is not null) or 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:timestamp), '1900-01-01')) is null and 
+                    src:timestamp is not null) or 
+                (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:sequencenumber), '1900-01-01')) is null and 
+                src:sequencenumber is not null)

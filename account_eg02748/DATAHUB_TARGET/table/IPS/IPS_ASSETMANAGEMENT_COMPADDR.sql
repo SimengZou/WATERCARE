@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_ASSETMANAGEMENT_COMPADDR(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ADDRKEY integer, 
+            ADDRQUAL varchar, 
+            COMPADDKEY integer, 
+            COMPKEY integer, 
+            COMPTYPE integer, 
+            DATALAKE_DELETED boolean, 
+            DELFLAG varchar, 
+            DISTFROMFT numeric(38, 10), 
+            DISTFROMM numeric(38, 10), 
+            DISTTOFT numeric(38, 10), 
+            DISTTOM numeric(38, 10), 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,26 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.EAM_R5WARCOVERAGES(
+                        WCV_WARRANTY varchar(30),
+                        WCV_OBJECT varchar(30),
+                        WCV_OBTYPE varchar(4),
+                        WCV_OBRTYPE varchar(4),
+                        WCV_UOM varchar(30),
+                        WCV_DURATION numeric(9, 2),
+                        WCV_EXPIRATION numeric(9, 2),
+                        WCV_EXPIRATIONDATE datetime(0),
+                        WCV_NEARTHRESHOLD numeric(24, 6),
+                        WCV_STARTUSAGE numeric(24, 6),
+                        WCV_SEQNO numeric(38, 10),
+                        WCV_ACTIVE varchar(1),
+                        WCV_STARTDATE datetime(0),
+                        WCV_RECORDED datetime(0),
+                        WCV_USER varchar(255),
+                        WCV_OBJECT_ORG varchar(15),
+                        WCV_UPDATECOUNT numeric(38, 0),
+                        WCV_CREATED datetime(0),
+                        WCV_UPDATED datetime(0),
+                        WCV_LASTSAVED datetime(0)
+                        ,etl_load_datetime timestamp,
+                          etl_load_metadatafilename varchar(255),
+                           ETL_LASTSAVED datetime(0),
+			ETL_DELETED boolean
+                    );

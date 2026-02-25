@@ -1,0 +1,51 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+variables:
+- group: DEV
+
+parameters:
+  - name: environment
+    displayName: Environment 
+    default: DEV
+    values:
+    - DEV
+    - QA
+    - STG
+    - PRD
+
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: Execution
+  jobs:
+  - job: Execution
+    timeoutInMinutes: 1200
+    steps:
+    # Install python and pip in case that the version of the current python doesn't match with the requirement of snowflake
+    - script: |
+        sudo apt-get update
+        sudo apt-get install -y python3
+        sudo apt-get install -y python3-pip
+      displayName: Install Python and Pip
+    # Install all python modules for the next sequence of scripts.
+    - script: |
+        pip3 install -r $(Build.Repository.LocalPath)/BuildScript/requirements.txt
+      displayName: Install Python Script Dependencies
+    - task: PythonScript@0
+      displayName: Execute the build
+      inputs:
+        scriptPath: $(Build.Repository.LocalPath)/BuildScript/execute_build.py
+      env:
+        branch: $(Build.SourceBranch)
+        environment:  ${{ parameters.environment }}
+        local_directory: $(Build.Repository.LocalPath)
+        # List of library variables
+        snowflake_deployment_user: $(SNOWFLAKE_DEPLOYMENT_USER)
+        snowflake_deployment_pw: $(SNOWFLAKE_DEPLOYMENT_PW)
+

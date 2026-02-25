@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLBILLING_EXTERNALACCOUNTDELETED(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            COMMENTS varchar, 
+            DELETED boolean, 
+            EXTERNALACCOUNTDELETEDKEY integer, 
+            EXTERNALACCOUNTKEY integer, 
+            EXTERNALACCOUNTNO varchar, 
+            EXTERNALACCOUNTTYPE varchar, 
+            HANSENACCOUNTKEY integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            ORIGADDBY varchar, 
+            ORIGADDDTTM datetime, 
+            ORIGMODBY varchar, 
+            ORIGMODDTTM datetime, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

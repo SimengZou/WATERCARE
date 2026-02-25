@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5CUSTOMERREQUESTHISTORY(
+                "CRH_CALLCENTERCODE" varchar, 
+                "CRH_CALLCENTER_ORG" varchar, 
+                "CRH_COMMENT" varchar, 
+                "CRH_EVENT" varchar, 
+                "CRH_EVENTTYPE" varchar, 
+                "CRH_FIELD" varchar, 
+                "CRH_LASTSAVED" datetime, 
+                "CRH_NEWVALUE" varchar, 
+                "CRH_OLDVALUE" varchar, 
+                "CRH_PK" varchar, 
+                "CRH_RENTITY" varchar, 
+                "CRH_REQDATE" datetime, 
+                "CRH_UPDATECOUNT" numeric(38, 10), 
+                "CRH_USERCODE" varchar, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

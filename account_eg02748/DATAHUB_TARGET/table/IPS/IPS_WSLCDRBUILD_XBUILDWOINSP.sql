@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCDRBUILD_XBUILDWOINSP(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APBLDGINSPDTLKEY integer, 
+            DATALAKE_DELETED boolean, 
+            HVCLEARANCE varchar, 
+            MAINSLOCATEDMARKED varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            OBERVEOHSCOMPLIANCE varchar, 
+            PILESFOUNDATIONEXCAVATED varchar, 
+            PILESFOUNDATIONMARKED varchar, 
+            VARIATION_ID integer, 
+            WORKSCOMPLETED varchar, 
+            XBUILDWOINSPKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,11 @@
+{
+    "env":"STG",
+    "env_lower":"stg",
+    "sns_topic_notification":"non-prod",
+    "env_s3":"st",
+    "infors3bucket":"watercareuat",
+    "smportal":"wsl-apsy-st-sminf-portal-daily-s3",
+    "smcurated":"wsl-apsy-st-sminf-cur-s3",
+    "smcuratedsns":"ap-southeast-2:654386096794"
+    
+}

@@ -1,0 +1,33 @@
+SELECT :datebucket(DATE) as "DATE",
+    MAX("RUNNING COUNT") as "RUNNING COUNT"
+FROM
+(
+    SELECT
+        :datebucket(DATE) as "DATE",
+        SUM("COUNT") over (ORDER BY DATE ASC ROWS BETWEEN unbounded preceding AND CURRENT ROW) AS "RUNNING COUNT"
+    FROM (
+        SELECT REPLACE(TABLE_SCHEMA, 'TARGET_', '') AS "SOURCE",
+            MIN(:datebucket(TO_DATE(CREATED))) as "DATE",
+            1 AS "COUNT"
+        FROM WATERLAKE_${var.ENVIRONMENT}.INFORMATION_SCHEMA.TABLES T
+        WHERE TABLE_TYPE = 'BASE TABLE' 
+            AND TABLE_SCHEMA LIKE 'TARGET_%' 
+            AND TABLE_SCHEMA NOT LIKE '%HISTORY%'
+            AND SOURCE = :source_system
+            AND TO_DATE(CREATED) = :daterange
+        GROUP BY REPLACE(TABLE_SCHEMA, 'TARGET_', '')
+        UNION ALL
+        SELECT CASE WHEN TABLE_SCHEMA = 'DATAHUB_TARGET' THEN 'IPS' ELSE REPLACE(TABLE_SCHEMA, 'TARGET_', '') END AS "SOURCE",
+            MIN(:datebucket(TO_DATE(CREATED))) as "DATE",    
+            1 AS "COUNT"
+        FROM ${var.ENVIRONMENT}_WCC_DATAWAREHOUSE.INFORMATION_SCHEMA.TABLES T
+        WHERE TABLE_TYPE = 'BASE TABLE' 
+            AND (TABLE_SCHEMA = 'DATAHUB_TARGET' OR TABLE_SCHEMA LIKE 'TARGET_%') 
+            AND TABLE_SCHEMA NOT LIKE '%HISTORY%'
+            AND SOURCE = :source_system
+            AND TO_DATE(CREATED) = :daterange
+        GROUP BY CASE WHEN TABLE_SCHEMA = 'DATAHUB_TARGET' THEN 'IPS' ELSE REPLACE(TABLE_SCHEMA, 'TARGET_', '') END
+    )
+)
+GROUP BY :datebucket(DATE)
+ORDER BY :datebucket(DATE)

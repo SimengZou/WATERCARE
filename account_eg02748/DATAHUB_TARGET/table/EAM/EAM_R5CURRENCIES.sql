@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5CURRENCIES(
+                "CUR_CLASS" varchar, 
+                "CUR_CLASS_ORG" varchar, 
+                "CUR_CODE" varchar, 
+                "CUR_CREATED" datetime, 
+                "CUR_DESC" varchar, 
+                "CUR_DUAL" numeric(38, 10), 
+                "CUR_INTERFACE" datetime, 
+                "CUR_LASTSAVED" datetime, 
+                "CUR_NOTUSED" varchar, 
+                "CUR_SOURCECODE" varchar, 
+                "CUR_SOURCESYSTEM" varchar, 
+                "CUR_UPDATECOUNT" numeric(38, 10), 
+                "CUR_UPDATED" datetime, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLCRM_XACCOUNTAUDITGD(
+            "ACCOUNT" integer, 
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CHANGEDDATE datetime, 
+            CHANGEDVALUE varchar, 
+            DELETED boolean, 
+            ENTITYKEY integer, 
+            ENTITYNAME varchar, 
+            IPSFIELDNAME varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            MODIFIEDBYEMPLOYEE varchar, 
+            ORIGINALVALUE varchar, 
+            VARIATION_ID integer, 
+            XACCOUNTAUDITDP integer, 
+            XACCOUNTAUDITGDKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

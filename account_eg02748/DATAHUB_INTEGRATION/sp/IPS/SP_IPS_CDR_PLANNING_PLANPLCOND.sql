@@ -1,0 +1,344 @@
+create or replace procedure DATAHUB_INTEGRATION.SP_IPS_CDR_PLANNING_PLANPLCOND()
+    returns varchar not null
+                language javascript
+                as
+                $$
+
+//  Variables
+
+var result = "";                                    // return status of this proc call
+const process_name = Object.keys(this)[0];          // name of currently executing process
+var number_of_rows_inserted = 0;                             // track number of rows we have inserted
+var number_of_rows_updated = 0;                             // track number of rows we have updated
+
+
+//  Step 1.
+
+//  Start execution - log start
+
+log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('Insert','" + process_name + "','Running','Started process execution.', 0,0,0);";
+snowflake.execute({sqlText: log_sql_command});
+
+snowflake.execute( {sqlText: "begin transaction;"} );
+try
+    {
+        var sql_command = `
+                            INSERT INTO LANDING_ERROR.IPS_RAW_ERROR
+                            SELECT * FROM LANDING_ERROR.VW_STREAM_IPS_CDR_PLANNING_PLANPLCOND_ERROR`;
+    var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+    var rs = sqlStmt.execute();
+        
+        var sql_command = ` 
+                            merge into  DATAHUB_TARGET.IPS_CDR_PLANNING_PLANPLCOND as target using (SELECT * FROM (SELECT 
+            strm.ADDBY, 
+            strm.ADDDTTM, 
+            strm.APPLANKEY, 
+            strm.APPLANPLCONDKEY, 
+            strm.APPLANSTATUSKEY, 
+            strm.AUTOSTATUSFRMKEY, 
+            strm.BLDGAUTOSTATUSFRMKEY, 
+            strm.CONDTEXTCHANGED, 
+            strm.CONDTITLE, 
+            strm.CONDTYPE, 
+            strm.DEFFERREDMILESTONE, 
+            strm.DELETED, 
+            strm.DEPARTMENT, 
+            strm.EFFDATE, 
+            strm.EXPDATE, 
+            strm.INHERITRULEKEY, 
+            strm.MILESTONEDATE, 
+            strm.MILESTONERULE, 
+            strm.MODBY, 
+            strm.MODDTTM, 
+            strm.ORIGINAPKEY, 
+            strm.ORIGINCDRTYPE, 
+            strm.PARENTAPKEY, 
+            strm.PARENTCDRTYPE, 
+            strm.PLANAUTOSTATUSFRMKEY, 
+            strm.PLANCONDNO, 
+            strm.PLCONDTYPE, 
+            strm.PROJAUTOSTATUSFRMKEY, 
+            strm.STATUSBY, 
+            strm.STATUSDATE, 
+            strm.VARIATION_ID, 
+            strm.ETL_SEQUENCE_NUMBER,
+            strm.ETL_DELETED,
+            strm.etl_load_datetime,
+            strm.etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+            strm.APPLANPLCONDKEY ORDER BY strm.ETL_SEQUENCE_NUMBER desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+        FROM DATAHUB_INTEGRATION.VW_STREAM_IPS_CDR_PLANNING_PLANPLCOND as  strm
+                    )   
+            WHERE ROWNUMBER=1  
+            
+                    ) as src on
+            ((target.APPLANPLCONDKEY=src.APPLANPLCONDKEY) OR (target.APPLANPLCONDKEY IS NULL AND src.APPLANPLCONDKEY IS NULL)) 
+                when matched and src.ETL_DELETED=TRUE THEN DELETE
+                when matched then update set
+                    target.ADDBY=src.ADDBY, 
+                    target.ADDDTTM=src.ADDDTTM, 
+                    target.APPLANKEY=src.APPLANKEY, 
+                    target.APPLANPLCONDKEY=src.APPLANPLCONDKEY, 
+                    target.APPLANSTATUSKEY=src.APPLANSTATUSKEY, 
+                    target.AUTOSTATUSFRMKEY=src.AUTOSTATUSFRMKEY, 
+                    target.BLDGAUTOSTATUSFRMKEY=src.BLDGAUTOSTATUSFRMKEY, 
+                    target.CONDTEXTCHANGED=src.CONDTEXTCHANGED, 
+                    target.CONDTITLE=src.CONDTITLE, 
+                    target.CONDTYPE=src.CONDTYPE, 
+                    target.DEFFERREDMILESTONE=src.DEFFERREDMILESTONE, 
+                    target.DELETED=src.DELETED, 
+                    target.DEPARTMENT=src.DEPARTMENT, 
+                    target.EFFDATE=src.EFFDATE, 
+                    target.EXPDATE=src.EXPDATE, 
+                    target.INHERITRULEKEY=src.INHERITRULEKEY, 
+                    target.MILESTONEDATE=src.MILESTONEDATE, 
+                    target.MILESTONERULE=src.MILESTONERULE, 
+                    target.MODBY=src.MODBY, 
+                    target.MODDTTM=src.MODDTTM, 
+                    target.ORIGINAPKEY=src.ORIGINAPKEY, 
+                    target.ORIGINCDRTYPE=src.ORIGINCDRTYPE, 
+                    target.PARENTAPKEY=src.PARENTAPKEY, 
+                    target.PARENTCDRTYPE=src.PARENTCDRTYPE, 
+                    target.PLANAUTOSTATUSFRMKEY=src.PLANAUTOSTATUSFRMKEY, 
+                    target.PLANCONDNO=src.PLANCONDNO, 
+                    target.PLCONDTYPE=src.PLCONDTYPE, 
+                    target.PROJAUTOSTATUSFRMKEY=src.PROJAUTOSTATUSFRMKEY, 
+                    target.STATUSBY=src.STATUSBY, 
+                    target.STATUSDATE=src.STATUSDATE, 
+                    target.VARIATION_ID=src.VARIATION_ID, 
+                    target.ETL_SEQUENCE_NUMBER=src.ETL_SEQUENCE_NUMBER,
+                    target.etl_load_datetime=CURRENT_TIMESTAMP,
+                    target.etl_load_metadatafilename=src.etl_load_metadatafilename
+        when not matched and (src.ETL_DELETED=FALSE OR src.ETL_DELETED IS NULL)  then insert ( 
+                    ADDBY, 
+                    ADDDTTM, 
+                    APPLANKEY, 
+                    APPLANPLCONDKEY, 
+                    APPLANSTATUSKEY, 
+                    AUTOSTATUSFRMKEY, 
+                    BLDGAUTOSTATUSFRMKEY, 
+                    CONDTEXTCHANGED, 
+                    CONDTITLE, 
+                    CONDTYPE, 
+                    DEFFERREDMILESTONE, 
+                    DELETED, 
+                    DEPARTMENT, 
+                    EFFDATE, 
+                    EXPDATE, 
+                    INHERITRULEKEY, 
+                    MILESTONEDATE, 
+                    MILESTONERULE, 
+                    MODBY, 
+                    MODDTTM, 
+                    ORIGINAPKEY, 
+                    ORIGINCDRTYPE, 
+                    PARENTAPKEY, 
+                    PARENTCDRTYPE, 
+                    PLANAUTOSTATUSFRMKEY, 
+                    PLANCONDNO, 
+                    PLCONDTYPE, 
+                    PROJAUTOSTATUSFRMKEY, 
+                    STATUSBY, 
+                    STATUSDATE, 
+                    VARIATION_ID, 
+                    ETL_SEQUENCE_NUMBER,                       
+                    etl_load_datetime,
+                    etl_load_metadatafilename) 
+            values (
+                    src.ADDBY, 
+                    src.ADDDTTM, 
+                    src.APPLANKEY, 
+                    src.APPLANPLCONDKEY, 
+                    src.APPLANSTATUSKEY, 
+                    src.AUTOSTATUSFRMKEY, 
+                    src.BLDGAUTOSTATUSFRMKEY, 
+                    src.CONDTEXTCHANGED, 
+                    src.CONDTITLE, 
+                    src.CONDTYPE, 
+                    src.DEFFERREDMILESTONE, 
+                    src.DELETED, 
+                    src.DEPARTMENT, 
+                    src.EFFDATE, 
+                    src.EXPDATE, 
+                    src.INHERITRULEKEY, 
+                    src.MILESTONEDATE, 
+                    src.MILESTONERULE, 
+                    src.MODBY, 
+                    src.MODDTTM, 
+                    src.ORIGINAPKEY, 
+                    src.ORIGINCDRTYPE, 
+                    src.PARENTAPKEY, 
+                    src.PARENTCDRTYPE, 
+                    src.PLANAUTOSTATUSFRMKEY, 
+                    src.PLANCONDNO, 
+                    src.PLCONDTYPE, 
+                    src.PROJAUTOSTATUSFRMKEY, 
+                    src.STATUSBY, 
+                    src.STATUSDATE, 
+                    src.VARIATION_ID,     
+                    src.ETL_SEQUENCE_NUMBER,
+                    CURRENT_TIMESTAMP,
+                    src.etl_load_metadatafilename);`;
+
+    var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+    var rs = sqlStmt.execute();
+
+    snowflake.execute( {sqlText: `merge into DATAHUB_TARGET_HISTORY.IPS_DELETED_CDR_PLANNING_PLANPLCOND as target using (
+                SELECT * FROM (SELECT 
+            strm.ADDBY, 
+            strm.ADDDTTM, 
+            strm.APPLANKEY, 
+            strm.APPLANPLCONDKEY, 
+            strm.APPLANSTATUSKEY, 
+            strm.AUTOSTATUSFRMKEY, 
+            strm.BLDGAUTOSTATUSFRMKEY, 
+            strm.CONDTEXTCHANGED, 
+            strm.CONDTITLE, 
+            strm.CONDTYPE, 
+            strm.DEFFERREDMILESTONE, 
+            strm.DELETED, 
+            strm.DEPARTMENT, 
+            strm.EFFDATE, 
+            strm.EXPDATE, 
+            strm.INHERITRULEKEY, 
+            strm.MILESTONEDATE, 
+            strm.MILESTONERULE, 
+            strm.MODBY, 
+            strm.MODDTTM, 
+            strm.ORIGINAPKEY, 
+            strm.ORIGINCDRTYPE, 
+            strm.PARENTAPKEY, 
+            strm.PARENTCDRTYPE, 
+            strm.PLANAUTOSTATUSFRMKEY, 
+            strm.PLANCONDNO, 
+            strm.PLCONDTYPE, 
+            strm.PROJAUTOSTATUSFRMKEY, 
+            strm.STATUSBY, 
+            strm.STATUSDATE, 
+            strm.VARIATION_ID, 
+            strm.ETL_SEQUENCE_NUMBER,
+            strm.ETL_DELETED,
+            strm.etl_load_datetime,
+            strm.etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+            strm.APPLANPLCONDKEY ORDER BY strm.ETL_SEQUENCE_NUMBER desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+        FROM DATAHUB_INTEGRATION.VW_STREAM_IPS_CDR_PLANNING_PLANPLCOND as  strm
+        WHERE strm.ETL_DELETED=TRUE
+                    )   
+            WHERE ROWNUMBER=1  
+            
+                    ) as src on
+            ((target.APPLANPLCONDKEY=src.APPLANPLCONDKEY) OR (target.APPLANPLCONDKEY IS NULL AND src.APPLANPLCONDKEY IS NULL)) 
+                when matched then update set
+                    target.ADDBY=src.ADDBY, 
+                    target.ADDDTTM=src.ADDDTTM, 
+                    target.APPLANKEY=src.APPLANKEY, 
+                    target.APPLANPLCONDKEY=src.APPLANPLCONDKEY, 
+                    target.APPLANSTATUSKEY=src.APPLANSTATUSKEY, 
+                    target.AUTOSTATUSFRMKEY=src.AUTOSTATUSFRMKEY, 
+                    target.BLDGAUTOSTATUSFRMKEY=src.BLDGAUTOSTATUSFRMKEY, 
+                    target.CONDTEXTCHANGED=src.CONDTEXTCHANGED, 
+                    target.CONDTITLE=src.CONDTITLE, 
+                    target.CONDTYPE=src.CONDTYPE, 
+                    target.DEFFERREDMILESTONE=src.DEFFERREDMILESTONE, 
+                    target.DELETED=src.DELETED, 
+                    target.DEPARTMENT=src.DEPARTMENT, 
+                    target.EFFDATE=src.EFFDATE, 
+                    target.EXPDATE=src.EXPDATE, 
+                    target.INHERITRULEKEY=src.INHERITRULEKEY, 
+                    target.MILESTONEDATE=src.MILESTONEDATE, 
+                    target.MILESTONERULE=src.MILESTONERULE, 
+                    target.MODBY=src.MODBY, 
+                    target.MODDTTM=src.MODDTTM, 
+                    target.ORIGINAPKEY=src.ORIGINAPKEY, 
+                    target.ORIGINCDRTYPE=src.ORIGINCDRTYPE, 
+                    target.PARENTAPKEY=src.PARENTAPKEY, 
+                    target.PARENTCDRTYPE=src.PARENTCDRTYPE, 
+                    target.PLANAUTOSTATUSFRMKEY=src.PLANAUTOSTATUSFRMKEY, 
+                    target.PLANCONDNO=src.PLANCONDNO, 
+                    target.PLCONDTYPE=src.PLCONDTYPE, 
+                    target.PROJAUTOSTATUSFRMKEY=src.PROJAUTOSTATUSFRMKEY, 
+                    target.STATUSBY=src.STATUSBY, 
+                    target.STATUSDATE=src.STATUSDATE, 
+                    target.VARIATION_ID=src.VARIATION_ID, 
+                    target.ETL_SEQUENCE_NUMBER=src.ETL_SEQUENCE_NUMBER,
+                    target.etl_load_datetime=CURRENT_TIMESTAMP,
+                    target.etl_load_metadatafilename=src.etl_load_metadatafilename,
+                    target.ETL_DELETED=src.ETL_DELETED
+        when not matched   then insert ( ADDBY, ADDDTTM, APPLANKEY, APPLANPLCONDKEY, APPLANSTATUSKEY, AUTOSTATUSFRMKEY, BLDGAUTOSTATUSFRMKEY, CONDTEXTCHANGED, CONDTITLE, CONDTYPE, DEFFERREDMILESTONE, DELETED, DEPARTMENT, EFFDATE, EXPDATE, INHERITRULEKEY, MILESTONEDATE, MILESTONERULE, MODBY, MODDTTM, ORIGINAPKEY, ORIGINCDRTYPE, PARENTAPKEY, PARENTCDRTYPE, PLANAUTOSTATUSFRMKEY, PLANCONDNO, PLCONDTYPE, PROJAUTOSTATUSFRMKEY, STATUSBY, STATUSDATE, VARIATION_ID, 
+                    ETL_SEQUENCE_NUMBER,                       
+                    etl_load_datetime,
+                    etl_load_metadatafilename,
+                    etl_is_deleted,
+                    ETL_DELETED) 
+            values (
+                    src.ADDBY, 
+                    src.ADDDTTM, 
+                    src.APPLANKEY, 
+                    src.APPLANPLCONDKEY, 
+                    src.APPLANSTATUSKEY, 
+                    src.AUTOSTATUSFRMKEY, 
+                    src.BLDGAUTOSTATUSFRMKEY, 
+                    src.CONDTEXTCHANGED, 
+                    src.CONDTITLE, 
+                    src.CONDTYPE, 
+                    src.DEFFERREDMILESTONE, 
+                    src.DELETED, 
+                    src.DEPARTMENT, 
+                    src.EFFDATE, 
+                    src.EXPDATE, 
+                    src.INHERITRULEKEY, 
+                    src.MILESTONEDATE, 
+                    src.MILESTONERULE, 
+                    src.MODBY, 
+                    src.MODDTTM, 
+                    src.ORIGINAPKEY, 
+                    src.ORIGINCDRTYPE, 
+                    src.PARENTAPKEY, 
+                    src.PARENTCDRTYPE, 
+                    src.PLANAUTOSTATUSFRMKEY, 
+                    src.PLANCONDNO, 
+                    src.PLCONDTYPE, 
+                    src.PROJAUTOSTATUSFRMKEY, 
+                    src.STATUSBY, 
+                    src.STATUSDATE, 
+                    src.VARIATION_ID,     
+                    src.ETL_SEQUENCE_NUMBER,
+                    CURRENT_TIMESTAMP,
+                    src.etl_load_metadatafilename,
+                    case when ETL_DELETED=TRUE then TRUE else FALSE end,
+                    ETL_DELETED);
+    `
+} );
+
+                    
+//  Get number of rows inserted
+        
+        var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+        var rs = sqlStmt.execute();
+        var number_of_rows_inserted = sqlStmt.getNumRowsInserted();
+        var number_of_rows_updated =  sqlStmt.getNumRowsUpdated();
+                    
+
+        
+    snowflake.execute ({sqlText: "commit"});
+
+    log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('UpdateEnd','" + process_name + "','Success','Completed process execution.', 0 ," + number_of_rows_inserted.toString()+ "," +  number_of_rows_updated.toString() + ");";
+    snowflake.execute({sqlText: log_sql_command});
+
+    result = "Success"; 
+
+    }       
+
+    catch (err)  {
+        snowflake.execute( {sqlText: "rollback;"} )
+        var clean_error_msg = err.message.replace(/[^\w\s]/gi, '');
+    //  Create a log entry to say INSERT STATEMENT failed
+    
+    log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('UpdateEnd','" + process_name + "','Failed','MERGE Failed. Error:" + err.code.toString()+" : "+ clean_error_msg  + "', 0 ,0,0);";
+    snowflake.execute({sqlText: log_sql_command});
+        ;
+        throw "Failed: " + err.message;   // Return a success/error indicator.
+        }
+    return result;
+    $$;

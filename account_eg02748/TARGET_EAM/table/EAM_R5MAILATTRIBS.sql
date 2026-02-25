@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5MAILATTRIBS(
+            MAA_ACTIVE varchar, 
+            MAA_COMMENT varchar, 
+            MAA_DELETE varchar, 
+            MAA_ENTEREDBY varchar, 
+            MAA_INCLUDEATTACHMENT varchar, 
+            MAA_INCLUDEURL varchar, 
+            MAA_INSERT varchar, 
+            MAA_LASTSAVED datetime, 
+            MAA_NEWSTATUS varchar, 
+            MAA_OLDSTATUS varchar, 
+            MAA_PK varchar, 
+            MAA_TABLE varchar, 
+            MAA_TEMPLATE varchar, 
+            MAA_UPDATE varchar, 
+            MAA_UPDATECOUNT numeric(38, 10), 
+            MAA_WORKFLOW varchar, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

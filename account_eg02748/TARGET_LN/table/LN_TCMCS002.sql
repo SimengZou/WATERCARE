@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TCMCS002(
+            brep integer, 
+            brep_kw varchar, 
+            ccur varchar, 
+            compnr integer, 
+            crnd numeric(38, 17), 
+            deleted boolean, 
+            dsca object, 
+            dscb object, 
+            emuc integer, 
+            emuc_kw varchar, 
+            gtrf numeric(38, 17), 
+            iccc varchar, 
+            sequencenumber integer, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

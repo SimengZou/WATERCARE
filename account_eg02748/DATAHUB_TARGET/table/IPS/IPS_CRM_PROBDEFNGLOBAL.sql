@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CRM_PROBDEFNGLOBAL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CHECKDUPLICATELOCALONLY varchar, 
+            CHKDUPFLG varchar, 
+            CORRPROCESSSETUP integer, 
+            CREATEDINLASTXMIN integer, 
+            DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            NOTIFYCUSTOMER varchar, 
+            PROBDEFNGLOBALKEY integer, 
+            RESOLVELINKEDREQUESTS varchar, 
+            SAMEREQUESTTYPEFLG varchar, 
+            SEARCHRADIUS numeric(38, 10), 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

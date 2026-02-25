@@ -1,0 +1,30 @@
+ CREATE OR REPLACE VIEW datahub_analytics.dw_ips_dim_account (accept_checks_flag, account_key, account_number, account_status, account_type, account_class, account_group,
+  account_subgroup, added_by, added_datetime, address_key, aggregate_flag, aggregate_key, allow_check_overrides_flag,
+  area, arranged_flag, assigned, bankrupt_flag, billing_cycle, billing_print_exception, billing_status, billing_datetime,
+  budget_billing_disallowed, budget_billing_flag, business_type, character_cons_value1, character_cons_value2, character_cons_value3, character_cons_value4,
+  character_cons_value5, character_cons_value6, character_cons_value7, character_cons_value8, close_date, collections_eligible_flag,
+  collections_flag, collections_exempt, comments_key, credit_flag, customer_description, delinquency_exempt,
+  delinquency_exempt_flag, delinquency_flag, deposit_paid_off, do_not_direct_debit, eligible_for_refund_flag, final_bill_flag, frequency,
+  identity_key, initiated_by, initiated_datetime, legacy_account_number, lien_eligible_flag, lien_exempt, lien_flag, modified_by,
+  modified_datetime, moved_out_account_key, move_in_admin_hold_by, move_in_admin_hold_datetime, move_in_admin_hold_reason, move_in_date,
+  move_in_exception, move_in_status, move_out_admin_hold_by, move_out_admin_hold_datetime, move_out_admin_hold_reason, move_out_date,
+  move_out_exception, move_out_status, do_not_arrange, do_not_send_bills, do_not_disconnect, do_not_send_notices, notice_datetime,
+  numeric_cons_value1, numeric_cons_value2, numeric_cons_value3, numeric_cons_value4, numeric_cons_value5, numeric_cons_value6,
+  numeric_cons_value7, numeric_cons_value8, occupant, oneoff_charge_flag, open_date, parcel_key, penalty_exempt, preselected_for_bill_run,
+  preselected_for_interim_bill, ready_flag, responsibility, status_by, status_datetime, suspended_by, suspended_datetime,
+  suspended_flag, tax_exempt_falg, transferred_to, writeoff_eligible_flag, etl_load_datetime, etl_source)
+AS
+SELECT 
+  acceptchecksflag, accountkey, accountnumber, accountstatus, accounttype, acctclass, acctgrp, acctsubgrp, addby, adddttm,
+  addrkey, aggregateflag, aggregatekey, allowcheckoverridesflag, area, arrangedflag, assigned, bankruptflag, billingcycle, billprintexception,
+  blngstat, blngstdttm, budgetbillingdisallowed, budgetbillingflag, businesstype, charconsval1, charconsval2, charconsval3, charconsval4,
+  charconsval5, charconsval6, charconsval7, charconsval8, closedate, collectionseligibleflag, collectionsflag, collexempt,
+  commentskey, credflag, custdesc, delinquencyexempt, delinquencyexemptflag, delinquencyflag, deppddate, donotdirectdebit,
+  eligibleforrefundflag, finalbillflag, frequency, idkey, initiatedby, initiateddttm, legacyaccountnumber, lieneligibleflag, lienexempt, lienflag,
+  modby, moddttm, movedoutaccountkey, moveinadminholdby, moveinadminholddttm, moveinadminholdreason, moveindate,
+  moveinexception, moveinstatus, moveoutadminholdby, moveoutadminholddttm, moveoutadminholdreason, moveoutdate, moveoutexception,
+  moveoutstatus, noarng, nobill, nodisconn, nonotice, noticedttm, numericconsval1, numericconsval2, numericconsval3, numericconsval4,
+  numericconsval5, numericconsval6, numericconsval7, numericconsval8, occupant, oneoffchargeflag, opendate, parcelkey, penexempt,
+  preselectedforbillrun, preselectedforinterimbill, null, responsibility, statby, statdttm, suspendby, suspenddttm, suspendflag,
+ taxexemptfalg, transferredto, writeoffeligibleflag, etl_load_datetime, 'IPS'
+FROM datahub_target.ips_billing_account;

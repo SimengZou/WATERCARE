@@ -1,0 +1,582 @@
+create or replace procedure DATAHUB_INTEGRATION.SP_EAM_R5TRADERATES()
+    returns varchar not null
+                language javascript
+                as
+                $$
+
+//  Variables
+
+var result = "";                                    // return status of this proc call
+const process_name = Object.keys(this)[0];          // name of currently executing process
+var number_of_rows_inserted = 0;                             // track number of rows we have inserted
+var number_of_rows_updated = 0;                             // track number of rows we have updated
+
+
+//  Step 1.
+
+//  Start execution - log start
+
+log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('Insert','" + process_name + "','Running','Started process execution.', 0,0,0);";
+snowflake.execute({sqlText: log_sql_command});
+
+snowflake.execute( {sqlText: "begin transaction;"} );
+try
+    {
+        var sql_command = `
+                            INSERT INTO LANDING_ERROR.EAM_RAW_ERROR
+                            SELECT * FROM LANDING_ERROR.VW_STREAM_EAM_R5TRADERATES_ERROR`;
+    var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+    var rs = sqlStmt.execute();
+        
+        var sql_command = ` 
+                            merge into  TARGET_EAM.EAM_R5TRADERATES as target using (SELECT * FROM (SELECT 
+            strm.TRR_ACTIVE, 
+            strm.TRR_END, 
+            strm.TRR_LASTSAVED, 
+            strm.TRR_MRC, 
+            strm.TRR_NTRATE, 
+            strm.TRR_OCTYPE, 
+            strm.TRR_ORG, 
+            strm.TRR_OTRATE, 
+            strm.TRR_PERSON, 
+            strm.TRR_START, 
+            strm.TRR_SUPPLIER, 
+            strm.TRR_SUPPLIER_ORG, 
+            strm.TRR_TAX, 
+            strm.TRR_TRADE, 
+            strm.TRR_UDFCHAR01, 
+            strm.TRR_UDFCHAR02, 
+            strm.TRR_UDFCHAR03, 
+            strm.TRR_UDFCHAR04, 
+            strm.TRR_UDFCHAR05, 
+            strm.TRR_UDFCHAR06, 
+            strm.TRR_UDFCHAR07, 
+            strm.TRR_UDFCHAR08, 
+            strm.TRR_UDFCHAR09, 
+            strm.TRR_UDFCHAR10, 
+            strm.TRR_UDFCHAR11, 
+            strm.TRR_UDFCHAR12, 
+            strm.TRR_UDFCHAR13, 
+            strm.TRR_UDFCHAR14, 
+            strm.TRR_UDFCHAR15, 
+            strm.TRR_UDFCHAR16, 
+            strm.TRR_UDFCHAR17, 
+            strm.TRR_UDFCHAR18, 
+            strm.TRR_UDFCHAR19, 
+            strm.TRR_UDFCHAR20, 
+            strm.TRR_UDFCHAR21, 
+            strm.TRR_UDFCHAR22, 
+            strm.TRR_UDFCHAR23, 
+            strm.TRR_UDFCHAR24, 
+            strm.TRR_UDFCHAR25, 
+            strm.TRR_UDFCHAR26, 
+            strm.TRR_UDFCHAR27, 
+            strm.TRR_UDFCHAR28, 
+            strm.TRR_UDFCHAR29, 
+            strm.TRR_UDFCHAR30, 
+            strm.TRR_UDFCHKBOX01, 
+            strm.TRR_UDFCHKBOX02, 
+            strm.TRR_UDFCHKBOX03, 
+            strm.TRR_UDFCHKBOX04, 
+            strm.TRR_UDFCHKBOX05, 
+            strm.TRR_UDFDATE01, 
+            strm.TRR_UDFDATE02, 
+            strm.TRR_UDFDATE03, 
+            strm.TRR_UDFDATE04, 
+            strm.TRR_UDFDATE05, 
+            strm.TRR_UDFNUM01, 
+            strm.TRR_UDFNUM02, 
+            strm.TRR_UDFNUM03, 
+            strm.TRR_UDFNUM04, 
+            strm.TRR_UDFNUM05, 
+            strm.TRR_UPDATECOUNT, 
+            strm._DELETED, 
+            strm.ETL_LASTSAVED,
+            strm.ETL_DELETED,
+            strm.etl_load_datetime,
+            strm.etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+            strm.TRR_MRC,
+            strm.TRR_TRADE,
+            strm.TRR_SUPPLIER,
+            strm.TRR_SUPPLIER_ORG,
+            strm.TRR_PERSON,
+            strm.TRR_ORG,
+            strm.TRR_START,
+            strm.TRR_OCTYPE ORDER BY strm.ETL_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+        FROM DATAHUB_INTEGRATION.VW_STREAM_EAM_R5TRADERATES as  strm
+                    )   
+            WHERE ROWNUMBER=1  
+            
+                    ) as src on
+            ((target.TRR_MRC=src.TRR_MRC) OR (target.TRR_MRC IS NULL AND src.TRR_MRC IS NULL)) AND
+            ((target.TRR_TRADE=src.TRR_TRADE) OR (target.TRR_TRADE IS NULL AND src.TRR_TRADE IS NULL)) AND
+            ((target.TRR_SUPPLIER=src.TRR_SUPPLIER) OR (target.TRR_SUPPLIER IS NULL AND src.TRR_SUPPLIER IS NULL)) AND
+            ((target.TRR_SUPPLIER_ORG=src.TRR_SUPPLIER_ORG) OR (target.TRR_SUPPLIER_ORG IS NULL AND src.TRR_SUPPLIER_ORG IS NULL)) AND
+            ((target.TRR_PERSON=src.TRR_PERSON) OR (target.TRR_PERSON IS NULL AND src.TRR_PERSON IS NULL)) AND
+            ((target.TRR_ORG=src.TRR_ORG) OR (target.TRR_ORG IS NULL AND src.TRR_ORG IS NULL)) AND
+            ((target.TRR_START=src.TRR_START) OR (target.TRR_START IS NULL AND src.TRR_START IS NULL)) AND
+            ((target.TRR_OCTYPE=src.TRR_OCTYPE) OR (target.TRR_OCTYPE IS NULL AND src.TRR_OCTYPE IS NULL)) 
+                when matched and src.ETL_DELETED=TRUE THEN DELETE
+                when matched then update set
+                    target.TRR_ACTIVE=src.TRR_ACTIVE, 
+                    target.TRR_END=src.TRR_END, 
+                    target.TRR_LASTSAVED=src.TRR_LASTSAVED, 
+                    target.TRR_MRC=src.TRR_MRC, 
+                    target.TRR_NTRATE=src.TRR_NTRATE, 
+                    target.TRR_OCTYPE=src.TRR_OCTYPE, 
+                    target.TRR_ORG=src.TRR_ORG, 
+                    target.TRR_OTRATE=src.TRR_OTRATE, 
+                    target.TRR_PERSON=src.TRR_PERSON, 
+                    target.TRR_START=src.TRR_START, 
+                    target.TRR_SUPPLIER=src.TRR_SUPPLIER, 
+                    target.TRR_SUPPLIER_ORG=src.TRR_SUPPLIER_ORG, 
+                    target.TRR_TAX=src.TRR_TAX, 
+                    target.TRR_TRADE=src.TRR_TRADE, 
+                    target.TRR_UDFCHAR01=src.TRR_UDFCHAR01, 
+                    target.TRR_UDFCHAR02=src.TRR_UDFCHAR02, 
+                    target.TRR_UDFCHAR03=src.TRR_UDFCHAR03, 
+                    target.TRR_UDFCHAR04=src.TRR_UDFCHAR04, 
+                    target.TRR_UDFCHAR05=src.TRR_UDFCHAR05, 
+                    target.TRR_UDFCHAR06=src.TRR_UDFCHAR06, 
+                    target.TRR_UDFCHAR07=src.TRR_UDFCHAR07, 
+                    target.TRR_UDFCHAR08=src.TRR_UDFCHAR08, 
+                    target.TRR_UDFCHAR09=src.TRR_UDFCHAR09, 
+                    target.TRR_UDFCHAR10=src.TRR_UDFCHAR10, 
+                    target.TRR_UDFCHAR11=src.TRR_UDFCHAR11, 
+                    target.TRR_UDFCHAR12=src.TRR_UDFCHAR12, 
+                    target.TRR_UDFCHAR13=src.TRR_UDFCHAR13, 
+                    target.TRR_UDFCHAR14=src.TRR_UDFCHAR14, 
+                    target.TRR_UDFCHAR15=src.TRR_UDFCHAR15, 
+                    target.TRR_UDFCHAR16=src.TRR_UDFCHAR16, 
+                    target.TRR_UDFCHAR17=src.TRR_UDFCHAR17, 
+                    target.TRR_UDFCHAR18=src.TRR_UDFCHAR18, 
+                    target.TRR_UDFCHAR19=src.TRR_UDFCHAR19, 
+                    target.TRR_UDFCHAR20=src.TRR_UDFCHAR20, 
+                    target.TRR_UDFCHAR21=src.TRR_UDFCHAR21, 
+                    target.TRR_UDFCHAR22=src.TRR_UDFCHAR22, 
+                    target.TRR_UDFCHAR23=src.TRR_UDFCHAR23, 
+                    target.TRR_UDFCHAR24=src.TRR_UDFCHAR24, 
+                    target.TRR_UDFCHAR25=src.TRR_UDFCHAR25, 
+                    target.TRR_UDFCHAR26=src.TRR_UDFCHAR26, 
+                    target.TRR_UDFCHAR27=src.TRR_UDFCHAR27, 
+                    target.TRR_UDFCHAR28=src.TRR_UDFCHAR28, 
+                    target.TRR_UDFCHAR29=src.TRR_UDFCHAR29, 
+                    target.TRR_UDFCHAR30=src.TRR_UDFCHAR30, 
+                    target.TRR_UDFCHKBOX01=src.TRR_UDFCHKBOX01, 
+                    target.TRR_UDFCHKBOX02=src.TRR_UDFCHKBOX02, 
+                    target.TRR_UDFCHKBOX03=src.TRR_UDFCHKBOX03, 
+                    target.TRR_UDFCHKBOX04=src.TRR_UDFCHKBOX04, 
+                    target.TRR_UDFCHKBOX05=src.TRR_UDFCHKBOX05, 
+                    target.TRR_UDFDATE01=src.TRR_UDFDATE01, 
+                    target.TRR_UDFDATE02=src.TRR_UDFDATE02, 
+                    target.TRR_UDFDATE03=src.TRR_UDFDATE03, 
+                    target.TRR_UDFDATE04=src.TRR_UDFDATE04, 
+                    target.TRR_UDFDATE05=src.TRR_UDFDATE05, 
+                    target.TRR_UDFNUM01=src.TRR_UDFNUM01, 
+                    target.TRR_UDFNUM02=src.TRR_UDFNUM02, 
+                    target.TRR_UDFNUM03=src.TRR_UDFNUM03, 
+                    target.TRR_UDFNUM04=src.TRR_UDFNUM04, 
+                    target.TRR_UDFNUM05=src.TRR_UDFNUM05, 
+                    target.TRR_UPDATECOUNT=src.TRR_UPDATECOUNT, 
+                    target._DELETED=src._DELETED, 
+                    target.ETL_LASTSAVED=src.ETL_LASTSAVED,
+                    target.etl_load_datetime=CURRENT_TIMESTAMP,
+                    target.etl_load_metadatafilename=src.etl_load_metadatafilename
+        when not matched and (src.ETL_DELETED=FALSE OR src.ETL_DELETED IS NULL)  then insert ( 
+                    TRR_ACTIVE, 
+                    TRR_END, 
+                    TRR_LASTSAVED, 
+                    TRR_MRC, 
+                    TRR_NTRATE, 
+                    TRR_OCTYPE, 
+                    TRR_ORG, 
+                    TRR_OTRATE, 
+                    TRR_PERSON, 
+                    TRR_START, 
+                    TRR_SUPPLIER, 
+                    TRR_SUPPLIER_ORG, 
+                    TRR_TAX, 
+                    TRR_TRADE, 
+                    TRR_UDFCHAR01, 
+                    TRR_UDFCHAR02, 
+                    TRR_UDFCHAR03, 
+                    TRR_UDFCHAR04, 
+                    TRR_UDFCHAR05, 
+                    TRR_UDFCHAR06, 
+                    TRR_UDFCHAR07, 
+                    TRR_UDFCHAR08, 
+                    TRR_UDFCHAR09, 
+                    TRR_UDFCHAR10, 
+                    TRR_UDFCHAR11, 
+                    TRR_UDFCHAR12, 
+                    TRR_UDFCHAR13, 
+                    TRR_UDFCHAR14, 
+                    TRR_UDFCHAR15, 
+                    TRR_UDFCHAR16, 
+                    TRR_UDFCHAR17, 
+                    TRR_UDFCHAR18, 
+                    TRR_UDFCHAR19, 
+                    TRR_UDFCHAR20, 
+                    TRR_UDFCHAR21, 
+                    TRR_UDFCHAR22, 
+                    TRR_UDFCHAR23, 
+                    TRR_UDFCHAR24, 
+                    TRR_UDFCHAR25, 
+                    TRR_UDFCHAR26, 
+                    TRR_UDFCHAR27, 
+                    TRR_UDFCHAR28, 
+                    TRR_UDFCHAR29, 
+                    TRR_UDFCHAR30, 
+                    TRR_UDFCHKBOX01, 
+                    TRR_UDFCHKBOX02, 
+                    TRR_UDFCHKBOX03, 
+                    TRR_UDFCHKBOX04, 
+                    TRR_UDFCHKBOX05, 
+                    TRR_UDFDATE01, 
+                    TRR_UDFDATE02, 
+                    TRR_UDFDATE03, 
+                    TRR_UDFDATE04, 
+                    TRR_UDFDATE05, 
+                    TRR_UDFNUM01, 
+                    TRR_UDFNUM02, 
+                    TRR_UDFNUM03, 
+                    TRR_UDFNUM04, 
+                    TRR_UDFNUM05, 
+                    TRR_UPDATECOUNT, 
+                    _DELETED, 
+                    ETL_LASTSAVED,                       
+                    etl_load_datetime,
+                    etl_load_metadatafilename) 
+            values (
+                    src.TRR_ACTIVE, 
+                    src.TRR_END, 
+                    src.TRR_LASTSAVED, 
+                    src.TRR_MRC, 
+                    src.TRR_NTRATE, 
+                    src.TRR_OCTYPE, 
+                    src.TRR_ORG, 
+                    src.TRR_OTRATE, 
+                    src.TRR_PERSON, 
+                    src.TRR_START, 
+                    src.TRR_SUPPLIER, 
+                    src.TRR_SUPPLIER_ORG, 
+                    src.TRR_TAX, 
+                    src.TRR_TRADE, 
+                    src.TRR_UDFCHAR01, 
+                    src.TRR_UDFCHAR02, 
+                    src.TRR_UDFCHAR03, 
+                    src.TRR_UDFCHAR04, 
+                    src.TRR_UDFCHAR05, 
+                    src.TRR_UDFCHAR06, 
+                    src.TRR_UDFCHAR07, 
+                    src.TRR_UDFCHAR08, 
+                    src.TRR_UDFCHAR09, 
+                    src.TRR_UDFCHAR10, 
+                    src.TRR_UDFCHAR11, 
+                    src.TRR_UDFCHAR12, 
+                    src.TRR_UDFCHAR13, 
+                    src.TRR_UDFCHAR14, 
+                    src.TRR_UDFCHAR15, 
+                    src.TRR_UDFCHAR16, 
+                    src.TRR_UDFCHAR17, 
+                    src.TRR_UDFCHAR18, 
+                    src.TRR_UDFCHAR19, 
+                    src.TRR_UDFCHAR20, 
+                    src.TRR_UDFCHAR21, 
+                    src.TRR_UDFCHAR22, 
+                    src.TRR_UDFCHAR23, 
+                    src.TRR_UDFCHAR24, 
+                    src.TRR_UDFCHAR25, 
+                    src.TRR_UDFCHAR26, 
+                    src.TRR_UDFCHAR27, 
+                    src.TRR_UDFCHAR28, 
+                    src.TRR_UDFCHAR29, 
+                    src.TRR_UDFCHAR30, 
+                    src.TRR_UDFCHKBOX01, 
+                    src.TRR_UDFCHKBOX02, 
+                    src.TRR_UDFCHKBOX03, 
+                    src.TRR_UDFCHKBOX04, 
+                    src.TRR_UDFCHKBOX05, 
+                    src.TRR_UDFDATE01, 
+                    src.TRR_UDFDATE02, 
+                    src.TRR_UDFDATE03, 
+                    src.TRR_UDFDATE04, 
+                    src.TRR_UDFDATE05, 
+                    src.TRR_UDFNUM01, 
+                    src.TRR_UDFNUM02, 
+                    src.TRR_UDFNUM03, 
+                    src.TRR_UDFNUM04, 
+                    src.TRR_UDFNUM05, 
+                    src.TRR_UPDATECOUNT, 
+                    src._DELETED,     
+                    src.ETL_LASTSAVED,
+                    CURRENT_TIMESTAMP,
+                    src.etl_load_metadatafilename);`;
+
+    var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+    var rs = sqlStmt.execute();
+
+    snowflake.execute( {sqlText: `merge into TARGET_HISTORY_EAM.EAM_R5TRADERATES_DELETED as target using (
+                SELECT * FROM (SELECT 
+            strm.TRR_ACTIVE, 
+            strm.TRR_END, 
+            strm.TRR_LASTSAVED, 
+            strm.TRR_MRC, 
+            strm.TRR_NTRATE, 
+            strm.TRR_OCTYPE, 
+            strm.TRR_ORG, 
+            strm.TRR_OTRATE, 
+            strm.TRR_PERSON, 
+            strm.TRR_START, 
+            strm.TRR_SUPPLIER, 
+            strm.TRR_SUPPLIER_ORG, 
+            strm.TRR_TAX, 
+            strm.TRR_TRADE, 
+            strm.TRR_UDFCHAR01, 
+            strm.TRR_UDFCHAR02, 
+            strm.TRR_UDFCHAR03, 
+            strm.TRR_UDFCHAR04, 
+            strm.TRR_UDFCHAR05, 
+            strm.TRR_UDFCHAR06, 
+            strm.TRR_UDFCHAR07, 
+            strm.TRR_UDFCHAR08, 
+            strm.TRR_UDFCHAR09, 
+            strm.TRR_UDFCHAR10, 
+            strm.TRR_UDFCHAR11, 
+            strm.TRR_UDFCHAR12, 
+            strm.TRR_UDFCHAR13, 
+            strm.TRR_UDFCHAR14, 
+            strm.TRR_UDFCHAR15, 
+            strm.TRR_UDFCHAR16, 
+            strm.TRR_UDFCHAR17, 
+            strm.TRR_UDFCHAR18, 
+            strm.TRR_UDFCHAR19, 
+            strm.TRR_UDFCHAR20, 
+            strm.TRR_UDFCHAR21, 
+            strm.TRR_UDFCHAR22, 
+            strm.TRR_UDFCHAR23, 
+            strm.TRR_UDFCHAR24, 
+            strm.TRR_UDFCHAR25, 
+            strm.TRR_UDFCHAR26, 
+            strm.TRR_UDFCHAR27, 
+            strm.TRR_UDFCHAR28, 
+            strm.TRR_UDFCHAR29, 
+            strm.TRR_UDFCHAR30, 
+            strm.TRR_UDFCHKBOX01, 
+            strm.TRR_UDFCHKBOX02, 
+            strm.TRR_UDFCHKBOX03, 
+            strm.TRR_UDFCHKBOX04, 
+            strm.TRR_UDFCHKBOX05, 
+            strm.TRR_UDFDATE01, 
+            strm.TRR_UDFDATE02, 
+            strm.TRR_UDFDATE03, 
+            strm.TRR_UDFDATE04, 
+            strm.TRR_UDFDATE05, 
+            strm.TRR_UDFNUM01, 
+            strm.TRR_UDFNUM02, 
+            strm.TRR_UDFNUM03, 
+            strm.TRR_UDFNUM04, 
+            strm.TRR_UDFNUM05, 
+            strm.TRR_UPDATECOUNT, 
+            strm._DELETED, 
+            strm.ETL_LASTSAVED,
+            strm.ETL_DELETED,
+            strm.etl_load_datetime,
+            strm.etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+            strm.TRR_MRC,
+            strm.TRR_TRADE,
+            strm.TRR_SUPPLIER,
+            strm.TRR_SUPPLIER_ORG,
+            strm.TRR_PERSON,
+            strm.TRR_ORG,
+            strm.TRR_START,
+            strm.TRR_OCTYPE ORDER BY strm.ETL_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+        FROM DATAHUB_INTEGRATION.VW_STREAM_EAM_R5TRADERATES as  strm
+        WHERE strm.ETL_DELETED=TRUE
+                    )   
+            WHERE ROWNUMBER=1  
+            
+                    ) as src on
+            ((target.TRR_MRC=src.TRR_MRC) OR (target.TRR_MRC IS NULL AND src.TRR_MRC IS NULL)) AND
+            ((target.TRR_TRADE=src.TRR_TRADE) OR (target.TRR_TRADE IS NULL AND src.TRR_TRADE IS NULL)) AND
+            ((target.TRR_SUPPLIER=src.TRR_SUPPLIER) OR (target.TRR_SUPPLIER IS NULL AND src.TRR_SUPPLIER IS NULL)) AND
+            ((target.TRR_SUPPLIER_ORG=src.TRR_SUPPLIER_ORG) OR (target.TRR_SUPPLIER_ORG IS NULL AND src.TRR_SUPPLIER_ORG IS NULL)) AND
+            ((target.TRR_PERSON=src.TRR_PERSON) OR (target.TRR_PERSON IS NULL AND src.TRR_PERSON IS NULL)) AND
+            ((target.TRR_ORG=src.TRR_ORG) OR (target.TRR_ORG IS NULL AND src.TRR_ORG IS NULL)) AND
+            ((target.TRR_START=src.TRR_START) OR (target.TRR_START IS NULL AND src.TRR_START IS NULL)) AND
+            ((target.TRR_OCTYPE=src.TRR_OCTYPE) OR (target.TRR_OCTYPE IS NULL AND src.TRR_OCTYPE IS NULL)) 
+                when matched then update set
+                    target.TRR_ACTIVE=src.TRR_ACTIVE, 
+                    target.TRR_END=src.TRR_END, 
+                    target.TRR_LASTSAVED=src.TRR_LASTSAVED, 
+                    target.TRR_MRC=src.TRR_MRC, 
+                    target.TRR_NTRATE=src.TRR_NTRATE, 
+                    target.TRR_OCTYPE=src.TRR_OCTYPE, 
+                    target.TRR_ORG=src.TRR_ORG, 
+                    target.TRR_OTRATE=src.TRR_OTRATE, 
+                    target.TRR_PERSON=src.TRR_PERSON, 
+                    target.TRR_START=src.TRR_START, 
+                    target.TRR_SUPPLIER=src.TRR_SUPPLIER, 
+                    target.TRR_SUPPLIER_ORG=src.TRR_SUPPLIER_ORG, 
+                    target.TRR_TAX=src.TRR_TAX, 
+                    target.TRR_TRADE=src.TRR_TRADE, 
+                    target.TRR_UDFCHAR01=src.TRR_UDFCHAR01, 
+                    target.TRR_UDFCHAR02=src.TRR_UDFCHAR02, 
+                    target.TRR_UDFCHAR03=src.TRR_UDFCHAR03, 
+                    target.TRR_UDFCHAR04=src.TRR_UDFCHAR04, 
+                    target.TRR_UDFCHAR05=src.TRR_UDFCHAR05, 
+                    target.TRR_UDFCHAR06=src.TRR_UDFCHAR06, 
+                    target.TRR_UDFCHAR07=src.TRR_UDFCHAR07, 
+                    target.TRR_UDFCHAR08=src.TRR_UDFCHAR08, 
+                    target.TRR_UDFCHAR09=src.TRR_UDFCHAR09, 
+                    target.TRR_UDFCHAR10=src.TRR_UDFCHAR10, 
+                    target.TRR_UDFCHAR11=src.TRR_UDFCHAR11, 
+                    target.TRR_UDFCHAR12=src.TRR_UDFCHAR12, 
+                    target.TRR_UDFCHAR13=src.TRR_UDFCHAR13, 
+                    target.TRR_UDFCHAR14=src.TRR_UDFCHAR14, 
+                    target.TRR_UDFCHAR15=src.TRR_UDFCHAR15, 
+                    target.TRR_UDFCHAR16=src.TRR_UDFCHAR16, 
+                    target.TRR_UDFCHAR17=src.TRR_UDFCHAR17, 
+                    target.TRR_UDFCHAR18=src.TRR_UDFCHAR18, 
+                    target.TRR_UDFCHAR19=src.TRR_UDFCHAR19, 
+                    target.TRR_UDFCHAR20=src.TRR_UDFCHAR20, 
+                    target.TRR_UDFCHAR21=src.TRR_UDFCHAR21, 
+                    target.TRR_UDFCHAR22=src.TRR_UDFCHAR22, 
+                    target.TRR_UDFCHAR23=src.TRR_UDFCHAR23, 
+                    target.TRR_UDFCHAR24=src.TRR_UDFCHAR24, 
+                    target.TRR_UDFCHAR25=src.TRR_UDFCHAR25, 
+                    target.TRR_UDFCHAR26=src.TRR_UDFCHAR26, 
+                    target.TRR_UDFCHAR27=src.TRR_UDFCHAR27, 
+                    target.TRR_UDFCHAR28=src.TRR_UDFCHAR28, 
+                    target.TRR_UDFCHAR29=src.TRR_UDFCHAR29, 
+                    target.TRR_UDFCHAR30=src.TRR_UDFCHAR30, 
+                    target.TRR_UDFCHKBOX01=src.TRR_UDFCHKBOX01, 
+                    target.TRR_UDFCHKBOX02=src.TRR_UDFCHKBOX02, 
+                    target.TRR_UDFCHKBOX03=src.TRR_UDFCHKBOX03, 
+                    target.TRR_UDFCHKBOX04=src.TRR_UDFCHKBOX04, 
+                    target.TRR_UDFCHKBOX05=src.TRR_UDFCHKBOX05, 
+                    target.TRR_UDFDATE01=src.TRR_UDFDATE01, 
+                    target.TRR_UDFDATE02=src.TRR_UDFDATE02, 
+                    target.TRR_UDFDATE03=src.TRR_UDFDATE03, 
+                    target.TRR_UDFDATE04=src.TRR_UDFDATE04, 
+                    target.TRR_UDFDATE05=src.TRR_UDFDATE05, 
+                    target.TRR_UDFNUM01=src.TRR_UDFNUM01, 
+                    target.TRR_UDFNUM02=src.TRR_UDFNUM02, 
+                    target.TRR_UDFNUM03=src.TRR_UDFNUM03, 
+                    target.TRR_UDFNUM04=src.TRR_UDFNUM04, 
+                    target.TRR_UDFNUM05=src.TRR_UDFNUM05, 
+                    target.TRR_UPDATECOUNT=src.TRR_UPDATECOUNT, 
+                    target._DELETED=src._DELETED, 
+                    target.ETL_LASTSAVED=src.ETL_LASTSAVED,
+                    target.etl_load_datetime=CURRENT_TIMESTAMP,
+                    target.etl_load_metadatafilename=src.etl_load_metadatafilename,
+                    target.ETL_DELETED=src.ETL_DELETED
+        when not matched   then insert ( TRR_ACTIVE, TRR_END, TRR_LASTSAVED, TRR_MRC, TRR_NTRATE, TRR_OCTYPE, TRR_ORG, TRR_OTRATE, TRR_PERSON, TRR_START, TRR_SUPPLIER, TRR_SUPPLIER_ORG, TRR_TAX, TRR_TRADE, TRR_UDFCHAR01, TRR_UDFCHAR02, TRR_UDFCHAR03, TRR_UDFCHAR04, TRR_UDFCHAR05, TRR_UDFCHAR06, TRR_UDFCHAR07, TRR_UDFCHAR08, TRR_UDFCHAR09, TRR_UDFCHAR10, TRR_UDFCHAR11, TRR_UDFCHAR12, TRR_UDFCHAR13, TRR_UDFCHAR14, TRR_UDFCHAR15, TRR_UDFCHAR16, TRR_UDFCHAR17, TRR_UDFCHAR18, TRR_UDFCHAR19, TRR_UDFCHAR20, TRR_UDFCHAR21, TRR_UDFCHAR22, TRR_UDFCHAR23, TRR_UDFCHAR24, TRR_UDFCHAR25, TRR_UDFCHAR26, TRR_UDFCHAR27, TRR_UDFCHAR28, TRR_UDFCHAR29, TRR_UDFCHAR30, TRR_UDFCHKBOX01, TRR_UDFCHKBOX02, TRR_UDFCHKBOX03, TRR_UDFCHKBOX04, TRR_UDFCHKBOX05, TRR_UDFDATE01, TRR_UDFDATE02, TRR_UDFDATE03, TRR_UDFDATE04, TRR_UDFDATE05, TRR_UDFNUM01, TRR_UDFNUM02, TRR_UDFNUM03, TRR_UDFNUM04, TRR_UDFNUM05, TRR_UPDATECOUNT, _DELETED, 
+                    ETL_LASTSAVED,                       
+                    etl_load_datetime,
+                    etl_load_metadatafilename,
+                    etl_is_deleted,
+                    ETL_DELETED) 
+            values (
+                    src.TRR_ACTIVE, 
+                    src.TRR_END, 
+                    src.TRR_LASTSAVED, 
+                    src.TRR_MRC, 
+                    src.TRR_NTRATE, 
+                    src.TRR_OCTYPE, 
+                    src.TRR_ORG, 
+                    src.TRR_OTRATE, 
+                    src.TRR_PERSON, 
+                    src.TRR_START, 
+                    src.TRR_SUPPLIER, 
+                    src.TRR_SUPPLIER_ORG, 
+                    src.TRR_TAX, 
+                    src.TRR_TRADE, 
+                    src.TRR_UDFCHAR01, 
+                    src.TRR_UDFCHAR02, 
+                    src.TRR_UDFCHAR03, 
+                    src.TRR_UDFCHAR04, 
+                    src.TRR_UDFCHAR05, 
+                    src.TRR_UDFCHAR06, 
+                    src.TRR_UDFCHAR07, 
+                    src.TRR_UDFCHAR08, 
+                    src.TRR_UDFCHAR09, 
+                    src.TRR_UDFCHAR10, 
+                    src.TRR_UDFCHAR11, 
+                    src.TRR_UDFCHAR12, 
+                    src.TRR_UDFCHAR13, 
+                    src.TRR_UDFCHAR14, 
+                    src.TRR_UDFCHAR15, 
+                    src.TRR_UDFCHAR16, 
+                    src.TRR_UDFCHAR17, 
+                    src.TRR_UDFCHAR18, 
+                    src.TRR_UDFCHAR19, 
+                    src.TRR_UDFCHAR20, 
+                    src.TRR_UDFCHAR21, 
+                    src.TRR_UDFCHAR22, 
+                    src.TRR_UDFCHAR23, 
+                    src.TRR_UDFCHAR24, 
+                    src.TRR_UDFCHAR25, 
+                    src.TRR_UDFCHAR26, 
+                    src.TRR_UDFCHAR27, 
+                    src.TRR_UDFCHAR28, 
+                    src.TRR_UDFCHAR29, 
+                    src.TRR_UDFCHAR30, 
+                    src.TRR_UDFCHKBOX01, 
+                    src.TRR_UDFCHKBOX02, 
+                    src.TRR_UDFCHKBOX03, 
+                    src.TRR_UDFCHKBOX04, 
+                    src.TRR_UDFCHKBOX05, 
+                    src.TRR_UDFDATE01, 
+                    src.TRR_UDFDATE02, 
+                    src.TRR_UDFDATE03, 
+                    src.TRR_UDFDATE04, 
+                    src.TRR_UDFDATE05, 
+                    src.TRR_UDFNUM01, 
+                    src.TRR_UDFNUM02, 
+                    src.TRR_UDFNUM03, 
+                    src.TRR_UDFNUM04, 
+                    src.TRR_UDFNUM05, 
+                    src.TRR_UPDATECOUNT, 
+                    src._DELETED,     
+                    src.ETL_LASTSAVED,
+                    CURRENT_TIMESTAMP,
+                    src.etl_load_metadatafilename,
+                    case when ETL_DELETED=TRUE then TRUE else FALSE end,
+                    ETL_DELETED);
+    `
+} );
+
+                    
+//  Get number of rows inserted
+        
+        var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+        var rs = sqlStmt.execute();
+        var number_of_rows_inserted = sqlStmt.getNumRowsInserted();
+        var number_of_rows_updated =  sqlStmt.getNumRowsUpdated();
+                    
+
+        
+    snowflake.execute ({sqlText: "commit"});
+
+    log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('UpdateEnd','" + process_name + "','Success','Completed process execution.', 0 ," + number_of_rows_inserted.toString()+ "," +  number_of_rows_updated.toString() + ");";
+    snowflake.execute({sqlText: log_sql_command});
+
+    result = "Success"; 
+
+    }       
+
+    catch (err)  {
+        snowflake.execute( {sqlText: "rollback;"} )
+        var clean_error_msg = err.message.replace(/[^\w\s]/gi, '');
+    //  Create a log entry to say INSERT STATEMENT failed
+    
+    log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('UpdateEnd','" + process_name + "','Failed','MERGE Failed. Error:" + err.code.toString()+" : "+ clean_error_msg  + "', 0 ,0,0);";
+    snowflake.execute({sqlText: log_sql_command});
+        ;
+        throw "Failed: " + err.message;   // Return a success/error indicator.
+        }
+    return result;
+    $$;

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TFFAM650(
+            compnr integer, 
+            cpga integer, 
+            cpga_kw varchar, 
+            czev integer, 
+            czev_kw varchar, 
+            deleted boolean, 
+            desc object, 
+            impa integer, 
+            impa_kw varchar, 
+            reas varchar, 
+            rety integer, 
+            rety_kw varchar, 
+            sequencenumber integer, 
+            skev integer, 
+            skev_kw varchar, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

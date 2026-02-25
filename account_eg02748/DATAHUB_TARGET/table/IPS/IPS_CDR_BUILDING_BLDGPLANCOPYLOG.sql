@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_BUILDING_BLDGPLANCOPYLOG(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APBLDGKEY integer, 
+            BLDGPLANCOPYKEY integer, 
+            BLDGPLANCOPYLOGKEY integer, 
+            BYTYPE varchar, 
+            CHKDTTM datetime, 
+            DELETED boolean, 
+            INSTATUS varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PLANLOCATION varchar, 
+            REVIEWER varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

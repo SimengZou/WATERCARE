@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5LANGUAGES(
+                "LAN_AVAILABLE" varchar, 
+                "LAN_CLASS" varchar, 
+                "LAN_CLASS_ORG" varchar, 
+                "LAN_CODE" varchar, 
+                "LAN_DESC" varchar, 
+                "LAN_ERRORMESSAGE" varchar, 
+                "LAN_INSTALLED" varchar, 
+                "LAN_LASTCREATED" datetime, 
+                "LAN_LASTSAVED" datetime, 
+                "LAN_NOTUSED" varchar, 
+                "LAN_PROCESSEND" datetime, 
+                "LAN_PROCESSSTART" datetime, 
+                "LAN_RSTATUS" varchar, 
+                "LAN_TXTTYPE" varchar, 
+                "LAN_UPDATECOUNT" numeric(38, 10), 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

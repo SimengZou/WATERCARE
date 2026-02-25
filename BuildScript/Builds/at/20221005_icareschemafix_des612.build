@@ -1,0 +1,3 @@
+#rebuild icare tables and views in landing and target
+DATAHUB_LANDING account_eg02748\DATAHUB_LANDING\view\ICARE\*
+TARGET_ICARE account_eg02748\DATAHUB_TARGET\table\ICARE\*

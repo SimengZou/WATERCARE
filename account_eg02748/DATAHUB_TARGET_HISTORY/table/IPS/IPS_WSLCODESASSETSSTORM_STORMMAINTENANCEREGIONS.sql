@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLCODESASSETSSTORM_STORMMAINTENANCEREGIONS(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            BUSINESSAREA varchar, 
+            CODE varchar, 
+            COSTCENTRE varchar, 
+            DATALAKE_DELETED boolean, 
+            DESCRIPT varchar, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            SERVICEAREA varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

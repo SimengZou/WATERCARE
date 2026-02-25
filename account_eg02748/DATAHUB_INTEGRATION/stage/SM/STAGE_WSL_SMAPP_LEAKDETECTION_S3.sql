@@ -1,0 +1,2 @@
+CREATE OR REPLACE STAGE DATAHUB_INTEGRATION.STAGE_WSL_SMAPP_LEAKDETECTION_S3 url = 's3://wsl-dev-deinf-smapp-leakdetection-s3' 
+storage_integration = DEV_WSL_SMAPP_LEAKDETECTION_S3;

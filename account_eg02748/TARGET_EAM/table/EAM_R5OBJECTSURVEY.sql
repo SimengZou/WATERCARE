@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5OBJECTSURVEY(
+            OBS_ANSWERPK varchar, 
+            OBS_CALCULATEDANSWER varchar, 
+            OBS_CALCULATEDVALUE numeric(38, 10), 
+            OBS_DATEEFFECTIVE datetime, 
+            OBS_DATELASTCALCULATED datetime, 
+            OBS_LASTSAVED datetime, 
+            OBS_LEVELPK varchar, 
+            OBS_OBJECT varchar, 
+            OBS_OBJECT_ORG varchar, 
+            OBS_OPERATORCHECKLIST varchar, 
+            OBS_TYPE varchar, 
+            OBS_UPDATECOUNT numeric(38, 10), 
+            OBS_VALUE numeric(38, 10), 
+            OBS_WORKORDER varchar, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

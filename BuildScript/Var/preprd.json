@@ -1,0 +1,11 @@
+{
+    "env":"PRD",
+    "env_lower":"prd",
+    "env_s3":"pr",
+    "sns_topic_notification":"prod",
+    "infors3bucket":"watercareprd",
+    "smportal":"wsl-apsy-pr-sminf-portal-daily-s3",
+    "smcurated":"wsl-apsy-pr-sminf-cur-s3",
+    "smcuratedsns":"ap-southeast-2:385173827802"
+    
+}

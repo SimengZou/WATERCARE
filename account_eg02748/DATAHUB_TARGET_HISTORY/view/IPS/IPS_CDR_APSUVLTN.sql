@@ -1,0 +1,42 @@
+CREATE OR REPLACE VIEW DATAHUB_TARGET_HISTORY.IPS_CDR_APSUVLTN AS 
+    SELECT 
+        ADDBY, 
+        ADDDTTM, 
+        CNSTTYPE, 
+        DELETED, 
+        EFFDATE, 
+        EXPDATE, 
+        MODBY, 
+        MODDTTM, 
+        MODIFIER, 
+        MULT, 
+        SUVLTNKEY, 
+        USEGRP, 
+        USESQT, 
+        VARIATION_ID, 
+        VARIATION_ID AS ETL_SEQUENCE_NUMBER,
+        ETL_IS_DELETED,
+        ETL_LOAD_DATETIME,
+        ETL_LOAD_METADATAFILENAME
+    FROM DATAHUB_TARGET_HISTORY.IPS_DELETED_CDR_APSUVLTN
+    UNION ALL 
+    SELECT 
+        ADDBY, 
+        ADDDTTM, 
+        CNSTTYPE, 
+        DELETED, 
+        EFFDATE, 
+        EXPDATE, 
+        MODBY, 
+        MODDTTM, 
+        MODIFIER, 
+        MULT, 
+        SUVLTNKEY, 
+        USEGRP, 
+        USESQT, 
+        VARIATION_ID, 
+        VARIATION_ID AS ETL_SEQUENCE_NUMBER,
+        FALSE AS ETL_IS_DELETED,
+        ETL_LOAD_DATETIME,
+        ETL_LOAD_METADATAFILENAME
+    FROM DATAHUB_TARGET.IPS_CDR_APSUVLTN;

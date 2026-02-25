@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_LN.LN_TFGLD005_DELETED(
+            compnr integer, 
+            corr integer, 
+            corr_kw varchar, 
+            deleted boolean, 
+            desc object, 
+            prno integer, 
+            ptyp integer, 
+            ptyp_kw varchar, 
+            sequencenumber integer, 
+            stdt date, 
+            timestamp datetime, 
+            username varchar, 
+            year integer, 
+            year_ref_compnr integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

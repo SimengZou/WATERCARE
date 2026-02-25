@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_U5CLAIMSETUP(
+                "CLS_CODE" varchar, 
+                "CLS_CONTRACT" varchar, 
+                "CLS_COSTITEM" varchar, 
+                "CLS_PROJACTIVITY" varchar, 
+                "CLS_PROJECT" varchar, 
+                "CLS_STAGINGCOSTCENTER" varchar, 
+                "CLS_SUPPLIER" varchar, 
+                "CREATED" datetime, 
+                "CREATEDBY" varchar, 
+                "LASTSAVED" datetime, 
+                "UPDATECOUNT" numeric(38, 10), 
+                "UPDATED" datetime, 
+                "UPDATEDBY" varchar, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

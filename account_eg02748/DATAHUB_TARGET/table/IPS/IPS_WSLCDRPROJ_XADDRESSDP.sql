@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCDRPROJ_XADDRESSDP(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPROJAPPLDTLKEY integer, 
+            CITY varchar, 
+            DATALAKE_DELETED boolean, 
+            FLAT varchar, 
+            HOUSENUMBER varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            POSTALCODE varchar, 
+            STREETNAME varchar, 
+            STREETTYPE varchar, 
+            SUBURB varchar, 
+            VARIATION_ID integer, 
+            XADDRESSDPKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

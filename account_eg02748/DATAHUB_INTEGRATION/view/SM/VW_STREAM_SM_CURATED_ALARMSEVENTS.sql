@@ -1,0 +1,38 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_SM_CURATED_ALARMSEVENTS(
+	AE_PLATFORM_ID,
+	AE_PLATFORM_TIME,
+	AE_PLATFORM_NAME,
+	AE_UNIT_ID,
+	AE_MANUFACTURER_NAME,
+	AE_PRODUCT_CLASS,
+	AE_ID,
+	AE_DESCRIPTION,
+	AE_CODE,
+	AE_METER_TIME,
+	AE_VALUE,
+	AE_ETL_JOB_ID1,
+	AE_ETL_JOB_ID2,
+	AE_CUSTOM_1,
+	AE_CUSTOM_2,
+	ETL_LOAD_DATETIME,
+	ETL_LOAD_METADATAFILENAME
+) as 
+select
+$1:"ae_platform_id"::TEXT AS ae_platform_id,
+to_timestamp_ntz($1:"ae_platform_time"::TEXT) AS ae_platform_time,
+$1:"ae_platform_name"::TEXT AS ae_platform_name,
+$1:"ae_unit_id"::TEXT AS ae_unit_id,
+$1:"ae_manufacturer_name"::TEXT AS ae_manufacturer_name,
+$1:"ae_product_class"::TEXT AS ae_product_class,
+$1:"ae_id"::TEXT AS ae_id,
+$1:"ae_description"::TEXT AS ae_description,
+$1:"ae_code"::TEXT AS ae_code,
+to_timestamp_ntz($1:"ae_meter_time"::TEXT) AS ae_meter_time,
+TO_VARIANT($1:"ae_value"::TEXT) AS ae_value,
+$1:"ae_etl_job_id1"::TEXT AS ae_etl_job_id1,
+$1:"ae_etl_job_id2"::TEXT AS ae_etl_job_id2,
+$1:"ae_custom_1"::TEXT AS ae_custom_1,
+$1:"ae_custom_2"::TEXT AS ae_custom_2,
+CURRENT_TIMESTAMP() AS ETL_LOAD_DATETIME,
+ETL_LOAD_METADATAFILENAME AS ETL_LOAD_METADATAFILENAME
+from DATAHUB_INTEGRATION.STREAM_SM_CURATED_ALARMSEVENTS

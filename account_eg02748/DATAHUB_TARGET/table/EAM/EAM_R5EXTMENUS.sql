@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5EXTMENUS(
+                "EMN_CODE" varchar, 
+                "EMN_DUXMOBILE" varchar, 
+                "EMN_FUNCTION" varchar, 
+                "EMN_GROUP" varchar, 
+                "EMN_HIDE" varchar, 
+                "EMN_ICON" varchar, 
+                "EMN_LASTSAVED" datetime, 
+                "EMN_MEFLAG" varchar, 
+                "EMN_MOBILE" varchar, 
+                "EMN_PARENT" varchar, 
+                "EMN_SEQUENCE" numeric(38, 10), 
+                "EMN_TRANSIT" varchar, 
+                "EMN_TYPE" varchar, 
+                "EMN_UPDATECOUNT" numeric(38, 10), 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

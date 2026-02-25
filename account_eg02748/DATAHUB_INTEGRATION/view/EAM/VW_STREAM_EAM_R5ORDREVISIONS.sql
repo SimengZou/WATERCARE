@@ -1,0 +1,168 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5ORDREVISIONS AS SELECT
+                        src:ORR_ACD::numeric(38, 10) AS ORR_ACD, 
+                        src:ORR_APPROV::datetime AS ORR_APPROV, 
+                        src:ORR_ATTENTIONTO::varchar AS ORR_ATTENTIONTO, 
+                        src:ORR_AUTH::varchar AS ORR_AUTH, 
+                        src:ORR_BLANKETORDER::varchar AS ORR_BLANKETORDER, 
+                        src:ORR_BLANKETRELEASE::numeric(38, 10) AS ORR_BLANKETRELEASE, 
+                        src:ORR_BUYER::varchar AS ORR_BUYER, 
+                        src:ORR_CLASS::varchar AS ORR_CLASS, 
+                        src:ORR_CLASS_ORG::varchar AS ORR_CLASS_ORG, 
+                        src:ORR_CONTRACT::varchar AS ORR_CONTRACT, 
+                        src:ORR_CONTROLNO::varchar AS ORR_CONTROLNO, 
+                        src:ORR_CREATED::datetime AS ORR_CREATED, 
+                        src:ORR_CREDITCARD::numeric(38, 10) AS ORR_CREDITCARD, 
+                        src:ORR_CURR::varchar AS ORR_CURR, 
+                        src:ORR_DATE::datetime AS ORR_DATE, 
+                        src:ORR_DELADDRESS::varchar AS ORR_DELADDRESS, 
+                        src:ORR_DESC::varchar AS ORR_DESC, 
+                        src:ORR_DFLTAUTH::varchar AS ORR_DFLTAUTH, 
+                        src:ORR_DISCOUNT::numeric(38, 10) AS ORR_DISCOUNT, 
+                        src:ORR_DISCPERC::numeric(38, 10) AS ORR_DISCPERC, 
+                        src:ORR_DUE::datetime AS ORR_DUE, 
+                        src:ORR_EXCH::numeric(38, 10) AS ORR_EXCH, 
+                        src:ORR_EXCHFROMDUAL::numeric(38, 10) AS ORR_EXCHFROMDUAL, 
+                        src:ORR_EXCHTODUAL::numeric(38, 10) AS ORR_EXCHTODUAL, 
+                        src:ORR_FOBPOINT::varchar AS ORR_FOBPOINT, 
+                        src:ORR_FREIGHTTERMS::varchar AS ORR_FREIGHTTERMS, 
+                        src:ORR_INTERFACE::datetime AS ORR_INTERFACE, 
+                        src:ORR_IPTRANSMITTED::varchar AS ORR_IPTRANSMITTED, 
+                        src:ORR_JECATEGORY::varchar AS ORR_JECATEGORY, 
+                        src:ORR_JESOURCE::varchar AS ORR_JESOURCE, 
+                        src:ORR_LASTSAVED::datetime AS ORR_LASTSAVED, 
+                        src:ORR_LASTSTATUSUPDATE::datetime AS ORR_LASTSTATUSUPDATE, 
+                        src:ORR_MAILTOSITE::varchar AS ORR_MAILTOSITE, 
+                        src:ORR_ORDER::varchar AS ORR_ORDER, 
+                        src:ORR_ORDER_ORG::varchar AS ORR_ORDER_ORG, 
+                        src:ORR_ORIGIN::varchar AS ORR_ORIGIN, 
+                        src:ORR_PACKAGETRACKINGNUMBER::varchar AS ORR_PACKAGETRACKINGNUMBER, 
+                        src:ORR_PAYBYMETHOD::varchar AS ORR_PAYBYMETHOD, 
+                        src:ORR_PAYMENTTERMS::varchar AS ORR_PAYMENTTERMS, 
+                        src:ORR_PRICE::numeric(38, 10) AS ORR_PRICE, 
+                        src:ORR_PRINTED::varchar AS ORR_PRINTED, 
+                        src:ORR_REVISED::datetime AS ORR_REVISED, 
+                        src:ORR_REVISEDBY::varchar AS ORR_REVISEDBY, 
+                        src:ORR_REVISEDORDER::varchar AS ORR_REVISEDORDER, 
+                        src:ORR_REVISION::numeric(38, 10) AS ORR_REVISION, 
+                        src:ORR_REVISIONREASON::varchar AS ORR_REVISIONREASON, 
+                        src:ORR_RSTATUS::varchar AS ORR_RSTATUS, 
+                        src:ORR_RTYPE::varchar AS ORR_RTYPE, 
+                        src:ORR_SHIPVIA::varchar AS ORR_SHIPVIA, 
+                        src:ORR_SOURCECODE::varchar AS ORR_SOURCECODE, 
+                        src:ORR_SOURCESYSTEM::varchar AS ORR_SOURCESYSTEM, 
+                        src:ORR_STATUS::varchar AS ORR_STATUS, 
+                        src:ORR_STORE::varchar AS ORR_STORE, 
+                        src:ORR_SUPPLIER::varchar AS ORR_SUPPLIER, 
+                        src:ORR_SUPPLIER_ORG::varchar AS ORR_SUPPLIER_ORG, 
+                        src:ORR_TYPE::varchar AS ORR_TYPE, 
+                        src:ORR_UDFCHAR01::varchar AS ORR_UDFCHAR01, 
+                        src:ORR_UDFCHAR02::varchar AS ORR_UDFCHAR02, 
+                        src:ORR_UDFCHAR03::varchar AS ORR_UDFCHAR03, 
+                        src:ORR_UDFCHAR04::varchar AS ORR_UDFCHAR04, 
+                        src:ORR_UDFCHAR05::varchar AS ORR_UDFCHAR05, 
+                        src:ORR_UDFCHAR06::varchar AS ORR_UDFCHAR06, 
+                        src:ORR_UDFCHAR07::varchar AS ORR_UDFCHAR07, 
+                        src:ORR_UDFCHAR08::varchar AS ORR_UDFCHAR08, 
+                        src:ORR_UDFCHAR09::varchar AS ORR_UDFCHAR09, 
+                        src:ORR_UDFCHAR10::varchar AS ORR_UDFCHAR10, 
+                        src:ORR_UDFCHAR11::varchar AS ORR_UDFCHAR11, 
+                        src:ORR_UDFCHAR12::varchar AS ORR_UDFCHAR12, 
+                        src:ORR_UDFCHAR13::varchar AS ORR_UDFCHAR13, 
+                        src:ORR_UDFCHAR14::varchar AS ORR_UDFCHAR14, 
+                        src:ORR_UDFCHAR15::varchar AS ORR_UDFCHAR15, 
+                        src:ORR_UDFCHAR16::varchar AS ORR_UDFCHAR16, 
+                        src:ORR_UDFCHAR17::varchar AS ORR_UDFCHAR17, 
+                        src:ORR_UDFCHAR18::varchar AS ORR_UDFCHAR18, 
+                        src:ORR_UDFCHAR19::varchar AS ORR_UDFCHAR19, 
+                        src:ORR_UDFCHAR20::varchar AS ORR_UDFCHAR20, 
+                        src:ORR_UDFCHAR21::varchar AS ORR_UDFCHAR21, 
+                        src:ORR_UDFCHAR22::varchar AS ORR_UDFCHAR22, 
+                        src:ORR_UDFCHAR23::varchar AS ORR_UDFCHAR23, 
+                        src:ORR_UDFCHAR24::varchar AS ORR_UDFCHAR24, 
+                        src:ORR_UDFCHAR25::varchar AS ORR_UDFCHAR25, 
+                        src:ORR_UDFCHAR26::varchar AS ORR_UDFCHAR26, 
+                        src:ORR_UDFCHAR27::varchar AS ORR_UDFCHAR27, 
+                        src:ORR_UDFCHAR28::varchar AS ORR_UDFCHAR28, 
+                        src:ORR_UDFCHAR29::varchar AS ORR_UDFCHAR29, 
+                        src:ORR_UDFCHAR30::varchar AS ORR_UDFCHAR30, 
+                        src:ORR_UDFCHKBOX01::varchar AS ORR_UDFCHKBOX01, 
+                        src:ORR_UDFCHKBOX02::varchar AS ORR_UDFCHKBOX02, 
+                        src:ORR_UDFCHKBOX03::varchar AS ORR_UDFCHKBOX03, 
+                        src:ORR_UDFCHKBOX04::varchar AS ORR_UDFCHKBOX04, 
+                        src:ORR_UDFCHKBOX05::varchar AS ORR_UDFCHKBOX05, 
+                        src:ORR_UDFDATE01::datetime AS ORR_UDFDATE01, 
+                        src:ORR_UDFDATE02::datetime AS ORR_UDFDATE02, 
+                        src:ORR_UDFDATE03::datetime AS ORR_UDFDATE03, 
+                        src:ORR_UDFDATE04::datetime AS ORR_UDFDATE04, 
+                        src:ORR_UDFDATE05::datetime AS ORR_UDFDATE05, 
+                        src:ORR_UDFNUM01::numeric(38, 10) AS ORR_UDFNUM01, 
+                        src:ORR_UDFNUM02::numeric(38, 10) AS ORR_UDFNUM02, 
+                        src:ORR_UDFNUM03::numeric(38, 10) AS ORR_UDFNUM03, 
+                        src:ORR_UDFNUM04::numeric(38, 10) AS ORR_UDFNUM04, 
+                        src:ORR_UDFNUM05::numeric(38, 10) AS ORR_UDFNUM05, 
+                        src:ORR_UPDATECOUNT::numeric(38, 10) AS ORR_UPDATECOUNT, 
+                        src:ORR_UPDATED::datetime AS ORR_UPDATED, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:ORR_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:ORR_ORDER,
+                src:ORR_ORDER_ORG,
+                src:ORR_REVISION  ORDER BY 
+            src:ORR_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5ORDREVISIONS as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_ACD), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_APPROV), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_BLANKETRELEASE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_CREATED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_CREDITCARD), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_DATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_DISCOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_DISCPERC), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_DUE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_EXCH), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_EXCHFROMDUAL), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_EXCHTODUAL), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_INTERFACE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_LASTSTATUSUPDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_PRICE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_REVISED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_REVISION), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_UDFDATE01), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_UDFDATE02), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_UDFDATE03), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_UDFDATE04), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_UDFDATE05), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_UDFNUM01), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_UDFNUM02), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_UDFNUM03), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_UDFNUM04), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_UDFNUM05), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ORR_UPDATECOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_UPDATED), '1900-01-01')) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ORR_LASTSAVED), '1900-01-01')) is not null

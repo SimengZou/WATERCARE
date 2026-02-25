@@ -1,0 +1,46 @@
+CREATE OR REPLACE VIEW DATAHUB_TARGET_HISTORY.IPS_PROPERTY_ADDRSTNZ AS 
+    SELECT 
+        ADDBY, 
+        ADDDTTM, 
+        DELETED, 
+        ESTNOHI, 
+        ESTNOLO, 
+        MODBY, 
+        MODDTTM, 
+        OSTNOHI, 
+        OSTNOLO, 
+        POSTCODE, 
+        STATE, 
+        STNAME, 
+        STNMKEY, 
+        STTYPE, 
+        SUBURB, 
+        VARIATION_ID, 
+        VARIATION_ID AS ETL_SEQUENCE_NUMBER,
+        ETL_IS_DELETED,
+        ETL_LOAD_DATETIME,
+        ETL_LOAD_METADATAFILENAME
+    FROM DATAHUB_TARGET_HISTORY.IPS_DELETED_PROPERTY_ADDRSTNZ
+    UNION ALL 
+    SELECT 
+        ADDBY, 
+        ADDDTTM, 
+        DELETED, 
+        ESTNOHI, 
+        ESTNOLO, 
+        MODBY, 
+        MODDTTM, 
+        OSTNOHI, 
+        OSTNOLO, 
+        POSTCODE, 
+        STATE, 
+        STNAME, 
+        STNMKEY, 
+        STTYPE, 
+        SUBURB, 
+        VARIATION_ID, 
+        VARIATION_ID AS ETL_SEQUENCE_NUMBER,
+        FALSE AS ETL_IS_DELETED,
+        ETL_LOAD_DATETIME,
+        ETL_LOAD_METADATAFILENAME
+    FROM DATAHUB_TARGET.IPS_PROPERTY_ADDRSTNZ;

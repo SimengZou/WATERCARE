@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TPPTC352(
+            amoc_1 numeric(38, 17), 
+            amoc_2 numeric(38, 17), 
+            amoc_3 numeric(38, 17), 
+            amoc_4 numeric(38, 17), 
+            ccal varchar, 
+            cceq varchar, 
+            compnr integer, 
+            cprj varchar, 
+            cprj_ccal_ref_compnr integer, 
+            cprj_ref_compnr integer, 
+            deleted boolean, 
+            eqan numeric(38, 17), 
+            quan numeric(38, 17), 
+            sequencenumber integer, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

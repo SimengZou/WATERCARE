@@ -1,0 +1,74 @@
+CREATE OR REPLACE VIEW LANDING_ERROR.VW_STREAM_IPS_WSLTRADEBILLOUTPUT_TRADEBILLOUTPUTEXT_ERROR AS SELECT src, 'IPS_WSLTRADEBILLOUTPUT_TRADEBILLOUTPUTEXT' as TABLE_OBJECT, CASE WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ACCOUNTKEY), '0'), 38, 10) is null and 
+                    src:ACCOUNTKEY is not null) THEN
+                    'ACCOUNTKEY contains a non-numeric value : \'' || AS_VARCHAR(src:ACCOUNTKEY) || '\'' WHEN 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:ADDDTTM), '1900-01-01')) is null and 
+                    src:ADDDTTM is not null) THEN
+                    'ADDDTTM contains a non-timestamp value : \'' || AS_VARCHAR(src:ADDDTTM) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:BILLKEY), '0'), 38, 10) is null and 
+                    src:BILLKEY is not null) THEN
+                    'BILLKEY contains a non-numeric value : \'' || AS_VARCHAR(src:BILLKEY) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:BILLRUNKEY), '0'), 38, 10) is null and 
+                    src:BILLRUNKEY is not null) THEN
+                    'BILLRUNKEY contains a non-numeric value : \'' || AS_VARCHAR(src:BILLRUNKEY) || '\'' WHEN 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:DTLRCT), '1900-01-01')) is null and 
+                    src:DTLRCT is not null) THEN
+                    'DTLRCT contains a non-timestamp value : \'' || AS_VARCHAR(src:DTLRCT) || '\'' WHEN 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:MODDTTM), '1900-01-01')) is null and 
+                    src:MODDTTM is not null) THEN
+                    'MODDTTM contains a non-timestamp value : \'' || AS_VARCHAR(src:MODDTTM) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:PREVBILLAMT), '0'), 38, 10) is null and 
+                    src:PREVBILLAMT is not null) THEN
+                    'PREVBILLAMT contains a non-numeric value : \'' || AS_VARCHAR(src:PREVBILLAMT) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:TRADEBILLOUTPUTEXTKEY), '0'), 38, 10) is null and 
+                    src:TRADEBILLOUTPUTEXTKEY is not null) THEN
+                    'TRADEBILLOUTPUTEXTKEY contains a non-numeric value : \'' || AS_VARCHAR(src:TRADEBILLOUTPUTEXTKEY) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:VARIATION_ID), '0'), 38, 10) is null and 
+                    src:VARIATION_ID is not null) THEN
+                    'VARIATION_ID contains a non-numeric value : \'' || AS_VARCHAR(src:VARIATION_ID) || '\'' WHEN 
+                (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:VARIATION_ID), '1900-01-01')) is null and 
+                src:VARIATION_ID is not null) THEN
+                'VARIATION_ID contains a non-timestamp value : \'' || AS_VARCHAR(src:VARIATION_ID) || '\'' END as COMMENT,  CURRENT_TIMESTAMP() as ETL_LANDING_LOAD_DATETIME,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                FROM 
+                (
+                select 
+                    src,
+                    etl_load_datetime,
+                    etl_load_metadatafilename
+                    from
+                    (
+                        SELECT
+        
+                            
+            src,
+            etl_load_datetime,
+            etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+                                    
+                src:TRADEBILLOUTPUTEXTKEY  ORDER BY 
+            src:VARIATION_ID desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_IPS_WSLTRADEBILLOUTPUT_TRADEBILLOUTPUTEXT as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:ACCOUNTKEY), '0'), 38, 10) is null and 
+                    src:ACCOUNTKEY is not null) or 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:ADDDTTM), '1900-01-01')) is null and 
+                    src:ADDDTTM is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:BILLKEY), '0'), 38, 10) is null and 
+                    src:BILLKEY is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:BILLRUNKEY), '0'), 38, 10) is null and 
+                    src:BILLRUNKEY is not null) or 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:DTLRCT), '1900-01-01')) is null and 
+                    src:DTLRCT is not null) or 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:MODDTTM), '1900-01-01')) is null and 
+                    src:MODDTTM is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:PREVBILLAMT), '0'), 38, 10) is null and 
+                    src:PREVBILLAMT is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:TRADEBILLOUTPUTEXTKEY), '0'), 38, 10) is null and 
+                    src:TRADEBILLOUTPUTEXTKEY is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:VARIATION_ID), '0'), 38, 10) is null and 
+                    src:VARIATION_ID is not null) or 
+                (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:VARIATION_ID), '1900-01-01')) is null and 
+                src:VARIATION_ID is not null)

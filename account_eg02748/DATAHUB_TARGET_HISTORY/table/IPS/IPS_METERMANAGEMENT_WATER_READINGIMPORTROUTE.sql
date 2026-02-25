@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_METERMANAGEMENT_WATER_READINGIMPORTROUTE(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CYCLEIMPORTTYPE integer, 
+            DATALAKE_DELETED boolean, 
+            DIRECTORYPATH varchar, 
+            EXCLUDEFROMIMPORTFLAG varchar, 
+            IMPORTFILENAME varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            READINGEXPORTROUTEKEY integer, 
+            READINGIMPORTROUTEKEY integer, 
+            READINGIMPORTSCHEDULEKEY integer, 
+            RERUNALLOWEDFLAG varchar, 
+            ROUTEKEY integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

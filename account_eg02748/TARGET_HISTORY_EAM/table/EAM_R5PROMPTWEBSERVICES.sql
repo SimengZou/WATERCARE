@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_R5PROMPTWEBSERVICES_DELETED(
+            PWS_ACTIONCODE varchar, 
+            PWS_BOTTOMBLOCKTITLE varchar, 
+            PWS_CFBLOCKTITLE varchar, 
+            PWS_CFKEYCODE varchar, 
+            PWS_FUNCTION varchar, 
+            PWS_LASTSAVED datetime, 
+            PWS_ORGXPATH varchar, 
+            PWS_PROCESSGROUP numeric(38, 10), 
+            PWS_TAB varchar, 
+            PWS_TOPBLOCKTITLE varchar, 
+            PWS_UPDATECOUNT numeric(38, 10), 
+            PWS_UPDATED datetime, 
+            PWS_WEBSERVICE varchar, 
+            PWS_WSPRMCODE varchar, 
+            PWS_WSTITLE varchar, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

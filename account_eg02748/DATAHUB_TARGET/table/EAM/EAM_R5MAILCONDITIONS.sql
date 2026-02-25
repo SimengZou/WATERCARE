@@ -1,0 +1,19 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5MAILCONDITIONS(
+                "MAC_ANDOR" varchar, 
+                "MAC_ATTRIBPK" varchar, 
+                "MAC_COLUMN" varchar, 
+                "MAC_COLUMNGRO" numeric(38, 10), 
+                "MAC_CRITERIA" varchar, 
+                "MAC_LASTSAVED" datetime, 
+                "MAC_PK" varchar, 
+                "MAC_TABLE" varchar, 
+                "MAC_TEMPLATE" varchar, 
+                "MAC_UPDATECOUNT" numeric(38, 10), 
+                "MAC_VALUE1" varchar, 
+                "MAC_VALUE2" varchar, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

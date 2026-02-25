@@ -1,0 +1,27 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.EAM_DELETED_R5FIRSTACT(
+                        ACT_EVENT varchar(30),
+                        ACT_ACT int,
+                        ACT_START datetime(0),
+                        ACT_TRADE varchar(15),
+                        ACT_PERSONS int,
+                        ACT_DURATION int,
+                        ACT_EST numeric(38, 10),
+                        ACT_REM numeric(38, 10),
+                        ACT_TASK varchar(20),
+                        ACT_MATLIST varchar(20),
+                        ACT_MULTIPLETRADES varchar(1),
+                        ACT_RPC varchar(4),
+                        ACT_WAP varchar(4),
+                        ACT_TPF varchar(4),
+                        ACT_MANUFACT varchar(24),
+                        ACT_SYSLEVEL varchar(30),
+                        ACT_ASMLEVEL varchar(30),
+                        ACT_COMPLEVEL varchar(30),
+                        ACT_COMPLOCATION varchar(80),
+                        ACT_LASTSAVED datetime(0)
+                        ,etl_load_datetime timestamp,
+                          etl_load_metadatafilename varchar(255),
+                           ETL_LASTSAVED datetime(0),
+			ETL_DELETED boolean,
+      ETL_IS_DELETED boolean default false
+                    );

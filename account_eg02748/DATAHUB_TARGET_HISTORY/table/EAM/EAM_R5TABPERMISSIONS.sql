@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_R5TABPERMISSIONS_DELETED(
+                "TRP_ALTERSAVE" varchar, 
+                "TRP_DELETE" varchar, 
+                "TRP_FUNCTION" varchar, 
+                "TRP_GROUP" varchar, 
+                "TRP_INSERT" varchar, 
+                "TRP_LASTSAVED" datetime, 
+                "TRP_SECURITYDDSPYID" numeric(38, 10), 
+                "TRP_SELECT" varchar, 
+                "TRP_SEQUENCE" numeric(38, 10), 
+                "TRP_SYSREQUIRED" varchar, 
+                "TRP_TAB" varchar, 
+                "TRP_UPDATE" varchar, 
+                "TRP_UPDATECOUNT" numeric(38, 10), 
+                "TRP_UPDATED" datetime, 
+                "TRP_VISIBLE" varchar, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar,
+                ETL_IS_DELETED boolean default false
+                ); 

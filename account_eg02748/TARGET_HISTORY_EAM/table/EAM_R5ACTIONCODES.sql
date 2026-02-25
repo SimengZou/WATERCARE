@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_R5ACTIONCODES_DELETED(
+            ACC_CLASS varchar, 
+            ACC_CLASS_ORG varchar, 
+            ACC_CODE varchar, 
+            ACC_CREATED datetime, 
+            ACC_DESC varchar, 
+            ACC_ENABLEWORKORDERS varchar, 
+            ACC_GEN varchar, 
+            ACC_GROUP varchar, 
+            ACC_LASTSAVED datetime, 
+            ACC_NOTUSED varchar, 
+            ACC_PARTFAILURE varchar, 
+            ACC_UPDATECOUNT numeric(38, 10), 
+            ACC_UPDATED datetime, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

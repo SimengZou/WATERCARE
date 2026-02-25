@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CRM_CRMLOGTYPE(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CODE varchar, 
+            DATALAKE_DELETED boolean, 
+            DESCRIPT varchar, 
+            DPDISPLAY varchar, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            ISPUBLIC varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PORTALDISPLAY varchar, 
+            TYPEKEY integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLBILLING_ACCOUNTAUTHGD(
+            ACCOUNTAUTHGDKEY integer, 
+            ACCOUNTEXTN integer, 
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            AUTHORISED varchar, 
+            DATALAKE_DELETED boolean, 
+            EMAIL varchar, 
+            GRANTED varchar, 
+            MOBILE varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            RELTOOWNER varchar, 
+            RELTOPROP varchar, 
+            STARTDATE datetime, 
+            STOPDATE datetime, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_BILLING_APPROVALSCHEME(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPROVALGROUP integer, 
+            APPROVALSCHEMEKEY integer, 
+            APPROVALSTYLE integer, 
+            DELETED boolean, 
+            DESCRIPTION varchar, 
+            EARLYFINALAPPROVALFORMULA integer, 
+            EARLYREJECTIONFORMULA integer, 
+            INITIALLEVELFORMULA integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            POSTFINALAPPROVALFORMULA integer, 
+            POSTREJECTIONFORMULA integer, 
+            PRIORITYORDER integer, 
+            SCHEMENAME varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

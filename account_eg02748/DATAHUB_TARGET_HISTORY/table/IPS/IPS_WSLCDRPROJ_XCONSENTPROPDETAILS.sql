@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLCDRPROJ_XCONSENTPROPDETAILS(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            AKLCOUNCILPROPOSALNO varchar, 
+            APPROJAPPLDTLKEY integer, 
+            CT varchar, 
+            DELETED boolean, 
+            DP varchar, 
+            LEGALPROPSITEADDRESS varchar, 
+            LOT varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            VARIATION_ID integer, 
+            WARD varchar, 
+            XCONSENTPROPDETAILSKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

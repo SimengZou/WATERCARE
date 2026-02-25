@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_PLANCOPYLOG(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APKEY integer, 
+            BYTYPE varchar, 
+            CHKDTTM datetime, 
+            COMMONPLANCOPYKEY integer, 
+            CONTACTKEY integer, 
+            DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            OUTSOURCE varchar, 
+            PLANCOPYLOGKEY integer, 
+            PLANLOCATION varchar, 
+            REVIEWER varchar, 
+            STATUS varchar, 
+            VARIATION_ID integer, 
+            VERSION varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

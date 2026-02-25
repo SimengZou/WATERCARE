@@ -1,0 +1,164 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_LN_TDSLS300 AS SELECT
+                        src:adco::integer AS adco, 
+                        src:adco_kw::varchar AS adco_kw, 
+                        src:aeco::integer AS aeco, 
+                        src:aeco_kw::varchar AS aeco_kw, 
+                        src:bpcl::varchar AS bpcl, 
+                        src:bpcl_ref_compnr::integer AS bpcl_ref_compnr, 
+                        src:ccrf::object AS ccrf, 
+                        src:ccrs::varchar AS ccrs, 
+                        src:ccrs_ref_compnr::integer AS ccrs_ref_compnr, 
+                        src:ccty::varchar AS ccty, 
+                        src:ccur::varchar AS ccur, 
+                        src:ccur_ref_compnr::integer AS ccur_ref_compnr, 
+                        src:cdat::datetime AS cdat, 
+                        src:cdec::varchar AS cdec, 
+                        src:cdec_ref_compnr::integer AS cdec_ref_compnr, 
+                        src:cdes::object AS cdes, 
+                        src:cfrw::varchar AS cfrw, 
+                        src:cfrw_ref_compnr::integer AS cfrw_ref_compnr, 
+                        src:cofc::varchar AS cofc, 
+                        src:cofc_ref_compnr::integer AS cofc_ref_compnr, 
+                        src:compnr::integer AS compnr, 
+                        src:cono::varchar AS cono, 
+                        src:corn::object AS corn, 
+                        src:cpay::varchar AS cpay, 
+                        src:cpay_ref_compnr::integer AS cpay_ref_compnr, 
+                        src:crep::varchar AS crep, 
+                        src:crep_ref_compnr::integer AS crep_ref_compnr, 
+                        src:csts::integer AS csts, 
+                        src:csts_kw::varchar AS csts_kw, 
+                        src:cvyn::integer AS cvyn, 
+                        src:cvyn_kw::varchar AS cvyn_kw, 
+                        src:deleted::boolean AS deleted, 
+                        src:edat::datetime AS edat, 
+                        src:hval::integer AS hval, 
+                        src:hval_kw::varchar AS hval_kw, 
+                        src:icap::integer AS icap, 
+                        src:icap_kw::varchar AS icap_kw, 
+                        src:icpr::integer AS icpr, 
+                        src:icpr_kw::varchar AS icpr_kw, 
+                        src:icyp::integer AS icyp, 
+                        src:icyp_kw::varchar AS icyp_kw, 
+                        src:itad::varchar AS itad, 
+                        src:itad_ref_compnr::integer AS itad_ref_compnr, 
+                        src:itbp::varchar AS itbp, 
+                        src:itbp_ref_compnr::integer AS itbp_ref_compnr, 
+                        src:itcn::varchar AS itcn, 
+                        src:itcn_ref_compnr::integer AS itcn_ref_compnr, 
+                        src:ocon::varchar AS ocon, 
+                        src:ocon_ref_compnr::integer AS ocon_ref_compnr, 
+                        src:ofad::varchar AS ofad, 
+                        src:ofad_ref_compnr::integer AS ofad_ref_compnr, 
+                        src:ofbp::varchar AS ofbp, 
+                        src:ofbp_ref_compnr::integer AS ofbp_ref_compnr, 
+                        src:ofcn::varchar AS ofcn, 
+                        src:ofcn_ref_compnr::integer AS ofcn_ref_compnr, 
+                        src:osrp::varchar AS osrp, 
+                        src:osrp_ref_compnr::integer AS osrp_ref_compnr, 
+                        src:paym::varchar AS paym, 
+                        src:pfad::varchar AS pfad, 
+                        src:pfad_ref_compnr::integer AS pfad_ref_compnr, 
+                        src:pfbp::varchar AS pfbp, 
+                        src:pfbp_ref_compnr::integer AS pfbp_ref_compnr, 
+                        src:pfcn::varchar AS pfcn, 
+                        src:pfcn_ref_compnr::integer AS pfcn_ref_compnr, 
+                        src:ptpa::varchar AS ptpa, 
+                        src:ptpa_ref_compnr::integer AS ptpa_ref_compnr, 
+                        src:refb::object AS refb, 
+                        src:refe::object AS refe, 
+                        src:rofc::varchar AS rofc, 
+                        src:rofc_ref_compnr::integer AS rofc_ref_compnr, 
+                        src:sdat::datetime AS sdat, 
+                        src:sequencenumber::integer AS sequencenumber, 
+                        src:sotp::varchar AS sotp, 
+                        src:sotp_ref_compnr::integer AS sotp_ref_compnr, 
+                        src:stad::varchar AS stad, 
+                        src:stad_ref_compnr::integer AS stad_ref_compnr, 
+                        src:stbp::varchar AS stbp, 
+                        src:stbp_ref_compnr::integer AS stbp_ref_compnr, 
+                        src:stcn::varchar AS stcn, 
+                        src:stcn_ref_compnr::integer AS stcn_ref_compnr, 
+                        src:timestamp::datetime AS timestamp, 
+                        src:trid::varchar AS trid, 
+                        src:trid_ref_compnr::integer AS trid_ref_compnr, 
+                        src:txta::integer AS txta, 
+                        src:txta_ref_compnr::integer AS txta_ref_compnr, 
+                        src:txtb::integer AS txtb, 
+                        src:txtb_ref_compnr::integer AS txtb_ref_compnr, 
+                        src:username::varchar AS username, src:sequencenumber::integer as ETL_SEQUENCE_NUMBER,
+            CASE
+                WHEN 'LN' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'LN' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:compnr,
+                src:cono  ORDER BY 
+            src:sequencenumber desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_LN_TDSLS300 as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:adco), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aeco), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:bpcl_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ccrs_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ccur_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:cdat), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cdec_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cfrw_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cofc_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpay_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:crep_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:csts), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cvyn), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:edat), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:hval), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:icap), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:icpr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:icyp), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:itad_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:itbp_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:itcn_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ocon_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ofad_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ofbp_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ofcn_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:osrp_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:pfad_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:pfbp_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:pfcn_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ptpa_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:rofc_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:sdat), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:sequencenumber), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:sotp_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:stad_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:stbp_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:stcn_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:timestamp), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:trid_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:txta), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:txta_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:txtb), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:txtb_ref_compnr), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:sequencenumber), '1900-01-01')) is not null

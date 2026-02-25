@@ -1,0 +1,21 @@
+CREATE OR REPLACE VIEW DATAHUB_LOGGING.VW_TASK_AND_PIPE_MONITORING as
+SELECT *
+FROM (
+    select 'TASK' as TYPE,
+        DATABASE_NAME || '.' || SCHEMA_NAME || '.' || NAME as OBJECT_NAME,
+        COMPLETED_TIME as EXEC_TIME,
+        ERROR_MESSAGE
+      from SNOWFLAKE.account_usage.task_history
+    WHERE DATABASE_NAME = current_database() AND 
+        ERROR_MESSAGE <> 'Conditional expression for task evaluated to false.' and
+        SCHEDULED_TIME >= DATEADD(hour, -72, CURRENT_TIMESTAMP())
+    UNION ALL
+    SELECT 'PIPE' as TYPE,
+            PIPE_CATALOG_NAME || '.' || PIPE_SCHEMA_NAME || '.' || PIPE_NAME as OBJECT_NAME,
+            LAST_LOAD_TIME as EXEC_TIME,
+            FIRST_ERROR_MESSAGE
+    from SNOWFLAKE.ACCOUNT_USAGE.COPY_HISTORY
+    WHERE STATUS <> 'Loaded' and PIPE_CATALOG_NAME = current_database()
+        AND LAST_LOAD_TIME >= DATEADD(hour, -72, CURRENT_TIMESTAMP())
+)
+ORDER BY EXEC_TIME DESC;

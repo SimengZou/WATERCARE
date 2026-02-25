@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CASHIERING_PAYMENTDISTRIBUTION(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CHGKEY integer, 
+            DELETED boolean, 
+            DISTAMT numeric(38, 10), 
+            DRWRTRANNO integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PAYDISTKEY integer, 
+            PAYSERVERTRANKEY integer, 
+            REFPD integer, 
+            REGTRANNO integer, 
+            STATUS varchar, 
+            TRANTYPE varchar, 
+            TRNNO integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

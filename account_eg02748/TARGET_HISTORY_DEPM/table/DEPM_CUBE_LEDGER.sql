@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_DEPM.DEPM_CUBE_LEDGER_SNAPSHOT(
+            "Account" varchar, 
+            Analysis01 varchar, 
+            Analysis02 varchar, 
+            Analysis03 varchar, 
+            Analysis04 varchar, 
+            Analysis05 varchar, 
+            Analysis06 varchar, 
+            Analysis07 varchar, 
+            Analysis08 varchar, 
+            Analysis09 varchar, 
+            Analysis10 varchar, 
+            Currency varchar, 
+            LdgTrxType varchar, 
+            LedgerMeas varchar, 
+            Period varchar, 
+            Timestamp datetime, 
+            Value varchar, 
+            Version varchar, 
+            Year varchar, ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

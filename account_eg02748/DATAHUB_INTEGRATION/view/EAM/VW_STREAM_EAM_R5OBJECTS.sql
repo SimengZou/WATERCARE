@@ -1,0 +1,614 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5OBJECTS AS SELECT
+                        src:OBJ_ACCESSIBLE::varchar AS OBJ_ACCESSIBLE, 
+                        src:OBJ_ACD::numeric(38, 10) AS OBJ_ACD, 
+                        src:OBJ_ALIAS::varchar AS OBJ_ALIAS, 
+                        src:OBJ_ASMLEVEL::varchar AS OBJ_ASMLEVEL, 
+                        src:OBJ_AVAILABILITYRSTATUS::varchar AS OBJ_AVAILABILITYRSTATUS, 
+                        src:OBJ_AVAILABILITYSTATUS::varchar AS OBJ_AVAILABILITYSTATUS, 
+                        src:OBJ_AVAILABLECAPACITY::numeric(38, 10) AS OBJ_AVAILABLECAPACITY, 
+                        src:OBJ_BATHCOUNT::numeric(38, 10) AS OBJ_BATHCOUNT, 
+                        src:OBJ_BEDCOUNT::numeric(38, 10) AS OBJ_BEDCOUNT, 
+                        src:OBJ_BILLABLE::varchar AS OBJ_BILLABLE, 
+                        src:OBJ_BILLEVERYPERIOD::numeric(38, 10) AS OBJ_BILLEVERYPERIOD, 
+                        src:OBJ_BILLEVERYPERIODUOM::varchar AS OBJ_BILLEVERYPERIODUOM, 
+                        src:OBJ_BILLINGCODE::varchar AS OBJ_BILLINGCODE, 
+                        src:OBJ_BILLINGCODE_ORG::varchar AS OBJ_BILLINGCODE_ORG, 
+                        src:OBJ_BIN::varchar AS OBJ_BIN, 
+                        src:OBJ_BIOMEDICALASSET::varchar AS OBJ_BIOMEDICALASSET, 
+                        src:OBJ_BLACKSWAN::varchar AS OBJ_BLACKSWAN, 
+                        src:OBJ_BLACKSWANCOST::numeric(38, 10) AS OBJ_BLACKSWANCOST, 
+                        src:OBJ_BUILDING::varchar AS OBJ_BUILDING, 
+                        src:OBJ_BUILDMAINTPROGRAM::varchar AS OBJ_BUILDMAINTPROGRAM, 
+                        src:OBJ_CALGROUP::varchar AS OBJ_CALGROUP, 
+                        src:OBJ_CALGROUPORG::varchar AS OBJ_CALGROUPORG, 
+                        src:OBJ_CAPACITYCODE::varchar AS OBJ_CAPACITYCODE, 
+                        src:OBJ_CAPACITYRATING::numeric(38, 10) AS OBJ_CAPACITYRATING, 
+                        src:OBJ_CATEGORY::varchar AS OBJ_CATEGORY, 
+                        src:OBJ_CGMP::varchar AS OBJ_CGMP, 
+                        src:OBJ_CHECKLISTFILTER::varchar AS OBJ_CHECKLISTFILTER, 
+                        src:OBJ_CLASS::varchar AS OBJ_CLASS, 
+                        src:OBJ_CLASS_ORG::varchar AS OBJ_CLASS_ORG, 
+                        src:OBJ_CN::varchar AS OBJ_CN, 
+                        src:OBJ_CODE::varchar AS OBJ_CODE, 
+                        src:OBJ_COMMISS::datetime AS OBJ_COMMISS, 
+                        src:OBJ_COMPLEVEL::varchar AS OBJ_COMPLEVEL, 
+                        src:OBJ_COMPLOCATION::varchar AS OBJ_COMPLOCATION, 
+                        src:OBJ_CONDITIONINDEX::varchar AS OBJ_CONDITIONINDEX, 
+                        src:OBJ_CONDITIONRATING::numeric(38, 10) AS OBJ_CONDITIONRATING, 
+                        src:OBJ_CONDITIONSCORE::numeric(38, 10) AS OBJ_CONDITIONSCORE, 
+                        src:OBJ_CONFIGAPPROVED::datetime AS OBJ_CONFIGAPPROVED, 
+                        src:OBJ_CONFIGAPPROVEDBY::varchar AS OBJ_CONFIGAPPROVEDBY, 
+                        src:OBJ_CONFIGAUTONUM::varchar AS OBJ_CONFIGAUTONUM, 
+                        src:OBJ_CONFIGCODE::varchar AS OBJ_CONFIGCODE, 
+                        src:OBJ_CONFIGDEFAULTSTATUS::varchar AS OBJ_CONFIGDEFAULTSTATUS, 
+                        src:OBJ_CONFIGPARENTSEPARATOR::varchar AS OBJ_CONFIGPARENTSEPARATOR, 
+                        src:OBJ_CONFIGPREFIX::varchar AS OBJ_CONFIGPREFIX, 
+                        src:OBJ_CONFIGREQUESTED::datetime AS OBJ_CONFIGREQUESTED, 
+                        src:OBJ_CONFIGREQUESTEDBY::varchar AS OBJ_CONFIGREQUESTEDBY, 
+                        src:OBJ_CONFIGREVISION::numeric(38, 10) AS OBJ_CONFIGREVISION, 
+                        src:OBJ_CONFIGREVISIONREASON::varchar AS OBJ_CONFIGREVISIONREASON, 
+                        src:OBJ_CONFIGRSTATUS::varchar AS OBJ_CONFIGRSTATUS, 
+                        src:OBJ_CONFIGSEQLENGTH::numeric(38, 10) AS OBJ_CONFIGSEQLENGTH, 
+                        src:OBJ_CONFIGSPECIFIC::varchar AS OBJ_CONFIGSPECIFIC, 
+                        src:OBJ_CONFIGSTATUS::varchar AS OBJ_CONFIGSTATUS, 
+                        src:OBJ_CONFIGSTWO::varchar AS OBJ_CONFIGSTWO, 
+                        src:OBJ_CONFIGSUFFIX::varchar AS OBJ_CONFIGSUFFIX, 
+                        src:OBJ_CONFIGTYPE::varchar AS OBJ_CONFIGTYPE, 
+                        src:OBJ_CONFIGUSEPARENTCODE::varchar AS OBJ_CONFIGUSEPARENTCODE, 
+                        src:OBJ_CONFINEDSPACE::varchar AS OBJ_CONFINEDSPACE, 
+                        src:OBJ_CONTRACT::varchar AS OBJ_CONTRACT, 
+                        src:OBJ_CONTRACTTEMPLATE::varchar AS OBJ_CONTRACTTEMPLATE, 
+                        src:OBJ_CONTRACTTEMPLATE_ORG::varchar AS OBJ_CONTRACTTEMPLATE_ORG, 
+                        src:OBJ_CORRCONDITIONDATE::datetime AS OBJ_CORRCONDITIONDATE, 
+                        src:OBJ_CORRCONDITIONREASON::varchar AS OBJ_CORRCONDITIONREASON, 
+                        src:OBJ_CORRCONDITIONSCORE::numeric(38, 10) AS OBJ_CORRCONDITIONSCORE, 
+                        src:OBJ_CORRCONDITIONUSAGE::numeric(38, 10) AS OBJ_CORRCONDITIONUSAGE, 
+                        src:OBJ_COSTCODE::varchar AS OBJ_COSTCODE, 
+                        src:OBJ_COSTOFNEEDEDREPAIRS::numeric(38, 10) AS OBJ_COSTOFNEEDEDREPAIRS, 
+                        src:OBJ_COUNTRY::numeric(38, 10) AS OBJ_COUNTRY, 
+                        src:OBJ_COVERAGETYPE::varchar AS OBJ_COVERAGETYPE, 
+                        src:OBJ_CREATED::datetime AS OBJ_CREATED, 
+                        src:OBJ_CREATEDBY::varchar AS OBJ_CREATEDBY, 
+                        src:OBJ_CRITICALITY::varchar AS OBJ_CRITICALITY, 
+                        src:OBJ_CRITICALITYSCORE::numeric(38, 10) AS OBJ_CRITICALITYSCORE, 
+                        src:OBJ_CUSTOMER::varchar AS OBJ_CUSTOMER, 
+                        src:OBJ_CUSTOMER_ORG::varchar AS OBJ_CUSTOMER_ORG, 
+                        src:OBJ_DEPEND::varchar AS OBJ_DEPEND, 
+                        src:OBJ_DESC::varchar AS OBJ_DESC, 
+                        src:OBJ_DESIREDCAPACITY::numeric(38, 10) AS OBJ_DESIREDCAPACITY, 
+                        src:OBJ_DEVICERANGEFROM::numeric(38, 10) AS OBJ_DEVICERANGEFROM, 
+                        src:OBJ_DEVICERANGETO::numeric(38, 10) AS OBJ_DEVICERANGETO, 
+                        src:OBJ_DEVICETOLFROM::numeric(38, 10) AS OBJ_DEVICETOLFROM, 
+                        src:OBJ_DEVICETOLTO::numeric(38, 10) AS OBJ_DEVICETOLTO, 
+                        src:OBJ_DEVICETOLTYPE::varchar AS OBJ_DEVICETOLTYPE, 
+                        src:OBJ_DIRECTION::varchar AS OBJ_DIRECTION, 
+                        src:OBJ_DISPOSALTYPE::varchar AS OBJ_DISPOSALTYPE, 
+                        src:OBJ_DOCUMOTO_BOOKID::varchar AS OBJ_DOCUMOTO_BOOKID, 
+                        src:OBJ_DORMEND::datetime AS OBJ_DORMEND, 
+                        src:OBJ_DORMREUSE::varchar AS OBJ_DORMREUSE, 
+                        src:OBJ_DORMSTART::datetime AS OBJ_DORMSTART, 
+                        src:OBJ_DRIVER::varchar AS OBJ_DRIVER, 
+                        src:OBJ_EFFLOSSPHASEIMBALANCE1::numeric(38, 10) AS OBJ_EFFLOSSPHASEIMBALANCE1, 
+                        src:OBJ_EFFLOSSPHASEIMBALANCE2::numeric(38, 10) AS OBJ_EFFLOSSPHASEIMBALANCE2, 
+                        src:OBJ_EFFLOSSPHASEIMBALANCE3::numeric(38, 10) AS OBJ_EFFLOSSPHASEIMBALANCE3, 
+                        src:OBJ_EFFLOSSPHASEIMBALANCE4::numeric(38, 10) AS OBJ_EFFLOSSPHASEIMBALANCE4, 
+                        src:OBJ_EFFLOSSPHASEIMBALANCE5::numeric(38, 10) AS OBJ_EFFLOSSPHASEIMBALANCE5, 
+                        src:OBJ_ELECSUBMETERINTERVAL::numeric(38, 10) AS OBJ_ELECSUBMETERINTERVAL, 
+                        src:OBJ_ELECUSAGETHRESHOLD::numeric(38, 10) AS OBJ_ELECUSAGETHRESHOLD, 
+                        src:OBJ_EMAIL::varchar AS OBJ_EMAIL, 
+                        src:OBJ_ENDUSEFULLIFE::datetime AS OBJ_ENDUSEFULLIFE, 
+                        src:OBJ_ENERGYSTARELIGIBLE::varchar AS OBJ_ENERGYSTARELIGIBLE, 
+                        src:OBJ_ESIGNATURE::varchar AS OBJ_ESIGNATURE, 
+                        src:OBJ_ESTREVENUE::numeric(38, 10) AS OBJ_ESTREVENUE, 
+                        src:OBJ_EXPOSURE::varchar AS OBJ_EXPOSURE, 
+                        src:OBJ_FACILITY::varchar AS OBJ_FACILITY, 
+                        src:OBJ_FACILITYCONDITIONINDEX::numeric(38, 10) AS OBJ_FACILITYCONDITIONINDEX, 
+                        src:OBJ_FAILUREPROBPERCENTAGE::numeric(38, 10) AS OBJ_FAILUREPROBPERCENTAGE, 
+                        src:OBJ_FCICALCULATION::varchar AS OBJ_FCICALCULATION, 
+                        src:OBJ_FLEETCUSTOMER::varchar AS OBJ_FLEETCUSTOMER, 
+                        src:OBJ_FLEETCUSTOMER_ORG::varchar AS OBJ_FLEETCUSTOMER_ORG, 
+                        src:OBJ_FLOOR::varchar AS OBJ_FLOOR, 
+                        src:OBJ_FLOORAREA::numeric(38, 10) AS OBJ_FLOORAREA, 
+                        src:OBJ_FLOORAREAUOM::varchar AS OBJ_FLOORAREAUOM, 
+                        src:OBJ_FLOW::varchar AS OBJ_FLOW, 
+                        src:OBJ_FROMPOINT::numeric(38, 10) AS OBJ_FROMPOINT, 
+                        src:OBJ_FUEL::varchar AS OBJ_FUEL, 
+                        src:OBJ_GASINDEX::varchar AS OBJ_GASINDEX, 
+                        src:OBJ_GEOREF::varchar AS OBJ_GEOREF, 
+                        src:OBJ_GISLAYER::varchar AS OBJ_GISLAYER, 
+                        src:OBJ_GISMAP::varchar AS OBJ_GISMAP, 
+                        src:OBJ_GISMAP_ORG::varchar AS OBJ_GISMAP_ORG, 
+                        src:OBJ_GISOBJID::numeric(38, 10) AS OBJ_GISOBJID, 
+                        src:OBJ_GISPROFILE::varchar AS OBJ_GISPROFILE, 
+                        src:OBJ_GIS_SYNCCOUNT::numeric(38, 10) AS OBJ_GIS_SYNCCOUNT, 
+                        src:OBJ_GIS_UPDATECOUNT::numeric(38, 10) AS OBJ_GIS_UPDATECOUNT, 
+                        src:OBJ_GLTRANSFER::datetime AS OBJ_GLTRANSFER, 
+                        src:OBJ_GLTRANSFERFLAG::varchar AS OBJ_GLTRANSFERFLAG, 
+                        src:OBJ_GROUP::varchar AS OBJ_GROUP, 
+                        src:OBJ_GUESTFIRSTNAME::varchar AS OBJ_GUESTFIRSTNAME, 
+                        src:OBJ_GUESTLASTNAME::varchar AS OBJ_GUESTLASTNAME, 
+                        src:OBJ_GUESTMIDDLENAME::varchar AS OBJ_GUESTMIDDLENAME, 
+                        src:OBJ_GUESTPHONENUMBER::varchar AS OBJ_GUESTPHONENUMBER, 
+                        src:OBJ_GUESTPROFILEID::numeric(38, 10) AS OBJ_GUESTPROFILEID, 
+                        src:OBJ_GUESTSALUTATION::varchar AS OBJ_GUESTSALUTATION, 
+                        src:OBJ_HARDWAREVER::varchar AS OBJ_HARDWAREVER, 
+                        src:OBJ_HIPAACONFIDENTIALITY::varchar AS OBJ_HIPAACONFIDENTIALITY, 
+                        src:OBJ_IMAGEURL::varchar AS OBJ_IMAGEURL, 
+                        src:OBJ_INCREMENT::numeric(38, 10) AS OBJ_INCREMENT, 
+                        src:OBJ_INSPECTIONDIRECTION::varchar AS OBJ_INSPECTIONDIRECTION, 
+                        src:OBJ_INSTALLDATE::datetime AS OBJ_INSTALLDATE, 
+                        src:OBJ_INSTRUMENT::varchar AS OBJ_INSTRUMENT, 
+                        src:OBJ_INSTRUMENTTYPE::varchar AS OBJ_INSTRUMENTTYPE, 
+                        src:OBJ_INTERFACE::datetime AS OBJ_INTERFACE, 
+                        src:OBJ_INVENTORYVERIFICATIONDATE::datetime AS OBJ_INVENTORYVERIFICATIONDATE, 
+                        src:OBJ_ISSUEDTO::varchar AS OBJ_ISSUEDTO, 
+                        src:OBJ_JECATEGORY::varchar AS OBJ_JECATEGORY, 
+                        src:OBJ_JESOURCE::varchar AS OBJ_JESOURCE, 
+                        src:OBJ_KEYNUMBER::varchar AS OBJ_KEYNUMBER, 
+                        src:OBJ_KITCHEN::varchar AS OBJ_KITCHEN, 
+                        src:OBJ_LASTSAVED::datetime AS OBJ_LASTSAVED, 
+                        src:OBJ_LASTSTATUSUPDATE::datetime AS OBJ_LASTSTATUSUPDATE, 
+                        src:OBJ_LATESTINSTALLDATE::datetime AS OBJ_LATESTINSTALLDATE, 
+                        src:OBJ_LATESTRECEIPTDATE::datetime AS OBJ_LATESTRECEIPTDATE, 
+                        src:OBJ_LENGTH::numeric(38, 10) AS OBJ_LENGTH, 
+                        src:OBJ_LENGTHUOM::varchar AS OBJ_LENGTHUOM, 
+                        src:OBJ_LINEARCOSTWEIGHT::numeric(38, 10) AS OBJ_LINEARCOSTWEIGHT, 
+                        src:OBJ_LINEAROBJTYPE::varchar AS OBJ_LINEAROBJTYPE, 
+                        src:OBJ_LINEARREFPRECISION::numeric(38, 10) AS OBJ_LINEARREFPRECISION, 
+                        src:OBJ_LINEARREFUOM::varchar AS OBJ_LINEARREFUOM, 
+                        src:OBJ_LINKGISWO::varchar AS OBJ_LINKGISWO, 
+                        src:OBJ_LIVINGROOM::varchar AS OBJ_LIVINGROOM, 
+                        src:OBJ_LOANEDDEPT::varchar AS OBJ_LOANEDDEPT, 
+                        src:OBJ_LOCATION::varchar AS OBJ_LOCATION, 
+                        src:OBJ_LOCATION_ORG::varchar AS OBJ_LOCATION_ORG, 
+                        src:OBJ_LOCKOUT::varchar AS OBJ_LOCKOUT, 
+                        src:OBJ_LOOP::varchar AS OBJ_LOOP, 
+                        src:OBJ_LOT::varchar AS OBJ_LOT, 
+                        src:OBJ_LOTOREVIEWED::datetime AS OBJ_LOTOREVIEWED, 
+                        src:OBJ_LOTOREVIEWEDBY::varchar AS OBJ_LOTOREVIEWEDBY, 
+                        src:OBJ_LOTOREVIEWEDNAME::varchar AS OBJ_LOTOREVIEWEDNAME, 
+                        src:OBJ_LOTOREVIEWEDTYPE::varchar AS OBJ_LOTOREVIEWEDTYPE, 
+                        src:OBJ_LOTOREVIEWREQUIRED::datetime AS OBJ_LOTOREVIEWREQUIRED, 
+                        src:OBJ_LTYPE::varchar AS OBJ_LTYPE, 
+                        src:OBJ_MANAGERPROFILEID::varchar AS OBJ_MANAGERPROFILEID, 
+                        src:OBJ_MANUFACT::varchar AS OBJ_MANUFACT, 
+                        src:OBJ_MANUFACTMODEL::varchar AS OBJ_MANUFACTMODEL, 
+                        src:OBJ_MANUFACTREVNUM::varchar AS OBJ_MANUFACTREVNUM, 
+                        src:OBJ_MARKUPCODE::varchar AS OBJ_MARKUPCODE, 
+                        src:OBJ_MARKUPCODE_ORG::varchar AS OBJ_MARKUPCODE_ORG, 
+                        src:OBJ_MAXGUESTCOUNT::varchar AS OBJ_MAXGUESTCOUNT, 
+                        src:OBJ_MINPENALTY::numeric(38, 10) AS OBJ_MINPENALTY, 
+                        src:OBJ_MNBDEFINITION::varchar AS OBJ_MNBDEFINITION, 
+                        src:OBJ_MRC::varchar AS OBJ_MRC, 
+                        src:OBJ_MTBFDAYS::numeric(38, 10) AS OBJ_MTBFDAYS, 
+                        src:OBJ_MTBFRATING::numeric(38, 10) AS OBJ_MTBFRATING, 
+                        src:OBJ_MTTRHRS::numeric(38, 10) AS OBJ_MTTRHRS, 
+                        src:OBJ_MTTRRATING::numeric(38, 10) AS OBJ_MTTRRATING, 
+                        src:OBJ_MUBF::numeric(38, 10) AS OBJ_MUBF, 
+                        src:OBJ_MUBFRATING::numeric(38, 10) AS OBJ_MUBFRATING, 
+                        src:OBJ_NONSMOKING::varchar AS OBJ_NONSMOKING, 
+                        src:OBJ_NOTUSED::varchar AS OBJ_NOTUSED, 
+                        src:OBJ_NUMBEROFFAILURES::numeric(38, 10) AS OBJ_NUMBEROFFAILURES, 
+                        src:OBJ_OBRTYPE::varchar AS OBJ_OBRTYPE, 
+                        src:OBJ_OBTYPE::varchar AS OBJ_OBTYPE, 
+                        src:OBJ_OEMSITE::varchar AS OBJ_OEMSITE, 
+                        src:OBJ_OPENBAY::varchar AS OBJ_OPENBAY, 
+                        src:OBJ_OPERATIONALRSTATUS::varchar AS OBJ_OPERATIONALRSTATUS, 
+                        src:OBJ_OPERATIONALSTATUS::varchar AS OBJ_OPERATIONALSTATUS, 
+                        src:OBJ_ORDER::varchar AS OBJ_ORDER, 
+                        src:OBJ_ORDERLINE::numeric(38, 10) AS OBJ_ORDERLINE, 
+                        src:OBJ_ORDER_ORG::varchar AS OBJ_ORDER_ORG, 
+                        src:OBJ_ORG::varchar AS OBJ_ORG, 
+                        src:OBJ_ORIGCONFIGCODE::varchar AS OBJ_ORIGCONFIGCODE, 
+                        src:OBJ_ORIGCONFIGORG::varchar AS OBJ_ORIGCONFIGORG, 
+                        src:OBJ_ORIGCONFIGREV::numeric(38, 10) AS OBJ_ORIGCONFIGREV, 
+                        src:OBJ_ORIGINALINSTALLDATE::datetime AS OBJ_ORIGINALINSTALLDATE, 
+                        src:OBJ_ORIGINALRECEIPTDATE::datetime AS OBJ_ORIGINALRECEIPTDATE, 
+                        src:OBJ_ORIGOBJECT::varchar AS OBJ_ORIGOBJECT, 
+                        src:OBJ_OUTPUTCALCTYPE::varchar AS OBJ_OUTPUTCALCTYPE, 
+                        src:OBJ_OUTPUTRANGEFROM::numeric(38, 10) AS OBJ_OUTPUTRANGEFROM, 
+                        src:OBJ_OUTPUTRANGETO::numeric(38, 10) AS OBJ_OUTPUTRANGETO, 
+                        src:OBJ_OUTPUTUOM::varchar AS OBJ_OUTPUTUOM, 
+                        src:OBJ_OWNERSHIPTYPE::varchar AS OBJ_OWNERSHIPTYPE, 
+                        src:OBJ_PARENT::varchar AS OBJ_PARENT, 
+                        src:OBJ_PARENT_ORG::varchar AS OBJ_PARENT_ORG, 
+                        src:OBJ_PART::varchar AS OBJ_PART, 
+                        src:OBJ_PART_ORG::varchar AS OBJ_PART_ORG, 
+                        src:OBJ_PENALTYFACTOR::numeric(38, 10) AS OBJ_PENALTYFACTOR, 
+                        src:OBJ_PERFORMANCE::numeric(38, 10) AS OBJ_PERFORMANCE, 
+                        src:OBJ_PERFORMANCEFORMULA::varchar AS OBJ_PERFORMANCEFORMULA, 
+                        src:OBJ_PERFORMANCEFORMULA_ORG::varchar AS OBJ_PERFORMANCEFORMULA_ORG, 
+                        src:OBJ_PERFORMANCELASTUPDATED::datetime AS OBJ_PERFORMANCELASTUPDATED, 
+                        src:OBJ_PERFORMANCEMANAGER::varchar AS OBJ_PERFORMANCEMANAGER, 
+                        src:OBJ_PERMITREVIEWED::datetime AS OBJ_PERMITREVIEWED, 
+                        src:OBJ_PERMITREVIEWEDBY::varchar AS OBJ_PERMITREVIEWEDBY, 
+                        src:OBJ_PERMITREVIEWEDNAME::varchar AS OBJ_PERMITREVIEWEDNAME, 
+                        src:OBJ_PERMITREVIEWEDTYPE::varchar AS OBJ_PERMITREVIEWEDTYPE, 
+                        src:OBJ_PERMITREVIEWREQUIRED::datetime AS OBJ_PERMITREVIEWREQUIRED, 
+                        src:OBJ_PERSON::varchar AS OBJ_PERSON, 
+                        src:OBJ_PERSONALPROTECTIVEEQUIP::varchar AS OBJ_PERSONALPROTECTIVEEQUIP, 
+                        src:OBJ_PHONENUMBER::varchar AS OBJ_PHONENUMBER, 
+                        src:OBJ_PIDDRAWING::varchar AS OBJ_PIDDRAWING, 
+                        src:OBJ_PIDNO::varchar AS OBJ_PIDNO, 
+                        src:OBJ_PMWODEPT::varchar AS OBJ_PMWODEPT, 
+                        src:OBJ_POSITION::varchar AS OBJ_POSITION, 
+                        src:OBJ_POSITION_ORG::varchar AS OBJ_POSITION_ORG, 
+                        src:OBJ_PRECISION::numeric(38, 10) AS OBJ_PRECISION, 
+                        src:OBJ_PREVENTEVTCOMP::varchar AS OBJ_PREVENTEVTCOMP, 
+                        src:OBJ_PRIMARYSYSTEM::varchar AS OBJ_PRIMARYSYSTEM, 
+                        src:OBJ_PRIMARYSYSTEM_ORG::varchar AS OBJ_PRIMARYSYSTEM_ORG, 
+                        src:OBJ_PRIMARYUOM::varchar AS OBJ_PRIMARYUOM, 
+                        src:OBJ_PRIMARYUSE::varchar AS OBJ_PRIMARYUSE, 
+                        src:OBJ_PROCESSRANGEFROM::numeric(38, 10) AS OBJ_PROCESSRANGEFROM, 
+                        src:OBJ_PROCESSRANGETO::numeric(38, 10) AS OBJ_PROCESSRANGETO, 
+                        src:OBJ_PROCESSTOLFROM::numeric(38, 10) AS OBJ_PROCESSTOLFROM, 
+                        src:OBJ_PROCESSTOLTO::numeric(38, 10) AS OBJ_PROCESSTOLTO, 
+                        src:OBJ_PRODUCTION::varchar AS OBJ_PRODUCTION, 
+                        src:OBJ_PROFILE::varchar AS OBJ_PROFILE, 
+                        src:OBJ_PROFILEPICTURE::varchar AS OBJ_PROFILEPICTURE, 
+                        src:OBJ_PROFILE_ORG::varchar AS OBJ_PROFILE_ORG, 
+                        src:OBJ_PTYPE::varchar AS OBJ_PTYPE, 
+                        src:OBJ_PURCHASECOST::numeric(38, 10) AS OBJ_PURCHASECOST, 
+                        src:OBJ_PURCHASEDATE::datetime AS OBJ_PURCHASEDATE, 
+                        src:OBJ_PURCHASEORDER::varchar AS OBJ_PURCHASEORDER, 
+                        src:OBJ_PURCHASINGASSET::varchar AS OBJ_PURCHASINGASSET, 
+                        src:OBJ_RCMLEVEL::varchar AS OBJ_RCMLEVEL, 
+                        src:OBJ_RECORD::datetime AS OBJ_RECORD, 
+                        src:OBJ_REGION::varchar AS OBJ_REGION, 
+                        src:OBJ_REGION_ORG::varchar AS OBJ_REGION_ORG, 
+                        src:OBJ_RELIABILITYRANKING::varchar AS OBJ_RELIABILITYRANKING, 
+                        src:OBJ_RELIABILITYRANKINGINDEX::varchar AS OBJ_RELIABILITYRANKINGINDEX, 
+                        src:OBJ_RELIABILITYRANKINGLOCKED::varchar AS OBJ_RELIABILITYRANKINGLOCKED, 
+                        src:OBJ_RELIABILITYRANKINGREV::numeric(38, 10) AS OBJ_RELIABILITYRANKINGREV, 
+                        src:OBJ_RELIABILITYRANKINGSCORE::numeric(38, 10) AS OBJ_RELIABILITYRANKINGSCORE, 
+                        src:OBJ_RELIABILITYRANKING_ORG::varchar AS OBJ_RELIABILITYRANKING_ORG, 
+                        src:OBJ_RENTAL::varchar AS OBJ_RENTAL, 
+                        src:OBJ_RENTALTEMPLATE::varchar AS OBJ_RENTALTEMPLATE, 
+                        src:OBJ_RENTALTEMPLATE_ORG::varchar AS OBJ_RENTALTEMPLATE_ORG, 
+                        src:OBJ_REPLACEMENTVALUE::numeric(38, 10) AS OBJ_REPLACEMENTVALUE, 
+                        src:OBJ_RESCALOWNER::varchar AS OBJ_RESCALOWNER, 
+                        src:OBJ_RESCALOWNERLIST::varchar AS OBJ_RESCALOWNERLIST, 
+                        src:OBJ_RESOURCE::varchar AS OBJ_RESOURCE, 
+                        src:OBJ_RESOURCEPRESENT::varchar AS OBJ_RESOURCEPRESENT, 
+                        src:OBJ_RISKCONSEQUENCECOST::numeric(38, 10) AS OBJ_RISKCONSEQUENCECOST, 
+                        src:OBJ_RISKLEVEL::varchar AS OBJ_RISKLEVEL, 
+                        src:OBJ_RISKPRIORITYINDEX::varchar AS OBJ_RISKPRIORITYINDEX, 
+                        src:OBJ_ROOMTYPE::varchar AS OBJ_ROOMTYPE, 
+                        src:OBJ_RPN::numeric(38, 10) AS OBJ_RPN, 
+                        src:OBJ_RRSURVEYLASTUPDATED::datetime AS OBJ_RRSURVEYLASTUPDATED, 
+                        src:OBJ_RRVALUESLASTCALCULATED::datetime AS OBJ_RRVALUESLASTCALCULATED, 
+                        src:OBJ_RSTATE::varchar AS OBJ_RSTATE, 
+                        src:OBJ_RSTATUS::varchar AS OBJ_RSTATUS, 
+                        src:OBJ_SAFETY::varchar AS OBJ_SAFETY, 
+                        src:OBJ_SAFETYREVIEWED::datetime AS OBJ_SAFETYREVIEWED, 
+                        src:OBJ_SAFETYREVIEWEDBY::varchar AS OBJ_SAFETYREVIEWEDBY, 
+                        src:OBJ_SAFETYREVIEWEDNAME::varchar AS OBJ_SAFETYREVIEWEDNAME, 
+                        src:OBJ_SAFETYREVIEWEDTYPE::varchar AS OBJ_SAFETYREVIEWEDTYPE, 
+                        src:OBJ_SAFETYREVIEWREQUIRED::datetime AS OBJ_SAFETYREVIEWREQUIRED, 
+                        src:OBJ_SCHEMATIC::varchar AS OBJ_SCHEMATIC, 
+                        src:OBJ_SDMPATH::varchar AS OBJ_SDMPATH, 
+                        src:OBJ_SDMPRESENT::varchar AS OBJ_SDMPRESENT, 
+                        src:OBJ_SERIALNO::varchar AS OBJ_SERIALNO, 
+                        src:OBJ_SERVICELIFE::numeric(38, 10) AS OBJ_SERVICELIFE, 
+                        src:OBJ_SERVICELIFEUSAGE::numeric(38, 10) AS OBJ_SERVICELIFEUSAGE, 
+                        src:OBJ_SERVICEPERC::numeric(38, 10) AS OBJ_SERVICEPERC, 
+                        src:OBJ_SET::varchar AS OBJ_SET, 
+                        src:OBJ_SOFTWAREVER::varchar AS OBJ_SOFTWAREVER, 
+                        src:OBJ_SOLDDATE::datetime AS OBJ_SOLDDATE, 
+                        src:OBJ_SOP::varchar AS OBJ_SOP, 
+                        src:OBJ_SOURCECODE::varchar AS OBJ_SOURCECODE, 
+                        src:OBJ_SOURCESYSTEM::varchar AS OBJ_SOURCESYSTEM, 
+                        src:OBJ_SQFOOTAGE::numeric(38, 10) AS OBJ_SQFOOTAGE, 
+                        src:OBJ_STARTBILLINGPERIOD::datetime AS OBJ_STARTBILLINGPERIOD, 
+                        src:OBJ_STATE::varchar AS OBJ_STATE, 
+                        src:OBJ_STATEMENTOFCOND::varchar AS OBJ_STATEMENTOFCOND, 
+                        src:OBJ_STATUS::varchar AS OBJ_STATUS, 
+                        src:OBJ_STORE::varchar AS OBJ_STORE, 
+                        src:OBJ_SYSLEVEL::varchar AS OBJ_SYSLEVEL, 
+                        src:OBJ_TAG::varchar AS OBJ_TAG, 
+                        src:OBJ_TARGETPEAKDEMAND::numeric(38, 10) AS OBJ_TARGETPEAKDEMAND, 
+                        src:OBJ_TARGETPOWERFACTOR::numeric(38, 10) AS OBJ_TARGETPOWERFACTOR, 
+                        src:OBJ_TEMPMONITORED::varchar AS OBJ_TEMPMONITORED, 
+                        src:OBJ_TESTPOINTUOM::varchar AS OBJ_TESTPOINTUOM, 
+                        src:OBJ_TOLERANCE_SIZE::numeric(38, 10) AS OBJ_TOLERANCE_SIZE, 
+                        src:OBJ_TOPOINT::numeric(38, 10) AS OBJ_TOPOINT, 
+                        src:OBJ_TRANSFERDATE::datetime AS OBJ_TRANSFERDATE, 
+                        src:OBJ_UDFCHAR01::varchar AS OBJ_UDFCHAR01, 
+                        src:OBJ_UDFCHAR02::varchar AS OBJ_UDFCHAR02, 
+                        src:OBJ_UDFCHAR03::varchar AS OBJ_UDFCHAR03, 
+                        src:OBJ_UDFCHAR04::varchar AS OBJ_UDFCHAR04, 
+                        src:OBJ_UDFCHAR05::varchar AS OBJ_UDFCHAR05, 
+                        src:OBJ_UDFCHAR06::varchar AS OBJ_UDFCHAR06, 
+                        src:OBJ_UDFCHAR07::varchar AS OBJ_UDFCHAR07, 
+                        src:OBJ_UDFCHAR08::varchar AS OBJ_UDFCHAR08, 
+                        src:OBJ_UDFCHAR09::varchar AS OBJ_UDFCHAR09, 
+                        src:OBJ_UDFCHAR10::varchar AS OBJ_UDFCHAR10, 
+                        src:OBJ_UDFCHAR11::varchar AS OBJ_UDFCHAR11, 
+                        src:OBJ_UDFCHAR12::varchar AS OBJ_UDFCHAR12, 
+                        src:OBJ_UDFCHAR13::varchar AS OBJ_UDFCHAR13, 
+                        src:OBJ_UDFCHAR14::varchar AS OBJ_UDFCHAR14, 
+                        src:OBJ_UDFCHAR15::varchar AS OBJ_UDFCHAR15, 
+                        src:OBJ_UDFCHAR16::varchar AS OBJ_UDFCHAR16, 
+                        src:OBJ_UDFCHAR17::varchar AS OBJ_UDFCHAR17, 
+                        src:OBJ_UDFCHAR18::varchar AS OBJ_UDFCHAR18, 
+                        src:OBJ_UDFCHAR19::varchar AS OBJ_UDFCHAR19, 
+                        src:OBJ_UDFCHAR20::varchar AS OBJ_UDFCHAR20, 
+                        src:OBJ_UDFCHAR21::varchar AS OBJ_UDFCHAR21, 
+                        src:OBJ_UDFCHAR22::varchar AS OBJ_UDFCHAR22, 
+                        src:OBJ_UDFCHAR23::varchar AS OBJ_UDFCHAR23, 
+                        src:OBJ_UDFCHAR24::varchar AS OBJ_UDFCHAR24, 
+                        src:OBJ_UDFCHAR25::varchar AS OBJ_UDFCHAR25, 
+                        src:OBJ_UDFCHAR26::varchar AS OBJ_UDFCHAR26, 
+                        src:OBJ_UDFCHAR27::varchar AS OBJ_UDFCHAR27, 
+                        src:OBJ_UDFCHAR28::varchar AS OBJ_UDFCHAR28, 
+                        src:OBJ_UDFCHAR29::varchar AS OBJ_UDFCHAR29, 
+                        src:OBJ_UDFCHAR30::varchar AS OBJ_UDFCHAR30, 
+                        src:OBJ_UDFCHAR31::varchar AS OBJ_UDFCHAR31, 
+                        src:OBJ_UDFCHAR32::varchar AS OBJ_UDFCHAR32, 
+                        src:OBJ_UDFCHAR33::varchar AS OBJ_UDFCHAR33, 
+                        src:OBJ_UDFCHAR34::varchar AS OBJ_UDFCHAR34, 
+                        src:OBJ_UDFCHAR35::varchar AS OBJ_UDFCHAR35, 
+                        src:OBJ_UDFCHAR36::varchar AS OBJ_UDFCHAR36, 
+                        src:OBJ_UDFCHAR37::varchar AS OBJ_UDFCHAR37, 
+                        src:OBJ_UDFCHAR38::varchar AS OBJ_UDFCHAR38, 
+                        src:OBJ_UDFCHAR39::varchar AS OBJ_UDFCHAR39, 
+                        src:OBJ_UDFCHAR40::varchar AS OBJ_UDFCHAR40, 
+                        src:OBJ_UDFCHAR41::varchar AS OBJ_UDFCHAR41, 
+                        src:OBJ_UDFCHAR42::varchar AS OBJ_UDFCHAR42, 
+                        src:OBJ_UDFCHAR43::varchar AS OBJ_UDFCHAR43, 
+                        src:OBJ_UDFCHAR44::varchar AS OBJ_UDFCHAR44, 
+                        src:OBJ_UDFCHAR45::varchar AS OBJ_UDFCHAR45, 
+                        src:OBJ_UDFCHKBOX01::varchar AS OBJ_UDFCHKBOX01, 
+                        src:OBJ_UDFCHKBOX02::varchar AS OBJ_UDFCHKBOX02, 
+                        src:OBJ_UDFCHKBOX03::varchar AS OBJ_UDFCHKBOX03, 
+                        src:OBJ_UDFCHKBOX04::varchar AS OBJ_UDFCHKBOX04, 
+                        src:OBJ_UDFCHKBOX05::varchar AS OBJ_UDFCHKBOX05, 
+                        src:OBJ_UDFCHKBOX06::varchar AS OBJ_UDFCHKBOX06, 
+                        src:OBJ_UDFCHKBOX07::varchar AS OBJ_UDFCHKBOX07, 
+                        src:OBJ_UDFCHKBOX08::varchar AS OBJ_UDFCHKBOX08, 
+                        src:OBJ_UDFCHKBOX09::varchar AS OBJ_UDFCHKBOX09, 
+                        src:OBJ_UDFCHKBOX10::varchar AS OBJ_UDFCHKBOX10, 
+                        src:OBJ_UDFDATE01::datetime AS OBJ_UDFDATE01, 
+                        src:OBJ_UDFDATE02::datetime AS OBJ_UDFDATE02, 
+                        src:OBJ_UDFDATE03::datetime AS OBJ_UDFDATE03, 
+                        src:OBJ_UDFDATE04::datetime AS OBJ_UDFDATE04, 
+                        src:OBJ_UDFDATE05::datetime AS OBJ_UDFDATE05, 
+                        src:OBJ_UDFDATE06::datetime AS OBJ_UDFDATE06, 
+                        src:OBJ_UDFDATE07::datetime AS OBJ_UDFDATE07, 
+                        src:OBJ_UDFDATE08::datetime AS OBJ_UDFDATE08, 
+                        src:OBJ_UDFDATE09::datetime AS OBJ_UDFDATE09, 
+                        src:OBJ_UDFDATE10::datetime AS OBJ_UDFDATE10, 
+                        src:OBJ_UDFNOTE01::varchar AS OBJ_UDFNOTE01, 
+                        src:OBJ_UDFNOTE02::varchar AS OBJ_UDFNOTE02, 
+                        src:OBJ_UDFNUM01::numeric(38, 10) AS OBJ_UDFNUM01, 
+                        src:OBJ_UDFNUM02::numeric(38, 10) AS OBJ_UDFNUM02, 
+                        src:OBJ_UDFNUM03::numeric(38, 10) AS OBJ_UDFNUM03, 
+                        src:OBJ_UDFNUM04::numeric(38, 10) AS OBJ_UDFNUM04, 
+                        src:OBJ_UDFNUM05::numeric(38, 10) AS OBJ_UDFNUM05, 
+                        src:OBJ_UDFNUM06::numeric(38, 10) AS OBJ_UDFNUM06, 
+                        src:OBJ_UDFNUM07::numeric(38, 10) AS OBJ_UDFNUM07, 
+                        src:OBJ_UDFNUM08::numeric(38, 10) AS OBJ_UDFNUM08, 
+                        src:OBJ_UDFNUM09::numeric(38, 10) AS OBJ_UDFNUM09, 
+                        src:OBJ_UDFNUM10::numeric(38, 10) AS OBJ_UDFNUM10, 
+                        src:OBJ_UMDNSCODE::varchar AS OBJ_UMDNSCODE, 
+                        src:OBJ_UNITTYPE::varchar AS OBJ_UNITTYPE, 
+                        src:OBJ_UPDATECOUNT::numeric(38, 10) AS OBJ_UPDATECOUNT, 
+                        src:OBJ_UPDATED::datetime AS OBJ_UPDATED, 
+                        src:OBJ_UPDATEDBY::varchar AS OBJ_UPDATEDBY, 
+                        src:OBJ_USER::varchar AS OBJ_USER, 
+                        src:OBJ_VALUE::numeric(38, 10) AS OBJ_VALUE, 
+                        src:OBJ_VARIABLE1::varchar AS OBJ_VARIABLE1, 
+                        src:OBJ_VARIABLE2::varchar AS OBJ_VARIABLE2, 
+                        src:OBJ_VARIABLE3::varchar AS OBJ_VARIABLE3, 
+                        src:OBJ_VARIABLE4::varchar AS OBJ_VARIABLE4, 
+                        src:OBJ_VARIABLE5::varchar AS OBJ_VARIABLE5, 
+                        src:OBJ_VARIABLE6::varchar AS OBJ_VARIABLE6, 
+                        src:OBJ_VARIABLERATING1::numeric(38, 10) AS OBJ_VARIABLERATING1, 
+                        src:OBJ_VARIABLERATING2::numeric(38, 10) AS OBJ_VARIABLERATING2, 
+                        src:OBJ_VARIABLERATING3::numeric(38, 10) AS OBJ_VARIABLERATING3, 
+                        src:OBJ_VARIABLERATING4::numeric(38, 10) AS OBJ_VARIABLERATING4, 
+                        src:OBJ_VARIABLERATING5::numeric(38, 10) AS OBJ_VARIABLERATING5, 
+                        src:OBJ_VARIABLERATING6::numeric(38, 10) AS OBJ_VARIABLERATING6, 
+                        src:OBJ_VARIABLERESULT1::numeric(38, 10) AS OBJ_VARIABLERESULT1, 
+                        src:OBJ_VARIABLERESULT2::numeric(38, 10) AS OBJ_VARIABLERESULT2, 
+                        src:OBJ_VARIABLERESULT3::numeric(38, 10) AS OBJ_VARIABLERESULT3, 
+                        src:OBJ_VARIABLERESULT4::numeric(38, 10) AS OBJ_VARIABLERESULT4, 
+                        src:OBJ_VARIABLERESULT5::numeric(38, 10) AS OBJ_VARIABLERESULT5, 
+                        src:OBJ_VARIABLERESULT6::numeric(38, 10) AS OBJ_VARIABLERESULT6, 
+                        src:OBJ_VEHICLE::varchar AS OBJ_VEHICLE, 
+                        src:OBJ_VEHICLERSTATUS::varchar AS OBJ_VEHICLERSTATUS, 
+                        src:OBJ_VEHICLESTATUS::varchar AS OBJ_VEHICLESTATUS, 
+                        src:OBJ_VEHICLETYPE::varchar AS OBJ_VEHICLETYPE, 
+                        src:OBJ_VENDOR::varchar AS OBJ_VENDOR, 
+                        src:OBJ_VIPSTATUS::varchar AS OBJ_VIPSTATUS, 
+                        src:OBJ_WING::varchar AS OBJ_WING, 
+                        src:OBJ_WITHDRAW::datetime AS OBJ_WITHDRAW, 
+                        src:OBJ_WODEPT::varchar AS OBJ_WODEPT, 
+                        src:OBJ_WORKSPACE::varchar AS OBJ_WORKSPACE, 
+                        src:OBJ_XCOORDINATE::numeric(38, 10) AS OBJ_XCOORDINATE, 
+                        src:OBJ_XLOCATION::numeric(38, 10) AS OBJ_XLOCATION, 
+                        src:OBJ_YCOORDINATE::numeric(38, 10) AS OBJ_YCOORDINATE, 
+                        src:OBJ_YEARBUILT::numeric(38, 10) AS OBJ_YEARBUILT, 
+                        src:OBJ_YLOCATION::numeric(38, 10) AS OBJ_YLOCATION, 
+                        src:OBJ_ZCOORDINATE::numeric(38, 10) AS OBJ_ZCOORDINATE, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:OBJ_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:OBJ_CODE,
+                src:OBJ_ORG  ORDER BY 
+            src:OBJ_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5OBJECTS as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_ACD), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_AVAILABLECAPACITY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_BATHCOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_BEDCOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_BILLEVERYPERIOD), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_BLACKSWANCOST), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_CAPACITYRATING), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_COMMISS), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_CONDITIONRATING), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_CONDITIONSCORE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_CONFIGAPPROVED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_CONFIGREQUESTED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_CONFIGREVISION), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_CONFIGSEQLENGTH), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_CORRCONDITIONDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_CORRCONDITIONSCORE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_CORRCONDITIONUSAGE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_COSTOFNEEDEDREPAIRS), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_COUNTRY), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_CREATED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_CRITICALITYSCORE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_DESIREDCAPACITY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_DEVICERANGEFROM), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_DEVICERANGETO), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_DEVICETOLFROM), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_DEVICETOLTO), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_DORMEND), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_DORMSTART), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_EFFLOSSPHASEIMBALANCE1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_EFFLOSSPHASEIMBALANCE2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_EFFLOSSPHASEIMBALANCE3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_EFFLOSSPHASEIMBALANCE4), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_EFFLOSSPHASEIMBALANCE5), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_ELECSUBMETERINTERVAL), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_ELECUSAGETHRESHOLD), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_ENDUSEFULLIFE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_ESTREVENUE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_FACILITYCONDITIONINDEX), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_FAILUREPROBPERCENTAGE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_FLOORAREA), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_FROMPOINT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_GISOBJID), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_GIS_SYNCCOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_GIS_UPDATECOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_GLTRANSFER), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_GUESTPROFILEID), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_INCREMENT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_INSTALLDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_INTERFACE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_INVENTORYVERIFICATIONDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_LASTSTATUSUPDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_LATESTINSTALLDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_LATESTRECEIPTDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_LENGTH), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_LINEARCOSTWEIGHT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_LINEARREFPRECISION), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_LOTOREVIEWED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_LOTOREVIEWREQUIRED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_MINPENALTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_MTBFDAYS), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_MTBFRATING), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_MTTRHRS), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_MTTRRATING), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_MUBF), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_MUBFRATING), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_NUMBEROFFAILURES), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_ORDERLINE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_ORIGCONFIGREV), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_ORIGINALINSTALLDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_ORIGINALRECEIPTDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_OUTPUTRANGEFROM), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_OUTPUTRANGETO), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_PENALTYFACTOR), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_PERFORMANCE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_PERFORMANCELASTUPDATED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_PERMITREVIEWED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_PERMITREVIEWREQUIRED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_PRECISION), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_PROCESSRANGEFROM), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_PROCESSRANGETO), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_PROCESSTOLFROM), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_PROCESSTOLTO), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_PURCHASECOST), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_PURCHASEDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_RECORD), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_RELIABILITYRANKINGREV), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_RELIABILITYRANKINGSCORE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_REPLACEMENTVALUE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_RISKCONSEQUENCECOST), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_RPN), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_RRSURVEYLASTUPDATED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_RRVALUESLASTCALCULATED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_SAFETYREVIEWED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_SAFETYREVIEWREQUIRED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_SERVICELIFE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_SERVICELIFEUSAGE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_SERVICEPERC), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_SOLDDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_SQFOOTAGE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_STARTBILLINGPERIOD), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_TARGETPEAKDEMAND), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_TARGETPOWERFACTOR), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_TOLERANCE_SIZE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_TOPOINT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_TRANSFERDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE01), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE02), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE03), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE04), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE05), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE06), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE07), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE08), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE09), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UDFDATE10), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM01), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM02), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM03), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM04), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM05), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM06), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM07), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM08), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM09), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UDFNUM10), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_UPDATECOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_UPDATED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VALUE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERATING1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERATING2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERATING3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERATING4), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERATING5), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERATING6), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERESULT1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERESULT2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERESULT3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERESULT4), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERESULT5), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_VARIABLERESULT6), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_WITHDRAW), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_XCOORDINATE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_XLOCATION), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_YCOORDINATE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_YEARBUILT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_YLOCATION), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OBJ_ZCOORDINATE), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OBJ_LASTSAVED), '1900-01-01')) is not null

@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_BILLING_CLASS(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            BUSINESSFLAG varchar, 
+            CODE varchar, 
+            DELETED boolean, 
+            DELINQUENTDATEDAYS integer, 
+            DELINQUENTDATEFORMULAKEY integer, 
+            DESCRIPT varchar, 
+            DUEDATEDAYS integer, 
+            DUEDATEFORMULAKEY integer, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            SURETYBONDFLAG varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

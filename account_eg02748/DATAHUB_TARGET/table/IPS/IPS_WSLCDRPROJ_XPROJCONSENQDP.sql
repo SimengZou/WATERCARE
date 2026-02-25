@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCDRPROJ_XPROJCONSENQDP(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPROJAPPLDTLKEY integer, 
+            DELETED boolean, 
+            ESTNORESHH integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            NEIGHBOURINGDEVS varchar, 
+            PRIORDEVCORR varchar, 
+            TOTALDEVAREAHA numeric(38, 10), 
+            VARIATION_ID integer, 
+            WASTEWATERCOMMENTS varchar, 
+            WATERSUPPLYCOMMENTS varchar, 
+            XPROJCONSENQDPKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

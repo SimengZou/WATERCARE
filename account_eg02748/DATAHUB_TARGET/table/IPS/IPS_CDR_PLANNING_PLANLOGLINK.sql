@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_PLANNING_PLANLOGLINK(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ALLOWCOMMENTS varchar, 
+            APPLICATIONTYPE integer, 
+            DELETED boolean, 
+            ENABLED varchar, 
+            ISINCUSTOMERDETAILS varchar, 
+            ISINMYPROJECTS varchar, 
+            ISINPUBLICDETAILS varchar, 
+            LINKTEXT varchar, 
+            LOGLINKKEY integer, 
+            LOGTYPECODE varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            STATUSCODE varchar, 
+            TABORDER integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLASSETS_ASSLOCDELETED(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ADDRKEY integer, 
+            ASSLOCDELETEDKEY integer, 
+            ASSLOCKEY integer, 
+            COMPKEY integer, 
+            DELETED boolean, 
+            INSTDT datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            ORIGADDBY varchar, 
+            ORIGADDDTTM datetime, 
+            ORIGMODBY varchar, 
+            ORIGMODDTTM datetime, 
+            POSITION integer, 
+            REMDT datetime, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5PMPLANSESSION(
+            PPS_DUEDATE datetime, 
+            PPS_DUEDAYOFWEEK numeric(38, 10), 
+            PPS_DUEWEEKOFMONTH varchar, 
+            PPS_IGNOREFREQWARNING varchar, 
+            PPS_IGNORERANGEWARNING varchar, 
+            PPS_LASTSAVED datetime, 
+            PPS_LOCKED varchar, 
+            PPS_NESTINGREF varchar, 
+            PPS_PK numeric(38, 10), 
+            PPS_PMREVISION numeric(38, 10), 
+            PPS_PPOPK numeric(38, 10), 
+            PPS_SESSIONID numeric(38, 10), 
+            PPS_UPDATECOUNT numeric(38, 10), 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

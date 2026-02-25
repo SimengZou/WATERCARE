@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_CDR_PROJECT_PROJSTATUSLOG(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPROJKEY integer, 
+            APPROJPROCESSSTATEKEY integer, 
+            APPROJSTATLOGKEY integer, 
+            CMPTRGEN varchar, 
+            DATALAKE_DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PROJAPPLICATIONSTATUS varchar, 
+            STAT varchar, 
+            STATUSBY varchar, 
+            STATUSDTTM datetime, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

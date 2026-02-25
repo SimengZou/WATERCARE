@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_RESOURCES_PAYTYPE(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            BNFTMULT numeric(38, 10), 
+            CODE varchar, 
+            DELETED boolean, 
+            DESCRIPT varchar, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            HRLYADJ numeric(38, 10), 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            RATEADD numeric(38, 10), 
+            RATEMULT numeric(38, 10), 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCDRBUILD_XBUILDDPWORKOVER(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APBLDGAPPLDTLKEY integer, 
+            CT varchar, 
+            DATALAKE_DELETED boolean, 
+            DP varchar, 
+            FINALCCTV varchar, 
+            FINALLOGSHEET varchar, 
+            INITIALCCTV varchar, 
+            INITIALLOGSHEET varchar, 
+            LOT varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PROPOSEDWORKDESC varchar, 
+            VARIATION_ID integer, 
+            XBUILDDPWORKOVERKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

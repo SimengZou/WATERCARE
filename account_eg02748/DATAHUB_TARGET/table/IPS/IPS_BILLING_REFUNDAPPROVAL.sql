@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_BILLING_REFUNDAPPROVAL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPROVALBY varchar, 
+            APPROVALCOMMENTS integer, 
+            APPROVALDTTM datetime, 
+            APPROVALLEVELKEY integer, 
+            APPROVALSTATUS varchar, 
+            DELETED boolean, 
+            DISPLAYEDFLAG varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            REFUNDDETAILAPPROVALKEY integer, 
+            REFUNDKEY integer, 
+            SUBMISSIONCOMMENTS integer, 
+            SUBMISSIONDTTM datetime, 
+            SUBMITTEDBY varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

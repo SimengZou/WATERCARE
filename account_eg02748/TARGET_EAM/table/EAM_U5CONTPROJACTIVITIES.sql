@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_U5CONTPROJACTIVITIES(
+            CREATED datetime, 
+            CREATEDBY varchar, 
+            CSA_ACTIVITY varchar, 
+            CSA_CONTRACT varchar, 
+            CSA_CONTRACTCODE varchar, 
+            CSA_CONTRACTOR varchar, 
+            CSA_ORG varchar, 
+            CSA_PROJECT varchar, 
+            CSA_SCHEDULEITEM varchar, 
+            CSA_SUPPLIER varchar, 
+            LASTSAVED datetime, 
+            UPDATECOUNT numeric(38, 10), 
+            UPDATED datetime, 
+            UPDATEDBY varchar, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

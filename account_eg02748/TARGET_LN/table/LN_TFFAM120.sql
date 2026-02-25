@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TFFAM120(
+            aext varchar, 
+            anbr varchar, 
+            anbr_aext_ref_compnr integer, 
+            comp integer, 
+            compnr integer, 
+            deleted boolean, 
+            dkey integer, 
+            dqty integer, 
+            lkey integer, 
+            memo object, 
+            sequencenumber integer, 
+            srce integer, 
+            srce_kw varchar, 
+            timestamp datetime, 
+            trsc varchar, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

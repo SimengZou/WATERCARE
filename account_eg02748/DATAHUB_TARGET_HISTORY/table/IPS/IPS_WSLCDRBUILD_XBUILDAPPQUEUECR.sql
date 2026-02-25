@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLCDRBUILD_XBUILDAPPQUEUECR(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ALLOCATED varchar, 
+            APBLDGKEY integer, 
+            APNO varchar, 
+            APTYPE varchar, 
+            DATALAKE_DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PARENTAPNO varchar, 
+            PARENTAPPLICATIONKEY integer, 
+            PARENTAPTYPE varchar, 
+            POSTCODE varchar, 
+            VARIATION_ID integer, 
+            XBUILDAPPQUEUECRKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

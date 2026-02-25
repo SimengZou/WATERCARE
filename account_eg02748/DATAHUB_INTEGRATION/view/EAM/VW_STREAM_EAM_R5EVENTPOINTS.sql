@@ -1,0 +1,301 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5EVENTPOINTS AS SELECT
+                        src:EPO_ASPECT::varchar AS EPO_ASPECT, 
+                        src:EPO_ASSESSEDSLOPE::numeric(38, 10) AS EPO_ASSESSEDSLOPE, 
+                        src:EPO_AVGSLOPE::numeric(38, 10) AS EPO_AVGSLOPE, 
+                        src:EPO_CLASS::varchar AS EPO_CLASS, 
+                        src:EPO_CLASS_ORG::varchar AS EPO_CLASS_ORG, 
+                        src:EPO_CODE::varchar AS EPO_CODE, 
+                        src:EPO_COMMENT::varchar AS EPO_COMMENT, 
+                        src:EPO_COMPLETED::varchar AS EPO_COMPLETED, 
+                        src:EPO_CONFRATING::varchar AS EPO_CONFRATING, 
+                        src:EPO_CREATE::varchar AS EPO_CREATE, 
+                        src:EPO_CREATED::datetime AS EPO_CREATED, 
+                        src:EPO_DATE::datetime AS EPO_DATE, 
+                        src:EPO_EVENT::varchar AS EPO_EVENT, 
+                        src:EPO_FINDING::varchar AS EPO_FINDING, 
+                        src:EPO_FROMGEOREF::varchar AS EPO_FROMGEOREF, 
+                        src:EPO_FROMPOINT::numeric(38, 10) AS EPO_FROMPOINT, 
+                        src:EPO_FROMREFDESC::varchar AS EPO_FROMREFDESC, 
+                        src:EPO_FROM_HORIZONTAL_OFFSET::numeric(38, 10) AS EPO_FROM_HORIZONTAL_OFFSET, 
+                        src:EPO_FROM_HORIZONTAL_OFFSETTYPE::varchar AS EPO_FROM_HORIZONTAL_OFFSETTYPE, 
+                        src:EPO_FROM_HORIZONTAL_OFFSETUOM::varchar AS EPO_FROM_HORIZONTAL_OFFSETUOM, 
+                        src:EPO_FROM_LATITUDE::numeric(38, 10) AS EPO_FROM_LATITUDE, 
+                        src:EPO_FROM_LONGITUDE::numeric(38, 10) AS EPO_FROM_LONGITUDE, 
+                        src:EPO_FROM_OFFSET::numeric(38, 10) AS EPO_FROM_OFFSET, 
+                        src:EPO_FROM_OFFSET_DIRECTION::varchar AS EPO_FROM_OFFSET_DIRECTION, 
+                        src:EPO_FROM_OFFSET_PERCENTAGE::numeric(38, 10) AS EPO_FROM_OFFSET_PERCENTAGE, 
+                        src:EPO_FROM_REFERENCE::numeric(38, 10) AS EPO_FROM_REFERENCE, 
+                        src:EPO_FROM_RELATIONSHIP_TYPE::varchar AS EPO_FROM_RELATIONSHIP_TYPE, 
+                        src:EPO_FROM_VERTICAL_OFFSET::numeric(38, 10) AS EPO_FROM_VERTICAL_OFFSET, 
+                        src:EPO_FROM_VERTICAL_OFFSETTYPE::varchar AS EPO_FROM_VERTICAL_OFFSETTYPE, 
+                        src:EPO_FROM_VERTICAL_OFFSETUOM::varchar AS EPO_FROM_VERTICAL_OFFSETUOM, 
+                        src:EPO_FROM_XCOORDINATE::numeric(38, 10) AS EPO_FROM_XCOORDINATE, 
+                        src:EPO_FROM_YCOORDINATE::numeric(38, 10) AS EPO_FROM_YCOORDINATE, 
+                        src:EPO_INSPECTOR::varchar AS EPO_INSPECTOR, 
+                        src:EPO_JOB::varchar AS EPO_JOB, 
+                        src:EPO_LASTSAVED::datetime AS EPO_LASTSAVED, 
+                        src:EPO_LASTSLOPE::numeric(38, 10) AS EPO_LASTSLOPE, 
+                        src:EPO_LINE::numeric(38, 10) AS EPO_LINE, 
+                        src:EPO_LOCATION::varchar AS EPO_LOCATION, 
+                        src:EPO_MAX::numeric(38, 10) AS EPO_MAX, 
+                        src:EPO_MAXDATE::datetime AS EPO_MAXDATE, 
+                        src:EPO_MAXPPM::varchar AS EPO_MAXPPM, 
+                        src:EPO_MAXSTWO::varchar AS EPO_MAXSTWO, 
+                        src:EPO_MAXTOL::numeric(38, 10) AS EPO_MAXTOL, 
+                        src:EPO_MAXTOLDATE::datetime AS EPO_MAXTOLDATE, 
+                        src:EPO_METHOD::varchar AS EPO_METHOD, 
+                        src:EPO_MIN::numeric(38, 10) AS EPO_MIN, 
+                        src:EPO_MINDATE::datetime AS EPO_MINDATE, 
+                        src:EPO_MINPPM::varchar AS EPO_MINPPM, 
+                        src:EPO_MINSTWO::varchar AS EPO_MINSTWO, 
+                        src:EPO_MINTOL::numeric(38, 10) AS EPO_MINTOL, 
+                        src:EPO_MINTOLDATE::datetime AS EPO_MINTOLDATE, 
+                        src:EPO_NIDATEMAXCRIT::datetime AS EPO_NIDATEMAXCRIT, 
+                        src:EPO_NIDATEMAXTOL::datetime AS EPO_NIDATEMAXTOL, 
+                        src:EPO_NIDATEMINCRIT::datetime AS EPO_NIDATEMINCRIT, 
+                        src:EPO_NIDATEMINTOL::datetime AS EPO_NIDATEMINTOL, 
+                        src:EPO_OBJECT::varchar AS EPO_OBJECT, 
+                        src:EPO_OBJECT_ORG::varchar AS EPO_OBJECT_ORG, 
+                        src:EPO_OBRTYPE::varchar AS EPO_OBRTYPE, 
+                        src:EPO_OBTYPE::varchar AS EPO_OBTYPE, 
+                        src:EPO_ORIGEVENT::varchar AS EPO_ORIGEVENT, 
+                        src:EPO_PARENT::varchar AS EPO_PARENT, 
+                        src:EPO_POINT::varchar AS EPO_POINT, 
+                        src:EPO_POINTTYPE::varchar AS EPO_POINTTYPE, 
+                        src:EPO_PROCESSED::varchar AS EPO_PROCESSED, 
+                        src:EPO_RESULT::varchar AS EPO_RESULT, 
+                        src:EPO_RISK::varchar AS EPO_RISK, 
+                        src:EPO_RRESULT::varchar AS EPO_RRESULT, 
+                        src:EPO_STWO::varchar AS EPO_STWO, 
+                        src:EPO_TOGEOREF::varchar AS EPO_TOGEOREF, 
+                        src:EPO_TOPOINT::numeric(38, 10) AS EPO_TOPOINT, 
+                        src:EPO_TOREFDESC::varchar AS EPO_TOREFDESC, 
+                        src:EPO_TO_HORIZONTAL_OFFSET::numeric(38, 10) AS EPO_TO_HORIZONTAL_OFFSET, 
+                        src:EPO_TO_HORIZONTAL_OFFSETTYPE::varchar AS EPO_TO_HORIZONTAL_OFFSETTYPE, 
+                        src:EPO_TO_HORIZONTAL_OFFSETUOM::varchar AS EPO_TO_HORIZONTAL_OFFSETUOM, 
+                        src:EPO_TO_LATITUDE::numeric(38, 10) AS EPO_TO_LATITUDE, 
+                        src:EPO_TO_LONGITUDE::numeric(38, 10) AS EPO_TO_LONGITUDE, 
+                        src:EPO_TO_OFFSET::numeric(38, 10) AS EPO_TO_OFFSET, 
+                        src:EPO_TO_OFFSET_DIRECTION::varchar AS EPO_TO_OFFSET_DIRECTION, 
+                        src:EPO_TO_OFFSET_PERCENTAGE::numeric(38, 10) AS EPO_TO_OFFSET_PERCENTAGE, 
+                        src:EPO_TO_REFERENCE::numeric(38, 10) AS EPO_TO_REFERENCE, 
+                        src:EPO_TO_RELATIONSHIP_TYPE::varchar AS EPO_TO_RELATIONSHIP_TYPE, 
+                        src:EPO_TO_VERTICAL_OFFSET::numeric(38, 10) AS EPO_TO_VERTICAL_OFFSET, 
+                        src:EPO_TO_VERTICAL_OFFSETTYPE::varchar AS EPO_TO_VERTICAL_OFFSETTYPE, 
+                        src:EPO_TO_VERTICAL_OFFSETUOM::varchar AS EPO_TO_VERTICAL_OFFSETUOM, 
+                        src:EPO_TO_XCOORDINATE::numeric(38, 10) AS EPO_TO_XCOORDINATE, 
+                        src:EPO_TO_YCOORDINATE::numeric(38, 10) AS EPO_TO_YCOORDINATE, 
+                        src:EPO_TYPE::varchar AS EPO_TYPE, 
+                        src:EPO_UOM::varchar AS EPO_UOM, 
+                        src:EPO_UPDATECOUNT::numeric(38, 10) AS EPO_UPDATECOUNT, 
+                        src:EPO_UPDATED::datetime AS EPO_UPDATED, 
+                        src:EPO_VALUE::numeric(38, 10) AS EPO_VALUE, 
+                        src:EPO_VARCHAR1::varchar AS EPO_VARCHAR1, 
+                        src:EPO_VARCHAR10::varchar AS EPO_VARCHAR10, 
+                        src:EPO_VARCHAR11::varchar AS EPO_VARCHAR11, 
+                        src:EPO_VARCHAR12::varchar AS EPO_VARCHAR12, 
+                        src:EPO_VARCHAR13::varchar AS EPO_VARCHAR13, 
+                        src:EPO_VARCHAR14::varchar AS EPO_VARCHAR14, 
+                        src:EPO_VARCHAR15::varchar AS EPO_VARCHAR15, 
+                        src:EPO_VARCHAR16::varchar AS EPO_VARCHAR16, 
+                        src:EPO_VARCHAR17::varchar AS EPO_VARCHAR17, 
+                        src:EPO_VARCHAR18::varchar AS EPO_VARCHAR18, 
+                        src:EPO_VARCHAR19::varchar AS EPO_VARCHAR19, 
+                        src:EPO_VARCHAR2::varchar AS EPO_VARCHAR2, 
+                        src:EPO_VARCHAR20::varchar AS EPO_VARCHAR20, 
+                        src:EPO_VARCHAR21::varchar AS EPO_VARCHAR21, 
+                        src:EPO_VARCHAR22::varchar AS EPO_VARCHAR22, 
+                        src:EPO_VARCHAR23::varchar AS EPO_VARCHAR23, 
+                        src:EPO_VARCHAR24::varchar AS EPO_VARCHAR24, 
+                        src:EPO_VARCHAR25::varchar AS EPO_VARCHAR25, 
+                        src:EPO_VARCHAR26::varchar AS EPO_VARCHAR26, 
+                        src:EPO_VARCHAR27::varchar AS EPO_VARCHAR27, 
+                        src:EPO_VARCHAR28::varchar AS EPO_VARCHAR28, 
+                        src:EPO_VARCHAR29::varchar AS EPO_VARCHAR29, 
+                        src:EPO_VARCHAR3::varchar AS EPO_VARCHAR3, 
+                        src:EPO_VARCHAR30::varchar AS EPO_VARCHAR30, 
+                        src:EPO_VARCHAR31::varchar AS EPO_VARCHAR31, 
+                        src:EPO_VARCHAR32::varchar AS EPO_VARCHAR32, 
+                        src:EPO_VARCHAR33::varchar AS EPO_VARCHAR33, 
+                        src:EPO_VARCHAR34::varchar AS EPO_VARCHAR34, 
+                        src:EPO_VARCHAR35::varchar AS EPO_VARCHAR35, 
+                        src:EPO_VARCHAR4::varchar AS EPO_VARCHAR4, 
+                        src:EPO_VARCHAR5::varchar AS EPO_VARCHAR5, 
+                        src:EPO_VARCHAR6::varchar AS EPO_VARCHAR6, 
+                        src:EPO_VARCHAR7::varchar AS EPO_VARCHAR7, 
+                        src:EPO_VARCHAR8::varchar AS EPO_VARCHAR8, 
+                        src:EPO_VARCHAR9::varchar AS EPO_VARCHAR9, 
+                        src:EPO_VARDATE1::datetime AS EPO_VARDATE1, 
+                        src:EPO_VARDATE10::datetime AS EPO_VARDATE10, 
+                        src:EPO_VARDATE11::datetime AS EPO_VARDATE11, 
+                        src:EPO_VARDATE12::datetime AS EPO_VARDATE12, 
+                        src:EPO_VARDATE13::datetime AS EPO_VARDATE13, 
+                        src:EPO_VARDATE14::datetime AS EPO_VARDATE14, 
+                        src:EPO_VARDATE15::datetime AS EPO_VARDATE15, 
+                        src:EPO_VARDATE2::datetime AS EPO_VARDATE2, 
+                        src:EPO_VARDATE3::datetime AS EPO_VARDATE3, 
+                        src:EPO_VARDATE4::datetime AS EPO_VARDATE4, 
+                        src:EPO_VARDATE5::datetime AS EPO_VARDATE5, 
+                        src:EPO_VARDATE6::datetime AS EPO_VARDATE6, 
+                        src:EPO_VARDATE7::datetime AS EPO_VARDATE7, 
+                        src:EPO_VARDATE8::datetime AS EPO_VARDATE8, 
+                        src:EPO_VARDATE9::datetime AS EPO_VARDATE9, 
+                        src:EPO_VARNUM1::numeric(38, 10) AS EPO_VARNUM1, 
+                        src:EPO_VARNUM10::numeric(38, 10) AS EPO_VARNUM10, 
+                        src:EPO_VARNUM11::numeric(38, 10) AS EPO_VARNUM11, 
+                        src:EPO_VARNUM12::numeric(38, 10) AS EPO_VARNUM12, 
+                        src:EPO_VARNUM13::numeric(38, 10) AS EPO_VARNUM13, 
+                        src:EPO_VARNUM14::numeric(38, 10) AS EPO_VARNUM14, 
+                        src:EPO_VARNUM15::numeric(38, 10) AS EPO_VARNUM15, 
+                        src:EPO_VARNUM16::numeric(38, 10) AS EPO_VARNUM16, 
+                        src:EPO_VARNUM17::numeric(38, 10) AS EPO_VARNUM17, 
+                        src:EPO_VARNUM18::numeric(38, 10) AS EPO_VARNUM18, 
+                        src:EPO_VARNUM19::numeric(38, 10) AS EPO_VARNUM19, 
+                        src:EPO_VARNUM2::numeric(38, 10) AS EPO_VARNUM2, 
+                        src:EPO_VARNUM20::numeric(38, 10) AS EPO_VARNUM20, 
+                        src:EPO_VARNUM21::numeric(38, 10) AS EPO_VARNUM21, 
+                        src:EPO_VARNUM22::numeric(38, 10) AS EPO_VARNUM22, 
+                        src:EPO_VARNUM23::numeric(38, 10) AS EPO_VARNUM23, 
+                        src:EPO_VARNUM24::numeric(38, 10) AS EPO_VARNUM24, 
+                        src:EPO_VARNUM25::numeric(38, 10) AS EPO_VARNUM25, 
+                        src:EPO_VARNUM26::numeric(38, 10) AS EPO_VARNUM26, 
+                        src:EPO_VARNUM27::numeric(38, 10) AS EPO_VARNUM27, 
+                        src:EPO_VARNUM28::numeric(38, 10) AS EPO_VARNUM28, 
+                        src:EPO_VARNUM29::numeric(38, 10) AS EPO_VARNUM29, 
+                        src:EPO_VARNUM3::numeric(38, 10) AS EPO_VARNUM3, 
+                        src:EPO_VARNUM30::numeric(38, 10) AS EPO_VARNUM30, 
+                        src:EPO_VARNUM31::numeric(38, 10) AS EPO_VARNUM31, 
+                        src:EPO_VARNUM32::numeric(38, 10) AS EPO_VARNUM32, 
+                        src:EPO_VARNUM33::numeric(38, 10) AS EPO_VARNUM33, 
+                        src:EPO_VARNUM34::numeric(38, 10) AS EPO_VARNUM34, 
+                        src:EPO_VARNUM35::numeric(38, 10) AS EPO_VARNUM35, 
+                        src:EPO_VARNUM4::numeric(38, 10) AS EPO_VARNUM4, 
+                        src:EPO_VARNUM5::numeric(38, 10) AS EPO_VARNUM5, 
+                        src:EPO_VARNUM6::numeric(38, 10) AS EPO_VARNUM6, 
+                        src:EPO_VARNUM7::numeric(38, 10) AS EPO_VARNUM7, 
+                        src:EPO_VARNUM8::numeric(38, 10) AS EPO_VARNUM8, 
+                        src:EPO_VARNUM9::numeric(38, 10) AS EPO_VARNUM9, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:EPO_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:EPO_CODE  ORDER BY 
+            src:EPO_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5EVENTPOINTS as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_ASSESSEDSLOPE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_AVGSLOPE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_CREATED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_DATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROMPOINT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_HORIZONTAL_OFFSET), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_LATITUDE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_LONGITUDE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_OFFSET), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_OFFSET_PERCENTAGE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_REFERENCE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_VERTICAL_OFFSET), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_XCOORDINATE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_FROM_YCOORDINATE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_LASTSLOPE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_LINE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_MAX), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_MAXDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_MAXTOL), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_MAXTOLDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_MIN), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_MINDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_MINTOL), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_MINTOLDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_NIDATEMAXCRIT), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_NIDATEMAXTOL), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_NIDATEMINCRIT), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_NIDATEMINTOL), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TOPOINT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_HORIZONTAL_OFFSET), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_LATITUDE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_LONGITUDE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_OFFSET), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_OFFSET_PERCENTAGE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_REFERENCE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_VERTICAL_OFFSET), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_XCOORDINATE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_TO_YCOORDINATE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_UPDATECOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_UPDATED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VALUE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE1), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE10), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE11), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE12), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE13), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE14), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE15), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE2), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE3), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE4), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE5), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE6), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE7), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE8), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_VARDATE9), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM10), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM11), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM12), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM13), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM14), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM15), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM16), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM17), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM18), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM19), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM20), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM21), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM22), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM23), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM24), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM25), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM26), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM27), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM28), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM29), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM30), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM31), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM32), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM33), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM34), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM35), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM4), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM5), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM6), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM7), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM8), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:EPO_VARNUM9), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:EPO_LASTSAVED), '1900-01-01')) is not null

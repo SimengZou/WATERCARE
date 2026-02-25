@@ -1,0 +1,11 @@
+{
+    "env":"QA",
+    "env_lower":"qa",
+    "env_s3":"qa",
+    "sns_topic_notification":"non-prod",
+    "infors3bucket":"watercareqa",
+    "smportal":"wsl-apsy-qa-sminf-portal-daily-s3",
+    "smcurated":"wsl-apsy-qa-sminf-cur-s3",
+    "smcuratedsns":"ap-southeast-2:302505748233"
+    
+}

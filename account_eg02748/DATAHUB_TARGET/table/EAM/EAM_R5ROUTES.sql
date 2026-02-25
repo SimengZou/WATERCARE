@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5ROUTES(
+                "ROU_CATEGORY" varchar, 
+                "ROU_CLASS" varchar, 
+                "ROU_CLASS_ORG" varchar, 
+                "ROU_CODE" varchar, 
+                "ROU_DESC" varchar, 
+                "ROU_LASTSAVED" datetime, 
+                "ROU_LINKGISWO" varchar, 
+                "ROU_ORG" varchar, 
+                "ROU_REVISION" numeric(38, 10), 
+                "ROU_REVRSTATUS" varchar, 
+                "ROU_REVSTATUS" varchar, 
+                "ROU_TEMPLATE" varchar, 
+                "ROU_UPDATECOUNT" numeric(38, 10), 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

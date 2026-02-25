@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_R5BINS_DELETED(
+            BIN_CODE varchar, 
+            BIN_CREATED datetime, 
+            BIN_CREATEDBY varchar, 
+            BIN_DESC varchar, 
+            BIN_FORHELDITEMS varchar, 
+            BIN_FORSTOCK varchar, 
+            BIN_LASTSAVED datetime, 
+            BIN_NOTUSED varchar, 
+            BIN_STORE varchar, 
+            BIN_UPDATECOUNT numeric(38, 10), 
+            BIN_UPDATED datetime, 
+            BIN_UPDATEDBY varchar, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

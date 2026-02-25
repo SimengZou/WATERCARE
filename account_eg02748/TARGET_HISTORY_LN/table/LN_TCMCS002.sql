@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_LN.LN_TCMCS002_DELETED(
+            brep integer, 
+            brep_kw varchar, 
+            ccur varchar, 
+            compnr integer, 
+            crnd numeric(38, 17), 
+            deleted boolean, 
+            dsca object, 
+            dscb object, 
+            emuc integer, 
+            emuc_kw varchar, 
+            gtrf numeric(38, 17), 
+            iccc varchar, 
+            sequencenumber integer, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

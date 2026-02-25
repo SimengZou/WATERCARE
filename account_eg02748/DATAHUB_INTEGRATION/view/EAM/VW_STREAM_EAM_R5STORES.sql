@@ -1,0 +1,146 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5STORES AS SELECT
+                        src:STR_AUTOAPPVSTATUS::varchar AS STR_AUTOAPPVSTATUS, 
+                        src:STR_AUTOPOSTATUS::varchar AS STR_AUTOPOSTATUS, 
+                        src:STR_CLASS::varchar AS STR_CLASS, 
+                        src:STR_CLASS_ORG::varchar AS STR_CLASS_ORG, 
+                        src:STR_CODE::varchar AS STR_CODE, 
+                        src:STR_COPY::varchar AS STR_COPY, 
+                        src:STR_CREATED::datetime AS STR_CREATED, 
+                        src:STR_DESC::varchar AS STR_DESC, 
+                        src:STR_ENTERPRISELOCATION::varchar AS STR_ENTERPRISELOCATION, 
+                        src:STR_FACILITY::varchar AS STR_FACILITY, 
+                        src:STR_FRIDAY::varchar AS STR_FRIDAY, 
+                        src:STR_HELDITEMSNONPOTEMPLATE::varchar AS STR_HELDITEMSNONPOTEMPLATE, 
+                        src:STR_HELDITEMSPOTEMPLATE::varchar AS STR_HELDITEMSPOTEMPLATE, 
+                        src:STR_HELDITEMSRECEIPTTEMPLATE::varchar AS STR_HELDITEMSRECEIPTTEMPLATE, 
+                        src:STR_HELDITEMSSTKTRSTEMPLATE::varchar AS STR_HELDITEMSSTKTRSTEMPLATE, 
+                        src:STR_HELDITEMSTOSTKTRSTEMPLATE::varchar AS STR_HELDITEMSTOSTKTRSTEMPLATE, 
+                        src:STR_HELDITEMSTRSTEMPLATE::varchar AS STR_HELDITEMSTRSTEMPLATE, 
+                        src:STR_INTERNALLEADTIME::numeric(38, 10) AS STR_INTERNALLEADTIME, 
+                        src:STR_ISSUETEMPLATE::varchar AS STR_ISSUETEMPLATE, 
+                        src:STR_LASTSAVED::datetime AS STR_LASTSAVED, 
+                        src:STR_LASTSTATUSUPDATE::datetime AS STR_LASTSTATUSUPDATE, 
+                        src:STR_LEADTIME::numeric(38, 10) AS STR_LEADTIME, 
+                        src:STR_LOCATION::varchar AS STR_LOCATION, 
+                        src:STR_LOCATION_ORG::varchar AS STR_LOCATION_ORG, 
+                        src:STR_LTYPE::varchar AS STR_LTYPE, 
+                        src:STR_MONDAY::varchar AS STR_MONDAY, 
+                        src:STR_NONPOTEMPLATE::varchar AS STR_NONPOTEMPLATE, 
+                        src:STR_NOTUSED::varchar AS STR_NOTUSED, 
+                        src:STR_ORG::varchar AS STR_ORG, 
+                        src:STR_PARENT::varchar AS STR_PARENT, 
+                        src:STR_PRICECODE::varchar AS STR_PRICECODE, 
+                        src:STR_PRICETYPE::varchar AS STR_PRICETYPE, 
+                        src:STR_PRINTER::varchar AS STR_PRINTER, 
+                        src:STR_PRINTSERVER::varchar AS STR_PRINTSERVER, 
+                        src:STR_RECEIPTTEMPLATE::varchar AS STR_RECEIPTTEMPLATE, 
+                        src:STR_RESERVEDPARTBUFFER::numeric(38, 10) AS STR_RESERVEDPARTBUFFER, 
+                        src:STR_SATURDAY::varchar AS STR_SATURDAY, 
+                        src:STR_SEGMENTVALUE::varchar AS STR_SEGMENTVALUE, 
+                        src:STR_STRECEIPTTEMPLATE::varchar AS STR_STRECEIPTTEMPLATE, 
+                        src:STR_SUNDAY::varchar AS STR_SUNDAY, 
+                        src:STR_SYSTEM::varchar AS STR_SYSTEM, 
+                        src:STR_SYSTEM_ORG::varchar AS STR_SYSTEM_ORG, 
+                        src:STR_TAX_PARTS::varchar AS STR_TAX_PARTS, 
+                        src:STR_TAX_SERVICES::varchar AS STR_TAX_SERVICES, 
+                        src:STR_THURSDAY::varchar AS STR_THURSDAY, 
+                        src:STR_TUESDAY::varchar AS STR_TUESDAY, 
+                        src:STR_UDFCHAR01::varchar AS STR_UDFCHAR01, 
+                        src:STR_UDFCHAR02::varchar AS STR_UDFCHAR02, 
+                        src:STR_UDFCHAR03::varchar AS STR_UDFCHAR03, 
+                        src:STR_UDFCHAR04::varchar AS STR_UDFCHAR04, 
+                        src:STR_UDFCHAR05::varchar AS STR_UDFCHAR05, 
+                        src:STR_UDFCHAR06::varchar AS STR_UDFCHAR06, 
+                        src:STR_UDFCHAR07::varchar AS STR_UDFCHAR07, 
+                        src:STR_UDFCHAR08::varchar AS STR_UDFCHAR08, 
+                        src:STR_UDFCHAR09::varchar AS STR_UDFCHAR09, 
+                        src:STR_UDFCHAR10::varchar AS STR_UDFCHAR10, 
+                        src:STR_UDFCHAR11::varchar AS STR_UDFCHAR11, 
+                        src:STR_UDFCHAR12::varchar AS STR_UDFCHAR12, 
+                        src:STR_UDFCHAR13::varchar AS STR_UDFCHAR13, 
+                        src:STR_UDFCHAR14::varchar AS STR_UDFCHAR14, 
+                        src:STR_UDFCHAR15::varchar AS STR_UDFCHAR15, 
+                        src:STR_UDFCHAR16::varchar AS STR_UDFCHAR16, 
+                        src:STR_UDFCHAR17::varchar AS STR_UDFCHAR17, 
+                        src:STR_UDFCHAR18::varchar AS STR_UDFCHAR18, 
+                        src:STR_UDFCHAR19::varchar AS STR_UDFCHAR19, 
+                        src:STR_UDFCHAR20::varchar AS STR_UDFCHAR20, 
+                        src:STR_UDFCHAR21::varchar AS STR_UDFCHAR21, 
+                        src:STR_UDFCHAR22::varchar AS STR_UDFCHAR22, 
+                        src:STR_UDFCHAR23::varchar AS STR_UDFCHAR23, 
+                        src:STR_UDFCHAR24::varchar AS STR_UDFCHAR24, 
+                        src:STR_UDFCHAR25::varchar AS STR_UDFCHAR25, 
+                        src:STR_UDFCHAR26::varchar AS STR_UDFCHAR26, 
+                        src:STR_UDFCHAR27::varchar AS STR_UDFCHAR27, 
+                        src:STR_UDFCHAR28::varchar AS STR_UDFCHAR28, 
+                        src:STR_UDFCHAR29::varchar AS STR_UDFCHAR29, 
+                        src:STR_UDFCHAR30::varchar AS STR_UDFCHAR30, 
+                        src:STR_UDFCHKBOX01::varchar AS STR_UDFCHKBOX01, 
+                        src:STR_UDFCHKBOX02::varchar AS STR_UDFCHKBOX02, 
+                        src:STR_UDFCHKBOX03::varchar AS STR_UDFCHKBOX03, 
+                        src:STR_UDFCHKBOX04::varchar AS STR_UDFCHKBOX04, 
+                        src:STR_UDFCHKBOX05::varchar AS STR_UDFCHKBOX05, 
+                        src:STR_UDFDATE01::datetime AS STR_UDFDATE01, 
+                        src:STR_UDFDATE02::datetime AS STR_UDFDATE02, 
+                        src:STR_UDFDATE03::datetime AS STR_UDFDATE03, 
+                        src:STR_UDFDATE04::datetime AS STR_UDFDATE04, 
+                        src:STR_UDFDATE05::datetime AS STR_UDFDATE05, 
+                        src:STR_UDFNUM01::numeric(38, 10) AS STR_UDFNUM01, 
+                        src:STR_UDFNUM02::numeric(38, 10) AS STR_UDFNUM02, 
+                        src:STR_UDFNUM03::numeric(38, 10) AS STR_UDFNUM03, 
+                        src:STR_UDFNUM04::numeric(38, 10) AS STR_UDFNUM04, 
+                        src:STR_UDFNUM05::numeric(38, 10) AS STR_UDFNUM05, 
+                        src:STR_UPDATECOUNT::numeric(38, 10) AS STR_UPDATECOUNT, 
+                        src:STR_UPDATED::datetime AS STR_UPDATED, 
+                        src:STR_WARRANTYTEMPLATE::varchar AS STR_WARRANTYTEMPLATE, 
+                        src:STR_WEDNESDAY::varchar AS STR_WEDNESDAY, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:STR_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:STR_CODE  ORDER BY 
+            src:STR_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5STORES as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_CREATED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_INTERNALLEADTIME), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_LASTSTATUSUPDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_LEADTIME), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_RESERVEDPARTBUFFER), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_UDFDATE01), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_UDFDATE02), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_UDFDATE03), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_UDFDATE04), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_UDFDATE05), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_UDFNUM01), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_UDFNUM02), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_UDFNUM03), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_UDFNUM04), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_UDFNUM05), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STR_UPDATECOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_UPDATED), '1900-01-01')) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STR_LASTSAVED), '1900-01-01')) is not null

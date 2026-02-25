@@ -1,0 +1,28 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.EAM_DELETED_R5JOBPARAM(
+                        JPR_NAME varchar(10),
+                        JPR_LINE int,
+                        JPR_PARAMETER varchar(20),
+                        JPR_RENTITY varchar(4),
+                        JPR_RTYPE varchar(4),
+                        JPR_DATATYPE varchar(2),
+                        JPR_LENGTH numeric(10, 0),
+                        JPR_FORMAT varchar(20),
+                        JPR_DEFAULT varchar(30),
+                        JPR_FIXED varchar(1),
+                        JPR_MANDATORY varchar(1),
+                        JPR_UPPER varchar(1),
+                        JPR_OPTIONS numeric(10, 0),
+                        JPR_REMEMBER varchar(1),
+                        JPR_TEST varchar(24),
+                        JPR_QUERY varchar(8),
+                        JPR_LOVFUNCTION varchar(6),
+                        JPR_PROPERTY varchar(8),
+                        JPR_EWSLOVDEF varchar(200),
+                        JPR_UPDATECOUNT numeric(38, 0),
+                        JPR_LASTSAVED datetime(0)
+                        ,etl_load_datetime timestamp,
+                          etl_load_metadatafilename varchar(255),
+                           ETL_LASTSAVED datetime(0),
+			ETL_DELETED boolean,
+      ETL_IS_DELETED boolean default false
+                    );

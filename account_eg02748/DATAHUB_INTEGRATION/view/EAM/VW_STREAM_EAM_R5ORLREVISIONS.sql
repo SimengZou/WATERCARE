@@ -1,0 +1,200 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5ORLREVISIONS AS SELECT
+                        src:OLR_ACD::numeric(38, 10) AS OLR_ACD, 
+                        src:OLR_ACT::numeric(38, 10) AS OLR_ACT, 
+                        src:OLR_ACTIVE::varchar AS OLR_ACTIVE, 
+                        src:OLR_ALLOWPREPAYMENT::varchar AS OLR_ALLOWPREPAYMENT, 
+                        src:OLR_ATTENTIONTO::varchar AS OLR_ATTENTIONTO, 
+                        src:OLR_BLANKETLINE::numeric(38, 10) AS OLR_BLANKETLINE, 
+                        src:OLR_BLANKETORDER::varchar AS OLR_BLANKETORDER, 
+                        src:OLR_CONTRACT::varchar AS OLR_CONTRACT, 
+                        src:OLR_COSTCODE::varchar AS OLR_COSTCODE, 
+                        src:OLR_CURR::varchar AS OLR_CURR, 
+                        src:OLR_DCKRECVQTY::numeric(38, 10) AS OLR_DCKRECVQTY, 
+                        src:OLR_DELADDRESS::varchar AS OLR_DELADDRESS, 
+                        src:OLR_DISCPERC::numeric(38, 10) AS OLR_DISCPERC, 
+                        src:OLR_DUE::datetime AS OLR_DUE, 
+                        src:OLR_EVENT::varchar AS OLR_EVENT, 
+                        src:OLR_EXCH::numeric(38, 10) AS OLR_EXCH, 
+                        src:OLR_EXCHFIX::varchar AS OLR_EXCHFIX, 
+                        src:OLR_EXCHFROMDUAL::numeric(38, 10) AS OLR_EXCHFROMDUAL, 
+                        src:OLR_EXCHTODUAL::numeric(38, 10) AS OLR_EXCHTODUAL, 
+                        src:OLR_INSPECT::varchar AS OLR_INSPECT, 
+                        src:OLR_INTERFACE::datetime AS OLR_INTERFACE, 
+                        src:OLR_INVQTY::numeric(38, 10) AS OLR_INVQTY, 
+                        src:OLR_INVVALUE::numeric(38, 10) AS OLR_INVVALUE, 
+                        src:OLR_IPCURRPRICE::varchar AS OLR_IPCURRPRICE, 
+                        src:OLR_IPERROR::numeric(38, 10) AS OLR_IPERROR, 
+                        src:OLR_IPERRORMESSAGE::varchar AS OLR_IPERRORMESSAGE, 
+                        src:OLR_IPTRANSMITTED::varchar AS OLR_IPTRANSMITTED, 
+                        src:OLR_LASTSAVED::datetime AS OLR_LASTSAVED, 
+                        src:OLR_LONGDESCRIPTION::varchar AS OLR_LONGDESCRIPTION, 
+                        src:OLR_MANUFACTPART::varchar AS OLR_MANUFACTPART, 
+                        src:OLR_MANUFACTURER::varchar AS OLR_MANUFACTURER, 
+                        src:OLR_MULTIPLY::numeric(38, 10) AS OLR_MULTIPLY, 
+                        src:OLR_NOTE::varchar AS OLR_NOTE, 
+                        src:OLR_ORDER::varchar AS OLR_ORDER, 
+                        src:OLR_ORDER_ORG::varchar AS OLR_ORDER_ORG, 
+                        src:OLR_ORDLINE::numeric(38, 10) AS OLR_ORDLINE, 
+                        src:OLR_ORDQTY::numeric(38, 10) AS OLR_ORDQTY, 
+                        src:OLR_PACKAGETRACKINGNUMBER::varchar AS OLR_PACKAGETRACKINGNUMBER, 
+                        src:OLR_PART::varchar AS OLR_PART, 
+                        src:OLR_PART_ORG::varchar AS OLR_PART_ORG, 
+                        src:OLR_PAYMENTNUMBER::numeric(38, 10) AS OLR_PAYMENTNUMBER, 
+                        src:OLR_PRICE::numeric(38, 10) AS OLR_PRICE, 
+                        src:OLR_PROJBUD::varchar AS OLR_PROJBUD, 
+                        src:OLR_PROJECT::varchar AS OLR_PROJECT, 
+                        src:OLR_PURUOM::varchar AS OLR_PURUOM, 
+                        src:OLR_QUOTID::varchar AS OLR_QUOTID, 
+                        src:OLR_QUOTLINE::numeric(38, 10) AS OLR_QUOTLINE, 
+                        src:OLR_RECVQTY::numeric(38, 10) AS OLR_RECVQTY, 
+                        src:OLR_RECVTASKQTY::numeric(38, 10) AS OLR_RECVTASKQTY, 
+                        src:OLR_RECVVALUE::numeric(38, 10) AS OLR_RECVVALUE, 
+                        src:OLR_REF::varchar AS OLR_REF, 
+                        src:OLR_RELATEDWO::varchar AS OLR_RELATEDWO, 
+                        src:OLR_REQ::varchar AS OLR_REQ, 
+                        src:OLR_REQLINE::numeric(38, 10) AS OLR_REQLINE, 
+                        src:OLR_REVISED::datetime AS OLR_REVISED, 
+                        src:OLR_REVISEDBY::varchar AS OLR_REVISEDBY, 
+                        src:OLR_REVISEDLINE::varchar AS OLR_REVISEDLINE, 
+                        src:OLR_REVISION::numeric(38, 10) AS OLR_REVISION, 
+                        src:OLR_RSTATUS::varchar AS OLR_RSTATUS, 
+                        src:OLR_RTYPE::varchar AS OLR_RTYPE, 
+                        src:OLR_SCRAPQTY::numeric(38, 10) AS OLR_SCRAPQTY, 
+                        src:OLR_SOURCECODE::varchar AS OLR_SOURCECODE, 
+                        src:OLR_SOURCESYSTEM::varchar AS OLR_SOURCESYSTEM, 
+                        src:OLR_STATUS::varchar AS OLR_STATUS, 
+                        src:OLR_STORE::varchar AS OLR_STORE, 
+                        src:OLR_SUPPLIER::varchar AS OLR_SUPPLIER, 
+                        src:OLR_SUPPLIER_ORG::varchar AS OLR_SUPPLIER_ORG, 
+                        src:OLR_TASK::varchar AS OLR_TASK, 
+                        src:OLR_TASKQTY::numeric(38, 10) AS OLR_TASKQTY, 
+                        src:OLR_TASKREV::numeric(38, 10) AS OLR_TASKREV, 
+                        src:OLR_TAX::varchar AS OLR_TAX, 
+                        src:OLR_TAX2::varchar AS OLR_TAX2, 
+                        src:OLR_TOTEXTRA::numeric(38, 10) AS OLR_TOTEXTRA, 
+                        src:OLR_TOTTAXAMOUNT::numeric(38, 10) AS OLR_TOTTAXAMOUNT, 
+                        src:OLR_TRADE::varchar AS OLR_TRADE, 
+                        src:OLR_TYPE::varchar AS OLR_TYPE, 
+                        src:OLR_UDFCHAR01::varchar AS OLR_UDFCHAR01, 
+                        src:OLR_UDFCHAR02::varchar AS OLR_UDFCHAR02, 
+                        src:OLR_UDFCHAR03::varchar AS OLR_UDFCHAR03, 
+                        src:OLR_UDFCHAR04::varchar AS OLR_UDFCHAR04, 
+                        src:OLR_UDFCHAR05::varchar AS OLR_UDFCHAR05, 
+                        src:OLR_UDFCHAR06::varchar AS OLR_UDFCHAR06, 
+                        src:OLR_UDFCHAR07::varchar AS OLR_UDFCHAR07, 
+                        src:OLR_UDFCHAR08::varchar AS OLR_UDFCHAR08, 
+                        src:OLR_UDFCHAR09::varchar AS OLR_UDFCHAR09, 
+                        src:OLR_UDFCHAR10::varchar AS OLR_UDFCHAR10, 
+                        src:OLR_UDFCHAR11::varchar AS OLR_UDFCHAR11, 
+                        src:OLR_UDFCHAR12::varchar AS OLR_UDFCHAR12, 
+                        src:OLR_UDFCHAR13::varchar AS OLR_UDFCHAR13, 
+                        src:OLR_UDFCHAR14::varchar AS OLR_UDFCHAR14, 
+                        src:OLR_UDFCHAR15::varchar AS OLR_UDFCHAR15, 
+                        src:OLR_UDFCHAR16::varchar AS OLR_UDFCHAR16, 
+                        src:OLR_UDFCHAR17::varchar AS OLR_UDFCHAR17, 
+                        src:OLR_UDFCHAR18::varchar AS OLR_UDFCHAR18, 
+                        src:OLR_UDFCHAR19::varchar AS OLR_UDFCHAR19, 
+                        src:OLR_UDFCHAR20::varchar AS OLR_UDFCHAR20, 
+                        src:OLR_UDFCHAR21::varchar AS OLR_UDFCHAR21, 
+                        src:OLR_UDFCHAR22::varchar AS OLR_UDFCHAR22, 
+                        src:OLR_UDFCHAR23::varchar AS OLR_UDFCHAR23, 
+                        src:OLR_UDFCHAR24::varchar AS OLR_UDFCHAR24, 
+                        src:OLR_UDFCHAR25::varchar AS OLR_UDFCHAR25, 
+                        src:OLR_UDFCHAR26::varchar AS OLR_UDFCHAR26, 
+                        src:OLR_UDFCHAR27::varchar AS OLR_UDFCHAR27, 
+                        src:OLR_UDFCHAR28::varchar AS OLR_UDFCHAR28, 
+                        src:OLR_UDFCHAR29::varchar AS OLR_UDFCHAR29, 
+                        src:OLR_UDFCHAR30::varchar AS OLR_UDFCHAR30, 
+                        src:OLR_UDFCHKBOX01::varchar AS OLR_UDFCHKBOX01, 
+                        src:OLR_UDFCHKBOX02::varchar AS OLR_UDFCHKBOX02, 
+                        src:OLR_UDFCHKBOX03::varchar AS OLR_UDFCHKBOX03, 
+                        src:OLR_UDFCHKBOX04::varchar AS OLR_UDFCHKBOX04, 
+                        src:OLR_UDFCHKBOX05::varchar AS OLR_UDFCHKBOX05, 
+                        src:OLR_UDFDATE01::datetime AS OLR_UDFDATE01, 
+                        src:OLR_UDFDATE02::datetime AS OLR_UDFDATE02, 
+                        src:OLR_UDFDATE03::datetime AS OLR_UDFDATE03, 
+                        src:OLR_UDFDATE04::datetime AS OLR_UDFDATE04, 
+                        src:OLR_UDFDATE05::datetime AS OLR_UDFDATE05, 
+                        src:OLR_UDFNUM01::numeric(38, 10) AS OLR_UDFNUM01, 
+                        src:OLR_UDFNUM02::numeric(38, 10) AS OLR_UDFNUM02, 
+                        src:OLR_UDFNUM03::numeric(38, 10) AS OLR_UDFNUM03, 
+                        src:OLR_UDFNUM04::numeric(38, 10) AS OLR_UDFNUM04, 
+                        src:OLR_UDFNUM05::numeric(38, 10) AS OLR_UDFNUM05, 
+                        src:OLR_UPDATECOUNT::numeric(38, 10) AS OLR_UPDATECOUNT, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:OLR_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:OLR_ORDER,
+                src:OLR_ORDER_ORG,
+                src:OLR_ORDLINE,
+                src:OLR_REVISION  ORDER BY 
+            src:OLR_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5ORLREVISIONS as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_ACD), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_ACT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_BLANKETLINE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_DCKRECVQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_DISCPERC), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_DUE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_EXCH), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_EXCHFROMDUAL), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_EXCHTODUAL), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_INTERFACE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_INVQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_INVVALUE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_IPERROR), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_MULTIPLY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_ORDLINE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_ORDQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_PAYMENTNUMBER), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_PRICE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_QUOTLINE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_RECVQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_RECVTASKQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_RECVVALUE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_REQLINE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_REVISED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_REVISION), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_SCRAPQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_TASKQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_TASKREV), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_TOTEXTRA), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_TOTTAXAMOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_UDFDATE01), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_UDFDATE02), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_UDFDATE03), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_UDFDATE04), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_UDFDATE05), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_UDFNUM01), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_UDFNUM02), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_UDFNUM03), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_UDFNUM04), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_UDFNUM05), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:OLR_UPDATECOUNT), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:OLR_LASTSAVED), '1900-01-01')) is not null

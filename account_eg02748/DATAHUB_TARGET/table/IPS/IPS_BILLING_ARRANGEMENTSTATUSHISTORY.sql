@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_BILLING_ARRANGEMENTSTATUSHISTORY(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ARRANGEMENTSTATUSHISTKEY integer, 
+            CHANGEDBY varchar, 
+            CHANGEDDTTM datetime, 
+            CLOSEDFLAG varchar, 
+            DELETED boolean, 
+            HISTORICARRANGEMENTKEY integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            OVERRIDEFLAG varchar, 
+            PAYMENTARRANGEMENTKEY integer, 
+            PREVIOUSSTATUS varchar, 
+            PYMNTARRANGEMENTREVIEWKEY integer, 
+            REASON varchar, 
+            STATUS varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

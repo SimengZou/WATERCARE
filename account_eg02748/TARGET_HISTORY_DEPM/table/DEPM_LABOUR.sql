@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_DEPM.DEPM_LABOUR_SNAPSHOT(
+            "Account" varchar, 
+            Analysis01 varchar, 
+            Analysis02 varchar, 
+            Analysis03 varchar, 
+            Analysis04 varchar, 
+            Analysis05 varchar, 
+            Currency varchar, 
+            LabourEmployeeType varchar, 
+            LabourLineNo varchar, 
+            LabourMeas varchar, 
+            LabourTrxType varchar, 
+            MeasureType varchar, 
+            Period varchar, 
+            Position varchar, 
+            Timestamp datetime, 
+            Value varchar, 
+            Version varchar, 
+            Year varchar, ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

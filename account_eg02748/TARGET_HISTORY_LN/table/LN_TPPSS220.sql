@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_LN.LN_TPPSS220_DELETED(
+            actv_cpla varchar, 
+            basn integer, 
+            bfdt datetime, 
+            bsdt datetime, 
+            cact varchar, 
+            compnr integer, 
+            cprj varchar, 
+            cprj_basn_ref_compnr integer, 
+            cprj_ref_compnr integer, 
+            deleted boolean, 
+            pact varchar, 
+            sequencenumber integer, 
+            tact integer, 
+            tact_kw varchar, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

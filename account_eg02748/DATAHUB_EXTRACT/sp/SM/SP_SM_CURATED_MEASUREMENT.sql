@@ -1,0 +1,144 @@
+CREATE OR REPLACE PROCEDURE DATAHUB_EXTRACT."SP_SM_CURATED_MEASUREMENT"()
+RETURNS VARCHAR(16777216)
+LANGUAGE JAVASCRIPT
+EXECUTE AS CALLER
+AS '
+//  Variables
+
+	var debug = "True";                                 // do we want debug messages?
+	var result = "";                                    // return status of this proc call
+	const process_name = Object.keys(this)[0];          // name of currently executing process
+	var debug_statement = "";                           // debug message statement
+	var number_of_rows_inserted = 0;                             // track number of rows we have inserted
+	var number_of_rows_updated = 0;                             // track number of rows we have updated
+                
+//  Step 1.
+//  Select MAX process ID for this process
+                  
+	var log_sql_command;
+	log_sql_command = "select MAX(process_execution_id) as max_id from datahub_logging.etl_log_ingestion_process ";
+	log_sql_command += "where process_name = ''" + process_name + "''";
+
+	var log_result_set = snowflake.execute({sqlText: log_sql_command});         // execute select from log table
+	log_result_set.next();                                                      // expecting only 1 row as this is a MAX() query
+	var process_execution_id = log_result_set.getColumnValue(1);                // and only 1 return value
+
+	//  Increment MAX process ID to log a new run of this process
+
+	if(process_execution_id === undefined)                                      // test if return value is NULL - first execution of this process
+		{process_execution_id = 1;}
+	else
+		{process_execution_id = process_execution_id + 1;}
+
+	//  log debug message
+	if( debug === "True" ) 
+	{
+		debug_statement = "call datahub_logging.sp_etl_log_ingestion_process_debug(''" + process_name + "'',''Started process, new ID = " + process_execution_id.toString() + "'');";
+		snowflake.execute({sqlText: debug_statement}); 
+	}
+
+//  Step 2.
+//  Start execution - log start
+
+	log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process(''Insert'',''" + process_name + "'',''Running'',''Started process execution.'', " + process_execution_id.toString() + ",0,0);";
+	snowflake.execute({sqlText: log_sql_command});
+
+	snowflake.execute( {sqlText: "begin transaction;"} );
+	try
+	{
+		//  log debug message
+		if( debug === "True" ) 
+		{
+			debug_statement = "call datahub_logging.sp_etl_log_ingestion_process_debug(''" + process_name + "'',''Begin Transaction'');";
+			snowflake.execute({sqlText: debug_statement}); 
+		}
+
+//  Step 3.
+//  Load the temporary table
+
+		snowflake.execute( {sqlText: 
+			`create or replace temporary table DATAHUB_EXTRACT.NewData as
+				select IPS_ACCOUNTNUMBER,M_METER_TIME,M_VALUE,IPS_CONSUMPTIONPERCENTAGE, M_UNIT_ID, HAS_IPS_ACCOUNT
+				from DATAHUB_EXTRACT.VW_SM_STREAM_CURATED_MEASUREMENT
+				
+				UNION ALL
+				
+				select IPS_ACCOUNTNUMBER,M_METER_TIME,M_VALUE,IPS_CONSUMPTIONPERCENTAGE, M_UNIT_ID, 1 as HAS_IPS_ACCOUNT 
+				FROM DATAHUB_EXTRACT.VW_SM_CURATED_MEASUREMENT_NEW_IPS_ACCOUNT`} );
+
+		snowflake.execute ({sqlText: "commit"});
+
+//  Step 4.
+//  Copy into the s3 bucket
+
+		//get a unique filename prefix using a timestamp
+		const query = "SELECT TO_VARCHAR(CURRENT_TIMESTAMP, ''YYYY-MM-DD_HH24-MI-SS-FF'') AS file_name";
+		const resultSet = snowflake.execute({ sqlText: query });
+
+		if (resultSet.next()) {
+			file_name = resultSet.getColumnValue("FILE_NAME");
+		}
+
+		sql_command =
+			"copy into s3://wsl-apsy-${buildvar.env_s3}-sminf-portal-differential-s3/" + file_name +
+			" FROM (" +
+			"	SELECT  OBJECT_CONSTRUCT(''accountId'', IPS_ACCOUNTNUMBER, ''readingTime'', M_METER_TIME, ''readingValue'', M_VALUE,''consumptionPercentage'',IPS_CONSUMPTIONPERCENTAGE)" +   
+			"	FROM (" +
+			"		select DISTINCT IPS_ACCOUNTNUMBER,M_METER_TIME,M_VALUE,IPS_CONSUMPTIONPERCENTAGE" + 
+			"		from DATAHUB_EXTRACT.NewData" +
+			"		WHERE HAS_IPS_ACCOUNT = true" +
+			"		)" +
+			"	)" +
+			" storage_integration = ${buildvar.env}_WSL_PORTAL_DIFFERENTIAL" +
+			" FILE_FORMAT = (TYPE = JSON COMPRESSION = NONE)" +
+			" OVERWRITE = TRUE" +
+			" encryption=(type=''AWS_SSE_S3'')" +
+			" MAX_FILE_SIZE=9999"
+		
+		snowflake.execute( {sqlText: sql_command}); 
+
+		snowflake.execute ({sqlText: "commit"});
+
+//  Step 5.
+//  Load the Portal missing IPS account
+
+		snowflake.execute( {sqlText: 
+			`MERGE INTO DATAHUB_EXTRACT.SM_CURATED_MEASUREMENT_MISSING_IPS_ACCOUNT TARGET
+			USING 
+				(SELECT DISTINCT M_UNIT_ID, HAS_IPS_ACCOUNT
+				 FROM DATAHUB_EXTRACT.NewData) SOURCE
+			on (TARGET.M_UNIT_ID = SOURCE.M_UNIT_ID)
+			WHEN MATCHED THEN UPDATE
+			set TARGET.HAS_IPS_ACCOUNT = SOURCE.HAS_IPS_ACCOUNT
+			WHEN NOT MATCHED THEN INSERT
+			(M_UNIT_ID, HAS_IPS_ACCOUNT)
+			values (SOURCE.M_UNIT_ID, SOURCE.HAS_IPS_ACCOUNT)`} );
+
+		snowflake.execute ({sqlText: "commit"});
+
+//  Step 6.
+//  End execution - log finish
+
+
+        log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process(''UpdateEnd'',''" + process_name + "'',''Success'',''Completed process execution.'', " + process_execution_id.toString() + "," + number_of_rows_inserted.toString()+ "," +  number_of_rows_updated.toString() + ");";
+        snowflake.execute({sqlText: log_sql_command});
+
+        result = "Success"; 
+
+        //  log debug message
+        if( debug === "True" ) 
+            {
+            debug_statement = "call datahub_logging.sp_etl_log_ingestion_process_debug(''" + process_name + "'',''Commit Transaction'');";
+            snowflake.execute({sqlText: debug_statement}); 
+            }
+
+        }
+
+	catch (err)  {
+		snowflake.execute( {sqlText: "rollback;"} );
+		throw "Failed: " + err.message;   // Return a success/error indicator.
+		}
+
+
+  return result;
+  ';

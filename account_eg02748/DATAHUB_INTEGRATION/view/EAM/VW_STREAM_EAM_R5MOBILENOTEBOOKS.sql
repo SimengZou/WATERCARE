@@ -1,0 +1,139 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5MOBILENOTEBOOKS AS SELECT
+                        src:MNB_CLASS::varchar AS MNB_CLASS, 
+                        src:MNB_CLASS_ORG::varchar AS MNB_CLASS_ORG, 
+                        src:MNB_CODE::varchar AS MNB_CODE, 
+                        src:MNB_CREATED::datetime AS MNB_CREATED, 
+                        src:MNB_CREATEDBY::varchar AS MNB_CREATEDBY, 
+                        src:MNB_DEFECT::varchar AS MNB_DEFECT, 
+                        src:MNB_DETAILED_LOCATION::varchar AS MNB_DETAILED_LOCATION, 
+                        src:MNB_DIVISION::varchar AS MNB_DIVISION, 
+                        src:MNB_EMAILADDRESS::varchar AS MNB_EMAILADDRESS, 
+                        src:MNB_HISTORY::varchar AS MNB_HISTORY, 
+                        src:MNB_LASTSAVED::datetime AS MNB_LASTSAVED, 
+                        src:MNB_LEVEL1::varchar AS MNB_LEVEL1, 
+                        src:MNB_LEVEL1_ORG::varchar AS MNB_LEVEL1_ORG, 
+                        src:MNB_LEVEL2::varchar AS MNB_LEVEL2, 
+                        src:MNB_LEVEL2_ORG::varchar AS MNB_LEVEL2_ORG, 
+                        src:MNB_LEVEL3::varchar AS MNB_LEVEL3, 
+                        src:MNB_LEVEL3A::varchar AS MNB_LEVEL3A, 
+                        src:MNB_LEVEL3A_ORG::varchar AS MNB_LEVEL3A_ORG, 
+                        src:MNB_LEVEL3_ORG::varchar AS MNB_LEVEL3_ORG, 
+                        src:MNB_LEVEL4::varchar AS MNB_LEVEL4, 
+                        src:MNB_LEVEL4_ORG::varchar AS MNB_LEVEL4_ORG, 
+                        src:MNB_LINE::varchar AS MNB_LINE, 
+                        src:MNB_MNECODE::varchar AS MNB_MNECODE, 
+                        src:MNB_MOBILECREATED::datetime AS MNB_MOBILECREATED, 
+                        src:MNB_MTASEVERITY::varchar AS MNB_MTASEVERITY, 
+                        src:MNB_NCFCLASS::varchar AS MNB_NCFCLASS, 
+                        src:MNB_NCFCLASS_ORG::varchar AS MNB_NCFCLASS_ORG, 
+                        src:MNB_NCFSEVERITY::varchar AS MNB_NCFSEVERITY, 
+                        src:MNB_NCTTYPE::varchar AS MNB_NCTTYPE, 
+                        src:MNB_NCTTYPE_ORG::varchar AS MNB_NCTTYPE_ORG, 
+                        src:MNB_NONCONFORMITY_OBSERVATION::varchar AS MNB_NONCONFORMITY_OBSERVATION, 
+                        src:MNB_NOTE::varchar AS MNB_NOTE, 
+                        src:MNB_OBJECT::varchar AS MNB_OBJECT, 
+                        src:MNB_OBJECT_ORG::varchar AS MNB_OBJECT_ORG, 
+                        src:MNB_ORG::varchar AS MNB_ORG, 
+                        src:MNB_PRIVATE::varchar AS MNB_PRIVATE, 
+                        src:MNB_SECTION::varchar AS MNB_SECTION, 
+                        src:MNB_STATION::varchar AS MNB_STATION, 
+                        src:MNB_STATIONING_MAJOR::numeric(38, 10) AS MNB_STATIONING_MAJOR, 
+                        src:MNB_STATIONING_MINOR::numeric(38, 10) AS MNB_STATIONING_MINOR, 
+                        src:MNB_TRACK::varchar AS MNB_TRACK, 
+                        src:MNB_UDFCHAR01::varchar AS MNB_UDFCHAR01, 
+                        src:MNB_UDFCHAR02::varchar AS MNB_UDFCHAR02, 
+                        src:MNB_UDFCHAR03::varchar AS MNB_UDFCHAR03, 
+                        src:MNB_UDFCHAR04::varchar AS MNB_UDFCHAR04, 
+                        src:MNB_UDFCHAR05::varchar AS MNB_UDFCHAR05, 
+                        src:MNB_UDFCHAR06::varchar AS MNB_UDFCHAR06, 
+                        src:MNB_UDFCHAR07::varchar AS MNB_UDFCHAR07, 
+                        src:MNB_UDFCHAR08::varchar AS MNB_UDFCHAR08, 
+                        src:MNB_UDFCHAR09::varchar AS MNB_UDFCHAR09, 
+                        src:MNB_UDFCHAR10::varchar AS MNB_UDFCHAR10, 
+                        src:MNB_UDFCHAR11::varchar AS MNB_UDFCHAR11, 
+                        src:MNB_UDFCHAR12::varchar AS MNB_UDFCHAR12, 
+                        src:MNB_UDFCHAR13::varchar AS MNB_UDFCHAR13, 
+                        src:MNB_UDFCHAR14::varchar AS MNB_UDFCHAR14, 
+                        src:MNB_UDFCHAR15::varchar AS MNB_UDFCHAR15, 
+                        src:MNB_UDFCHAR16::varchar AS MNB_UDFCHAR16, 
+                        src:MNB_UDFCHAR17::varchar AS MNB_UDFCHAR17, 
+                        src:MNB_UDFCHAR18::varchar AS MNB_UDFCHAR18, 
+                        src:MNB_UDFCHAR19::varchar AS MNB_UDFCHAR19, 
+                        src:MNB_UDFCHAR20::varchar AS MNB_UDFCHAR20, 
+                        src:MNB_UDFCHAR21::varchar AS MNB_UDFCHAR21, 
+                        src:MNB_UDFCHAR22::varchar AS MNB_UDFCHAR22, 
+                        src:MNB_UDFCHAR23::varchar AS MNB_UDFCHAR23, 
+                        src:MNB_UDFCHAR24::varchar AS MNB_UDFCHAR24, 
+                        src:MNB_UDFCHAR25::varchar AS MNB_UDFCHAR25, 
+                        src:MNB_UDFCHAR26::varchar AS MNB_UDFCHAR26, 
+                        src:MNB_UDFCHAR27::varchar AS MNB_UDFCHAR27, 
+                        src:MNB_UDFCHAR28::varchar AS MNB_UDFCHAR28, 
+                        src:MNB_UDFCHAR29::varchar AS MNB_UDFCHAR29, 
+                        src:MNB_UDFCHAR30::varchar AS MNB_UDFCHAR30, 
+                        src:MNB_UDFCHKBOX01::varchar AS MNB_UDFCHKBOX01, 
+                        src:MNB_UDFCHKBOX02::varchar AS MNB_UDFCHKBOX02, 
+                        src:MNB_UDFCHKBOX03::varchar AS MNB_UDFCHKBOX03, 
+                        src:MNB_UDFCHKBOX04::varchar AS MNB_UDFCHKBOX04, 
+                        src:MNB_UDFCHKBOX05::varchar AS MNB_UDFCHKBOX05, 
+                        src:MNB_UDFDATE01::datetime AS MNB_UDFDATE01, 
+                        src:MNB_UDFDATE02::datetime AS MNB_UDFDATE02, 
+                        src:MNB_UDFDATE03::datetime AS MNB_UDFDATE03, 
+                        src:MNB_UDFDATE04::datetime AS MNB_UDFDATE04, 
+                        src:MNB_UDFDATE05::datetime AS MNB_UDFDATE05, 
+                        src:MNB_UDFNUM01::numeric(38, 10) AS MNB_UDFNUM01, 
+                        src:MNB_UDFNUM02::numeric(38, 10) AS MNB_UDFNUM02, 
+                        src:MNB_UDFNUM03::numeric(38, 10) AS MNB_UDFNUM03, 
+                        src:MNB_UDFNUM04::numeric(38, 10) AS MNB_UDFNUM04, 
+                        src:MNB_UDFNUM05::numeric(38, 10) AS MNB_UDFNUM05, 
+                        src:MNB_UPDATECOUNT::numeric(38, 10) AS MNB_UPDATECOUNT, 
+                        src:MNB_UPDATED::datetime AS MNB_UPDATED, 
+                        src:MNB_UPDATEDBY::varchar AS MNB_UPDATEDBY, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:MNB_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:MNB_CODE  ORDER BY 
+            src:MNB_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5MOBILENOTEBOOKS as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_CREATED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_MOBILECREATED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MNB_STATIONING_MAJOR), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MNB_STATIONING_MINOR), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_UDFDATE01), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_UDFDATE02), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_UDFDATE03), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_UDFDATE04), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_UDFDATE05), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MNB_UDFNUM01), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MNB_UDFNUM02), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MNB_UDFNUM03), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MNB_UDFNUM04), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MNB_UDFNUM05), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MNB_UPDATECOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_UPDATED), '1900-01-01')) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MNB_LASTSAVED), '1900-01-01')) is not null

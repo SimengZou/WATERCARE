@@ -1,0 +1,27 @@
+create or replace view VW_SM_PORTAL_DIFFERENTIAL_DEV(
+	IPS_ACCOUNTNUMBER,
+	M_METER_TIME,
+	M_VALUE,
+	IPS_CONSUMPTIONPERCENTAGE,
+	M_METER_TIME_DATETIME,
+	EPOCH_M_METER_TIME
+) as
+				SELECT 
+			i.IPS_ACCOUNTNUMBER
+			,concat(to_varchar(dateadd('m',-30,dateadd('ms',s.M_METER_TIME/1000,'1970-01-01')), 'YYYY-MM-DD"T"HH24:MI:SS"Z"') ,'#',s.M_UNIT_ID) AS M_METER_TIME
+			,M_VALUE*IPS_CONSUMPTIONPERCENTAGE AS M_VALUE
+			,IPS_CONSUMPTIONPERCENTAGE
+            ,dateadd('m',-30,dateadd('ms',s.M_METER_TIME/1000,'1970-01-01')) as M_METER_TIME_datetime
+            ,cast(s.M_METER_TIME/1000 as int) as Epoch_M_METER_TIME
+			FROM 
+			( select distinct
+			  M_UNIT_ID
+			  ,M_METER_TIME
+			  ,M_VALUE
+			 FROM 
+			 DATAHUB_target.SM_APSY_SMINF_CUR
+			 WHERE M_RESOURCE_TYPE ='Water_Flow_Readings_30min'
+			 ) s JOIN DATAHUB_TARGET.VW_IPS_SM_ACCOUNT_UNITID i ON i.IPS_UNITID=s.M_UNIT_ID   
+			 INNER JOIN (select distinct SMARTMETERID from "DATAHUB_EXTRACT".SM_APSY_SMINF_PILOT) pilot ON pilot.SMARTMETERID=s.M_UNIT_ID  
+             --
+             ;

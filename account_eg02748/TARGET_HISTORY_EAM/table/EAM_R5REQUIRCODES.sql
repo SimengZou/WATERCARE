@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_R5REQUIRCODES_DELETED(
+            RQM_CLASS varchar, 
+            RQM_CLASS_ORG varchar, 
+            RQM_CODE varchar, 
+            RQM_CREATED datetime, 
+            RQM_DESC varchar, 
+            RQM_ENABLEWORKORDERS varchar, 
+            RQM_GEN varchar, 
+            RQM_GROUP varchar, 
+            RQM_LASTSAVED datetime, 
+            RQM_NOTUSED varchar, 
+            RQM_PARTFAILURE varchar, 
+            RQM_UPDATECOUNT numeric(38, 10), 
+            RQM_UPDATED datetime, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

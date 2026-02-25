@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_BILLING_ARRANGEMENTTRANSACTION(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ARRANGEMENTTRANSACTIONKEY integer, 
+            BILLKEY integer, 
+            DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PAYMENTARRANGEMENTKEY integer, 
+            PAYMENTKEY integer, 
+            TRANSACTIONAMT numeric(38, 10), 
+            TRANSACTIONBY varchar, 
+            TRANSACTIONDTTM datetime, 
+            TRANSACTIONTYPE varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

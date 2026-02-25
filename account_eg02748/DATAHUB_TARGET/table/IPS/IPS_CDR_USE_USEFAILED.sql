@@ -1,0 +1,19 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_USE_USEFAILED(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APUSEFAILKEY integer, 
+            APUSEINSPKEY integer, 
+            CMPLDTTM datetime, 
+            DELETED boolean, 
+            FAILED varchar, 
+            LOC varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            STATUS varchar, 
+            VARIATION_ID integer, 
+            VIOLDTTM datetime, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

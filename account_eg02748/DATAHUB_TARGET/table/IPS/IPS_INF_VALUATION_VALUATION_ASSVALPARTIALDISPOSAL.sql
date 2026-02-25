@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_INF_VALUATION_VALUATION_ASSVALPARTIALDISPOSAL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ASSVALKEY integer, 
+            ASSVALPARTIALDISPOSALKEY integer, 
+            DATALAKE_DELETED boolean, 
+            DISPOSALDATE datetime, 
+            DISPOSALPERCENTAGE numeric(38, 10), 
+            DISPOSALQUANTITY numeric(38, 10), 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            OPENINGQUANTITY numeric(38, 10), 
+            PROCEEDSONDISPOSAL numeric(38, 10), 
+            UNITTYPE varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

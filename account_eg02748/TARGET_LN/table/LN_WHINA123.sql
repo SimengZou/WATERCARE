@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_WHINA123(
+            amnt_1 numeric(38, 17), 
+            amnt_2 numeric(38, 17), 
+            amnt_3 numeric(38, 17), 
+            compnr integer, 
+            cpcp varchar, 
+            cpcp_ref_compnr integer, 
+            deleted boolean, 
+            hour numeric(38, 17), 
+            orno varchar, 
+            rorg integer, 
+            rorg_kw varchar, 
+            rorg_orno_seqn_ref_compnr integer, 
+            seqn integer, 
+            sequencenumber integer, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

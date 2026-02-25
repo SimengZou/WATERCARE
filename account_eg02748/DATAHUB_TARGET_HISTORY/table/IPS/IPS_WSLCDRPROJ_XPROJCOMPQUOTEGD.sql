@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLCDRPROJ_XPROJCOMPQUOTEGD(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CONNECTIONTYPE varchar, 
+            DELETED boolean, 
+            DESCRIPTION varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            QUANTITY numeric(38, 10), 
+            QUOTEITEM varchar, 
+            TOTAL numeric(38, 10), 
+            UNITCHARGE numeric(38, 10), 
+            VARIATION_ID integer, 
+            XCDRPROJQUOTEACCEPTDPKEY integer, 
+            XPROJCOMPQUOTEGDKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_LN.LN_TSMDM015_DELETED(
+            clrt varchar, 
+            clrt_ref_compnr integer, 
+            compnr integer, 
+            cpcp varchar, 
+            cpcp_ref_compnr integer, 
+            ctsk varchar, 
+            deleted boolean, 
+            desc object, 
+            occf numeric(38, 17), 
+            sear object, 
+            sequencenumber integer, 
+            timestamp datetime, 
+            tmdu numeric(38, 17), 
+            txta integer, 
+            txta_ref_compnr integer, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

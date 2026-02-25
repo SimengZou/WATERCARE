@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_PLANNING_PLANFEETYPE(
+            ADDBY varchar, 
+            ADDCONDFRMLA integer, 
+            ADDDEPPROCESSSTATEKEY integer, 
+            ADDDTTM datetime, 
+            APPLANDEFNKEY integer, 
+            APPLANFEETYPEKEY integer, 
+            APPLANPROCESSSTATEKEY integer, 
+            DELETED boolean, 
+            FEELIBTYPEUSEDFROMDT datetime, 
+            FEELIBTYPEUSEDTODT datetime, 
+            FEETYPEKEY integer, 
+            INTERNALONLYFLAG varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PAYFEEPROCESSSTATEKEY integer, 
+            PAYINPORTAL varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

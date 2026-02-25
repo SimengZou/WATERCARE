@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_RESOURCES_ESCROWTRN(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ADJREAS varchar, 
+            DELETED boolean, 
+            ESCROWACCTKEY integer, 
+            ESCROWPAYKEY integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            TRNAMT numeric(38, 10), 
+            TRNBY varchar, 
+            TRNDTTM datetime, 
+            TRNNO integer, 
+            TRNTYPE integer, 
+            VARIATION_ID integer, 
+            XFERREFTRNNO integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

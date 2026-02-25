@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_RESOURCES_IDENTITYALERT(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ALERTDEFINITIONKEY integer, 
+            ALERTTYPE varchar, 
+            DATALAKE_DELETED boolean, 
+            DELINQUENCYMSALERTKEY integer, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            IDENTITYALERTKEY integer, 
+            IDENTITYKEY integer, 
+            INITIATEDBY varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            REASON varchar, 
+            RESOLUTION varchar, 
+            RESOLVEDBY varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

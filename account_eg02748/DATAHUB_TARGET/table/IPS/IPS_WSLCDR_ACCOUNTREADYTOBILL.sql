@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCDR_ACCOUNTREADYTOBILL(
+            ACCOUNTKEY integer, 
+            ACCOUNTNUMBER varchar, 
+            ACCOUNTREADYTOBILLKEY integer, 
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPLICATIONKEY integer, 
+            APPLICATIONNUMBER varchar, 
+            BUILDINGAPPLICATIONKEY integer, 
+            DATALAKE_DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PARENTACCOUNTNUMBER varchar, 
+            PARENTAPPLICATIONNUMBER varchar, 
+            PARENTBLDGAPPLICATIONKEY integer, 
+            READYTOBILL varchar, 
+            TYPEOFFEE varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_ASSETMANAGEMENT_GRPCOMP(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            COMPKEY integer, 
+            DATALAKE_DELETED boolean, 
+            DISTFROMFT numeric(38, 10), 
+            DISTFROMM numeric(38, 10), 
+            DISTTOFT numeric(38, 10), 
+            DISTTOM numeric(38, 10), 
+            GROUPITEMKEY integer, 
+            GROUPKEY integer, 
+            INDEXNO integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            RWFEATUREKEY integer, 
+            RWFEATURETYPE integer, 
+            RWROWP varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

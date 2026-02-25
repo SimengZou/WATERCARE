@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_METERMANAGEMENT_WATER_USGESTRULE(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CALCORDER integer, 
+            CONDITIONFORMULAKEY integer, 
+            DELETED boolean, 
+            DESCRIPTION varchar, 
+            EXCEPTIONDESC varchar, 
+            EXCEPTIONFLAG varchar, 
+            HIGHCONDITIONFORMULAKEY integer, 
+            HIGHUSGESTFORMULAKEY integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            USGESTFORMULAKEY integer, 
+            USGESTRULEGROUPKEY integer, 
+            USGESTRULEID varchar, 
+            USGESTRULEKEY integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_RESOURCES_ESCROWACCT(
+            ACCTSTATUS integer, 
+            ACCTSTATUSBY varchar, 
+            ACCTSTATUSDTTM datetime, 
+            ACCTTYPE varchar, 
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CNTCTKEY integer, 
+            DELETED boolean, 
+            DESCRIPTION varchar, 
+            ESCROWACCTKEY integer, 
+            ESCROWACCTNO varchar, 
+            LASTTRANDTTM datetime, 
+            MAXBALVALUE numeric(38, 10), 
+            MINBALVALUE numeric(38, 10), 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

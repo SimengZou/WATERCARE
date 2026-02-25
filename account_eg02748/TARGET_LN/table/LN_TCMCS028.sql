@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TCMCS028(
+            ccde varchar, 
+            cdf_ccde object, 
+            cdf_cdes object, 
+            cdf_gccd object, 
+            cdf_gdsc object, 
+            compnr integer, 
+            deleted boolean, 
+            dsca object, 
+            exdt datetime, 
+            quan numeric(38, 17), 
+            sequencenumber integer, 
+            timestamp datetime, 
+            txta integer, 
+            txta_ref_compnr integer, 
+            unit varchar, 
+            unit_ref_compnr integer, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

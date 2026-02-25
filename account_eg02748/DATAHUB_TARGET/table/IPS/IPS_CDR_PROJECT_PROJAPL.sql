@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_PROJECT_PROJAPL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APLTY integer, 
+            APPROJAPLKEY integer, 
+            APPROJKEY integer, 
+            CAPACITY varchar, 
+            CNTCTKEY integer, 
+            DATALAKE_DELETED boolean, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PRIM varchar, 
+            RESPACCOUNTHOLDERFLAG varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TPPDM095(
+            cobs varchar, 
+            cobs_coel_ref_compnr integer, 
+            coel varchar, 
+            compnr integer, 
+            deleted boolean, 
+            dsca object, 
+            obsu integer, 
+            obsu_kw varchar, 
+            sequencenumber integer, 
+            styp integer, 
+            styp_kw varchar, 
+            timestamp datetime, 
+            txta integer, 
+            txta_ref_compnr integer, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

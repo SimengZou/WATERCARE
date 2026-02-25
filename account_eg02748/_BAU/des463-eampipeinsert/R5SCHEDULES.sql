@@ -1,0 +1,6 @@
+
+                         copy into DATAHUB_LANDING.EAM_R5SCHEDULES
+                    from (
+            SELECT
+            $1,CURRENT_TIMESTAMP as ETL_LOAD_DATETIME,METADATA$FILENAME as ETL_LOAD_METADATAFILENAME
+            FROM @DATAHUB_INTEGRATION.STAGE_EAM_R5SCHEDULES(FILE_FORMAT => json_format));

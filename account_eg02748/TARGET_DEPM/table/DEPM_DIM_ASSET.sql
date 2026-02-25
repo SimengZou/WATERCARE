@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE TARGET_DEPM.DEPM_DIM_ASSET(
+            AcqType varchar, 
+            Area varchar, 
+            AsBuilt varchar, 
+            CostCentre varchar, 
+            ElementName varchar, 
+            InstallDate varchar, 
+            Life varchar, 
+            LongName varchar, 
+            Model varchar, 
+            Name varchar, 
+            Project varchar, 
+            Serial varchar, 
+            ServiceStatus varchar, 
+            SubArea varchar, 
+            Timestamp datetime, 
+            TypeCode varchar, 
+            TypeDesc varchar, 
+            UnitType varchar, ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,150 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5PERSONNEL AS SELECT
+                        src:PER_ADDRESS::varchar AS PER_ADDRESS, 
+                        src:PER_ALIAS::varchar AS PER_ALIAS, 
+                        src:PER_BIRTHDATE::datetime AS PER_BIRTHDATE, 
+                        src:PER_CAPACITY::numeric(38, 10) AS PER_CAPACITY, 
+                        src:PER_CITY::varchar AS PER_CITY, 
+                        src:PER_CLASS::varchar AS PER_CLASS, 
+                        src:PER_CLASS_ORG::varchar AS PER_CLASS_ORG, 
+                        src:PER_CODE::varchar AS PER_CODE, 
+                        src:PER_COSTCODE::varchar AS PER_COSTCODE, 
+                        src:PER_COUNTRY::varchar AS PER_COUNTRY, 
+                        src:PER_CREATED::datetime AS PER_CREATED, 
+                        src:PER_CREATEDBY::varchar AS PER_CREATEDBY, 
+                        src:PER_CUSTOMER::varchar AS PER_CUSTOMER, 
+                        src:PER_CUSTOMER_ORG::varchar AS PER_CUSTOMER_ORG, 
+                        src:PER_DESC::varchar AS PER_DESC, 
+                        src:PER_DETERMINESCREWLOCATION::varchar AS PER_DETERMINESCREWLOCATION, 
+                        src:PER_DRIVERSLICENSE::varchar AS PER_DRIVERSLICENSE, 
+                        src:PER_EMAILADDRESS::varchar AS PER_EMAILADDRESS, 
+                        src:PER_EMERGENCYCONTACT::varchar AS PER_EMERGENCYCONTACT, 
+                        src:PER_EMERGENCYCONTACTPHNO::varchar AS PER_EMERGENCYCONTACTPHNO, 
+                        src:PER_FAX::varchar AS PER_FAX, 
+                        src:PER_FLEETCUSTOMER::varchar AS PER_FLEETCUSTOMER, 
+                        src:PER_FLEETCUSTOMER_ORG::varchar AS PER_FLEETCUSTOMER_ORG, 
+                        src:PER_HIREDATE::datetime AS PER_HIREDATE, 
+                        src:PER_HOMEPHONENO::varchar AS PER_HOMEPHONENO, 
+                        src:PER_INITIALS::varchar AS PER_INITIALS, 
+                        src:PER_JOBTITLE::varchar AS PER_JOBTITLE, 
+                        src:PER_LASTSAVED::datetime AS PER_LASTSAVED, 
+                        src:PER_MOBILEPHONENO::varchar AS PER_MOBILEPHONENO, 
+                        src:PER_MRC::varchar AS PER_MRC, 
+                        src:PER_NOTIFICATIONPREF::varchar AS PER_NOTIFICATIONPREF, 
+                        src:PER_NOTUSED::varchar AS PER_NOTUSED, 
+                        src:PER_OBJECT::varchar AS PER_OBJECT, 
+                        src:PER_OBJECT_ORG::varchar AS PER_OBJECT_ORG, 
+                        src:PER_ORG::varchar AS PER_ORG, 
+                        src:PER_PARENT::varchar AS PER_PARENT, 
+                        src:PER_PAYROLLNO::varchar AS PER_PAYROLLNO, 
+                        src:PER_PHONE::varchar AS PER_PHONE, 
+                        src:PER_PROFILEPICTURE::varchar AS PER_PROFILEPICTURE, 
+                        src:PER_SCHEDULINGSESSIONID::varchar AS PER_SCHEDULINGSESSIONID, 
+                        src:PER_SCHEDULINGTYPE::varchar AS PER_SCHEDULINGTYPE, 
+                        src:PER_SECURITYBADGENO::varchar AS PER_SECURITYBADGENO, 
+                        src:PER_STATE::varchar AS PER_STATE, 
+                        src:PER_SUPERVISOR::varchar AS PER_SUPERVISOR, 
+                        src:PER_TERMINATEDDATE::datetime AS PER_TERMINATEDDATE, 
+                        src:PER_TRADE::varchar AS PER_TRADE, 
+                        src:PER_TRADESPERSON::varchar AS PER_TRADESPERSON, 
+                        src:PER_UDFCHAR01::varchar AS PER_UDFCHAR01, 
+                        src:PER_UDFCHAR02::varchar AS PER_UDFCHAR02, 
+                        src:PER_UDFCHAR03::varchar AS PER_UDFCHAR03, 
+                        src:PER_UDFCHAR04::varchar AS PER_UDFCHAR04, 
+                        src:PER_UDFCHAR05::varchar AS PER_UDFCHAR05, 
+                        src:PER_UDFCHAR06::varchar AS PER_UDFCHAR06, 
+                        src:PER_UDFCHAR07::varchar AS PER_UDFCHAR07, 
+                        src:PER_UDFCHAR08::varchar AS PER_UDFCHAR08, 
+                        src:PER_UDFCHAR09::varchar AS PER_UDFCHAR09, 
+                        src:PER_UDFCHAR10::varchar AS PER_UDFCHAR10, 
+                        src:PER_UDFCHAR11::varchar AS PER_UDFCHAR11, 
+                        src:PER_UDFCHAR12::varchar AS PER_UDFCHAR12, 
+                        src:PER_UDFCHAR13::varchar AS PER_UDFCHAR13, 
+                        src:PER_UDFCHAR14::varchar AS PER_UDFCHAR14, 
+                        src:PER_UDFCHAR15::varchar AS PER_UDFCHAR15, 
+                        src:PER_UDFCHAR16::varchar AS PER_UDFCHAR16, 
+                        src:PER_UDFCHAR17::varchar AS PER_UDFCHAR17, 
+                        src:PER_UDFCHAR18::varchar AS PER_UDFCHAR18, 
+                        src:PER_UDFCHAR19::varchar AS PER_UDFCHAR19, 
+                        src:PER_UDFCHAR20::varchar AS PER_UDFCHAR20, 
+                        src:PER_UDFCHAR21::varchar AS PER_UDFCHAR21, 
+                        src:PER_UDFCHAR22::varchar AS PER_UDFCHAR22, 
+                        src:PER_UDFCHAR23::varchar AS PER_UDFCHAR23, 
+                        src:PER_UDFCHAR24::varchar AS PER_UDFCHAR24, 
+                        src:PER_UDFCHAR25::varchar AS PER_UDFCHAR25, 
+                        src:PER_UDFCHAR26::varchar AS PER_UDFCHAR26, 
+                        src:PER_UDFCHAR27::varchar AS PER_UDFCHAR27, 
+                        src:PER_UDFCHAR28::varchar AS PER_UDFCHAR28, 
+                        src:PER_UDFCHAR29::varchar AS PER_UDFCHAR29, 
+                        src:PER_UDFCHAR30::varchar AS PER_UDFCHAR30, 
+                        src:PER_UDFCHKBOX01::varchar AS PER_UDFCHKBOX01, 
+                        src:PER_UDFCHKBOX02::varchar AS PER_UDFCHKBOX02, 
+                        src:PER_UDFCHKBOX03::varchar AS PER_UDFCHKBOX03, 
+                        src:PER_UDFCHKBOX04::varchar AS PER_UDFCHKBOX04, 
+                        src:PER_UDFCHKBOX05::varchar AS PER_UDFCHKBOX05, 
+                        src:PER_UDFDATE01::datetime AS PER_UDFDATE01, 
+                        src:PER_UDFDATE02::datetime AS PER_UDFDATE02, 
+                        src:PER_UDFDATE03::datetime AS PER_UDFDATE03, 
+                        src:PER_UDFDATE04::datetime AS PER_UDFDATE04, 
+                        src:PER_UDFDATE05::datetime AS PER_UDFDATE05, 
+                        src:PER_UDFNUM01::numeric(38, 10) AS PER_UDFNUM01, 
+                        src:PER_UDFNUM02::numeric(38, 10) AS PER_UDFNUM02, 
+                        src:PER_UDFNUM03::numeric(38, 10) AS PER_UDFNUM03, 
+                        src:PER_UDFNUM04::numeric(38, 10) AS PER_UDFNUM04, 
+                        src:PER_UDFNUM05::numeric(38, 10) AS PER_UDFNUM05, 
+                        src:PER_UPDATECOUNT::numeric(38, 10) AS PER_UPDATECOUNT, 
+                        src:PER_UPDATED::datetime AS PER_UPDATED, 
+                        src:PER_UPDATEDBY::varchar AS PER_UPDATEDBY, 
+                        src:PER_URL::varchar AS PER_URL, 
+                        src:PER_USER::varchar AS PER_USER, 
+                        src:PER_WORKSPACEOCCUPANT::varchar AS PER_WORKSPACEOCCUPANT, 
+                        src:PER_ZIP::varchar AS PER_ZIP, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:PER_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:PER_CODE  ORDER BY 
+            src:PER_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5PERSONNEL as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_BIRTHDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:PER_CAPACITY), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_CREATED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_HIREDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_TERMINATEDDATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_UDFDATE01), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_UDFDATE02), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_UDFDATE03), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_UDFDATE04), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_UDFDATE05), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:PER_UDFNUM01), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:PER_UDFNUM02), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:PER_UDFNUM03), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:PER_UDFNUM04), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:PER_UDFNUM05), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:PER_UPDATECOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_UPDATED), '1900-01-01')) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:PER_LASTSAVED), '1900-01-01')) is not null

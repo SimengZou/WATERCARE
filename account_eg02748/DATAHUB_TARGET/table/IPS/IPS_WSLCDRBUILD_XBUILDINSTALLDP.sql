@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCDRBUILD_XBUILDINSTALLDP(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APBLDGAPPLDTLKEY integer, 
+            BACKFLOW varchar, 
+            DELETED boolean, 
+            DISCONNECTION varchar, 
+            INSTALLCOMPLETE datetime, 
+            METERINSTALLATION varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            REINSTATEMENTCOMPLETE datetime, 
+            RELOCATION varchar, 
+            RELOCATIONREPLACEDMETER varchar, 
+            SERVICELINEINSTALLATION varchar, 
+            VARIATION_ID integer, 
+            XBUILDINSTALLDPKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

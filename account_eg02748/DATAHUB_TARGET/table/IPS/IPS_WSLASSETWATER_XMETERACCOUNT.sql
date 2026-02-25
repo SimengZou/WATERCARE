@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLASSETWATER_XMETERACCOUNT(
+            "ACCOUNT" integer, 
+            ACCTSRVPOSKEY integer, 
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ADDRESS varchar, 
+            COMPKEY integer, 
+            DATALAKE_DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            SERVICETYPE varchar, 
+            SHAREPERC numeric(38, 10), 
+            STARTDTTM datetime, 
+            SUBTRACTFLAG varchar, 
+            VARIATION_ID integer, 
+            XMETERACCOUNTKEY integer, 
+            XWATERMETERDETAILKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

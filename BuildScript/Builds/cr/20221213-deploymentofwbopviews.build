@@ -1,0 +1,5 @@
+#deploying WBP VIEWS
+#Schema scriptlocation
+DATAHUB_SHARED_WBP account_eg02748\DATAHUB_SHARED_WBP\secureview\*
+DATAHUB_SHARED_WBP account_eg02748\DATAHUB_SHARED_WBP\view\*
+#DATAHUB_TARGET account_eg02748\_BAU\test\test.sql

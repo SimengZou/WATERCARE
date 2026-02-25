@@ -1,0 +1,7 @@
+CREATE OR REPLACE TASK DATAHUB_INTEGRATION.TASK_EAM_R5EVENTOBJECTS
+                    schedule  = 'USING CRON 0 4 * * * Pacific/Auckland'
+    when
+    system$stream_has_data('STREAM_EAM_R5EVENTOBJECTS')
+  as 
+call EAM_TARGET_MERGE_R5EVENTOBJECTS();
+alter task DATAHUB_INTEGRATION.TASK_EAM_R5EVENTOBJECTS resume;

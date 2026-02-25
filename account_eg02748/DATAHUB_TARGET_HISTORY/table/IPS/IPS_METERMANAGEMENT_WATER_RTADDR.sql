@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_METERMANAGEMENT_WATER_RTADDR(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ADDRKEY integer, 
+            COMMENTS varchar, 
+            DATALAKE_DELETED boolean, 
+            FIELDCODE varchar, 
+            INDEXNO integer, 
+            MANUALREVIEWFLAG varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            POSITION integer, 
+            REREADSRVREQNO integer, 
+            ROUTEKEY integer, 
+            RTADDRKEY integer, 
+            SEQNO integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

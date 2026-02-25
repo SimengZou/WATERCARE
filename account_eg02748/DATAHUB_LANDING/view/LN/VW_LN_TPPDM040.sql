@@ -1,0 +1,86 @@
+CREATE OR REPLACE VIEW DATAHUB_LANDING.VW_LN_TPPDM040 AS SELECT
+                        src:acta::integer AS acta, 
+                        src:acta_kw::varchar AS acta_kw, 
+                        src:actp::integer AS actp, 
+                        src:actp_kw::varchar AS actp_kw, 
+                        src:blbl::integer AS blbl, 
+                        src:blbl_kw::varchar AS blbl_kw, 
+                        src:ccco::varchar AS ccco, 
+                        src:ccco_ref_compnr::integer AS ccco_ref_compnr, 
+                        src:cccp::varchar AS cccp, 
+                        src:cccp_ref_compnr::integer AS cccp_ref_compnr, 
+                        src:ccfu::integer AS ccfu, 
+                        src:ccfu_kw::varchar AS ccfu_kw, 
+                        src:ccic::varchar AS ccic, 
+                        src:ccip::varchar AS ccip, 
+                        src:ccip_ref_compnr::integer AS ccip_ref_compnr, 
+                        src:ccsp::varchar AS ccsp, 
+                        src:ccsp_ref_compnr::integer AS ccsp_ref_compnr, 
+                        src:cico::varchar AS cico, 
+                        src:compnr::integer AS compnr, 
+                        src:cuni::varchar AS cuni, 
+                        src:cuni_ref_compnr::integer AS cuni_ref_compnr, 
+                        src:cvat::varchar AS cvat, 
+                        src:cvat_ref_compnr::integer AS cvat_ref_compnr, 
+                        src:deleted::boolean AS deleted, 
+                        src:desc::object AS desc, 
+                        src:ltcp::datetime AS ltcp, 
+                        src:ltip::datetime AS ltip, 
+                        src:ltsp::datetime AS ltsp, 
+                        src:pcmc_1::numeric(38, 17) AS pcmc_1, 
+                        src:pcmc_2::numeric(38, 17) AS pcmc_2, 
+                        src:pcmc_3::numeric(38, 17) AS pcmc_3, 
+                        src:pimc_1::numeric(38, 17) AS pimc_1, 
+                        src:pimc_2::numeric(38, 17) AS pimc_2, 
+                        src:pimc_3::numeric(38, 17) AS pimc_3, 
+                        src:pric::numeric(38, 17) AS pric, 
+                        src:prii::numeric(38, 17) AS prii, 
+                        src:pris::numeric(38, 17) AS pris, 
+                        src:prre::integer AS prre, 
+                        src:prre_kw::varchar AS prre_kw, 
+                        src:psmc_1::numeric(38, 17) AS psmc_1, 
+                        src:psmc_2::numeric(38, 17) AS psmc_2, 
+                        src:psmc_3::numeric(38, 17) AS psmc_3, 
+                        src:seak::object AS seak, 
+                        src:sequencenumber::integer AS sequencenumber, 
+                        src:timestamp::datetime AS timestamp, 
+                        src:txta::integer AS txta, 
+                        src:txta_ref_compnr::integer AS txta_ref_compnr, 
+                        src:username::varchar AS username, 
+                        src:usyn::integer AS usyn, 
+                        src:usyn_kw::varchar AS usyn_kw, 
+            CASE
+                WHEN 'LN' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'LN' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED,
+            etl_load_datetime,
+            etl_load_metadatafilename,
+            ETL_RANK,
+            IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) as ETL_RANK_TIMESTAMP
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROWNUMBER as ETL_RANK
+                from
+                (
+                    SELECT
+    
+                        
+                src:compnr,
+                src:cico,
+            src:sequencenumber
+                ,src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:compnr,
+                src:cico  ORDER BY 
+            src:sequencenumber desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_LANDING.LN_TPPDM040 as strm))

@@ -1,0 +1,19 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_BILLING_ACCTNOGENSETUP(
+            ACCOUNTTYPE integer, 
+            ACCTNOGENSETUPKEY integer, 
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CATEGORY integer, 
+            DATALAKE_DELETED boolean, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            INCREMENTMETHOD integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            NAME varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

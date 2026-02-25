@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCUSTOMER_XSMSDETAILS(
+            ACTIVITYKEY integer, 
+            ACTIVITYTYPE varchar, 
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CONTACTKEY integer, 
+            DELETED boolean, 
+            MESSAGEID varchar, 
+            MESSAGERECEIVED varchar, 
+            MOBILENUMBER varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            RESPONSEREQ varchar, 
+            STATUS varchar, 
+            VARIATION_ID integer, 
+            XSMSDETAILSKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

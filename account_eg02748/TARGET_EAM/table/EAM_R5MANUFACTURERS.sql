@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5MANUFACTURERS(
+            MFG_CLASS varchar, 
+            MFG_CLASS_ORG varchar, 
+            MFG_CODE varchar, 
+            MFG_DESC varchar, 
+            MFG_LASTSAVED datetime, 
+            MFG_NOTUSED varchar, 
+            MFG_ORG varchar, 
+            MFG_SOURCECODE varchar, 
+            MFG_SOURCESYSTEM varchar, 
+            MFG_SUPPLIER varchar, 
+            MFG_SUPPLIER_ORG varchar, 
+            MFG_UPDATECOUNT numeric(38, 10), 
+            MFG_UPDATED datetime, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

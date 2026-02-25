@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_BUILDING_BLDGREVIEWDETAILTYPE(
+            ACCESSID integer, 
+            ADDBY varchar, 
+            ADDCONDFRMLA integer, 
+            ADDDTTM datetime, 
+            APBLDGREVDTLTYPEKEY integer, 
+            APBLDGREVIEWTYPEKEY integer, 
+            CLASSNAME varchar, 
+            DATALAKE_DELETED boolean, 
+            DESCRIPT varchar, 
+            DISPLAY integer, 
+            DISPLAYORDER integer, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PAGEPATH varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

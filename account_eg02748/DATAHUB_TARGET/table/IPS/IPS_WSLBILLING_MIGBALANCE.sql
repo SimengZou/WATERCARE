@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLBILLING_MIGBALANCE(
+            ACCOUNTNUMBER varchar, 
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            BILLKEY integer, 
+            CREDITBALANCE numeric(38, 10), 
+            DATALAKE_DELETED boolean, 
+            DEBITBALANCE numeric(38, 10), 
+            MIGBALANCEKEY integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PENALTY numeric(38, 10), 
+            STATUSMESG varchar, 
+            VARIATION_ID integer, 
+            WASTEBALANCE numeric(38, 10), 
+            WASTEBALANCEF numeric(38, 10), 
+            WATERBALANCE numeric(38, 10), 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

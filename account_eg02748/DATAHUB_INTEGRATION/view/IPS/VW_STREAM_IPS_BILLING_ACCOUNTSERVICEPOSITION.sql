@@ -1,0 +1,70 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_IPS_BILLING_ACCOUNTSERVICEPOSITION AS SELECT
+                        src:ACCOUNTSERVICEKEY::integer AS ACCOUNTSERVICEKEY, 
+                        src:ACCOUNTSERVICEPOSITIONKEY::integer AS ACCOUNTSERVICEPOSITIONKEY, 
+                        src:ADDBY::varchar AS ADDBY, 
+                        src:ADDDTTM::datetime AS ADDDTTM, 
+                        src:ADDRKEY::integer AS ADDRKEY, 
+                        src:ASSETTYPE::integer AS ASSETTYPE, 
+                        src:CONSUMPTIONPERCENTAGE::numeric(38, 10) AS CONSUMPTIONPERCENTAGE, 
+                        src:DATALAKE_DELETED::boolean AS DATALAKE_DELETED, 
+                        src:GRAPHUSAGEFLAG::varchar AS GRAPHUSAGEFLAG, 
+                        src:HIDEREADINGSONBILL::varchar AS HIDEREADINGSONBILL, 
+                        src:METERREGISTERUSE::integer AS METERREGISTERUSE, 
+                        src:MODBY::varchar AS MODBY, 
+                        src:MODDTTM::datetime AS MODDTTM, 
+                        src:MOVEINREADINGKEY::integer AS MOVEINREADINGKEY, 
+                        src:MOVEOUTREADINGKEY::integer AS MOVEOUTREADINGKEY, 
+                        src:POSITION::integer AS POSITION, 
+                        src:STARTDTTM::datetime AS STARTDTTM, 
+                        src:STOPDTTM::datetime AS STOPDTTM, 
+                        src:SUBTRACTIVEFLAG::varchar AS SUBTRACTIVEFLAG, 
+                        src:USEDAYSRDS::varchar AS USEDAYSRDS, 
+                        src:USEUOM::varchar AS USEUOM, 
+                        src:USGHISTINBILLOUTPUT::varchar AS USGHISTINBILLOUTPUT, 
+                        src:VARIATION_ID::integer AS VARIATION_ID, 
+                        src:WINTERAVG::numeric(38, 10) AS WINTERAVG, src:VARIATION_ID::integer as ETL_SEQUENCE_NUMBER,
+            CASE
+                WHEN 'IPS' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'IPS' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:ACCOUNTSERVICEPOSITIONKEY  ORDER BY 
+            src:VARIATION_ID desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_IPS_BILLING_ACCOUNTSERVICEPOSITION as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ACCOUNTSERVICEKEY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ACCOUNTSERVICEPOSITIONKEY), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:ADDDTTM), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ADDRKEY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ASSETTYPE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:CONSUMPTIONPERCENTAGE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:METERREGISTERUSE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:MODDTTM), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MOVEINREADINGKEY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:MOVEOUTREADINGKEY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:POSITION), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STARTDTTM), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STOPDTTM), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:VARIATION_ID), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:WINTERAVG), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:VARIATION_ID), '1900-01-01')) is not null

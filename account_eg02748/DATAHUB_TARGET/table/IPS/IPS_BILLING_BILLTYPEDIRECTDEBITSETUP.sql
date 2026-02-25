@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_BILLING_BILLTYPEDIRECTDEBITSETUP(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            BILLTYPEDIRECTDEBITSUKEY integer, 
+            BILLTYPEKEY integer, 
+            COMBINEAMOUNT varchar, 
+            DELETED boolean, 
+            EXTRACTAMOUNTCRITERIA varchar, 
+            INCLUDEUNBILLED varchar, 
+            MAXAMOUNT numeric(38, 10), 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            REFBALTHRUEXTRDATE varchar, 
+            REFRESHEXTRACTAMOUNT varchar, 
+            USEDDSETUPDEFAULT varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

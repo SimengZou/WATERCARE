@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_LN.LN_TCCOM155_DELETED(
+            bpid varchar, 
+            bpid_ref_compnr integer, 
+            cert object, 
+            code varchar, 
+            cofc varchar, 
+            cofc_ref_compnr integer, 
+            compnr integer, 
+            deleted boolean, 
+            efdt datetime, 
+            exdt datetime, 
+            kcod integer, 
+            kcod_kw varchar, 
+            sequencenumber integer, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

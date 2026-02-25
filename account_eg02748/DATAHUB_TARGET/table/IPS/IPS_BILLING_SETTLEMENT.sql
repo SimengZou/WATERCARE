@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_BILLING_SETTLEMENT(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            BILLRUNKEY integer, 
+            BUDGETBILLINGPLANKEY integer, 
+            COMMENTSKEY integer, 
+            DELETED boolean, 
+            FORCESETTLEBYDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            SETTLEDBY varchar, 
+            SETTLEMENTDATE datetime, 
+            SETTLEMENTKEY integer, 
+            SETTLEMENTTYPE varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLCDRPLAN_XPLANAPTIMELINEGD(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            AREAHECTARES numeric(38, 10), 
+            COMMENTS varchar, 
+            COMPLETEMONTH integer, 
+            COMPLETEYEAR1 integer, 
+            DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            NOOFUNITS integer, 
+            STAGE varchar, 
+            STARTMONTH integer, 
+            STARTYEAR1 integer, 
+            STATUS varchar, 
+            VARIATION_ID integer, 
+            XPLANAPTIMELINEDPKEY integer, 
+            XPLANAPTIMELINEGDKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

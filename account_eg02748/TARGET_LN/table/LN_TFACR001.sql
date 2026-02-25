@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TFACR001(
+            affi integer, 
+            affi_kw varchar, 
+            compnr integer, 
+            defs varchar, 
+            defs_ref_compnr integer, 
+            deleted boolean, 
+            desc object, 
+            ficu varchar, 
+            ircd varchar, 
+            ircd_ref_compnr integer, 
+            sequencenumber integer, 
+            text integer, 
+            text_ref_compnr integer, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

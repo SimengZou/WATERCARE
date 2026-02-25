@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_R5RELIABILITYRANKINGRANKS_DELETED(
+            RRR_COLOR varchar, 
+            RRR_CRITICALITY varchar, 
+            RRR_ICON varchar, 
+            RRR_ICONPATH varchar, 
+            RRR_LASTSAVED datetime, 
+            RRR_MAXVALUE numeric(38, 10), 
+            RRR_MINVALUE numeric(38, 10), 
+            RRR_ORG varchar, 
+            RRR_PK varchar, 
+            RRR_RELIABILITYRANKING varchar, 
+            RRR_REVISION numeric(38, 10), 
+            RRR_RRINDEX varchar, 
+            RRR_UPDATECOUNT numeric(38, 10), 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

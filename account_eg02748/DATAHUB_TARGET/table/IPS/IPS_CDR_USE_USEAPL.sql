@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_USE_USEAPL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APLTY integer, 
+            APUSEKEY integer, 
+            CAPACITY varchar, 
+            CNTCTKEY integer, 
+            DELETED boolean, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PRIM varchar, 
+            RESPACCOUNTHOLDERFLAG varchar, 
+            USEAPLKEY integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

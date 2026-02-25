@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_BILLING_PAYSPECIFICBILL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ADJUSTMENTKEY integer, 
+            BILLKEY integer, 
+            CDRAPPLICATIONFEEKEY integer, 
+            DELETED boolean, 
+            DEPOSITADJUSTMENTKEY integer, 
+            DEPOSITCHARGEKEY integer, 
+            LINEITEMKEY integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            ONEOFFCHARGEKEY integer, 
+            ORIGPAYALLOCAMT numeric(38, 10), 
+            PAYMENTKEY integer, 
+            PAYORDER integer, 
+            PAYSPECIFICBILLKEY integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

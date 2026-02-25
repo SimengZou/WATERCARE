@@ -1,0 +1,2 @@
+create database PRDCLONE_WCC_DATAWAREHOUSE;
+create schema DATAHUB_ADMIN;

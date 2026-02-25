@@ -1,0 +1,19 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_U5PMPRIORTIES(
+                "CREATED" datetime, 
+                "CREATEDBY" varchar, 
+                "LASTSAVED" datetime, 
+                "PMP_COMPLETE_DAYS" numeric(38, 10), 
+                "PMP_CYCLE_LENGTH" numeric(38, 10), 
+                "PMP_CYCLE_TEXT" varchar, 
+                "PMP_CYCLE_UOM" varchar, 
+                "PMP_PRIORITY" varchar, 
+                "PMP_RELEASE_DAYS" numeric(38, 10), 
+                "UPDATECOUNT" numeric(38, 10), 
+                "UPDATED" datetime, 
+                "UPDATEDBY" varchar, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

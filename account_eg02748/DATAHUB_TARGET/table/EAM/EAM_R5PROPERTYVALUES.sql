@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5PROPERTYVALUES(
+                "PRV_CLASS" varchar, 
+                "PRV_CLASS_ORG" varchar, 
+                "PRV_CODE" varchar, 
+                "PRV_CREATED" datetime, 
+                "PRV_DVALUE" datetime, 
+                "PRV_LASTSAVED" datetime, 
+                "PRV_NOTUSED" varchar, 
+                "PRV_NVALUE" numeric(38, 10), 
+                "PRV_PROPERTY" varchar, 
+                "PRV_RENTITY" varchar, 
+                "PRV_SEQNO" numeric(38, 10), 
+                "PRV_UPDATECOUNT" numeric(38, 10), 
+                "PRV_UPDATED" datetime, 
+                "PRV_VALUE" varchar, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

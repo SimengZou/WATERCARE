@@ -1,0 +1,7 @@
+create or replace pipe DATAHUB_INTEGRATION.PIPE_IPS_CDR_BUILDING_BLDGAPL auto_ingest=true
+            error_integration = ${buildvar.env}_NOTIFICATION_INTEGRATION_PIPE as
+            copy into DATAHUB_LANDING.IPS_CDR_BUILDING_BLDGAPL
+             from (
+                SELECT
+                $1,CURRENT_TIMESTAMP as ETL_LOAD_DATETIME,METADATA$FILENAME as ETL_LOAD_METADATAFILENAME
+                FROM @DATAHUB_INTEGRATION.STAGE_IPS_CDR_BUILDING_BLDGAPL(FILE_FORMAT => DATAHUB_INTEGRATION.json_format));

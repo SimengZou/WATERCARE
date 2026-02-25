@@ -1,0 +1,19 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_WSLSERVICEREQUESTCODES_SRPRIORITYCAL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CODE varchar, 
+            COMPLETED integer, 
+            DELETED boolean, 
+            DESCRIPT varchar, 
+            EFFDATE datetime, 
+            EXPDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            ONSITE integer, 
+            SERVICERESTORED integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,7 @@
+CREATE OR REPLACE TASK DATAHUB_INTEGRATION.TASK_EAM_U5DIMENSION3
+                    schedule  = 'USING CRON 0 4 * * * Pacific/Auckland'
+    when
+    system$stream_has_data('STREAM_EAM_U5DIMENSION3')
+  as 
+call EAM_TARGET_MERGE_U5DIMENSION3();
+alter task DATAHUB_INTEGRATION.TASK_EAM_U5DIMENSION3 resume;

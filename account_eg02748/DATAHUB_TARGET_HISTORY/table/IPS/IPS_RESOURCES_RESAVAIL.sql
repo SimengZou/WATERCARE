@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_RESOURCES_RESAVAIL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            ALTWKDT datetime, 
+            DATALAKE_DELETED boolean, 
+            EFFDATE datetime, 
+            EMPID varchar, 
+            ENDTIME datetime, 
+            EXPDATE datetime, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            RESAVKEY integer, 
+            STARTTIME datetime, 
+            VARIATION_ID integer, 
+            WKDAY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

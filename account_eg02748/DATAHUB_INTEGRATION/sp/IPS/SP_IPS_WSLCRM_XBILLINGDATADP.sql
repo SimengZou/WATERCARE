@@ -1,0 +1,512 @@
+create or replace procedure DATAHUB_INTEGRATION.SP_IPS_WSLCRM_XBILLINGDATADP()
+    returns varchar not null
+                language javascript
+                as
+                $$
+
+//  Variables
+
+var result = "";                                    // return status of this proc call
+const process_name = Object.keys(this)[0];          // name of currently executing process
+var number_of_rows_inserted = 0;                             // track number of rows we have inserted
+var number_of_rows_updated = 0;                             // track number of rows we have updated
+
+
+//  Step 1.
+
+//  Start execution - log start
+
+log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('Insert','" + process_name + "','Running','Started process execution.', 0,0,0);";
+snowflake.execute({sqlText: log_sql_command});
+
+snowflake.execute( {sqlText: "begin transaction;"} );
+try
+    {
+        var sql_command = `
+                            INSERT INTO LANDING_ERROR.IPS_RAW_ERROR
+                            SELECT * FROM LANDING_ERROR.VW_STREAM_IPS_WSLCRM_XBILLINGDATADP_ERROR`;
+    var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+    var rs = sqlStmt.execute();
+        
+        var sql_command = ` 
+                            merge into  DATAHUB_TARGET.IPS_WSLCRM_XBILLINGDATADP as target using (SELECT * FROM (SELECT 
+            strm.ACCOUNTCLASS, 
+            strm.ACCOUNTCREATEDATE, 
+            strm.ACTIONTYPEDESC, 
+            strm.ADDBY, 
+            strm.ADDDTTM, 
+            strm.ADDRESS, 
+            strm.APPNO, 
+            strm.CONTACTID, 
+            strm.CONTACTKEY, 
+            strm.CONTRACTORREFNO, 
+            strm.CREATEACCOUNT, 
+            strm.CREWID, 
+            strm.CT, 
+            strm.CUSTOMERSIDE, 
+            strm.DELETED, 
+            strm.DISCONNECTIONDATE, 
+            strm.DISCONNECTIONTYPE, 
+            strm.DP, 
+            strm.EMPLOYEEID, 
+            strm.ESTDAILYWATERDEMAND, 
+            strm.FLOWATTHEMETER, 
+            strm.GISXCOORD, 
+            strm.GISYCOORD, 
+            strm.GISZCOORD, 
+            strm.INITIALMETERREADING, 
+            strm.LOCATIONDESCRIPTION, 
+            strm.LOT, 
+            strm.METERINSTALLATIONPHOTO, 
+            strm.MODBY, 
+            strm.MODDTTM, 
+            strm.MULTIMETERACCOUNT, 
+            strm.NEWMETERID, 
+            strm.NEWMETERINSTALLDATE, 
+            strm.NEWMETERSIZE, 
+            strm.OLDMETERID, 
+            strm.OLDMETERREADING, 
+            strm.OWNERCUSTOMER, 
+            strm.PHONENUMBER, 
+            strm.PIPEDAIMETER, 
+            strm.PIPELENGTH, 
+            strm.PRICEPLAN, 
+            strm.REJECTBYBILLS, 
+            strm.REJECTREASON, 
+            strm.SERIALNO, 
+            strm.SERVICELINEMATERIAL, 
+            strm.SERVNO, 
+            strm.SMS, 
+            strm.SUBMITTEDASBUILT, 
+            strm.USELASTBILLEDREAD, 
+            strm.VARIATION_ID, 
+            strm.WORKORDERMETERID, 
+            strm.WORKORDERNO, 
+            strm.WORKTYPEDESC, 
+            strm.WSLSIDE, 
+            strm.XBILLINGDATADPKEY, 
+            strm.ETL_SEQUENCE_NUMBER,
+            strm.ETL_DELETED,
+            strm.etl_load_datetime,
+            strm.etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+            strm.XBILLINGDATADPKEY ORDER BY strm.ETL_SEQUENCE_NUMBER desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+        FROM DATAHUB_INTEGRATION.VW_STREAM_IPS_WSLCRM_XBILLINGDATADP as  strm
+                    )   
+            WHERE ROWNUMBER=1  
+            
+                    ) as src on
+            ((target.XBILLINGDATADPKEY=src.XBILLINGDATADPKEY) OR (target.XBILLINGDATADPKEY IS NULL AND src.XBILLINGDATADPKEY IS NULL)) 
+                when matched and src.ETL_DELETED=TRUE THEN DELETE
+                when matched then update set
+                    target.ACCOUNTCLASS=src.ACCOUNTCLASS, 
+                    target.ACCOUNTCREATEDATE=src.ACCOUNTCREATEDATE, 
+                    target.ACTIONTYPEDESC=src.ACTIONTYPEDESC, 
+                    target.ADDBY=src.ADDBY, 
+                    target.ADDDTTM=src.ADDDTTM, 
+                    target.ADDRESS=src.ADDRESS, 
+                    target.APPNO=src.APPNO, 
+                    target.CONTACTID=src.CONTACTID, 
+                    target.CONTACTKEY=src.CONTACTKEY, 
+                    target.CONTRACTORREFNO=src.CONTRACTORREFNO, 
+                    target.CREATEACCOUNT=src.CREATEACCOUNT, 
+                    target.CREWID=src.CREWID, 
+                    target.CT=src.CT, 
+                    target.CUSTOMERSIDE=src.CUSTOMERSIDE, 
+                    target.DELETED=src.DELETED, 
+                    target.DISCONNECTIONDATE=src.DISCONNECTIONDATE, 
+                    target.DISCONNECTIONTYPE=src.DISCONNECTIONTYPE, 
+                    target.DP=src.DP, 
+                    target.EMPLOYEEID=src.EMPLOYEEID, 
+                    target.ESTDAILYWATERDEMAND=src.ESTDAILYWATERDEMAND, 
+                    target.FLOWATTHEMETER=src.FLOWATTHEMETER, 
+                    target.GISXCOORD=src.GISXCOORD, 
+                    target.GISYCOORD=src.GISYCOORD, 
+                    target.GISZCOORD=src.GISZCOORD, 
+                    target.INITIALMETERREADING=src.INITIALMETERREADING, 
+                    target.LOCATIONDESCRIPTION=src.LOCATIONDESCRIPTION, 
+                    target.LOT=src.LOT, 
+                    target.METERINSTALLATIONPHOTO=src.METERINSTALLATIONPHOTO, 
+                    target.MODBY=src.MODBY, 
+                    target.MODDTTM=src.MODDTTM, 
+                    target.MULTIMETERACCOUNT=src.MULTIMETERACCOUNT, 
+                    target.NEWMETERID=src.NEWMETERID, 
+                    target.NEWMETERINSTALLDATE=src.NEWMETERINSTALLDATE, 
+                    target.NEWMETERSIZE=src.NEWMETERSIZE, 
+                    target.OLDMETERID=src.OLDMETERID, 
+                    target.OLDMETERREADING=src.OLDMETERREADING, 
+                    target.OWNERCUSTOMER=src.OWNERCUSTOMER, 
+                    target.PHONENUMBER=src.PHONENUMBER, 
+                    target.PIPEDAIMETER=src.PIPEDAIMETER, 
+                    target.PIPELENGTH=src.PIPELENGTH, 
+                    target.PRICEPLAN=src.PRICEPLAN, 
+                    target.REJECTBYBILLS=src.REJECTBYBILLS, 
+                    target.REJECTREASON=src.REJECTREASON, 
+                    target.SERIALNO=src.SERIALNO, 
+                    target.SERVICELINEMATERIAL=src.SERVICELINEMATERIAL, 
+                    target.SERVNO=src.SERVNO, 
+                    target.SMS=src.SMS, 
+                    target.SUBMITTEDASBUILT=src.SUBMITTEDASBUILT, 
+                    target.USELASTBILLEDREAD=src.USELASTBILLEDREAD, 
+                    target.VARIATION_ID=src.VARIATION_ID, 
+                    target.WORKORDERMETERID=src.WORKORDERMETERID, 
+                    target.WORKORDERNO=src.WORKORDERNO, 
+                    target.WORKTYPEDESC=src.WORKTYPEDESC, 
+                    target.WSLSIDE=src.WSLSIDE, 
+                    target.XBILLINGDATADPKEY=src.XBILLINGDATADPKEY, 
+                    target.ETL_SEQUENCE_NUMBER=src.ETL_SEQUENCE_NUMBER,
+                    target.etl_load_datetime=CURRENT_TIMESTAMP,
+                    target.etl_load_metadatafilename=src.etl_load_metadatafilename
+        when not matched and (src.ETL_DELETED=FALSE OR src.ETL_DELETED IS NULL)  then insert ( 
+                    ACCOUNTCLASS, 
+                    ACCOUNTCREATEDATE, 
+                    ACTIONTYPEDESC, 
+                    ADDBY, 
+                    ADDDTTM, 
+                    ADDRESS, 
+                    APPNO, 
+                    CONTACTID, 
+                    CONTACTKEY, 
+                    CONTRACTORREFNO, 
+                    CREATEACCOUNT, 
+                    CREWID, 
+                    CT, 
+                    CUSTOMERSIDE, 
+                    DELETED, 
+                    DISCONNECTIONDATE, 
+                    DISCONNECTIONTYPE, 
+                    DP, 
+                    EMPLOYEEID, 
+                    ESTDAILYWATERDEMAND, 
+                    FLOWATTHEMETER, 
+                    GISXCOORD, 
+                    GISYCOORD, 
+                    GISZCOORD, 
+                    INITIALMETERREADING, 
+                    LOCATIONDESCRIPTION, 
+                    LOT, 
+                    METERINSTALLATIONPHOTO, 
+                    MODBY, 
+                    MODDTTM, 
+                    MULTIMETERACCOUNT, 
+                    NEWMETERID, 
+                    NEWMETERINSTALLDATE, 
+                    NEWMETERSIZE, 
+                    OLDMETERID, 
+                    OLDMETERREADING, 
+                    OWNERCUSTOMER, 
+                    PHONENUMBER, 
+                    PIPEDAIMETER, 
+                    PIPELENGTH, 
+                    PRICEPLAN, 
+                    REJECTBYBILLS, 
+                    REJECTREASON, 
+                    SERIALNO, 
+                    SERVICELINEMATERIAL, 
+                    SERVNO, 
+                    SMS, 
+                    SUBMITTEDASBUILT, 
+                    USELASTBILLEDREAD, 
+                    VARIATION_ID, 
+                    WORKORDERMETERID, 
+                    WORKORDERNO, 
+                    WORKTYPEDESC, 
+                    WSLSIDE, 
+                    XBILLINGDATADPKEY, 
+                    ETL_SEQUENCE_NUMBER,                       
+                    etl_load_datetime,
+                    etl_load_metadatafilename) 
+            values (
+                    src.ACCOUNTCLASS, 
+                    src.ACCOUNTCREATEDATE, 
+                    src.ACTIONTYPEDESC, 
+                    src.ADDBY, 
+                    src.ADDDTTM, 
+                    src.ADDRESS, 
+                    src.APPNO, 
+                    src.CONTACTID, 
+                    src.CONTACTKEY, 
+                    src.CONTRACTORREFNO, 
+                    src.CREATEACCOUNT, 
+                    src.CREWID, 
+                    src.CT, 
+                    src.CUSTOMERSIDE, 
+                    src.DELETED, 
+                    src.DISCONNECTIONDATE, 
+                    src.DISCONNECTIONTYPE, 
+                    src.DP, 
+                    src.EMPLOYEEID, 
+                    src.ESTDAILYWATERDEMAND, 
+                    src.FLOWATTHEMETER, 
+                    src.GISXCOORD, 
+                    src.GISYCOORD, 
+                    src.GISZCOORD, 
+                    src.INITIALMETERREADING, 
+                    src.LOCATIONDESCRIPTION, 
+                    src.LOT, 
+                    src.METERINSTALLATIONPHOTO, 
+                    src.MODBY, 
+                    src.MODDTTM, 
+                    src.MULTIMETERACCOUNT, 
+                    src.NEWMETERID, 
+                    src.NEWMETERINSTALLDATE, 
+                    src.NEWMETERSIZE, 
+                    src.OLDMETERID, 
+                    src.OLDMETERREADING, 
+                    src.OWNERCUSTOMER, 
+                    src.PHONENUMBER, 
+                    src.PIPEDAIMETER, 
+                    src.PIPELENGTH, 
+                    src.PRICEPLAN, 
+                    src.REJECTBYBILLS, 
+                    src.REJECTREASON, 
+                    src.SERIALNO, 
+                    src.SERVICELINEMATERIAL, 
+                    src.SERVNO, 
+                    src.SMS, 
+                    src.SUBMITTEDASBUILT, 
+                    src.USELASTBILLEDREAD, 
+                    src.VARIATION_ID, 
+                    src.WORKORDERMETERID, 
+                    src.WORKORDERNO, 
+                    src.WORKTYPEDESC, 
+                    src.WSLSIDE, 
+                    src.XBILLINGDATADPKEY,     
+                    src.ETL_SEQUENCE_NUMBER,
+                    CURRENT_TIMESTAMP,
+                    src.etl_load_metadatafilename);`;
+
+    var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+    var rs = sqlStmt.execute();
+
+    snowflake.execute( {sqlText: `merge into DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLCRM_XBILLINGDATADP as target using (
+                SELECT * FROM (SELECT 
+            strm.ACCOUNTCLASS, 
+            strm.ACCOUNTCREATEDATE, 
+            strm.ACTIONTYPEDESC, 
+            strm.ADDBY, 
+            strm.ADDDTTM, 
+            strm.ADDRESS, 
+            strm.APPNO, 
+            strm.CONTACTID, 
+            strm.CONTACTKEY, 
+            strm.CONTRACTORREFNO, 
+            strm.CREATEACCOUNT, 
+            strm.CREWID, 
+            strm.CT, 
+            strm.CUSTOMERSIDE, 
+            strm.DELETED, 
+            strm.DISCONNECTIONDATE, 
+            strm.DISCONNECTIONTYPE, 
+            strm.DP, 
+            strm.EMPLOYEEID, 
+            strm.ESTDAILYWATERDEMAND, 
+            strm.FLOWATTHEMETER, 
+            strm.GISXCOORD, 
+            strm.GISYCOORD, 
+            strm.GISZCOORD, 
+            strm.INITIALMETERREADING, 
+            strm.LOCATIONDESCRIPTION, 
+            strm.LOT, 
+            strm.METERINSTALLATIONPHOTO, 
+            strm.MODBY, 
+            strm.MODDTTM, 
+            strm.MULTIMETERACCOUNT, 
+            strm.NEWMETERID, 
+            strm.NEWMETERINSTALLDATE, 
+            strm.NEWMETERSIZE, 
+            strm.OLDMETERID, 
+            strm.OLDMETERREADING, 
+            strm.OWNERCUSTOMER, 
+            strm.PHONENUMBER, 
+            strm.PIPEDAIMETER, 
+            strm.PIPELENGTH, 
+            strm.PRICEPLAN, 
+            strm.REJECTBYBILLS, 
+            strm.REJECTREASON, 
+            strm.SERIALNO, 
+            strm.SERVICELINEMATERIAL, 
+            strm.SERVNO, 
+            strm.SMS, 
+            strm.SUBMITTEDASBUILT, 
+            strm.USELASTBILLEDREAD, 
+            strm.VARIATION_ID, 
+            strm.WORKORDERMETERID, 
+            strm.WORKORDERNO, 
+            strm.WORKTYPEDESC, 
+            strm.WSLSIDE, 
+            strm.XBILLINGDATADPKEY, 
+            strm.ETL_SEQUENCE_NUMBER,
+            strm.ETL_DELETED,
+            strm.etl_load_datetime,
+            strm.etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+            strm.XBILLINGDATADPKEY ORDER BY strm.ETL_SEQUENCE_NUMBER desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+        FROM DATAHUB_INTEGRATION.VW_STREAM_IPS_WSLCRM_XBILLINGDATADP as  strm
+        WHERE strm.ETL_DELETED=TRUE
+                    )   
+            WHERE ROWNUMBER=1  
+            
+                    ) as src on
+            ((target.XBILLINGDATADPKEY=src.XBILLINGDATADPKEY) OR (target.XBILLINGDATADPKEY IS NULL AND src.XBILLINGDATADPKEY IS NULL)) 
+                when matched then update set
+                    target.ACCOUNTCLASS=src.ACCOUNTCLASS, 
+                    target.ACCOUNTCREATEDATE=src.ACCOUNTCREATEDATE, 
+                    target.ACTIONTYPEDESC=src.ACTIONTYPEDESC, 
+                    target.ADDBY=src.ADDBY, 
+                    target.ADDDTTM=src.ADDDTTM, 
+                    target.ADDRESS=src.ADDRESS, 
+                    target.APPNO=src.APPNO, 
+                    target.CONTACTID=src.CONTACTID, 
+                    target.CONTACTKEY=src.CONTACTKEY, 
+                    target.CONTRACTORREFNO=src.CONTRACTORREFNO, 
+                    target.CREATEACCOUNT=src.CREATEACCOUNT, 
+                    target.CREWID=src.CREWID, 
+                    target.CT=src.CT, 
+                    target.CUSTOMERSIDE=src.CUSTOMERSIDE, 
+                    target.DELETED=src.DELETED, 
+                    target.DISCONNECTIONDATE=src.DISCONNECTIONDATE, 
+                    target.DISCONNECTIONTYPE=src.DISCONNECTIONTYPE, 
+                    target.DP=src.DP, 
+                    target.EMPLOYEEID=src.EMPLOYEEID, 
+                    target.ESTDAILYWATERDEMAND=src.ESTDAILYWATERDEMAND, 
+                    target.FLOWATTHEMETER=src.FLOWATTHEMETER, 
+                    target.GISXCOORD=src.GISXCOORD, 
+                    target.GISYCOORD=src.GISYCOORD, 
+                    target.GISZCOORD=src.GISZCOORD, 
+                    target.INITIALMETERREADING=src.INITIALMETERREADING, 
+                    target.LOCATIONDESCRIPTION=src.LOCATIONDESCRIPTION, 
+                    target.LOT=src.LOT, 
+                    target.METERINSTALLATIONPHOTO=src.METERINSTALLATIONPHOTO, 
+                    target.MODBY=src.MODBY, 
+                    target.MODDTTM=src.MODDTTM, 
+                    target.MULTIMETERACCOUNT=src.MULTIMETERACCOUNT, 
+                    target.NEWMETERID=src.NEWMETERID, 
+                    target.NEWMETERINSTALLDATE=src.NEWMETERINSTALLDATE, 
+                    target.NEWMETERSIZE=src.NEWMETERSIZE, 
+                    target.OLDMETERID=src.OLDMETERID, 
+                    target.OLDMETERREADING=src.OLDMETERREADING, 
+                    target.OWNERCUSTOMER=src.OWNERCUSTOMER, 
+                    target.PHONENUMBER=src.PHONENUMBER, 
+                    target.PIPEDAIMETER=src.PIPEDAIMETER, 
+                    target.PIPELENGTH=src.PIPELENGTH, 
+                    target.PRICEPLAN=src.PRICEPLAN, 
+                    target.REJECTBYBILLS=src.REJECTBYBILLS, 
+                    target.REJECTREASON=src.REJECTREASON, 
+                    target.SERIALNO=src.SERIALNO, 
+                    target.SERVICELINEMATERIAL=src.SERVICELINEMATERIAL, 
+                    target.SERVNO=src.SERVNO, 
+                    target.SMS=src.SMS, 
+                    target.SUBMITTEDASBUILT=src.SUBMITTEDASBUILT, 
+                    target.USELASTBILLEDREAD=src.USELASTBILLEDREAD, 
+                    target.VARIATION_ID=src.VARIATION_ID, 
+                    target.WORKORDERMETERID=src.WORKORDERMETERID, 
+                    target.WORKORDERNO=src.WORKORDERNO, 
+                    target.WORKTYPEDESC=src.WORKTYPEDESC, 
+                    target.WSLSIDE=src.WSLSIDE, 
+                    target.XBILLINGDATADPKEY=src.XBILLINGDATADPKEY, 
+                    target.ETL_SEQUENCE_NUMBER=src.ETL_SEQUENCE_NUMBER,
+                    target.etl_load_datetime=CURRENT_TIMESTAMP,
+                    target.etl_load_metadatafilename=src.etl_load_metadatafilename,
+                    target.ETL_DELETED=src.ETL_DELETED
+        when not matched   then insert ( ACCOUNTCLASS, ACCOUNTCREATEDATE, ACTIONTYPEDESC, ADDBY, ADDDTTM, ADDRESS, APPNO, CONTACTID, CONTACTKEY, CONTRACTORREFNO, CREATEACCOUNT, CREWID, CT, CUSTOMERSIDE, DELETED, DISCONNECTIONDATE, DISCONNECTIONTYPE, DP, EMPLOYEEID, ESTDAILYWATERDEMAND, FLOWATTHEMETER, GISXCOORD, GISYCOORD, GISZCOORD, INITIALMETERREADING, LOCATIONDESCRIPTION, LOT, METERINSTALLATIONPHOTO, MODBY, MODDTTM, MULTIMETERACCOUNT, NEWMETERID, NEWMETERINSTALLDATE, NEWMETERSIZE, OLDMETERID, OLDMETERREADING, OWNERCUSTOMER, PHONENUMBER, PIPEDAIMETER, PIPELENGTH, PRICEPLAN, REJECTBYBILLS, REJECTREASON, SERIALNO, SERVICELINEMATERIAL, SERVNO, SMS, SUBMITTEDASBUILT, USELASTBILLEDREAD, VARIATION_ID, WORKORDERMETERID, WORKORDERNO, WORKTYPEDESC, WSLSIDE, XBILLINGDATADPKEY, 
+                    ETL_SEQUENCE_NUMBER,                       
+                    etl_load_datetime,
+                    etl_load_metadatafilename,
+                    etl_is_deleted,
+                    ETL_DELETED) 
+            values (
+                    src.ACCOUNTCLASS, 
+                    src.ACCOUNTCREATEDATE, 
+                    src.ACTIONTYPEDESC, 
+                    src.ADDBY, 
+                    src.ADDDTTM, 
+                    src.ADDRESS, 
+                    src.APPNO, 
+                    src.CONTACTID, 
+                    src.CONTACTKEY, 
+                    src.CONTRACTORREFNO, 
+                    src.CREATEACCOUNT, 
+                    src.CREWID, 
+                    src.CT, 
+                    src.CUSTOMERSIDE, 
+                    src.DELETED, 
+                    src.DISCONNECTIONDATE, 
+                    src.DISCONNECTIONTYPE, 
+                    src.DP, 
+                    src.EMPLOYEEID, 
+                    src.ESTDAILYWATERDEMAND, 
+                    src.FLOWATTHEMETER, 
+                    src.GISXCOORD, 
+                    src.GISYCOORD, 
+                    src.GISZCOORD, 
+                    src.INITIALMETERREADING, 
+                    src.LOCATIONDESCRIPTION, 
+                    src.LOT, 
+                    src.METERINSTALLATIONPHOTO, 
+                    src.MODBY, 
+                    src.MODDTTM, 
+                    src.MULTIMETERACCOUNT, 
+                    src.NEWMETERID, 
+                    src.NEWMETERINSTALLDATE, 
+                    src.NEWMETERSIZE, 
+                    src.OLDMETERID, 
+                    src.OLDMETERREADING, 
+                    src.OWNERCUSTOMER, 
+                    src.PHONENUMBER, 
+                    src.PIPEDAIMETER, 
+                    src.PIPELENGTH, 
+                    src.PRICEPLAN, 
+                    src.REJECTBYBILLS, 
+                    src.REJECTREASON, 
+                    src.SERIALNO, 
+                    src.SERVICELINEMATERIAL, 
+                    src.SERVNO, 
+                    src.SMS, 
+                    src.SUBMITTEDASBUILT, 
+                    src.USELASTBILLEDREAD, 
+                    src.VARIATION_ID, 
+                    src.WORKORDERMETERID, 
+                    src.WORKORDERNO, 
+                    src.WORKTYPEDESC, 
+                    src.WSLSIDE, 
+                    src.XBILLINGDATADPKEY,     
+                    src.ETL_SEQUENCE_NUMBER,
+                    CURRENT_TIMESTAMP,
+                    src.etl_load_metadatafilename,
+                    case when ETL_DELETED=TRUE then TRUE else FALSE end,
+                    ETL_DELETED);
+    `
+} );
+
+                    
+//  Get number of rows inserted
+        
+        var sqlStmt = snowflake.createStatement( {sqlText:  sql_command} );
+        var rs = sqlStmt.execute();
+        var number_of_rows_inserted = sqlStmt.getNumRowsInserted();
+        var number_of_rows_updated =  sqlStmt.getNumRowsUpdated();
+                    
+
+        
+    snowflake.execute ({sqlText: "commit"});
+
+    log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('UpdateEnd','" + process_name + "','Success','Completed process execution.', 0 ," + number_of_rows_inserted.toString()+ "," +  number_of_rows_updated.toString() + ");";
+    snowflake.execute({sqlText: log_sql_command});
+
+    result = "Success"; 
+
+    }       
+
+    catch (err)  {
+        snowflake.execute( {sqlText: "rollback;"} )
+        var clean_error_msg = err.message.replace(/[^\w\s]/gi, '');
+    //  Create a log entry to say INSERT STATEMENT failed
+    
+    log_sql_command = "call datahub_logging.sp_etl_log_ingestion_process('UpdateEnd','" + process_name + "','Failed','MERGE Failed. Error:" + err.code.toString()+" : "+ clean_error_msg  + "', 0 ,0,0);";
+    snowflake.execute({sqlText: log_sql_command});
+        ;
+        throw "Failed: " + err.message;   // Return a success/error indicator.
+        }
+    return result;
+    $$;

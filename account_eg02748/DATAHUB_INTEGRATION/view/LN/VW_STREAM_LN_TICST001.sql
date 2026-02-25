@@ -1,0 +1,437 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_LN_TICST001 AS SELECT
+                        src:aamt_1::numeric(38, 17) AS aamt_1, 
+                        src:aamt_2::numeric(38, 17) AS aamt_2, 
+                        src:aamt_3::numeric(38, 17) AS aamt_3, 
+                        src:aamt_dwhc::numeric(38, 17) AS aamt_dwhc, 
+                        src:aamt_lclc::numeric(38, 17) AS aamt_lclc, 
+                        src:aamt_refc::numeric(38, 17) AS aamt_refc, 
+                        src:aamt_rpc1::numeric(38, 17) AS aamt_rpc1, 
+                        src:aamt_rpc2::numeric(38, 17) AS aamt_rpc2, 
+                        src:aamu_1::numeric(38, 17) AS aamu_1, 
+                        src:aamu_2::numeric(38, 17) AS aamu_2, 
+                        src:aamu_3::numeric(38, 17) AS aamu_3, 
+                        src:aamu_dwhc::numeric(38, 17) AS aamu_dwhc, 
+                        src:aamu_lclc::numeric(38, 17) AS aamu_lclc, 
+                        src:aamu_refc::numeric(38, 17) AS aamu_refc, 
+                        src:aamu_rpc1::numeric(38, 17) AS aamu_rpc1, 
+                        src:aamu_rpc2::numeric(38, 17) AS aamu_rpc2, 
+                        src:aldt::datetime AS aldt, 
+                        src:alfp::integer AS alfp, 
+                        src:almi::integer AS almi, 
+                        src:almi_kw::varchar AS almi_kw, 
+                        src:altp::integer AS altp, 
+                        src:altp_kw::varchar AS altp_kw, 
+                        src:alty::integer AS alty, 
+                        src:alty_kw::varchar AS alty_kw, 
+                        src:ames_dwhc::numeric(38, 17) AS ames_dwhc, 
+                        src:ames_lclc::numeric(38, 17) AS ames_lclc, 
+                        src:ames_refc::numeric(38, 17) AS ames_refc, 
+                        src:ames_rpc1::numeric(38, 17) AS ames_rpc1, 
+                        src:ames_rpc2::numeric(38, 17) AS ames_rpc2, 
+                        src:aues_dwhc::numeric(38, 17) AS aues_dwhc, 
+                        src:aues_lclc::numeric(38, 17) AS aues_lclc, 
+                        src:aues_refc::numeric(38, 17) AS aues_refc, 
+                        src:aues_rpc1::numeric(38, 17) AS aues_rpc1, 
+                        src:aues_rpc2::numeric(38, 17) AS aues_rpc2, 
+                        src:bfls::integer AS bfls, 
+                        src:bfls_kw::varchar AS bfls_kw, 
+                        src:bmdl::varchar AS bmdl, 
+                        src:bmit::varchar AS bmit, 
+                        src:bmrv::varchar AS bmrv, 
+                        src:boun::varchar AS boun, 
+                        src:boun_ref_compnr::integer AS boun_ref_compnr, 
+                        src:bpon::integer AS bpon, 
+                        src:bseq::integer AS bseq, 
+                        src:bwar::varchar AS bwar, 
+                        src:bwar_ref_compnr::integer AS bwar_ref_compnr, 
+                        src:cctt::integer AS cctt, 
+                        src:cctt_kw::varchar AS cctt_kw, 
+                        src:ccur::varchar AS ccur, 
+                        src:ccur_ref_compnr::integer AS ccur_ref_compnr, 
+                        src:clot::varchar AS clot, 
+                        src:compnr::integer AS compnr, 
+                        src:cpcs_1::numeric(38, 17) AS cpcs_1, 
+                        src:cpcs_2::numeric(38, 17) AS cpcs_2, 
+                        src:cpcs_3::numeric(38, 17) AS cpcs_3, 
+                        src:cpcs_dwhc::numeric(38, 17) AS cpcs_dwhc, 
+                        src:cpcs_lclc::numeric(38, 17) AS cpcs_lclc, 
+                        src:cpcs_refc::numeric(38, 17) AS cpcs_refc, 
+                        src:cpcs_rpc1::numeric(38, 17) AS cpcs_rpc1, 
+                        src:cpcs_rpc2::numeric(38, 17) AS cpcs_rpc2, 
+                        src:cpcu_1::numeric(38, 17) AS cpcu_1, 
+                        src:cpcu_2::numeric(38, 17) AS cpcu_2, 
+                        src:cpcu_3::numeric(38, 17) AS cpcu_3, 
+                        src:cpcu_dwhc::numeric(38, 17) AS cpcu_dwhc, 
+                        src:cpcu_lclc::numeric(38, 17) AS cpcu_lclc, 
+                        src:cpcu_refc::numeric(38, 17) AS cpcu_refc, 
+                        src:cpcu_rpc1::numeric(38, 17) AS cpcu_rpc1, 
+                        src:cpcu_rpc2::numeric(38, 17) AS cpcu_rpc2, 
+                        src:cpes_1::numeric(38, 17) AS cpes_1, 
+                        src:cpes_2::numeric(38, 17) AS cpes_2, 
+                        src:cpes_3::numeric(38, 17) AS cpes_3, 
+                        src:cpes_dwhc::numeric(38, 17) AS cpes_dwhc, 
+                        src:cpes_eam1::numeric(38, 17) AS cpes_eam1, 
+                        src:cpes_eam2::numeric(38, 17) AS cpes_eam2, 
+                        src:cpes_eam3::numeric(38, 17) AS cpes_eam3, 
+                        src:cpes_refc::numeric(38, 17) AS cpes_refc, 
+                        src:cues_1::numeric(38, 17) AS cues_1, 
+                        src:cues_2::numeric(38, 17) AS cues_2, 
+                        src:cues_3::numeric(38, 17) AS cues_3, 
+                        src:cues_dwhc::numeric(38, 17) AS cues_dwhc, 
+                        src:cues_eau1::numeric(38, 17) AS cues_eau1, 
+                        src:cues_eau2::numeric(38, 17) AS cues_eau2, 
+                        src:cues_eau3::numeric(38, 17) AS cues_eau3, 
+                        src:cues_refc::numeric(38, 17) AS cues_refc, 
+                        src:cwar::varchar AS cwar, 
+                        src:cwar_ref_compnr::integer AS cwar_ref_compnr, 
+                        src:deleted::boolean AS deleted, 
+                        src:dptm_fcmp::integer AS dptm_fcmp, 
+                        src:drin::integer AS drin, 
+                        src:drin_kw::varchar AS drin_kw, 
+                        src:dris::integer AS dris, 
+                        src:dris_kw::varchar AS dris_kw, 
+                        src:dstp::integer AS dstp, 
+                        src:dstp_kw::varchar AS dstp_kw, 
+                        src:effn::integer AS effn, 
+                        src:icfm::integer AS icfm, 
+                        src:icfm_kw::varchar AS icfm_kw, 
+                        src:ippg::integer AS ippg, 
+                        src:ippg_kw::varchar AS ippg_kw, 
+                        src:issu::numeric(38, 17) AS issu, 
+                        src:issu_buar::numeric(38, 17) AS issu_buar, 
+                        src:issu_buln::numeric(38, 17) AS issu_buln, 
+                        src:issu_bupc::numeric(38, 17) AS issu_bupc, 
+                        src:issu_butm::numeric(38, 17) AS issu_butm, 
+                        src:issu_buvl::numeric(38, 17) AS issu_buvl, 
+                        src:issu_buwg::numeric(38, 17) AS issu_buwg, 
+                        src:iswh::numeric(38, 17) AS iswh, 
+                        src:iswh_buar::numeric(38, 17) AS iswh_buar, 
+                        src:iswh_buln::numeric(38, 17) AS iswh_buln, 
+                        src:iswh_bupc::numeric(38, 17) AS iswh_bupc, 
+                        src:iswh_butm::numeric(38, 17) AS iswh_butm, 
+                        src:iswh_buvl::numeric(38, 17) AS iswh_buvl, 
+                        src:iswh_buwg::numeric(38, 17) AS iswh_buwg, 
+                        src:item_rcmp::integer AS item_rcmp, 
+                        src:leng::numeric(38, 17) AS leng, 
+                        src:lpno::integer AS lpno, 
+                        src:lsel::integer AS lsel, 
+                        src:lsel_kw::varchar AS lsel_kw, 
+                        src:mcmd::integer AS mcmd, 
+                        src:mcmd_kw::varchar AS mcmd_kw, 
+                        src:noun::integer AS noun, 
+                        src:opno::integer AS opno, 
+                        src:owns::integer AS owns, 
+                        src:owns_kw::varchar AS owns_kw, 
+                        src:pdno::varchar AS pdno, 
+                        src:pdno_ref_compnr::integer AS pdno_ref_compnr, 
+                        src:pono::integer AS pono, 
+                        src:preq::numeric(38, 17) AS preq, 
+                        src:qbfd::numeric(38, 17) AS qbfd, 
+                        src:qbfd_buar::numeric(38, 17) AS qbfd_buar, 
+                        src:qbfd_buln::numeric(38, 17) AS qbfd_buln, 
+                        src:qbfd_bupc::numeric(38, 17) AS qbfd_bupc, 
+                        src:qbfd_butm::numeric(38, 17) AS qbfd_butm, 
+                        src:qbfd_buvl::numeric(38, 17) AS qbfd_buvl, 
+                        src:qbfd_buwg::numeric(38, 17) AS qbfd_buwg, 
+                        src:qqar::numeric(38, 17) AS qqar, 
+                        src:qqar_buar::numeric(38, 17) AS qqar_buar, 
+                        src:qqar_buln::numeric(38, 17) AS qqar_buln, 
+                        src:qqar_bupc::numeric(38, 17) AS qqar_bupc, 
+                        src:qqar_butm::numeric(38, 17) AS qqar_butm, 
+                        src:qqar_buvl::numeric(38, 17) AS qqar_buvl, 
+                        src:qqar_buwg::numeric(38, 17) AS qqar_buwg, 
+                        src:qqur::numeric(38, 17) AS qqur, 
+                        src:qscr::numeric(38, 17) AS qscr, 
+                        src:qscr_buar::numeric(38, 17) AS qscr_buar, 
+                        src:qscr_buln::numeric(38, 17) AS qscr_buln, 
+                        src:qscr_bupc::numeric(38, 17) AS qscr_bupc, 
+                        src:qscr_butm::numeric(38, 17) AS qscr_butm, 
+                        src:qscr_buvl::numeric(38, 17) AS qscr_buvl, 
+                        src:qscr_buwg::numeric(38, 17) AS qscr_buwg, 
+                        src:qspl::numeric(38, 17) AS qspl, 
+                        src:qtor::numeric(38, 17) AS qtor, 
+                        src:qtor_buar::numeric(38, 17) AS qtor_buar, 
+                        src:qtor_buln::numeric(38, 17) AS qtor_buln, 
+                        src:qtor_bupc::numeric(38, 17) AS qtor_bupc, 
+                        src:qtor_butm::numeric(38, 17) AS qtor_butm, 
+                        src:qtor_buvl::numeric(38, 17) AS qtor_buvl, 
+                        src:qtor_buwg::numeric(38, 17) AS qtor_buwg, 
+                        src:qucs::numeric(38, 17) AS qucs, 
+                        src:qucs_buar::numeric(38, 17) AS qucs_buar, 
+                        src:qucs_buln::numeric(38, 17) AS qucs_buln, 
+                        src:qucs_bupc::numeric(38, 17) AS qucs_bupc, 
+                        src:qucs_butm::numeric(38, 17) AS qucs_butm, 
+                        src:qucs_buvl::numeric(38, 17) AS qucs_buvl, 
+                        src:qucs_buwg::numeric(38, 17) AS qucs_buwg, 
+                        src:ques::numeric(38, 17) AS ques, 
+                        src:ques_buar::numeric(38, 17) AS ques_buar, 
+                        src:ques_buln::numeric(38, 17) AS ques_buln, 
+                        src:ques_bupc::numeric(38, 17) AS ques_bupc, 
+                        src:ques_butm::numeric(38, 17) AS ques_butm, 
+                        src:ques_buvl::numeric(38, 17) AS ques_buvl, 
+                        src:ques_buwg::numeric(38, 17) AS ques_buwg, 
+                        src:qune::numeric(38, 17) AS qune, 
+                        src:qune_buar::numeric(38, 17) AS qune_buar, 
+                        src:qune_buln::numeric(38, 17) AS qune_buln, 
+                        src:qune_bupc::numeric(38, 17) AS qune_bupc, 
+                        src:qune_butm::numeric(38, 17) AS qune_butm, 
+                        src:qune_buvl::numeric(38, 17) AS qune_buvl, 
+                        src:qune_buwg::numeric(38, 17) AS qune_buwg, 
+                        src:rdsp::integer AS rdsp, 
+                        src:rdsp_kw::varchar AS rdsp_kw, 
+                        src:revi::varchar AS revi, 
+                        src:revn::integer AS revn, 
+                        src:rtas::integer AS rtas, 
+                        src:rtas_kw::varchar AS rtas_kw, 
+                        src:rwit::integer AS rwit, 
+                        src:rwit_kw::varchar AS rwit_kw, 
+                        src:sayn::integer AS sayn, 
+                        src:sayn_kw::varchar AS sayn_kw, 
+                        src:sbsr::integer AS sbsr, 
+                        src:sbsr_kw::varchar AS sbsr_kw, 
+                        src:scdl::numeric(38, 17) AS scdl, 
+                        src:scpf::numeric(38, 17) AS scpf, 
+                        src:scpq::numeric(38, 17) AS scpq, 
+                        src:scpq_buar::numeric(38, 17) AS scpq_buar, 
+                        src:scpq_buln::numeric(38, 17) AS scpq_buln, 
+                        src:scpq_bupc::numeric(38, 17) AS scpq_bupc, 
+                        src:scpq_butm::numeric(38, 17) AS scpq_butm, 
+                        src:scpq_buvl::numeric(38, 17) AS scpq_buvl, 
+                        src:scpq_buwg::numeric(38, 17) AS scpq_buwg, 
+                        src:sequencenumber::integer AS sequencenumber, 
+                        src:sitm::varchar AS sitm, 
+                        src:sitm_ref_compnr::integer AS sitm_ref_compnr, 
+                        src:sizu::varchar AS sizu, 
+                        src:sizu_ref_compnr::integer AS sizu_ref_compnr, 
+                        src:spcn::varchar AS spcn, 
+                        src:subc::integer AS subc, 
+                        src:subc_kw::varchar AS subc_kw, 
+                        src:subd::numeric(38, 17) AS subd, 
+                        src:subd_buar::numeric(38, 17) AS subd_buar, 
+                        src:subd_buln::numeric(38, 17) AS subd_buln, 
+                        src:subd_bupc::numeric(38, 17) AS subd_bupc, 
+                        src:subd_butm::numeric(38, 17) AS subd_butm, 
+                        src:subd_buvl::numeric(38, 17) AS subd_buvl, 
+                        src:subd_buwg::numeric(38, 17) AS subd_buwg, 
+                        src:timestamp::datetime AS timestamp, 
+                        src:txta::integer AS txta, 
+                        src:txta_ref_compnr::integer AS txta_ref_compnr, 
+                        src:username::varchar AS username, 
+                        src:widt::numeric(38, 17) AS widt, src:sequencenumber::integer as ETL_SEQUENCE_NUMBER,
+            CASE
+                WHEN 'LN' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'LN' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:compnr,
+                src:pdno,
+                src:pono  ORDER BY 
+            src:sequencenumber desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_LN_TICST001 as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamt_1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamt_2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamt_3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamt_dwhc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamt_lclc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamt_refc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamt_rpc1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamt_rpc2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamu_1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamu_2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamu_3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamu_dwhc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamu_lclc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamu_refc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamu_rpc1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aamu_rpc2), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:aldt), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:alfp), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:almi), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:altp), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:alty), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ames_dwhc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ames_lclc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ames_refc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ames_rpc1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ames_rpc2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aues_dwhc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aues_lclc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aues_refc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aues_rpc1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:aues_rpc2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:bfls), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:boun_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:bpon), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:bseq), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:bwar_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cctt), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ccur_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcs_1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcs_2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcs_3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcs_dwhc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcs_lclc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcs_refc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcs_rpc1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcs_rpc2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcu_1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcu_2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcu_3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcu_dwhc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcu_lclc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcu_refc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcu_rpc1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpcu_rpc2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpes_1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpes_2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpes_3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpes_dwhc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpes_eam1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpes_eam2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpes_eam3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cpes_refc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cues_1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cues_2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cues_3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cues_dwhc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cues_eau1), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cues_eau2), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cues_eau3), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cues_refc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:cwar_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:dptm_fcmp), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:drin), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:dris), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:dstp), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:effn), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:icfm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ippg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:issu), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:issu_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:issu_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:issu_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:issu_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:issu_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:issu_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:iswh), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:iswh_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:iswh_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:iswh_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:iswh_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:iswh_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:iswh_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:item_rcmp), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:leng), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:lpno), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:lsel), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:mcmd), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:noun), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:opno), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:owns), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:pdno_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:pono), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:preq), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qbfd), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qbfd_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qbfd_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qbfd_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qbfd_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qbfd_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qbfd_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qqar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qqar_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qqar_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qqar_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qqar_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qqar_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qqar_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qqur), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qscr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qscr_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qscr_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qscr_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qscr_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qscr_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qscr_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qspl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qtor), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qtor_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qtor_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qtor_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qtor_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qtor_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qtor_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qucs), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qucs_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qucs_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qucs_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qucs_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qucs_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qucs_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ques), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ques_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ques_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ques_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ques_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ques_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:ques_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qune), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qune_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qune_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qune_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qune_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qune_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:qune_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:rdsp), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:revn), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:rtas), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:rwit), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:sayn), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:sbsr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scdl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scpf), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scpq), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scpq_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scpq_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scpq_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scpq_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scpq_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:scpq_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:sequencenumber), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:sitm_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:sizu_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:subc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:subd), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:subd_buar), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:subd_buln), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:subd_bupc), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:subd_butm), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:subd_buvl), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:subd_buwg), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:timestamp), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:txta), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:txta_ref_compnr), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:widt), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:sequencenumber), '1900-01-01')) is not null

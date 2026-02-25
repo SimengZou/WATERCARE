@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_CRM_CUSTCALL(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CALLDTTM datetime, 
+            CNTCTKEY integer, 
+            COMMENTS varchar, 
+            CSTCALKEY integer, 
+            DATALAKE_DELETED boolean, 
+            DURATION integer, 
+            INITCALL varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PRIMCALL varchar, 
+            SERVNO integer, 
+            TAKENBY varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

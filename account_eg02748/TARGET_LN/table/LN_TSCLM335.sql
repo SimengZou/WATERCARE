@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TSCLM335(
+            adur numeric(38, 17), 
+            compnr integer, 
+            cstn varchar, 
+            deleted boolean, 
+            desc object, 
+            esyn integer, 
+            esyn_kw varchar, 
+            exyn integer, 
+            exyn_kw varchar, 
+            sequencenumber integer, 
+            timestamp datetime, 
+            umtc integer, 
+            umtc_kw varchar, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

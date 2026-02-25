@@ -1,0 +1,84 @@
+CREATE OR REPLACE VIEW LANDING_ERROR.VW_STREAM_IPS_WSLASSETWATER_READINGREVIEWPARAMETERS_ERROR AS SELECT src, 'IPS_WSLASSETWATER_READINGREVIEWPARAMETERS' as TABLE_OBJECT, CASE WHEN 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:ADDDTTM), '1900-01-01')) is null and 
+                    src:ADDDTTM is not null) THEN
+                    'ADDDTTM contains a non-timestamp value : \'' || AS_VARCHAR(src:ADDDTTM) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:DAILYAVERAGEPERC), '0'), 38, 10) is null and 
+                    src:DAILYAVERAGEPERC is not null) THEN
+                    'DAILYAVERAGEPERC contains a non-numeric value : \'' || AS_VARCHAR(src:DAILYAVERAGEPERC) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:DAILYAVERAGEVALUEMAX), '0'), 38, 10) is null and 
+                    src:DAILYAVERAGEVALUEMAX is not null) THEN
+                    'DAILYAVERAGEVALUEMAX contains a non-numeric value : \'' || AS_VARCHAR(src:DAILYAVERAGEVALUEMAX) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:DAILYAVERAGEVALUEMIN), '0'), 38, 10) is null and 
+                    src:DAILYAVERAGEVALUEMIN is not null) THEN
+                    'DAILYAVERAGEVALUEMIN contains a non-numeric value : \'' || AS_VARCHAR(src:DAILYAVERAGEVALUEMIN) || '\'' WHEN 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:EFFDATE), '1900-01-01')) is null and 
+                    src:EFFDATE is not null) THEN
+                    'EFFDATE contains a non-timestamp value : \'' || AS_VARCHAR(src:EFFDATE) || '\'' WHEN 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:EXPDATE), '1900-01-01')) is null and 
+                    src:EXPDATE is not null) THEN
+                    'EXPDATE contains a non-timestamp value : \'' || AS_VARCHAR(src:EXPDATE) || '\'' WHEN 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:MODDTTM), '1900-01-01')) is null and 
+                    src:MODDTTM is not null) THEN
+                    'MODDTTM contains a non-timestamp value : \'' || AS_VARCHAR(src:MODDTTM) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:OCCURRENCE), '0'), 38, 10) is null and 
+                    src:OCCURRENCE is not null) THEN
+                    'OCCURRENCE contains a non-numeric value : \'' || AS_VARCHAR(src:OCCURRENCE) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:USAGEVALUEMAX), '0'), 38, 10) is null and 
+                    src:USAGEVALUEMAX is not null) THEN
+                    'USAGEVALUEMAX contains a non-numeric value : \'' || AS_VARCHAR(src:USAGEVALUEMAX) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:USAGEVALUEMIN), '0'), 38, 10) is null and 
+                    src:USAGEVALUEMIN is not null) THEN
+                    'USAGEVALUEMIN contains a non-numeric value : \'' || AS_VARCHAR(src:USAGEVALUEMIN) || '\'' WHEN 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:VARIATION_ID), '0'), 38, 10) is null and 
+                    src:VARIATION_ID is not null) THEN
+                    'VARIATION_ID contains a non-numeric value : \'' || AS_VARCHAR(src:VARIATION_ID) || '\'' WHEN 
+                (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:VARIATION_ID), '1900-01-01')) is null and 
+                src:VARIATION_ID is not null) THEN
+                'VARIATION_ID contains a non-timestamp value : \'' || AS_VARCHAR(src:VARIATION_ID) || '\'' END as COMMENT,  CURRENT_TIMESTAMP() as ETL_LANDING_LOAD_DATETIME,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                FROM 
+                (
+                select 
+                    src,
+                    etl_load_datetime,
+                    etl_load_metadatafilename
+                    from
+                    (
+                        SELECT
+        
+                            
+            src,
+            etl_load_datetime,
+            etl_load_metadatafilename,
+            ROW_NUMBER() OVER (PARTITION BY 
+                                    
+                src:CODE  ORDER BY 
+            src:VARIATION_ID desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_IPS_WSLASSETWATER_READINGREVIEWPARAMETERS as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:ADDDTTM), '1900-01-01')) is null and 
+                    src:ADDDTTM is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:DAILYAVERAGEPERC), '0'), 38, 10) is null and 
+                    src:DAILYAVERAGEPERC is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:DAILYAVERAGEVALUEMAX), '0'), 38, 10) is null and 
+                    src:DAILYAVERAGEVALUEMAX is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:DAILYAVERAGEVALUEMIN), '0'), 38, 10) is null and 
+                    src:DAILYAVERAGEVALUEMIN is not null) or 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:EFFDATE), '1900-01-01')) is null and 
+                    src:EFFDATE is not null) or 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:EXPDATE), '1900-01-01')) is null and 
+                    src:EXPDATE is not null) or 
+                    (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:MODDTTM), '1900-01-01')) is null and 
+                    src:MODDTTM is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:OCCURRENCE), '0'), 38, 10) is null and 
+                    src:OCCURRENCE is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:USAGEVALUEMAX), '0'), 38, 10) is null and 
+                    src:USAGEVALUEMAX is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:USAGEVALUEMIN), '0'), 38, 10) is null and 
+                    src:USAGEVALUEMIN is not null) or 
+                    (TRY_TO_NUMERIC(NVL(AS_VARCHAR(src:VARIATION_ID), '0'), 38, 10) is null and 
+                    src:VARIATION_ID is not null) or 
+                (TRY_TO_TIMESTAMP(NVL(AS_VARCHAR(src:VARIATION_ID), '1900-01-01')) is null and 
+                src:VARIATION_ID is not null)

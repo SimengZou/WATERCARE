@@ -1,0 +1,185 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5STOCK AS SELECT
+                        src:STO_ABCCLASS::varchar AS STO_ABCCLASS, 
+                        src:STO_AVGPRICE::numeric(38, 10) AS STO_AVGPRICE, 
+                        src:STO_BASEPRICE::numeric(38, 10) AS STO_BASEPRICE, 
+                        src:STO_CLASS::varchar AS STO_CLASS, 
+                        src:STO_CLASS_ORG::varchar AS STO_CLASS_ORG, 
+                        src:STO_CONSIGNMENT::varchar AS STO_CONSIGNMENT, 
+                        src:STO_CORERETURNTEMPLATE::varchar AS STO_CORERETURNTEMPLATE, 
+                        src:STO_COREVALUE::numeric(38, 10) AS STO_COREVALUE, 
+                        src:STO_CREATED::datetime AS STO_CREATED, 
+                        src:STO_CREDIT::numeric(38, 10) AS STO_CREDIT, 
+                        src:STO_DEFAULTBIN::varchar AS STO_DEFAULTBIN, 
+                        src:STO_DEFAULTRETURNBIN::varchar AS STO_DEFAULTRETURNBIN, 
+                        src:STO_FORINV::numeric(38, 10) AS STO_FORINV, 
+                        src:STO_HELDITEMSNONPOTEMPLATE::varchar AS STO_HELDITEMSNONPOTEMPLATE, 
+                        src:STO_HELDITEMSPOTEMPLATE::varchar AS STO_HELDITEMSPOTEMPLATE, 
+                        src:STO_HELDITEMSRECEIPTTEMPLATE::varchar AS STO_HELDITEMSRECEIPTTEMPLATE, 
+                        src:STO_HELDITEMSSTKTRSTEMPLATE::varchar AS STO_HELDITEMSSTKTRSTEMPLATE, 
+                        src:STO_HELDITEMSTOSTKTRSTEMPLATE::varchar AS STO_HELDITEMSTOSTKTRSTEMPLATE, 
+                        src:STO_HELDITEMSTRSTEMPLATE::varchar AS STO_HELDITEMSTRSTEMPLATE, 
+                        src:STO_ISSUETEMPLATE::varchar AS STO_ISSUETEMPLATE, 
+                        src:STO_LABELDEFAULT::varchar AS STO_LABELDEFAULT, 
+                        src:STO_LASTPRICE::numeric(38, 10) AS STO_LASTPRICE, 
+                        src:STO_LASTSAVED::datetime AS STO_LASTSAVED, 
+                        src:STO_LEADTIME::numeric(38, 10) AS STO_LEADTIME, 
+                        src:STO_MAXQTY::numeric(38, 10) AS STO_MAXQTY, 
+                        src:STO_MINLEV::numeric(38, 10) AS STO_MINLEV, 
+                        src:STO_NONPOTEMPLATE::varchar AS STO_NONPOTEMPLATE, 
+                        src:STO_ONDEMAND::varchar AS STO_ONDEMAND, 
+                        src:STO_ORDLEV::numeric(38, 10) AS STO_ORDLEV, 
+                        src:STO_ORDQTY::numeric(38, 10) AS STO_ORDQTY, 
+                        src:STO_PART::varchar AS STO_PART, 
+                        src:STO_PARTCONDITION::varchar AS STO_PARTCONDITION, 
+                        src:STO_PART_ORG::varchar AS STO_PART_ORG, 
+                        src:STO_PREFMANUFACTPART::varchar AS STO_PREFMANUFACTPART, 
+                        src:STO_PREFMANUFACTURER::varchar AS STO_PREFMANUFACTURER, 
+                        src:STO_PREFPRICE::numeric(38, 10) AS STO_PREFPRICE, 
+                        src:STO_PREFSTORE::varchar AS STO_PREFSTORE, 
+                        src:STO_PREFSUP::varchar AS STO_PREFSUP, 
+                        src:STO_PREFSUP_ORG::varchar AS STO_PREFSUP_ORG, 
+                        src:STO_PREFUOM::varchar AS STO_PREFUOM, 
+                        src:STO_PREVENTISSUEDEFRTNBIN::varchar AS STO_PREVENTISSUEDEFRTNBIN, 
+                        src:STO_PRICETYPE::varchar AS STO_PRICETYPE, 
+                        src:STO_PRINTER::varchar AS STO_PRINTER, 
+                        src:STO_QTY::numeric(38, 10) AS STO_QTY, 
+                        src:STO_RECEIPTTEMPLATE::varchar AS STO_RECEIPTTEMPLATE, 
+                        src:STO_REORDERCONDITIONS::varchar AS STO_REORDERCONDITIONS, 
+                        src:STO_REPAIRQTY::numeric(38, 10) AS STO_REPAIRQTY, 
+                        src:STO_REPAIRTYPE::varchar AS STO_REPAIRTYPE, 
+                        src:STO_REPAUTOASSIGN::varchar AS STO_REPAUTOASSIGN, 
+                        src:STO_REPDEFAULTBIN::varchar AS STO_REPDEFAULTBIN, 
+                        src:STO_REPLEADTIME::numeric(38, 10) AS STO_REPLEADTIME, 
+                        src:STO_REPMINQTY::numeric(38, 10) AS STO_REPMINQTY, 
+                        src:STO_REPMRC::varchar AS STO_REPMRC, 
+                        src:STO_REPOBJECT::varchar AS STO_REPOBJECT, 
+                        src:STO_REPOBJECT_ORG::varchar AS STO_REPOBJECT_ORG, 
+                        src:STO_REPPREFSUP::varchar AS STO_REPPREFSUP, 
+                        src:STO_REPPREFSUP_ORG::varchar AS STO_REPPREFSUP_ORG, 
+                        src:STO_REPPRICE::numeric(38, 10) AS STO_REPPRICE, 
+                        src:STO_REPSTANDWORK::varchar AS STO_REPSTANDWORK, 
+                        src:STO_REPSTOCKMETHOD::varchar AS STO_REPSTOCKMETHOD, 
+                        src:STO_SHOPQTY::numeric(38, 10) AS STO_SHOPQTY, 
+                        src:STO_STDPRICE::numeric(38, 10) AS STO_STDPRICE, 
+                        src:STO_STOCKOUT::varchar AS STO_STOCKOUT, 
+                        src:STO_STOCKTAKE::datetime AS STO_STOCKTAKE, 
+                        src:STO_STORE::varchar AS STO_STORE, 
+                        src:STO_STRECEIPTTEMPLATE::varchar AS STO_STRECEIPTTEMPLATE, 
+                        src:STO_UDFCHAR01::varchar AS STO_UDFCHAR01, 
+                        src:STO_UDFCHAR02::varchar AS STO_UDFCHAR02, 
+                        src:STO_UDFCHAR03::varchar AS STO_UDFCHAR03, 
+                        src:STO_UDFCHAR04::varchar AS STO_UDFCHAR04, 
+                        src:STO_UDFCHAR05::varchar AS STO_UDFCHAR05, 
+                        src:STO_UDFCHAR06::varchar AS STO_UDFCHAR06, 
+                        src:STO_UDFCHAR07::varchar AS STO_UDFCHAR07, 
+                        src:STO_UDFCHAR08::varchar AS STO_UDFCHAR08, 
+                        src:STO_UDFCHAR09::varchar AS STO_UDFCHAR09, 
+                        src:STO_UDFCHAR10::varchar AS STO_UDFCHAR10, 
+                        src:STO_UDFCHAR11::varchar AS STO_UDFCHAR11, 
+                        src:STO_UDFCHAR12::varchar AS STO_UDFCHAR12, 
+                        src:STO_UDFCHAR13::varchar AS STO_UDFCHAR13, 
+                        src:STO_UDFCHAR14::varchar AS STO_UDFCHAR14, 
+                        src:STO_UDFCHAR15::varchar AS STO_UDFCHAR15, 
+                        src:STO_UDFCHAR16::varchar AS STO_UDFCHAR16, 
+                        src:STO_UDFCHAR17::varchar AS STO_UDFCHAR17, 
+                        src:STO_UDFCHAR18::varchar AS STO_UDFCHAR18, 
+                        src:STO_UDFCHAR19::varchar AS STO_UDFCHAR19, 
+                        src:STO_UDFCHAR20::varchar AS STO_UDFCHAR20, 
+                        src:STO_UDFCHAR21::varchar AS STO_UDFCHAR21, 
+                        src:STO_UDFCHAR22::varchar AS STO_UDFCHAR22, 
+                        src:STO_UDFCHAR23::varchar AS STO_UDFCHAR23, 
+                        src:STO_UDFCHAR24::varchar AS STO_UDFCHAR24, 
+                        src:STO_UDFCHAR25::varchar AS STO_UDFCHAR25, 
+                        src:STO_UDFCHAR26::varchar AS STO_UDFCHAR26, 
+                        src:STO_UDFCHAR27::varchar AS STO_UDFCHAR27, 
+                        src:STO_UDFCHAR28::varchar AS STO_UDFCHAR28, 
+                        src:STO_UDFCHAR29::varchar AS STO_UDFCHAR29, 
+                        src:STO_UDFCHAR30::varchar AS STO_UDFCHAR30, 
+                        src:STO_UDFCHKBOX01::varchar AS STO_UDFCHKBOX01, 
+                        src:STO_UDFCHKBOX02::varchar AS STO_UDFCHKBOX02, 
+                        src:STO_UDFCHKBOX03::varchar AS STO_UDFCHKBOX03, 
+                        src:STO_UDFCHKBOX04::varchar AS STO_UDFCHKBOX04, 
+                        src:STO_UDFCHKBOX05::varchar AS STO_UDFCHKBOX05, 
+                        src:STO_UDFDATE01::datetime AS STO_UDFDATE01, 
+                        src:STO_UDFDATE02::datetime AS STO_UDFDATE02, 
+                        src:STO_UDFDATE03::datetime AS STO_UDFDATE03, 
+                        src:STO_UDFDATE04::datetime AS STO_UDFDATE04, 
+                        src:STO_UDFDATE05::datetime AS STO_UDFDATE05, 
+                        src:STO_UDFNUM01::numeric(38, 10) AS STO_UDFNUM01, 
+                        src:STO_UDFNUM02::numeric(38, 10) AS STO_UDFNUM02, 
+                        src:STO_UDFNUM03::numeric(38, 10) AS STO_UDFNUM03, 
+                        src:STO_UDFNUM04::numeric(38, 10) AS STO_UDFNUM04, 
+                        src:STO_UDFNUM05::numeric(38, 10) AS STO_UDFNUM05, 
+                        src:STO_UPDATECOUNT::numeric(38, 10) AS STO_UPDATECOUNT, 
+                        src:STO_UPDATED::datetime AS STO_UPDATED, 
+                        src:STO_VENDORQTY::numeric(38, 10) AS STO_VENDORQTY, 
+                        src:STO_WARRANTYTEMPLATE::varchar AS STO_WARRANTYTEMPLATE, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:STO_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:STO_PART,
+                src:STO_PART_ORG,
+                src:STO_STORE  ORDER BY 
+            src:STO_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5STOCK as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_AVGPRICE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_BASEPRICE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_COREVALUE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_CREATED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_CREDIT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_FORINV), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_LASTPRICE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_LEADTIME), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_MAXQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_MINLEV), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_ORDLEV), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_ORDQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_PREFPRICE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_QTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_REPAIRQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_REPLEADTIME), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_REPMINQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_REPPRICE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_SHOPQTY), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_STDPRICE), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_STOCKTAKE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_UDFDATE01), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_UDFDATE02), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_UDFDATE03), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_UDFDATE04), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_UDFDATE05), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_UDFNUM01), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_UDFNUM02), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_UDFNUM03), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_UDFNUM04), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_UDFNUM05), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_UPDATECOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_UPDATED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:STO_VENDORQTY), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:STO_LASTSAVED), '1900-01-01')) is not null

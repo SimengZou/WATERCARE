@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_EAM.EAM_R5QUERIES(
+                "QUE_ASSET" varchar, 
+                "QUE_CHART" varchar, 
+                "QUE_CODE" varchar, 
+                "QUE_DESC" varchar, 
+                "QUE_EQUIPMENTRANKING" varchar, 
+                "QUE_INBOX" varchar, 
+                "QUE_KPI" varchar, 
+                "QUE_LASTSAVED" datetime, 
+                "QUE_LOOKUP" varchar, 
+                "QUE_NORMAL" varchar, 
+                "QUE_NOTE" varchar, 
+                "QUE_TEXT" varchar, 
+                "QUE_UPDATECOUNT" numeric(38, 10), 
+                "QUE_UPDATED" datetime, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar
+                ); 

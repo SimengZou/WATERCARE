@@ -1,0 +1,161 @@
+CREATE OR REPLACE VIEW DATAHUB_INTEGRATION.VW_STREAM_EAM_R5BOOKEDHOURS AS SELECT
+                        src:BOO_ACD::numeric(38, 10) AS BOO_ACD, 
+                        src:BOO_ACT::numeric(38, 10) AS BOO_ACT, 
+                        src:BOO_BILLSUBLINE::varchar AS BOO_BILLSUBLINE, 
+                        src:BOO_CODE::varchar AS BOO_CODE, 
+                        src:BOO_CORRECTION::varchar AS BOO_CORRECTION, 
+                        src:BOO_CORRECTIONDATE::datetime AS BOO_CORRECTIONDATE, 
+                        src:BOO_COST::numeric(38, 10) AS BOO_COST, 
+                        src:BOO_DATE::datetime AS BOO_DATE, 
+                        src:BOO_DESC::varchar AS BOO_DESC, 
+                        src:BOO_ENTERED::datetime AS BOO_ENTERED, 
+                        src:BOO_EVENT::varchar AS BOO_EVENT, 
+                        src:BOO_EVTALIAS::varchar AS BOO_EVTALIAS, 
+                        src:BOO_FLEETCHECKED::varchar AS BOO_FLEETCHECKED, 
+                        src:BOO_FLEETMARKUP::numeric(38, 10) AS BOO_FLEETMARKUP, 
+                        src:BOO_GLTRANSFER::datetime AS BOO_GLTRANSFER, 
+                        src:BOO_GLTRANSFERFLAG::varchar AS BOO_GLTRANSFERFLAG, 
+                        src:BOO_HOURS::numeric(38, 10) AS BOO_HOURS, 
+                        src:BOO_INVOICE::varchar AS BOO_INVOICE, 
+                        src:BOO_INVOICELINE::numeric(38, 10) AS BOO_INVOICELINE, 
+                        src:BOO_INVOICE_ORG::varchar AS BOO_INVOICE_ORG, 
+                        src:BOO_INVOICE_REVISION::numeric(38, 10) AS BOO_INVOICE_REVISION, 
+                        src:BOO_JECATEGORY::varchar AS BOO_JECATEGORY, 
+                        src:BOO_JESOURCE::varchar AS BOO_JESOURCE, 
+                        src:BOO_LASTSAVED::datetime AS BOO_LASTSAVED, 
+                        src:BOO_MISC::varchar AS BOO_MISC, 
+                        src:BOO_MRC::varchar AS BOO_MRC, 
+                        src:BOO_OCRTYPE::varchar AS BOO_OCRTYPE, 
+                        src:BOO_OCTYPE::varchar AS BOO_OCTYPE, 
+                        src:BOO_OFF::numeric(38, 10) AS BOO_OFF, 
+                        src:BOO_ON::numeric(38, 10) AS BOO_ON, 
+                        src:BOO_ORDER::varchar AS BOO_ORDER, 
+                        src:BOO_ORDER_ORG::varchar AS BOO_ORDER_ORG, 
+                        src:BOO_ORDLINE::numeric(38, 10) AS BOO_ORDLINE, 
+                        src:BOO_ORIGHOURS::numeric(38, 10) AS BOO_ORIGHOURS, 
+                        src:BOO_ORIGTAXAMOUNT::numeric(38, 10) AS BOO_ORIGTAXAMOUNT, 
+                        src:BOO_PERSON::varchar AS BOO_PERSON, 
+                        src:BOO_RATE::numeric(38, 10) AS BOO_RATE, 
+                        src:BOO_ROUTEPARENT::varchar AS BOO_ROUTEPARENT, 
+                        src:BOO_ROUTEREC::varchar AS BOO_ROUTEREC, 
+                        src:BOO_ROUTERTYPE::varchar AS BOO_ROUTERTYPE, 
+                        src:BOO_SPLITHOURS::varchar AS BOO_SPLITHOURS, 
+                        src:BOO_TAXAMOUNT::numeric(38, 10) AS BOO_TAXAMOUNT, 
+                        src:BOO_TRADE::varchar AS BOO_TRADE, 
+                        src:BOO_TRANSCODE::varchar AS BOO_TRANSCODE, 
+                        src:BOO_TRANSGROUP::numeric(38, 10) AS BOO_TRANSGROUP, 
+                        src:BOO_TRANSORGID::numeric(38, 10) AS BOO_TRANSORGID, 
+                        src:BOO_UDFCHAR01::varchar AS BOO_UDFCHAR01, 
+                        src:BOO_UDFCHAR02::varchar AS BOO_UDFCHAR02, 
+                        src:BOO_UDFCHAR03::varchar AS BOO_UDFCHAR03, 
+                        src:BOO_UDFCHAR04::varchar AS BOO_UDFCHAR04, 
+                        src:BOO_UDFCHAR05::varchar AS BOO_UDFCHAR05, 
+                        src:BOO_UDFCHAR06::varchar AS BOO_UDFCHAR06, 
+                        src:BOO_UDFCHAR07::varchar AS BOO_UDFCHAR07, 
+                        src:BOO_UDFCHAR08::varchar AS BOO_UDFCHAR08, 
+                        src:BOO_UDFCHAR09::varchar AS BOO_UDFCHAR09, 
+                        src:BOO_UDFCHAR10::varchar AS BOO_UDFCHAR10, 
+                        src:BOO_UDFCHAR11::varchar AS BOO_UDFCHAR11, 
+                        src:BOO_UDFCHAR12::varchar AS BOO_UDFCHAR12, 
+                        src:BOO_UDFCHAR13::varchar AS BOO_UDFCHAR13, 
+                        src:BOO_UDFCHAR14::varchar AS BOO_UDFCHAR14, 
+                        src:BOO_UDFCHAR15::varchar AS BOO_UDFCHAR15, 
+                        src:BOO_UDFCHAR16::varchar AS BOO_UDFCHAR16, 
+                        src:BOO_UDFCHAR17::varchar AS BOO_UDFCHAR17, 
+                        src:BOO_UDFCHAR18::varchar AS BOO_UDFCHAR18, 
+                        src:BOO_UDFCHAR19::varchar AS BOO_UDFCHAR19, 
+                        src:BOO_UDFCHAR20::varchar AS BOO_UDFCHAR20, 
+                        src:BOO_UDFCHAR21::varchar AS BOO_UDFCHAR21, 
+                        src:BOO_UDFCHAR22::varchar AS BOO_UDFCHAR22, 
+                        src:BOO_UDFCHAR23::varchar AS BOO_UDFCHAR23, 
+                        src:BOO_UDFCHAR24::varchar AS BOO_UDFCHAR24, 
+                        src:BOO_UDFCHAR25::varchar AS BOO_UDFCHAR25, 
+                        src:BOO_UDFCHAR26::varchar AS BOO_UDFCHAR26, 
+                        src:BOO_UDFCHAR27::varchar AS BOO_UDFCHAR27, 
+                        src:BOO_UDFCHAR28::varchar AS BOO_UDFCHAR28, 
+                        src:BOO_UDFCHAR29::varchar AS BOO_UDFCHAR29, 
+                        src:BOO_UDFCHAR30::varchar AS BOO_UDFCHAR30, 
+                        src:BOO_UDFCHKBOX01::varchar AS BOO_UDFCHKBOX01, 
+                        src:BOO_UDFCHKBOX02::varchar AS BOO_UDFCHKBOX02, 
+                        src:BOO_UDFCHKBOX03::varchar AS BOO_UDFCHKBOX03, 
+                        src:BOO_UDFCHKBOX04::varchar AS BOO_UDFCHKBOX04, 
+                        src:BOO_UDFCHKBOX05::varchar AS BOO_UDFCHKBOX05, 
+                        src:BOO_UDFDATE01::datetime AS BOO_UDFDATE01, 
+                        src:BOO_UDFDATE02::datetime AS BOO_UDFDATE02, 
+                        src:BOO_UDFDATE03::datetime AS BOO_UDFDATE03, 
+                        src:BOO_UDFDATE04::datetime AS BOO_UDFDATE04, 
+                        src:BOO_UDFDATE05::datetime AS BOO_UDFDATE05, 
+                        src:BOO_UDFNUM01::numeric(38, 10) AS BOO_UDFNUM01, 
+                        src:BOO_UDFNUM02::numeric(38, 10) AS BOO_UDFNUM02, 
+                        src:BOO_UDFNUM03::numeric(38, 10) AS BOO_UDFNUM03, 
+                        src:BOO_UDFNUM04::numeric(38, 10) AS BOO_UDFNUM04, 
+                        src:BOO_UDFNUM05::numeric(38, 10) AS BOO_UDFNUM05, 
+                        src:BOO_UNMATCHEDINVOICE::varchar AS BOO_UNMATCHEDINVOICE, 
+                        src:BOO_UNMATCHEDINVOICELINE::numeric(38, 10) AS BOO_UNMATCHEDINVOICELINE, 
+                        src:BOO_UNMATCHEDINVOICE_ORG::varchar AS BOO_UNMATCHEDINVOICE_ORG, 
+                        src:BOO_UPDATECOUNT::numeric(38, 10) AS BOO_UPDATECOUNT, 
+                        src:_DELETED::boolean AS _DELETED, 
+                        src:BOO_LASTSAVED::datetime as ETL_LASTSAVED,
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED, 
+            etl_load_datetime,
+            etl_load_metadatafilename
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename
+                from
+                (
+                    SELECT
+                        
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:BOO_CODE  ORDER BY 
+            src:BOO_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_INTEGRATION.STREAM_EAM_R5BOOKEDHOURS as strm)
+                WHERE
+                ROWNUMBER=1) where 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_ACD), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_ACT), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_CORRECTIONDATE), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_COST), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_DATE), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_ENTERED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_FLEETMARKUP), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_GLTRANSFER), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_HOURS), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_INVOICELINE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_INVOICE_REVISION), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_LASTSAVED), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_OFF), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_ON), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_ORDLINE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_ORIGHOURS), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_ORIGTAXAMOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_RATE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_TAXAMOUNT), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_TRANSGROUP), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_TRANSORGID), '0'), 38, 10) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_UDFDATE01), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_UDFDATE02), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_UDFDATE03), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_UDFDATE04), '1900-01-01')) is not null and 
+                    TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_UDFDATE05), '1900-01-01')) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_UDFNUM01), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_UDFNUM02), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_UDFNUM03), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_UDFNUM04), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_UDFNUM05), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_UNMATCHEDINVOICELINE), '0'), 38, 10) is not null and 
+                    TRY_TO_NUMERIC(nvl(AS_VARCHAR(src:BOO_UPDATECOUNT), '0'), 38, 10) is not null and 
+                TRY_TO_TIMESTAMP(nvl(AS_VARCHAR(src:BOO_LASTSAVED), '1900-01-01')) is not null

@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_USE_USESTATUSLOG(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APUSEKEY integer, 
+            APUSEPROCESSSTATEKEY integer, 
+            APUSESTATLOGKEY integer, 
+            CMPTRGEN varchar, 
+            DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            STAT varchar, 
+            STATUSBY varchar, 
+            STATUSDTTM datetime, 
+            USEAPPLSTATUS varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

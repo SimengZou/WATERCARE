@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_U5PUBLICHOLIDAYS_DELETED(
+                "AUTO" numeric(38, 10), 
+                "CREATED" datetime, 
+                "CREATEDBY" varchar, 
+                "HLY_CONCODE" varchar, 
+                "HLY_DATE" datetime, 
+                "HLY_ID" varchar, 
+                "HLY_NAME" varchar, 
+                "HLY_ORG" varchar, 
+                "HLY_YEAR" varchar, 
+                "LASTSAVED" datetime, 
+                "UPDATECOUNT" numeric(38, 10), 
+                "UPDATED" datetime, 
+                "UPDATEDBY" varchar, 
+                "_DELETED" boolean, 
+                ETL_DELETED boolean,
+                ETL_LASTSAVED datetime, 
+                etl_load_datetime timestamp,
+                etl_load_metadatafilename varchar,
+                ETL_IS_DELETED boolean default false
+                ); 

@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_PLANNING_PLANPLCONDINHERITRULE(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPLANPLCONDINHERITRULEKEY integer, 
+            BLDGINHERITFRMLAKEY integer, 
+            CDSYSTEMAPPLTYPE integer, 
+            DATALAKE_DELETED boolean, 
+            INHERITFRMLA integer, 
+            INHERITRULETYPE integer, 
+            INHERITTITLE varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PLANINHERITFRMLAKEY integer, 
+            PROJINHERITFRMLAKEY integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_CDR_BUILDING_BLDGFEETYPE(
+            ADDBY varchar, 
+            ADDCONDFRMLA integer, 
+            ADDDEPPROCESSSTATEKEY integer, 
+            ADDDTTM datetime, 
+            APBLDGDEFNKEY integer, 
+            APBLDGFEETYPEKEY integer, 
+            APBLDGPROCESSSTATEKEY integer, 
+            DELETED boolean, 
+            FEELIBTYPEUSEFROMDT datetime, 
+            FEELIBTYPEUSETODT datetime, 
+            FEETYPEKEY integer, 
+            INTERNALONLYFLAG varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PAYFEEPROCESSSTATEKEY integer, 
+            PAYINPORTAL varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

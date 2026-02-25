@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_BILLING_MOVEINCUSTSEARCH(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            DELETED boolean, 
+            EMAILFLAG varchar, 
+            FIRSTNAMEFLAG varchar, 
+            IDFLAG varchar, 
+            LASTNAMEFLAG varchar, 
+            LICENSEFLAG varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            MOVEINCUSTSEARCHKEY integer, 
+            PERFORMORDER integer, 
+            PHONEFLAG varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

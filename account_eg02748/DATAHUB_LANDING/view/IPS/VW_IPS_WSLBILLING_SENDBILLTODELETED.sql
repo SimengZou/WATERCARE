@@ -1,0 +1,75 @@
+CREATE OR REPLACE VIEW DATAHUB_LANDING.VW_IPS_WSLBILLING_SENDBILLTODELETED AS SELECT
+                        src:ACCOUNTKEY::integer AS ACCOUNTKEY, 
+                        src:ADDBY::varchar AS ADDBY, 
+                        src:ADDDTTM::datetime AS ADDDTTM, 
+                        src:ADDR1::varchar AS ADDR1, 
+                        src:ADDR2::varchar AS ADDR2, 
+                        src:ADDRESSCONTACTKEY::integer AS ADDRESSCONTACTKEY, 
+                        src:CARRT::varchar AS CARRT, 
+                        src:CASSBARCODE::integer AS CASSBARCODE, 
+                        src:CASSVER::integer AS CASSVER, 
+                        src:CITY::varchar AS CITY, 
+                        src:COUNTRY::varchar AS COUNTRY, 
+                        src:DELETED::boolean AS DELETED, 
+                        src:DELIVERYOPTION::integer AS DELIVERYOPTION, 
+                        src:DPC::varchar AS DPC, 
+                        src:EFFECTIVEDATE::datetime AS EFFECTIVEDATE, 
+                        src:LOT::varchar AS LOT, 
+                        src:MODBY::varchar AS MODBY, 
+                        src:MODDTTM::datetime AS MODDTTM, 
+                        src:ORIGADDBY::varchar AS ORIGADDBY, 
+                        src:ORIGADDDTTM::datetime AS ORIGADDDTTM, 
+                        src:ORIGMODBY::varchar AS ORIGMODBY, 
+                        src:ORIGMODDTTM::datetime AS ORIGMODDTTM, 
+                        src:SEASADDR1::varchar AS SEASADDR1, 
+                        src:SEASADDR2::varchar AS SEASADDR2, 
+                        src:SEASCARRT::varchar AS SEASCARRT, 
+                        src:SEASCASSVER::integer AS SEASCASSVER, 
+                        src:SEASCITY::varchar AS SEASCITY, 
+                        src:SEASCOUNTRY::varchar AS SEASCOUNTRY, 
+                        src:SEASDPC::varchar AS SEASDPC, 
+                        src:SEASFROMDATE::datetime AS SEASFROMDATE, 
+                        src:SEASLOT::varchar AS SEASLOT, 
+                        src:SEASSTATE::varchar AS SEASSTATE, 
+                        src:SEASTODATE::datetime AS SEASTODATE, 
+                        src:SEASZIP::varchar AS SEASZIP, 
+                        src:SENDBILLTODELETEDKEY::integer AS SENDBILLTODELETEDKEY, 
+                        src:SENDBILLTOKEY::integer AS SENDBILLTOKEY, 
+                        src:SENDTOLINE1::varchar AS SENDTOLINE1, 
+                        src:SENDTOLINE2::varchar AS SENDTOLINE2, 
+                        src:STATE::varchar AS STATE, 
+                        src:VARIATION_ID::integer AS VARIATION_ID, 
+                        src:ZIP::varchar AS ZIP, 
+            CASE
+                WHEN 'IPS' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'IPS' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED,
+            etl_load_datetime,
+            etl_load_metadatafilename,
+            ETL_RANK,
+            IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) as ETL_RANK_TIMESTAMP
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROWNUMBER as ETL_RANK
+                from
+                (
+                    SELECT
+    
+                        
+                src:SENDBILLTODELETEDKEY,
+            src:VARIATION_ID
+                ,src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:SENDBILLTODELETEDKEY  ORDER BY 
+            src:VARIATION_ID desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_LANDING.IPS_WSLBILLING_SENDBILLTODELETED as strm))

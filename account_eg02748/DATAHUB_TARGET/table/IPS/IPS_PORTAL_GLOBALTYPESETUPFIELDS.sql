@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_PORTAL_GLOBALTYPESETUPFIELDS(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            DATALAKE_DELETED boolean, 
+            DISPLAYORDER integer, 
+            FIELDDESCRIPTION varchar, 
+            FIELDNAME varchar, 
+            GLOBALTYPESETUPFIELDSKEY integer, 
+            GROUPING varchar, 
+            LOOKUPRECORDCUSTOMER varchar, 
+            LOOKUPRECORDPUBLIC varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            MYASSIGNMENTS varchar, 
+            MYPROJECTPARENT varchar, 
+            MYPROJECTRELATED varchar, 
+            PRODUCTFAMILY varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

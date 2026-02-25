@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLCDRBUILD_XBUILDPREQUOTEGD(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            CUSTOMERREFERENCE varchar, 
+            DATALAKE_DELETED boolean, 
+            FEE varchar, 
+            FEEAMOUNT numeric(38, 10), 
+            FEEQTY numeric(38, 10), 
+            FEEUNIT varchar, 
+            FEEVALUE numeric(38, 10), 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            VARIATION_ID integer, 
+            XBUILDAPPESTDPKEY integer, 
+            XBUILDPREQUOTEGDKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

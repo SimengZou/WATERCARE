@@ -1,0 +1,82 @@
+CREATE OR REPLACE SECURE VIEW ${buildvar.env}_WBP_SHARE.DATAHUB_SHARED_WBP.VWS_PLANT_CONDUITS_PIPES
+AS
+SELECT 
+  A1."ACQTYPE" AS "Acquistion Type"
+, A3."ADDRKEY" AS "Address"
+, A2."UNITID" AS "Asset ID"
+, A2."COMPKEY" AS "CompKey"
+, A1."COSTCENTRE" AS "Cost Centre Code"
+, 'TBD' AS "Cost Centre Description"
+, A1."CRITICALITY" AS "Criticality Code"
+, 'TBD' AS "Criticality Description"
+, A2."DPTH" AS "Depth"
+, A2."UNITDESC" AS "Description"
+, A2."DIAM" AS "Diameter"
+, A1."FORDISPOSAL" AS "Disposal Reason"
+, A1."DRAWINGNO" AS "Drawing No"
+, A1."DRAWINGNOREF" AS "Drawing No Ref"
+, A2."AGENCYCHARACTER1" AS "Equipment No"
+, A3."EXPDATE" AS "Expire Date"
+, A2."AREA" AS "Facility Code"
+, 'TBD' AS "Facility Description"
+, A2."HT" AS "Height"
+, A2."INSTDATE" AS "Installed"
+, A2."ASBLT" AS "Legacy Key"
+, A2."LEN" AS "Length"
+, A2."MATL" AS "Material Code"
+, 'TBD' AS "Material Description"
+, A1."MODELNO" AS "Model #"
+, 'TBD' AS "Operations Area"
+, A2."OWN" AS "Ownership Code"
+, 'TBD' AS "Ownership Description"
+, A3."MAPNO" AS "Position"
+, A2."SUBAREA" AS "Process Code"
+, 'TBD' AS "Process Description"
+, 'TBD' AS "Process Type"
+, A1."SAFETYCRITICAL" AS "Safety Critical Element"
+, A2."SERVSTAT" AS "Service Status"
+, A2."LOC" AS "Set Code"
+, 'TBD' AS "Set Description"
+, A2."DISTRICT" AS "System Code"
+, 'TBD' AS "System Description"
+, A2."UNITTYPE" AS "Unit Type Code"
+, 'TBD' AS "Unit Type Description"
+, A2."WT" AS "Weight"
+, A2."WID" AS "Width"
+
+
+, ad."NZHOUSENO" AS "Street Number"
+, CONCAT(ad."NZSTNAME",' ',ad."NZSTTYPE") AS "Street Name"
+, ad."NZSUBURB" AS "City"
+, ad."NZPOSTCODE" AS "Postal Code"
+
+, A1.MAKE                    					AS "Make"
+, A2.SERNO                                     	AS "Serial Number"
+, A1.ZONECATCHMENT           					AS "Water Zone/Sewer Catchment"
+, XCONDUITSNPIPES.DIAMEXT                 		AS "Diameter External (mm)"
+, XCONDUITSNPIPES.DIAMINT                 		AS "Diameter Internal (mm)"
+, XCONDUITSNPIPES.INVLEVEL                      AS "Invert Level (M)"
+, XCONDUITSNPIPES.PRESSURERATING                AS "Pressure Rating (kPa)"
+, XCONDUITSNPIPES.STIFFRATING                   AS "Stiffness Rating (SN)"
+, A1.WARRANTYEND             					AS "Warranty End Date"
+, A1.WARRANTYSTART           					AS "Warranty Start Date"
+, XCONDUITSNPIPES.CONSTMETHOD                   AS "Construction Method"
+, XCONDUITSNPIPES.DESIGNRESILIENCE              AS "Design Resilience"
+, XCONDUITSNPIPES.QUAKEDESIGN                   AS "Earthquake Design Level"
+, XCONDUITSNPIPES.EXTCOAT                  		AS "External Coating"
+, XCONDUITSNPIPES.FUNCAREA                   	AS "Functional Area"
+, XCONDUITSNPIPES.GRDLEVEL                      AS "Ground Level"
+, XCONDUITSNPIPES.INTLINING                   	AS "Internal Lining"
+, XCONDUITSNPIPES.JTTYPE                        AS "Joint Method"
+, XCONDUITSNPIPES.LOCALITY                      AS "Locality"
+, XCONDUITSNPIPES.MEDIATYPE                     AS "Media Type"
+, XCONDUITSNPIPES.PHOTO3D                       AS "Photo/3D Model"
+
+FROM
+  "${buildvar.env}_WCC_DATAWAREHOUSE"."DATAHUB_TARGET"."IPS_ASSETMANAGEMENT_AGENCYDEFINED_COMPAGENCYSIMPLE" as A2
+  INNER JOIN "${buildvar.env}_WCC_DATAWAREHOUSE"."DATAHUB_TARGET"."IPS_WSLASSETS_XALLASSETSDP01" as A1 ON A2.COMPKEY = A1.COMPKEY AND A1.BUSINESSAREA IN ('WBC','WBE','WBW')
+  INNER JOIN "${buildvar.env}_WCC_DATAWAREHOUSE"."DATAHUB_TARGET"."IPS_ASSETMANAGEMENT_COMP" as A3 on A3.COMPKEY = A1.COMPKEY
+  INNER JOIN "${buildvar.env}_WCC_DATAWAREHOUSE"."DATAHUB_TARGET"."IPS_ASSETMANAGEMENT_COMPTYPE" as A4 on A4.COMPTYPE = A3.COMPTYPE
+  LEFT OUTER JOIN "${buildvar.env}_WCC_DATAWAREHOUSE"."DATAHUB_TARGET"."IPS_PROPERTY_ADDRESS" as ad ON ad.ADDRKEY = A3.ADDRKEY AND ad.OPTA = 'WBP'
+  LEFT OUTER JOIN "${buildvar.env}_WCC_DATAWAREHOUSE"."DATAHUB_TARGET".IPS_WSLASSETSCONFIGURED_XCONDUITSNPIPES AS XCONDUITSNPIPES ON A2.COMPKEY = XCONDUITSNPIPES.COMPKEY 
+  WHERE A2.OWN = 'WBP' and A4.COMPCODE = 'CONP';

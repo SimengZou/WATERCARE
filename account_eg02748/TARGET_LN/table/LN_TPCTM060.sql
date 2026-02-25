@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_LN.LN_TPCTM060(
+            cact varchar, 
+            cnln varchar, 
+            compnr integer, 
+            cono varchar, 
+            cono_cnln_ref_compnr integer, 
+            cono_ref_compnr integer, 
+            cprj varchar, 
+            cprj_cspa_ref_compnr integer, 
+            cprj_cstl_ref_compnr integer, 
+            cprj_ref_compnr integer, 
+            cspa varchar, 
+            cstl varchar, 
+            deleted boolean, 
+            sequencenumber integer, 
+            sern integer, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

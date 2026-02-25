@@ -1,0 +1,20 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLASSETS_XUSAGEAREADP01(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            BUSINESSAREA varchar, 
+            COMPKEY integer, 
+            COSTCENTRE varchar, 
+            CRITICALITY varchar, 
+            DELETED boolean, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PROJECTNO varchar, 
+            SAFETYCRITICAL varchar, 
+            VARIATION_ID integer, 
+            XUSAGEAREADP01KEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

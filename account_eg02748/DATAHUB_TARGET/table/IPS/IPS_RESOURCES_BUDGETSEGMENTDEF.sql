@@ -1,0 +1,18 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET.IPS_RESOURCES_BUDGETSEGMENTDEF(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            BUDGETSEGMENTDEFKEY integer, 
+            DATALAKE_DELETED boolean, 
+            DESCRIPTION varchar, 
+            LENGTH integer, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            POSITION integer, 
+            SEPARATOR varchar, 
+            TOTALLENGTH integer, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar
+            ); 

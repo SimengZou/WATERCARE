@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_LN.LN_TTDPM515_DELETED(
+            cmod varchar, 
+            compnr integer, 
+            cpac varchar, 
+            cpac_ref_compnr integer, 
+            deleted boolean, 
+            dset varchar, 
+            dset_ref_compnr integer, 
+            flno varchar, 
+            pacc varchar, 
+            pacc_dset_ref_compnr integer, 
+            pacc_ref_compnr integer, 
+            pubd integer, 
+            pubd_kw varchar, 
+            sequencenumber integer, 
+            timestamp datetime, 
+            username varchar, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

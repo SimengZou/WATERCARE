@@ -1,0 +1,23 @@
+CREATE OR REPLACE TABLE TARGET_HISTORY_EAM.EAM_R5EVENTCOST_DELETED(
+            EVO_COSTCALCULATED varchar, 
+            EVO_DIRECTMATERIAL numeric(38, 10), 
+            EVO_EVENT varchar, 
+            EVO_HIREDLABOR numeric(38, 10), 
+            EVO_HOURS numeric(38, 10), 
+            EVO_LABOR numeric(38, 10), 
+            EVO_LASTSAVED datetime, 
+            EVO_MATERIAL numeric(38, 10), 
+            EVO_OWNLABOR numeric(38, 10), 
+            EVO_RECALCCOST varchar, 
+            EVO_SERVICESLABOR numeric(38, 10), 
+            EVO_STOCKMATERIAL numeric(38, 10), 
+            EVO_TOOL numeric(38, 10), 
+            EVO_TOTAL numeric(38, 10), 
+            EVO_UPDATED datetime, 
+            _DELETED boolean, 
+            ETL_DELETED boolean,
+            ETL_LASTSAVED datetime, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

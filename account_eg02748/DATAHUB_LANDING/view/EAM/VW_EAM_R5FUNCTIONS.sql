@@ -1,0 +1,121 @@
+CREATE OR REPLACE VIEW DATAHUB_LANDING.VW_EAM_R5FUNCTIONS AS SELECT
+                        src:FUN_ADVREPT::varchar AS FUN_ADVREPT, 
+                        src:FUN_APPLICATION::varchar AS FUN_APPLICATION, 
+                        src:FUN_AUTO::varchar AS FUN_AUTO, 
+                        src:FUN_AUTOREFRESHTIMER::numeric(38, 10) AS FUN_AUTOREFRESHTIMER, 
+                        src:FUN_BACKGROUND::varchar AS FUN_BACKGROUND, 
+                        src:FUN_BACKGROUNDGRAPH::varchar AS FUN_BACKGROUNDGRAPH, 
+                        src:FUN_BACKGROUNDREP::varchar AS FUN_BACKGROUNDREP, 
+                        src:FUN_BLOCKDURATION::varchar AS FUN_BLOCKDURATION, 
+                        src:FUN_CLASS::varchar AS FUN_CLASS, 
+                        src:FUN_CLASS_ORG::varchar AS FUN_CLASS_ORG, 
+                        src:FUN_CODE::varchar AS FUN_CODE, 
+                        src:FUN_COMMAND::varchar AS FUN_COMMAND, 
+                        src:FUN_DEFAULTRESERVATIONSTATUS::varchar AS FUN_DEFAULTRESERVATIONSTATUS, 
+                        src:FUN_DEFAULTRESERVATIONTYPE::varchar AS FUN_DEFAULTRESERVATIONTYPE, 
+                        src:FUN_DELETE::varchar AS FUN_DELETE, 
+                        src:FUN_DESC::varchar AS FUN_DESC, 
+                        src:FUN_DESCCHANGED::varchar AS FUN_DESCCHANGED, 
+                        src:FUN_DEVICE::varchar AS FUN_DEVICE, 
+                        src:FUN_DIRECTORY::varchar AS FUN_DIRECTORY, 
+                        src:FUN_DIRSEL::varchar AS FUN_DIRSEL, 
+                        src:FUN_DISPLAYAP::varchar AS FUN_DISPLAYAP, 
+                        src:FUN_DISPLAYFT::varchar AS FUN_DISPLAYFT, 
+                        src:FUN_EWSBTN::varchar AS FUN_EWSBTN, 
+                        src:FUN_EWSREPORT::varchar AS FUN_EWSREPORT, 
+                        src:FUN_EWSURLNEW::varchar AS FUN_EWSURLNEW, 
+                        src:FUN_FIELDFILTERCFCLASS::varchar AS FUN_FIELDFILTERCFCLASS, 
+                        src:FUN_FIELDFILTERCFCLASS_ORG::varchar AS FUN_FIELDFILTERCFCLASS_ORG, 
+                        src:FUN_FIELDFILTERCFORG::varchar AS FUN_FIELDFILTERCFORG, 
+                        src:FUN_FIELDFILTERCHECKLIST::varchar AS FUN_FIELDFILTERCHECKLIST, 
+                        src:FUN_FIELDFILTERCLASS::varchar AS FUN_FIELDFILTERCLASS, 
+                        src:FUN_FIELDFILTERTYPE::varchar AS FUN_FIELDFILTERTYPE, 
+                        src:FUN_FIELDFILTERWOOBJTYPE::varchar AS FUN_FIELDFILTERWOOBJTYPE, 
+                        src:FUN_FILE::varchar AS FUN_FILE, 
+                        src:FUN_FRIDAY::varchar AS FUN_FRIDAY, 
+                        src:FUN_HDR::varchar AS FUN_HDR, 
+                        src:FUN_ICON::varchar AS FUN_ICON, 
+                        src:FUN_INSERT::varchar AS FUN_INSERT, 
+                        src:FUN_LASTSAVED::datetime AS FUN_LASTSAVED, 
+                        src:FUN_LASTVALUE::varchar AS FUN_LASTVALUE, 
+                        src:FUN_LST::varchar AS FUN_LST, 
+                        src:FUN_MEKEY::varchar AS FUN_MEKEY, 
+                        src:FUN_MOBILEROUTE::varchar AS FUN_MOBILEROUTE, 
+                        src:FUN_MODE::varchar AS FUN_MODE, 
+                        src:FUN_MONDAY::varchar AS FUN_MONDAY, 
+                        src:FUN_NODESIGN::varchar AS FUN_NODESIGN, 
+                        src:FUN_NOW::varchar AS FUN_NOW, 
+                        src:FUN_ORIENTATION::varchar AS FUN_ORIENTATION, 
+                        src:FUN_PARENTFUNCTION::varchar AS FUN_PARENTFUNCTION, 
+                        src:FUN_PARENTTAB::varchar AS FUN_PARENTTAB, 
+                        src:FUN_PERTYPE::varchar AS FUN_PERTYPE, 
+                        src:FUN_POPUPAP::varchar AS FUN_POPUPAP, 
+                        src:FUN_POPUPFT::varchar AS FUN_POPUPFT, 
+                        src:FUN_POPUPFUNCTION::varchar AS FUN_POPUPFUNCTION, 
+                        src:FUN_PRDDATASRC::varchar AS FUN_PRDDATASRC, 
+                        src:FUN_PUBLIC::varchar AS FUN_PUBLIC, 
+                        src:FUN_RENTITY::varchar AS FUN_RENTITY, 
+                        src:FUN_REPDISABLED::varchar AS FUN_REPDISABLED, 
+                        src:FUN_RESERVATIONCALENDAR::varchar AS FUN_RESERVATIONCALENDAR, 
+                        src:FUN_RPTFILEUPDATED::datetime AS FUN_RPTFILEUPDATED, 
+                        src:FUN_RPTFILEUPDATEDBY::varchar AS FUN_RPTFILEUPDATEDBY, 
+                        src:FUN_RS::varchar AS FUN_RS, 
+                        src:FUN_SATURDAY::varchar AS FUN_SATURDAY, 
+                        src:FUN_SCHEDULERVIEW::varchar AS FUN_SCHEDULERVIEW, 
+                        src:FUN_SELECT::varchar AS FUN_SELECT, 
+                        src:FUN_SPLITVIEWDISPLAY::varchar AS FUN_SPLITVIEWDISPLAY, 
+                        src:FUN_STARTUPVIEW::varchar AS FUN_STARTUPVIEW, 
+                        src:FUN_SUBTYPE::varchar AS FUN_SUBTYPE, 
+                        src:FUN_SUNDAY::varchar AS FUN_SUNDAY, 
+                        src:FUN_SYSTEM::varchar AS FUN_SYSTEM, 
+                        src:FUN_THURSDAY::varchar AS FUN_THURSDAY, 
+                        src:FUN_TICKET::varchar AS FUN_TICKET, 
+                        src:FUN_TUESDAY::varchar AS FUN_TUESDAY, 
+                        src:FUN_TXTCODE::varchar AS FUN_TXTCODE, 
+                        src:FUN_UDFRENTITY::varchar AS FUN_UDFRENTITY, 
+                        src:FUN_UGFILE::varchar AS FUN_UGFILE, 
+                        src:FUN_UPDATE::varchar AS FUN_UPDATE, 
+                        src:FUN_UPDATECOUNT::numeric(38, 10) AS FUN_UPDATECOUNT, 
+                        src:FUN_UPDATED::datetime AS FUN_UPDATED, 
+                        src:FUN_WEDNESDAY::varchar AS FUN_WEDNESDAY, 
+                        src:FUN_WORKBOOK::varchar AS FUN_WORKBOOK, 
+                        src:FUN_WORKINGENDTIMEHOURS::varchar AS FUN_WORKINGENDTIMEHOURS, 
+                        src:FUN_WORKINGENDTIMEMINUTES::varchar AS FUN_WORKINGENDTIMEMINUTES, 
+                        src:FUN_WORKINGSTARTTIMEHOURS::varchar AS FUN_WORKINGSTARTTIMEHOURS, 
+                        src:FUN_WORKINGSTARTTIMEMINUTES::varchar AS FUN_WORKINGSTARTTIMEMINUTES, 
+                        src:FUN_WORKSHEET::varchar AS FUN_WORKSHEET, 
+                        src:FUN_XTYPE::varchar AS FUN_XTYPE, 
+                        src:_DELETED::boolean AS _DELETED, 
+            CASE
+                WHEN 'EAM' = 'LN'
+                THEN src:"deleted"::BOOLEAN
+                WHEN 'EAM' = 'IPS'
+                THEN src:"DATALAKE_DELETED"::BOOLEAN
+                ELSE src:"_DELETED"::BOOLEAN
+            END as ETL_DELETED,
+            etl_load_datetime,
+            etl_load_metadatafilename,
+            ETL_RANK,
+            IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) as ETL_RANK_TIMESTAMP
+            FROM 
+            (
+            select 
+                src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROWNUMBER as ETL_RANK
+                from
+                (
+                    SELECT
+    
+                        
+                src:FUN_CODE,
+            src:FUN_LASTSAVED
+                ,src,
+                etl_load_datetime,
+                etl_load_metadatafilename,
+                ROW_NUMBER() OVER (PARTITION BY 
+                                        
+                src:FUN_CODE  ORDER BY 
+            src:FUN_LASTSAVED desc,IFNULL(TRY_TO_TIMESTAMP(replace(right(replace(lower(etl_load_metadatafilename),'.json'),23),'_','-'), 'yyyy-mm-dd-HH-MI-SS-FF') ,etl_load_datetime) desc) as ROWNUMBER
+                FROM DATAHUB_LANDING.EAM_R5FUNCTIONS as strm))

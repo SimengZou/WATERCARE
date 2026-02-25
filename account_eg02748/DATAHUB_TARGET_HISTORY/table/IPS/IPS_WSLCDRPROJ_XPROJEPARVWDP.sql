@@ -1,0 +1,22 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_WSLCDRPROJ_XPROJEPARVWDP(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            APPROJREVDTLKEY integer, 
+            AUDITREQ varchar, 
+            AUDITREQREASON varchar, 
+            DELETED boolean, 
+            ENGEPAASSESS varchar, 
+            FINALWALKOVER varchar, 
+            FINALWALKOVERREASON varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            PRECONONSITE varchar, 
+            PRECONONSITEREASON varchar, 
+            VARIATION_ID integer, 
+            XPROJEPARVWDPKEY integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 

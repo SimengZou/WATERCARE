@@ -1,0 +1,21 @@
+CREATE OR REPLACE TABLE DATAHUB_TARGET_HISTORY.IPS_DELETED_BILLING_SERVICEFIELD(
+            ADDBY varchar, 
+            ADDDTTM datetime, 
+            DEFAULTVALUE numeric(38, 10), 
+            DELETED boolean, 
+            DESCRIPTION varchar, 
+            MODBY varchar, 
+            MODDTTM datetime, 
+            MOVEINPROMPT varchar, 
+            MOVEOUTNOTES varchar, 
+            SERVICEFIELDKEY integer, 
+            SETVALUEONADDRSERVFLAG varchar, 
+            TITLE varchar, 
+            VALIDATEVALUEFLAG varchar, 
+            VARIATION_ID integer, 
+            ETL_DELETED boolean,
+            ETL_SEQUENCE_NUMBER integer, 
+            etl_load_datetime timestamp,
+            etl_load_metadatafilename varchar,
+            ETL_IS_DELETED boolean default false
+            ); 
