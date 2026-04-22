@@ -1,0 +1,108 @@
+version: 2
+models:
+- name: tffam800
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: tkey
+    description: (required) Transaction Key
+    data_tests:
+    - not_null
+  - name: anbr
+    description: 'Asset Number. Max length: 15'
+  - name: aext
+    description: 'Asset Extension. Max length: 15'
+  - name: amnt_1
+    description: Transaction Amount
+  - name: amnt_2
+    description: Transaction Amount
+  - name: amnt_3
+    description: Transaction Amount
+  - name: atty
+    description: 'Asset Tran Type. Allowed values: 1, 2, 3, 4, 5, 6, 8, 10, 11, 12,
+      14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
+      45, 46, 50'
+  - name: atty_kw
+    description: 'Asset Tran Type (keyword). Allowed values: tffam.atty.acqu, tffam.atty.adju,
+      tffam.atty.depr, tffam.atty.disp, tffam.atty.tran.in, tffam.atty.tran.out, tffam.atty.add.post,
+      tffam.atty.remo.acqu, tffam.atty.remo.capi, tffam.atty.reva, tffam.atty.rest.depr,
+      tffam.atty.adju.depr, tffam.atty.tran.depr, tffam.atty.addi.post, tffam.atty.gain.loss,
+      tffam.atty.susp.depr, tffam.atty.rest.susp.depr, tffam.atty.anti.depr, tffam.atty.rest.anti.depr,
+      tffam.atty.reva.depr, tffam.atty.rest.reva.depr, tffam.atty.tran.reva.depr,
+      tffam.atty.tran.reva.in, tffam.atty.tran.reva.out, tffam.atty.anti.reva.depr,
+      tffam.atty.rest.anti.rdpr, tffam.atty.econ.reva.depr, tffam.atty.retr.reva.depr,
+      tffam.atty.accu.reva, tffam.atty.reva.cz, tffam.atty.tu, tffam.atty.expense'
+  - name: book
+    description: 'Asset Book. Max length: 10'
+  - name: docn
+    description: Document Number
+  - name: line
+    description: Line Number
+  - name: rort
+    description: 'Reversed Transaction. Allowed values: 1, 2'
+  - name: rort_kw
+    description: 'Reversed Transaction (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: prod
+    description: Period
+  - name: post
+    description: 'Posted. Allowed values: 1, 2'
+  - name: post_kw
+    description: 'Posted (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tdat
+    description: Transaction Date
+  - name: ttyp
+    description: 'Transaction Type. Max length: 3'
+  - name: year
+    description: Year
+  - name: text
+    description: Journal Entry Text
+  - name: anbr_aext_book_ref_compnr
+    description: company number of primary key of table tffam110 Asset Book
+  - name: anbr_aext_ref_compnr
+    description: company number of primary key of table tffam100 Asset
+  - name: book_ref_compnr
+    description: company number of primary key of table tffam600 Books
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam800 Transaction table, Generated 2026-04-10T19:41:34Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - tkey

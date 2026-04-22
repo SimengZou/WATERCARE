@@ -1,0 +1,65 @@
+version: 2
+models:
+- name: r5classes
+  columns:
+  - name: cls_lastsaved
+    description: CLS_LASTSAVED
+  - name: cls_image
+    description: CLS_IMAGE
+  - name: cls_code
+    description: CLS_CODE
+  - name: cls_desc
+    description: CLS_DESC
+  - name: cls_org
+    description: CLS_ORG
+  - name: cls_rentitycode
+    description: CLS_RENTITYCODE
+  - name: cls_level
+    description: CLS_LEVEL
+  - name: cls_updatecount
+    description: CLS_UPDATECOUNT
+  - name: cls_created
+    description: CLS_CREATED
+  - name: cls_updated
+    description: CLS_UPDATED
+  - name: cls_notused
+    description: CLS_NOTUSED
+  - name: cls_icon
+    description: CLS_ICON
+  - name: cls_iconpath
+    description: CLS_ICONPATH
+  - name: cls_property_definition
+    description: CLS_PROPERTY_DEFINITION
+  - name: cls_mobile_notebook_definition
+    description: CLS_MOBILE_NOTEBOOK_DEFINITION
+  - name: cls_segmentvalue
+    description: CLS_SEGMENTVALUE
+  - name: cls_entity
+    description: CLS_ENTITY
+  - name: cls_rentity
+    description: CLS_RENTITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CLASSES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - cls_entity
+        - cls_code
+        - cls_org

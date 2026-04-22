@@ -1,0 +1,48 @@
+version: 2
+models:
+- name: r5wsrsphist
+  columns:
+  - name: wsr_lastsaved
+    description: WSR_LASTSAVED
+  - name: wsr_address
+    description: WSR_ADDRESS
+  - name: wsr_message
+    description: WSR_MESSAGE
+  - name: wsr_dataarea
+    description: WSR_DATAAREA
+  - name: wsr_time
+    description: WSR_TIME
+  - name: wsr_status
+    description: WSR_STATUS
+  - name: wsr_rstatus
+    description: WSR_RSTATUS
+  - name: wsr_status_message
+    description: WSR_STATUS_MESSAGE
+  - name: wsr_updatecount
+    description: WSR_UPDATECOUNT
+  - name: wsr_process
+    description: WSR_PROCESS
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WSRSPHIST
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - wsr_message
+        - wsr_process

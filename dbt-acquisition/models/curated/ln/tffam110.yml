@@ -1,0 +1,249 @@
+version: 2
+models:
+- name: tffam110
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: anbr
+    description: '(required) Asset Number. Max length: 15'
+    data_tests:
+    - not_null
+  - name: aext
+    description: '(required) Asset Extension. Max length: 15'
+    data_tests:
+    - not_null
+  - name: book
+    description: '(required) Asset Book. Max length: 10'
+    data_tests:
+    - not_null
+  - name: adpa_1
+    description: Additional Posting Amount
+  - name: adpa_2
+    description: Additional Posting Amount
+  - name: adpa_3
+    description: Additional Posting Amount
+  - name: adpc
+    description: 'Additional Posting. Allowed values: 0, 1, 2'
+  - name: adpc_kw
+    description: 'Additional Posting (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: adpm
+    description: 'Depreciation Code. Max length: 20'
+  - name: bslv
+    description: 'Depreciate Below Salvage. Allowed values: 1, 2'
+  - name: bslv_kw
+    description: 'Depreciate Below Salvage (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: c263_1
+    description: Allocated Cost
+  - name: c263_2
+    description: Allocated Cost
+  - name: c263_3
+    description: Allocated Cost
+  - name: capi_1
+    description: Capitalized Interest
+  - name: capi_2
+    description: Capitalized Interest
+  - name: capi_3
+    description: Capitalized Interest
+  - name: cost_1
+    description: Current Cost
+  - name: cost_2
+    description: Current Cost
+  - name: cost_3
+    description: Current Cost
+  - name: curd
+    description: Recovery Date
+  - name: depr_1
+    description: Depreciation Amount
+  - name: depr_2
+    description: Depreciation Amount
+  - name: depr_3
+    description: Depreciation Amount
+  - name: disd
+    description: Final Disposal Date
+  - name: ecre
+    description: 'Economic Recapture. Allowed values: 1, 2'
+  - name: ecre_kw
+    description: 'Economic Recapture (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: freq
+    description: 'Depreciation Frequency. Max length: 10'
+  - name: indx
+    description: 'Revaluation Index. Max length: 3'
+  - name: itca_1
+    description: Current ITC Amount
+  - name: itca_2
+    description: Current ITC Amount
+  - name: itca_3
+    description: Current ITC Amount
+  - name: last
+    description: Last Depreciation Date
+  - name: life
+    description: Asset Life
+  - name: lrev
+    description: Last Revaluation Year
+  - name: ltdd_1
+    description: Accumulated Depreciation
+  - name: ltdd_2
+    description: Accumulated Depreciation
+  - name: ltdd_3
+    description: Accumulated Depreciation
+  - name: meth
+    description: 'Depreciation Code. Max length: 20'
+  - name: ocst_1
+    description: Original Cost
+  - name: ocst_2
+    description: Original Cost
+  - name: ocst_3
+    description: Original Cost
+  - name: post
+    description: 'Depreciation Postings to General Ledger. Allowed values: 1, 2'
+  - name: post_kw
+    description: 'Depreciation Postings to General Ledger (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: prop
+    description: 'Property Type. Max length: 10'
+  - name: s179_1
+    description: Section 179 Value
+  - name: s179_2
+    description: Section 179 Value
+  - name: s179_3
+    description: Section 179 Value
+  - name: salv_1
+    description: Salvage Value
+  - name: salv_2
+    description: Salvage Value
+  - name: salv_3
+    description: Salvage Value
+  - name: shft
+    description: Shift Factor
+  - name: stat
+    description: 'Asset Book Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: stat_kw
+    description: 'Asset Book Status (keyword). Allowed values: tffam.bsta.ente, tffam.bsta.capi,
+      tffam.bsta.depr, tffam.bsta.disp, tffam.bsta.full.depr'
+  - name: tmth
+    description: 'MACRS Depreciation By. Allowed values: 0, 1, 2'
+  - name: tmth_kw
+    description: 'MACRS Depreciation By (keyword). Allowed values: , tffam.tmth.tabl,
+      tffam.tmth.form'
+  - name: unit
+    description: Units
+  - name: ytdd_1
+    description: YTD Depreciation
+  - name: ytdd_2
+    description: YTD Depreciation
+  - name: ytdd_3
+    description: YTD Depreciation
+  - name: ytdr_1
+    description: YTD Revaluation
+  - name: ytdr_2
+    description: YTD Revaluation
+  - name: ytdr_3
+    description: YTD Revaluation
+  - name: sdpn
+    description: Count of Suspended Periods
+  - name: ltad_1
+    description: Accumulated Accelerated Depreciation
+  - name: ltad_2
+    description: Accumulated Accelerated Depreciation
+  - name: ltad_3
+    description: Accumulated Accelerated Depreciation
+  - name: rcst_1
+    description: Revaluation Cost
+  - name: rcst_2
+    description: Revaluation Cost
+  - name: rcst_3
+    description: Revaluation Cost
+  - name: srac
+    description: 'Separate Revaluation Accounting. Allowed values: 1, 2'
+  - name: srac_kw
+    description: 'Separate Revaluation Accounting (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rdpr_1
+    description: Revaluation Depreciation
+  - name: rdpr_2
+    description: Revaluation Depreciation
+  - name: rdpr_3
+    description: Revaluation Depreciation
+  - name: ltdr_1
+    description: Accumulated Revaluated Depreciation
+  - name: ltdr_2
+    description: Accumulated Revaluated Depreciation
+  - name: ltdr_3
+    description: Accumulated Revaluated Depreciation
+  - name: ltar_1
+    description: Accumulated Accelerated Revaluation Depreciation
+  - name: ltar_2
+    description: Accumulated Accelerated Revaluation Depreciation
+  - name: ltar_3
+    description: Accumulated Accelerated Revaluation Depreciation
+  - name: gfac_1
+    description: Guarantee Value
+  - name: gfac_2
+    description: Guarantee Value
+  - name: gfac_3
+    description: Guarantee Value
+  - name: fydp
+    description: First Year Depreciation Percentage
+  - name: txta
+    description: Comment
+  - name: anbr_aext_ref_compnr
+    description: company number of primary key of table tffam100 Asset
+  - name: book_ref_compnr
+    description: company number of primary key of table tffam600 Books
+  - name: adpm_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: freq_ref_compnr
+    description: company number of primary key of table tffam700 Depreciation Frequency
+  - name: indx_ref_compnr
+    description: company number of primary key of table tffam300 Index Master Data
+  - name: meth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: prop_ref_compnr
+    description: company number of primary key of table tffam780 Property Type
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam110 Asset Book table, Generated 2026-04-10T19:41:32Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - anbr
+        - aext
+        - book

@@ -1,0 +1,148 @@
+version: 2
+models:
+- name: metermanagement_water_readingreviewsetup
+  columns:
+  - name: uponcyreadapproval
+    description: Metadata for column UPONCYREADAPPROVAL
+  - name: lo1defaction
+    description: Metadata for column LO1DEFACTION
+  - name: metertype
+    description: 'Metadata for column METERTYPE. Max length: 10'
+  - name: nousgbkg
+    description: Metadata for column NOUSGBKG
+  - name: hi3defaction
+    description: Metadata for column HI3DEFACTION
+  - name: negusgdefaction
+    description: Metadata for column NEGUSGDEFACTION
+  - name: nousgtxt
+    description: Metadata for column NOUSGTXT
+  - name: lo3bkg
+    description: Metadata for column LO3BKG
+  - name: hi1txt
+    description: Metadata for column HI1TXT
+  - name: hi3txt
+    description: Metadata for column HI3TXT
+  - name: esttxt
+    description: Metadata for column ESTTXT
+  - name: hi2defaction
+    description: Metadata for column HI2DEFACTION
+  - name: normalprocess
+    description: Metadata for column NORMALPROCESS
+  - name: nousgprocess
+    description: Metadata for column NOUSGPROCESS
+  - name: lo3process
+    description: Metadata for column LO3PROCESS
+  - name: lo2txt
+    description: Metadata for column LO2TXT
+  - name: negusgbkg
+    description: Metadata for column NEGUSGBKG
+  - name: lo2defaction
+    description: Metadata for column LO2DEFACTION
+  - name: lo1txt
+    description: Metadata for column LO1TXT
+  - name: lo3defaction
+    description: Metadata for column LO3DEFACTION
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: lo2bkg
+    description: Metadata for column LO2BKG
+  - name: lo2pct
+    description: Metadata for column LO2PCT
+  - name: hi3pct
+    description: Metadata for column HI3PCT
+  - name: hi1pct
+    description: Metadata for column HI1PCT
+  - name: lo1pct
+    description: Metadata for column LO1PCT
+  - name: hi2pct
+    description: Metadata for column HI2PCT
+  - name: daysforcurrd
+    description: Metadata for column DAYSFORCURRD
+  - name: preselectacctforbill
+    description: 'Metadata for column PRESELECTACCTFORBILL. Max length: 1'
+  - name: noacctdefaction
+    description: Metadata for column NOACCTDEFACTION
+  - name: negusgprocess
+    description: Metadata for column NEGUSGPROCESS
+  - name: lo3txt
+    description: Metadata for column LO3TXT
+  - name: noaccttxt
+    description: Metadata for column NOACCTTXT
+  - name: hi2process
+    description: Metadata for column HI2PROCESS
+  - name: rdprobkey
+    description: Metadata for column RDPROBKEY
+  - name: lo3pct
+    description: Metadata for column LO3PCT
+  - name: rdreviewsukey
+    description: (required) Metadata for column RDREVIEWSUKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: norddefaction
+    description: Metadata for column NORDDEFACTION
+  - name: hi2bkg
+    description: Metadata for column HI2BKG
+  - name: hi1bkg
+    description: Metadata for column HI1BKG
+  - name: noacctprocess
+    description: Metadata for column NOACCTPROCESS
+  - name: hi2txt
+    description: Metadata for column HI2TXT
+  - name: nordbkg
+    description: Metadata for column NORDBKG
+  - name: lo2process
+    description: Metadata for column LO2PROCESS
+  - name: hi3bkg
+    description: Metadata for column HI3BKG
+  - name: noacctbkg
+    description: Metadata for column NOACCTBKG
+  - name: lo1bkg
+    description: Metadata for column LO1BKG
+  - name: markreread
+    description: 'Metadata for column MARKREREAD. Max length: 1'
+  - name: uponaddireadapproval
+    description: Metadata for column UPONADDIREADAPPROVAL
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: lo1process
+    description: Metadata for column LO1PROCESS
+  - name: nousgdefaction
+    description: Metadata for column NOUSGDEFACTION
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: cnclrereadrescode
+    description: 'Metadata for column CNCLREREADRESCODE. Max length: 10'
+  - name: hi1defaction
+    description: Metadata for column HI1DEFACTION
+  - name: hi3process
+    description: Metadata for column HI3PROCESS
+  - name: estbkg
+    description: Metadata for column ESTBKG
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: hi1process
+    description: Metadata for column HI1PROCESS
+  - name: negusgtxt
+    description: Metadata for column NEGUSGTXT
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table METERMANAGEMENT_WATER.READINGREVIEWSETUP on 2022-03-03T11:30:55.623

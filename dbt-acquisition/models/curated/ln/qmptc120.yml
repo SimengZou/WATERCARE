@@ -1,0 +1,276 @@
+version: 2
+models:
+- name: qmptc120
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orgn
+    description: '(required) Origin. Allowed values: 1, 2, 4, 5, 6, 7, 8, 10, 11,
+      13, 20, 75, 80, 90, 100, 110, 120, 130, 140, 150, 200'
+    data_tests:
+    - not_null
+  - name: orgn_kw
+    description: 'Origin (keyword). Allowed values: qmptc.orgn.sales, qmptc.orgn.purchase,
+      qmptc.orgn.production, qmptc.orgn.matl.bom, qmptc.orgn.rou.ti, qmptc.orgn.sales.sched,
+      qmptc.orgn.purchase.sched, qmptc.orgn.cwar.insp, qmptc.orgn.inv.insp, qmptc.orgn.cwar.trans,
+      qmptc.orgn.cwar.trans.man, qmptc.orgn.project, qmptc.orgn.prj.contract, qmptc.orgn.enterprise.plan,
+      qmptc.orgn.prod.repetitive, qmptc.orgn.rou.repetitive, qmptc.orgn.service, qmptc.orgn.maint.sales,
+      qmptc.orgn.batch.repair, qmptc.orgn.maint.work, qmptc.orgn.not.appl'
+  - name: orno
+    description: '(required) Origin Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Origin Order Line
+    data_tests:
+    - not_null
+  - name: opno
+    description: (required) Operation
+    data_tests:
+    - not_null
+  - name: wstt
+    description: '(required) Work Station. Max length: 6'
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Origin Order Sequence
+    data_tests:
+    - not_null
+  - name: apno
+    description: '(required) Inspection. Max length: 9'
+    data_tests:
+    - not_null
+  - name: apsq
+    description: (required) Inspection Sequence
+    data_tests:
+    - not_null
+  - name: huid
+    description: '(required) Handling Unit. Max length: 25'
+    data_tests:
+    - not_null
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: date
+    description: Inventory Date
+  - name: effn
+    description: Effectivity Unit
+  - name: revi
+    description: 'E-Item Revision. Max length: 6'
+  - name: schd
+    description: 'Schedule. Allowed values: 0, 1, 2'
+  - name: schd_kw
+    description: 'Schedule (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: loca
+    description: 'Location. Max length: 10'
+  - name: oqua
+    description: Order Quantity
+  - name: cuoq
+    description: 'Order Unit. Max length: 3'
+  - name: raqa
+    description: Recommended Quantity Accepted
+  - name: rrqa
+    description: Recommended Quantity Rejected
+  - name: rdqa
+    description: Recommended Quantity Destroyed
+  - name: aaqa
+    description: Actual Quantity Accepted
+  - name: arqa
+    description: Actual Quantity Rejected
+  - name: cdis
+    description: 'Reason for Rejection. Max length: 6'
+  - name: rsta
+    description: 'Inspection Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: rsta_kw
+    description: 'Inspection Status (keyword). Allowed values: qmptc.rsta.free, qmptc.rsta.active,
+      qmptc.rsta.completed, qmptc.rsta.processed, qmptc.rsta.closed, qmptc.rsta.cancelled'
+  - name: cdat
+    description: Completion Date
+  - name: pdat
+    description: Processing Date
+  - name: blmt
+    description: 'Blocking Method for Inspections. Allowed values: 1, 2, 3, 4, 14'
+  - name: blmt_kw
+    description: 'Blocking Method for Inspections (keyword). Allowed values: qmptc.blmt.continue,
+      qmptc.blmt.blck.oper, qmptc.blmt.blck.comp, qmptc.blmt.block, qmptc.blmt.not.appl'
+  - name: reco
+    description: 'QM Only Recommends. Allowed values: 1, 2'
+  - name: reco_kw
+    description: 'QM Only Recommends (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: gncm
+    description: 'Non-Conforming Material Report. Allowed values: 1, 2'
+  - name: gncm_kw
+    description: 'Non-Conforming Material Report (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: fain
+    description: 'FAI Number. Max length: 9'
+  - name: fseq
+    description: FAI Sequence
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: crdt
+    description: Creation Date
+  - name: acdt
+    description: Activation Date
+  - name: cldt
+    description: Closing Date
+  - name: cndt
+    description: Cancelled Date
+  - name: prmd
+    description: 'Production Model. Max length: 9'
+  - name: pmrv
+    description: 'Production Model Revision. Max length: 6'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: ownr
+    description: 'Owner. Max length: 9'
+  - name: stid
+    description: 'Ship to Stock Rule ID. Max length: 22'
+  - name: stsn
+    description: 'Ship to Stock Number. Max length: 9'
+  - name: stss
+    description: 'Ship to Stock. Allowed values: 1, 2'
+  - name: stss_kw
+    description: 'Ship to Stock (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Number
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cdis_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: ownr_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: stat_chno
+    description: 'CC: Status change number of Order Inspection'
+  - name: oqua_buar
+    description: 'CC: Order Quantity in Base Unit Area'
+  - name: oqua_buln
+    description: 'CC: Order Quantity in Base Unit Length'
+  - name: oqua_bupc
+    description: 'CC: Order Quantity in Base Unit Piece'
+  - name: oqua_butm
+    description: 'CC: Order Quantity in Base Unit Time'
+  - name: oqua_buvl
+    description: 'CC: Order Quantity in Base Unit Volume'
+  - name: oqua_buwg
+    description: 'CC: Order Quantity in Base Unit Weight'
+  - name: raqa_buar
+    description: 'CC: Recommended Quantity Accepted in Base Unit Area'
+  - name: raqa_buln
+    description: 'CC: Recommended Quantity Accepted in Base Unit Length'
+  - name: raqa_bupc
+    description: 'CC: Recommended Quantity Accepted in Base Unit Piece'
+  - name: raqa_butm
+    description: 'CC: Recommended Quantity Accepted in Base Unit Time'
+  - name: raqa_buvl
+    description: 'CC: Recommended Quantity Accepted in Base Unit Volume'
+  - name: raqa_buwg
+    description: 'CC: Recommended Quantity Accepted in Base Unit Weight'
+  - name: rrqa_buar
+    description: 'CC: Recommended Quantity Rejected in Base Unit Area'
+  - name: rrqa_buln
+    description: 'CC: Recommended Quantity Rejected in Base Unit Length'
+  - name: rrqa_bupc
+    description: 'CC: Recommended Quantity Rejected in Base Unit Piece'
+  - name: rrqa_butm
+    description: 'CC: Recommended Quantity Rejected in Base Unit Time'
+  - name: rrqa_buvl
+    description: 'CC: Recommended Quantity Rejected in Base Unit Volume'
+  - name: rrqa_buwg
+    description: 'CC: Recommended Quantity Rejected in Base Unit Weight'
+  - name: rdqa_buar
+    description: 'CC: Recommended Quantity Destroyed in Base Unit Area'
+  - name: rdqa_buln
+    description: 'CC: Recommended Quantity Destroyed in Base Unit Length'
+  - name: rdqa_bupc
+    description: 'CC: Recommended Quantity Destroyed in Base Unit Piece'
+  - name: rdqa_butm
+    description: 'CC: Recommended Quantity Destroyed in Base Unit Time'
+  - name: rdqa_buvl
+    description: 'CC: Recommended Quantity Destroyed in Base Unit Volume'
+  - name: rdqa_buwg
+    description: 'CC: Recommended Quantity Destroyed in Base Unit Weight'
+  - name: aaqa_buar
+    description: 'CC: Actual Quantity Accepted in Base Unit Area'
+  - name: aaqa_buln
+    description: 'CC: Actual Quantity Accepted in Base Unit Length'
+  - name: aaqa_bupc
+    description: 'CC: Actual Quantity Accepted in Base Unit Piece'
+  - name: aaqa_butm
+    description: 'CC: Actual Quantity Accepted in Base Unit Time'
+  - name: aaqa_buvl
+    description: 'CC: Actual Quantity Accepted in Base Unit Volume'
+  - name: aaqa_buwg
+    description: 'CC: Actual Quantity Accepted in Base Unit Weight'
+  - name: arqa_buar
+    description: 'CC: Actual Quantity Rejected in Base Unit Area'
+  - name: arqa_buln
+    description: 'CC: Actual Quantity Rejected in Base Unit Length'
+  - name: arqa_bupc
+    description: 'CC: Actual Quantity Rejected in Base Unit Piece'
+  - name: arqa_butm
+    description: 'CC: Actual Quantity Rejected in Base Unit Time'
+  - name: arqa_buvl
+    description: 'CC: Actual Quantity Rejected in Base Unit Volume'
+  - name: arqa_buwg
+    description: 'CC: Actual Quantity Rejected in Base Unit Weight'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmptc120 Order Inspections table, Generated 2022-06-15T01:21:06Z
+    from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orgn
+        - orno
+        - pono
+        - opno
+        - wstt
+        - seqn
+        - apno
+        - apsq
+        - huid

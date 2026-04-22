@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5pagecache
+  columns:
+  - name: pgc_lastsaved
+    description: PGC_LASTSAVED
+  - name: pgc_function
+    description: PGC_FUNCTION
+  - name: pgc_tabname
+    description: PGC_TABNAME
+  - name: pgc_layouttype
+    description: PGC_LAYOUTTYPE
+  - name: pgc_jspfile
+    description: PGC_JSPFILE
+  - name: pgc_updatecount
+    description: PGC_UPDATECOUNT
+  - name: pgc_usergroup
+    description: PGC_USERGROUP
+  - name: pgc_rentity
+    description: PGC_RENTITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PAGECACHE
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - pgc_usergroup
+        - pgc_function
+        - pgc_tabname
+        - pgc_layouttype

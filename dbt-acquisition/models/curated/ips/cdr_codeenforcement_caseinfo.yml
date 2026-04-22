@@ -1,0 +1,150 @@
+version: 2
+models:
+- name: cdr_codeenforcement_caseinfo
+  columns:
+  - name: statby
+    description: 'Metadata for column STATBY. Max length: 12'
+  - name: apprjkey
+    description: Metadata for column APPRJKEY
+  - name: statreas
+    description: 'Metadata for column STATREAS. Max length: 30'
+  - name: casedttm
+    description: Metadata for column CASEDTTM
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: rescode
+    description: 'Metadata for column RESCODE. Max length: 10'
+  - name: src
+    description: 'Metadata for column SRC. Max length: 10'
+  - name: statdttm
+    description: Metadata for column STATDTTM
+  - name: xcoordinate
+    description: Metadata for column XCOORDINATE
+  - name: casecheck
+    description: 'Metadata for column CASECHECK. Max length: 1'
+  - name: apcaseprocessstatekey
+    description: Metadata for column APCASEPROCESSSTATEKEY
+  - name: casename
+    description: 'Metadata for column CASENAME. Max length: 50'
+  - name: pri
+    description: 'Metadata for column PRI. Max length: 10'
+  - name: mobiledttm
+    description: Metadata for column MOBILEDTTM
+  - name: groupkey
+    description: Metadata for column GROUPKEY
+  - name: planrev
+    description: 'Metadata for column PLANREV. Max length: 1'
+  - name: propertycranederrick
+    description: Metadata for column PROPERTYCRANEDERRICK
+  - name: relation
+    description: Metadata for column RELATION
+  - name: linearfromm
+    description: Metadata for column LINEARFROMM
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: liccheck
+    description: 'Metadata for column LICCHECK. Max length: 1'
+  - name: propertyoccupancy
+    description: Metadata for column PROPERTYOCCUPANCY
+  - name: apcasekey
+    description: (required) Metadata for column APCASEKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 300'
+  - name: propertyfacade
+    description: Metadata for column PROPERTYFACADE
+  - name: ycoordinate
+    description: Metadata for column YCOORDINATE
+  - name: lstactdttm
+    description: Metadata for column LSTACTDTTM
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: propertyconveyance
+    description: Metadata for column PROPERTYCONVEYANCE
+  - name: usecheck
+    description: 'Metadata for column USECHECK. Max length: 1'
+  - name: propertymaterial
+    description: Metadata for column PROPERTYMATERIAL
+  - name: apkey
+    description: Metadata for column APKEY
+  - name: apno
+    description: 'Metadata for column APNO. Max length: 25'
+  - name: propertyequipment
+    description: Metadata for column PROPERTYEQUIPMENT
+  - name: resdttm
+    description: Metadata for column RESDTTM
+  - name: lineartoft
+    description: Metadata for column LINEARTOFT
+  - name: resby
+    description: 'Metadata for column RESBY. Max length: 12'
+  - name: propkey
+    description: Metadata for column PROPKEY
+  - name: bldgcheck
+    description: 'Metadata for column BLDGCHECK. Max length: 1'
+  - name: linearfromft
+    description: Metadata for column LINEARFROMFT
+  - name: prjcheck
+    description: 'Metadata for column PRJCHECK. Max length: 1'
+  - name: mobileemp
+    description: 'Metadata for column MOBILEEMP. Max length: 12'
+  - name: capacity
+    description: 'Metadata for column CAPACITY. Max length: 10'
+  - name: compkey
+    description: Metadata for column COMPKEY
+  - name: plancheck
+    description: 'Metadata for column PLANCHECK. Max length: 1'
+  - name: apcasedefnkey
+    description: Metadata for column APCASEDEFNKEY
+  - name: stat
+    description: 'Metadata for column STAT. Max length: 1'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: propertyvessel
+    description: Metadata for column PROPERTYVESSEL
+  - name: zcoordinate
+    description: Metadata for column ZCOORDINATE
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: mobile
+    description: 'Metadata for column MOBILE. Max length: 1'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: caseinfostatus
+    description: 'Metadata for column CASEINFOSTATUS. Max length: 10'
+  - name: lineartom
+    description: Metadata for column LINEARTOM
+  - name: refno
+    description: 'Metadata for column REFNO. Max length: 20'
+  - name: apby
+    description: 'Metadata for column APBY. Max length: 12'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: expdttm
+    description: Metadata for column EXPDTTM
+  - name: casegrp
+    description: 'Metadata for column CASEGRP. Max length: 10'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table CDR_CODEENFORCEMENT.CASEINFO on 2021-07-09T15:15:45.929

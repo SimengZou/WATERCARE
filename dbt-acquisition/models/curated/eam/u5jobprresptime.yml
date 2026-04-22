@@ -1,0 +1,60 @@
+version: 2
+models:
+- name: u5jobprresptime
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: jbp_wotype
+    description: JBP_WOTYPE
+  - name: jbp_contractor
+    description: JBP_CONTRACTOR
+  - name: jbp_woresponsetime
+    description: JBP_WORESPONSETIME
+  - name: jbp_wocompletiontime
+    description: JBP_WOCOMPLETIONTIME
+  - name: jbp_woresolutiontime
+    description: JBP_WORESOLUTIONTIME
+  - name: jbp_businessdays
+    description: JBP_BUSINESSDAYS
+  - name: jbp_organization
+    description: JBP_ORGANIZATION
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: jbp_wopriority
+    description: JBP_WOPRIORITY
+  - name: jbp_wopriority_desc
+    description: JBP_WOPRIORITY_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5JOBPRRESPTIME
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - jbp_wopriority
+        - jbp_wotype
+        - jbp_contractor
+        - jbp_organization

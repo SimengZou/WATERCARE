@@ -1,0 +1,60 @@
+version: 2
+models:
+- name: r5mrcs
+  columns:
+  - name: mrc_lastsaved
+    description: MRC_LASTSAVED
+  - name: mrc_availableforcus
+    description: MRC_AVAILABLEFORCUS
+  - name: mrc_class
+    description: MRC_CLASS
+  - name: mrc_store
+    description: MRC_STORE
+  - name: mrc_dfltscreener
+    description: MRC_DFLTSCREENER
+  - name: mrc_schedgroup
+    description: MRC_SCHEDGROUP
+  - name: mrc_capacity
+    description: MRC_CAPACITY
+  - name: mrc_org
+    description: MRC_ORG
+  - name: mrc_class_org
+    description: MRC_CLASS_ORG
+  - name: mrc_updatecount
+    description: MRC_UPDATECOUNT
+  - name: mrc_created
+    description: MRC_CREATED
+  - name: mrc_updated
+    description: MRC_UPDATED
+  - name: mrc_notused
+    description: MRC_NOTUSED
+  - name: mrc_segmentvalue
+    description: MRC_SEGMENTVALUE
+  - name: mrc_depot
+    description: MRC_DEPOT
+  - name: mrc_depot_org
+    description: MRC_DEPOT_ORG
+  - name: mrc_code
+    description: MRC_CODE
+    data_tests:
+    - unique
+  - name: mrc_desc
+    description: MRC_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MRCS

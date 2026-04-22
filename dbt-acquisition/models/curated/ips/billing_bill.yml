@@ -1,0 +1,212 @@
+version: 2
+models:
+- name: billing_bill
+  columns:
+  - name: priorbillamt
+    description: Metadata for column PRIORBILLAMT
+  - name: settlementkey
+    description: Metadata for column SETTLEMENTKEY
+  - name: billdate
+    description: Metadata for column BILLDATE
+  - name: insttotamt
+    description: Metadata for column INSTTOTAMT
+  - name: accountkey
+    description: Metadata for column ACCOUNTKEY
+  - name: billkey
+    description: (required) Metadata for column BILLKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: instno
+    description: Metadata for column INSTNO
+  - name: duedate
+    description: Metadata for column DUEDATE
+  - name: billadjamt
+    description: Metadata for column BILLADJAMT
+  - name: variamt
+    description: Metadata for column VARIAMT
+  - name: coname
+    description: 'Metadata for column CONAME. Max length: 30'
+  - name: billtypekey
+    description: Metadata for column BILLTYPEKEY
+  - name: dpc
+    description: 'Metadata for column DPC. Max length: 4'
+  - name: penexempt
+    description: 'Metadata for column PENEXEMPT. Max length: 10'
+  - name: billtoline2
+    description: 'Metadata for column BILLTOLINE2. Max length: 90'
+  - name: lienamt
+    description: Metadata for column LIENAMT
+  - name: adjamt
+    description: Metadata for column ADJAMT
+  - name: collkey
+    description: Metadata for column COLLKEY
+  - name: dispamt
+    description: Metadata for column DISPAMT
+  - name: finalbillflag
+    description: 'Metadata for column FINALBILLFLAG. Max length: 1'
+  - name: country
+    description: 'Metadata for column COUNTRY. Max length: 20'
+  - name: arngpayamt
+    description: Metadata for column ARNGPAYAMT
+  - name: billpertodate
+    description: Metadata for column BILLPERTODATE
+  - name: lienkey
+    description: Metadata for column LIENKEY
+  - name: setlamt
+    description: Metadata for column SETLAMT
+  - name: state
+    description: 'Metadata for column STATE. Max length: 30'
+  - name: extractdate
+    description: Metadata for column EXTRACTDATE
+  - name: dlnqamt
+    description: Metadata for column DLNQAMT
+  - name: acctbalcalcflag
+    description: 'Metadata for column ACCTBALCALCFLAG. Max length: 1'
+  - name: corrkey
+    description: Metadata for column CORRKEY
+  - name: penaltylineitemsamount
+    description: Metadata for column PENALTYLINEITEMSAMOUNT
+  - name: billrunkey
+    description: Metadata for column BILLRUNKEY
+  - name: billamt
+    description: Metadata for column BILLAMT
+  - name: depdueamt
+    description: Metadata for column DEPDUEAMT
+  - name: discexpamt
+    description: Metadata for column DISCEXPAMT
+  - name: previousbillkey
+    description: Metadata for column PREVIOUSBILLKEY
+  - name: concsapplflag
+    description: 'Metadata for column CONCSAPPLFLAG. Max length: 1'
+  - name: creditflag
+    description: 'Metadata for column CREDITFLAG. Max length: 1'
+  - name: postedttm
+    description: Metadata for column POSTEDTTM
+  - name: directdebitrunkey
+    description: Metadata for column DIRECTDEBITRUNKEY
+  - name: interimflag
+    description: 'Metadata for column INTERIMFLAG. Max length: 1'
+  - name: deferredpenaltydate
+    description: Metadata for column DEFERREDPENALTYDATE
+  - name: arngamt
+    description: Metadata for column ARNGAMT
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: collamt
+    description: Metadata for column COLLAMT
+  - name: outputflag
+    description: 'Metadata for column OUTPUTFLAG. Max length: 1'
+  - name: addr2
+    description: 'Metadata for column ADDR2. Max length: 40'
+  - name: city
+    description: 'Metadata for column CITY. Max length: 30'
+  - name: depositlineitemsamount
+    description: Metadata for column DEPOSITLINEITEMSAMOUNT
+  - name: billperfrdate
+    description: Metadata for column BILLPERFRDATE
+  - name: payorder
+    description: Metadata for column PAYORDER
+  - name: carrt
+    description: 'Metadata for column CARRT. Max length: 4'
+  - name: adjustmentlineitemsamount
+    description: Metadata for column ADJUSTMENTLINEITEMSAMOUNT
+  - name: propaddr
+    description: 'Metadata for column PROPADDR. Max length: 80'
+  - name: reverseflag
+    description: 'Metadata for column REVERSEFLAG. Max length: 1'
+  - name: nobillflag
+    description: 'Metadata for column NOBILLFLAG. Max length: 1'
+  - name: zip
+    description: 'Metadata for column ZIP. Max length: 20'
+  - name: entno
+    description: 'Metadata for column ENTNO. Max length: 20'
+  - name: curramt
+    description: Metadata for column CURRAMT
+  - name: estimateflag
+    description: 'Metadata for column ESTIMATEFLAG. Max length: 1'
+  - name: depamt
+    description: Metadata for column DEPAMT
+  - name: postedflag
+    description: 'Metadata for column POSTEDFLAG. Max length: 1'
+  - name: discexpdate
+    description: Metadata for column DISCEXPDATE
+  - name: lot
+    description: 'Metadata for column LOT. Max length: 5'
+  - name: addr1
+    description: 'Metadata for column ADDR1. Max length: 40'
+  - name: overamt
+    description: Metadata for column OVERAMT
+  - name: paymentlineitemsamount
+    description: Metadata for column PAYMENTLINEITEMSAMOUNT
+  - name: cassver
+    description: Metadata for column CASSVER
+  - name: penamt
+    description: Metadata for column PENAMT
+  - name: reversedbillkey
+    description: Metadata for column REVERSEDBILLKEY
+  - name: discountlineitemsamount
+    description: Metadata for column DISCOUNTLINEITEMSAMOUNT
+  - name: calculatedflag
+    description: 'Metadata for column CALCULATEDFLAG. Max length: 1'
+  - name: batchidentifier
+    description: Metadata for column BATCHIDENTIFIER
+  - name: deferredpenaltyamount
+    description: Metadata for column DEFERREDPENALTYAMOUNT
+  - name: daysrds
+    description: Metadata for column DAYSRDS
+  - name: budgetbillingplankey
+    description: Metadata for column BUDGETBILLINGPLANKEY
+  - name: delinquentdate
+    description: Metadata for column DELINQUENTDATE
+  - name: paidstat
+    description: 'Metadata for column PAIDSTAT. Max length: 1'
+  - name: billto
+    description: 'Metadata for column BILLTO. Max length: 90'
+  - name: actualamt
+    description: Metadata for column ACTUALAMT
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: earlypayordeferredpenalty
+    description: 'Metadata for column EARLYPAYORDEFERREDPENALTY. Max length: 1'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: conccred
+    description: Metadata for column CONCCRED
+  - name: paiddttm
+    description: Metadata for column PAIDDTTM
+  - name: exclusiveflag
+    description: 'Metadata for column EXCLUSIVEFLAG. Max length: 1'
+  - name: principaltotalamount
+    description: Metadata for column PRINCIPALTOTALAMOUNT
+  - name: cumvariamt
+    description: Metadata for column CUMVARIAMT
+  - name: createddttm
+    description: Metadata for column CREATEDDTTM
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: intamt
+    description: Metadata for column INTAMT
+  - name: billno
+    description: 'Metadata for column BILLNO. Max length: 9'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.BILL on 2021-07-09T15:14:55.757

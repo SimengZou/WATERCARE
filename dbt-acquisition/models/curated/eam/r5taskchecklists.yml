@@ -1,0 +1,134 @@
+version: 2
+models:
+- name: r5taskchecklists
+  columns:
+  - name: tch_lastsaved
+    description: TCH_LASTSAVED
+  - name: tch_metricfractionslider
+    description: TCH_METRICFRACTIONSLIDER
+  - name: tch_taskrev
+    description: TCH_TASKREV
+  - name: tch_desc
+    description: TCH_DESC
+  - name: tch_sequence
+    description: TCH_SEQUENCE
+  - name: tch_notused
+    description: TCH_NOTUSED
+  - name: tch_updated
+    description: TCH_UPDATED
+  - name: tch_updatedby
+    description: TCH_UPDATEDBY
+  - name: tch_updatecount
+    description: TCH_UPDATECOUNT
+  - name: tch_type
+    description: TCH_TYPE
+  - name: tch_requiredtoclose
+    description: TCH_REQUIREDTOCLOSE
+  - name: tch_objectlevel
+    description: TCH_OBJECTLEVEL
+  - name: tch_objectclass
+    description: TCH_OBJECTCLASS
+  - name: tch_objectclass_org
+    description: TCH_OBJECTCLASS_ORG
+  - name: tch_objectcategory
+    description: TCH_OBJECTCATEGORY
+  - name: tch_uom
+    description: TCH_UOM
+  - name: tch_aspect
+    description: TCH_ASPECT
+  - name: tch_pointtype
+    description: TCH_POINTTYPE
+  - name: tch_repeating
+    description: TCH_REPEATING
+  - name: tch_followuptask
+    description: TCH_FOLLOWUPTASK
+  - name: tch_matlist
+    description: TCH_MATLIST
+  - name: tch_syslevel
+    description: TCH_SYSLEVEL
+  - name: tch_asmlevel
+    description: TCH_ASMLEVEL
+  - name: tch_complevel
+    description: TCH_COMPLEVEL
+  - name: tch_complocation
+    description: TCH_COMPLOCATION
+  - name: tch_condition
+    description: TCH_CONDITION
+  - name: tch_possiblefindings
+    description: TCH_POSSIBLEFINDINGS
+  - name: tch_followupjob
+    description: TCH_FOLLOWUPJOB
+  - name: tch_part
+    description: TCH_PART
+  - name: tch_part_org
+    description: TCH_PART_ORG
+  - name: tch_partcondition
+    description: TCH_PARTCONDITION
+  - name: tch_partclass
+    description: TCH_PARTCLASS
+  - name: tch_partclass_org
+    description: TCH_PARTCLASS_ORG
+  - name: tch_partcategory
+    description: TCH_PARTCATEGORY
+  - name: tch_color
+    description: TCH_COLOR
+  - name: tch_reference
+    description: TCH_REFERENCE
+  - name: tch_equipfilter
+    description: TCH_EQUIPFILTER
+  - name: tch_minslidervalue
+    description: TCH_MINSLIDERVALUE
+  - name: tch_maxslidervalue
+    description: TCH_MAXSLIDERVALUE
+  - name: tch_srccalculatedvalue
+    description: TCH_SRCCALCULATEDVALUE
+  - name: tch_formula
+    description: TCH_FORMULA
+  - name: tch_direction_options
+    description: TCH_DIRECTION_OPTIONS
+  - name: tch_not_applicable_options
+    description: TCH_NOT_APPLICABLE_OPTIONS
+  - name: tch_condition_options
+    description: TCH_CONDITION_OPTIONS
+  - name: tch_group_label
+    description: TCH_GROUP_LABEL
+  - name: tch_responsibility
+    description: TCH_RESPONSIBILITY
+  - name: tch_measurementresp
+    description: TCH_MEASUREMENTRESP
+  - name: tch_hidefollowup
+    description: TCH_HIDEFOLLOWUP
+  - name: tch_hidelinearfields
+    description: TCH_HIDELINEARFIELDS
+  - name: tch_enablenonconformities
+    description: TCH_ENABLENONCONFORMITIES
+  - name: tch_fractionsliderdimensions
+    description: TCH_FRACTIONSLIDERDIMENSIONS
+  - name: tch_resultrentity
+    description: TCH_RESULTRENTITY
+  - name: tch_resultentityclassoptions
+    description: TCH_RESULTENTITYCLASSOPTIONS
+  - name: tch_code
+    description: TCH_CODE
+    data_tests:
+    - unique
+  - name: tch_task
+    description: TCH_TASK
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TASKCHECKLISTS

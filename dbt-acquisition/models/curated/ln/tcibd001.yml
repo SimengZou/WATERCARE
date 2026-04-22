@@ -1,0 +1,421 @@
+version: 2
+models:
+- name: tcibd001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 60'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key I - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: seab__en_us
+    description: '(required) Search Key II - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: exin
+    description: 'Extra Information. Max length: 8'
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: crdt
+    description: Creation Date
+  - name: lmdt
+    description: Last Modification Date
+  - name: cood
+    description: 'Technical Coordinator. Max length: 9'
+  - name: kitm
+    description: 'Item Type. Allowed values: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30,
+      35, 40, 50, 60, 70, 80, 90, 100, 110'
+  - name: kitm_kw
+    description: 'Item Type (keyword). Allowed values: tckitm.purchase, tckitm.manufacture,
+      tckitm.generic.obs, tckitm.cost.obs, tckitm.service.obs, tckitm.subcontract.obs,
+      tckitm.list.obs, tckitm.tool.obs, tckitm.equipment.obs, tckitm.engineering.obs,
+      tckitm.product, tckitm.rental.prod, tckitm.tool, tckitm.equipment, tckitm.subcontracting,
+      tckitm.cost, tckitm.service, tckitm.generic, tckitm.engineering, tckitm.list'
+  - name: citg
+    description: 'Item Group. Max length: 6'
+  - name: itmt
+    description: 'List Type. Allowed values: 10, 20, 30, 40, 50'
+  - name: itmt_kw
+    description: 'List Type (keyword). Allowed values: tcitmt.not.applicable, tcitmt.tool,
+      tcitmt.kit, tcitmt.option, tcitmt.menu'
+  - name: dsct
+    description: 'Dimension Controlled. Allowed values: 1, 2'
+  - name: dsct_kw
+    description: 'Dimension Controlled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: osys
+    description: 'Order System. Allowed values: 1, 2, 4, 9'
+  - name: osys_kw
+    description: 'Order System (keyword). Allowed values: tcosys.sic, tcosys.mps,
+      tcosys.fas, tcosys.mnl'
+  - name: cuni
+    description: 'Inventory Unit. Max length: 3'
+  - name: rtun
+    description: 'Rental Unit. Max length: 3'
+  - name: uset
+    description: 'Unit Set. Max length: 6'
+  - name: ltct
+    description: 'Lot Controlled. Allowed values: 1, 2'
+  - name: ltct_kw
+    description: 'Lot Controlled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: seri
+    description: 'Serialized. Allowed values: 1, 2'
+  - name: seri_kw
+    description: 'Serialized (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cnfg
+    description: 'Configurable. Allowed values: 1, 2'
+  - name: cnfg_kw
+    description: 'Configurable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: repl
+    description: 'Type of Replacement. Allowed values: 5, 10, 15, 20'
+  - name: repl_kw
+    description: 'Type of Replacement (keyword). Allowed values: tcibd.repl.not.appl,
+      tcibd.repl.repl, tcibd.repl.subst, tcibd.repl.repl.subst'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cpva
+    description: Product Variant
+  - name: dfit
+    description: 'Derived-from Item. Max length: 47'
+  - name: stoi
+    description: 'Standard To Order. Allowed values: 1, 2'
+  - name: stoi_kw
+    description: 'Standard To Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: opts
+    description: Option Set
+  - name: cust
+    description: 'Customized. Allowed values: 0, 1, 2'
+  - name: cust_kw
+    description: 'Customized (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: opol
+    description: 'Customizable. Allowed values: 1, 2'
+  - name: opol_kw
+    description: 'Customizable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: wpcs
+    description: 'With PCS. Allowed values: 1, 2'
+  - name: wpcs_kw
+    description: 'With PCS (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccfg
+    description: 'Configuration Group. Max length: 6'
+  - name: unef
+    description: 'Unit Effective End Item. Allowed values: 1, 2'
+  - name: unef_kw
+    description: 'Unit Effective End Item (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ichg
+    description: 'Effectivity Units are Interchangeable. Allowed values: 1, 2'
+  - name: ichg_kw
+    description: 'Effectivity Units are Interchangeable (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: eitm
+    description: 'Revision Controlled. Allowed values: 1, 2'
+  - name: eitm_kw
+    description: 'Revision Controlled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: uefs
+    description: 'Unit Effective Supply. Allowed values: 1, 2'
+  - name: uefs_kw
+    description: 'Unit Effective Supply (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: umer
+    description: 'Update Method for E-Item Relation. Allowed values: 1, 2, 3, 4'
+  - name: umer_kw
+    description: 'Update Method for E-Item Relation (keyword). Allowed values: tcibd.umer.yes,
+      tcibd.umer.freeze, tcibd.umer.break, tcibd.umer.not.appl'
+  - name: chma
+    description: 'Change Management Allowed. Allowed values: 1, 2'
+  - name: chma_kw
+    description: 'Change Management Allowed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: efco
+    description: 'Change Order. Max length: 8'
+  - name: indt
+    description: Effective Date
+  - name: edco
+    description: 'Effectivity Dates by Change Order. Allowed values: 1, 2'
+  - name: edco_kw
+    description: 'Effectivity Dates by Change Order (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mcoa
+    description: 'Multiple Change Orders Allowed. Allowed values: 1, 2'
+  - name: mcoa_kw
+    description: 'Multiple Change Orders Allowed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sayn
+    description: 'Subassembly. Allowed values: 1, 2'
+  - name: sayn_kw
+    description: 'Subassembly (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cont
+    description: 'Container Item. Allowed values: 1, 2'
+  - name: cont_kw
+    description: 'Container Item (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cntr
+    description: 'Container. Max length: 3'
+  - name: cpcp
+    description: 'Cost Component. Max length: 8'
+  - name: coeu
+    description: 'Standard Costs at Level. Allowed values: 5, 10, 15'
+  - name: coeu_kw
+    description: 'Standard Costs at Level (keyword). Allowed values: tccoeu.company,
+      tccoeu.ent.unit, tccoeu.not.appl'
+  - name: ppeg
+    description: 'Mandatory Project Peg. Allowed values: 1, 2'
+  - name: ppeg_kw
+    description: 'Mandatory Project Peg (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ippg
+    description: 'Inherit Project Peg. Allowed values: 1, 2'
+  - name: ippg_kw
+    description: 'Inherit Project Peg (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ppss
+    description: 'Project Pegged Safety Stock Allowed. Allowed values: 1, 2'
+  - name: ppss_kw
+    description: 'Project Pegged Safety Stock Allowed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: elcm
+    description: 'Restricted by Components. Allowed values: 1, 2'
+  - name: elcm_kw
+    description: 'Restricted by Components (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: elrq
+    description: 'Restrict Commingling and Transfers. Allowed values: 1, 2'
+  - name: elrq_kw
+    description: 'Restrict Commingling and Transfers (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dpeg
+    description: 'Demand Pegged. Allowed values: 1, 2'
+  - name: dpeg_kw
+    description: 'Demand Pegged (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dptp
+    description: 'Demand Pegging Type. Allowed values: 5, 7, 10, 15, 20, 90'
+  - name: dptp_kw
+    description: 'Demand Pegging Type (keyword). Allowed values: tcpgtp.bp.based,
+      tcpgtp.bploc.based, tcpgtp.order.based, tcpgtp.cust.ref.based, tcpgtp.int.ref.based,
+      tcpgtp.not.appl'
+  - name: dpuu
+    description: 'Use Unallocated Inventory. Allowed values: 1, 2'
+  - name: dpuu_kw
+    description: 'Use Unallocated Inventory (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sgtc
+    description: 'Subject to Trade Compliance. Allowed values: 1, 2'
+  - name: sgtc_kw
+    description: 'Subject to Trade Compliance (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lctr
+    description: 'License Tracking. Allowed values: 1, 2'
+  - name: lctr_kw
+    description: 'License Tracking (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cltr
+    description: 'Contains License Tracking. Allowed values: 1, 2'
+  - name: cltr_kw
+    description: 'Contains License Tracking (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: srce
+    description: 'Default Supply Source. Allowed values: 10, 20, 25, 30, 40, 50, 60'
+  - name: srce_kw
+    description: 'Default Supply Source (keyword). Allowed values: tcsrce.not.appl,
+      tcsrce.shopfloor, tcsrce.repetitive, tcsrce.assembly, tcsrce.purchase, tcsrce.subcontract,
+      tcsrce.distribution'
+  - name: efpr
+    description: 'Date-Effective Item Sources. Allowed values: 1, 2'
+  - name: efpr_kw
+    description: 'Date-Effective Item Sources (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dscb__en_us
+    description: '(required) Material - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dscc__en_us
+    description: '(required) Size - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dscd__en_us
+    description: '(required) Standard - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: wght
+    description: Weight
+  - name: cwun
+    description: 'Weight Unit. Max length: 3'
+  - name: ctyp
+    description: 'Product Type. Max length: 3'
+  - name: cpcl
+    description: 'Product Class. Max length: 6'
+  - name: cpln
+    description: 'Product Line. Max length: 6'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: csel
+    description: 'Selection Code. Max length: 3'
+  - name: csig
+    description: 'Item Signal. Max length: 3'
+  - name: rdpt
+    description: 'Responsible Department. Max length: 6'
+  - name: ctyo
+    description: 'Country of Origin. Max length: 3'
+  - name: envc
+    description: 'Environmental Compliance. Allowed values: 5, 10, 15, 20, 25, 30,
+      35, 40'
+  - name: envc_kw
+    description: 'Environmental Compliance (keyword). Allowed values: tcenvc.not.appl,
+      tcenvc.not.valid, tcenvc.compliant, tcenvc.compl.except, tcenvc.not.compl, tcenvc.cond.fail,
+      tcenvc.part.fail, tcenvc.not.rele'
+  - name: cean
+    description: 'EAN Code. Max length: 14'
+  - name: ccde
+    description: 'Harmonized System Code. Max length: 25'
+  - name: icsi
+    description: 'Critical Safety Item. Allowed values: 1, 2'
+  - name: icsi_kw
+    description: 'Critical Safety Item (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: fstk
+    description: 'Floor Stock. Allowed values: 1, 2'
+  - name: fstk_kw
+    description: 'Floor Stock (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: psiu
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: psiu_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: styp
+    description: 'Obsolete. Allowed values: 1, 2, 3'
+  - name: styp_kw
+    description: 'Obsolete (keyword). Allowed values: tcstyp.not.applicable, tcstyp.pull,
+      tcstyp.push'
+  - name: subc
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: subc_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oktm
+    description: Obsolete
+  - name: dpcr
+    description: 'Obsolete. Allowed values: 10, 20, 100'
+  - name: dpcr_kw
+    description: 'Obsolete (keyword). Allowed values: tcpgcr.always, tcpgcr.sls.contract,
+      tcpgcr.not.apl'
+  - name: rvdi
+    description: 'Revision Data in IBD. Allowed values: 1, 2'
+  - name: rvdi_kw
+    description: 'Revision Data in IBD (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rnum
+    description: 'Rental Number. Allowed values: 10, 20, 100'
+  - name: rnum_kw
+    description: 'Rental Number (keyword). Allowed values: tcitm.rnum.prod, tcitm.rnum.rent,
+      tcitm.rnum.not.appl'
+  - name: mdtp
+    description: 'Module Type. Allowed values: 10, 20, 100'
+  - name: mdtp_kw
+    description: 'Module Type (keyword). Allowed values: tcibd.mdtp.eng.mod, tcibd.mdtp.mou.list,
+      tcibd.mdtp.not.appl'
+  - name: iitv
+    description: Indicative Item Value in Reference Currency
+  - name: iivc
+    description: 'Indicative Item Value Currency. Max length: 3'
+  - name: iivu
+    description: 'Indicative Item Value Unit. Max length: 3'
+  - name: ivmd
+    description: Indicative Item Value Modification Date
+  - name: ivbd
+    description: 'Indicative Item Value Based on Default. Allowed values: 1, 2'
+  - name: ivbd_kw
+    description: 'Indicative Item Value Based on Default (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Item Text
+  - name: cood_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: citg_ref_compnr
+    description: company number of primary key of table tcmcs023 Item Groups
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: rtun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: uset_cwun_ref_compnr
+    description: company number of primary key of table tcmcs012 Units by Unit Set
+  - name: uset_ref_compnr
+    description: company number of primary key of table tcmcs006 Unit Sets
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: dfit_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: ccfg_ref_compnr
+    description: company number of primary key of table tcmcs150 Configuration Group
+  - name: cntr_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cpcp_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: cwun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ctyp_ref_compnr
+    description: company number of primary key of table tcmcs015 Product Types
+  - name: cpcl_ref_compnr
+    description: company number of primary key of table tcmcs062 Product Classes
+  - name: cpln_ref_compnr
+    description: company number of primary key of table tcmcs061 Product Lines
+  - name: cmnf_ref_compnr
+    description: company number of primary key of table tcmcs060 Manufacturers
+  - name: csel_ref_compnr
+    description: company number of primary key of table tcmcs022 Selection Codes
+  - name: csig_ref_compnr
+    description: company number of primary key of table tcmcs018 Item Signals
+  - name: rdpt_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: ctyo_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccde_ref_compnr
+    description: company number of primary key of table tcmcs028 Harmonized System
+      Codes
+  - name: iivc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: iivu_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: cpva_rcmp
+    description: 'CC: Reference Company of Product Variant'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcibd001 Items table, Generated 2026-04-10T19:41:07Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - item

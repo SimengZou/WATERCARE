@@ -1,0 +1,62 @@
+version: 2
+models:
+- name: r5importexportstatus
+  columns:
+  - name: ies_lastsaved
+    description: IES_LASTSAVED
+  - name: ies_type
+    description: IES_TYPE
+  - name: ies_status
+    description: IES_STATUS
+  - name: ies_filelocation
+    description: IES_FILELOCATION
+  - name: ies_emailsent
+    description: IES_EMAILSENT
+  - name: ies_filesent
+    description: IES_FILESENT
+  - name: ies_esttimetostart
+    description: IES_ESTTIMETOSTART
+  - name: ies_esttimetoend
+    description: IES_ESTTIMETOEND
+  - name: ies_datecreated
+    description: IES_DATECREATED
+  - name: ies_updatecount
+    description: IES_UPDATECOUNT
+  - name: ies_started
+    description: IES_STARTED
+  - name: ies_completed
+    description: IES_COMPLETED
+  - name: ies_recordcount
+    description: IES_RECORDCOUNT
+  - name: ies_email
+    description: IES_EMAIL
+  - name: ies_desc
+    description: IES_DESC
+  - name: ies_includeemail
+    description: IES_INCLUDEEMAIL
+  - name: ies_preview
+    description: IES_PREVIEW
+  - name: ies_userid
+    description: IES_USERID
+  - name: ies_sessionid
+    description: IES_SESSIONID
+    data_tests:
+    - unique
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5IMPORTEXPORTSTATUS

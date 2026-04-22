@@ -1,0 +1,333 @@
+version: 2
+models:
+- name: whinr110
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: cwar
+    description: '(required) Warehouse. Max length: 6'
+    data_tests:
+    - not_null
+  - name: trdt
+    description: (required) Transaction Date
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: rowc
+    description: Rental Owner Company
+  - name: rown
+    description: 'Rental Owner. Max length: 6'
+  - name: effn
+    description: Effectivity Unit
+  - name: serl
+    description: 'Serial Number. Max length: 30'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: tagn
+    description: 'Tag. Max length: 9'
+  - name: qstk
+    description: Quantity (Inventory Unit)
+  - name: qipu
+    description: Quantity (Piece Unit)
+  - name: ocmp
+    description: Order Company
+  - name: koor
+    description: 'Order Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+      13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 26, 28, 29, 30, 31, 32, 33, 34, 35,
+      36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+      55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 68, 69, 70, 71, 72, 74, 76, 78, 80,
+      82, 84, 86, 88, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100'
+  - name: koor_kw
+    description: 'Order Type (keyword). Allowed values: tckoor.act.sfc, tckoor.act.pur,
+      tckoor.act.sls, tckoor.cp.sfc, tckoor.cp.pur, tckoor.act.pur.sched, tckoor.act.sls.sched,
+      tckoor.act.pur.adv, tckoor.act.asc, tckoor.services.proc, tckoor.mrp.sls, tckoor.mrp.atp,
+      tckoor.sls.quot, tckoor.pur.con, tckoor.sls.con, tckoor.wrh.order, tckoor.act.srv,
+      tckoor.pss.pur, tckoor.pss.wrh, tckoor.serv.proc.adv, tckoor.wrh.ass, tckoor.act.trf,
+      tckoor.act.pmg, tckoor.srv.call, tckoor.srv.planned.act, tckoor.cp.ipl, tckoor.cf.ap,
+      tckoor.act.sfc.man, tckoor.act.pur.man, tckoor.act.sls.man, tckoor.act.srv.man,
+      tckoor.act.trf.man, tckoor.act.srv.sls, tckoor.act.dpt.wrk, tckoor.act.srv.sls.man,
+      tckoor.pur.rfq, tckoor.act.sls.sched.f, tckoor.act.dpt.wrk.man, tckoor.freight,
+      tckoor.stock, tckoor.safety.stock, tckoor.act.asc.man, tckoor.act.pur.req, tckoor.epp.quote,
+      tckoor.mps.prod, tckoor.mps.pur, tckoor.cycle.count, tckoor.adjustment, tckoor.apl.asc,
+      tckoor.cp.rpt, tckoor.revaluation, tckoor.product.sched, tckoor.product.kanban,
+      tckoor.project, tckoor.project.man, tckoor.enterprise.plan, tckoor.intercomp.trade,
+      tckoor.cp.sub, tckoor.act.sub.sched, tckoor.pcs.project, tckoor.eus.change,
+      tckoor.alloc.change, tckoor.inv.own.change, tckoor.exp.supply, tckoor.conf.supply,
+      tckoor.bp.forecast, tckoor.aggr.demand, tckoor.bfbp.trf.pur, tckoor.bfbp.trf.sched,
+      tckoor.stbp.trf.sls, tckoor.stbp.trf.sched, tckoor.stbp.trf.wh.man, tckoor.stbp.trf.man,
+      tckoor.stbp.trf.wh.dis, tckoor.cp.cpt, tckoor.act.cpt, tckoor.tag.transfer,
+      tckoor.proj.contract, tckoor.customer.claim, tckoor.supplier.claim, tckoor.quarantine,
+      tckoor.transformation, tckoor.not.appl'
+  - name: kost
+    description: 'Transaction Type. Allowed values: 1, 2, 3, 4, 5'
+  - name: kost_kw
+    description: 'Transaction Type (keyword). Allowed values: tckost.stc.correction,
+      tckost.on.order, tckost.receipt, tckost.allocation, tckost.issue'
+  - name: itid
+    description: 'Inventory Transaction ID. Max length: 9'
+  - name: itse
+    description: Inventory Transaction ID Sequence
+  - name: orno
+    description: 'Order. Max length: 9'
+  - name: pono
+    description: Line
+  - name: srnb
+    description: Sequence
+  - name: boml
+    description: BOM Line
+  - name: dlin
+    description: Project Peg Line
+  - name: rcno
+    description: 'Receipt. Max length: 9'
+  - name: rcln
+    description: Receipt Line
+  - name: pyps
+    description: Payable Receipt Sequence
+  - name: shpm
+    description: 'Shipment. Max length: 9'
+  - name: shpo
+    description: Shipment Line
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: oats
+    description: 'Order Attribute Set. Max length: 35'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: prjp
+    description: 'Project Pegged. Allowed values: 1, 2'
+  - name: prjp_kw
+    description: 'Project Pegged (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: prnt
+    description: 'Inventory Transaction Printed. Allowed values: 1, 2'
+  - name: prnt_kw
+    description: 'Inventory Transaction Printed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: chan
+    description: 'Channel. Max length: 3'
+  - name: qhnd
+    description: Inventory After Transaction
+  - name: qaiu
+    description: Attribute Set Inventory After Transaction (Inventory Unit)
+  - name: qapu
+    description: Attribute Set Inventory After Transaction (Piece Unit)
+  - name: logn
+    description: 'User. Max length: 16'
+  - name: cons
+    description: 'Obsolete. Allowed values: 1, 2, 3'
+  - name: cons_kw
+    description: 'Obsolete (keyword). Allowed values: whconsignment.yes, whconsignment.no,
+      whconsignment.shipment.var'
+  - name: owns
+    description: 'Ownership. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: owns_kw
+    description: 'Ownership (keyword). Allowed values: tcowns.comp.owned, tcowns.consigned,
+      tcowns.cust.owned, tcowns.return.as.issue, tcowns.deferred, tcowns.not.appl'
+  - name: ownr
+    description: 'Owner. Max length: 9'
+  - name: bfbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: phtr
+    description: 'Physical Transaction. Allowed values: 1, 2'
+  - name: phtr_kw
+    description: 'Physical Transaction (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cosv
+    description: 'Consignment Shipment Variance. Allowed values: 1, 2'
+  - name: cosv_kw
+    description: 'Consignment Shipment Variance (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ctrr
+    description: 'Consignment Transfer Reversal. Allowed values: 0, 1, 2, 3, 255'
+  - name: ctrr_kw
+    description: 'Consignment Transfer Reversal (keyword). Allowed values: , whinr.ctrr.phase.1,
+      whinr.ctrr.phase.2, whinr.ctrr.phase.3, whinr.ctrr.not.applicable'
+  - name: reco
+    description: 'Receipt Correction. Allowed values: 1, 2'
+  - name: reco_kw
+    description: 'Receipt Correction (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: reje
+    description: 'Quarantine Inventory. Allowed values: 1, 2'
+  - name: reje_kw
+    description: 'Quarantine Inventory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: vbas
+    description: 'Valuation by Attribute Set. Allowed values: 1, 2'
+  - name: vbas_kw
+    description: 'Valuation by Attribute Set (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: valm
+    description: 'Valuation Method. Allowed values: 1, 2, 3, 4, 5, 6, 20, 255'
+  - name: valm_kw
+    description: 'Valuation Method (keyword). Allowed values: whina.valm.ftp, whina.valm.mauc,
+      whina.valm.fifo, whina.valm.lifo, whina.valm.lot, whina.valm.serial, whina.valm.tag,
+      whina.valm.not.appl'
+  - name: vwvg
+    description: 'Valuation by Warehouse Valuation Group. Allowed values: 1, 2'
+  - name: vwvg_kw
+    description: 'Valuation by Warehouse Valuation Group (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: wvgr
+    description: 'Warehouse Valuation Group. Max length: 6'
+  - name: lgdt
+    description: Actual Log Date
+  - name: iseq
+    description: Invoice Sequence
+  - name: ttyp
+    description: 'Financial Transaction Type. Max length: 3'
+  - name: cinv
+    description: Invoice Number
+  - name: invd
+    description: Invoice Date
+  - name: itrd
+    description: Invoice Transaction Date
+  - name: ilgd
+    description: Invoice Log Date
+  - name: spcn
+    description: 'Specification. Max length: 22'
+  - name: topl
+    description: 'Type of Order for Planning. Allowed values: 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 26, 28, 29, 30, 31,
+      32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+      51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 68, 69, 70, 71, 72,
+      74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100'
+  - name: topl_kw
+    description: 'Type of Order for Planning (keyword). Allowed values: tckoor.act.sfc,
+      tckoor.act.pur, tckoor.act.sls, tckoor.cp.sfc, tckoor.cp.pur, tckoor.act.pur.sched,
+      tckoor.act.sls.sched, tckoor.act.pur.adv, tckoor.act.asc, tckoor.services.proc,
+      tckoor.mrp.sls, tckoor.mrp.atp, tckoor.sls.quot, tckoor.pur.con, tckoor.sls.con,
+      tckoor.wrh.order, tckoor.act.srv, tckoor.pss.pur, tckoor.pss.wrh, tckoor.serv.proc.adv,
+      tckoor.wrh.ass, tckoor.act.trf, tckoor.act.pmg, tckoor.srv.call, tckoor.srv.planned.act,
+      tckoor.cp.ipl, tckoor.cf.ap, tckoor.act.sfc.man, tckoor.act.pur.man, tckoor.act.sls.man,
+      tckoor.act.srv.man, tckoor.act.trf.man, tckoor.act.srv.sls, tckoor.act.dpt.wrk,
+      tckoor.act.srv.sls.man, tckoor.pur.rfq, tckoor.act.sls.sched.f, tckoor.act.dpt.wrk.man,
+      tckoor.freight, tckoor.stock, tckoor.safety.stock, tckoor.act.asc.man, tckoor.act.pur.req,
+      tckoor.epp.quote, tckoor.mps.prod, tckoor.mps.pur, tckoor.cycle.count, tckoor.adjustment,
+      tckoor.apl.asc, tckoor.cp.rpt, tckoor.revaluation, tckoor.product.sched, tckoor.product.kanban,
+      tckoor.project, tckoor.project.man, tckoor.enterprise.plan, tckoor.intercomp.trade,
+      tckoor.cp.sub, tckoor.act.sub.sched, tckoor.pcs.project, tckoor.eus.change,
+      tckoor.alloc.change, tckoor.inv.own.change, tckoor.exp.supply, tckoor.conf.supply,
+      tckoor.bp.forecast, tckoor.aggr.demand, tckoor.bfbp.trf.pur, tckoor.bfbp.trf.sched,
+      tckoor.stbp.trf.sls, tckoor.stbp.trf.sched, tckoor.stbp.trf.wh.man, tckoor.stbp.trf.man,
+      tckoor.stbp.trf.wh.dis, tckoor.cp.cpt, tckoor.act.cpt, tckoor.tag.transfer,
+      tckoor.proj.contract, tckoor.customer.claim, tckoor.supplier.claim, tckoor.quarantine,
+      tckoor.transformation, tckoor.not.appl'
+  - name: item_ref_compnr
+    description: company number of primary key of table whwmd400 Item Warehousing
+      Data
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: atse_ref_compnr
+    description: company number of primary key of table whwmd464 Attribute Sets
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: rowc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: rown_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: ocmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: oats_ref_compnr
+    description: company number of primary key of table whwmd464 Attribute Sets
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: chan_ref_compnr
+    description: company number of primary key of table tcmcs066 Channels
+  - name: wvgr_ref_compnr
+    description: company number of primary key of table whina102 Warehouse Valuation
+      Groups
+  - name: qstk_buar
+    description: 'CC: Quantity in Base Unit Area'
+  - name: qstk_buln
+    description: 'CC: Quantity in Base Unit Length'
+  - name: qstk_buvl
+    description: 'CC: Quantity in Base Unit Volume'
+  - name: qstk_buwg
+    description: 'CC: Quantity in Base Unit Weight'
+  - name: qhnd_buar
+    description: 'CC: Inventory After Transaction in Base Unit Area'
+  - name: qhnd_buln
+    description: 'CC: Inventory After Transaction in Base Unit Length'
+  - name: qhnd_buvl
+    description: 'CC: Inventory After Transaction in Base Unit Volume'
+  - name: qhnd_buwg
+    description: 'CC: Inventory After Transaction in Base Unit Weight'
+  - name: koor_oorg
+    description: 'CC: Type of Order converted to Order Origin. Allowed values: 0,
+      1, 2, 3, 11, 12, 31, 32, 33, 34, 40, 41, 50, 51, 53, 55, 56, 58, 60, 61, 71,
+      72, 75, 76, 78, 80, 81, 82, 90, 100'
+  - name: koor_oorg_kw
+    description: 'CC: Type of Order converted to Order Origin (keyword). Allowed values:
+      , whinh.oorg.sales, whinh.oorg.sales.sched, whinh.oorg.sales.man, whinh.oorg.service,
+      whinh.oorg.service.man, whinh.oorg.maint.sales, whinh.oorg.maint.sales.man,
+      whinh.oorg.maint.work, whinh.oorg.maint.work.man, whinh.oorg.customer.claim,
+      whinh.oorg.supplier.claim, whinh.oorg.production, whinh.oorg.production.man,
+      whinh.oorg.product.sched, whinh.oorg.product.asc, whinh.oorg.product.asc.man,
+      whinh.oorg.product.kanban, whinh.oorg.transformation, whinh.oorg.assembly, whinh.oorg.transfer,
+      whinh.oorg.transfer.man, whinh.oorg.project, whinh.oorg.project.man, whinh.oorg.proj.contract,
+      whinh.oorg.purchase, whinh.oorg.purchase.sched, whinh.oorg.purchase.man, whinh.oorg.enterprise.plan,
+      whinh.oorg.not.appl'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinr110 Inventory Transactions by Item and Warehouse table, Generated
+    2026-04-10T19:42:53Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - item
+        - cwar
+        - trdt
+        - seqn

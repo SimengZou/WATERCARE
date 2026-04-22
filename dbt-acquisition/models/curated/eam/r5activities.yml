@@ -1,0 +1,404 @@
+version: 2
+models:
+- name: r5activities
+  columns:
+  - name: act_lastsaved
+    description: ACT_LASTSAVED
+  - name: act_event
+    description: ACT_EVENT
+  - name: act_act
+    description: ACT_ACT
+  - name: act_supplier
+    description: ACT_SUPPLIER
+  - name: act_start
+    description: ACT_START
+  - name: act_time
+    description: ACT_TIME
+  - name: act_newstart
+    description: ACT_NEWSTART
+  - name: act_hire
+    description: ACT_HIRE
+  - name: act_ordered
+    description: ACT_ORDERED
+  - name: act_fixh
+    description: ACT_FIXH
+  - name: act_minhours
+    description: ACT_MINHOURS
+  - name: act_mrc
+    description: ACT_MRC
+  - name: act_trade
+    description: ACT_TRADE
+  - name: act_shift
+    description: ACT_SHIFT
+  - name: act_persons
+    description: ACT_PERSONS
+  - name: act_project
+    description: ACT_PROJECT
+  - name: act_projbud
+    description: ACT_PROJBUD
+  - name: act_route
+    description: ACT_ROUTE
+  - name: act_duration
+    description: ACT_DURATION
+  - name: act_newdur
+    description: ACT_NEWDUR
+  - name: act_maxdur
+    description: ACT_MAXDUR
+  - name: act_est
+    description: ACT_EST
+  - name: act_rem
+    description: ACT_REM
+  - name: act_nt
+    description: ACT_NT
+  - name: act_ntrate
+    description: ACT_NTRATE
+  - name: act_ot
+    description: ACT_OT
+  - name: act_otrate
+    description: ACT_OTRATE
+  - name: act_purrate
+    description: ACT_PURRATE
+  - name: act_task
+    description: ACT_TASK
+  - name: act_matlist
+    description: ACT_MATLIST
+  - name: act_special
+    description: ACT_SPECIAL
+  - name: act_graph
+    description: ACT_GRAPH
+  - name: act_level
+    description: ACT_LEVEL
+  - name: act_order
+    description: ACT_ORDER
+  - name: act_ordline
+    description: ACT_ORDLINE
+  - name: act_ordtype
+    description: ACT_ORDTYPE
+  - name: act_ordrtype
+    description: ACT_ORDRTYPE
+  - name: act_schedhrs
+    description: ACT_SCHEDHRS
+  - name: act_latestsched
+    description: ACT_LATESTSCHED
+  - name: act_completed
+    description: ACT_COMPLETED
+  - name: act_matlrev
+    description: ACT_MATLREV
+  - name: act_taskrev
+    description: ACT_TASKREV
+  - name: act_qty
+    description: ACT_QTY
+  - name: act_uom
+    description: ACT_UOM
+  - name: act_req
+    description: ACT_REQ
+  - name: act_reqline
+    description: ACT_REQLINE
+  - name: act_supplier_org
+    description: ACT_SUPPLIER_ORG
+  - name: act_order_org
+    description: ACT_ORDER_ORG
+  - name: act_rpc
+    description: ACT_RPC
+  - name: act_wap
+    description: ACT_WAP
+  - name: act_tpf
+    description: ACT_TPF
+  - name: act_manufact
+    description: ACT_MANUFACT
+  - name: act_syslevel
+    description: ACT_SYSLEVEL
+  - name: act_asmlevel
+    description: ACT_ASMLEVEL
+  - name: act_complevel
+    description: ACT_COMPLEVEL
+  - name: act_class
+    description: ACT_CLASS
+  - name: act_class_org
+    description: ACT_CLASS_ORG
+  - name: act_percomplete
+    description: ACT_PERCOMPLETE
+  - name: act_updatecount
+    description: ACT_UPDATECOUNT
+  - name: act_sourcecode
+    description: ACT_SOURCECODE
+  - name: act_sourcesystem
+    description: ACT_SOURCESYSTEM
+  - name: act_perresp
+    description: ACT_PERRESP
+  - name: act_warranty
+    description: ACT_WARRANTY
+  - name: act_relatedwo
+    description: ACT_RELATEDWO
+  - name: act_note
+    description: ACT_NOTE
+  - name: act_defermaintenance
+    description: ACT_DEFERMAINTENANCE
+  - name: act_deferredirectmats
+    description: ACT_DEFERREDIRECTMATS
+  - name: act_deferredorigwo
+    description: ACT_DEFERREDORIGWO
+  - name: act_deferredorigact
+    description: ACT_DEFERREDORIGACT
+  - name: act_udfchar01
+    description: ACT_UDFCHAR01
+  - name: act_udfchar02
+    description: ACT_UDFCHAR02
+  - name: act_udfchar03
+    description: ACT_UDFCHAR03
+  - name: act_udfchar04
+    description: ACT_UDFCHAR04
+  - name: act_udfchar05
+    description: ACT_UDFCHAR05
+  - name: act_udfchar06
+    description: ACT_UDFCHAR06
+  - name: act_udfchar07
+    description: ACT_UDFCHAR07
+  - name: act_udfchar08
+    description: ACT_UDFCHAR08
+  - name: act_udfchar09
+    description: ACT_UDFCHAR09
+  - name: act_udfchar10
+    description: ACT_UDFCHAR10
+  - name: act_udfchar11
+    description: ACT_UDFCHAR11
+  - name: act_udfchar12
+    description: ACT_UDFCHAR12
+  - name: act_udfchar13
+    description: ACT_UDFCHAR13
+  - name: act_udfchar14
+    description: ACT_UDFCHAR14
+  - name: act_udfchar15
+    description: ACT_UDFCHAR15
+  - name: act_udfchar16
+    description: ACT_UDFCHAR16
+  - name: act_udfchar17
+    description: ACT_UDFCHAR17
+  - name: act_udfchar18
+    description: ACT_UDFCHAR18
+  - name: act_udfchar19
+    description: ACT_UDFCHAR19
+  - name: act_udfchar20
+    description: ACT_UDFCHAR20
+  - name: act_udfchar21
+    description: ACT_UDFCHAR21
+  - name: act_udfchar22
+    description: ACT_UDFCHAR22
+  - name: act_udfchar23
+    description: ACT_UDFCHAR23
+  - name: act_udfchar24
+    description: ACT_UDFCHAR24
+  - name: act_udfchar25
+    description: ACT_UDFCHAR25
+  - name: act_udfchar26
+    description: ACT_UDFCHAR26
+  - name: act_udfchar27
+    description: ACT_UDFCHAR27
+  - name: act_udfchar28
+    description: ACT_UDFCHAR28
+  - name: act_udfchar29
+    description: ACT_UDFCHAR29
+  - name: act_udfchar30
+    description: ACT_UDFCHAR30
+  - name: act_udfnum01
+    description: ACT_UDFNUM01
+  - name: act_udfnum02
+    description: ACT_UDFNUM02
+  - name: act_udfnum03
+    description: ACT_UDFNUM03
+  - name: act_udfnum04
+    description: ACT_UDFNUM04
+  - name: act_udfnum05
+    description: ACT_UDFNUM05
+  - name: act_udfdate01
+    description: ACT_UDFDATE01
+  - name: act_udfdate02
+    description: ACT_UDFDATE02
+  - name: act_udfdate03
+    description: ACT_UDFDATE03
+  - name: act_udfdate04
+    description: ACT_UDFDATE04
+  - name: act_udfdate05
+    description: ACT_UDFDATE05
+  - name: act_udfchkbox01
+    description: ACT_UDFCHKBOX01
+  - name: act_udfchkbox02
+    description: ACT_UDFCHKBOX02
+  - name: act_udfchkbox03
+    description: ACT_UDFCHKBOX03
+  - name: act_udfchkbox04
+    description: ACT_UDFCHKBOX04
+  - name: act_udfchkbox05
+    description: ACT_UDFCHKBOX05
+  - name: act_invoice
+    description: ACT_INVOICE
+  - name: act_invoice_org
+    description: ACT_INVOICE_ORG
+  - name: act_invoice_revision
+    description: ACT_INVOICE_REVISION
+  - name: act_invoiceline
+    description: ACT_INVOICELINE
+  - name: act_performed
+    description: ACT_PERFORMED
+  - name: act_performedby
+    description: ACT_PERFORMEDBY
+  - name: act_performedtype
+    description: ACT_PERFORMEDTYPE
+  - name: act_reviewed
+    description: ACT_REVIEWED
+  - name: act_reviewedby
+    description: ACT_REVIEWEDBY
+  - name: act_reviewedtype
+    description: ACT_REVIEWEDTYPE
+  - name: act_complocation
+    description: ACT_COMPLOCATION
+  - name: act_schedulingsessionid
+    description: ACT_SCHEDULINGSESSIONID
+  - name: act_schedulingsessiontype
+    description: ACT_SCHEDULINGSESSIONTYPE
+  - name: act_topparent
+    description: ACT_TOPPARENT
+  - name: act_parent
+    description: ACT_PARENT
+  - name: act_seq
+    description: ACT_SEQ
+  - name: act_planninglevel
+    description: ACT_PLANNINGLEVEL
+  - name: act_multipletrades
+    description: ACT_MULTIPLETRADES
+  - name: act_frompoint
+    description: ACT_FROMPOINT
+  - name: act_fromrefdesc
+    description: ACT_FROMREFDESC
+  - name: act_fromgeoref
+    description: ACT_FROMGEOREF
+  - name: act_topoint
+    description: ACT_TOPOINT
+  - name: act_torefdesc
+    description: ACT_TOREFDESC
+  - name: act_togeoref
+    description: ACT_TOGEOREF
+  - name: act_estlaborcost
+    description: ACT_ESTLABORCOST
+  - name: act_estmatlcost
+    description: ACT_ESTMATLCOST
+  - name: act_estmisccost
+    description: ACT_ESTMISCCOST
+  - name: act_assignmentstatus
+    description: ACT_ASSIGNMENTSTATUS
+  - name: act_from_reference
+    description: ACT_FROM_REFERENCE
+  - name: act_from_offset
+    description: ACT_FROM_OFFSET
+  - name: act_from_offset_percentage
+    description: ACT_FROM_OFFSET_PERCENTAGE
+  - name: act_from_offset_direction
+    description: ACT_FROM_OFFSET_DIRECTION
+  - name: act_from_xcoordinate
+    description: ACT_FROM_XCOORDINATE
+  - name: act_from_ycoordinate
+    description: ACT_FROM_YCOORDINATE
+  - name: act_from_latitude
+    description: ACT_FROM_LATITUDE
+  - name: act_from_longitude
+    description: ACT_FROM_LONGITUDE
+  - name: act_from_relationship_type
+    description: ACT_FROM_RELATIONSHIP_TYPE
+  - name: act_from_horizontal_offset
+    description: ACT_FROM_HORIZONTAL_OFFSET
+  - name: act_from_horizontal_offsetuom
+    description: ACT_FROM_HORIZONTAL_OFFSETUOM
+  - name: act_from_horizontal_offsettype
+    description: ACT_FROM_HORIZONTAL_OFFSETTYPE
+  - name: act_from_vertical_offset
+    description: ACT_FROM_VERTICAL_OFFSET
+  - name: act_from_vertical_offsetuom
+    description: ACT_FROM_VERTICAL_OFFSETUOM
+  - name: act_from_vertical_offsettype
+    description: ACT_FROM_VERTICAL_OFFSETTYPE
+  - name: act_to_reference
+    description: ACT_TO_REFERENCE
+  - name: act_to_offset
+    description: ACT_TO_OFFSET
+  - name: act_to_offset_direction
+    description: ACT_TO_OFFSET_DIRECTION
+  - name: act_to_offset_percentage
+    description: ACT_TO_OFFSET_PERCENTAGE
+  - name: act_to_xcoordinate
+    description: ACT_TO_XCOORDINATE
+  - name: act_to_ycoordinate
+    description: ACT_TO_YCOORDINATE
+  - name: act_to_latitude
+    description: ACT_TO_LATITUDE
+  - name: act_to_longitude
+    description: ACT_TO_LONGITUDE
+  - name: act_to_relationship_type
+    description: ACT_TO_RELATIONSHIP_TYPE
+  - name: act_to_vertical_offset
+    description: ACT_TO_VERTICAL_OFFSET
+  - name: act_to_horizontal_offset
+    description: ACT_TO_HORIZONTAL_OFFSET
+  - name: act_to_horizontal_offsetuom
+    description: ACT_TO_HORIZONTAL_OFFSETUOM
+  - name: act_to_horizontal_offsettype
+    description: ACT_TO_HORIZONTAL_OFFSETTYPE
+  - name: act_to_vertical_offsetuom
+    description: ACT_TO_VERTICAL_OFFSETUOM
+  - name: act_to_vertical_offsettype
+    description: ACT_TO_VERTICAL_OFFSETTYPE
+  - name: act_performed2
+    description: ACT_PERFORMED2
+  - name: act_performedby2
+    description: ACT_PERFORMEDBY2
+  - name: act_performedtype2
+    description: ACT_PERFORMEDTYPE2
+  - name: act_rejectperformedby
+    description: ACT_REJECTPERFORMEDBY
+  - name: act_rejectperformedby2
+    description: ACT_REJECTPERFORMEDBY2
+  - name: act_rejectreason
+    description: ACT_REJECTREASON
+  - name: act_condition_as_found
+    description: ACT_CONDITION_AS_FOUND
+  - name: act_reviewresp
+    description: ACT_REVIEWRESP
+  - name: act_performbyresp
+    description: ACT_PERFORMBYRESP
+  - name: act_performby2resp
+    description: ACT_PERFORMBY2RESP
+  - name: act_udfnote01
+    description: ACT_UDFNOTE01
+  - name: act_udfnote02
+    description: ACT_UDFNOTE02
+  - name: act_recordedby
+    description: ACT_RECORDEDBY
+  - name: act_daterecorded
+    description: ACT_DATERECORDED
+  - name: act_dispatcherrors
+    description: ACT_DISPATCHERRORS
+  - name: act_cuest
+    description: ACT_CUEST
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ACTIVITIES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - act_event
+        - act_act

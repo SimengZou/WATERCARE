@@ -1,0 +1,42 @@
+version: 2
+models:
+- name: r5install
+  columns:
+  - name: ins_lastsaved
+    description: INS_LASTSAVED
+  - name: ins_desc
+    description: INS_DESC
+  - name: ins_comment
+    description: INS_COMMENT
+  - name: ins_fixed
+    description: INS_FIXED
+  - name: ins_updatecount
+    description: INS_UPDATECOUNT
+  - name: ins_extended
+    description: INS_EXTENDED
+  - name: ins_edcomment
+    description: INS_EDCOMMENT
+  - name: ins_code
+    description: INS_CODE
+    data_tests:
+    - unique
+  - name: ins_module
+    description: INS_MODULE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5INSTALL

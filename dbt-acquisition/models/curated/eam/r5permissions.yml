@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5permissions
+  columns:
+  - name: prm_lastsaved
+    description: PRM_LASTSAVED
+  - name: prm_select
+    description: PRM_SELECT
+  - name: prm_update
+    description: PRM_UPDATE
+  - name: prm_insert
+    description: PRM_INSERT
+  - name: prm_delete
+    description: PRM_DELETE
+  - name: prm_printer
+    description: PRM_PRINTER
+  - name: prm_screen
+    description: PRM_SCREEN
+  - name: prm_prfile
+    description: PRM_PRFILE
+  - name: prm_local
+    description: PRM_LOCAL
+  - name: prm_defquery
+    description: PRM_DEFQUERY
+  - name: prm_overrule
+    description: PRM_OVERRULE
+  - name: prm_input
+    description: PRM_INPUT
+  - name: prm_updatecount
+    description: PRM_UPDATECOUNT
+  - name: prm_created
+    description: PRM_CREATED
+  - name: prm_updated
+    description: PRM_UPDATED
+  - name: prm_securityddspyid
+    description: PRM_SECURITYDDSPYID
+  - name: prm_function
+    description: PRM_FUNCTION
+  - name: prm_group
+    description: PRM_GROUP
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PERMISSIONS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - prm_function
+        - prm_group

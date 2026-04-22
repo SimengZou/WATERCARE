@@ -1,0 +1,114 @@
+version: 2
+models:
+- name: enum_localized
+  columns:
+  - name: keyword
+    description: '(required) Max length: 30'
+    data_tests:
+    - unique
+    - not_null
+  - name: domain
+    description: '(required) Max length: 14'
+    data_tests:
+    - not_null
+  - name: const
+    description: (required)
+    data_tests:
+    - not_null
+  - name: description__nl_nl
+    description: 'additional language. Max length: 255'
+  - name: description__en_us
+    description: '(required) base language. Max length: 255'
+    data_tests:
+    - not_null
+  - name: description__de_de
+    description: 'additional language. Max length: 255'
+  - name: description__fr_fr
+    description: 'additional language. Max length: 255'
+  - name: description__es_es
+    description: 'additional language. Max length: 255'
+  - name: description__it_it
+    description: 'additional language. Max length: 255'
+  - name: description__sv_se
+    description: 'additional language. Max length: 255'
+  - name: description__hr_hr
+    description: 'additional language. Max length: 255'
+  - name: description__pt_pt
+    description: 'additional language. Max length: 255'
+  - name: description__ru_ru
+    description: 'additional language. Max length: 255'
+  - name: description__th_th
+    description: 'additional language. Max length: 255'
+  - name: description__sr_ba
+    description: 'additional language. Max length: 255'
+  - name: description__ar_sa
+    description: 'additional language. Max length: 255'
+  - name: description__bg_bg
+    description: 'additional language. Max length: 255'
+  - name: description__pl_pl
+    description: 'additional language. Max length: 255'
+  - name: description__fi_fi
+    description: 'additional language. Max length: 255'
+  - name: description__he_il
+    description: 'additional language. Max length: 255'
+  - name: description__ja_jp
+    description: 'additional language. Max length: 255'
+  - name: description__ko_kr
+    description: 'additional language. Max length: 255'
+  - name: description__hu_hu
+    description: 'additional language. Max length: 255'
+  - name: description__zh_tw
+    description: 'additional language. Max length: 255'
+  - name: description__zh_cn
+    description: 'additional language. Max length: 255'
+  - name: description__pt_br
+    description: 'additional language. Max length: 255'
+  - name: description__ro_ro
+    description: 'additional language. Max length: 255'
+  - name: description__sl_si
+    description: 'additional language. Max length: 255'
+  - name: description__cs_cz
+    description: 'additional language. Max length: 255'
+  - name: description__uk_ua
+    description: 'additional language. Max length: 255'
+  - name: description__vi_vn
+    description: 'additional language. Max length: 255'
+  - name: description__sk_sk
+    description: 'additional language. Max length: 255'
+  - name: description__en_gb
+    description: 'additional language. Max length: 255'
+  - name: description__tr_tr
+    description: 'additional language. Max length: 255'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN Enum_localized Translations of enum descriptions, Generated 2026-04-10T19:40:58Z
+    from package combination ce01101

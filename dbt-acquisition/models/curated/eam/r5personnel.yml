@@ -1,0 +1,226 @@
+version: 2
+models:
+- name: r5personnel
+  columns:
+  - name: per_lastsaved
+    description: PER_LASTSAVED
+  - name: per_code
+    description: PER_CODE
+    data_tests:
+    - unique
+  - name: per_desc
+    description: PER_DESC
+  - name: per_class
+    description: PER_CLASS
+  - name: per_mrc
+    description: PER_MRC
+  - name: per_trade
+    description: PER_TRADE
+  - name: per_notused
+    description: PER_NOTUSED
+  - name: per_capacity
+    description: PER_CAPACITY
+  - name: per_org
+    description: PER_ORG
+  - name: per_class_org
+    description: PER_CLASS_ORG
+  - name: per_emailaddress
+    description: PER_EMAILADDRESS
+  - name: per_notificationpref
+    description: PER_NOTIFICATIONPREF
+  - name: per_user
+    description: PER_USER
+  - name: per_created
+    description: PER_CREATED
+  - name: per_createdby
+    description: PER_CREATEDBY
+  - name: per_updated
+    description: PER_UPDATED
+  - name: per_updatedby
+    description: PER_UPDATEDBY
+  - name: per_updatecount
+    description: PER_UPDATECOUNT
+  - name: per_fleetcustomer
+    description: PER_FLEETCUSTOMER
+  - name: per_fleetcustomer_org
+    description: PER_FLEETCUSTOMER_ORG
+  - name: per_costcode
+    description: PER_COSTCODE
+  - name: per_driverslicense
+    description: PER_DRIVERSLICENSE
+  - name: per_phone
+    description: PER_PHONE
+  - name: per_parent
+    description: PER_PARENT
+  - name: per_schedulingsessionid
+    description: PER_SCHEDULINGSESSIONID
+  - name: per_schedulingtype
+    description: PER_SCHEDULINGTYPE
+  - name: per_customer
+    description: PER_CUSTOMER
+  - name: per_customer_org
+    description: PER_CUSTOMER_ORG
+  - name: per_alias
+    description: PER_ALIAS
+  - name: per_object
+    description: PER_OBJECT
+  - name: per_object_org
+    description: PER_OBJECT_ORG
+  - name: per_udfchar01
+    description: PER_UDFCHAR01
+  - name: per_udfchar02
+    description: PER_UDFCHAR02
+  - name: per_udfchar03
+    description: PER_UDFCHAR03
+  - name: per_udfchar04
+    description: PER_UDFCHAR04
+  - name: per_udfchar05
+    description: PER_UDFCHAR05
+  - name: per_udfchar06
+    description: PER_UDFCHAR06
+  - name: per_udfchar07
+    description: PER_UDFCHAR07
+  - name: per_udfchar08
+    description: PER_UDFCHAR08
+  - name: per_udfchar09
+    description: PER_UDFCHAR09
+  - name: per_udfchar10
+    description: PER_UDFCHAR10
+  - name: per_udfchar11
+    description: PER_UDFCHAR11
+  - name: per_udfchar12
+    description: PER_UDFCHAR12
+  - name: per_udfchar13
+    description: PER_UDFCHAR13
+  - name: per_udfchar14
+    description: PER_UDFCHAR14
+  - name: per_udfchar15
+    description: PER_UDFCHAR15
+  - name: per_udfchar16
+    description: PER_UDFCHAR16
+  - name: per_udfchar17
+    description: PER_UDFCHAR17
+  - name: per_udfchar18
+    description: PER_UDFCHAR18
+  - name: per_udfchar19
+    description: PER_UDFCHAR19
+  - name: per_udfchar20
+    description: PER_UDFCHAR20
+  - name: per_udfchar21
+    description: PER_UDFCHAR21
+  - name: per_udfchar22
+    description: PER_UDFCHAR22
+  - name: per_udfchar23
+    description: PER_UDFCHAR23
+  - name: per_udfchar24
+    description: PER_UDFCHAR24
+  - name: per_udfchar25
+    description: PER_UDFCHAR25
+  - name: per_udfchar26
+    description: PER_UDFCHAR26
+  - name: per_udfchar27
+    description: PER_UDFCHAR27
+  - name: per_udfchar28
+    description: PER_UDFCHAR28
+  - name: per_udfchar29
+    description: PER_UDFCHAR29
+  - name: per_udfchar30
+    description: PER_UDFCHAR30
+  - name: per_udfnum01
+    description: PER_UDFNUM01
+  - name: per_udfnum02
+    description: PER_UDFNUM02
+  - name: per_udfnum03
+    description: PER_UDFNUM03
+  - name: per_udfnum04
+    description: PER_UDFNUM04
+  - name: per_udfnum05
+    description: PER_UDFNUM05
+  - name: per_udfdate01
+    description: PER_UDFDATE01
+  - name: per_udfdate02
+    description: PER_UDFDATE02
+  - name: per_udfdate03
+    description: PER_UDFDATE03
+  - name: per_udfdate04
+    description: PER_UDFDATE04
+  - name: per_udfdate05
+    description: PER_UDFDATE05
+  - name: per_udfchkbox01
+    description: PER_UDFCHKBOX01
+  - name: per_udfchkbox02
+    description: PER_UDFCHKBOX02
+  - name: per_udfchkbox03
+    description: PER_UDFCHKBOX03
+  - name: per_udfchkbox04
+    description: PER_UDFCHKBOX04
+  - name: per_udfchkbox05
+    description: PER_UDFCHKBOX05
+  - name: per_jobtitle
+    description: PER_JOBTITLE
+  - name: per_supervisor
+    description: PER_SUPERVISOR
+  - name: per_hiredate
+    description: PER_HIREDATE
+  - name: per_birthdate
+    description: PER_BIRTHDATE
+  - name: per_terminateddate
+    description: PER_TERMINATEDDATE
+  - name: per_payrollno
+    description: PER_PAYROLLNO
+  - name: per_securitybadgeno
+    description: PER_SECURITYBADGENO
+  - name: per_address
+    description: PER_ADDRESS
+  - name: per_city
+    description: PER_CITY
+  - name: per_state
+    description: PER_STATE
+  - name: per_zip
+    description: PER_ZIP
+  - name: per_country
+    description: PER_COUNTRY
+  - name: per_emergencycontact
+    description: PER_EMERGENCYCONTACT
+  - name: per_emergencycontactphno
+    description: PER_EMERGENCYCONTACTPHNO
+  - name: per_mobilephoneno
+    description: PER_MOBILEPHONENO
+  - name: per_homephoneno
+    description: PER_HOMEPHONENO
+  - name: per_url
+    description: PER_URL
+  - name: per_fax
+    description: PER_FAX
+  - name: per_initials
+    description: PER_INITIALS
+  - name: per_tradesperson
+    description: PER_TRADESPERSON
+  - name: per_workspaceoccupant
+    description: PER_WORKSPACEOCCUPANT
+  - name: per_profilepicture
+    description: PER_PROFILEPICTURE
+  - name: per_determinescrewlocation
+    description: PER_DETERMINESCREWLOCATION
+  - name: per_startingxcoordinate
+    description: PER_STARTINGXCOORDINATE
+  - name: per_startingycoordinate
+    description: PER_STARTINGYCOORDINATE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PERSONNEL

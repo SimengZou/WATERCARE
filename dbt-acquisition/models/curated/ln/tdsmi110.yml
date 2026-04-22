@@ -1,0 +1,168 @@
+version: 2
+models:
+- name: tdsmi110
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: opty
+    description: '(required) Opportunity. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: seri
+    description: 'Series. Max length: 8'
+  - name: bpid
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: crep
+    description: 'Assigned to. Max length: 9'
+  - name: cptp
+    description: 'Opportunity Type. Max length: 3'
+  - name: csou
+    description: 'Source. Max length: 3'
+  - name: opst
+    description: 'Status. Allowed values: 10, 20, 30, 40, 50, 60'
+  - name: opst_kw
+    description: 'Status (keyword). Allowed values: tdsmi.opst.preliminary, tdsmi.opst.in.process,
+      tdsmi.opst.dead, tdsmi.opst.canceled, tdsmi.opst.won, tdsmi.opst.lost'
+  - name: sapr
+    description: 'Sales Process. Max length: 3'
+  - name: cpha
+    description: 'Phase. Max length: 3'
+  - name: sccp
+    description: Probability Percentage
+  - name: cdis
+    description: 'Reason. Max length: 6'
+  - name: incf
+    description: 'Include in Forecast. Allowed values: 1, 2'
+  - name: incf_kw
+    description: 'Include in Forecast (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: xpam
+    description: Expected Revenue
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: fcdt
+    description: Date of First Contact
+  - name: dcdt
+    description: Expected Close Date
+  - name: acdt
+    description: Actual Close Date
+  - name: cofc
+    description: 'Sales Office. Max length: 6'
+  - name: catt
+    description: 'Attention. Max length: 3'
+  - name: ccor
+    description: 'Postal Address. Max length: 9'
+  - name: telp
+    description: 'Telephone. Max length: 32'
+  - name: tefx
+    description: 'Fax. Max length: 32'
+  - name: guid
+    description: 'Guid. Max length: 22'
+  - name: user
+    description: 'Created by. Max length: 16'
+  - name: crdt
+    description: Creation Date
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: ltdt
+    description: Last Transaction Date
+  - name: name__en_us
+    description: '(required) Name - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: mprj
+    description: 'Obsolete. Max length: 6'
+  - name: role
+    description: 'Obsolete. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9'
+  - name: role_kw
+    description: 'Obsolete (keyword). Allowed values: , tdsmi.role.general, tdsmi.role.soldto,
+      tdsmi.role.shipto, tdsmi.role.invoiceto, tdsmi.role.payto, tdsmi.role.payfrom,
+      tdsmi.role.buyfrom, tdsmi.role.shipfrom, tdsmi.role.invoicefrom'
+  - name: text
+    description: Opportunity Text
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: crep_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cptp_ref_compnr
+    description: company number of primary key of table tdsmi007 Opportunity Types
+  - name: csou_ref_compnr
+    description: company number of primary key of table tcmcs124 Sources
+  - name: sapr_cpha_ref_compnr
+    description: company number of primary key of table tdsmi009 Phases by Sales Process
+  - name: sapr_ref_compnr
+    description: company number of primary key of table tdsmi008 Sales Processes
+  - name: cpha_ref_compnr
+    description: company number of primary key of table tdsmi003 Phases
+  - name: cdis_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tdsls012 Sales Offices
+  - name: catt_ref_compnr
+    description: company number of primary key of table tcmcs122 Attention
+  - name: ccor_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: xpam_lclc
+    description: 'CC: Expected Revenue in Local Currency'
+  - name: xpam_rpc1
+    description: 'CC: Expected Revenue in Reporting Currency 1'
+  - name: xpam_rpc2
+    description: 'CC: Expected Revenue in Reporting Currency 2'
+  - name: xpam_rfrc
+    description: 'CC: Expected Revenue in Reference Currency'
+  - name: xpam_dtwc
+    description: 'CC: Expected Revenue in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdsmi110 Opportunities table, Generated 2026-04-10T19:41:27Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - opty

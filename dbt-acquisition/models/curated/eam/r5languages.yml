@@ -1,0 +1,54 @@
+version: 2
+models:
+- name: r5languages
+  columns:
+  - name: lan_lastsaved
+    description: LAN_LASTSAVED
+  - name: lan_class
+    description: LAN_CLASS
+  - name: lan_txttype
+    description: LAN_TXTTYPE
+  - name: lan_class_org
+    description: LAN_CLASS_ORG
+  - name: lan_updatecount
+    description: LAN_UPDATECOUNT
+  - name: lan_rstatus
+    description: LAN_RSTATUS
+  - name: lan_lastcreated
+    description: LAN_LASTCREATED
+  - name: lan_processstart
+    description: LAN_PROCESSSTART
+  - name: lan_processend
+    description: LAN_PROCESSEND
+  - name: lan_installed
+    description: LAN_INSTALLED
+  - name: lan_notused
+    description: LAN_NOTUSED
+  - name: lan_available
+    description: LAN_AVAILABLE
+  - name: lan_errormessage
+    description: LAN_ERRORMESSAGE
+  - name: lan_code
+    description: LAN_CODE
+    data_tests:
+    - unique
+  - name: lan_desc
+    description: LAN_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5LANGUAGES

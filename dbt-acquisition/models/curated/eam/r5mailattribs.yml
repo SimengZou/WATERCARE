@@ -1,0 +1,56 @@
+version: 2
+models:
+- name: r5mailattribs
+  columns:
+  - name: maa_lastsaved
+    description: MAA_LASTSAVED
+  - name: maa_enteredby
+    description: MAA_ENTEREDBY
+  - name: maa_comment
+    description: MAA_COMMENT
+  - name: maa_insert
+    description: MAA_INSERT
+  - name: maa_update
+    description: MAA_UPDATE
+  - name: maa_delete
+    description: MAA_DELETE
+  - name: maa_oldstatus
+    description: MAA_OLDSTATUS
+  - name: maa_newstatus
+    description: MAA_NEWSTATUS
+  - name: maa_workflow
+    description: MAA_WORKFLOW
+  - name: maa_updatecount
+    description: MAA_UPDATECOUNT
+  - name: maa_pk
+    description: MAA_PK
+    data_tests:
+    - unique
+  - name: maa_active
+    description: MAA_ACTIVE
+  - name: maa_includeurl
+    description: MAA_INCLUDEURL
+  - name: maa_includeattachment
+    description: MAA_INCLUDEATTACHMENT
+  - name: maa_table
+    description: MAA_TABLE
+  - name: maa_template
+    description: MAA_TEMPLATE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MAILATTRIBS

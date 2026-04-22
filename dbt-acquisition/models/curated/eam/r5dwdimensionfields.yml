@@ -1,0 +1,34 @@
+version: 2
+models:
+- name: r5dwdimensionfields
+  columns:
+  - name: dmf_lastsaved
+    description: DMF_LASTSAVED
+  - name: dmf_desc
+    description: DMF_DESC
+  - name: dmf_field
+    description: DMF_FIELD
+  - name: dmf_fieldid
+    description: DMF_FIELDID
+  - name: dmf_dimtable
+    description: DMF_DIMTABLE
+  - name: dmf_botnumber
+    description: DMF_BOTNUMBER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DWDIMENSIONFIELDS

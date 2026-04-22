@@ -1,0 +1,146 @@
+version: 2
+models:
+- name: r5home
+  columns:
+  - name: hom_lastsaved
+    description: HOM_LASTSAVED
+  - name: hom_desc
+    description: HOM_DESC
+  - name: hom_sqlcode
+    description: HOM_SQLCODE
+  - name: hom_function
+    description: HOM_FUNCTION
+  - name: hom_gen
+    description: HOM_GEN
+  - name: hom_parent
+    description: HOM_PARENT
+  - name: hom_updfreq
+    description: HOM_UPDFREQ
+  - name: hom_update
+    description: HOM_UPDATE
+  - name: hom_nxtupdate
+    description: HOM_NXTUPDATE
+  - name: hom_uom
+    description: HOM_UOM
+  - name: hom_history
+    description: HOM_HISTORY
+  - name: hom_whereclause
+    description: HOM_WHERECLAUSE
+  - name: hom_curvalue
+    description: HOM_CURVALUE
+  - name: hom_normscore
+    description: HOM_NORMSCORE
+  - name: hom_error
+    description: HOM_ERROR
+  - name: hom_updatecount
+    description: HOM_UPDATECOUNT
+  - name: hom_ewsfunction
+    description: HOM_EWSFUNCTION
+  - name: hom_ewsdataspyid
+    description: HOM_EWSDATASPYID
+  - name: hom_operator
+    description: HOM_OPERATOR
+  - name: hom_value
+    description: HOM_VALUE
+  - name: hom_notused
+    description: HOM_NOTUSED
+  - name: hom_rolluptype
+    description: HOM_ROLLUPTYPE
+  - name: hom_udfchar01
+    description: HOM_UDFCHAR01
+  - name: hom_udfchar02
+    description: HOM_UDFCHAR02
+  - name: hom_udfchar03
+    description: HOM_UDFCHAR03
+  - name: hom_udfchar04
+    description: HOM_UDFCHAR04
+  - name: hom_udfchar05
+    description: HOM_UDFCHAR05
+  - name: hom_udfchar06
+    description: HOM_UDFCHAR06
+  - name: hom_udfchar07
+    description: HOM_UDFCHAR07
+  - name: hom_udfchar08
+    description: HOM_UDFCHAR08
+  - name: hom_udfchar09
+    description: HOM_UDFCHAR09
+  - name: hom_udfchar10
+    description: HOM_UDFCHAR10
+  - name: hom_udfnum01
+    description: HOM_UDFNUM01
+  - name: hom_udfnum02
+    description: HOM_UDFNUM02
+  - name: hom_udfnum03
+    description: HOM_UDFNUM03
+  - name: hom_udfnum04
+    description: HOM_UDFNUM04
+  - name: hom_udfnum05
+    description: HOM_UDFNUM05
+  - name: hom_udfnum06
+    description: HOM_UDFNUM06
+  - name: hom_udfnum07
+    description: HOM_UDFNUM07
+  - name: hom_udfnum08
+    description: HOM_UDFNUM08
+  - name: hom_udfnum09
+    description: HOM_UDFNUM09
+  - name: hom_udfnum10
+    description: HOM_UDFNUM10
+  - name: hom_udfdate01
+    description: HOM_UDFDATE01
+  - name: hom_udfdate02
+    description: HOM_UDFDATE02
+  - name: hom_udfdate03
+    description: HOM_UDFDATE03
+  - name: hom_udfdate04
+    description: HOM_UDFDATE04
+  - name: hom_udfdate05
+    description: HOM_UDFDATE05
+  - name: hom_udfchkbox01
+    description: HOM_UDFCHKBOX01
+  - name: hom_udfchkbox02
+    description: HOM_UDFCHKBOX02
+  - name: hom_udfchkbox03
+    description: HOM_UDFCHKBOX03
+  - name: hom_udfchkbox04
+    description: HOM_UDFCHKBOX04
+  - name: hom_udfchkbox05
+    description: HOM_UDFCHKBOX05
+  - name: hom_min
+    description: HOM_MIN
+  - name: hom_max
+    description: HOM_MAX
+  - name: hom_radiuspercentage
+    description: HOM_RADIUSPERCENTAGE
+  - name: hom_kpitype
+    description: HOM_KPITYPE
+  - name: hom_groupbytext
+    description: HOM_GROUPBYTEXT
+  - name: hom_code
+    description: HOM_CODE
+  - name: hom_type
+    description: HOM_TYPE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5HOME
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - hom_code
+        - hom_type

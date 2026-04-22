@@ -1,0 +1,132 @@
+version: 2
+models:
+- name: tffam830
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: tkey
+    description: (required) Transaction Key
+    data_tests:
+    - not_null
+  - name: abdf
+    description: 'Book Distr. Depr.. Allowed values: 0, 1, 2'
+  - name: abdf_kw
+    description: 'Book Distr. Depr. (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: cost_1
+    description: Current Cost
+  - name: cost_2
+    description: Current Cost
+  - name: cost_3
+    description: Current Cost
+  - name: curd
+    description: Recovery Date
+  - name: depr_1
+    description: Depreciation Expense
+  - name: depr_2
+    description: Depreciation Expense
+  - name: depr_3
+    description: Depreciation Expense
+  - name: dtty
+    description: 'Depreciation Transaction Type. Allowed values: 0, 1, 2, 3, 4, 5,
+      6'
+  - name: dtty_kw
+    description: 'Depreciation Transaction Type (keyword). Allowed values: , tffam.dtty.normal,
+      tffam.dtty.add.post, tffam.dtty.econ.recap, tffam.dtty.reva.depr, tffam.dtty.econ.reva.depr,
+      tffam.dtty.retr.reva.depr'
+  - name: jobn
+    description: Job Number
+  - name: last
+    description: Last Depreciation Date
+  - name: ltdd_1
+    description: Accumulated Depreciation
+  - name: ltdd_2
+    description: Accumulated Depreciation
+  - name: ltdd_3
+    description: Accumulated Depreciation
+  - name: ltdu
+    description: LTD Units
+  - name: meth
+    description: 'Depreciation Code. Max length: 20'
+  - name: prop
+    description: 'Property Type. Max length: 10'
+  - name: susp
+    description: 'Suspended. Allowed values: 1, 2'
+  - name: susp_kw
+    description: 'Suspended (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: unit
+    description: Units Used
+  - name: user
+    description: 'User. Max length: 16'
+  - name: ytdd_1
+    description: YTD Depreciation
+  - name: ytdd_2
+    description: YTD Depreciation
+  - name: ytdd_3
+    description: YTD Depreciation
+  - name: adpc
+    description: Accelerated Depreciation Percentage
+  - name: rcst_1
+    description: Revaluation Cost
+  - name: rcst_2
+    description: Revaluation Cost
+  - name: rcst_3
+    description: Revaluation Cost
+  - name: ltdr_1
+    description: Accumulated Revaluated Depreciation
+  - name: ltdr_2
+    description: Accumulated Revaluated Depreciation
+  - name: ltdr_3
+    description: Accumulated Revaluated Depreciation
+  - name: ytdr_1
+    description: YTD Revaluation Depreciation
+  - name: ytdr_2
+    description: YTD Revaluation Depreciation
+  - name: ytdr_3
+    description: YTD Revaluation Depreciation
+  - name: tkey_ref_compnr
+    description: company number of primary key of table tffam800 Transaction
+  - name: meth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: prop_ref_compnr
+    description: company number of primary key of table tffam780 Property Type
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam830 Depreciation Transaction table, Generated 2026-04-10T19:41:36Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - tkey

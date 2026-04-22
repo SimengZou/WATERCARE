@@ -1,0 +1,207 @@
+version: 2
+models:
+- name: tdisa001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key I - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: qimc
+    description: Minimum Quantity to Commit
+  - name: mnra
+    description: Minimum Rate for Commitment
+  - name: qimo
+    description: Minimum Order Quantity
+  - name: qpmo
+    description: Minimum Order Quantity in Piece Unit
+  - name: cuqs
+    description: 'Sales Unit. Max length: 3'
+  - name: cuqi
+    description: 'Sales Piece Unit. Max length: 3'
+  - name: cups
+    description: 'Sales Price Unit. Max length: 3'
+  - name: cpgs
+    description: 'Sales Price Group. Max length: 6'
+  - name: csgs
+    description: 'Sales Statistics Group. Max length: 6'
+  - name: cmgp
+    description: 'Commission Group. Max length: 6'
+  - name: rbgp
+    description: 'Sales Rebate group. Max length: 6'
+  - name: ccur
+    description: 'Sales Currency. Max length: 3'
+  - name: pris
+    description: Sales Price
+  - name: ltsp
+    description: Last Sales Price Transaction Date
+  - name: prir
+    description: Suggested Retail Price
+  - name: umsp
+    description: Upper Margin
+  - name: lmsp
+    description: Lower Margin
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: qidd
+    description: Direct Delivery from Quantity
+  - name: qpdd
+    description: Direct Delivery from Quantity in Piece Unit
+  - name: bfbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: acci
+    description: 'Accessories Allowed. Allowed values: 1, 2'
+  - name: acci_kw
+    description: 'Accessories Allowed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: retw
+    description: 'Release to Warehousing. Allowed values: 1, 2'
+  - name: retw_kw
+    description: 'Release to Warehousing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: acom
+    description: 'Commitment Policy. Allowed values: 1, 2, 3, 4'
+  - name: acom_kw
+    description: 'Commitment Policy (keyword). Allowed values: tdacom.no, tdacom.entry,
+      tdacom.batch, tdacom.manual'
+  - name: rcom
+    description: 'Return Components. Allowed values: 1, 2'
+  - name: rcom_kw
+    description: 'Return Components (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: afrb
+    description: 'Item applicable for Retro-Billing. Allowed values: 1, 2'
+  - name: afrb_kw
+    description: 'Item applicable for Retro-Billing (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lcmp
+    description: Site Logistic Company
+  - name: sfsi
+    description: 'Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: cphl
+    description: 'Component Handling. Allowed values: 5, 10, 15'
+  - name: cphl_kw
+    description: 'Component Handling (keyword). Allowed values: tdcphl.not.applicable,
+      tdcphl.sales.bom, tdcphl.component.lines'
+  - name: scon
+    description: 'Shipping Constraint. Allowed values: 1, 2, 3, 4, 5, 6, 10'
+  - name: scon_kw
+    description: 'Shipping Constraint (keyword). Allowed values: tdscon.none, tdscon.sc,
+      tdscon.rc, tdscon.oc, tdscon.sca, tdscon.kc, tdscon.not.applicable'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: alod
+    description: 'Allow Overdeliveries. Allowed values: 1, 2'
+  - name: alod_kw
+    description: 'Allow Overdeliveries (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tltp
+    description: 'Tolerance Type. Allowed values: 1, 2, 3'
+  - name: tltp_kw
+    description: 'Tolerance Type (keyword). Allowed values: tcisa.tltp.percentage,
+      tcisa.tltp.quantity, tcisa.tltp.no'
+  - name: actn
+    description: 'Action. Allowed values: 1, 2, 3'
+  - name: actn_kw
+    description: 'Action (keyword). Allowed values: tchstp.no, tchstp.warn, tchstp.block'
+  - name: mmtl
+    description: Maximum Tolerance
+  - name: mmtp
+    description: Maximum Tolerance in Piece Unit
+  - name: txts
+    description: Item Sales Text
+  - name: item_sfsi_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: cuqs_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuqi_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cups_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cpgs_ref_compnr
+    description: company number of primary key of table tcmcs024 Price Groups
+  - name: csgs_ref_compnr
+    description: company number of primary key of table tcmcs044 Statistical Groups
+  - name: cmgp_ref_compnr
+    description: company number of primary key of table tdcms018 Commission/Rebate
+      Group
+  - name: rbgp_ref_compnr
+    description: company number of primary key of table tdcms018 Commission/Rebate
+      Group
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: bfbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom121 Ship-from Business
+      Partners
+  - name: lcmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: sfsi_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: txts_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: pris_lclc
+    description: 'CC: Item Sales Price in Local Currency'
+  - name: pris_rpc1
+    description: 'CC: Item Sales Price in Reporting Currency 1'
+  - name: pris_rpc2
+    description: 'CC: Item Sales Price in Reporting Currency 2'
+  - name: pris_rfrc
+    description: 'CC: Item Sales Price in Reference Currency'
+  - name: pris_dtwc
+    description: 'CC: Item Sales Price in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdisa001 Item - Sales table, Generated 2026-04-10T19:41:17Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - item

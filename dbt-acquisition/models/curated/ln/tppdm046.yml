@@ -1,0 +1,74 @@
+version: 2
+models:
+- name: tppdm046
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cint
+    description: '(required) Third Party Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: cins
+    description: '(required) Third Party. Max length: 3'
+    data_tests:
+    - not_null
+  - name: name__en_us
+    description: '(required) Name - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ccnt
+    description: 'Contact. Max length: 9'
+  - name: padr
+    description: 'Postal Address Code. Max length: 9'
+  - name: vadr
+    description: 'Visiting Address Code. Max length: 9'
+  - name: cint_ref_compnr
+    description: company number of primary key of table tppdm045 Third Party Types
+  - name: ccnt_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: padr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: vadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm046 Third Parties table, Generated 2026-04-10T19:41:56Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cint
+        - cins

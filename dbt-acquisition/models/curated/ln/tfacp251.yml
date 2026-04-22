@@ -1,0 +1,179 @@
+version: 2
+models:
+- name: tfacp251
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: icom
+    description: (required) Financial Company Purchase Invoice
+    data_tests:
+    - not_null
+  - name: ityp
+    description: '(required) Invoice Transaction Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: idoc
+    description: (required) Invoice Document
+    data_tests:
+    - not_null
+  - name: loco
+    description: (required) Logistic Company
+    data_tests:
+    - not_null
+  - name: shpm
+    description: '(required) Packing Slip. Max length: 30'
+    data_tests:
+    - not_null
+  - name: otyp
+    description: '(required) Order Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21'
+    data_tests:
+    - not_null
+  - name: otyp_kw
+    description: 'Order Type (keyword). Allowed values: tfacp.otyp.purchase, tfacp.otyp.sales,
+      tfacp.otyp.trans, tfacp.otyp.trans.man, tfacp.otyp.trans.wip, tfacp.otyp.freight,
+      tfacp.otyp.commissions, tfacp.otyp.project, tfacp.otyp.project.man, tfacp.otyp.ent.planning,
+      tfacp.otyp.assembly, tfacp.otyp.production, tfacp.otyp.service, tfacp.otyp.maint.sales,
+      tfacp.otyp.pcs.project, tfacp.otyp.maint.work, tfacp.otyp.not.applicable, tfacp.otyp.proj.contract,
+      tfacp.otyp.customer.claim, tfacp.otyp.intercomp.trade, tfacp.otyp.services.procm'
+  - name: orno
+    description: '(required) Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Position
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: rcno
+    description: '(required) Goods Receipt. Max length: 9'
+    data_tests:
+    - not_null
+  - name: rseq
+    description: (required) Receipt Line
+    data_tests:
+    - not_null
+  - name: ccur
+    description: 'Invoice Currency. Max length: 3'
+  - name: ifbp
+    description: 'Invoice-from Business Partner. Max length: 9'
+  - name: rate_1
+    description: Currency Rate
+  - name: rate_2
+    description: Currency Rate
+  - name: rate_3
+    description: Currency Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: ratd
+    description: Rate Date
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: iamt
+    description: Invoiced Amount
+  - name: iqan
+    description: Invoiced Quantity
+  - name: iqpc
+    description: Invoiced Quantity in Piece Unit
+  - name: amth_1
+    description: Amount in Home Currency
+  - name: amth_2
+    description: Amount in Home Currency
+  - name: amth_3
+    description: Amount in Home Currency
+  - name: finl
+    description: 'Obsolete. Allowed values: 0, 1, 2'
+  - name: finl_kw
+    description: 'Obsolete (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: pric
+    description: 'Update Average/Last Purchase Price. Allowed values: 0, 1, 2'
+  - name: pric_kw
+    description: 'Update Average/Last Purchase Price (keyword). Allowed values: ,
+      tcyesno.yes, tcyesno.no'
+  - name: data
+    description: Date of Approval
+  - name: apry
+    description: Approval Year
+  - name: aprp
+    description: Approval Period
+  - name: dbmo
+    description: 'Debit Memo. Allowed values: 1, 2'
+  - name: dbmo_kw
+    description: 'Debit Memo (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: buex
+    description: 'Budget Exception. Allowed values: 1, 2'
+  - name: buex_kw
+    description: 'Budget Exception (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: imrf__en_us
+    description: '(required) Import Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: pdif
+    description: Price Difference
+  - name: pdfd
+    description: 'Price Difference Determined. Allowed values: 1, 2'
+  - name: pdfd_kw
+    description: 'Price Difference Determined (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: shpm_otyp_orno_pono_sqnb_loco_rcno_rseq_ref_compnr
+    description: company number of primary key of table tfacp245 Goods Receipts
+  - name: ifbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfacp251 Invoices Related To Purchase Goods Receipt Lines table,
+    Generated 2026-04-10T19:41:29Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - icom
+        - ityp
+        - idoc
+        - loco
+        - shpm
+        - otyp
+        - orno
+        - pono
+        - sqnb
+        - rcno
+        - rseq

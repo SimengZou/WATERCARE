@@ -1,0 +1,120 @@
+version: 2
+models:
+- name: billing_billtype
+  columns:
+  - name: billtype
+    description: 'Metadata for column BILLTYPE. Max length: 8'
+  - name: readingstracked
+    description: Metadata for column READINGSTRACKED
+  - name: paymentorder
+    description: Metadata for column PAYMENTORDER
+  - name: dynamicbpflag
+    description: 'Metadata for column DYNAMICBPFLAG. Max length: 1'
+  - name: penalizeentirebillflag
+    description: 'Metadata for column PENALIZEENTIREBILLFLAG. Max length: 1'
+  - name: paymentapplicationrule
+    description: Metadata for column PAYMENTAPPLICATIONRULE
+  - name: billtypekey
+    description: (required) Metadata for column BILLTYPEKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: penaltypenflag
+    description: 'Metadata for column PENALTYPENFLAG. Max length: 1'
+  - name: whereclause
+    description: 'Metadata for column WHERECLAUSE. Max length: 300'
+  - name: commentskey
+    description: Metadata for column COMMENTSKEY
+  - name: discountpenaltyvariance
+    description: Metadata for column DISCOUNTPENALTYVARIANCE
+  - name: billmaximum
+    description: Metadata for column BILLMAXIMUM
+  - name: discountpenaltydays
+    description: Metadata for column DISCOUNTPENALTYDAYS
+  - name: penallflag
+    description: 'Metadata for column PENALLFLAG. Max length: 1'
+  - name: billminimum
+    description: Metadata for column BILLMINIMUM
+  - name: penaltyagedflag
+    description: 'Metadata for column PENALTYAGEDFLAG. Max length: 1'
+  - name: waivepenaltydefaultcode
+    description: Metadata for column WAIVEPENALTYDEFAULTCODE
+  - name: discntpendayformulakey
+    description: Metadata for column DISCNTPENDAYFORMULAKEY
+  - name: delinquentdatedays
+    description: Metadata for column DELINQUENTDATEDAYS
+  - name: viewbillimageformula
+    description: Metadata for column VIEWBILLIMAGEFORMULA
+  - name: discountpenaltytype
+    description: 'Metadata for column DISCOUNTPENALTYTYPE. Max length: 1'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: billingfamily
+    description: Metadata for column BILLINGFAMILY
+  - name: defaultforrefund
+    description: 'Metadata for column DEFAULTFORREFUND. Max length: 1'
+  - name: paydepositfirstflag
+    description: 'Metadata for column PAYDEPOSITFIRSTFLAG. Max length: 1'
+  - name: waivepenaltylog
+    description: 'Metadata for column WAIVEPENALTYLOG. Max length: 10'
+  - name: delinquentdateformulakey
+    description: Metadata for column DELINQUENTDATEFORMULAKEY
+  - name: conditionformulakey
+    description: Metadata for column CONDITIONFORMULAKEY
+  - name: duedatedays
+    description: Metadata for column DUEDATEDAYS
+  - name: minchargeamount
+    description: Metadata for column MINCHARGEAMOUNT
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: delinquencytype
+    description: Metadata for column DELINQUENCYTYPE
+  - name: discountpenaltylisukey
+    description: Metadata for column DISCOUNTPENALTYLISUKEY
+  - name: applycredittype
+    description: Metadata for column APPLYCREDITTYPE
+  - name: usewinteraverageusageonlyflag
+    description: 'Metadata for column USEWINTERAVERAGEUSAGEONLYFLAG. Max length: 1'
+  - name: penaltycodekey
+    description: Metadata for column PENALTYCODEKEY
+  - name: interimtypeflag
+    description: 'Metadata for column INTERIMTYPEFLAG. Max length: 1'
+  - name: duedateformulakey
+    description: Metadata for column DUEDATEFORMULAKEY
+  - name: effdate
+    description: Metadata for column EFFDATE
+  - name: billdesc
+    description: 'Metadata for column BILLDESC. Max length: 30'
+  - name: corrprocesssetup
+    description: Metadata for column CORRPROCESSSETUP
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: delinquencyexemptflag
+    description: 'Metadata for column DELINQUENCYEXEMPTFLAG. Max length: 1'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: includeservicedates
+    description: Metadata for column INCLUDESERVICEDATES
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.BILLTYPE on 2021-07-09T15:14:55.957

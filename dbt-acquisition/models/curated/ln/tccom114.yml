@@ -1,0 +1,189 @@
+version: 2
+models:
+- name: tccom114
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: pfbp
+    description: '(required) Pay-by Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cofc
+    description: '(required) Department. Max length: 6'
+    data_tests:
+    - not_null
+  - name: bpst
+    description: 'Business Partner Status. Allowed values: 1, 2, 254'
+  - name: bpst_kw
+    description: 'Business Partner Status (keyword). Allowed values: tccom.bpst.active,
+      tccom.bpst.inactive, tccom.bpst.not.specified'
+  - name: stdt
+    description: Start Date
+  - name: endt
+    description: End Date
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: cbps
+    description: 'Business Partner Signal. Max length: 3'
+  - name: cbtp
+    description: 'Business Partner Type. Max length: 3'
+  - name: cadr
+    description: 'Address Code. Max length: 9'
+  - name: telp
+    description: 'Phone Number. Max length: 32'
+  - name: tlcy
+    description: 'Country for Phone Number. Max length: 6'
+  - name: tlci
+    description: 'City/Area Code for Phone Number. Max length: 15'
+  - name: tlln
+    description: 'Local Number for Phone Number. Max length: 32'
+  - name: tlex
+    description: 'Extension for Phone Number. Max length: 15'
+  - name: tefx
+    description: 'Fax Number. Max length: 32'
+  - name: tfcy
+    description: 'Country for Fax Number. Max length: 6'
+  - name: tfci
+    description: 'City/Area Code for Fax Number. Max length: 15'
+  - name: tfln
+    description: 'Local Number for Fax Number. Max length: 32'
+  - name: tfex
+    description: 'Extension for Fax Number. Max length: 15'
+  - name: ccal
+    description: 'Calendar Code. Max length: 9'
+  - name: ccnt
+    description: 'Contact. Max length: 9'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: cban
+    description: 'Bank. Max length: 3'
+  - name: bank
+    description: 'Bank Relation. Max length: 3'
+  - name: eded
+    description: Extra Days after Due Date
+  - name: mrem
+    description: 'Reminder Method. Max length: 3'
+  - name: rtad
+    description: 'Remit-to Address. Max length: 9'
+  - name: prra
+    description: 'Print Receipt Acknowledgement. Allowed values: 1, 2'
+  - name: prra_kw
+    description: 'Print Receipt Acknowledgement (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: vtcb
+    description: 'Vat on Cash Basis. Allowed values: 1, 2'
+  - name: vtcb_kw
+    description: 'Vat on Cash Basis (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: stxa
+    description: 'Revenue Stamp Tax Applicable. Allowed values: 1, 2'
+  - name: stxa_kw
+    description: 'Revenue Stamp Tax Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: tndm
+    description: 'Trade Note Division Method. Allowed values: 1, 2, 3, 254'
+  - name: tndm_kw
+    description: 'Trade Note Division Method (keyword). Allowed values: tctndm.stamptax,
+      tctndm.predetermined, tctndm.na, tctndm.not.specified'
+  - name: mxtn
+    description: Maximum Number of TNs Allowed
+  - name: ppsl
+    description: 'Print Payment Slip. Allowed values: 1, 2'
+  - name: ppsl_kw
+    description: 'Print Payment Slip (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aofc
+    description: 'Accounting Office. Max length: 6'
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: user
+    description: 'Created by. Max length: 16'
+  - name: crdt
+    description: Creation Date
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: lmdt
+    description: Last Modification Date
+  - name: setl
+    description: 'Block Settlement of Direct Debits with Purchase Invoices. Allowed
+      values: 1, 2'
+  - name: setl_kw
+    description: 'Block Settlement of Direct Debits with Purchase Invoices (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Text
+  - name: pfbp_cban_ref_compnr
+    description: company number of primary key of table tccom115 Bank Accounts by
+      Pay-by Business Partner
+  - name: pfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: cbps_ref_compnr
+    description: company number of primary key of table tcmcs039 Signals
+  - name: cbtp_ref_compnr
+    description: company number of primary key of table tcmcs029 Business Partner
+      Types
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: ccnt_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: rtad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: aofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom114 Pay-by Business Partners table, Generated 2026-04-10T19:41:02Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - pfbp
+        - cofc

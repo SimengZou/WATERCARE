@@ -1,0 +1,143 @@
+version: 2
+models:
+- name: r5points
+  columns:
+  - name: poi_lastsaved
+    description: POI_LASTSAVED
+  - name: poi_obtype
+    description: POI_OBTYPE
+  - name: poi_point
+    description: POI_POINT
+  - name: poi_desc
+    description: POI_DESC
+  - name: poi_pointtype
+    description: POI_POINTTYPE
+  - name: poi_object_org
+    description: POI_OBJECT_ORG
+  - name: poi_updatecount
+    description: POI_UPDATECOUNT
+  - name: poi_created
+    description: POI_CREATED
+  - name: poi_updated
+    description: POI_UPDATED
+  - name: poi_udfchar01
+    description: POI_UDFCHAR01
+  - name: poi_udfchar02
+    description: POI_UDFCHAR02
+  - name: poi_udfchar03
+    description: POI_UDFCHAR03
+  - name: poi_udfchar04
+    description: POI_UDFCHAR04
+  - name: poi_udfchar05
+    description: POI_UDFCHAR05
+  - name: poi_udfchar06
+    description: POI_UDFCHAR06
+  - name: poi_udfchar07
+    description: POI_UDFCHAR07
+  - name: poi_udfchar08
+    description: POI_UDFCHAR08
+  - name: poi_udfchar09
+    description: POI_UDFCHAR09
+  - name: poi_udfchar10
+    description: POI_UDFCHAR10
+  - name: poi_udfchar11
+    description: POI_UDFCHAR11
+  - name: poi_udfchar12
+    description: POI_UDFCHAR12
+  - name: poi_udfchar13
+    description: POI_UDFCHAR13
+  - name: poi_udfchar14
+    description: POI_UDFCHAR14
+  - name: poi_udfchar15
+    description: POI_UDFCHAR15
+  - name: poi_udfchar16
+    description: POI_UDFCHAR16
+  - name: poi_udfchar17
+    description: POI_UDFCHAR17
+  - name: poi_udfchar18
+    description: POI_UDFCHAR18
+  - name: poi_udfchar19
+    description: POI_UDFCHAR19
+  - name: poi_udfchar20
+    description: POI_UDFCHAR20
+  - name: poi_udfchar21
+    description: POI_UDFCHAR21
+  - name: poi_udfchar22
+    description: POI_UDFCHAR22
+  - name: poi_udfchar23
+    description: POI_UDFCHAR23
+  - name: poi_udfchar24
+    description: POI_UDFCHAR24
+  - name: poi_udfchar25
+    description: POI_UDFCHAR25
+  - name: poi_udfchar26
+    description: POI_UDFCHAR26
+  - name: poi_udfchar27
+    description: POI_UDFCHAR27
+  - name: poi_udfchar28
+    description: POI_UDFCHAR28
+  - name: poi_udfchar29
+    description: POI_UDFCHAR29
+  - name: poi_udfchar30
+    description: POI_UDFCHAR30
+  - name: poi_udfnum01
+    description: POI_UDFNUM01
+  - name: poi_udfnum02
+    description: POI_UDFNUM02
+  - name: poi_udfnum03
+    description: POI_UDFNUM03
+  - name: poi_udfnum04
+    description: POI_UDFNUM04
+  - name: poi_udfnum05
+    description: POI_UDFNUM05
+  - name: poi_udfdate01
+    description: POI_UDFDATE01
+  - name: poi_udfdate02
+    description: POI_UDFDATE02
+  - name: poi_udfdate03
+    description: POI_UDFDATE03
+  - name: poi_udfdate04
+    description: POI_UDFDATE04
+  - name: poi_udfdate05
+    description: POI_UDFDATE05
+  - name: poi_udfchkbox01
+    description: POI_UDFCHKBOX01
+  - name: poi_udfchkbox02
+    description: POI_UDFCHKBOX02
+  - name: poi_udfchkbox03
+    description: POI_UDFCHKBOX03
+  - name: poi_udfchkbox04
+    description: POI_UDFCHKBOX04
+  - name: poi_udfchkbox05
+    description: POI_UDFCHKBOX05
+  - name: poi_object
+    description: POI_OBJECT
+  - name: poi_obrtype
+    description: POI_OBRTYPE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5POINTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - poi_object
+        - poi_object_org
+        - poi_obtype
+        - poi_point
+        - poi_pointtype

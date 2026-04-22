@@ -1,0 +1,182 @@
+version: 2
+models:
+- name: whinh435
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: prdn
+    description: '(required) Preliminary Delivery Note. Max length: 9'
+    data_tests:
+    - not_null
+  - name: deln
+    description: 'Delivery Note. Max length: 19'
+  - name: fsyr
+    description: Year
+  - name: crdt
+    description: Creation Date
+  - name: load
+    description: 'Load. Max length: 9'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: sfty
+    description: 'Ship-from Type. Allowed values: 1, 2, 3, 4, 10'
+  - name: sfty_kw
+    description: 'Ship-from Type (keyword). Allowed values: tctyps.warehouse, tctyps.partner,
+      tctyps.project, tctyps.work.center, tctyps.not.appl'
+  - name: sfco
+    description: 'Ship-from Code. Max length: 9'
+  - name: sfad
+    description: 'Ship-from Address. Max length: 9'
+  - name: sfcp
+    description: Ship-from Company
+  - name: stty
+    description: 'Ship-to Type. Allowed values: 1, 2, 3, 4, 10'
+  - name: stty_kw
+    description: 'Ship-to Type (keyword). Allowed values: tctyps.warehouse, tctyps.partner,
+      tctyps.project, tctyps.work.center, tctyps.not.appl'
+  - name: stco
+    description: 'Ship-to Code. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: stcp
+    description: Ship-to Company
+  - name: tsad
+    description: 'Transit Address. Max length: 9'
+  - name: depc
+    description: Office Company
+  - name: wdep
+    description: 'Office. Max length: 6'
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: bptc
+    description: 'BP Tax Country. Max length: 3'
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: dnst
+    description: 'Delivery Note Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: dnst_kw
+    description: 'Delivery Note Status (keyword). Allowed values: whinh.dnst.canceled,
+      whinh.dnst.open, whinh.dnst.frozen, whinh.dnst.confirmed, whinh.dnst.completed'
+  - name: finp
+    description: 'Final Print. Allowed values: 1, 2'
+  - name: finp_kw
+    description: 'Final Print (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: prdt
+    description: Printing Date
+  - name: dcdt
+    description: Document Date
+  - name: manl
+    description: 'Manual. Allowed values: 1, 2'
+  - name: manl_kw
+    description: 'Manual (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: motv
+    description: 'Motive of Transport. Max length: 6'
+  - name: delc
+    description: 'Delivery Code. Max length: 6'
+  - name: taxs
+    description: 'Own Identification Number. Max length: 35'
+  - name: taxp
+    description: 'Business Partner Identification Number. Max length: 35'
+  - name: qpac
+    description: Number of Packages
+  - name: shap__en_us
+    description: '(required) Shape - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: nota__en_us
+    description: '(required) Note A - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: notb__en_us
+    description: '(required) Note B - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: notc__en_us
+    description: '(required) Note C - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: grwt
+    description: Gross Weight
+  - name: cwun
+    description: 'Unit of Measure. Max length: 3'
+  - name: carp
+    description: 'Pick-up Carrier/LSP. Max length: 3'
+  - name: fnsr
+    description: 'Series for Delivery Note. Max length: 8'
+  - name: load_ref_compnr
+    description: company number of primary key of table whinh440 Loads
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: sfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: tsad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: depc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: motv_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: delc_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cwun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh435 Delivery Notes table, Generated 2026-04-10T19:42:50Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - prdn

@@ -1,0 +1,116 @@
+version: 2
+models:
+- name: r5contactcenteroptions
+  columns:
+  - name: cop_lastsaved
+    description: COP_LASTSAVED
+  - name: cop_includepmworkorders
+    description: COP_INCLUDEPMWORKORDERS
+  - name: cop_defcontactsource
+    description: COP_DEFCONTACTSOURCE
+  - name: cop_defwostatus
+    description: COP_DEFWOSTATUS
+  - name: cop_defopenstatus
+    description: COP_DEFOPENSTATUS
+  - name: cop_deffollowupstatus
+    description: COP_DEFFOLLOWUPSTATUS
+  - name: cop_toptenlookback
+    description: COP_TOPTENLOOKBACK
+  - name: cop_closeable
+    description: COP_CLOSEABLE
+  - name: cop_copycustomerinfo
+    description: COP_COPYCUSTOMERINFO
+  - name: cop_woclosedays
+    description: COP_WOCLOSEDAYS
+  - name: cop_deftype
+    description: COP_DEFTYPE
+  - name: cop_deffindby
+    description: COP_DEFFINDBY
+  - name: cop_updated
+    description: COP_UPDATED
+  - name: cop_updatedby
+    description: COP_UPDATEDBY
+  - name: cop_highlightmap
+    description: COP_HIGHLIGHTMAP
+  - name: cop_idefeature
+    description: COP_IDEFEATURE
+  - name: cop_showchildren
+    description: COP_SHOWCHILDREN
+  - name: cop_nearaddress
+    description: COP_NEARADDRESS
+  - name: cop_schedulewo
+    description: COP_SCHEDULEWO
+  - name: cop_showprovider
+    description: COP_SHOWPROVIDER
+  - name: cop_showservicecategory
+    description: COP_SHOWSERVICECATEGORY
+  - name: cop_kbresultsperpage
+    description: COP_KBRESULTSPERPAGE
+  - name: cop_updatecount
+    description: COP_UPDATECOUNT
+  - name: cop_newcustomerallowed
+    description: COP_NEWCUSTOMERALLOWED
+  - name: cop_minpenalty
+    description: COP_MINPENALTY
+  - name: cop_deptstructureusage
+    description: COP_DEPTSTRUCTUREUSAGE
+  - name: cop_deforgusage
+    description: COP_DEFORGUSAGE
+  - name: cop_spcvalidation
+    description: COP_SPCVALIDATION
+  - name: cop_eventtypefilter
+    description: COP_EVENTTYPEFILTER
+  - name: cop_woduplicatecheck
+    description: COP_WODUPLICATECHECK
+  - name: cop_woopendays
+    description: COP_WOOPENDAYS
+  - name: cop_wotypes
+    description: COP_WOTYPES
+  - name: cop_wostatuses
+    description: COP_WOSTATUSES
+  - name: cop_woheaderobjonly
+    description: COP_WOHEADEROBJONLY
+  - name: cop_matchsc
+    description: COP_MATCHSC
+  - name: cop_matchspc
+    description: COP_MATCHSPC
+  - name: cop_showspc
+    description: COP_SHOWSPC
+  - name: cop_showsupplier
+    description: COP_SHOWSUPPLIER
+  - name: cop_chkduplicateopenreq
+    description: COP_CHKDUPLICATEOPENREQ
+  - name: cop_chkrecurringclosedreq
+    description: COP_CHKRECURRINGCLOSEDREQ
+  - name: cop_recurringreqlookbackdays
+    description: COP_RECURRINGREQLOOKBACKDAYS
+  - name: cop_defportalsource
+    description: COP_DEFPORTALSOURCE
+  - name: cop_defportaltype
+    description: COP_DEFPORTALTYPE
+  - name: cop_defportalstatus
+    description: COP_DEFPORTALSTATUS
+  - name: cop_org
+    description: COP_ORG
+    data_tests:
+    - unique
+  - name: cop_defwoorg
+    description: COP_DEFWOORG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CONTACTCENTEROPTIONS

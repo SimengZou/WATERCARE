@@ -1,0 +1,187 @@
+version: 2
+models:
+- name: whina122
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: rorg
+    description: '(required) Revaluation Origin. Allowed values: 10, 20, 30, 35, 40,
+      50, 100'
+    data_tests:
+    - not_null
+  - name: rorg_kw
+    description: 'Revaluation Origin (keyword). Allowed values: whina.rorg.act.cost.price,
+      whina.rorg.antedating, whina.rorg.mauc.correct, whina.rorg.act.cost.corr, whina.rorg.change.val.meth,
+      whina.rorg.change.int.fam, whina.rorg.not.appl'
+  - name: orno
+    description: '(required) Revaluation Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: rowc
+    description: Rental Owner Company
+  - name: rown
+    description: 'Rental Owner. Max length: 6'
+  - name: rvrs
+    description: 'Reason. Max length: 6'
+  - name: rvdt
+    description: Revaluation Date
+  - name: lgdt
+    description: Actual Log Date
+  - name: logn
+    description: 'User. Max length: 16'
+  - name: quan
+    description: Quantity
+  - name: serl
+    description: 'Serial Number. Max length: 30'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: tagn
+    description: 'Tag. Max length: 9'
+  - name: inwp
+    description: 'Inventory WIP. Allowed values: 1, 2'
+  - name: inwp_kw
+    description: 'Inventory WIP (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ovba
+    description: 'Old Valuation by Attribute Set. Allowed values: 1, 2'
+  - name: ovba_kw
+    description: 'Old Valuation by Attribute Set (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: oval
+    description: 'Old Valuation Method. Allowed values: 1, 2, 3, 4, 5, 6, 20, 255'
+  - name: oval_kw
+    description: 'Old Valuation Method (keyword). Allowed values: whina.valm.ftp,
+      whina.valm.mauc, whina.valm.fifo, whina.valm.lifo, whina.valm.lot, whina.valm.serial,
+      whina.valm.tag, whina.valm.not.appl'
+  - name: owvg
+    description: 'Old Valuation by Warehouse Valuation Group. Allowed values: 1, 2'
+  - name: owvg_kw
+    description: 'Old Valuation by Warehouse Valuation Group (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: ovgr
+    description: 'Old Warehouse Valuation Group. Max length: 6'
+  - name: nvba
+    description: 'New Valuation by Attribute Set. Allowed values: 1, 2'
+  - name: nvba_kw
+    description: 'New Valuation by Attribute Set (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: nval
+    description: 'New Valuation Method. Allowed values: 1, 2, 3, 4, 5, 6, 20, 255'
+  - name: nval_kw
+    description: 'New Valuation Method (keyword). Allowed values: whina.valm.ftp,
+      whina.valm.mauc, whina.valm.fifo, whina.valm.lifo, whina.valm.lot, whina.valm.serial,
+      whina.valm.tag, whina.valm.not.appl'
+  - name: nwvg
+    description: 'New Valuation by Warehouse Valuation Group. Allowed values: 1, 2'
+  - name: nwvg_kw
+    description: 'New Valuation by Warehouse Valuation Group (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: nvgr
+    description: 'New Warehouse Valuation Group. Max length: 6'
+  - name: cvmo
+    description: 'Use Old Valuation Method. Allowed values: 1, 2'
+  - name: cvmo_kw
+    description: 'Use Old Valuation Method (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: owns
+    description: 'Ownership. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: owns_kw
+    description: 'Ownership (keyword). Allowed values: tcowns.comp.owned, tcowns.consigned,
+      tcowns.cust.owned, tcowns.return.as.issue, tcowns.deferred, tcowns.not.appl'
+  - name: ownr
+    description: 'Owner. Max length: 9'
+  - name: bfbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: reje
+    description: 'Quarantine Inventory. Allowed values: 1, 2'
+  - name: reje_kw
+    description: 'Quarantine Inventory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: item_ref_compnr
+    description: company number of primary key of table whwmd400 Item Warehousing
+      Data
+  - name: atse_ref_compnr
+    description: company number of primary key of table whwmd464 Attribute Sets
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: rowc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: rown_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: rvrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: ovgr_ref_compnr
+    description: company number of primary key of table whina102 Warehouse Valuation
+      Groups
+  - name: nvgr_ref_compnr
+    description: company number of primary key of table whina102 Warehouse Valuation
+      Groups
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whina122 Inventory Revaluation Transactions table, Generated 2026-04-10T19:42:46Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - rorg
+        - orno
+        - seqn

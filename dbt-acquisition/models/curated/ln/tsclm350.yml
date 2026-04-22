@@ -1,0 +1,140 @@
+version: 2
+models:
+- name: tsclm350
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orig
+    description: '(required) Origin. Allowed values: 1, 2, 3, 4, 5'
+    data_tests:
+    - not_null
+  - name: orig_kw
+    description: 'Origin (keyword). Allowed values: tsclm.orig.cal, tsclm.orig.soc,
+      tsclm.orig.msc, tsclm.orig.wcs, tsclm.orig.cmm'
+  - name: orno
+    description: '(required) Order Number. Max length: 9'
+    data_tests:
+    - not_null
+  - name: acln
+    description: (required) Activity
+    data_tests:
+    - not_null
+  - name: ccll
+    description: '(required) Call. Max length: 9'
+    data_tests:
+    - not_null
+  - name: hidt
+    description: (required) History Date
+    data_tests:
+    - not_null
+  - name: sigr
+    description: 'Serialized Item Group. Max length: 6'
+  - name: csgr
+    description: 'Service Item Group. Max length: 6'
+  - name: cgrp
+    description: 'Call Group1. Max length: 3'
+  - name: scgr
+    description: 'Call Group2. Max length: 3'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: desc__en_us
+    description: '(required) Call Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: clst
+    description: 'Installation Group. Max length: 9'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: sern
+    description: 'Serial Number. Max length: 30'
+  - name: rprl
+    description: 'Reported Problem. Max length: 10'
+  - name: expr
+    description: 'Expected Problem. Max length: 10'
+  - name: espr
+    description: 'Actual Problem. Max length: 10'
+  - name: exsl
+    description: 'Expected Solution. Max length: 10'
+  - name: sltn
+    description: 'Actual Solution. Max length: 10'
+  - name: crac
+    description: 'Reference Activity. Max length: 16'
+  - name: sear
+    description: 'Search String. Max length: 132'
+  - name: ccll_ref_compnr
+    description: company number of primary key of table tsclm100 Calls
+  - name: sigr_ref_compnr
+    description: company number of primary key of table tscfg010 Serialized Item Groups
+  - name: csgr_ref_compnr
+    description: company number of primary key of table tsmdm210 Service Item Groups
+  - name: cgrp_ref_compnr
+    description: company number of primary key of table tsclm050 Call Groups
+  - name: scgr_ref_compnr
+    description: company number of primary key of table tsclm050 Call Groups
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: clst_ref_compnr
+    description: company number of primary key of table tsbsc100 Installation Group
+  - name: item_sern_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: item_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: rprl_ref_compnr
+    description: company number of primary key of table tsclm330 Problems
+  - name: expr_ref_compnr
+    description: company number of primary key of table tsclm330 Problems
+  - name: espr_ref_compnr
+    description: company number of primary key of table tsclm330 Problems
+  - name: exsl_ref_compnr
+    description: company number of primary key of table tsclm335 Solutions
+  - name: sltn_ref_compnr
+    description: company number of primary key of table tsclm335 Solutions
+  - name: crac_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsclm350 Service Resolution - Probability Analysis table, Generated
+    2026-04-10T19:42:29Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orig
+        - orno
+        - acln
+        - ccll
+        - hidt

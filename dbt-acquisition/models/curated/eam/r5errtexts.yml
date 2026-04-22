@@ -1,0 +1,40 @@
+version: 2
+models:
+- name: r5errtexts
+  columns:
+  - name: ert_lastsaved
+    description: ERT_LASTSAVED
+  - name: ert_text
+    description: ERT_TEXT
+  - name: ert_translate
+    description: ERT_TRANSLATE
+  - name: ert_updatecount
+    description: ERT_UPDATECOUNT
+  - name: ert_code
+    description: ERT_CODE
+  - name: ert_lang
+    description: ERT_LANG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ERRTEXTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - ert_code
+        - ert_lang

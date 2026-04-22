@@ -1,0 +1,310 @@
+version: 2
+models:
+- name: r5ppms
+  columns:
+  - name: ppm_lastsaved
+    description: PPM_LASTSAVED
+  - name: ppm_desc
+    description: PPM_DESC
+  - name: ppm_class
+    description: PPM_CLASS
+  - name: ppm_isstype
+    description: PPM_ISSTYPE
+  - name: ppm_duration
+    description: PPM_DURATION
+  - name: ppm_freq
+    description: PPM_FREQ
+  - name: ppm_meter
+    description: PPM_METER
+  - name: ppm_metuom
+    description: PPM_METUOM
+  - name: ppm_nested
+    description: PPM_NESTED
+  - name: ppm_priority
+    description: PPM_PRIORITY
+  - name: ppm_jobtype
+    description: PPM_JOBTYPE
+  - name: ppm_special
+    description: PPM_SPECIAL
+  - name: ppm_okwindow
+    description: PPM_OKWINDOW
+  - name: ppm_nearwindow
+    description: PPM_NEARWINDOW
+  - name: ppm_genwindow
+    description: PPM_GENWINDOW
+  - name: ppm_revision
+    description: PPM_REVISION
+  - name: ppm_revrstatus
+    description: PPM_REVRSTATUS
+  - name: ppm_revstatus
+    description: PPM_REVSTATUS
+  - name: ppm_org
+    description: PPM_ORG
+  - name: ppm_class_org
+    description: PPM_CLASS_ORG
+  - name: ppm_package
+    description: PPM_PACKAGE
+  - name: ppm_plan
+    description: PPM_PLAN
+  - name: ppm_notused
+    description: PPM_NOTUSED
+  - name: ppm_estworkload
+    description: PPM_ESTWORKLOAD
+  - name: ppm_woclass
+    description: PPM_WOCLASS
+  - name: ppm_woclass_org
+    description: PPM_WOCLASS_ORG
+  - name: ppm_nestedpmstatus
+    description: PPM_NESTEDPMSTATUS
+  - name: ppm_code
+    description: PPM_CODE
+  - name: ppm_perioduom
+    description: PPM_PERIODUOM
+  - name: ppm_nestedtolmin
+    description: PPM_NESTEDTOLMIN
+  - name: ppm_nestedtolmax
+    description: PPM_NESTEDTOLMAX
+  - name: ppm_nestedtolmetmin
+    description: PPM_NESTEDTOLMETMIN
+  - name: ppm_nestedtolmetmax
+    description: PPM_NESTEDTOLMETMAX
+  - name: ppm_nestedtolmet2min
+    description: PPM_NESTEDTOLMET2MIN
+  - name: ppm_nestedtolmet2max
+    description: PPM_NESTEDTOLMET2MAX
+  - name: ppm_meter2
+    description: PPM_METER2
+  - name: ppm_metuom2
+    description: PPM_METUOM2
+  - name: ppm_updatecount
+    description: PPM_UPDATECOUNT
+  - name: ppm_schedgrp
+    description: PPM_SCHEDGRP
+  - name: ppm_performonweek
+    description: PPM_PERFORMONWEEK
+  - name: ppm_performonday
+    description: PPM_PERFORMONDAY
+  - name: ppm_prodpriority
+    description: PPM_PRODPRIORITY
+  - name: ppm_requestedstartdatebuffer
+    description: PPM_REQUESTEDSTARTDATEBUFFER
+  - name: ppm_requestedenddatebuffer
+    description: PPM_REQUESTEDENDDATEBUFFER
+  - name: ppm_udfchar01
+    description: PPM_UDFCHAR01
+  - name: ppm_udfchar02
+    description: PPM_UDFCHAR02
+  - name: ppm_udfchar03
+    description: PPM_UDFCHAR03
+  - name: ppm_udfchar04
+    description: PPM_UDFCHAR04
+  - name: ppm_udfchar05
+    description: PPM_UDFCHAR05
+  - name: ppm_udfchar06
+    description: PPM_UDFCHAR06
+  - name: ppm_udfchar07
+    description: PPM_UDFCHAR07
+  - name: ppm_udfchar08
+    description: PPM_UDFCHAR08
+  - name: ppm_udfchar09
+    description: PPM_UDFCHAR09
+  - name: ppm_udfchar10
+    description: PPM_UDFCHAR10
+  - name: ppm_udfchar11
+    description: PPM_UDFCHAR11
+  - name: ppm_udfchar12
+    description: PPM_UDFCHAR12
+  - name: ppm_udfchar13
+    description: PPM_UDFCHAR13
+  - name: ppm_udfchar14
+    description: PPM_UDFCHAR14
+  - name: ppm_udfchar15
+    description: PPM_UDFCHAR15
+  - name: ppm_udfchar16
+    description: PPM_UDFCHAR16
+  - name: ppm_udfchar17
+    description: PPM_UDFCHAR17
+  - name: ppm_udfchar18
+    description: PPM_UDFCHAR18
+  - name: ppm_udfchar19
+    description: PPM_UDFCHAR19
+  - name: ppm_udfchar20
+    description: PPM_UDFCHAR20
+  - name: ppm_udfchar21
+    description: PPM_UDFCHAR21
+  - name: ppm_udfchar22
+    description: PPM_UDFCHAR22
+  - name: ppm_udfchar23
+    description: PPM_UDFCHAR23
+  - name: ppm_udfchar24
+    description: PPM_UDFCHAR24
+  - name: ppm_udfchar25
+    description: PPM_UDFCHAR25
+  - name: ppm_udfchar26
+    description: PPM_UDFCHAR26
+  - name: ppm_udfchar27
+    description: PPM_UDFCHAR27
+  - name: ppm_udfchar28
+    description: PPM_UDFCHAR28
+  - name: ppm_udfchar29
+    description: PPM_UDFCHAR29
+  - name: ppm_udfchar30
+    description: PPM_UDFCHAR30
+  - name: ppm_udfnum01
+    description: PPM_UDFNUM01
+  - name: ppm_udfnum02
+    description: PPM_UDFNUM02
+  - name: ppm_udfnum03
+    description: PPM_UDFNUM03
+  - name: ppm_udfnum04
+    description: PPM_UDFNUM04
+  - name: ppm_udfnum05
+    description: PPM_UDFNUM05
+  - name: ppm_udfdate01
+    description: PPM_UDFDATE01
+  - name: ppm_udfdate02
+    description: PPM_UDFDATE02
+  - name: ppm_udfdate03
+    description: PPM_UDFDATE03
+  - name: ppm_udfdate04
+    description: PPM_UDFDATE04
+  - name: ppm_udfdate05
+    description: PPM_UDFDATE05
+  - name: ppm_udfchkbox01
+    description: PPM_UDFCHKBOX01
+  - name: ppm_udfchkbox02
+    description: PPM_UDFCHKBOX02
+  - name: ppm_udfchkbox03
+    description: PPM_UDFCHKBOX03
+  - name: ppm_udfchkbox04
+    description: PPM_UDFCHKBOX04
+  - name: ppm_udfchkbox05
+    description: PPM_UDFCHKBOX05
+  - name: ppm_safetyreviewrequired
+    description: PPM_SAFETYREVIEWREQUIRED
+  - name: ppm_safetyreviewed
+    description: PPM_SAFETYREVIEWED
+  - name: ppm_safetyreviewedby
+    description: PPM_SAFETYREVIEWEDBY
+  - name: ppm_safetyreviewedname
+    description: PPM_SAFETYREVIEWEDNAME
+  - name: ppm_permitreviewedby
+    description: PPM_PERMITREVIEWEDBY
+  - name: ppm_safetyreviewedtype
+    description: PPM_SAFETYREVIEWEDTYPE
+  - name: ppm_permitreviewrequired
+    description: PPM_PERMITREVIEWREQUIRED
+  - name: ppm_permitreviewed
+    description: PPM_PERMITREVIEWED
+  - name: ppm_permitreviewedname
+    description: PPM_PERMITREVIEWEDNAME
+  - name: ppm_permitreviewedtype
+    description: PPM_PERMITREVIEWEDTYPE
+  - name: ppm_udfnote01
+    description: PPM_UDFNOTE01
+  - name: ppm_udfnote02
+    description: PPM_UDFNOTE02
+  - name: ppm_udfchar31
+    description: PPM_UDFCHAR31
+  - name: ppm_udfchar32
+    description: PPM_UDFCHAR32
+  - name: ppm_udfchar33
+    description: PPM_UDFCHAR33
+  - name: ppm_udfchar34
+    description: PPM_UDFCHAR34
+  - name: ppm_udfchar35
+    description: PPM_UDFCHAR35
+  - name: ppm_udfchar36
+    description: PPM_UDFCHAR36
+  - name: ppm_udfchar37
+    description: PPM_UDFCHAR37
+  - name: ppm_udfchar38
+    description: PPM_UDFCHAR38
+  - name: ppm_udfchar39
+    description: PPM_UDFCHAR39
+  - name: ppm_udfchar40
+    description: PPM_UDFCHAR40
+  - name: ppm_udfchar41
+    description: PPM_UDFCHAR41
+  - name: ppm_udfchar42
+    description: PPM_UDFCHAR42
+  - name: ppm_udfchar43
+    description: PPM_UDFCHAR43
+  - name: ppm_udfchar44
+    description: PPM_UDFCHAR44
+  - name: ppm_udfchar45
+    description: PPM_UDFCHAR45
+  - name: ppm_udfnum06
+    description: PPM_UDFNUM06
+  - name: ppm_udfnum07
+    description: PPM_UDFNUM07
+  - name: ppm_udfnum08
+    description: PPM_UDFNUM08
+  - name: ppm_udfnum09
+    description: PPM_UDFNUM09
+  - name: ppm_udfnum10
+    description: PPM_UDFNUM10
+  - name: ppm_udfdate06
+    description: PPM_UDFDATE06
+  - name: ppm_udfdate07
+    description: PPM_UDFDATE07
+  - name: ppm_udfdate08
+    description: PPM_UDFDATE08
+  - name: ppm_udfdate09
+    description: PPM_UDFDATE09
+  - name: ppm_udfdate10
+    description: PPM_UDFDATE10
+  - name: ppm_udfchkbox06
+    description: PPM_UDFCHKBOX06
+  - name: ppm_udfchkbox07
+    description: PPM_UDFCHKBOX07
+  - name: ppm_udfchkbox08
+    description: PPM_UDFCHKBOX08
+  - name: ppm_udfchar47
+    description: PPM_UDFCHAR47
+  - name: ppm_udfchkbox09
+    description: PPM_UDFCHKBOX09
+  - name: ppm_udfchkbox10
+    description: PPM_UDFCHKBOX10
+  - name: ppm_udfchar46
+    description: PPM_UDFCHAR46
+  - name: ppm_udfchar48
+    description: PPM_UDFCHAR48
+  - name: ppm_udfchar49
+    description: PPM_UDFCHAR49
+  - name: ppm_udfchar50
+    description: PPM_UDFCHAR50
+  - name: ppm_udfchar51
+    description: PPM_UDFCHAR51
+  - name: ppm_udfchar52
+    description: PPM_UDFCHAR52
+  - name: ppm_udfchar53
+    description: PPM_UDFCHAR53
+  - name: ppm_udfchar54
+    description: PPM_UDFCHAR54
+  - name: ppm_udfchar55
+    description: PPM_UDFCHAR55
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PPMS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - ppm_code
+        - ppm_revision

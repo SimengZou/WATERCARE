@@ -1,0 +1,265 @@
+version: 2
+models:
+- name: tppdm001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: loco
+    description: '(required) User. Max length: 16'
+    data_tests:
+    - not_null
+  - name: udpr
+    description: 'Use Default Project. Allowed values: 1, 2'
+  - name: udpr_kw
+    description: 'Use Default Project (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: udsp
+    description: 'Use Default Element. Allowed values: 1, 2'
+  - name: udsp_kw
+    description: 'Use Default Element (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: udpl
+    description: 'Use Default Project Plan. Allowed values: 1, 2'
+  - name: udpl_kw
+    description: 'Use Default Project Plan (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cpla
+    description: 'Project Plan. Max length: 3'
+  - name: udac
+    description: 'Use Default Activity. Allowed values: 1, 2'
+  - name: udac_kw
+    description: 'Use Default Activity (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: whng
+    description: 'PRP Warehouse Orders Number Group. Max length: 3'
+  - name: whsr
+    description: 'PRP Warehouse Order Series. Max length: 8'
+  - name: pung
+    description: 'PRP Purchase Orders Number Group. Max length: 3'
+  - name: pusr
+    description: 'PRP Purchase Order Series. Max length: 8'
+  - name: song
+    description: 'Service Orders Number Group. Max length: 3'
+  - name: sosr
+    description: 'Service Order Series. Max length: 8'
+  - name: erng
+    description: 'Planned Equipment Request Number Group. Max length: 3'
+  - name: ersr
+    description: 'Planned Equipment Request Series. Max length: 8'
+  - name: ctng
+    description: 'Contracts Number Group. Max length: 3'
+  - name: ctsr
+    description: 'Contract Series. Max length: 8'
+  - name: ngrp
+    description: 'Project Number Group. Max length: 3'
+  - name: prsr
+    description: 'Project Series. Max length: 8'
+  - name: ests
+    description: 'Estimate Series. Max length: 8'
+  - name: serr
+    description: 'Order Series for PCS Project. Max length: 8'
+  - name: dsct
+    description: 'Default Start up Cost Type. Allowed values: 1, 2, 3, 4, 5, 10'
+  - name: dsct_kw
+    description: 'Default Start up Cost Type (keyword). Allowed values: tppdm.cotp.tasks,
+      tppdm.cotp.materials, tppdm.cotp.equipment, tppdm.cotp.subcontracting, tppdm.cotp.indirect,
+      tppdm.cotp.overhead'
+  - name: asct
+    description: 'Alternate Start up Cost Type. Allowed values: 1, 2, 3, 4, 5, 10'
+  - name: asct_kw
+    description: 'Alternate Start up Cost Type (keyword). Allowed values: tppdm.cotp.tasks,
+      tppdm.cotp.materials, tppdm.cotp.equipment, tppdm.cotp.subcontracting, tppdm.cotp.indirect,
+      tppdm.cotp.overhead'
+  - name: mpvw
+    description: 'Default Main View. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+      11, 12, 13, 14, 15, 16, 17'
+  - name: mpvw_kw
+    description: 'Default Main View (keyword). Allowed values: tppdm.mpvw.project,
+      tppdm.mpvw.element, tppdm.mpvw.activity, tppdm.mpvw.extension, tppdm.mpvw.obs,
+      tppdm.mpvw.primary, tppdm.mpvw.sort, tppdm.mpvw.asta, tppdm.mpvw.astb, tppdm.mpvw.astc,
+      tppdm.mpvw.astd, tppdm.mpvw.aste, tppdm.mpvw.astf, tppdm.mpvw.astg, tppdm.mpvw.ofbp,
+      tppdm.mpvw.structure, tppdm.mpvw.item'
+  - name: olvl
+    description: Opening Level
+  - name: tpte
+    description: 'Project Template. Max length: 9'
+  - name: udev
+    description: 'Use Default Estimate Version. Allowed values: 1, 2'
+  - name: udev_kw
+    description: 'Use Default Estimate Version (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: vers
+    description: 'Estimate Version. Max length: 3'
+  - name: tgrp
+    description: 'Template Number Group. Max length: 3'
+  - name: tpsr
+    description: 'Template Series. Max length: 8'
+  - name: dfet
+    description: 'Default Estimate Type. Allowed values: 1, 2'
+  - name: dfet_kw
+    description: 'Default Estimate Type (keyword). Allowed values: tpest.etyp.topdown,
+      tpest.etyp.bottomup'
+  - name: dflv
+    description: 'Default Level. Allowed values: 1, 2, 3, 4'
+  - name: dflv_kw
+    description: 'Default Level (keyword). Allowed values: tpest.levl.total, tpest.levl.cost.type,
+      tpest.levl.other.struct, tpest.levl.detail'
+  - name: dcty
+    description: 'Default Cost Type. Allowed values: 1, 2, 3, 4, 5, 6, 15, 255'
+  - name: dcty_kw
+    description: 'Default Cost Type (keyword). Allowed values: tppdm.cotr.tasks, tppdm.cotr.materials,
+      tppdm.cotr.equipment, tppdm.cotr.subcontracting, tppdm.cotr.indirect, tppdm.cotr.refact,
+      tppdm.cotr.composite, tppdm.cotr.not.applicable'
+  - name: prim
+    description: 'Pricing Method. Allowed values: 1, 2, 3'
+  - name: prim_kw
+    description: 'Pricing Method (keyword). Allowed values: tpest.prim.mark.up, tpest.prim.target.pricing,
+      tpest.prim.target.amount'
+  - name: delt
+    description: 'Default Estimate Line Type. Allowed values: 1, 2'
+  - name: delt_kw
+    description: 'Default Estimate Line Type (keyword). Allowed values: tpest.cspt.direct,
+      tpest.cspt.indirect'
+  - name: mnvf
+    description: 'Verify Online. Allowed values: 1, 2, 3'
+  - name: mnvf_kw
+    description: 'Verify Online (keyword). Allowed values: tpest.veon.no.online, tpest.veon.field.level,
+      tpest.veon.record.level'
+  - name: aagt
+    description: 'Auto Aggregate Totals. Allowed values: 1, 2'
+  - name: aagt_kw
+    description: 'Auto Aggregate Totals (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: potp
+    description: 'Project Procedure. Max length: 3'
+  - name: cofc
+    description: 'Sales Office. Max length: 6'
+  - name: rlcr
+    description: 'Can Release Credit Held Orders. Allowed values: 1, 2'
+  - name: rlcr_kw
+    description: 'Can Release Credit Held Orders (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rlgn
+    description: 'Can Release Generally Held Orders. Allowed values: 1, 2'
+  - name: rlgn_kw
+    description: 'Can Release Generally Held Orders (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: tprf
+    description: 'Type of Profile. Allowed values: 5, 10'
+  - name: tprf_kw
+    description: 'Type of Profile (keyword). Allowed values: tcmcs.tprf.user, tcmcs.tprf.template'
+  - name: sdnr
+    description: 'Scope Document Number Group. Max length: 3'
+  - name: sdsr
+    description: 'Scope Document Series. Max length: 8'
+  - name: apnr
+    description: 'Application for Payment Number Group. Max length: 3'
+  - name: apsr
+    description: 'Application for Payment Series. Max length: 8'
+  - name: prcv
+    description: 'Prefill Certified Values based on Applied Values. Allowed values:
+      0, 1, 2'
+  - name: prcv_kw
+    description: 'Prefill Certified Values based on Applied Values (keyword). Allowed
+      values: , tppdm.yeno.yes, tppdm.yeno.no'
+  - name: svsr
+    description: 'Scope Variation Series. Max length: 8'
+  - name: conr
+    description: 'Change Order Number Group. Max length: 3'
+  - name: cosr
+    description: 'Change Order Series. Max length: 8'
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cprj_vers_ref_compnr
+    description: company number of primary key of table tpest100 Estimate Versions
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: cspa_ref_compnr
+    description: company number of primary key of table tppdm090 Standard Elements
+  - name: whng_whsr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: whng_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: pung_pusr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: pung_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: song_sosr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: song_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: erng_ersr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: erng_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ctng_ctsr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ctng_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngrp_prsr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngrp_ests_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngrp_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: tpte_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: tgrp_tpsr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: tgrp_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: potp_ref_compnr
+    description: company number of primary key of table tppdm680 Project Procedures
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: sdnr_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: apnr_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm001 User Profiles table, Generated 2026-04-10T19:41:52Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - loco

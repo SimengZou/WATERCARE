@@ -1,0 +1,156 @@
+version: 2
+models:
+- name: billing_moveinsetup
+  columns:
+  - name: existcustprompt
+    description: 'Metadata for column EXISTCUSTPROMPT. Max length: 300'
+  - name: maxdayspasttoallowmodify
+    description: Metadata for column MAXDAYSPASTTOALLOWMODIFY
+  - name: secondtenantmsgkey
+    description: Metadata for column SECONDTENANTMSGKEY
+  - name: moveinsetupkey
+    description: (required) Metadata for column MOVEINSETUPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: existcustdefaultflag
+    description: 'Metadata for column EXISTCUSTDEFAULTFLAG. Max length: 1'
+  - name: shownewcntctcommflag
+    description: 'Metadata for column SHOWNEWCNTCTCOMMFLAG. Max length: 1'
+  - name: readingrequestresolution
+    description: 'Metadata for column READINGREQUESTRESOLUTION. Max length: 10'
+  - name: tenantnoownermsgkey
+    description: Metadata for column TENANTNOOWNERMSGKEY
+  - name: searchidflag
+    description: 'Metadata for column SEARCHIDFLAG. Max length: 1'
+  - name: occupantprompt
+    description: 'Metadata for column OCCUPANTPROMPT. Max length: 300'
+  - name: searchidtitle
+    description: 'Metadata for column SEARCHIDTITLE. Max length: 40'
+  - name: cancellogtype
+    description: 'Metadata for column CANCELLOGTYPE. Max length: 10'
+  - name: showcustalertsflag
+    description: 'Metadata for column SHOWCUSTALERTSFLAG. Max length: 1'
+  - name: shownewcntctseasaddrflag
+    description: 'Metadata for column SHOWNEWCNTCTSEASADDRFLAG. Max length: 1'
+  - name: finalizeactiveacctflag
+    description: 'Metadata for column FINALIZEACTIVEACCTFLAG. Max length: 1'
+  - name: searchphoneorder
+    description: Metadata for column SEARCHPHONEORDER
+  - name: searchfirstnametitle
+    description: 'Metadata for column SEARCHFIRSTNAMETITLE. Max length: 40'
+  - name: searchcallerprompt
+    description: 'Metadata for column SEARCHCALLERPROMPT. Max length: 300'
+  - name: optservsectorder
+    description: Metadata for column OPTSERVSECTORDER
+  - name: searchemailtitle
+    description: 'Metadata for column SEARCHEMAILTITLE. Max length: 40'
+  - name: searchlicensetitle
+    description: 'Metadata for column SEARCHLICENSETITLE. Max length: 40'
+  - name: billingstatus
+    description: 'Metadata for column BILLINGSTATUS. Max length: 10'
+  - name: addrsectorder
+    description: Metadata for column ADDRSECTORDER
+  - name: showaddrsectflag
+    description: 'Metadata for column SHOWADDRSECTFLAG. Max length: 1'
+  - name: searchlastnameflag
+    description: 'Metadata for column SEARCHLASTNAMEFLAG. Max length: 1'
+  - name: moveindatesectorder
+    description: Metadata for column MOVEINDATESECTORDER
+  - name: showexistcustpromptflag
+    description: 'Metadata for column SHOWEXISTCUSTPROMPTFLAG. Max length: 1'
+  - name: servicessectorder
+    description: Metadata for column SERVICESSECTORDER
+  - name: maxdayspasttoallowcancel
+    description: Metadata for column MAXDAYSPASTTOALLOWCANCEL
+  - name: shownewcustcommflag
+    description: 'Metadata for column SHOWNEWCUSTCOMMFLAG. Max length: 1'
+  - name: showexistcntctseasaddrflag
+    description: 'Metadata for column SHOWEXISTCNTCTSEASADDRFLAG. Max length: 1'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: moveindateprompt
+    description: 'Metadata for column MOVEINDATEPROMPT. Max length: 300'
+  - name: searchfirstnameorder
+    description: Metadata for column SEARCHFIRSTNAMEORDER
+  - name: searchlicenseflag
+    description: 'Metadata for column SEARCHLICENSEFLAG. Max length: 1'
+  - name: searchidorder
+    description: Metadata for column SEARCHIDORDER
+  - name: secondownermsgkey
+    description: Metadata for column SECONDOWNERMSGKEY
+  - name: servicestatus
+    description: 'Metadata for column SERVICESTATUS. Max length: 10'
+  - name: searchphoneflag
+    description: 'Metadata for column SEARCHPHONEFLAG. Max length: 1'
+  - name: showexistcustcommflag
+    description: 'Metadata for column SHOWEXISTCUSTCOMMFLAG. Max length: 1'
+  - name: showexistcntctcommflag
+    description: 'Metadata for column SHOWEXISTCNTCTCOMMFLAG. Max length: 1'
+  - name: provservsectorder
+    description: Metadata for column PROVSERVSECTORDER
+  - name: searchfirstnameflag
+    description: 'Metadata for column SEARCHFIRSTNAMEFLAG. Max length: 1'
+  - name: searchlicenseorder
+    description: Metadata for column SEARCHLICENSEORDER
+  - name: contactsectorder
+    description: Metadata for column CONTACTSECTORDER
+  - name: showexistcustfieldsflag
+    description: 'Metadata for column SHOWEXISTCUSTFIELDSFLAG. Max length: 1'
+  - name: modifyconfirmationmsgkey
+    description: Metadata for column MODIFYCONFIRMATIONMSGKEY
+  - name: cancelrequestresolution
+    description: 'Metadata for column CANCELREQUESTRESOLUTION. Max length: 10'
+  - name: modifylogtype
+    description: 'Metadata for column MODIFYLOGTYPE. Max length: 10'
+  - name: searchlastnametitle
+    description: 'Metadata for column SEARCHLASTNAMETITLE. Max length: 40'
+  - name: showconfirmcntctinfoflag
+    description: 'Metadata for column SHOWCONFIRMCNTCTINFOFLAG. Max length: 1'
+  - name: showaddralertsflag
+    description: 'Metadata for column SHOWADDRALERTSFLAG. Max length: 1'
+  - name: searchphonetitle
+    description: 'Metadata for column SEARCHPHONETITLE. Max length: 40'
+  - name: searchlastnameorder
+    description: Metadata for column SEARCHLASTNAMEORDER
+  - name: cancelconfirmationmsgkey
+    description: Metadata for column CANCELCONFIRMATIONMSGKEY
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: searchemailflag
+    description: 'Metadata for column SEARCHEMAILFLAG. Max length: 1'
+  - name: showlocbyservaddrlinkflag
+    description: 'Metadata for column SHOWLOCBYSERVADDRLINKFLAG. Max length: 1'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: searchemailorder
+    description: Metadata for column SEARCHEMAILORDER
+  - name: confirmcntctinfosectorder
+    description: Metadata for column CONFIRMCNTCTINFOSECTORDER
+  - name: cdrbuildingappltype
+    description: Metadata for column CDRBUILDINGAPPLTYPE
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: modifymaxintfornewrequest
+    description: Metadata for column MODIFYMAXINTFORNEWREQUEST
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.MOVEINSETUP on 2022-03-24T08:59:46.449

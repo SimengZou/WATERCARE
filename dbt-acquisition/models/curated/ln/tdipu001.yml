@@ -1,0 +1,267 @@
+version: 2
+models:
+- name: tdipu001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key I - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cuqi
+    description: 'Purchase Piece Unit. Max length: 3'
+  - name: cuqp
+    description: 'Purchase Unit. Max length: 3'
+  - name: rqun
+    description: 'Rental Purchase Unit. Max length: 3'
+  - name: cupp
+    description: 'Purchase Price Unit. Max length: 3'
+  - name: rpun
+    description: 'Rental Purchase Price Unit. Max length: 3'
+  - name: cpgp
+    description: 'Purchase Price Group. Max length: 6'
+  - name: csgp
+    description: 'Purchase Statistics Group. Max length: 6'
+  - name: ccur
+    description: 'Purchase Currency. Max length: 3'
+  - name: vtbo
+    description: 'VAT Based on. Allowed values: 10, 20, 100'
+  - name: vtbo_kw
+    description: 'VAT Based on (keyword). Allowed values: tctax.vtbo.services, tctax.vtbo.goods,
+      tctax.vtbo.not.appl'
+  - name: prip
+    description: Purchase Price
+  - name: rppr
+    description: Rental Purchase Price
+  - name: ispr
+    description: Product Subcontracting Purchase Price
+  - name: scpr
+    description: Operation Subcontracting Purchase Price
+  - name: sopr
+    description: 'Source of Price for Operation Subcontracting. Allowed values: 1,
+      2, 3, 4'
+  - name: sopr_kw
+    description: 'Source of Price for Operation Subcontracting (keyword). Allowed
+      values: tcsopr.rate, tcsopr.price.book, tcsopr.not.appl, tcsopr.reference.act'
+  - name: sspr
+    description: Service Subcontracting Purchase Price
+  - name: sops
+    description: 'Source of Price for Service Subcontracting. Allowed values: 1, 2,
+      3, 4'
+  - name: sops_kw
+    description: 'Source of Price for Service Subcontracting (keyword). Allowed values:
+      tcsopr.rate, tcsopr.price.book, tcsopr.not.appl, tcsopr.reference.act'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: buyr
+    description: 'Buyer. Max length: 9'
+  - name: edco
+    description: 'Effective Date by Change Order. Allowed values: 1, 2'
+  - name: edco_kw
+    description: 'Effective Date by Change Order (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mlco
+    description: 'Multiple Change Orders. Allowed values: 1, 2'
+  - name: mlco_kw
+    description: 'Multiple Change Orders (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rtdp
+    description: Delivery Date Tolerance (+)
+  - name: rtdm
+    description: Delivery Date Tolerance (-)
+  - name: rtqp
+    description: Quantity Tolerance (+)
+  - name: rtqm
+    description: Quantity Tolerance (-)
+  - name: acci
+    description: 'Accessories Allowed. Allowed values: 1, 2'
+  - name: acci_kw
+    description: 'Accessories Allowed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mmnf
+    description: 'Multiple Manufacturer Item. Allowed values: 1, 2'
+  - name: mmnf_kw
+    description: 'Multiple Manufacturer Item (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cims
+    description: 'Check for Valid Item-Manufacturer / Item-Manufacturer and BP. Allowed
+      values: 1, 2'
+  - name: cims_kw
+    description: 'Check for Valid Item-Manufacturer / Item-Manufacturer and BP (keyword).
+      Allowed values: tdipu.cims.item.cmnf, tdipu.cims.item.cmnf.otbp'
+  - name: lcmp
+    description: Purchase Office Logistic Company
+  - name: cofc
+    description: 'Purchase Office. Max length: 6'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: retw
+    description: 'Release to Warehousing. Allowed values: 1, 2'
+  - name: retw_kw
+    description: 'Release to Warehousing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: issp
+    description: 'Invoice by Stage Payments. Allowed values: 1, 2'
+  - name: issp_kw
+    description: 'Invoice by Stage Payments (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: afrb
+    description: 'Item applicable for Retro-Billing. Allowed values: 1, 2'
+  - name: afrb_kw
+    description: 'Item applicable for Retro-Billing (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: spco
+    description: 'Specify Cost Optionally. Allowed values: 1, 2'
+  - name: spco_kw
+    description: 'Specify Cost Optionally (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: vryn
+    description: 'Vendor Rating. Allowed values: 1, 2'
+  - name: vryn_kw
+    description: 'Vendor Rating (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: suti
+    description: Supply Time
+  - name: sutu
+    description: 'Unit for Supply Time. Allowed values: 5, 10'
+  - name: sutu_kw
+    description: 'Unit for Supply Time (keyword). Allowed values: tctope.hours, tctope.days'
+  - name: qual
+    description: 'Inspection. Allowed values: 1, 2'
+  - name: qual_kw
+    description: 'Inspection (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: hstq
+    description: 'Hard Stop on Quantity. Allowed values: 1, 2, 3'
+  - name: hstq_kw
+    description: 'Hard Stop on Quantity (keyword). Allowed values: tchstp.no, tchstp.warn,
+      tchstp.block'
+  - name: hstd
+    description: 'Hard Stop on Date. Allowed values: 1, 2, 3'
+  - name: hstd_kw
+    description: 'Hard Stop on Date (keyword). Allowed values: tchstp.no, tchstp.warn,
+      tchstp.block'
+  - name: casl
+    description: 'Deliver by Specified Suppliers Only. Allowed values: 1, 2'
+  - name: casl_kw
+    description: 'Deliver by Specified Suppliers Only (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mpyn
+    description: 'MPN Item. Allowed values: 1, 2'
+  - name: mpyn_kw
+    description: 'MPN Item (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mpnr
+    description: 'Preferred Manufacturer Part Number. Max length: 35'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: rqms
+    description: 'Requisition Mandatory for Operation Subcontracting. Allowed values:
+      1, 2'
+  - name: rqms_kw
+    description: 'Requisition Mandatory for Operation Subcontracting (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: rmss
+    description: 'Requisition Mandatory for Service Subcontracting. Allowed values:
+      1, 2'
+  - name: rmss_kw
+    description: 'Requisition Mandatory for Service Subcontracting (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: scus
+    description: 'Purchase Schedule in use. Allowed values: 1, 2'
+  - name: scus_kw
+    description: 'Purchase Schedule in use (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: styp
+    description: 'Schedule Type. Allowed values: 1, 2, 3'
+  - name: styp_kw
+    description: 'Schedule Type (keyword). Allowed values: tcstyp.not.applicable,
+      tcstyp.pull, tcstyp.push'
+  - name: ctyo
+    description: 'Country of Origin. Max length: 3'
+  - name: txtp
+    description: Item Purchase Text
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: cuqi_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuqp_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: rqun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cupp_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: rpun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cpgp_ref_compnr
+    description: company number of primary key of table tcmcs024 Price Groups
+  - name: csgp_ref_compnr
+    description: company number of primary key of table tcmcs044 Statistical Groups
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: buyr_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: lcmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tdpur012 Purchase Offices
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: mpnr_cmnf_ref_compnr
+    description: company number of primary key of table tdipu045 Manufacturer Part
+      Numbers
+  - name: cmnf_ref_compnr
+    description: company number of primary key of table tcmcs060 Manufacturers
+  - name: ctyo_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: txtp_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdipu001 Item - Purchase table, Generated 2026-04-10T19:41:16Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - item

@@ -1,0 +1,52 @@
+version: 2
+models:
+- name: u5wojournallabourvw
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: jrn_costs
+    description: JRN_COSTS
+  - name: jrn_hours
+    description: JRN_HOURS
+  - name: jrn_costtype
+    description: 'JRN_COSTTYPE. Max length: 0'
+  - name: jrn_trnflag
+    description: 'JRN_TRNFLAG. Max length: 0'
+  - name: jrn_debcostcentre
+    description: JRN_DEBCOSTCENTRE
+  - name: jrn_debdimension3
+    description: JRN_DEBDIMENSION3
+  - name: jrn_debdimension4
+    description: JRN_DEBDIMENSION4
+  - name: jrn_crecostcentre
+    description: JRN_CRECOSTCENTRE
+  - name: jrn_credimension3
+    description: JRN_CREDIMENSION3
+  - name: jrn_credimension4
+    description: JRN_CREDIMENSION4
+  - name: jrn_projectnumber
+    description: JRN_PROJECTNUMBER
+  - name: jrn_projectativity
+    description: JRN_PROJECTATIVITY
+  - name: jrn_workorder
+    description: JRN_WORKORDER
+  - name: jrn_identifier
+    description: JRN_IDENTIFIER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5WOJOURNALLABOURVW

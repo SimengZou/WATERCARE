@@ -1,0 +1,82 @@
+version: 2
+models:
+- name: u5claimconfig
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: clc_childworateapp
+    description: CLC_CHILDWORATEAPP
+  - name: clc_costitem
+    description: CLC_COSTITEM
+  - name: clc_lncompany
+    description: CLC_LNCOMPANY
+  - name: clc_stgcostcode
+    description: CLC_STGCOSTCODE
+  - name: clc_projectnumber
+    description: CLC_PROJECTNUMBER
+  - name: clc_projectactivity
+    description: CLC_PROJECTACTIVITY
+  - name: clc_supplier
+    description: CLC_SUPPLIER
+  - name: clc_store
+    description: CLC_STORE
+  - name: clc_creator
+    description: CLC_CREATOR
+  - name: clc_requestor
+    description: CLC_REQUESTOR
+  - name: clc_requestor2
+    description: CLC_REQUESTOR2
+  - name: clc_purchaseoffice
+    description: CLC_PURCHASEOFFICE
+  - name: clc_contordertype
+    description: CLC_CONTORDERTYPE
+  - name: clc_noncontordertype
+    description: CLC_NONCONTORDERTYPE
+  - name: clc_orderseries
+    description: CLC_ORDERSERIES
+  - name: clc_excludewofromln
+    description: CLC_EXCLUDEWOFROMLN
+  - name: clc_excludepofromln
+    description: CLC_EXCLUDEPOFROMLN
+  - name: clc_splitintercompanycosts
+    description: CLC_SPLITINTERCOMPANYCOSTS
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: clc_pmworateapp
+    description: CLC_PMWORATEAPP
+  - name: clc_org
+    description: CLC_ORG
+  - name: clc_contractor
+    description: CLC_CONTRACTOR
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5CLAIMCONFIG
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - clc_org
+        - clc_contractor

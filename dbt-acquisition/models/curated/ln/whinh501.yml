@@ -1,0 +1,208 @@
+version: 2
+models:
+- name: whinh501
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orno
+    description: '(required) Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cntn
+    description: (required) Count Number
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: rowc
+    description: Rental Owner Company
+  - name: rown
+    description: 'Rental Owner. Max length: 6'
+  - name: zone
+    description: 'Storage Zone. Max length: 8'
+  - name: strt
+    description: 'Row. Max length: 2'
+  - name: coln
+    description: 'Level. Max length: 4'
+  - name: rack
+    description: 'Bin. Max length: 4'
+  - name: loca
+    description: 'Location. Max length: 10'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: itag
+    description: 'Inventory Tag. Max length: 9'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: idat
+    description: Inventory Date
+  - name: stun
+    description: 'Unit. Max length: 3'
+  - name: pkdf
+    description: 'Package Definition. Max length: 6'
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: hupr
+    description: 'Handling Unit Present. Allowed values: 1, 2'
+  - name: hupr_kw
+    description: 'Handling Unit Present (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: qstp
+    description: Stock Point Inventory (Inventory Unit)
+  - name: qstr
+    description: Stock Point Inventory (Storage Unit)
+  - name: qspu
+    description: Stock Point Inventory (Piece Unit)
+  - name: qcnt
+    description: Inventory Counted (Inventory Unit)
+  - name: qcnr
+    description: Inventory Counted (Storage Unit)
+  - name: qcpu
+    description: Inventory Counted (Piece Unit)
+  - name: qvrc
+    description: Variance (Inventory Unit)
+  - name: qvrr
+    description: Variance (Storage Unit)
+  - name: qvpu
+    description: Variance (Piece Unit)
+  - name: csts
+    description: 'Counted Inventory. Allowed values: 1, 2'
+  - name: csts_kw
+    description: 'Counted Inventory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdat
+    description: Date of Count
+  - name: reco
+    description: 'Recount. Allowed values: 1, 2'
+  - name: reco_kw
+    description: 'Recount (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: uapr
+    description: 'Use Adjustment Price. Allowed values: 1, 2'
+  - name: uapr_kw
+    description: 'Use Adjustment Price (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: adpr
+    description: Adjustment Price
+  - name: pric
+    description: Inventory Value
+  - name: amnt
+    description: Transaction Amount
+  - name: appr
+    description: 'Approval. Allowed values: 1, 2, 3, 4'
+  - name: appr_kw
+    description: 'Approval (keyword). Allowed values: whinh.vara.to.approve, whinh.vara.approved,
+      whinh.vara.recount, whinh.vara.not.required'
+  - name: cadj
+    description: 'Reason for Variance. Max length: 6'
+  - name: owns
+    description: 'Ownership. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: owns_kw
+    description: 'Ownership (keyword). Allowed values: tcowns.comp.owned, tcowns.consigned,
+      tcowns.cust.owned, tcowns.return.as.issue, tcowns.deferred, tcowns.not.appl'
+  - name: ownr
+    description: 'Owner. Max length: 9'
+  - name: istr
+    description: 'Issue Strategy. Allowed values: 10, 20, 30, 90'
+  - name: istr_kw
+    description: 'Issue Strategy (keyword). Allowed values: tcistr.free, tcistr.preferred,
+      tcistr.restricted, tcistr.not.appl'
+  - name: ifbp
+    description: 'Issue from Business Partner. Max length: 9'
+  - name: iown
+    description: 'Issue Ownership. Allowed values: 10, 20, 30, 40, 90'
+  - name: iown_kw
+    description: 'Issue Ownership (keyword). Allowed values: tciown.default, tciown.comp.owned,
+      tciown.consigned, tciown.cust.owned, tciown.not.appl'
+  - name: dpby
+    description: 'Inventory Discrepancies Paid By. Allowed values: 10, 20, 30, 90'
+  - name: dpby_kw
+    description: 'Inventory Discrepancies Paid By (keyword). Allowed values: whdpby.terms.and.cond,
+      whdpby.own.comp, whdpby.owner, whdpby.not.appl'
+  - name: prcd
+    description: 'Processed. Allowed values: 1, 2'
+  - name: prcd_kw
+    description: 'Processed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: spcn
+    description: 'Specification. Max length: 22'
+  - name: nstp
+    description: 'New Stock Point. Allowed values: 1, 2'
+  - name: nstp_kw
+    description: 'New Stock Point (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Line Text
+  - name: orno_cntn_ref_compnr
+    description: company number of primary key of table whinh500 Cycle Counting Orders
+  - name: cwar_loca_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: rowc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: rown_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: item_clot_ref_compnr
+    description: company number of primary key of table whltc100 Lots
+  - name: item_ref_compnr
+    description: company number of primary key of table whwmd400 Item Warehousing
+      Data
+  - name: stun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: pkdf_ref_compnr
+    description: company number of primary key of table whwmd410 Package Definitions
+  - name: huid_ref_compnr
+    description: company number of primary key of table whwmd530 Handling Units
+  - name: cadj_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: ownr_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ifbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh501 Cycle Counting Order Lines table, Generated 2026-04-10T19:42:51Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orno
+        - cntn
+        - pono

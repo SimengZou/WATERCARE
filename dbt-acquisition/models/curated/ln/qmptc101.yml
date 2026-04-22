@@ -1,0 +1,223 @@
+version: 2
+models:
+- name: qmptc101
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: iorn
+    description: '(required) Inspection Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Inspection Line
+    data_tests:
+    - not_null
+  - name: aspt
+    description: 'Aspect. Max length: 8'
+  - name: char
+    description: 'Characteristic. Max length: 8'
+  - name: docm
+    description: 'Document. Max length: 9'
+  - name: refr
+    description: 'Reference Designator. Max length: 16'
+  - name: dfcl
+    description: 'Defect Classification. Allowed values: 10, 20, 30, 40'
+  - name: dfcl_kw
+    description: 'Defect Classification (keyword). Allowed values: qmptc.dfcl.crit,
+      qmptc.dfcl.maj, qmptc.dfcl.min, qmptc.dfcl.na'
+  - name: ctyp
+    description: 'Characteristic Type. Allowed values: 1, 2, 3'
+  - name: ctyp_kw
+    description: 'Characteristic Type (keyword). Allowed values: qmptc.ctyp.fraction,
+      qmptc.ctyp.integer, qmptc.ctyp.option'
+  - name: chun
+    description: 'Characteristic Unit. Max length: 3'
+  - name: falg
+    description: 'For Algorithm. Allowed values: 1, 2'
+  - name: falg_kw
+    description: 'For Algorithm (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oset
+    description: 'Option Set. Max length: 6'
+  - name: mthd
+    description: 'Method. Allowed values: 1, 2, 3'
+  - name: mthd_kw
+    description: 'Method (keyword). Allowed values: qmptc.mthd.fixed, qmptc.mthd.variable,
+      qmptc.mthd.algorithm'
+  - name: algo
+    description: 'Algorithm. Max length: 6'
+  - name: asdt
+    description: Actual Start Date
+  - name: acdt
+    description: Actual Completion Date
+  - name: test
+    description: 'Test. Max length: 8'
+  - name: tare
+    description: 'Test Area. Max length: 3'
+  - name: dstr
+    description: 'Destructive. Allowed values: 1, 2'
+  - name: dstr_kw
+    description: 'Destructive (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rslt
+    description: 'Result Type. Allowed values: 1, 2'
+  - name: rslt_kw
+    description: 'Result Type (keyword). Allowed values: qmptc.rslt.quantitative,
+      qmptc.rslt.qualitative'
+  - name: tuni
+    description: 'Test Unit. Max length: 3'
+  - name: tstd__en_us
+    description: '(required) Test Standard - base language. Max length: 8'
+    data_tests:
+    - not_null
+  - name: skll
+    description: 'Skill. Max length: 9'
+  - name: emno
+    description: 'Employee. Max length: 9'
+  - name: intg
+    description: 'Instrument Group. Max length: 6'
+  - name: inst
+    description: 'Instrument. Max length: 6'
+  - name: inno
+    description: 'Instrument Number. Max length: 9'
+  - name: fcvl
+    description: Fixed Characteristic Value
+  - name: cstd__en_us
+    description: '(required) Characteristic Standard - base language. Max length:
+      8'
+    data_tests:
+    - not_null
+  - name: norm
+    description: Norm
+  - name: llmt
+    description: Lower Limit
+  - name: ulmt
+    description: Upper Limit
+  - name: cdch
+    description: 'Characteristic Drawing. Max length: 16'
+  - name: cdtt
+    description: 'Test Drawing. Max length: 16'
+  - name: cvtu
+    description: Conversion Factor Test Unit
+  - name: osta
+    description: 'Order Line Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: osta_kw
+    description: 'Order Line Status (keyword). Allowed values: qmptc.osta.free, qmptc.osta.printed,
+      qmptc.osta.active, qmptc.osta.completed, qmptc.osta.cancelled'
+  - name: acre
+    description: 'Result. Allowed values: 10, 15, 20, 30'
+  - name: acre_kw
+    description: 'Result (keyword). Allowed values: qmptc.acre.accept, qmptc.acre.part.accept,
+      qmptc.acre.reject, qmptc.acre.undefined'
+  - name: ltwa
+    description: Lower Warning
+  - name: utwa
+    description: Upper Warning
+  - name: vaty
+    description: 'Value Type. Allowed values: 1, 2, 3'
+  - name: vaty_kw
+    description: 'Value Type (keyword). Allowed values: qmptc.vaty.norm, qmptc.vaty.nominal,
+      qmptc.vaty.not.appl'
+  - name: chrt
+    description: 'Chart Name. Max length: 10'
+  - name: chty
+    description: 'Chart Type. Max length: 10'
+  - name: tost
+    description: 'Tolerance Standard. Max length: 10'
+  - name: nomi
+    description: Nominal Value
+  - name: psdt
+    description: Planned Start Date
+  - name: pcdt
+    description: Planned Completion Date
+  - name: iskl
+    description: 'Instrument Skill. Max length: 9'
+  - name: tipe
+    description: Time Estimate
+  - name: tiun
+    description: 'Time Unit. Max length: 3'
+  - name: txta
+    description: Inspection Order Line Text
+  - name: iorn_ref_compnr
+    description: company number of primary key of table qmptc100 Inspection Orders
+  - name: aspt_ref_compnr
+    description: company number of primary key of table qmptc002 Aspects
+  - name: aspt_char_ref_compnr
+    description: company number of primary key of table qmptc003 Aspect Characteristics
+  - name: char_ref_compnr
+    description: company number of primary key of table qmptc001 Characteristics
+  - name: refr_ref_compnr
+    description: company number of primary key of table tcmcs090 Reference Designators
+  - name: chun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: oset_ref_compnr
+    description: company number of primary key of table qmptc013 Option Sets
+  - name: algo_ref_compnr
+    description: company number of primary key of table qmptc021 Algorithms
+  - name: test_ref_compnr
+    description: company number of primary key of table qmptc006 Tests
+  - name: tare_ref_compnr
+    description: company number of primary key of table qmptc007 Test Areas
+  - name: tuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: skll_ref_compnr
+    description: company number of primary key of table tcppl010 Skills
+  - name: emno_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: intg_ref_compnr
+    description: company number of primary key of table qmptc024 Instrument Group
+  - name: inst_inno_ref_compnr
+    description: company number of primary key of table qmptc008 Instruments
+  - name: chrt_ref_compnr
+    description: company number of primary key of table qmptc081 Chart Name
+  - name: chrt_chty_ref_compnr
+    description: company number of primary key of table qmptc085 Nominal Table
+  - name: chty_ref_compnr
+    description: company number of primary key of table qmptc082 Chart Type
+  - name: iskl_ref_compnr
+    description: company number of primary key of table tcppl010 Skills
+  - name: tiun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmptc101 Inspection Order Lines table, Generated 2022-06-15T01:21:05Z
+    from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - iorn
+        - pono

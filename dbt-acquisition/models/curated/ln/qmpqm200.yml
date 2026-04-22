@@ -1,0 +1,172 @@
+version: 2
+models:
+- name: qmpqm200
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: frac
+    description: '(required) FRACAS Number. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ftyp
+    description: 'FRACAS Type. Allowed values: 10, 20, 30, 40'
+  - name: ftyp_kw
+    description: 'FRACAS Type (keyword). Allowed values: qmpqm.ftyp.hardware, qmpqm.ftyp.non.hardware,
+      qmpqm.ftyp.instrument, qmpqm.ftyp.other'
+  - name: othr__en_us
+    description: '(required) Specify Other - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: orgn
+    description: 'Order Origin. Allowed values: 1, 2, 3, 10, 50, 51, 53, 55, 56, 61,
+      62, 63, 64, 65, 71, 72, 75, 76, 78, 80, 81, 82, 90, 95, 96, 97, 100'
+  - name: orgn_kw
+    description: 'Order Origin (keyword). Allowed values: qmpqm.orgn.sales, qmpqm.orgn.sales.sched,
+      qmpqm.orgn.sales.man, qmpqm.orgn.adjustment, qmpqm.orgn.production, qmpqm.orgn.production.man,
+      qmpqm.orgn.product.sched, qmpqm.orgn.product.asc, qmpqm.orgn.product.asc.man,
+      qmpqm.orgn.service, qmpqm.orgn.maint.work, qmpqm.orgn.batch.repair, qmpqm.orgn.maint.sales,
+      qmpqm.orgn.call, qmpqm.orgn.transfer, qmpqm.orgn.transfer.man, qmpqm.orgn.project,
+      qmpqm.orgn.project.man, qmpqm.orgn.proj.contract, qmpqm.orgn.purchase, qmpqm.orgn.purchase.sched,
+      qmpqm.orgn.purchase.man, qmpqm.orgn.enterprise.plan, qmpqm.orgn.stor.insp, qmpqm.orgn.warehouse.inv,
+      qmpqm.orgn.inv.insp, qmpqm.orgn.not.appl'
+  - name: orno
+    description: 'Order Number. Max length: 9'
+  - name: pono
+    description: Position
+  - name: seqn
+    description: Sequence
+  - name: opno
+    description: Operation
+  - name: styp
+    description: 'Line Type. Allowed values: 1, 2, 3, 4, 5'
+  - name: styp_kw
+    description: 'Line Type (keyword). Allowed values: qmptc.styp.material.line, qmptc.styp.incoming.sub,
+      qmptc.styp.outgoing.sub, qmptc.styp.activity.line, qmptc.styp.not.appl'
+  - name: rpas
+    description: 'Reported at Supplier/Subcontractor. Allowed values: 0, 1, 2'
+  - name: rpas_kw
+    description: 'Reported at Supplier/Subcontractor (keyword). Allowed values: ,
+      tcyesno.yes, tcyesno.no'
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: item
+    description: 'Reported Failed Item. Max length: 47'
+  - name: revi
+    description: 'E-Item Revision. Max length: 6'
+  - name: effn
+    description: Effectivity Unit
+  - name: cser
+    description: 'Reported Serial. Max length: 30'
+  - name: clot
+    description: 'Reported Lot. Max length: 20'
+  - name: pitm
+    description: 'Production Item. Max length: 47'
+  - name: pser
+    description: 'Production Serial Number. Max length: 30'
+  - name: plot
+    description: 'Production Lot Number. Max length: 20'
+  - name: lfcr
+    description: 'Parent FRACAS Number. Max length: 9'
+  - name: lfln
+    description: Parent FRACAS Line
+  - name: frst
+    description: 'Failure Stage. Max length: 9'
+  - name: frcd
+    description: 'Failure Code. Max length: 9'
+  - name: rptd
+    description: 'Repeated Failure. Allowed values: 1, 2'
+  - name: rptd_kw
+    description: 'Repeated Failure (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: frct
+    description: 'Failure Category. Max length: 9'
+  - name: intg
+    description: 'Instrument Group. Max length: 6'
+  - name: inst
+    description: 'Instrument. Max length: 6'
+  - name: inno
+    description: 'Instrument Number. Max length: 9'
+  - name: frpt
+    description: 'Failure Reported By. Max length: 16'
+  - name: fdat
+    description: Failure Reported Date
+  - name: fcrt
+    description: 'Failure Created By. Max length: 16'
+  - name: fsld
+    description: Failure Solved Date
+  - name: cnrs
+    description: 'Cancel Reason. Max length: 6'
+  - name: stat
+    description: 'Status. Allowed values: 0, 10, 20, 30, 40, 50'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: , qmpqm.fsta.open, qmpqm.fsta.in.process,
+      qmpqm.fsta.complete, qmpqm.fsta.close, qmpqm.fsta.cancel'
+  - name: mrbc
+    description: 'Team. Max length: 9'
+  - name: ftxt
+    description: Failure Text
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: pitm_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: frst_ref_compnr
+    description: company number of primary key of table qmpqm020 Failure Stages
+  - name: frcd_ref_compnr
+    description: company number of primary key of table qmpqm022 Failure Codes
+  - name: frct_ref_compnr
+    description: company number of primary key of table qmpqm021 Failure Categories
+  - name: intg_ref_compnr
+    description: company number of primary key of table qmptc024 Instrument Group
+  - name: cnrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: ftxt_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmpqm200 Failure Report Analysis and Corrective Action System table,
+    Generated 2022-06-15T01:21:03Z from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - frac

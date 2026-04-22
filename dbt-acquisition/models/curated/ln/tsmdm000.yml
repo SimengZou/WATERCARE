@@ -1,0 +1,465 @@
+version: 2
+models:
+- name: tsmdm000
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Introduction Date
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: trmd
+    description: 'Traveling Cost Method. Allowed values: 2, 5, 10, 15, 18, 20'
+  - name: trmd_kw
+    description: 'Traveling Cost Method (keyword). Allowed values: tsmdm.trmd.serial,
+      tsmdm.trmd.installation, tsmdm.trmd.area, tsmdm.trmd.zone, tsmdm.trmd.so.travel,
+      tsmdm.trmd.none'
+  - name: usar
+    description: 'Use Service Areas. Allowed values: 1, 2'
+  - name: usar_kw
+    description: 'Use Service Areas (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: undi
+    description: 'Distance Unit. Max length: 3'
+  - name: untm
+    description: 'Base Time Unit Hour. Max length: 3'
+  - name: unlr
+    description: 'Labor Rate Time Unit. Max length: 3'
+  - name: untd
+    description: 'Time Duration Unit. Max length: 3'
+  - name: uday
+    description: 'Unit for Day. Max length: 3'
+  - name: uwks
+    description: 'Unit for Week. Max length: 3'
+  - name: umon
+    description: 'Unit for Month. Max length: 3'
+  - name: uyrs
+    description: 'Unit for Year. Max length: 3'
+  - name: trac_1
+    description: Standard Cost for Traveling Time
+  - name: trac_2
+    description: Standard Cost for Traveling Time
+  - name: trac_3
+    description: Standard Cost for Traveling Time
+  - name: tras
+    description: Standard Sales Price for Traveling Time
+  - name: cpdi_1
+    description: Standard Cost for Traveling Distance
+  - name: cpdi_2
+    description: Standard Cost for Traveling Distance
+  - name: cpdi_3
+    description: Standard Cost for Traveling Distance
+  - name: spdi
+    description: Standard Sales Price for Traveling Distance
+  - name: tvcc
+    description: 'Traveling Cost Currency. Max length: 3'
+  - name: tvce
+    description: 'Update Traveling Cost Currency Executed. Allowed values: 1, 2'
+  - name: tvce_kw
+    description: 'Update Traveling Cost Currency Executed (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: ccur
+    description: 'Travel Sales Price Currency. Max length: 3'
+  - name: erac
+    description: 'Engineering Revisions Active. Allowed values: 1, 2'
+  - name: erac_kw
+    description: 'Engineering Revisions Active (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: clyn
+    description: 'Apply Search Engine for Installation Groups. Allowed values: 1,
+      2'
+  - name: clyn_kw
+    description: 'Apply Search Engine for Installation Groups (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: siyn
+    description: 'Apply Search Engine for Serialized Items. Allowed values: 1, 2'
+  - name: siyn_kw
+    description: 'Apply Search Engine for Serialized Items (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: atws_1
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_1
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_2
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_2
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_3
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_3
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_4
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_4
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_5
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_5
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_6
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_6
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_7
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_7
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_8
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_8
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_9
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_9
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: atws_10
+    description: 'Attribute Search Argument Location Address. Allowed values: 5, 10,
+      15, 20, 25, 30, 35, 37, 40, 45, 50, 55, 99'
+  - name: atws_kw_10
+    description: 'Attribute Search Argument Location Address (keyword). Allowed values:
+      tsmdm.atrb.name, tsmdm.atrb.name2, tsmdm.atrb.houseno, tsmdm.atrb.address, tsmdm.atrb.address2,
+      tsmdm.atrb.town, tsmdm.atrb.town2, tsmdm.atrb.towndsca, tsmdm.atrb.zipcode,
+      tsmdm.atrb.ccty, tsmdm.atrb.country, tsmdm.atrb.telp, tsmdm.atrb.not.applicable'
+  - name: spsm
+    description: 'Sales Prices Search Method. Allowed values: 1, 2, 3, 4'
+  - name: spsm_kw
+    description: 'Sales Prices Search Method (keyword). Allowed values: tsmdm.spsm.serv.books,
+      tsmdm.spsm.serv.sls.books, tsmdm.spsm.serv.items, tsmdm.spsm.sls.serv.books'
+  - name: feyn
+    description: 'Functional Elements Active. Allowed values: 0, 1, 2'
+  - name: feyn_kw
+    description: 'Functional Elements Active (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: flds
+    description: 'Field Service. Allowed values: 1, 2'
+  - name: flds_kw
+    description: 'Field Service (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: shpm
+    description: 'Depot Repair. Allowed values: 1, 2'
+  - name: shpm_kw
+    description: 'Depot Repair (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: skll
+    description: 'Skills Implemented. Allowed values: 1, 2'
+  - name: skll_kw
+    description: 'Skills Implemented (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: meyn
+    description: 'Use Inspections. Allowed values: 1, 2'
+  - name: meyn_kw
+    description: 'Use Inspections (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: icrr
+    description: 'Use Item Counter Readings. Allowed values: 0, 1, 2'
+  - name: icrr_kw
+    description: 'Use Item Counter Readings (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: ccli
+    description: 'Customer Claims. Allowed values: 1, 2'
+  - name: ccli_kw
+    description: 'Customer Claims (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: scli
+    description: 'Supplier Claims. Allowed values: 1, 2'
+  - name: scli_kw
+    description: 'Supplier Claims (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ract
+    description: 'Availability Type. Max length: 6'
+  - name: dfpb
+    description: 'Discounts from Price Books. Allowed values: 0, 1, 2'
+  - name: dfpb_kw
+    description: 'Discounts from Price Books (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: dipy
+    description: 'Discount Policy. Allowed values: 1, 2'
+  - name: dipy_kw
+    description: 'Discount Policy (keyword). Allowed values: tsmdm.dipy.bfcv, tsmdm.dipy.afcv'
+  - name: utpd
+    description: 'Use Cumulative and Total Prices and Discounts. Allowed values: 1,
+      2'
+  - name: utpd_kw
+    description: 'Use Cumulative and Total Prices and Discounts (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: ubpp
+    description: 'Use Default Business Partner Prices and Discounts. Allowed values:
+      1, 2'
+  - name: ubpp_kw
+    description: 'Use Default Business Partner Prices and Discounts (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: dist
+    description: 'Default Invoice Line Status. Allowed values: 5, 10'
+  - name: dist_kw
+    description: 'Default Invoice Line Status (keyword). Allowed values: tsmdm.inst.on.hold,
+      tsmdm.inst.confirmed'
+  - name: alrm
+    description: 'Demand Pegging. Allowed values: 1, 2'
+  - name: alrm_kw
+    description: 'Demand Pegging (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: isdp
+    description: 'Use Item Settings for Demand Pegging. Allowed values: 1, 2'
+  - name: isdp_kw
+    description: 'Use Item Settings for Demand Pegging (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: prnt
+    description: 'Default Value for Print on Invoice. Allowed values: 1, 2, 3, 4'
+  - name: prnt_kw
+    description: 'Default Value for Print on Invoice (keyword). Allowed values: tsmdm.prnt.yes,
+      tsmdm.prnt.no, tsmdm.prnt.not.app, tsmdm.prnt.no.invoice'
+  - name: pvap
+    description: Percentage of Valuation Price
+  - name: uspg
+    description: 'Paging Active. Allowed values: 1, 2'
+  - name: uspg_kw
+    description: 'Paging Active (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: udgn
+    description: 'Use Diagnostics. Allowed values: 1, 2'
+  - name: udgn_kw
+    description: 'Use Diagnostics (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ncri
+    description: 'Non-Conformance Reports Implemented. Allowed values: 1, 2'
+  - name: ncri_kw
+    description: 'Non-Conformance Reports Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: scin
+    description: 'Scope of Inventory Check. Allowed values: 5, 10'
+  - name: scin_kw
+    description: 'Scope of Inventory Check (keyword). Allowed values: tsmdm.scin.curr.warehouse,
+      tsmdm.scin.wrhs.in.cluster'
+  - name: icpr_1
+    description: 'Order Type Priority Material Availability Check. Allowed values:
+      5, 10, 15, 20, 25, 99'
+  - name: icpr_kw_1
+    description: 'Order Type Priority Material Availability Check (keyword). Allowed
+      values: tsmdm.maco.soc, tsmdm.maco.wcs, tsmdm.maco.msc, tsmdm.maco.spc, tsmdm.maco.epp,
+      tsmdm.maco.not.applicable'
+  - name: icpr_2
+    description: 'Order Type Priority Material Availability Check. Allowed values:
+      5, 10, 15, 20, 25, 99'
+  - name: icpr_kw_2
+    description: 'Order Type Priority Material Availability Check (keyword). Allowed
+      values: tsmdm.maco.soc, tsmdm.maco.wcs, tsmdm.maco.msc, tsmdm.maco.spc, tsmdm.maco.epp,
+      tsmdm.maco.not.applicable'
+  - name: icpr_3
+    description: 'Order Type Priority Material Availability Check. Allowed values:
+      5, 10, 15, 20, 25, 99'
+  - name: icpr_kw_3
+    description: 'Order Type Priority Material Availability Check (keyword). Allowed
+      values: tsmdm.maco.soc, tsmdm.maco.wcs, tsmdm.maco.msc, tsmdm.maco.spc, tsmdm.maco.epp,
+      tsmdm.maco.not.applicable'
+  - name: icpr_4
+    description: 'Order Type Priority Material Availability Check. Allowed values:
+      5, 10, 15, 20, 25, 99'
+  - name: icpr_kw_4
+    description: 'Order Type Priority Material Availability Check (keyword). Allowed
+      values: tsmdm.maco.soc, tsmdm.maco.wcs, tsmdm.maco.msc, tsmdm.maco.spc, tsmdm.maco.epp,
+      tsmdm.maco.not.applicable'
+  - name: icpr_5
+    description: 'Order Type Priority Material Availability Check. Allowed values:
+      5, 10, 15, 20, 25, 99'
+  - name: icpr_kw_5
+    description: 'Order Type Priority Material Availability Check (keyword). Allowed
+      values: tsmdm.maco.soc, tsmdm.maco.wcs, tsmdm.maco.msc, tsmdm.maco.spc, tsmdm.maco.epp,
+      tsmdm.maco.not.applicable'
+  - name: pmnt
+    description: 'Use Preventive Maintenance. Allowed values: 1, 2'
+  - name: pmnt_kw
+    description: 'Use Preventive Maintenance (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sbmt
+    description: 'Use Subcontract Management. Allowed values: 1, 2'
+  - name: sbmt_kw
+    description: 'Use Subcontract Management (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: tlgi
+    description: 'Tool Requirements Planning. Allowed values: 1, 2'
+  - name: tlgi_kw
+    description: 'Tool Requirements Planning (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ingr
+    description: 'Installation Groups. Allowed values: 1, 2'
+  - name: ingr_kw
+    description: 'Installation Groups (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ttpl
+    description: 'Territory Planning. Allowed values: 1, 2'
+  - name: ttpl_kw
+    description: 'Territory Planning (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: clgr
+    description: 'List Group Service. Max length: 3'
+  - name: uwev
+    description: 'Use Warranty Events. Allowed values: 1, 2'
+  - name: uwev_kw
+    description: 'Use Warranty Events (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: isom
+    description: 'Items Service by Office is Mandatory. Allowed values: 1, 2'
+  - name: isom_kw
+    description: 'Items Service by Office is Mandatory (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: cibp
+    description: 'Create Item - Service Business Partner After Delivery. Allowed values:
+      1, 2'
+  - name: cibp_kw
+    description: 'Create Item - Service Business Partner After Delivery (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: inby
+    description: 'Default Value for Invoicing By. Allowed values: 5, 10, 99'
+  - name: inby_kw
+    description: 'Default Value for Invoicing By (keyword). Allowed values: tcinby.project,
+      tcinby.service, tcinby.not.appl'
+  - name: ngtb
+    description: 'Number Group for Travel Rate Books. Max length: 3'
+  - name: sntb
+    description: 'Series for Travel Rate Books. Max length: 8'
+  - name: npeg
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: npeg_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: iwos
+    description: 'Initial Warehousing Order Status Determined by Warehousing. Allowed
+      values: 1, 2'
+  - name: iwos_kw
+    description: 'Initial Warehousing Order Status Determined by Warehousing (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: grpl
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: grpl_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: skla
+    description: 'Obsolete. Allowed values: 5, 10'
+  - name: skla_kw
+    description: 'Obsolete (keyword). Allowed values: tsmdm.skil.mandatory, tsmdm.skil.preferred'
+  - name: sklb
+    description: 'Obsolete. Allowed values: 5, 10'
+  - name: sklb_kw
+    description: 'Obsolete (keyword). Allowed values: tsmdm.skil.mandatory, tsmdm.skil.preferred'
+  - name: sklc
+    description: 'Obsolete. Allowed values: 5, 10'
+  - name: sklc_kw
+    description: 'Obsolete (keyword). Allowed values: tsmdm.skil.mandatory, tsmdm.skil.preferred'
+  - name: ctii
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: ctii_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: kpad
+    description: 'Obsolete. Allowed values: 0, 5, 10'
+  - name: kpad_kw
+    description: 'Obsolete (keyword). Allowed values: , tsmdm.kpad.itu, tsmdm.kpad.nitu'
+  - name: erdc
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: erdc_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: icsc
+    description: 'Obsolete. Max length: 47'
+  - name: ipsm
+    description: 'Obsolete. Allowed values: 1, 2, 3'
+  - name: ipsm_kw
+    description: 'Obsolete (keyword). Allowed values: tsmdm.ipsm.serv.sls.books, tsmdm.ipsm.trans.books,
+      tsmdm.ipsm.serv.items'
+  - name: text
+    description: Text
+  - name: undi_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: untm_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: unlr_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: untd_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: uday_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: uwks_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: umon_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: uyrs_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: tvcc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ract_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: clgr_ref_compnr
+    description: company number of primary key of table tcibd301 List Groups
+  - name: ngtb_sntb_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngtb_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsmdm000 General Service Parameters table, Generated 2026-04-10T19:42:35Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - indt

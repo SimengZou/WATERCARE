@@ -1,0 +1,55 @@
+version: 2
+models:
+- name: r5eventobjects
+  columns:
+  - name: eob_lastsaved
+    description: EOB_LASTSAVED
+  - name: eob_obtype
+    description: EOB_OBTYPE
+  - name: eob_obrtype
+    description: EOB_OBRTYPE
+  - name: eob_object
+    description: EOB_OBJECT
+  - name: eob_level
+    description: EOB_LEVEL
+  - name: eob_rollup
+    description: EOB_ROLLUP
+  - name: eob_object_org
+    description: EOB_OBJECT_ORG
+  - name: eob_updatecount
+    description: EOB_UPDATECOUNT
+  - name: eob_frompoint
+    description: EOB_FROMPOINT
+  - name: eob_topoint
+    description: EOB_TOPOINT
+  - name: eob_weightpercentage
+    description: EOB_WEIGHTPERCENTAGE
+  - name: eob_event
+    description: EOB_EVENT
+  - name: eob_downtime
+    description: EOB_DOWNTIME
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EVENTOBJECTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - eob_event
+        - eob_object
+        - eob_object_org

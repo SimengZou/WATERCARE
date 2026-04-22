@@ -1,0 +1,496 @@
+version: 2
+models:
+- name: ticst001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: pdno
+    description: '(required) Production Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Position
+    data_tests:
+    - not_null
+  - name: sitm
+    description: 'Item. Max length: 47'
+  - name: revi
+    description: 'Engineering Item Revision. Max length: 6'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: lsel
+    description: 'Lot Selection. Allowed values: 1, 2, 3'
+  - name: lsel_kw
+    description: 'Lot Selection (keyword). Allowed values: tclsel.any, tclsel.same,
+      tclsel.specific'
+  - name: clot
+    description: 'Lot Code. Max length: 20'
+  - name: leng
+    description: Length
+  - name: widt
+    description: Width
+  - name: sizu
+    description: 'Size Unit. Max length: 3'
+  - name: noun
+    description: Number of Units
+  - name: qune
+    description: Net Quantity
+  - name: scpf
+    description: Scrap Percentage
+  - name: scpq
+    description: Scrap Quantity
+  - name: boun
+    description: 'BOM Unit. Max length: 3'
+  - name: scdl
+    description: Delta Scrap Quantity
+  - name: ques
+    description: Estimated Quantity
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: cpes_1
+    description: Estimated Unit Cost
+  - name: cpes_2
+    description: Estimated Unit Cost
+  - name: cpes_3
+    description: Estimated Unit Cost
+  - name: cues_1
+    description: Estimated Cost (customer owned)
+  - name: cues_2
+    description: Estimated Cost (customer owned)
+  - name: cues_3
+    description: Estimated Cost (customer owned)
+  - name: qbfd
+    description: Quantity Backflushed
+  - name: qucs
+    description: Actual Quantity
+  - name: qspl
+    description: Delta Actual Split Quantity
+  - name: qqur
+    description: Delta Actual Quantity to Quarantine
+  - name: qtor
+    description: Quantity Rejected
+  - name: qscr
+    description: Quantity Scrapped
+  - name: qqar
+    description: Quantity Quarantined
+  - name: cpcs_1
+    description: Actual Standard Cost
+  - name: cpcs_2
+    description: Actual Standard Cost
+  - name: cpcs_3
+    description: Actual Standard Cost
+  - name: cpcu_1
+    description: Actual Standard Cost (customer owned)
+  - name: cpcu_2
+    description: Actual Standard Cost (customer owned)
+  - name: cpcu_3
+    description: Actual Standard Cost (customer owned)
+  - name: issu
+    description: To Issue
+  - name: iswh
+    description: To Issue by Warehousing
+  - name: subd
+    description: Subsequent Delivery
+  - name: opno
+    description: Operation
+  - name: aldt
+    description: Allocation Date
+  - name: bfls
+    description: 'Report Material. Allowed values: 1, 2, 30, 40, 50, 80, 90'
+  - name: bfls_kw
+    description: 'Report Material (keyword). Allowed values: tirep.cons.backflush,
+      tirep.cons.manual, tirep.cons.machine, tirep.cons.by.mes, tirep.cons.mach.group,
+      tirep.cons.undefined, tirep.cons.not.applicable'
+  - name: drin
+    description: 'Direct Initiate Inventory Issue. Allowed values: 1, 2'
+  - name: drin_kw
+    description: 'Direct Initiate Inventory Issue (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dris
+    description: 'Direct Process Warehouse Order Line. Allowed values: 1, 2'
+  - name: dris_kw
+    description: 'Direct Process Warehouse Order Line (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: revn
+    description: Obsolete
+  - name: mcmd
+    description: 'Material Control Method. Allowed values: 1, 2, 3, 10'
+  - name: mcmd_kw
+    description: 'Material Control Method (keyword). Allowed values: tisfc.mcmd.print.and.alloc,
+      tisfc.mcmd.print.only, tisfc.mcmd.alloc.only, tisfc.mcmd.no.control'
+  - name: preq
+    description: Percentage Required
+  - name: cctt
+    description: 'Update Method. Allowed values: 1, 2, 3'
+  - name: cctt_kw
+    description: 'Update Method (keyword). Allowed values: ticst.updm.estimated, ticst.updm.actual,
+      ticst.updm.no.action'
+  - name: aamt_1
+    description: Actual Amount
+  - name: aamt_2
+    description: Actual Amount
+  - name: aamt_3
+    description: Actual Amount
+  - name: aamu_1
+    description: Actual Amount (customer owned)
+  - name: aamu_2
+    description: Actual Amount (customer owned)
+  - name: aamu_3
+    description: Actual Amount (customer owned)
+  - name: almi
+    description: 'Allow Multiple Items. Allowed values: 1, 2'
+  - name: almi_kw
+    description: 'Allow Multiple Items (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: altp
+    description: 'Alternatives Present. Allowed values: 1, 2'
+  - name: altp_kw
+    description: 'Alternatives Present (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: alfp
+    description: Alternative for Position
+  - name: rdsp
+    description: 'Reference Designators Present. Allowed values: 1, 2'
+  - name: rdsp_kw
+    description: 'Reference Designators Present (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: alty
+    description: 'Allocation Type. Allowed values: 1, 2, 3, 4'
+  - name: alty_kw
+    description: 'Allocation Type (keyword). Allowed values: tialty.none, tialty.input,
+      tialty.output, tialty.both'
+  - name: sbsr
+    description: 'Supplied by Subcontractor. Allowed values: 1, 2'
+  - name: sbsr_kw
+    description: 'Supplied by Subcontractor (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sayn
+    description: 'Subassembly. Allowed values: 1, 2'
+  - name: sayn_kw
+    description: 'Subassembly (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rwit
+    description: 'Rework Item. Allowed values: 1, 2'
+  - name: rwit_kw
+    description: 'Rework Item (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bwar
+    description: 'Original Allocation Warehouse. Max length: 6'
+  - name: owns
+    description: 'Ownership. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: owns_kw
+    description: 'Ownership (keyword). Allowed values: tcowns.comp.owned, tcowns.consigned,
+      tcowns.cust.owned, tcowns.return.as.issue, tcowns.deferred, tcowns.not.appl'
+  - name: lpno
+    description: Linked Position
+  - name: rtas
+    description: 'Return as. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: rtas_kw
+    description: 'Return as (keyword). Allowed values: tcowns.comp.owned, tcowns.consigned,
+      tcowns.cust.owned, tcowns.return.as.issue, tcowns.deferred, tcowns.not.appl'
+  - name: spcn
+    description: 'Specifications Number. Max length: 22'
+  - name: icfm
+    description: 'Customer Furnished Material. Allowed values: 1, 2'
+  - name: icfm_kw
+    description: 'Customer Furnished Material (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: subc
+    description: 'Contains Customer Furnished Material. Allowed values: 1, 2'
+  - name: subc_kw
+    description: 'Contains Customer Furnished Material (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: dstp
+    description: 'Distribution Type. Allowed values: 10, 20, 30, 40, 50, 60'
+  - name: dstp_kw
+    description: 'Distribution Type (keyword). Allowed values: tcdstp.not.appl, tcdstp.units,
+      tcdstp.pegs, tcdstp.units.pegs, tcdstp.cost.pegs, tcdstp.units.cost.pegs'
+  - name: ippg
+    description: 'Inherit Project Peg. Allowed values: 1, 2'
+  - name: ippg_kw
+    description: 'Inherit Project Peg (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bmit
+    description: 'BOM Main Item. Max length: 47'
+  - name: bmdl
+    description: 'BOM Model. Max length: 9'
+  - name: bmrv
+    description: 'BOM Revision. Max length: 6'
+  - name: bpon
+    description: BOM Position
+  - name: bseq
+    description: BOM Sequence
+  - name: effn
+    description: Obsolete
+  - name: txta
+    description: Material Text
+  - name: pdno_ref_compnr
+    description: company number of primary key of table tisfc001 Production Orders
+  - name: sitm_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: sizu_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: boun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: bwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: item_rcmp
+    description: 'CC: Reference Company of Item'
+  - name: cpes_eam1
+    description: 'CC: Estimate Unit Cost in Local Currency'
+  - name: cpes_eam2
+    description: 'CC: Estimate Unit Cost in Reporting Currency 1'
+  - name: cpes_eam3
+    description: 'CC: Estimate Unit Cost in Reporting Currency 2'
+  - name: cpes_refc
+    description: 'CC: Estimate Unit Cost in Reference Currency'
+  - name: cpes_dwhc
+    description: 'CC: Estimate Unit Cost in Data Warehouse Currency'
+  - name: cues_eau1
+    description: 'CC: Customer Owned Estimate Cost in Local Currency'
+  - name: cues_eau2
+    description: 'CC: Customer Owned Estimate Cost in Reporting Currency 1'
+  - name: cues_eau3
+    description: 'CC: Customer Owned Estimate Cost in Reporting Currency 2'
+  - name: cues_refc
+    description: 'CC: Customer Owned Estimate Cost in Reference Currency'
+  - name: cues_dwhc
+    description: 'CC: Customer Owned Estimate Unit Cost in Data Warehouse Currency'
+  - name: cpcs_lclc
+    description: 'CC: Actual Standard Cost in Local Currency'
+  - name: cpcs_rpc1
+    description: 'CC: Actual Standard Cost in Reporting Currency 1'
+  - name: cpcs_rpc2
+    description: 'CC: Actual Standard Cost in Reporting Currency 2'
+  - name: cpcs_refc
+    description: 'CC: Actual Standard Cost in Reference Currency'
+  - name: cpcs_dwhc
+    description: 'CC: Actual Standard Cost in Data Warehouse Currency'
+  - name: cpcu_lclc
+    description: 'CC: Customer Owned Actual Standard Cost in Local Currency'
+  - name: cpcu_rpc1
+    description: 'CC: Customer Owned Actual Standard Cost in Reporting Currency 1'
+  - name: cpcu_rpc2
+    description: 'CC: Customer Owned Actual Standard Cost in Reporting Currency 2'
+  - name: cpcu_refc
+    description: 'CC: Customer Owned Actual Standard Cost in Reference Currency'
+  - name: cpcu_dwhc
+    description: 'CC: Customer Owned Actual Standard Cost in Data Warehouse Currency'
+  - name: ames_lclc
+    description: 'CC: Estimate Amount in Local Currency'
+  - name: ames_rpc1
+    description: 'CC: Estimate Amount in Reporting Currency 1'
+  - name: ames_rpc2
+    description: 'CC: Estimate Amount in Reporting Currency 2'
+  - name: ames_refc
+    description: 'CC: Estimate Amount in Reference Currency'
+  - name: ames_dwhc
+    description: 'CC: Estimate Amount in Data Warehouse Currency'
+  - name: aues_lclc
+    description: 'CC: Customer Owned Estimate Amount in Local Currency'
+  - name: aues_rpc1
+    description: 'CC: Customer Owned Estimate Amount in Reporting Currency 1'
+  - name: aues_rpc2
+    description: 'CC: Customer Owned Estimate Amount in Reporting Currency 2'
+  - name: aues_refc
+    description: 'CC: Customer Owned Estimate Amount in Reference Currency'
+  - name: aues_dwhc
+    description: 'CC: Customer Owned Estimate Amount in Data Warehouse Currency'
+  - name: aamt_lclc
+    description: 'CC: Actual Amount in Local Currency'
+  - name: aamt_rpc1
+    description: 'CC: Actual Amount in Reporting Currency 1'
+  - name: aamt_rpc2
+    description: 'CC: Actual Amount in Reporting Currency 2'
+  - name: aamt_refc
+    description: 'CC: Actual Amount in Reference Currency'
+  - name: aamt_dwhc
+    description: 'CC: Actual Amount in Data Warehouse Currency'
+  - name: aamu_lclc
+    description: 'CC: Customer Owned Actual Amount in Local Currency'
+  - name: aamu_rpc1
+    description: 'CC: Customer Owned Actual Amount in Reporting Currency 1'
+  - name: aamu_rpc2
+    description: 'CC: Customer Owned Actual Amount in Reporting Currency 2'
+  - name: aamu_refc
+    description: 'CC: Customer Owned Actual Amount in Reference Currency'
+  - name: aamu_dwhc
+    description: 'CC: Customer Owned Actual Amount in Data Warehouse Currency'
+  - name: dptm_fcmp
+    description: 'CC: Financial Company of Department'
+  - name: scpq_buar
+    description: 'CC: Scrap Quantity in Base Unit Area'
+  - name: scpq_buln
+    description: 'CC: Scrap Quantity in Base Unit Length'
+  - name: scpq_bupc
+    description: 'CC: Scrap Quantity in Base Unit Piece'
+  - name: scpq_butm
+    description: 'CC: Scrap Quantity in Base Unit Time'
+  - name: scpq_buvl
+    description: 'CC: Scrap Quantity in Base Unit Volume'
+  - name: scpq_buwg
+    description: 'CC: Scrap Quantity in Base Unit Weight'
+  - name: ques_buar
+    description: 'CC: Estimated Quantity in Base Unit Area'
+  - name: ques_buln
+    description: 'CC: Estimated Quantity in Base Unit Length'
+  - name: ques_bupc
+    description: 'CC: Estimated Quantity in Base Unit Piece'
+  - name: ques_butm
+    description: 'CC: Estimated Quantity in Base Unit Time'
+  - name: ques_buvl
+    description: 'CC: Estimated Quantity in Base Unit Volume'
+  - name: ques_buwg
+    description: 'CC: Estimated Quantity in Base Unit Weight'
+  - name: qucs_buar
+    description: 'CC: Actual Quantity in Base Unit Area'
+  - name: qucs_buln
+    description: 'CC: Actual Quantity in Base Unit Length'
+  - name: qucs_bupc
+    description: 'CC: Actual Quantity in Base Unit Piece'
+  - name: qucs_butm
+    description: 'CC: Actual Quantity in Base Unit Time'
+  - name: qucs_buvl
+    description: 'CC: Actual Quantity in Base Unit Volume'
+  - name: qucs_buwg
+    description: 'CC: Actual Quantity in Base Unit Weight'
+  - name: qune_buar
+    description: 'CC: Net Quantity in Base Unit Area'
+  - name: qune_buln
+    description: 'CC: Net Quantity in Base Unit Length'
+  - name: qune_bupc
+    description: 'CC: Net Quantity in Base Unit Piece'
+  - name: qune_butm
+    description: 'CC: Net Quantity in Base Unit Time'
+  - name: qune_buvl
+    description: 'CC: Net Quantity in Base Unit Volume'
+  - name: qune_buwg
+    description: 'CC: Net Quantity in Base Unit Weight'
+  - name: qbfd_buar
+    description: 'CC: Quantity Backflushed in Base Unit Area'
+  - name: qbfd_buln
+    description: 'CC: Quantity Backflushed in Base Unit Length'
+  - name: qbfd_bupc
+    description: 'CC: Quantity Backflushed in Base Unit Piece'
+  - name: qbfd_butm
+    description: 'CC: Quantity Backflushed in Base Unit Time'
+  - name: qbfd_buvl
+    description: 'CC: Quantity Backflushed in Base Unit Volume'
+  - name: qbfd_buwg
+    description: 'CC: Quantity Backflushed in Base Unit Weight'
+  - name: qqar_buar
+    description: 'CC: Quantity Quarantined in Base Unit Area'
+  - name: qqar_buln
+    description: 'CC: Quantity Quarantined in Base Unit Length'
+  - name: qqar_bupc
+    description: 'CC: Quantity Quarantined in Base Unit Piece'
+  - name: qqar_butm
+    description: 'CC: Quantity Quarantined in Base Unit Time'
+  - name: qqar_buvl
+    description: 'CC: Quantity Quarantined in Base Unit Volume'
+  - name: qqar_buwg
+    description: 'CC: Quantity Quarantined in Base Unit Weight'
+  - name: qtor_buar
+    description: 'CC: Quantity Rejected in Base Unit Area'
+  - name: qtor_buln
+    description: 'CC: Quantity Rejected in Base Unit Length'
+  - name: qtor_bupc
+    description: 'CC: Quantity Rejected in Base Unit Piece'
+  - name: qtor_butm
+    description: 'CC: Quantity Rejected in Base Unit Time'
+  - name: qtor_buvl
+    description: 'CC: Quantity Rejected in Base Unit Volume'
+  - name: qtor_buwg
+    description: 'CC: Quantity Rejected in Base Unit Weight'
+  - name: qscr_buar
+    description: 'CC: Quantity Scrapped in Base Unit Area'
+  - name: qscr_buln
+    description: 'CC: Quantity Scrapped in Base Unit Length'
+  - name: qscr_bupc
+    description: 'CC: Quantity Scrapped in Base Unit Piece'
+  - name: qscr_butm
+    description: 'CC: Quantity Scrapped in Base Unit Time'
+  - name: qscr_buvl
+    description: 'CC: Quantity Scrapped in Base Unit Volume'
+  - name: qscr_buwg
+    description: 'CC: Quantity Scrapped in Base Unit Weight'
+  - name: issu_buar
+    description: 'CC: To Issue in Base Unit Area'
+  - name: issu_buln
+    description: 'CC: To Issue in Base Unit Length'
+  - name: issu_bupc
+    description: 'CC: To Issue in Base Unit Piece'
+  - name: issu_butm
+    description: 'CC: To Issue in Base Unit Time'
+  - name: issu_buvl
+    description: 'CC: To Issue in Base Unit Volume'
+  - name: issu_buwg
+    description: 'CC: To Issue in Base Unit Weight'
+  - name: iswh_buar
+    description: 'CC: To Issue by Warehousing in Base Unit Area'
+  - name: iswh_buln
+    description: 'CC: To Issue by Warehousing in Base Unit Length'
+  - name: iswh_bupc
+    description: 'CC: To Issue by Warehousing in Base Unit Piece'
+  - name: iswh_butm
+    description: 'CC: To Issue by Warehousing in Base Unit Time'
+  - name: iswh_buvl
+    description: 'CC: To Issue by Warehousing in Base Unit Volume'
+  - name: iswh_buwg
+    description: 'CC: To Issue by Warehousing in Base Unit Weight'
+  - name: subd_buar
+    description: 'CC: Subsequent Delivery in Base Unit Area'
+  - name: subd_buln
+    description: 'CC: Subsequent Delivery in Base Unit Length'
+  - name: subd_bupc
+    description: 'CC: Subsequent Delivery in Base Unit Piece'
+  - name: subd_butm
+    description: 'CC: Subsequent Delivery in Base Unit Time'
+  - name: subd_buvl
+    description: 'CC: Subsequent Delivery in Base Unit Volume'
+  - name: subd_buwg
+    description: 'CC: Subsequent Delivery in Base Unit Weight'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN ticst001 Estimated and Actual Material Costs table, Generated 2026-04-10T19:41:46Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - pdno
+        - pono

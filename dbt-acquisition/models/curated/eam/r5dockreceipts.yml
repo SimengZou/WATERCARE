@@ -1,0 +1,168 @@
+version: 2
+models:
+- name: r5dockreceipts
+  columns:
+  - name: dck_lastsaved
+    description: DCK_LASTSAVED
+  - name: dck_code
+    description: DCK_CODE
+    data_tests:
+    - unique
+  - name: dck_org
+    description: DCK_ORG
+  - name: dck_desc
+    description: DCK_DESC
+  - name: dck_status
+    description: DCK_STATUS
+  - name: dck_rstatus
+    description: DCK_RSTATUS
+  - name: dck_supplier
+    description: DCK_SUPPLIER
+  - name: dck_supplier_org
+    description: DCK_SUPPLIER_ORG
+  - name: dck_order
+    description: DCK_ORDER
+  - name: dck_order_org
+    description: DCK_ORDER_ORG
+  - name: dck_recvdate
+    description: DCK_RECVDATE
+  - name: dck_dockid
+    description: DCK_DOCKID
+  - name: dck_location
+    description: DCK_LOCATION
+  - name: dck_shipvia
+    description: DCK_SHIPVIA
+  - name: dck_packslip
+    description: DCK_PACKSLIP
+  - name: dck_freight
+    description: DCK_FREIGHT
+  - name: dck_reference
+    description: DCK_REFERENCE
+  - name: dck_receiver
+    description: DCK_RECEIVER
+  - name: dck_created
+    description: DCK_CREATED
+  - name: dck_user
+    description: DCK_USER
+  - name: dck_updated
+    description: DCK_UPDATED
+  - name: dck_upduser
+    description: DCK_UPDUSER
+  - name: dck_class
+    description: DCK_CLASS
+  - name: dck_class_org
+    description: DCK_CLASS_ORG
+  - name: dck_updatecount
+    description: DCK_UPDATECOUNT
+  - name: dck_retrieveall
+    description: DCK_RETRIEVEALL
+  - name: dck_udfchar01
+    description: DCK_UDFCHAR01
+  - name: dck_udfchar02
+    description: DCK_UDFCHAR02
+  - name: dck_udfchar03
+    description: DCK_UDFCHAR03
+  - name: dck_udfchar04
+    description: DCK_UDFCHAR04
+  - name: dck_udfchar05
+    description: DCK_UDFCHAR05
+  - name: dck_udfchar06
+    description: DCK_UDFCHAR06
+  - name: dck_udfchar07
+    description: DCK_UDFCHAR07
+  - name: dck_udfchar08
+    description: DCK_UDFCHAR08
+  - name: dck_udfchar09
+    description: DCK_UDFCHAR09
+  - name: dck_udfchar10
+    description: DCK_UDFCHAR10
+  - name: dck_udfchar11
+    description: DCK_UDFCHAR11
+  - name: dck_udfchar12
+    description: DCK_UDFCHAR12
+  - name: dck_udfchar13
+    description: DCK_UDFCHAR13
+  - name: dck_udfchar14
+    description: DCK_UDFCHAR14
+  - name: dck_udfchar15
+    description: DCK_UDFCHAR15
+  - name: dck_udfchar16
+    description: DCK_UDFCHAR16
+  - name: dck_udfchar17
+    description: DCK_UDFCHAR17
+  - name: dck_udfchar18
+    description: DCK_UDFCHAR18
+  - name: dck_udfchar19
+    description: DCK_UDFCHAR19
+  - name: dck_udfchar20
+    description: DCK_UDFCHAR20
+  - name: dck_udfchar21
+    description: DCK_UDFCHAR21
+  - name: dck_udfchar22
+    description: DCK_UDFCHAR22
+  - name: dck_udfchar23
+    description: DCK_UDFCHAR23
+  - name: dck_udfchar24
+    description: DCK_UDFCHAR24
+  - name: dck_udfchar25
+    description: DCK_UDFCHAR25
+  - name: dck_udfchar26
+    description: DCK_UDFCHAR26
+  - name: dck_udfchar27
+    description: DCK_UDFCHAR27
+  - name: dck_udfchar28
+    description: DCK_UDFCHAR28
+  - name: dck_udfchar29
+    description: DCK_UDFCHAR29
+  - name: dck_udfchar30
+    description: DCK_UDFCHAR30
+  - name: dck_udfnum01
+    description: DCK_UDFNUM01
+  - name: dck_udfnum02
+    description: DCK_UDFNUM02
+  - name: dck_udfnum03
+    description: DCK_UDFNUM03
+  - name: dck_udfnum04
+    description: DCK_UDFNUM04
+  - name: dck_udfnum05
+    description: DCK_UDFNUM05
+  - name: dck_udfdate01
+    description: DCK_UDFDATE01
+  - name: dck_udfdate02
+    description: DCK_UDFDATE02
+  - name: dck_udfdate03
+    description: DCK_UDFDATE03
+  - name: dck_udfdate04
+    description: DCK_UDFDATE04
+  - name: dck_udfdate05
+    description: DCK_UDFDATE05
+  - name: dck_udfchkbox01
+    description: DCK_UDFCHKBOX01
+  - name: dck_udfchkbox02
+    description: DCK_UDFCHKBOX02
+  - name: dck_udfchkbox03
+    description: DCK_UDFCHKBOX03
+  - name: dck_udfchkbox04
+    description: DCK_UDFCHKBOX04
+  - name: dck_udfchkbox05
+    description: DCK_UDFCHKBOX05
+  - name: dck_mrc
+    description: DCK_MRC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DOCKRECEIPTS

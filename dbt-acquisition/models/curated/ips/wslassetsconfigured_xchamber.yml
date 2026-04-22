@@ -1,0 +1,142 @@
+version: 2
+models:
+- name: wslassetsconfigured_xchamber
+  columns:
+  - name: covertype
+    description: 'Metadata for column COVERTYPE. Max length: 10'
+  - name: warrantyend
+    description: Metadata for column WARRANTYEND
+  - name: costcentre
+    description: 'Metadata for column COSTCENTRE. Max length: 10'
+  - name: safetycritical
+    description: 'Metadata for column SAFETYCRITICAL. Max length: 1'
+  - name: photo3d
+    description: 'Metadata for column PHOTO3D. Max length: 300'
+  - name: grdlevel
+    description: Metadata for column GRDLEVEL
+  - name: relstatus
+    description: 'Metadata for column RELSTATUS. Max length: 10'
+  - name: warrantystart
+    description: Metadata for column WARRANTYSTART
+  - name: relgeosp
+    description: 'Metadata for column RELGEOSP. Max length: 10'
+  - name: criticality
+    description: 'Metadata for column CRITICALITY. Max length: 10'
+  - name: acceldeprec
+    description: 'Metadata for column ACCELDEPREC. Max length: 1'
+  - name: designresilience
+    description: 'Metadata for column DESIGNRESILIENCE. Max length: 10'
+  - name: invlevel
+    description: Metadata for column INVLEVEL
+  - name: businessarea
+    description: 'Metadata for column BUSINESSAREA. Max length: 10'
+  - name: xchamberkey
+    description: (required) Metadata for column XCHAMBERKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: acqtype
+    description: 'Metadata for column ACQTYPE. Max length: 10'
+  - name: zonecatchment
+    description: 'Metadata for column ZONECATCHMENT. Max length: 10'
+  - name: reldepth
+    description: 'Metadata for column RELDEPTH. Max length: 10'
+  - name: subtypefeatures
+    description: 'Metadata for column SUBTYPEFEATURES. Max length: 10'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: linkedasset
+    description: 'Metadata for column LINKEDASSET. Max length: 300'
+  - name: hinged
+    description: 'Metadata for column HINGED. Max length: 1'
+  - name: overflowtype
+    description: 'Metadata for column OVERFLOWTYPE. Max length: 10'
+  - name: disposaldesc
+    description: 'Metadata for column DISPOSALDESC. Max length: 300'
+  - name: reldia
+    description: 'Metadata for column RELDIA. Max length: 10'
+  - name: framesize
+    description: 'Metadata for column FRAMESIZE. Max length: 10'
+  - name: locality
+    description: 'Metadata for column LOCALITY. Max length: 10'
+  - name: overflowlevel
+    description: Metadata for column OVERFLOWLEVEL
+  - name: quakedesign
+    description: 'Metadata for column QUAKEDESIGN. Max length: 10'
+  - name: removable
+    description: 'Metadata for column REMOVABLE. Max length: 1'
+  - name: diamext
+    description: Metadata for column DIAMEXT
+  - name: diamint
+    description: Metadata for column DIAMINT
+  - name: lidlevel
+    description: Metadata for column LIDLEVEL
+  - name: mediatype
+    description: 'Metadata for column MEDIATYPE. Max length: 10'
+  - name: modelno
+    description: 'Metadata for column MODELNO. Max length: 30'
+  - name: confinedspace
+    description: 'Metadata for column CONFINEDSPACE. Max length: 10'
+  - name: fallprotect
+    description: 'Metadata for column FALLPROTECT. Max length: 1'
+  - name: make
+    description: 'Metadata for column MAKE. Max length: 10'
+  - name: boltdown
+    description: 'Metadata for column BOLTDOWN. Max length: 1'
+  - name: relown
+    description: 'Metadata for column RELOWN. Max length: 10'
+  - name: relmatl
+    description: 'Metadata for column RELMATL. Max length: 10'
+  - name: projectwise
+    description: 'Metadata for column PROJECTWISE. Max length: 20'
+  - name: fordisposal
+    description: 'Metadata for column FORDISPOSAL. Max length: 10'
+  - name: drawingnoref
+    description: 'Metadata for column DRAWINGNOREF. Max length: 30'
+  - name: compkey
+    description: Metadata for column COMPKEY
+  - name: dropmh
+    description: 'Metadata for column DROPMH. Max length: 1'
+  - name: reldate
+    description: 'Metadata for column RELDATE. Max length: 10'
+  - name: funcarea
+    description: 'Metadata for column FUNCAREA. Max length: 10'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: loadrating
+    description: Metadata for column LOADRATING
+  - name: lockable
+    description: 'Metadata for column LOCKABLE. Max length: 1'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: acceldeprecdesc
+    description: 'Metadata for column ACCELDEPRECDESC. Max length: 300'
+  - name: projectno
+    description: 'Metadata for column PROJECTNO. Max length: 20'
+  - name: intlining
+    description: 'Metadata for column INTLINING. Max length: 10'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: drawingno
+    description: 'Metadata for column DRAWINGNO. Max length: 30'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table WSLASSETSCONFIGURED.XCHAMBER on 2024-10-03T13:41:56.142

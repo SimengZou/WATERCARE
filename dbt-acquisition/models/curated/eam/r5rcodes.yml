@@ -1,0 +1,40 @@
+version: 2
+models:
+- name: r5rcodes
+  columns:
+  - name: rco_lastsaved
+    description: RCO_LASTSAVED
+  - name: rco_rcode
+    description: RCO_RCODE
+  - name: rco_updatecount
+    description: RCO_UPDATECOUNT
+  - name: rco_textcode
+    description: RCO_TEXTCODE
+  - name: rco_rentity
+    description: RCO_RENTITY
+  - name: rco_desc
+    description: RCO_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5RCODES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - rco_rentity
+        - rco_rcode

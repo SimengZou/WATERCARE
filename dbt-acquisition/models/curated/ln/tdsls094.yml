@@ -1,0 +1,270 @@
+version: 2
+models:
+- name: tdsls094
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: sotp
+    description: '(required) Sales Order Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: reto
+    description: 'Return Order. Allowed values: 1, 2, 3'
+  - name: reto_kw
+    description: 'Return Order (keyword). Allowed values: tdpur.reto.yes, tdpur.reto.no,
+      tdpur.reto.rejectgoods'
+  - name: coun
+    description: 'Collect Order. Allowed values: 1, 2'
+  - name: coun_kw
+    description: 'Collect Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: retb
+    description: 'Retro-Billed. Allowed values: 1, 2'
+  - name: retb_kw
+    description: 'Retro-Billed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sund
+    description: 'Cost Order. Allowed values: 1, 2'
+  - name: sund_kw
+    description: 'Cost Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cnsi
+    description: 'Consignment Invoicing. Allowed values: 1, 2'
+  - name: cnsi_kw
+    description: 'Consignment Invoicing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cnsr
+    description: 'Consignment Replenishment. Allowed values: 1, 2'
+  - name: cnsr_kw
+    description: 'Consignment Replenishment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: wrhp
+    description: 'Warehousing Order Type. Max length: 3'
+  - name: cphl
+    description: 'Component Handling. Allowed values: 5, 10, 15'
+  - name: cphl_kw
+    description: 'Component Handling (keyword). Allowed values: tdcphl.not.applicable,
+      tdcphl.sales.bom, tdcphl.component.lines'
+  - name: scon
+    description: 'Shipping Constraint. Allowed values: 1, 2, 3, 4, 5, 6, 10'
+  - name: scon_kw
+    description: 'Shipping Constraint (keyword). Allowed values: tdscon.none, tdscon.sc,
+      tdscon.rc, tdscon.oc, tdscon.sca, tdscon.kc, tdscon.not.applicable'
+  - name: blcs
+    description: 'Block As of Activity. Max length: 13'
+  - name: crdc
+    description: 'Credit Check. Allowed values: 1, 2'
+  - name: crdc_kw
+    description: 'Credit Check (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: gmrc
+    description: 'Gross Margin Control. Allowed values: 1, 2'
+  - name: gmrc_kw
+    description: 'Gross Margin Control (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: apur
+    description: 'Allow Purchase Orders. Allowed values: 1, 2'
+  - name: apur_kw
+    description: 'Allow Purchase Orders (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: lcpl
+    description: 'Direct Link Cross-docking. Allowed values: 1, 2'
+  - name: lcpl_kw
+    description: 'Direct Link Cross-docking (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: upls
+    description: 'Update Lost Sales. Allowed values: 1, 2'
+  - name: upls_kw
+    description: 'Update Lost Sales (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: upsh
+    description: 'Update Demand Sales. Allowed values: 1, 2'
+  - name: upsh_kw
+    description: 'Update Demand Sales (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aprd
+    description: 'Allow Production Orders. Allowed values: 1, 2'
+  - name: aprd_kw
+    description: 'Allow Production Orders (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mwdl
+    description: 'Manual Activities Awaiting Delivery. Allowed values: 1, 2'
+  - name: mwdl_kw
+    description: 'Manual Activities Awaiting Delivery (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: aaps
+    description: 'Automatically Approve Sales Order. Allowed values: 1, 2'
+  - name: aaps_kw
+    description: 'Automatically Approve Sales Order (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ngso
+    description: 'Order Group. Max length: 3'
+  - name: seso
+    description: 'Order Series. Max length: 8'
+  - name: ngsq
+    description: 'Quotation Group. Max length: 3'
+  - name: sesq
+    description: 'Quotation Series. Max length: 8'
+  - name: ngsc
+    description: 'Contract Group. Max length: 3'
+  - name: sesc
+    description: 'Contract Series. Max length: 8'
+  - name: einc
+    description: 'Extended Inventory Check. Allowed values: 1, 2'
+  - name: einc_kw
+    description: 'Extended Inventory Check (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: incm
+    description: 'Inventory Check Moment. Allowed values: 1, 5, 10, 25'
+  - name: incm_kw
+    description: 'Inventory Check Moment (keyword). Allowed values: tdsls.incm.never,
+      tdsls.incm.manual.entry, tdsls.incm.batch, tdsls.incm.not.applicable'
+  - name: wpal
+    description: 'Write Planned Inventory Transactions only for Accepted Lines. Allowed
+      values: 1, 2'
+  - name: wpal_kw
+    description: 'Write Planned Inventory Transactions only for Accepted Lines (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ssoa
+    description: 'Non-generic/Not Planned Item Option. Allowed values: 1, 5, 9, 13,
+      17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 79, 81, 85,
+      99'
+  - name: ssoa_kw
+    description: 'Non-generic/Not Planned Item Option (keyword). Allowed values: tdsls.ssop.channel.plan,
+      tdsls.ssop.item.mastr.plan, tdsls.ssop.item.ordr.plan, tdsls.ssop.planned.inv,
+      tdsls.ssop.inv.item.whs, tdsls.ssop.inv.specific, tdsls.ssop.inv.commitments,
+      tdsls.ssop.alloc.buffer, tdsls.ssop.alt.items, tdsls.ssop.pur.advice, tdsls.ssop.dir.del,
+      tdsls.ssop.purchase, tdsls.ssop.production, tdsls.ssop.transfer, tdsls.ssop.atp,
+      tdsls.ssop.atp.fixed.date, tdsls.ssop.atp.fixed.wh, tdsls.ssop.adjust.qty, tdsls.ssop.adj.hold.back,
+      tdsls.ssop.del.date, tdsls.ssop.force.accept, tdsls.ssop.restore.old, tdsls.ssop.no.action,
+      tdsls.ssop.none'
+  - name: ssob
+    description: 'Non-generic/Planned Item Option. Allowed values: 1, 5, 9, 13, 17,
+      21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 79, 81, 85, 99'
+  - name: ssob_kw
+    description: 'Non-generic/Planned Item Option (keyword). Allowed values: tdsls.ssop.channel.plan,
+      tdsls.ssop.item.mastr.plan, tdsls.ssop.item.ordr.plan, tdsls.ssop.planned.inv,
+      tdsls.ssop.inv.item.whs, tdsls.ssop.inv.specific, tdsls.ssop.inv.commitments,
+      tdsls.ssop.alloc.buffer, tdsls.ssop.alt.items, tdsls.ssop.pur.advice, tdsls.ssop.dir.del,
+      tdsls.ssop.purchase, tdsls.ssop.production, tdsls.ssop.transfer, tdsls.ssop.atp,
+      tdsls.ssop.atp.fixed.date, tdsls.ssop.atp.fixed.wh, tdsls.ssop.adjust.qty, tdsls.ssop.adj.hold.back,
+      tdsls.ssop.del.date, tdsls.ssop.force.accept, tdsls.ssop.restore.old, tdsls.ssop.no.action,
+      tdsls.ssop.none'
+  - name: ssoc
+    description: 'Generic/Not Planned Item Option. Allowed values: 1, 5, 9, 13, 17,
+      21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 79, 81, 85, 99'
+  - name: ssoc_kw
+    description: 'Generic/Not Planned Item Option (keyword). Allowed values: tdsls.ssop.channel.plan,
+      tdsls.ssop.item.mastr.plan, tdsls.ssop.item.ordr.plan, tdsls.ssop.planned.inv,
+      tdsls.ssop.inv.item.whs, tdsls.ssop.inv.specific, tdsls.ssop.inv.commitments,
+      tdsls.ssop.alloc.buffer, tdsls.ssop.alt.items, tdsls.ssop.pur.advice, tdsls.ssop.dir.del,
+      tdsls.ssop.purchase, tdsls.ssop.production, tdsls.ssop.transfer, tdsls.ssop.atp,
+      tdsls.ssop.atp.fixed.date, tdsls.ssop.atp.fixed.wh, tdsls.ssop.adjust.qty, tdsls.ssop.adj.hold.back,
+      tdsls.ssop.del.date, tdsls.ssop.force.accept, tdsls.ssop.restore.old, tdsls.ssop.no.action,
+      tdsls.ssop.none'
+  - name: ssod
+    description: 'Generic/Planned Item Option. Allowed values: 1, 5, 9, 13, 17, 21,
+      25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77, 79, 81, 85, 99'
+  - name: ssod_kw
+    description: 'Generic/Planned Item Option (keyword). Allowed values: tdsls.ssop.channel.plan,
+      tdsls.ssop.item.mastr.plan, tdsls.ssop.item.ordr.plan, tdsls.ssop.planned.inv,
+      tdsls.ssop.inv.item.whs, tdsls.ssop.inv.specific, tdsls.ssop.inv.commitments,
+      tdsls.ssop.alloc.buffer, tdsls.ssop.alt.items, tdsls.ssop.pur.advice, tdsls.ssop.dir.del,
+      tdsls.ssop.purchase, tdsls.ssop.production, tdsls.ssop.transfer, tdsls.ssop.atp,
+      tdsls.ssop.atp.fixed.date, tdsls.ssop.atp.fixed.wh, tdsls.ssop.adjust.qty, tdsls.ssop.adj.hold.back,
+      tdsls.ssop.del.date, tdsls.ssop.force.accept, tdsls.ssop.restore.old, tdsls.ssop.no.action,
+      tdsls.ssop.none'
+  - name: ssoe
+    description: 'Inventory Shortage Recheck Option for Unplanned Item. Allowed values:
+      1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77,
+      79, 81, 85, 99'
+  - name: ssoe_kw
+    description: 'Inventory Shortage Recheck Option for Unplanned Item (keyword).
+      Allowed values: tdsls.ssop.channel.plan, tdsls.ssop.item.mastr.plan, tdsls.ssop.item.ordr.plan,
+      tdsls.ssop.planned.inv, tdsls.ssop.inv.item.whs, tdsls.ssop.inv.specific, tdsls.ssop.inv.commitments,
+      tdsls.ssop.alloc.buffer, tdsls.ssop.alt.items, tdsls.ssop.pur.advice, tdsls.ssop.dir.del,
+      tdsls.ssop.purchase, tdsls.ssop.production, tdsls.ssop.transfer, tdsls.ssop.atp,
+      tdsls.ssop.atp.fixed.date, tdsls.ssop.atp.fixed.wh, tdsls.ssop.adjust.qty, tdsls.ssop.adj.hold.back,
+      tdsls.ssop.del.date, tdsls.ssop.force.accept, tdsls.ssop.restore.old, tdsls.ssop.no.action,
+      tdsls.ssop.none'
+  - name: ssof
+    description: 'Inventory Shortage Recheck Option for Planned Item. Allowed values:
+      1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73, 77,
+      79, 81, 85, 99'
+  - name: ssof_kw
+    description: 'Inventory Shortage Recheck Option for Planned Item (keyword). Allowed
+      values: tdsls.ssop.channel.plan, tdsls.ssop.item.mastr.plan, tdsls.ssop.item.ordr.plan,
+      tdsls.ssop.planned.inv, tdsls.ssop.inv.item.whs, tdsls.ssop.inv.specific, tdsls.ssop.inv.commitments,
+      tdsls.ssop.alloc.buffer, tdsls.ssop.alt.items, tdsls.ssop.pur.advice, tdsls.ssop.dir.del,
+      tdsls.ssop.purchase, tdsls.ssop.production, tdsls.ssop.transfer, tdsls.ssop.atp,
+      tdsls.ssop.atp.fixed.date, tdsls.ssop.atp.fixed.wh, tdsls.ssop.adjust.qty, tdsls.ssop.adj.hold.back,
+      tdsls.ssop.del.date, tdsls.ssop.force.accept, tdsls.ssop.restore.old, tdsls.ssop.no.action,
+      tdsls.ssop.none'
+  - name: udps
+    description: 'Use Delivery Patterns. Allowed values: 1, 2'
+  - name: udps_kw
+    description: 'Use Delivery Patterns (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sdec
+    description: 'Standard Delivery Terms. Max length: 3'
+  - name: spay
+    description: 'Standard Payment Terms. Max length: 3'
+  - name: efdt
+    description: Effective Date
+  - name: exdt
+    description: Expiry Date
+  - name: pmsk
+    description: 'Obsolete. Max length: 20'
+  - name: proc
+    description: 'Obsolete. Max length: 6'
+  - name: ngso_seso_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngso_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngsq_sesq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngsq_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngsc_sesc_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngsc_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: sdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: spay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdsls094 Sales Order Types table, Generated 2026-04-10T19:41:23Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - sotp

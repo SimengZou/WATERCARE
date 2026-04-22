@@ -1,0 +1,162 @@
+version: 2
+models:
+- name: tsctm501
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: wrty
+    description: '(required) Warranty. Max length: 16'
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: sern
+    description: '(required) Serial Number. Max length: 30'
+    data_tests:
+    - not_null
+  - name: trtm
+    description: (required) Transaction Time
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: cctp
+    description: 'Coverage Type. Max length: 3'
+  - name: cotp
+    description: 'Term Type. Allowed values: 5, 10, 15, 20, 25, 30, 35, 40, 45'
+  - name: cotp_kw
+    description: 'Term Type (keyword). Allowed values: tsctm.tmtp.material, tsctm.tmtp.labor,
+      tsctm.tmtp.tool, tsctm.tmtp.travel, tsctm.tmtp.subcon, tsctm.tmtp.helpdesk,
+      tsctm.tmtp.other, tsctm.tmtp.uptime, tsctm.tmtp.all'
+  - name: ortp
+    description: 'Order Type. Allowed values: 5, 10, 15, 20, 25'
+  - name: ortp_kw
+    description: 'Order Type (keyword). Allowed values: tsctm.ortp.serv, tsctm.ortp.maint,
+      tsctm.ortp.call, tsctm.ortp.claim, tsctm.ortp.quote'
+  - name: orno
+    description: 'Order. Max length: 9'
+  - name: pono
+    description: Order Line
+  - name: cvln
+    description: Order Detail Line
+  - name: tcst
+    description: 'Cost Type. Allowed values: 5, 10, 15, 20, 25, 30, 35, 45, 47, 50,
+      51, 60'
+  - name: tcst_kw
+    description: 'Cost Type (keyword). Allowed values: tsmdm.cotp.material, tsmdm.cotp.labor,
+      tsmdm.cotp.tool, tsmdm.cotp.travel, tsmdm.cotp.subcon, tsmdm.cotp.helpdesk,
+      tsmdm.cotp.other, tsmdm.cotp.order, tsmdm.cotp.activity, tsmdm.cotp.freight,
+      tsmdm.cotp.quotinv, tsmdm.cotp.rental'
+  - name: wrtp
+    description: 'Warranty Type. Allowed values: 5, 10, 15'
+  - name: wrtp_kw
+    description: 'Warranty Type (keyword). Allowed values: tstdm.wrtp.serial, tstdm.wrtp.general,
+      tstdm.wrtp.no.warranty'
+  - name: cstp
+    description: 'Service Type. Max length: 3'
+  - name: cwoc
+    description: 'Service Office. Max length: 6'
+  - name: clst
+    description: 'Installation Group. Max length: 9'
+  - name: litm
+    description: 'Item. Max length: 47'
+  - name: lser
+    description: 'Serial Number. Max length: 30'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: spco_1
+    description: Spent Costs
+  - name: spco_2
+    description: Spent Costs
+  - name: spco_3
+    description: Spent Costs
+  - name: spsa
+    description: Spent Sales
+  - name: item_sern_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: item_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: cctp_ref_compnr
+    description: company number of primary key of table tsmdm035 Coverage Types
+  - name: cstp_ref_compnr
+    description: company number of primary key of table tsmdm030 Service Types
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: clst_ref_compnr
+    description: company number of primary key of table tsbsc100 Installation Group
+  - name: litm_lser_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: litm_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: spco_trnc
+    description: 'CC: Spent Cost Amount in Contract Currency'
+  - name: spco_refc
+    description: 'CC: Spent Cost Amount in Reference Currency'
+  - name: spco_dwhc
+    description: 'CC: Spent Cost Amount in Data Warehouse Currency'
+  - name: spsa_homc
+    description: 'CC: Spent Sales Amount in Local Currency'
+  - name: spsa_rpc1
+    description: 'CC: Spent Sales Amount in Reporting Currency 1'
+  - name: spsa_rpc2
+    description: 'CC: Spent Sales Amount in Reporting Currency 2'
+  - name: spsa_refc
+    description: 'CC: Spent Sales Amount in Reference Currency'
+  - name: spsa_dwhc
+    description: 'CC: Spent Sales Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm501 Warranty Transactions table, Generated 2026-04-10T19:42:35Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - wrty
+        - item
+        - sern
+        - trtm
+        - seqn

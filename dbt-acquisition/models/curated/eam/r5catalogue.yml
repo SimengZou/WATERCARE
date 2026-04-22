@@ -1,0 +1,102 @@
+version: 2
+models:
+- name: r5catalogue
+  columns:
+  - name: cat_lastsaved
+    description: CAT_LASTSAVED
+  - name: cat_repref
+    description: CAT_REPREF
+  - name: cat_iplastupdate
+    description: CAT_IPLASTUPDATE
+  - name: cat_iperror
+    description: CAT_IPERROR
+  - name: cat_iperrormessage
+    description: CAT_IPERRORMESSAGE
+  - name: cat_insertoldreference
+    description: CAT_INSERTOLDREFERENCE
+  - name: cat_costcode
+    description: CAT_COSTCODE
+  - name: cat_documoto_bookid
+    description: CAT_DOCUMOTO_BOOKID
+  - name: cat_documoto_part
+    description: CAT_DOCUMOTO_PART
+  - name: cat_part
+    description: CAT_PART
+  - name: cat_supplier
+    description: CAT_SUPPLIER
+  - name: cat_date
+    description: CAT_DATE
+  - name: cat_gross
+    description: CAT_GROSS
+  - name: cat_leadtime
+    description: CAT_LEADTIME
+  - name: cat_quotation
+    description: CAT_QUOTATION
+  - name: cat_expquot
+    description: CAT_EXPQUOT
+  - name: cat_quotprice
+    description: CAT_QUOTPRICE
+  - name: cat_quotuom
+    description: CAT_QUOTUOM
+  - name: cat_exppurpr
+    description: CAT_EXPPURPR
+  - name: cat_purprice
+    description: CAT_PURPRICE
+  - name: cat_puruom
+    description: CAT_PURUOM
+  - name: cat_ref
+    description: CAT_REF
+  - name: cat_multiply
+    description: CAT_MULTIPLY
+  - name: cat_curr
+    description: CAT_CURR
+  - name: cat_exch
+    description: CAT_EXCH
+  - name: cat_tax
+    description: CAT_TAX
+  - name: cat_sourcesystem
+    description: CAT_SOURCESYSTEM
+  - name: cat_sourcecode
+    description: CAT_SOURCECODE
+  - name: cat_exchtodual
+    description: CAT_EXCHTODUAL
+  - name: cat_exchfromdual
+    description: CAT_EXCHFROMDUAL
+  - name: cat_supplier_org
+    description: CAT_SUPPLIER_ORG
+  - name: cat_part_org
+    description: CAT_PART_ORG
+  - name: cat_desc
+    description: CAT_DESC
+  - name: cat_minordqty
+    description: CAT_MINORDQTY
+  - name: cat_repprice
+    description: CAT_REPPRICE
+  - name: cat_updatecount
+    description: CAT_UPDATECOUNT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CATALOGUE
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - cat_part
+        - cat_part_org
+        - cat_supplier
+        - cat_supplier_org

@@ -1,0 +1,180 @@
+version: 2
+models:
+- name: crm_custprob
+  columns:
+  - name: disttoft
+    description: Metadata for column DISTTOFT
+  - name: insphrs
+    description: Metadata for column INSPHRS
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: locnotes
+    description: 'Metadata for column LOCNOTES. Max length: 300'
+  - name: rescode
+    description: 'Metadata for column RESCODE. Max length: 10'
+  - name: inspdttm
+    description: Metadata for column INSPDTTM
+  - name: src
+    description: 'Metadata for column SRC. Max length: 10'
+  - name: probdttm
+    description: Metadata for column PROBDTTM
+  - name: woflag
+    description: 'Metadata for column WOFLAG. Max length: 1'
+  - name: inspectr
+    description: 'Metadata for column INSPECTR. Max length: 25'
+  - name: xcoordinate
+    description: Metadata for column XCOORDINATE
+  - name: suspdttm
+    description: Metadata for column SUSPDTTM
+  - name: custflag
+    description: 'Metadata for column CUSTFLAG. Max length: 1'
+  - name: subarea
+    description: 'Metadata for column SUBAREA. Max length: 10'
+  - name: resp
+    description: 'Metadata for column RESP. Max length: 10'
+  - name: inspflag
+    description: 'Metadata for column INSPFLAG. Max length: 1'
+  - name: addbybaseusr
+    description: 'Metadata for column ADDBYBASEUSR. Max length: 50'
+  - name: pri
+    description: 'Metadata for column PRI. Max length: 10'
+  - name: startdttm
+    description: Metadata for column STARTDTTM
+  - name: mobiledttm
+    description: Metadata for column MOBILEDTTM
+  - name: inspdays
+    description: Metadata for column INSPDAYS
+  - name: schduedttm
+    description: Metadata for column SCHDUEDTTM
+  - name: severity
+    description: Metadata for column SEVERITY
+  - name: assetinspflag
+    description: 'Metadata for column ASSETINSPFLAG. Max length: 1'
+  - name: comments
+    description: 'Metadata for column COMMENTS. Max length: 999999'
+  - name: emailnotice
+    description: 'Metadata for column EMAILNOTICE. Max length: 1'
+  - name: morework
+    description: 'Metadata for column MOREWORK. Max length: 1'
+  - name: inworkflag
+    description: 'Metadata for column INWORKFLAG. Max length: 1'
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: distfromft
+    description: Metadata for column DISTFROMFT
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: srtype
+    description: 'Metadata for column SRTYPE. Max length: 4'
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 300'
+  - name: addbyportalusr
+    description: 'Metadata for column ADDBYPORTALUSR. Max length: 50'
+  - name: qtycalls
+    description: Metadata for column QTYCALLS
+  - name: ycoordinate
+    description: Metadata for column YCOORDINATE
+  - name: mapno
+    description: 'Metadata for column MAPNO. Max length: 14'
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: inspmins
+    description: Metadata for column INSPMINS
+  - name: servlink
+    description: Metadata for column SERVLINK
+  - name: apkey
+    description: Metadata for column APKEY
+  - name: resflag
+    description: 'Metadata for column RESFLAG. Max length: 1'
+  - name: takenby
+    description: 'Metadata for column TAKENBY. Max length: 25'
+  - name: impact
+    description: Metadata for column IMPACT
+  - name: modbyportalusr
+    description: 'Metadata for column MODBYPORTALUSR. Max length: 50'
+  - name: acctkey
+    description: Metadata for column ACCTKEY
+  - name: resdttm
+    description: Metadata for column RESDTTM
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: modbybaseusr
+    description: 'Metadata for column MODBYBASEUSR. Max length: 50'
+  - name: distfromm
+    description: Metadata for column DISTFROMM
+  - name: propkey
+    description: Metadata for column PROPKEY
+  - name: scdcmpdttm
+    description: Metadata for column SCDCMPDTTM
+  - name: servno
+    description: (required) Metadata for column SERVNO
+    data_tests:
+    - unique
+    - not_null
+  - name: caseflag
+    description: 'Metadata for column CASEFLAG. Max length: 1'
+  - name: asgnflag
+    description: 'Metadata for column ASGNFLAG. Max length: 1'
+  - name: oocflag
+    description: 'Metadata for column OOCFLAG. Max length: 1'
+  - name: resduedttm
+    description: Metadata for column RESDUEDTTM
+  - name: mobileemp
+    description: 'Metadata for column MOBILEEMP. Max length: 25'
+  - name: compkey
+    description: Metadata for column COMPKEY
+  - name: stduedttm
+    description: Metadata for column STDUEDTTM
+  - name: scheddttm
+    description: Metadata for column SCHEDDTTM
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: prob
+    description: Metadata for column PROB
+  - name: zcoordinate
+    description: Metadata for column ZCOORDINATE
+  - name: district
+    description: 'Metadata for column DISTRICT. Max length: 10'
+  - name: proj
+    description: 'Metadata for column PROJ. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: incdtdttm
+    description: Metadata for column INCDTDTTM
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: mobile
+    description: 'Metadata for column MOBILE. Max length: 1'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: disttom
+    description: Metadata for column DISTTOM
+  - name: refno
+    description: 'Metadata for column REFNO. Max length: 20'
+  - name: clericdttm
+    description: Metadata for column CLERICDTTM
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table CRM.CUSTPROB on 2024-12-02T11:42:34.207

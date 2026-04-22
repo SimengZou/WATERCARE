@@ -1,0 +1,238 @@
+version: 2
+models:
+- name: tccom130
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cadr
+    description: '(required) Address Code. Max length: 9'
+    data_tests:
+    - not_null
+  - name: nama__en_us
+    description: '(required) Name - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: namb__en_us
+    description: '(required) Name 2 - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: namc__en_us
+    description: '(required) Street - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: namd__en_us
+    description: '(required) Street 2 - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: hono__en_us
+    description: '(required) House Number - base language. Max length: 10'
+    data_tests:
+    - not_null
+  - name: pobn__en_us
+    description: '(required) P.O. Box Number - base language. Max length: 10'
+    data_tests:
+    - not_null
+  - name: namf__en_us
+    description: '(required) City 2 - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: pstc__en_us
+    description: '(required) ZIP Code/Postal Code - base language. Max length: 10'
+    data_tests:
+    - not_null
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: telp
+    description: 'Telephone. Max length: 32'
+  - name: telx
+    description: 'Telex. Max length: 15'
+  - name: tefx
+    description: 'Fax. Max length: 32'
+  - name: ccit
+    description: 'City. Max length: 8'
+  - name: ccty
+    description: 'Country. Max length: 3'
+  - name: cste
+    description: 'State/Province. Max length: 3'
+  - name: bldg__en_us
+    description: '(required) Building - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: blfl__en_us
+    description: '(required) Floor - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: blun__en_us
+    description: '(required) Unit - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: fovn
+    description: 'Obsolete. Max length: 24'
+  - name: lvdt
+    description: Obsolete
+  - name: coaf
+    description: 'Address Format. Max length: 3'
+  - name: ccal
+    description: 'Calendar Code. Max length: 9'
+  - name: gebo
+    description: 'GEO Code based on. Allowed values: 10, 20, 100'
+  - name: gebo_kw
+    description: 'GEO Code based on (keyword). Allowed values: tctax.gebo.address,
+      tctax.gebo.coordinates, tctax.gebo.not.appl'
+  - name: geoc
+    description: 'GEO Code. Max length: 10'
+  - name: cnty__en_us
+    description: '(required) County - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dtlm
+    description: Date Last Modification
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: tzid
+    description: 'Time Zone. Max length: 3'
+  - name: inet__en_us
+    description: '(required) Website - base language. Max length: 150'
+    data_tests:
+    - not_null
+  - name: etyp
+    description: 'E-Mail Address Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 10'
+  - name: etyp_kw
+    description: 'E-Mail Address Type (keyword). Allowed values: tccom.etyp.smtp,
+      tccom.etyp.x400, tccom.etyp.notes, tccom.etyp.ccmail, tccom.etyp.mhs, tccom.etyp.mess,
+      tccom.etyp.ms, tccom.etyp.not.applicable'
+  - name: foid
+    description: Front Office ID
+  - name: crid
+    description: Creator's Unique System ID
+  - name: sita
+    description: 'SITA Address. Max length: 7'
+  - name: info__en_us
+    description: '(required) E-mail - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: smsa__en_us
+    description: '(required) SMS Number - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: defa
+    description: 'Default Messaging. Allowed values: 1, 2, 3, 4, 5, 6, 10'
+  - name: defa_kw
+    description: 'Default Messaging (keyword). Allowed values: tccom.defa.email, tccom.defa.fax,
+      tccom.defa.telex, tccom.defa.sita, tccom.defa.sms, tccom.defa.phone, tccom.defa.not.applicable'
+  - name: dsca__en_us
+    description: '(required) City Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: crdt
+    description: Creation Date
+  - name: user
+    description: 'Created by. Max length: 16'
+  - name: vatl
+    description: 'Local Tax Number. Max length: 25'
+  - name: glat
+    description: GPS Latitude (WGS84)
+  - name: glon
+    description: GPS Longitude (WGS84)
+  - name: icty
+    description: 'Obsolete. Max length: 3'
+  - name: valr
+    description: 'Validation Required. Allowed values: 1, 2'
+  - name: valr_kw
+    description: 'Validation Required (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: afal
+    description: 'Address Format for Address Lines. Max length: 3'
+  - name: ln01__en_us
+    description: '(required) Address Line 1 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: ln02__en_us
+    description: '(required) Address Line 2 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: ln03__en_us
+    description: '(required) Address Line 3 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: ln04__en_us
+    description: '(required) Address Line 4 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: ln05__en_us
+    description: '(required) Address Line 5 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: ln06__en_us
+    description: '(required) Address Line 6 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: ezty
+    description: 'Economic Zone Type. Max length: 9'
+  - name: txta
+    description: Text
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccty_cste_ref_compnr
+    description: company number of primary key of table tcmcs143 States/Provinces
+  - name: ccty_cste_ccit_ref_compnr
+    description: company number of primary key of table tccom139 Cities by Country
+  - name: coaf_ref_compnr
+    description: company number of primary key of table tccom135 Address Formats
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: tzid_ref_compnr
+    description: company number of primary key of table tcemm100 Time Zones
+  - name: afal_ref_compnr
+    description: company number of primary key of table tccom135 Address Formats
+  - name: ezty_ref_compnr
+    description: company number of primary key of table tccom187 Economic Zone Types
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom130 Addresses table, Generated 2026-04-10T19:41:04Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cadr

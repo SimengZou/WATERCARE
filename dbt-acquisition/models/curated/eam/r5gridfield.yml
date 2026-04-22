@@ -1,0 +1,63 @@
+version: 2
+models:
+- name: r5gridfield
+  columns:
+  - name: gfd_lastsaved
+    description: GFD_LASTSAVED
+  - name: gfd_botfunction
+    description: GFD_BOTFUNCTION
+  - name: gfd_botnumber
+    description: GFD_BOTNUMBER
+  - name: gfd_controltype
+    description: GFD_CONTROLTYPE
+  - name: gfd_scriptevent
+    description: GFD_SCRIPTEVENT
+  - name: gfd_tagname
+    description: GFD_TAGNAME
+  - name: gfd_updatecount
+    description: GFD_UPDATECOUNT
+  - name: gfd_tagparams
+    description: GFD_TAGPARAMS
+  - name: gfd_aggfunc
+    description: GFD_AGGFUNC
+  - name: gfd_fieldtype
+    description: GFD_FIELDTYPE
+  - name: gfd_occurrence
+    description: GFD_OCCURRENCE
+  - name: gfd_dependent
+    description: GFD_DEPENDENT
+  - name: gfd_secentity
+    description: GFD_SECENTITY
+  - name: gfd_headerlocation
+    description: GFD_HEADERLOCATION
+  - name: gfd_updated
+    description: GFD_UPDATED
+  - name: gfd_fieldid
+    description: GFD_FIELDID
+  - name: gfd_gridid
+    description: GFD_GRIDID
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5GRIDFIELD
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - gfd_fieldid
+        - gfd_gridid
+        - gfd_occurrence

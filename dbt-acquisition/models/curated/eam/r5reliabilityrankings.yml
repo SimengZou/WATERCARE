@@ -1,0 +1,177 @@
+version: 2
+models:
+- name: r5reliabilityrankings
+  columns:
+  - name: rrk_lastsaved
+    description: RRK_LASTSAVED
+  - name: rrk_code
+    description: RRK_CODE
+  - name: rrk_org
+    description: RRK_ORG
+  - name: rrk_revision
+    description: RRK_REVISION
+  - name: rrk_desc
+    description: RRK_DESC
+  - name: rrk_class
+    description: RRK_CLASS
+  - name: rrk_class_org
+    description: RRK_CLASS_ORG
+  - name: rrk_revrstatus
+    description: RRK_REVRSTATUS
+  - name: rrk_revstatus
+    description: RRK_REVSTATUS
+  - name: rrk_created
+    description: RRK_CREATED
+  - name: rrk_createdby
+    description: RRK_CREATEDBY
+  - name: rrk_setuplastupdated
+    description: RRK_SETUPLASTUPDATED
+  - name: rrk_notused
+    description: RRK_NOTUSED
+  - name: rrk_updatecount
+    description: RRK_UPDATECOUNT
+  - name: rrk_type
+    description: RRK_TYPE
+  - name: rrk_rtype
+    description: RRK_RTYPE
+  - name: rrk_conditionprotocol
+    description: RRK_CONDITIONPROTOCOL
+  - name: rrk_condscorestart
+    description: RRK_CONDSCORESTART
+  - name: rrk_condscoreend
+    description: RRK_CONDSCOREEND
+  - name: rrk_condscorethreshold
+    description: RRK_CONDSCORETHRESHOLD
+  - name: rrk_decaycurve
+    description: RRK_DECAYCURVE
+  - name: rrk_decaycurve_org
+    description: RRK_DECAYCURVE_ORG
+  - name: rrk_trackhistory
+    description: RRK_TRACKHISTORY
+  - name: rrk_udfchar01
+    description: RRK_UDFCHAR01
+  - name: rrk_udfchar02
+    description: RRK_UDFCHAR02
+  - name: rrk_udfchar03
+    description: RRK_UDFCHAR03
+  - name: rrk_udfchar04
+    description: RRK_UDFCHAR04
+  - name: rrk_udfchar05
+    description: RRK_UDFCHAR05
+  - name: rrk_udfchar06
+    description: RRK_UDFCHAR06
+  - name: rrk_udfchar07
+    description: RRK_UDFCHAR07
+  - name: rrk_udfchar08
+    description: RRK_UDFCHAR08
+  - name: rrk_udfchar09
+    description: RRK_UDFCHAR09
+  - name: rrk_udfchar10
+    description: RRK_UDFCHAR10
+  - name: rrk_udfchar11
+    description: RRK_UDFCHAR11
+  - name: rrk_udfchar12
+    description: RRK_UDFCHAR12
+  - name: rrk_udfchar13
+    description: RRK_UDFCHAR13
+  - name: rrk_udfchar14
+    description: RRK_UDFCHAR14
+  - name: rrk_udfchar15
+    description: RRK_UDFCHAR15
+  - name: rrk_udfchar16
+    description: RRK_UDFCHAR16
+  - name: rrk_udfchar17
+    description: RRK_UDFCHAR17
+  - name: rrk_udfchar18
+    description: RRK_UDFCHAR18
+  - name: rrk_udfchar19
+    description: RRK_UDFCHAR19
+  - name: rrk_udfchar20
+    description: RRK_UDFCHAR20
+  - name: rrk_udfchar21
+    description: RRK_UDFCHAR21
+  - name: rrk_udfchar22
+    description: RRK_UDFCHAR22
+  - name: rrk_udfchar23
+    description: RRK_UDFCHAR23
+  - name: rrk_udfchar24
+    description: RRK_UDFCHAR24
+  - name: rrk_udfchar25
+    description: RRK_UDFCHAR25
+  - name: rrk_udfchar26
+    description: RRK_UDFCHAR26
+  - name: rrk_udfchar27
+    description: RRK_UDFCHAR27
+  - name: rrk_udfchar28
+    description: RRK_UDFCHAR28
+  - name: rrk_udfchar29
+    description: RRK_UDFCHAR29
+  - name: rrk_udfchar30
+    description: RRK_UDFCHAR30
+  - name: rrk_udfnum01
+    description: RRK_UDFNUM01
+  - name: rrk_udfnum02
+    description: RRK_UDFNUM02
+  - name: rrk_udfnum03
+    description: RRK_UDFNUM03
+  - name: rrk_udfnum04
+    description: RRK_UDFNUM04
+  - name: rrk_udfnum05
+    description: RRK_UDFNUM05
+  - name: rrk_udfdate01
+    description: RRK_UDFDATE01
+  - name: rrk_udfdate02
+    description: RRK_UDFDATE02
+  - name: rrk_udfdate03
+    description: RRK_UDFDATE03
+  - name: rrk_udfdate04
+    description: RRK_UDFDATE04
+  - name: rrk_udfdate05
+    description: RRK_UDFDATE05
+  - name: rrk_udfchkbox01
+    description: RRK_UDFCHKBOX01
+  - name: rrk_udfchkbox02
+    description: RRK_UDFCHKBOX02
+  - name: rrk_udfchkbox03
+    description: RRK_UDFCHKBOX03
+  - name: rrk_udfchkbox04
+    description: RRK_UDFCHKBOX04
+  - name: rrk_udfchkbox05
+    description: RRK_UDFCHKBOX05
+  - name: rrk_precision
+    description: RRK_PRECISION
+  - name: rrk_performanceformula
+    description: RRK_PERFORMANCEFORMULA
+  - name: rrk_performanceformula_org
+    description: RRK_PERFORMANCEFORMULA_ORG
+  - name: rrk_corrscoreranking
+    description: RRK_CORRSCORERANKING
+  - name: rrk_corrscoreranking_org
+    description: RRK_CORRSCORERANKING_ORG
+  - name: rrk_corrscorerankingrev
+    description: RRK_CORRSCORERANKINGREV
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5RELIABILITYRANKINGS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - rrk_code
+        - rrk_org
+        - rrk_revision

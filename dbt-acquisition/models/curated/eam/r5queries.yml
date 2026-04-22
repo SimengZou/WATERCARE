@@ -1,0 +1,52 @@
+version: 2
+models:
+- name: r5queries
+  columns:
+  - name: que_lastsaved
+    description: QUE_LASTSAVED
+  - name: que_text
+    description: QUE_TEXT
+  - name: que_normal
+    description: QUE_NORMAL
+  - name: que_asset
+    description: QUE_ASSET
+  - name: que_inbox
+    description: QUE_INBOX
+  - name: que_kpi
+    description: QUE_KPI
+  - name: que_updatecount
+    description: QUE_UPDATECOUNT
+  - name: que_updated
+    description: QUE_UPDATED
+  - name: que_chart
+    description: QUE_CHART
+  - name: que_desc
+    description: QUE_DESC
+  - name: que_note
+    description: QUE_NOTE
+  - name: que_equipmentranking
+    description: QUE_EQUIPMENTRANKING
+  - name: que_code
+    description: QUE_CODE
+    data_tests:
+    - unique
+  - name: que_lookup
+    description: QUE_LOOKUP
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5QUERIES

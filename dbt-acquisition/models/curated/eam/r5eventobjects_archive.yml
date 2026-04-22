@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: r5eventobjects_archive
+  columns:
+  - name: aeo_lastsaved
+    description: AEO_LASTSAVED
+  - name: aeo_event
+    description: AEO_EVENT
+  - name: aeo_obtype
+    description: AEO_OBTYPE
+  - name: aeo_obrtype
+    description: AEO_OBRTYPE
+  - name: aeo_object
+    description: AEO_OBJECT
+  - name: aeo_level
+    description: AEO_LEVEL
+  - name: aeo_downtime
+    description: AEO_DOWNTIME
+  - name: aeo_object_org
+    description: AEO_OBJECT_ORG
+  - name: aeo_updatecount
+    description: AEO_UPDATECOUNT
+  - name: aeo_frompoint
+    description: AEO_FROMPOINT
+  - name: aeo_topoint
+    description: AEO_TOPOINT
+  - name: aeo_weightpercentage
+    description: AEO_WEIGHTPERCENTAGE
+  - name: aeo_archive
+    description: AEO_ARCHIVE
+  - name: aeo_rollup
+    description: AEO_ROLLUP
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EVENTOBJECTS_ARCHIVE

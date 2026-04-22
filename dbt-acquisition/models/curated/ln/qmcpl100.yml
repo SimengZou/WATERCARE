@@ -1,0 +1,192 @@
+version: 2
+models:
+- name: qmcpl100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: capn
+    description: '(required) Corrective Action Plan. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ownr
+    description: 'Owner. Max length: 9'
+  - name: appr
+    description: 'Approver. Max length: 9'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: effn
+    description: Effectivity Unit
+  - name: revi
+    description: 'E-Item Revision. Max length: 6'
+  - name: dudt
+    description: Due Date
+  - name: cmdt
+    description: Closed Date
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: cusr
+    description: 'Created by User. Max length: 16'
+  - name: crdt
+    description: Creation Date
+  - name: stat
+    description: 'Status. Allowed values: 1, 2, 3, 4, 5, 6, 7'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: qmcpl.caps.open, qmcpl.caps.submitted,
+      qmcpl.caps.approved, qmcpl.caps.modified, qmcpl.caps.closed, qmcpl.caps.cancelled,
+      qmcpl.caps.complete'
+  - name: cprj
+    description: 'Project Code. Max length: 9'
+  - name: catg
+    description: 'Category. Max length: 9'
+  - name: apdt
+    description: Approved Date
+  - name: sudt
+    description: Submitted Date
+  - name: modt
+    description: Modified Date
+  - name: cndt
+    description: Cancelled Date
+  - name: cpef
+    description: 'CAP is Effective. Allowed values: 10, 20, 30, 100'
+  - name: cpef_kw
+    description: 'CAP is Effective (keyword). Allowed values: qmcpl.cape.yes, qmcpl.cape.no,
+      qmcpl.cape.uevl, qmcpl.cape.na'
+  - name: ecpv
+    description: 'Effectiveness of CAP is Verified. Allowed values: 1, 2'
+  - name: ecpv_kw
+    description: 'Effectiveness of CAP is Verified (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mrbc
+    description: 'Review Board. Max length: 9'
+  - name: pbsm
+    description: 'Problem Solving Method. Allowed values: 10, 20, 30, 90, 100'
+  - name: pbsm_kw
+    description: 'Problem Solving Method (keyword). Allowed values: tcmcs.pbsm.8d,
+      tcmcs.pbsm.a3, tcmcs.pbsm.chlt, tcmcs.pbsm.other, tcmcs.pbsm.na'
+  - name: psmo__en_us
+    description: '(required) Other Method - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: rcad
+    description: 'RCA Document Number. Max length: 9'
+  - name: scap
+    description: 'Supplier Corrective Action Plan. Allowed values: 1, 2'
+  - name: scap_kw
+    description: 'Supplier Corrective Action Plan (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: scas
+    description: 'Supplier Corrective Action Plan Status. Allowed values: 10, 20,
+      30, 40, 50, 100'
+  - name: scas_kw
+    description: 'Supplier Corrective Action Plan Status (keyword). Allowed values:
+      qmcpl.scar.notsent, qmcpl.scar.submit, qmcpl.scar.receive, qmcpl.scar.approve,
+      qmcpl.scar.reject, qmcpl.scar.na'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: efdt
+    description: Due date for Effectiveness
+  - name: codt
+    description: Completion Date
+  - name: text
+    description: Text
+  - name: pbst
+    description: Problem Statement
+  - name: comt
+    description: Comments
+  - name: bgif
+    description: Background Information
+  - name: crst
+    description: Current Situation
+  - name: goal
+    description: Goal
+  - name: cfef
+    description: Confirmation of Effect
+  - name: evds
+    description: Effectiveness Verification Details
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: ownr_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: appr_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Number
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: catg_ref_compnr
+    description: company number of primary key of table qmcpl002 Categories
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: pbst_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: comt_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: bgif_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: crst_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: goal_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: cfef_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: evds_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmcpl100 Corrective Action Plan table, Generated 2022-06-15T01:21:00Z
+    from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - capn

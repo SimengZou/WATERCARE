@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: r5pmplansession
+  columns:
+  - name: pps_lastsaved
+    description: PPS_LASTSAVED
+  - name: pps_sessionid
+    description: PPS_SESSIONID
+  - name: pps_ppopk
+    description: PPS_PPOPK
+  - name: pps_pmrevision
+    description: PPS_PMREVISION
+  - name: pps_dueweekofmonth
+    description: PPS_DUEWEEKOFMONTH
+  - name: pps_duedayofweek
+    description: PPS_DUEDAYOFWEEK
+  - name: pps_duedate
+    description: PPS_DUEDATE
+  - name: pps_nestingref
+    description: PPS_NESTINGREF
+  - name: pps_ignorefreqwarning
+    description: PPS_IGNOREFREQWARNING
+  - name: pps_ignorerangewarning
+    description: PPS_IGNORERANGEWARNING
+  - name: pps_updatecount
+    description: PPS_UPDATECOUNT
+  - name: pps_pk
+    description: PPS_PK
+    data_tests:
+    - unique
+  - name: pps_locked
+    description: PPS_LOCKED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PMPLANSESSION

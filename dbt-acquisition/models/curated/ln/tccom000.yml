@@ -1,0 +1,766 @@
+version: 2
+models:
+- name: tccom000
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Introduction Date
+    data_tests:
+    - not_null
+  - name: ncmp
+    description: (required) Company
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: nama__en_us
+    description: '(required) Name - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: ccty
+    description: 'Country. Max length: 3'
+  - name: cmai
+    description: 'Mailing Number. Max length: 7'
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: cadr
+    description: 'Address Code. Max length: 9'
+  - name: fovn
+    description: 'Tax Number of Own Company. Max length: 35'
+  - name: arcc
+    description: 'Archive Company. Allowed values: 1, 2'
+  - name: arcc_kw
+    description: 'Archive Company (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: darc
+    description: Archive-to Company
+  - name: adcc
+    description: 'Data Lake Company. Allowed values: 1, 2'
+  - name: adcc_kw
+    description: 'Data Lake Company (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ardc
+    description: Archive-to Data Lake Company
+  - name: fini
+    description: 'Financials (TF). Allowed values: 1, 2'
+  - name: fini_kw
+    description: 'Financials (TF) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: frmi
+    description: 'Freight Management (FM). Allowed values: 1, 2'
+  - name: frmi_kw
+    description: 'Freight Management (FM) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: prji
+    description: 'Project (TP). Allowed values: 1, 2'
+  - name: prji_kw
+    description: 'Project (TP) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: wrhi
+    description: 'Warehouse Management (WH). Allowed values: 1, 2'
+  - name: wrhi_kw
+    description: 'Warehouse Management (WH) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: wmbi
+    description: 'Factory Track (BR). Allowed values: 1, 2'
+  - name: wmbi_kw
+    description: 'Factory Track (BR) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cfri
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: cfri_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cpli
+    description: 'Enterprise Planning (CP). Allowed values: 1, 2'
+  - name: cpli_kw
+    description: 'Enterprise Planning (CP) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: srvi
+    description: 'Service (TS). Allowed values: 1, 2'
+  - name: srvi_kw
+    description: 'Service (TS) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cinv
+    description: 'Central Invoicing (CI). Allowed values: 1, 2'
+  - name: cinv_kw
+    description: 'Central Invoicing (CI) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dsri
+    description: 'Order Management (TD). Allowed values: 1, 2'
+  - name: dsri_kw
+    description: 'Order Management (TD) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: spri
+    description: 'Services Procurement. Allowed values: 10, 15, 20, 30'
+  - name: spri_kw
+    description: 'Services Procurement (keyword). Allowed values: tcactf.inactive,
+      tcactf.em.inprep, tcactf.inprep, tcactf.active'
+  - name: qumi
+    description: 'Quality Management (QM). Allowed values: 1, 2'
+  - name: qumi_kw
+    description: 'Quality Management (QM) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ecmi
+    description: 'Electronic Commerce (EC). Allowed values: 1, 2'
+  - name: ecmi_kw
+    description: 'Electronic Commerce (EC) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mnfc
+    description: 'Manufacturing (TI). Allowed values: 1, 2'
+  - name: mnfc_kw
+    description: 'Manufacturing (TI) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tlgi
+    description: 'Tool Requirements Planning (TRP). Allowed values: 1, 2'
+  - name: tlgi_kw
+    description: 'Tool Requirements Planning (TRP) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pcsi
+    description: 'Project Control (PCS). Allowed values: 1, 2'
+  - name: pcsi_kw
+    description: 'Project Control (PCS) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: erac
+    description: 'Engineering Revisions. Allowed values: 1, 2'
+  - name: erac_kw
+    description: 'Engineering Revisions (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rpti
+    description: 'Repetitive Manufacturing (RPT). Allowed values: 1, 2'
+  - name: rpti_kw
+    description: 'Repetitive Manufacturing (RPT) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pcfi
+    description: 'Product Configurator (PCF). Allowed values: 1, 2'
+  - name: pcfi_kw
+    description: 'Product Configurator (PCF) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: unef
+    description: 'Unit Effectivity. Allowed values: 1, 2'
+  - name: unef_kw
+    description: 'Unit Effectivity (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bape
+    description: 'People (BP). Allowed values: 1, 2'
+  - name: bape_kw
+    description: 'People (BP) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: odmu
+    description: 'Object Data Management (DM). Allowed values: 1, 2'
+  - name: odmu_kw
+    description: 'Object Data Management (DM) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: plma
+    description: 'Product Lifecycle Management (PD). Allowed values: 1, 2'
+  - name: plma_kw
+    description: 'Product Lifecycle Management (PD) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: plai
+    description: 'Infor SCM Planner. Allowed values: 1, 2'
+  - name: plai_kw
+    description: 'Infor SCM Planner (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: schi
+    description: 'Infor SCM Scheduler. Allowed values: 1, 2'
+  - name: schi_kw
+    description: 'Infor SCM Scheduler (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: opsi
+    description: 'Order Promising Server. Allowed values: 1, 2'
+  - name: opsi_kw
+    description: 'Order Promising Server (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: asci
+    description: 'Assembly. Allowed values: 1, 2'
+  - name: asci_kw
+    description: 'Assembly (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: asmi
+    description: 'Assembly 2.0. Allowed values: 1, 2'
+  - name: asmi_kw
+    description: 'Assembly 2.0 (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: eust
+    description: 'EU Statistical Reporting. Allowed values: 1, 2'
+  - name: eust_kw
+    description: 'EU Statistical Reporting (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: eusl
+    description: 'EU Sales Listing. Allowed values: 1, 2'
+  - name: eusl_kw
+    description: 'EU Sales Listing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: smii
+    description: 'Relation Management (SMI). Allowed values: 1, 2'
+  - name: smii_kw
+    description: 'Relation Management (SMI) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rdes
+    description: 'Reference Designators. Allowed values: 1, 2'
+  - name: rdes_kw
+    description: 'Reference Designators (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dasr
+    description: 'DAS 2 Reporting. Allowed values: 1, 2'
+  - name: dasr_kw
+    description: 'DAS 2 Reporting (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: capp
+    description: 'Customer Approval. Allowed values: 1, 2'
+  - name: capp_kw
+    description: 'Customer Approval (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: altm
+    description: 'Alternative Materials. Allowed values: 1, 2'
+  - name: altm_kw
+    description: 'Alternative Materials (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: usup
+    description: 'Use Up Material. Allowed values: 1, 2'
+  - name: usup_kw
+    description: 'Use Up Material (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: deln
+    description: 'Delivery Notes. Allowed values: 1, 2'
+  - name: deln_kw
+    description: 'Delivery Notes (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: stat
+    description: 'Purchase/Sales Statistics (STA). Allowed values: 1, 2'
+  - name: stat_kw
+    description: 'Purchase/Sales Statistics (STA) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: uwht
+    description: 'Withholding Income Tax and Social Contribution. Allowed values:
+      1, 2'
+  - name: uwht_kw
+    description: 'Withholding Income Tax and Social Contribution (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: lgid__en_us
+    description: '(required) Chamber of Commerce ID - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: duns
+    description: DUNS Number
+  - name: fidn
+    description: 'Fiscal Identification. Max length: 20'
+  - name: gtro
+    description: 'Grand Total Rounding. Allowed values: 1, 2'
+  - name: gtro_kw
+    description: 'Grand Total Rounding (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: lnwi
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: lnwi_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: taxd
+    description: 'Tax. Allowed values: 1, 2'
+  - name: taxd_kw
+    description: 'Tax (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mpni
+    description: 'Manufacturer Part Numbers. Allowed values: 1, 2'
+  - name: mpni_kw
+    description: 'Manufacturer Part Numbers (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: owni
+    description: 'Ownership Internal. Allowed values: 1, 2'
+  - name: owni_kw
+    description: 'Ownership Internal (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: owne
+    description: 'Ownership External. Allowed values: 1, 2'
+  - name: owne_kw
+    description: 'Ownership External (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: smfs
+    description: 'Customer Furnished Materials. Allowed values: 1, 2'
+  - name: smfs_kw
+    description: 'Customer Furnished Materials (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: smfm
+    description: 'Subcontracting with Material Flow. Allowed values: 1, 2'
+  - name: smfm_kw
+    description: 'Subcontracting with Material Flow (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ssmf
+    description: 'Subcontracting with Material Flow - Service. Allowed values: 1,
+      2'
+  - name: ssmf_kw
+    description: 'Subcontracting with Material Flow - Service (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: alhp
+    description: 'Demand Pegging. Allowed values: 1, 2'
+  - name: alhp_kw
+    description: 'Demand Pegging (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: vmis
+    description: 'VMI (supplier side). Allowed values: 1, 2'
+  - name: vmis_kw
+    description: 'VMI (supplier side) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: vmic
+    description: 'VMI (customer side). Allowed values: 1, 2'
+  - name: vmic_kw
+    description: 'VMI (customer side) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ucsl
+    description: 'Use Confirmation (Sales). Allowed values: 1, 2'
+  - name: ucsl_kw
+    description: 'Use Confirmation (Sales) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ucpu
+    description: 'Use Confirmation (Purchase). Allowed values: 1, 2'
+  - name: ucpu_kw
+    description: 'Use Confirmation (Purchase) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: trcn
+    description: 'Terms and Conditions (TRM). Allowed values: 1, 2'
+  - name: trcn_kw
+    description: 'Terms and Conditions (TRM) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: csli
+    description: 'Customer and Supplier List Italy. Allowed values: 1, 2'
+  - name: csli_kw
+    description: 'Customer and Supplier List Italy (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: eupl
+    description: 'EU Purchase Listing. Allowed values: 1, 2'
+  - name: eupl_kw
+    description: 'EU Purchase Listing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ffpl
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: ffpl_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cbtp
+    description: 'Business Partner Type. Max length: 3'
+  - name: cbrn
+    description: 'Line of Business. Max length: 6'
+  - name: repr
+    description: 'Representative. Max length: 9'
+  - name: crid__en_us
+    description: '(required) Creditor Identifier - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: beid__en_us
+    description: '(required) Business Entity Identifier - base language. Max length:
+      15'
+    data_tests:
+    - not_null
+  - name: bgci
+    description: 'Budget Control. Allowed values: 1, 2'
+  - name: bgci_kw
+    description: 'Budget Control (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: acfg
+    description: 'Infor Configurator (CPQ). Allowed values: 1, 2'
+  - name: acfg_kw
+    description: 'Infor Configurator (CPQ) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lcsi
+    description: 'Landed Costs. Allowed values: 1, 2'
+  - name: lcsi_kw
+    description: 'Landed Costs (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: lrus
+    description: 'Functionality for Russia. Allowed values: 1, 2'
+  - name: lrus_kw
+    description: 'Functionality for Russia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lpol
+    description: 'Functionality for Poland. Allowed values: 1, 2'
+  - name: lpol_kw
+    description: 'Functionality for Poland (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lcze
+    description: 'Functionality for Czech Republic. Allowed values: 1, 2'
+  - name: lcze_kw
+    description: 'Functionality for Czech Republic (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lnor
+    description: 'Functionality for Norway. Allowed values: 1, 2'
+  - name: lnor_kw
+    description: 'Functionality for Norway (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lsvk
+    description: 'Functionality for Slovakia. Allowed values: 1, 2'
+  - name: lsvk_kw
+    description: 'Functionality for Slovakia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lmys
+    description: 'Functionality for Malaysia. Allowed values: 1, 2'
+  - name: lmys_kw
+    description: 'Functionality for Malaysia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bulg
+    description: 'Functionality for Bulgaria. Allowed values: 1, 2'
+  - name: bulg_kw
+    description: 'Functionality for Bulgaria (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lbra
+    description: 'Functionality for Brazil. Allowed values: 1, 2'
+  - name: lbra_kw
+    description: 'Functionality for Brazil (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lesp
+    description: 'Functionality for Spain. Allowed values: 1, 2'
+  - name: lesp_kw
+    description: 'Functionality for Spain (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lmex
+    description: 'Functionality for Mexico. Allowed values: 1, 2'
+  - name: lmex_kw
+    description: 'Functionality for Mexico (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ldeu
+    description: 'Functionality for Germany. Allowed values: 1, 2'
+  - name: ldeu_kw
+    description: 'Functionality for Germany (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lisr
+    description: 'Functionality For Israel. Allowed values: 1, 2'
+  - name: lisr_kw
+    description: 'Functionality For Israel (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lrom
+    description: 'Functionality for Romania. Allowed values: 1, 2'
+  - name: lrom_kw
+    description: 'Functionality for Romania (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lchn
+    description: 'Functionality for China. Allowed values: 1, 2'
+  - name: lchn_kw
+    description: 'Functionality for China (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lchl
+    description: 'Functionality for Chile. Allowed values: 1, 2'
+  - name: lchl_kw
+    description: 'Functionality for Chile (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ltur
+    description: 'Functionality for Turkey. Allowed values: 1, 2'
+  - name: ltur_kw
+    description: 'Functionality for Turkey (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: larg
+    description: 'Functionality for Argentina. Allowed values: 1, 2'
+  - name: larg_kw
+    description: 'Functionality for Argentina (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lhun
+    description: 'Functionality for Hungary. Allowed values: 1, 2'
+  - name: lhun_kw
+    description: 'Functionality for Hungary (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lpor
+    description: 'Functionality for Portugal. Allowed values: 1, 2'
+  - name: lpor_kw
+    description: 'Functionality for Portugal (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lche
+    description: 'Functionality for Switzerland. Allowed values: 1, 2'
+  - name: lche_kw
+    description: 'Functionality for Switzerland (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lper
+    description: 'Functionality for Peru. Allowed values: 1, 2'
+  - name: lper_kw
+    description: 'Functionality for Peru (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ltha
+    description: 'Functionality for Thailand. Allowed values: 1, 2'
+  - name: ltha_kw
+    description: 'Functionality for Thailand (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lago
+    description: 'Functionality for Angola. Allowed values: 1, 2'
+  - name: lago_kw
+    description: 'Functionality for Angola (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lind
+    description: 'Functionality for India. Allowed values: 1, 2'
+  - name: lind_kw
+    description: 'Functionality for India (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lidn
+    description: 'Functionality for Indonesia. Allowed values: 1, 2'
+  - name: lidn_kw
+    description: 'Functionality for Indonesia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lvnm
+    description: 'Functionality for Vietnam. Allowed values: 1, 2'
+  - name: lvnm_kw
+    description: 'Functionality for Vietnam (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lcol
+    description: 'Functionality for Colombia. Allowed values: 1, 2'
+  - name: lcol_kw
+    description: 'Functionality for Colombia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lita
+    description: 'Functionality for Italy. Allowed values: 1, 2'
+  - name: lita_kw
+    description: 'Functionality for Italy (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lsau
+    description: 'Functionality for Saudi Arabia. Allowed values: 1, 2'
+  - name: lsau_kw
+    description: 'Functionality for Saudi Arabia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lsvn
+    description: 'Functionality for Slovenia. Allowed values: 1, 2'
+  - name: lsvn_kw
+    description: 'Functionality for Slovenia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lhrv
+    description: 'Functionality for Croatia. Allowed values: 1, 2'
+  - name: lhrv_kw
+    description: 'Functionality for Croatia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lsrb
+    description: 'Functionality for Serbia. Allowed values: 1, 2'
+  - name: lsrb_kw
+    description: 'Functionality for Serbia (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lphl
+    description: 'Functionality for Philippines. Allowed values: 1, 2'
+  - name: lphl_kw
+    description: 'Functionality for Philippines (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lgbr
+    description: 'Functionality for United Kingdom. Allowed values: 1, 2'
+  - name: lgbr_kw
+    description: 'Functionality for United Kingdom (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lfra
+    description: 'Functionality for France. Allowed values: 1, 2'
+  - name: lfra_kw
+    description: 'Functionality for France (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lkor
+    description: 'Functionality for South Korea. Allowed values: 1, 2'
+  - name: lkor_kw
+    description: 'Functionality for South Korea (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ppeg
+    description: 'Project Pegging. Allowed values: 1, 2'
+  - name: ppeg_kw
+    description: 'Project Pegging (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: slbp
+    description: 'Self-Billing (Purchase). Allowed values: 1, 2'
+  - name: slbp_kw
+    description: 'Self-Billing (Purchase) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: slbs
+    description: 'Self-Billing (Sales). Allowed values: 1, 2'
+  - name: slbs_kw
+    description: 'Self-Billing (Sales) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ilwh
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: ilwh_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: siac__en_us
+    description: '(required) SIA Company Code - base language. Max length: 5'
+    data_tests:
+    - not_null
+  - name: cbrk
+    description: 'Costing Breaks. Allowed values: 1, 2'
+  - name: cbrk_kw
+    description: 'Costing Breaks (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: spsp
+    description: 'Supplier Stage Payments. Allowed values: 1, 2'
+  - name: spsp_kw
+    description: 'Supplier Stage Payments (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mprs
+    description: 'Material Pricing. Allowed values: 1, 2'
+  - name: mprs_kw
+    description: 'Material Pricing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: hcst
+    description: 'Show Hours in Costing. Allowed values: 1, 2'
+  - name: hcst_kw
+    description: 'Show Hours in Costing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mfsi
+    description: 'Mobile Field Service Implemented. Allowed values: 1, 2'
+  - name: mfsi_kw
+    description: 'Mobile Field Service Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: itri
+    description: 'Intercompany Trade. Allowed values: 1, 2'
+  - name: itri_kw
+    description: 'Intercompany Trade (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ptri
+    description: 'Point in Time Revenue Recognition. Allowed values: 1, 2'
+  - name: ptri_kw
+    description: 'Point in Time Revenue Recognition (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: asec
+    description: 'Authorization and Security. Allowed values: 0, 1, 2'
+  - name: asec_kw
+    description: 'Authorization and Security (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: grpl
+    description: 'Resource Planning. Allowed values: 1, 2'
+  - name: grpl_kw
+    description: 'Resource Planning (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: gtci
+    description: 'Trade Management. Allowed values: 1, 2'
+  - name: gtci_kw
+    description: 'Trade Management (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: itpd
+    description: 'Item Type Product. Allowed values: 10, 15, 20, 30'
+  - name: itpd_kw
+    description: 'Item Type Product (keyword). Allowed values: tcactf.inactive, tcactf.em.inprep,
+      tcactf.inprep, tcactf.active'
+  - name: jspm
+    description: 'Job Shop by Site. Allowed values: 10, 15, 20, 30'
+  - name: jspm_kw
+    description: 'Job Shop by Site (keyword). Allowed values: tcactf.inactive, tcactf.em.inprep,
+      tcactf.inprep, tcactf.active'
+  - name: mstc
+    description: 'Standard Cost by Enterprise Unit. Allowed values: 10, 15, 20, 30'
+  - name: mstc_kw
+    description: 'Standard Cost by Enterprise Unit (keyword). Allowed values: tcactf.inactive,
+      tcactf.em.inprep, tcactf.inprep, tcactf.active'
+  - name: pcmd
+    description: 'Planning Cluster Mandatory. Allowed values: 10, 15, 20, 30'
+  - name: pcmd_kw
+    description: 'Planning Cluster Mandatory (keyword). Allowed values: tcactf.inactive,
+      tcactf.em.inprep, tcactf.inprep, tcactf.active'
+  - name: simd
+    description: 'Sites. Allowed values: 10, 15, 20, 30'
+  - name: simd_kw
+    description: 'Sites (keyword). Allowed values: tcactf.inactive, tcactf.em.inprep,
+      tcactf.inprep, tcactf.active'
+  - name: prci
+    description: 'Product Classification. Allowed values: 1, 2'
+  - name: prci_kw
+    description: 'Product Classification (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tati
+    description: 'Turnaround Time. Allowed values: 1, 2'
+  - name: tati_kw
+    description: 'Turnaround Time (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bcmi
+    description: 'Business Communication. Allowed values: 1, 2'
+  - name: bcmi_kw
+    description: 'Business Communication (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mejs
+    description: 'MES Reporting for Job Shop. Allowed values: 1, 2'
+  - name: mejs_kw
+    description: 'MES Reporting for Job Shop (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: psch
+    description: 'Production Scheduler. Allowed values: 1, 2'
+  - name: psch_kw
+    description: 'Production Scheduler (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: stbi
+    description: 'Scan To Book. Allowed values: 1, 2'
+  - name: stbi_kw
+    description: 'Scan To Book (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: eaas
+    description: 'Equipment as a Service. Allowed values: 1, 2'
+  - name: eaas_kw
+    description: 'Equipment as a Service (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rsbs
+    description: 'Resources by Site. Allowed values: 10, 15, 20, 30'
+  - name: rsbs_kw
+    description: 'Resources by Site (keyword). Allowed values: tcactf.inactive, tcactf.em.inprep,
+      tcactf.inprep, tcactf.active'
+  - name: scbs
+    description: 'Sourcing by Site. Allowed values: 10, 15, 20, 30'
+  - name: scbs_kw
+    description: 'Sourcing by Site (keyword). Allowed values: tcactf.inactive, tcactf.em.inprep,
+      tcactf.inprep, tcactf.active'
+  - name: inf1__en_us
+    description: '(required) Company Information 1 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: inf2__en_us
+    description: '(required) Company Information 2 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: inf3__en_us
+    description: '(required) Company Information 3 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: inf4__en_us
+    description: '(required) Company Information 4 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: xtmm
+    description: 'Attendance. Allowed values: 0, 1, 2'
+  - name: xtmm_kw
+    description: 'Attendance (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: clbi
+    description: 'Collaboration Portal. Allowed values: 1, 2'
+  - name: clbi_kw
+    description: 'Collaboration Portal (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cfbs
+    description: 'Configurations by Site. Allowed values: 10, 15, 20, 30'
+  - name: cfbs_kw
+    description: 'Configurations by Site (keyword). Allowed values: tcactf.inactive,
+      tcactf.em.inprep, tcactf.inprep, tcactf.active'
+  - name: eqbu
+    description: 'Buying Equipment. Allowed values: 10, 15, 20, 30'
+  - name: eqbu_kw
+    description: 'Buying Equipment (keyword). Allowed values: tcactf.inactive, tcactf.em.inprep,
+      tcactf.inprep, tcactf.active'
+  - name: corg
+    description: 'Country of Origin. Allowed values: 1, 2'
+  - name: corg_kw
+    description: 'Country of Origin (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: inpr
+    description: 'Inward Processing. Allowed values: 1, 2'
+  - name: inpr_kw
+    description: 'Inward Processing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pdim
+    description: 'Product Dimensions (DS). Allowed values: 1, 2'
+  - name: pdim_kw
+    description: 'Product Dimensions (DS) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pedi
+    description: 'Import Reference. Allowed values: 1, 2'
+  - name: pedi_kw
+    description: 'Import Reference (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: intr
+    description: 'Inventory Tracking. Allowed values: 1, 2'
+  - name: intr_kw
+    description: 'Inventory Tracking (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: fstk
+    description: 'Floor Stock. Allowed values: 1, 2'
+  - name: fstk_kw
+    description: 'Floor Stock (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mesa
+    description: 'MES Reporting for Assembly. Allowed values: 1, 2'
+  - name: mesa_kw
+    description: 'MES Reporting for Assembly (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: plnp
+    description: 'Infor Planner+. Allowed values: 1, 2'
+  - name: plnp_kw
+    description: 'Infor Planner+ (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: schp
+    description: 'Infor Scheduler+. Allowed values: 0, 1, 2'
+  - name: schp_kw
+    description: 'Infor Scheduler+ (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: esag
+    description: 'Environmental, Social and Governance (ESG). Allowed values: 1, 2'
+  - name: esag_kw
+    description: 'Environmental, Social and Governance (ESG) (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom000 Implemented Software Components (Companies) table, Generated
+    2026-04-10T19:41:00Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - indt
+        - ncmp

@@ -1,0 +1,158 @@
+version: 2
+models:
+- name: tpppc600
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: user
+    description: '(required) User. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: base
+    description: '(required) Base. Max length: 8'
+    data_tests:
+    - not_null
+  - name: cspa
+    description: '(required) Element. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cotp
+    description: '(required) Cost Type. Allowed values: 1, 2, 3, 4, 5, 10'
+    data_tests:
+    - not_null
+  - name: cotp_kw
+    description: 'Cost Type (keyword). Allowed values: tppdm.cotp.tasks, tppdm.cotp.materials,
+      tppdm.cotp.equipment, tppdm.cotp.subcontracting, tppdm.cotp.indirect, tppdm.cotp.overhead'
+  - name: coob
+    description: '(required) Cost Object. Max length: 47'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: ohcs
+    description: (required) Overhead Cost Sequence
+    data_tests:
+    - not_null
+  - name: tcob
+    description: 'Target Cost Object. Max length: 8'
+  - name: cccp
+    description: 'Cost Component. Max length: 8'
+  - name: vrsn
+    description: Version
+  - name: btyp
+    description: 'Base Type. Allowed values: 1, 2'
+  - name: btyp_kw
+    description: 'Base Type (keyword). Allowed values: tppdm.btyp.amount, tppdm.btyp.direct.labor.h'
+  - name: amnt
+    description: Base Value Amount
+  - name: hour
+    description: Base Value Hours
+  - name: unit
+    description: 'Unit. Max length: 3'
+  - name: perc
+    description: Overhead Percentage
+  - name: rate
+    description: Overhead Rate
+  - name: levl
+    description: Level
+  - name: tbap
+    description: Overhead to be Applied
+  - name: calc
+    description: Calculated Overhead
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: bamt
+    description: Billing Base Value Amount
+  - name: bprc
+    description: Billing Percentage
+  - name: brte
+    description: Billing Rate
+  - name: btba
+    description: Billing Amount to be Applied
+  - name: bclc
+    description: Billing Calculated Overhead
+  - name: bcur
+    description: 'Currency. Max length: 3'
+  - name: ohst
+    description: 'Status. Allowed values: 1, 2, 3, 4'
+  - name: ohst_kw
+    description: 'Status (keyword). Allowed values: tpppc.ohst.open, tpppc.ohst.not.able.apply,
+      tpppc.ohst.applied, tpppc.ohst.not.applied'
+  - name: appl
+    description: 'Apply. Allowed values: 1, 2'
+  - name: appl_kw
+    description: 'Apply (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ctdt
+    description: Calculation Transaction Date
+  - name: trdt
+    description: Transaction Date
+  - name: cldt
+    description: Calculation Date
+  - name: year
+    description: Year
+  - name: base_vrsn_ref_compnr
+    description: company number of primary key of table tppdm200 Overhead Application
+      Base
+  - name: tcob_ref_compnr
+    description: company number of primary key of table tppdm042 Standard Overhead
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpppc600 Overhead Cost Transactions table, Generated 2026-04-10T19:42:17Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - user
+        - cprj
+        - base
+        - cspa
+        - cact
+        - cotp
+        - coob
+        - sern
+        - ohcs

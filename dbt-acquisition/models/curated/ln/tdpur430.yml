@@ -1,0 +1,508 @@
+version: 2
+models:
+- name: tdpur430
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orno
+    description: '(required) Purchase Order/Schedule. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line Position
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Line Sequence
+    data_tests:
+    - not_null
+  - name: rsqn
+    description: (required) Receipt Sequence
+    data_tests:
+    - not_null
+  - name: psqn
+    description: (required) Payable Receipt Sequence
+    data_tests:
+    - not_null
+  - name: styp
+    description: 'Schedule Type. Allowed values: 1, 2, 3, 4'
+  - name: styp_kw
+    description: 'Schedule Type (keyword). Allowed values: tdstyp.push, tdstyp.pull.forecast,
+      tdstyp.pull.calloff, tdstyp.not.applicable'
+  - name: ptyp
+    description: 'Payable Receipt Type. Allowed values: 1, 2, 3'
+  - name: ptyp_kw
+    description: 'Payable Receipt Type (keyword). Allowed values: tdpur.ptyp.order,
+      tdpur.ptyp.push, tdpur.ptyp.pull'
+  - name: usdt
+    description: Usage Date
+  - name: uldt
+    description: Usage Log Date
+  - name: qipr
+    description: Payable Quantity in Inventory Unit
+  - name: qppr
+    description: Payable Quantity in Piece Unit
+  - name: pric
+    description: Price
+  - name: prsg
+    description: 'Price Stage. Max length: 3'
+  - name: porg
+    description: 'Price Origin. Allowed values: 2, 4, 6, 8, 10, 12, 13, 14, 16, 18,
+      20, 25, 30, 35, 40'
+  - name: porg_kw
+    description: 'Price Origin (keyword). Allowed values: tdgen.porg.not.applicable,
+      tdgen.porg.manual, tdgen.porg.contract, tdgen.porg.variant, tdgen.porg.item.pur,
+      tdgen.porg.item.sls, tdgen.porg.item.service, tdgen.porg.supp.pr.book, tdgen.porg.def.pr.book,
+      tdgen.porg.price.structure, tdgen.porg.extern, tdgen.porg.consumption, tdgen.porg.generic.pr.list,
+      tdgen.porg.project.budget, tdgen.porg.projectcost.obj'
+  - name: pmde
+    description: 'Price Matrix. Max length: 9'
+  - name: pmse
+    description: Price Matrix Sequence
+  - name: cupp
+    description: 'Purchase Price Unit. Max length: 3'
+  - name: cvpp
+    description: Conversion Factor Price to Inventory Unit
+  - name: disc_1
+    description: Line Discount
+  - name: disc_2
+    description: Line Discount
+  - name: disc_3
+    description: Line Discount
+  - name: disc_4
+    description: Line Discount
+  - name: disc_5
+    description: Line Discount
+  - name: disc_6
+    description: Line Discount
+  - name: disc_7
+    description: Line Discount
+  - name: disc_8
+    description: Line Discount
+  - name: disc_9
+    description: Line Discount
+  - name: disc_10
+    description: Line Discount
+  - name: disc_11
+    description: Line Discount
+  - name: ldam_1
+    description: Discount Amount
+  - name: ldam_2
+    description: Discount Amount
+  - name: ldam_3
+    description: Discount Amount
+  - name: ldam_4
+    description: Discount Amount
+  - name: ldam_5
+    description: Discount Amount
+  - name: ldam_6
+    description: Discount Amount
+  - name: ldam_7
+    description: Discount Amount
+  - name: ldam_8
+    description: Discount Amount
+  - name: ldam_9
+    description: Discount Amount
+  - name: ldam_10
+    description: Discount Amount
+  - name: ldam_11
+    description: Discount Amount
+  - name: dorg_1
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_1
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_2
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_2
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_3
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_3
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_4
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_4
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_5
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_5
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_6
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_6
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_7
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_7
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_8
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_8
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_9
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_9
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_10
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_10
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_11
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_11
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dmty_1
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_1
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_2
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_2
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_3
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_3
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_4
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_4
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_5
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_5
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_6
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_6
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_7
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_7
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_8
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_8
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_9
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_9
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_10
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_10
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_11
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_11
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmde_1
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_2
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_3
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_4
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_5
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_6
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_7
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_8
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_9
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_10
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_11
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmse_1
+    description: Discount Matrix Sequence
+  - name: dmse_2
+    description: Discount Matrix Sequence
+  - name: dmse_3
+    description: Discount Matrix Sequence
+  - name: dmse_4
+    description: Discount Matrix Sequence
+  - name: dmse_5
+    description: Discount Matrix Sequence
+  - name: dmse_6
+    description: Discount Matrix Sequence
+  - name: dmse_7
+    description: Discount Matrix Sequence
+  - name: dmse_8
+    description: Discount Matrix Sequence
+  - name: dmse_9
+    description: Discount Matrix Sequence
+  - name: dmse_10
+    description: Discount Matrix Sequence
+  - name: dmse_11
+    description: Discount Matrix Sequence
+  - name: dmth_1
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_1
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_2
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_2
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_3
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_3
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_4
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_4
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_5
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_5
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_6
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_6
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_7
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_7
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_8
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_8
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_9
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_9
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_10
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_10
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_11
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_11
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: cdis_1
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_2
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_3
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_4
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_5
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_6
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_7
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_8
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_9
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_10
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_11
+    description: 'Discount Code. Max length: 3'
+  - name: dtrm
+    description: 'Determining. Allowed values: 1, 2'
+  - name: dtrm_kw
+    description: 'Determining (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: elgb
+    description: 'Eligible. Allowed values: 1, 2'
+  - name: elgb_kw
+    description: 'Eligible (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: stsc
+    description: 'Update Status of Actual Purchase Costs. Allowed values: 1, 2'
+  - name: stsc_kw
+    description: 'Update Status of Actual Purchase Costs (keyword). Allowed values:
+      tcstsc.free, tcstsc.updated'
+  - name: stsd
+    description: 'Invoicing Status. Allowed values: 1, 2, 3, 4'
+  - name: stsd_kw
+    description: 'Invoicing Status (keyword). Allowed values: tcstsd.free, tcstsd.approved,
+      tcstsd.all.approved, tcstsd.matched'
+  - name: qiiv
+    description: Invoiced Quantity
+  - name: iamt
+    description: Invoiced Amount
+  - name: qpiv
+    description: Invoiced Quantity in Piece Unit
+  - name: invn
+    description: 'Invoice Number. Max length: 9'
+  - name: invd
+    description: Invoice Date
+  - name: cuva
+    description: Customs Value
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: cono
+    description: 'Contract. Max length: 9'
+  - name: cpon
+    description: Contract Position
+  - name: ccof
+    description: 'Contract Purchase Office. Max length: 6'
+  - name: csqn
+    description: Contract Sequence
+  - name: cnig
+    description: 'Contract Ignored. Allowed values: 1, 2'
+  - name: cnig_kw
+    description: 'Contract Ignored (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pamt
+    description: Payable Amount in Order Currency
+  - name: amod
+    description: Order Discount Amount
+  - name: amld
+    description: Order Line Discount Amount
+  - name: rarc
+    description: 'Reason for Amount Change. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8'
+  - name: rarc_kw
+    description: 'Reason for Amount Change (keyword). Allowed values: tdpur.rach.receipt,
+      tdpur.rach.rec.corr, tdpur.rach.inspection, tdpur.rach.issue, tdpur.rach.pric.change,
+      tdpur.rach.not.appl, tdpur.rach.consumption, tdpur.rach.proc.pur.order'
+  - name: ract
+    description: 'Retro-Active. Allowed values: 1, 2'
+  - name: ract_kw
+    description: 'Retro-Active (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: lssn
+    description: 'Item Identification Set. Max length: 22'
+  - name: opsq
+    description: Original Payable
+  - name: ftdt
+    description: Finance Transaction Date
+  - name: proc
+    description: 'Processed. Allowed values: 1, 2'
+  - name: proc_kw
+    description: 'Processed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: prsg_ref_compnr
+    description: company number of primary key of table tcmcs212 Price Stages
+  - name: cupp_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: lssn_ref_compnr
+    description: company number of primary key of table tcibd410 Item Identification
+      Sets
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur430 Purchase Payable Receipts for Orders and Schedules table,
+    Generated 2026-04-10T19:41:23Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orno
+        - pono
+        - sqnb
+        - rsqn
+        - psqn

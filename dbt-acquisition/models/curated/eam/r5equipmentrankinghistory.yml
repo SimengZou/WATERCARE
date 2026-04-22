@@ -1,0 +1,246 @@
+version: 2
+models:
+- name: r5equipmentrankinghistory
+  columns:
+  - name: erh_lastsaved
+    description: ERH_LASTSAVED
+  - name: erh_rankingcode
+    description: ERH_RANKINGCODE
+  - name: erh_rankingorg
+    description: ERH_RANKINGORG
+  - name: erh_rankingrevision
+    description: ERH_RANKINGREVISION
+  - name: erh_rankingtype
+    description: ERH_RANKINGTYPE
+  - name: erh_objcode
+    description: ERH_OBJCODE
+  - name: erh_objorg
+    description: ERH_OBJORG
+  - name: erh_date
+    description: ERH_DATE
+  - name: erh_score
+    description: ERH_SCORE
+  - name: erh_index
+    description: ERH_INDEX
+  - name: erh_endofusefullife
+    description: ERH_ENDOFUSEFULLIFE
+  - name: erh_conditionprotocol
+    description: ERH_CONDITIONPROTOCOL
+  - name: erh_condscorestart
+    description: ERH_CONDSCORESTART
+  - name: erh_condscoreend
+    description: ERH_CONDSCOREEND
+  - name: erh_condscorethreshold
+    description: ERH_CONDSCORETHRESHOLD
+  - name: erh_decaycurve
+    description: ERH_DECAYCURVE
+  - name: erh_decaycurve_org
+    description: ERH_DECAYCURVE_ORG
+  - name: erh_corrconditionscore
+    description: ERH_CORRCONDITIONSCORE
+  - name: erh_corrconditionreason
+    description: ERH_CORRCONDITIONREASON
+  - name: erh_corrconditiondate
+    description: ERH_CORRCONDITIONDATE
+  - name: erh_corrconditionusage
+    description: ERH_CORRCONDITIONUSAGE
+  - name: erh_primaryuom
+    description: ERH_PRIMARYUOM
+  - name: erh_servicelife
+    description: ERH_SERVICELIFE
+  - name: erh_dailyusageuom
+    description: ERH_DAILYUSAGEUOM
+  - name: erh_usage
+    description: ERH_USAGE
+  - name: erh_servicelifeusage
+    description: ERH_SERVICELIFEUSAGE
+  - name: erh_risklevel
+    description: ERH_RISKLEVEL
+  - name: erh_updatecount
+    description: ERH_UPDATECOUNT
+  - name: erh_capacityrating
+    description: ERH_CAPACITYRATING
+  - name: erh_numberoffailures
+    description: ERH_NUMBEROFFAILURES
+  - name: erh_mtbfdays
+    description: ERH_MTBFDAYS
+  - name: erh_mtbfrating
+    description: ERH_MTBFRATING
+  - name: erh_mubf
+    description: ERH_MUBF
+  - name: erh_mubfrating
+    description: ERH_MUBFRATING
+  - name: erh_mttrhrs
+    description: ERH_MTTRHRS
+  - name: erh_mttrrating
+    description: ERH_MTTRRATING
+  - name: erh_variableresult1
+    description: ERH_VARIABLERESULT1
+  - name: erh_variablerating1
+    description: ERH_VARIABLERATING1
+  - name: erh_variableresult2
+    description: ERH_VARIABLERESULT2
+  - name: erh_variablerating2
+    description: ERH_VARIABLERATING2
+  - name: erh_variableresult3
+    description: ERH_VARIABLERESULT3
+  - name: erh_variablerating3
+    description: ERH_VARIABLERATING3
+  - name: erh_variableresult4
+    description: ERH_VARIABLERESULT4
+  - name: erh_variablerating4
+    description: ERH_VARIABLERATING4
+  - name: erh_variableresult5
+    description: ERH_VARIABLERESULT5
+  - name: erh_variablerating5
+    description: ERH_VARIABLERATING5
+  - name: erh_variableresult6
+    description: ERH_VARIABLERESULT6
+  - name: erh_variablerating6
+    description: ERH_VARIABLERATING6
+  - name: erh_performanceformula
+    description: ERH_PERFORMANCEFORMULA
+  - name: erh_performanceformula_org
+    description: ERH_PERFORMANCEFORMULA_ORG
+  - name: erh_performance
+    description: ERH_PERFORMANCE
+  - name: erh_conditionrating
+    description: ERH_CONDITIONRATING
+  - name: erh_capacitycode
+    description: ERH_CAPACITYCODE
+  - name: erh_availablecapacity
+    description: ERH_AVAILABLECAPACITY
+  - name: erh_desiredcapacity
+    description: ERH_DESIREDCAPACITY
+  - name: erh_pk
+    description: ERH_PK
+    data_tests:
+    - unique
+  - name: erh_created
+    description: ERH_CREATED
+  - name: erh_createdby
+    description: ERH_CREATEDBY
+  - name: erh_updated
+    description: ERH_UPDATED
+  - name: erh_updatedby
+    description: ERH_UPDATEDBY
+  - name: erh_frompoint
+    description: ERH_FROMPOINT
+  - name: erh_fromrefdesc
+    description: ERH_FROMREFDESC
+  - name: erh_fromgeoref
+    description: ERH_FROMGEOREF
+  - name: erh_topoint
+    description: ERH_TOPOINT
+  - name: erh_torefdesc
+    description: ERH_TOREFDESC
+  - name: erh_togeoref
+    description: ERH_TOGEOREF
+  - name: erh_udfchar01
+    description: ERH_UDFCHAR01
+  - name: erh_udfchar02
+    description: ERH_UDFCHAR02
+  - name: erh_udfchar03
+    description: ERH_UDFCHAR03
+  - name: erh_udfchar04
+    description: ERH_UDFCHAR04
+  - name: erh_udfchar05
+    description: ERH_UDFCHAR05
+  - name: erh_udfchar06
+    description: ERH_UDFCHAR06
+  - name: erh_udfchar07
+    description: ERH_UDFCHAR07
+  - name: erh_udfchar08
+    description: ERH_UDFCHAR08
+  - name: erh_udfchar09
+    description: ERH_UDFCHAR09
+  - name: erh_udfchar10
+    description: ERH_UDFCHAR10
+  - name: erh_udfchar11
+    description: ERH_UDFCHAR11
+  - name: erh_udfchar12
+    description: ERH_UDFCHAR12
+  - name: erh_udfchar13
+    description: ERH_UDFCHAR13
+  - name: erh_udfchar14
+    description: ERH_UDFCHAR14
+  - name: erh_udfchar18
+    description: ERH_UDFCHAR18
+  - name: erh_udfchar15
+    description: ERH_UDFCHAR15
+  - name: erh_udfchar16
+    description: ERH_UDFCHAR16
+  - name: erh_udfchar17
+    description: ERH_UDFCHAR17
+  - name: erh_udfchar19
+    description: ERH_UDFCHAR19
+  - name: erh_udfchar20
+    description: ERH_UDFCHAR20
+  - name: erh_udfchar21
+    description: ERH_UDFCHAR21
+  - name: erh_udfchar22
+    description: ERH_UDFCHAR22
+  - name: erh_udfchar23
+    description: ERH_UDFCHAR23
+  - name: erh_udfchar24
+    description: ERH_UDFCHAR24
+  - name: erh_udfchar25
+    description: ERH_UDFCHAR25
+  - name: erh_udfchar26
+    description: ERH_UDFCHAR26
+  - name: erh_udfchar27
+    description: ERH_UDFCHAR27
+  - name: erh_udfchar28
+    description: ERH_UDFCHAR28
+  - name: erh_udfchar29
+    description: ERH_UDFCHAR29
+  - name: erh_udfchar30
+    description: ERH_UDFCHAR30
+  - name: erh_udfnum01
+    description: ERH_UDFNUM01
+  - name: erh_udfnum02
+    description: ERH_UDFNUM02
+  - name: erh_udfnum03
+    description: ERH_UDFNUM03
+  - name: erh_udfnum04
+    description: ERH_UDFNUM04
+  - name: erh_udfnum05
+    description: ERH_UDFNUM05
+  - name: erh_udfdate01
+    description: ERH_UDFDATE01
+  - name: erh_udfdate02
+    description: ERH_UDFDATE02
+  - name: erh_udfdate03
+    description: ERH_UDFDATE03
+  - name: erh_udfdate04
+    description: ERH_UDFDATE04
+  - name: erh_udfdate05
+    description: ERH_UDFDATE05
+  - name: erh_udfchkbox01
+    description: ERH_UDFCHKBOX01
+  - name: erh_udfchkbox02
+    description: ERH_UDFCHKBOX02
+  - name: erh_udfchkbox03
+    description: ERH_UDFCHKBOX03
+  - name: erh_udfchkbox04
+    description: ERH_UDFCHKBOX04
+  - name: erh_udfchkbox05
+    description: ERH_UDFCHKBOX05
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EQUIPMENTRANKINGHISTORY

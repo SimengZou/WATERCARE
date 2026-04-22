@@ -1,0 +1,375 @@
+version: 2
+models:
+- name: tppdm000
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Introduction Date
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: uset
+    description: 'Unit Set. Max length: 6'
+  - name: ctut
+    description: 'Unit Code for Hours. Max length: 3'
+  - name: ccpr
+    description: 'Project. Allowed values: 1, 2'
+  - name: ccpr_kw
+    description: 'Project (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cprt
+    description: 'Project/Cost Type. Allowed values: 1, 2'
+  - name: cprt_kw
+    description: 'Project/Cost Type (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cprc
+    description: 'Project/Cost Component. Allowed values: 1, 2'
+  - name: cprc_kw
+    description: 'Project/Cost Component (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cpru
+    description: 'Project/Control Code. Allowed values: 1, 2'
+  - name: cpru_kw
+    description: 'Project/Control Code (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cpsp
+    description: 'Project/Element. Allowed values: 1, 2'
+  - name: cpsp_kw
+    description: 'Project/Element (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cspt
+    description: 'Project/Element/Cost Type. Allowed values: 1, 2'
+  - name: cspt_kw
+    description: 'Project/Element/Cost Type (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cspc
+    description: 'Project/Element/Cost Component. Allowed values: 1, 2'
+  - name: cspc_kw
+    description: 'Project/Element/Cost Component (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cspu
+    description: 'Project/Element/Control Code. Allowed values: 1, 2'
+  - name: cspu_kw
+    description: 'Project/Element/Control Code (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cpac
+    description: 'Project/Activity. Allowed values: 1, 2'
+  - name: cpac_kw
+    description: 'Project/Activity (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cact
+    description: 'Project/Activity/Cost Type. Allowed values: 1, 2'
+  - name: cact_kw
+    description: 'Project/Activity/Cost Type (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cacc
+    description: 'Project/Activity/Cost Component. Allowed values: 1, 2'
+  - name: cacc_kw
+    description: 'Project/Activity/Cost Component (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cacu
+    description: 'Project/Activity/Cost Control Code. Allowed values: 1, 2'
+  - name: cacu_kw
+    description: 'Project/Activity/Cost Control Code (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cpst
+    description: 'Project/Extension. Allowed values: 1, 2'
+  - name: cpst_kw
+    description: 'Project/Extension (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cstt
+    description: 'Project/Extension/Cost Type. Allowed values: 1, 2'
+  - name: cstt_kw
+    description: 'Project/Extension/Cost Type (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cstc
+    description: 'Project/Extension/Cost Component. Allowed values: 1, 2'
+  - name: cstc_kw
+    description: 'Project/Extension/Cost Component (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cstu
+    description: 'Project/Extension/Control Code. Allowed values: 1, 2'
+  - name: cstu_kw
+    description: 'Project/Extension/Control Code (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: uwka
+    description: 'Use WKA (Dutch law regarding tax payments). Allowed values: 1, 2'
+  - name: uwka_kw
+    description: 'Use WKA (Dutch law regarding tax payments) (keyword). Allowed values:
+      tppdm.yeno.yes, tppdm.yeno.no'
+  - name: elus
+    description: 'Use Element. Allowed values: 1, 2'
+  - name: elus_kw
+    description: 'Use Element (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: acus
+    description: 'Use Activity. Allowed values: 1, 2'
+  - name: acus_kw
+    description: 'Use Activity (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: exus
+    description: 'Use Extension. Allowed values: 1, 2'
+  - name: exus_kw
+    description: 'Use Extension (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccus
+    description: 'Use Cost Component. Allowed values: 1, 2'
+  - name: ccus_kw
+    description: 'Use Cost Component (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dpci
+    description: 'Revenue Code for Installment. Max length: 8'
+  - name: dpca
+    description: 'Revenue Code for Additional Work. Max length: 8'
+  - name: dpch
+    description: 'Revenue Code for Holdback. Max length: 8'
+  - name: rcpp
+    description: 'Revenue Code for Progress Payment. Max length: 8'
+  - name: rcfe
+    description: 'Revenue Code for Fee. Max length: 8'
+  - name: rcpt
+    description: 'Revenue Code for Penalty. Max length: 8'
+  - name: rcap
+    description: 'Revenue Code for Advance Payment. Max length: 8'
+  - name: frvt
+    description: Fee Revenue Threshold
+  - name: pcsp
+    description: 'Process Subprojects with Main Project. Allowed values: 1, 2'
+  - name: pcsp_kw
+    description: 'Process Subprojects with Main Project (keyword). Allowed values:
+      tppdm.yeno.yes, tppdm.yeno.no'
+  - name: pcmp
+    description: 'Aggregate Main Project from Subprojects. Allowed values: 1, 2'
+  - name: pcmp_kw
+    description: 'Aggregate Main Project from Subprojects (keyword). Allowed values:
+      tppdm.yeno.yes, tppdm.yeno.no'
+  - name: lexp
+    description: 'Log Commitments (Purchase Transactions). Allowed values: 1, 2, 3'
+  - name: lexp_kw
+    description: 'Log Commitments (Purchase Transactions) (keyword). Allowed values:
+      tppdm.lexp.not, tppdm.lexp.both, tppdm.lexp.pur.deliv'
+  - name: lccc
+    description: 'Log Commitments (Customer Claims). Allowed values: 1, 2'
+  - name: lccc_kw
+    description: 'Log Commitments (Customer Claims) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: citt
+    description: 'Item Code System (File Import). Max length: 3'
+  - name: rscs
+    description: 'Default Extension Code for Fluctuation Settlement. Max length: 4'
+  - name: capp
+    description: 'Appointment Type. Max length: 3'
+  - name: cgch
+    description: 'Copy General Surcharges when creating Project. Allowed values: 1,
+      2, 3, 4'
+  - name: cgch_kw
+    description: 'Copy General Surcharges when creating Project (keyword). Allowed
+      values: tppdm.cgch.not, tppdm.cgch.tech.calc, tppdm.cgch.cost.reg, tppdm.cgch.both'
+  - name: upra
+    description: 'Project Archives. Allowed values: 1, 2'
+  - name: upra_kw
+    description: 'Project Archives (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: rtyp
+    description: 'Default Exchange Rate Type Budget. Max length: 3'
+  - name: rrtp
+    description: 'Default Exchange Rate Type for Revenues. Max length: 3'
+  - name: crtp
+    description: 'Default Exchange Rate Type for Costs. Max length: 3'
+  - name: usev
+    description: 'All Activity Types. Allowed values: 1, 2'
+  - name: usev_kw
+    description: 'All Activity Types (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: serr
+    description: 'Order Series for PCS Project. Max length: 8'
+  - name: tpte
+    description: 'Default Template. Max length: 9'
+  - name: ngrp
+    description: 'Project Number Group. Max length: 3'
+  - name: prsr
+    description: 'Project Series. Max length: 8'
+  - name: ests
+    description: 'Estimate Series. Max length: 8'
+  - name: egrp
+    description: 'Estimate Line Number Group. Max length: 3'
+  - name: essr
+    description: 'Estimate Line Series. Max length: 8'
+  - name: nlit
+    description: Sequence No. Length Item Codes
+  - name: nlta
+    description: Sequence No. Length Labor Codes
+  - name: nleq
+    description: Sequence No. Length Equipment Codes
+  - name: nlci
+    description: Sequence No. Length Sundry Cost Codes
+  - name: tgrp
+    description: 'Template Number Group. Max length: 3'
+  - name: tpsr
+    description: 'Template Series. Max length: 8'
+  - name: nlsb
+    description: Sequence No. Length Subcontracting Codes
+  - name: prbs
+    description: 'Profit Base. Allowed values: 1, 2'
+  - name: prbs_kw
+    description: 'Profit Base (keyword). Allowed values: tpest.prbs.cost, tpest.prbs.sales'
+  - name: pwar
+    description: 'Priority Supply Warehouse. Max length: 6'
+  - name: ohac
+    description: 'Overhead Actuals. Allowed values: 1, 2'
+  - name: ohac_kw
+    description: 'Overhead Actuals (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ohhc
+    description: 'Overhead Hard Commitments. Allowed values: 1, 2'
+  - name: ohhc_kw
+    description: 'Overhead Hard Commitments (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ohim
+    description: 'Overhead Include in Monitoring. Allowed values: 1, 2'
+  - name: ohim_kw
+    description: 'Overhead Include in Monitoring (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: citg
+    description: 'Item Code System (Order Entry). Max length: 3'
+  - name: prhs
+    description: 'Log Project History. Allowed values: 1, 2'
+  - name: prhs_kw
+    description: 'Log Project History (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: achs
+    description: 'Log Activity History. Allowed values: 1, 2'
+  - name: achs_kw
+    description: 'Log Activity History (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: elhs
+    description: 'Log Element History. Allowed values: 1, 2'
+  - name: elhs_kw
+    description: 'Log Element History (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bghi
+    description: 'Hide Project Bank Guarantee. Allowed values: 1, 2'
+  - name: bghi_kw
+    description: 'Hide Project Bank Guarantee (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bgnw
+    description: 'Allow Project Bank Guarantee for new Documents. Allowed values:
+      1, 2'
+  - name: bgnw_kw
+    description: 'Allow Project Bank Guarantee for new Documents (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: plmi
+    description: 'PLM Integration. Allowed values: 1, 2'
+  - name: plmi_kw
+    description: 'PLM Integration (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: plmc
+    description: PLM Company
+  - name: nbpt
+    description: 'Use New PLM Business Process Type. Allowed values: 1, 2'
+  - name: nbpt_kw
+    description: 'Use New PLM Business Process Type (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: rtus
+    description: 'Equipment Rental. Allowed values: 1, 2'
+  - name: rtus_kw
+    description: 'Equipment Rental (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: text
+    description: Text
+  - name: cdf_acnl
+    description: 'Parent/Child activity control. Allowed values: 1, 2'
+  - name: cdf_acnl_kw
+    description: 'Parent/Child activity control (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cdf_ocrl
+    description: 'Opex Control. Allowed values: 1, 2'
+  - name: cdf_ocrl_kw
+    description: 'Opex Control (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdf_scrl
+    description: 'Spend Control. Allowed values: 1, 2'
+  - name: cdf_scrl_kw
+    description: 'Spend Control (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdf_sres
+    description: 'Responsibility. Max length: 3'
+  - name: uset_ref_compnr
+    description: company number of primary key of table tcmcs006 Unit Sets
+  - name: ctut_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: dpci_ref_compnr
+    description: company number of primary key of table tppdm043 Revenues
+  - name: dpca_ref_compnr
+    description: company number of primary key of table tppdm043 Revenues
+  - name: dpch_ref_compnr
+    description: company number of primary key of table tppdm043 Revenues
+  - name: rcpp_ref_compnr
+    description: company number of primary key of table tppdm043 Revenues
+  - name: rcfe_ref_compnr
+    description: company number of primary key of table tppdm043 Revenues
+  - name: rcpt_ref_compnr
+    description: company number of primary key of table tppdm043 Revenues
+  - name: rcap_ref_compnr
+    description: company number of primary key of table tppdm043 Revenues
+  - name: citt_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: capp_ref_compnr
+    description: company number of primary key of table tppdm053 Appointment Types
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: rrtp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: crtp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: tpte_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ngrp_prsr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngrp_ests_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngrp_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: egrp_essr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: tgrp_tpsr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: tgrp_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: pwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: citg_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: plmc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: cdf_sres_ref_compnr
+    description: company number of primary key of table tppdm048 Responsibilities
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm000 General Project Parameters table, Generated 2026-04-10T19:41:52Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - indt

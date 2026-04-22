@@ -1,0 +1,296 @@
+version: 2
+models:
+- name: r5users
+  columns:
+  - name: usr_lastsaved
+    description: USR_LASTSAVED
+  - name: usr_code
+    description: USR_CODE
+    data_tests:
+    - unique
+  - name: usr_desc
+    description: USR_DESC
+  - name: usr_class
+    description: USR_CLASS
+  - name: usr_mrc
+    description: USR_MRC
+  - name: usr_sysman
+    description: USR_SYSMAN
+  - name: usr_password
+    description: USR_PASSWORD
+  - name: usr_lastfunc
+    description: USR_LASTFUNC
+  - name: usr_firstfunc
+    description: USR_FIRSTFUNC
+  - name: usr_group
+    description: USR_GROUP
+  - name: usr_lang
+    description: USR_LANG
+  - name: usr_printer
+    description: USR_PRINTER
+  - name: usr_exppass
+    description: USR_EXPPASS
+  - name: usr_expuser
+    description: USR_EXPUSER
+  - name: usr_facility
+    description: USR_FACILITY
+  - name: usr_reqappvlimit
+    description: USR_REQAPPVLIMIT
+  - name: usr_reqauthappvlimit
+    description: USR_REQAUTHAPPVLIMIT
+  - name: usr_buyer
+    description: USR_BUYER
+  - name: usr_pordappvlimit
+    description: USR_PORDAPPVLIMIT
+  - name: usr_pordauthappvlimit
+    description: USR_PORDAUTHAPPVLIMIT
+  - name: usr_router
+    description: USR_ROUTER
+  - name: usr_datelocked
+    description: USR_DATELOCKED
+  - name: usr_violations
+    description: USR_VIOLATIONS
+  - name: usr_class_org
+    description: USR_CLASS_ORG
+  - name: usr_approver
+    description: USR_APPROVER
+  - name: usr_picappvlimit
+    description: USR_PICAPPVLIMIT
+  - name: usr_emailaddress
+    description: USR_EMAILADDRESS
+  - name: usr_notificationpref
+    description: USR_NOTIFICATIONPREF
+  - name: usr_browser
+    description: USR_BROWSER
+  - name: usr_invappvlimit
+    description: USR_INVAPPVLIMIT
+  - name: usr_invappvlimitnonpo
+    description: USR_INVAPPVLIMITNONPO
+  - name: usr_updatecount
+    description: USR_UPDATECOUNT
+  - name: usr_login
+    description: USR_LOGIN
+  - name: usr_requestor
+    description: USR_REQUESTOR
+  - name: usr_active
+    description: USR_ACTIVE
+  - name: usr_locale
+    description: USR_LOCALE
+  - name: usr_successmsgtimeout
+    description: USR_SUCCESSMSGTIMEOUT
+  - name: usr_ewsfirstfunc
+    description: USR_EWSFIRSTFUNC
+  - name: usr_created
+    description: USR_CREATED
+  - name: usr_updated
+    description: USR_UPDATED
+  - name: usr_inboxtab
+    description: USR_INBOXTAB
+  - name: usr_mobile
+    description: USR_MOBILE
+  - name: usr_connector
+    description: USR_CONNECTOR
+  - name: usr_barcode
+    description: USR_BARCODE
+  - name: usr_notused
+    description: USR_NOTUSED
+  - name: usr_sessiontimeout
+    description: USR_SESSIONTIMEOUT
+  - name: usr_analytics
+    description: USR_ANALYTICS
+  - name: usr_professional
+    description: USR_PROFESSIONAL
+  - name: usr_consumer
+    description: USR_CONSUMER
+  - name: usr_screendesigner
+    description: USR_SCREENDESIGNER
+  - name: usr_508
+    description: USR_508
+  - name: usr_mobileadm
+    description: USR_MOBILEADM
+  - name: usr_editdataspy
+    description: USR_EDITDATASPY
+  - name: usr_advancedfilters
+    description: USR_ADVANCEDFILTERS
+  - name: usr_editowncomments
+    description: USR_EDITOWNCOMMENTS
+  - name: usr_editotherscomments
+    description: USR_EDITOTHERSCOMMENTS
+  - name: usr_udfchar01
+    description: USR_UDFCHAR01
+  - name: usr_udfchar02
+    description: USR_UDFCHAR02
+  - name: usr_udfchar03
+    description: USR_UDFCHAR03
+  - name: usr_udfchar04
+    description: USR_UDFCHAR04
+  - name: usr_udfchar05
+    description: USR_UDFCHAR05
+  - name: usr_udfchar06
+    description: USR_UDFCHAR06
+  - name: usr_udfchar07
+    description: USR_UDFCHAR07
+  - name: usr_udfchar08
+    description: USR_UDFCHAR08
+  - name: usr_udfchar09
+    description: USR_UDFCHAR09
+  - name: usr_udfchar10
+    description: USR_UDFCHAR10
+  - name: usr_udfchar11
+    description: USR_UDFCHAR11
+  - name: usr_udfchar12
+    description: USR_UDFCHAR12
+  - name: usr_udfchar13
+    description: USR_UDFCHAR13
+  - name: usr_udfchar14
+    description: USR_UDFCHAR14
+  - name: usr_udfchar15
+    description: USR_UDFCHAR15
+  - name: usr_udfchar16
+    description: USR_UDFCHAR16
+  - name: usr_udfchar17
+    description: USR_UDFCHAR17
+  - name: usr_udfchar18
+    description: USR_UDFCHAR18
+  - name: usr_udfchar19
+    description: USR_UDFCHAR19
+  - name: usr_udfchar20
+    description: USR_UDFCHAR20
+  - name: usr_udfchar21
+    description: USR_UDFCHAR21
+  - name: usr_udfchar22
+    description: USR_UDFCHAR22
+  - name: usr_udfchar23
+    description: USR_UDFCHAR23
+  - name: usr_udfchar24
+    description: USR_UDFCHAR24
+  - name: usr_udfchar25
+    description: USR_UDFCHAR25
+  - name: usr_udfchar26
+    description: USR_UDFCHAR26
+  - name: usr_udfchar27
+    description: USR_UDFCHAR27
+  - name: usr_udfchar28
+    description: USR_UDFCHAR28
+  - name: usr_udfchar29
+    description: USR_UDFCHAR29
+  - name: usr_udfchar30
+    description: USR_UDFCHAR30
+  - name: usr_udfnum01
+    description: USR_UDFNUM01
+  - name: usr_udfnum02
+    description: USR_UDFNUM02
+  - name: usr_udfnum03
+    description: USR_UDFNUM03
+  - name: usr_udfnum04
+    description: USR_UDFNUM04
+  - name: usr_udfnum05
+    description: USR_UDFNUM05
+  - name: usr_udfdate01
+    description: USR_UDFDATE01
+  - name: usr_udfdate02
+    description: USR_UDFDATE02
+  - name: usr_udfdate03
+    description: USR_UDFDATE03
+  - name: usr_udfdate04
+    description: USR_UDFDATE04
+  - name: usr_udfdate05
+    description: USR_UDFDATE05
+  - name: usr_udfchkbox01
+    description: USR_UDFCHKBOX01
+  - name: usr_udfchkbox02
+    description: USR_UDFCHKBOX02
+  - name: usr_udfchkbox03
+    description: USR_UDFCHKBOX03
+  - name: usr_udfchkbox04
+    description: USR_UDFCHKBOX04
+  - name: usr_udfchkbox05
+    description: USR_UDFCHKBOX05
+  - name: usr_enxuser
+    description: USR_ENXUSER
+  - name: usr_globaldataspy
+    description: USR_GLOBALDATASPY
+  - name: usr_default_org
+    description: USR_DEFAULT_ORG
+  - name: usr_default_chart_type
+    description: USR_DEFAULT_CHART_TYPE
+  - name: usr_default_chart_period
+    description: USR_DEFAULT_CHART_PERIOD
+  - name: usr_default_chart_groupby
+    description: USR_DEFAULT_CHART_GROUPBY
+  - name: usr_default_chart_showyear
+    description: USR_DEFAULT_CHART_SHOWYEAR
+  - name: usr_default_kpi_size
+    description: USR_DEFAULT_KPI_SIZE
+  - name: usr_externcode
+    description: USR_EXTERNCODE
+  - name: usr_canceldailyschedsession
+    description: USR_CANCELDAILYSCHEDSESSION
+  - name: usr_supplier
+    description: USR_SUPPLIER
+  - name: usr_supplier_org
+    description: USR_SUPPLIER_ORG
+  - name: usr_allowscreencachesetup
+    description: USR_ALLOWSCREENCACHESETUP
+  - name: usr_allowcreateimportutiltemp
+    description: USR_ALLOWCREATEIMPORTUTILTEMP
+  - name: usr_allowviewingaudittrail
+    description: USR_ALLOWVIEWINGAUDITTRAIL
+  - name: usr_enablescreencachedeck
+    description: USR_ENABLESCREENCACHEDECK
+  - name: usr_enabletransitionanimations
+    description: USR_ENABLETRANSITIONANIMATIONS
+  - name: usr_default_chart_state
+    description: USR_DEFAULT_CHART_STATE
+  - name: usr_defaultstore
+    description: USR_DEFAULTSTORE
+  - name: usr_allowmobilesettings
+    description: USR_ALLOWMOBILESETTINGS
+  - name: usr_arcgis_usercode
+    description: USR_ARCGIS_USERCODE
+  - name: usr_arcgis_password
+    description: USR_ARCGIS_PASSWORD
+  - name: usr_allowviewingprivatecases
+    description: USR_ALLOWVIEWINGPRIVATECASES
+  - name: usr_mobilefirstscreen
+    description: USR_MOBILEFIRSTSCREEN
+  - name: usr_allowcontainssearch
+    description: USR_ALLOWCONTAINSSEARCH
+  - name: usr_allowupdatefield
+    description: USR_ALLOWUPDATEFIELD
+  - name: usr_profilepicture
+    description: USR_PROFILEPICTURE
+  - name: usr_mobileautosync
+    description: USR_MOBILEAUTOSYNC
+  - name: usr_enablebiometrics
+    description: USR_ENABLEBIOMETRICS
+  - name: usr_duxfirstfunc
+    description: USR_DUXFIRSTFUNC
+  - name: usr_mobileapp
+    description: USR_MOBILEAPP
+  - name: usr_allowmobilesyncconfig
+    description: USR_ALLOWMOBILESYNCCONFIG
+  - name: usr_enablemobilerestoreuser
+    description: USR_ENABLEMOBILERESTOREUSER
+  - name: usr_pwdresetlinkgentime
+    description: USR_PWDRESETLINKGENTIME
+  - name: usr_pwdresetcount
+    description: USR_PWDRESETCOUNT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5USERS

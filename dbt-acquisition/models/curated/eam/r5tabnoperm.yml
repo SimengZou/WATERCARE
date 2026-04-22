@@ -1,0 +1,44 @@
+version: 2
+models:
+- name: r5tabnoperm
+  columns:
+  - name: tpn_lastsaved
+    description: TPN_LASTSAVED
+  - name: tpn_tab
+    description: TPN_TAB
+  - name: tpn_noselect
+    description: TPN_NOSELECT
+  - name: tpn_nodelete
+    description: TPN_NODELETE
+  - name: tpn_noupdate
+    description: TPN_NOUPDATE
+  - name: tpn_updatecount
+    description: TPN_UPDATECOUNT
+  - name: tpn_function
+    description: TPN_FUNCTION
+  - name: tpn_noinsert
+    description: TPN_NOINSERT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TABNOPERM
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - tpn_function
+        - tpn_tab

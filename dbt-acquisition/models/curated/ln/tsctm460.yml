@@ -1,0 +1,154 @@
+version: 2
+models:
+- name: tsctm460
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: csco
+    description: '(required) Service Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cchn
+    description: (required) Origin Contract Change
+    data_tests:
+    - not_null
+  - name: cfln
+    description: (required) Configuration Line
+    data_tests:
+    - not_null
+  - name: plyr
+    description: (required) Planned Year
+    data_tests:
+    - not_null
+  - name: plpr
+    description: (required) Planned Period
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Revenue Line
+    data_tests:
+    - not_null
+  - name: ndrc
+    description: Number of Days Recognized
+  - name: clrv
+    description: Calculated Revenue
+  - name: corv
+    description: Contract Revenue
+  - name: rahc_1
+    description: Revenue Amount in Home Currency
+  - name: rahc_2
+    description: Revenue Amount in Home Currency
+  - name: rahc_3
+    description: Revenue Amount in Home Currency
+  - name: ratc_1
+    description: Currency Rates for Home Currencies
+  - name: ratc_2
+    description: Currency Rates for Home Currencies
+  - name: ratc_3
+    description: Currency Rates for Home Currencies
+  - name: ratf_1
+    description: Rate Factors for Home Currencies
+  - name: ratf_2
+    description: Rate Factors for Home Currencies
+  - name: ratf_3
+    description: Rate Factors for Home Currencies
+  - name: ratd
+    description: Rate Date
+  - name: rtor
+    description: 'Rate Origin. Allowed values: 1, 5, 10, 99'
+  - name: rtor_kw
+    description: 'Rate Origin (keyword). Allowed values: tsctm.rtor.currency.rates,
+      tsctm.rtor.manual, tsctm.rtor.calculated, tsctm.rtor.not.applicable'
+  - name: crdt
+    description: Creation Date
+  - name: cmdt
+    description: Confirm Date
+  - name: cmur
+    description: 'Confirmed by User. Max length: 16'
+  - name: rcdt
+    description: Recognition Date
+  - name: rcur
+    description: 'Recognized by User. Max length: 16'
+  - name: poyr
+    description: Posted Fiscal Year
+  - name: popr
+    description: Posted Fiscal Period
+  - name: stat
+    description: 'Status. Allowed values: 5, 10, 15, 20'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: tsctm.rvst.free, tsctm.rvst.confirm,
+      tsctm.rvst.recognize, tsctm.rvst.posted'
+  - name: erfa
+    description: Earned Revenue Factor
+  - name: prov
+    description: Provision
+  - name: rchn
+    description: Change Number of Contract Period
+  - name: camt_1
+    description: Obsolete
+  - name: camt_2
+    description: Obsolete
+  - name: camt_3
+    description: Obsolete
+  - name: acco_1
+    description: Obsolete
+  - name: acco_2
+    description: Obsolete
+  - name: acco_3
+    description: Obsolete
+  - name: csco_cchn_ref_compnr
+    description: company number of primary key of table tsctm320 Contract Changes
+  - name: csco_rchn_ref_compnr
+    description: company number of primary key of table tsctm320 Contract Changes
+  - name: csco_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: corv_refc
+    description: 'CC: Revenue Amount in Reference Currency'
+  - name: corv_dwhc
+    description: 'CC: Revenue Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm460 Contract Revenues table, Generated 2026-04-10T19:42:34Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - csco
+        - cchn
+        - cfln
+        - plyr
+        - plpr
+        - seqn

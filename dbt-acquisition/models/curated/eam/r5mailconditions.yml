@@ -1,0 +1,48 @@
+version: 2
+models:
+- name: r5mailconditions
+  columns:
+  - name: mac_lastsaved
+    description: MAC_LASTSAVED
+  - name: mac_template
+    description: MAC_TEMPLATE
+  - name: mac_column
+    description: MAC_COLUMN
+  - name: mac_criteria
+    description: MAC_CRITERIA
+  - name: mac_value1
+    description: MAC_VALUE1
+  - name: mac_updatecount
+    description: MAC_UPDATECOUNT
+  - name: mac_columngro
+    description: MAC_COLUMNGRO
+  - name: mac_andor
+    description: MAC_ANDOR
+  - name: mac_attribpk
+    description: MAC_ATTRIBPK
+  - name: mac_pk
+    description: MAC_PK
+    data_tests:
+    - unique
+  - name: mac_table
+    description: MAC_TABLE
+  - name: mac_value2
+    description: MAC_VALUE2
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MAILCONDITIONS

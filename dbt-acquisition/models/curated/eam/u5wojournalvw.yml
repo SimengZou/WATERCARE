@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: u5wojournalvw
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: jrn_costtype
+    description: JRN_COSTTYPE
+  - name: jrn_trnflag
+    description: JRN_TRNFLAG
+  - name: jrn_debitcredit
+    description: JRN_DEBITCREDIT
+  - name: jrn_costs
+    description: JRN_COSTS
+  - name: jrn_costcentre
+    description: JRN_COSTCENTRE
+  - name: jrn_dimension4
+    description: JRN_DIMENSION4
+  - name: jrn_identifier
+    description: JRN_IDENTIFIER
+  - name: jrn_projectnumber
+    description: JRN_PROJECTNUMBER
+  - name: jrn_projectativity
+    description: JRN_PROJECTATIVITY
+  - name: fic_code
+    description: FIC_CODE
+  - name: jrn_hours
+    description: JRN_HOURS
+  - name: jrn_workorder
+    description: JRN_WORKORDER
+  - name: jrn_dimension3
+    description: JRN_DIMENSION3
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5WOJOURNALVW

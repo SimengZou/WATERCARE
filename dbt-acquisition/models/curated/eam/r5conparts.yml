@@ -1,0 +1,53 @@
+version: 2
+models:
+- name: r5conparts
+  columns:
+  - name: cpa_lastsaved
+    description: CPA_LASTSAVED
+  - name: cpa_supplier
+    description: CPA_SUPPLIER
+  - name: cpa_part
+    description: CPA_PART
+  - name: cpa_multiply
+    description: CPA_MULTIPLY
+  - name: cpa_leadtime
+    description: CPA_LEADTIME
+  - name: cpa_ref
+    description: CPA_REF
+  - name: cpa_puruom
+    description: CPA_PURUOM
+  - name: cpa_supplier_org
+    description: CPA_SUPPLIER_ORG
+  - name: cpa_part_org
+    description: CPA_PART_ORG
+  - name: cpa_updatecount
+    description: CPA_UPDATECOUNT
+  - name: cpa_contract
+    description: CPA_CONTRACT
+  - name: cpa_price
+    description: CPA_PRICE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CONPARTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - cpa_contract
+        - cpa_part
+        - cpa_part_org

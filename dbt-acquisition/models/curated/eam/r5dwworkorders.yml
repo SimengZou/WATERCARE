@@ -1,0 +1,106 @@
+version: 2
+models:
+- name: r5dwworkorders
+  columns:
+  - name: zwo_lastsaved
+    description: ZWO_LASTSAVED
+  - name: zwo_code
+    description: ZWO_CODE
+  - name: zwo_desc
+    description: ZWO_DESC
+  - name: zwo_typecode
+    description: ZWO_TYPECODE
+  - name: zwo_typedesc
+    description: ZWO_TYPEDESC
+  - name: zwo_jobtypecode
+    description: ZWO_JOBTYPECODE
+  - name: zwo_jobtypedesc
+    description: ZWO_JOBTYPEDESC
+  - name: zwo_classcode
+    description: ZWO_CLASSCODE
+  - name: zwo_classorg
+    description: ZWO_CLASSORG
+  - name: zwo_classdesc
+    description: ZWO_CLASSDESC
+  - name: zwo_statuscode
+    description: ZWO_STATUSCODE
+  - name: zwo_statusdesc
+    description: ZWO_STATUSDESC
+  - name: zwo_costcode
+    description: ZWO_COSTCODE
+  - name: zwo_costcodedesc
+    description: ZWO_COSTCODEDESC
+  - name: zwo_locationcode
+    description: ZWO_LOCATIONCODE
+  - name: zwo_locationorg
+    description: ZWO_LOCATIONORG
+  - name: zwo_locationdesc
+    description: ZWO_LOCATIONDESC
+  - name: zwo_projectcode
+    description: ZWO_PROJECTCODE
+  - name: zwo_projectdesc
+    description: ZWO_PROJECTDESC
+  - name: zwo_projbudgetcode
+    description: ZWO_PROJBUDGETCODE
+  - name: zwo_priority
+    description: ZWO_PRIORITY
+  - name: zwo_shiftcode
+    description: ZWO_SHIFTCODE
+  - name: zwo_shiftdesc
+    description: ZWO_SHIFTDESC
+  - name: zwo_assignedbycode
+    description: ZWO_ASSIGNEDBYCODE
+  - name: zwo_assignedbyname
+    description: ZWO_ASSIGNEDBYNAME
+  - name: zwo_assignedtocode
+    description: ZWO_ASSIGNEDTOCODE
+  - name: zwo_assignedtoname
+    description: ZWO_ASSIGNEDTONAME
+  - name: zwo_objunderwarranty
+    description: ZWO_OBJUNDERWARRANTY
+  - name: zwo_reopened
+    description: ZWO_REOPENED
+  - name: zwo_problemcode
+    description: ZWO_PROBLEMCODE
+  - name: zwo_problemdesc
+    description: ZWO_PROBLEMDESC
+  - name: zwo_failurecode
+    description: ZWO_FAILURECODE
+  - name: zwo_failuredesc
+    description: ZWO_FAILUREDESC
+  - name: zwo_causecode
+    description: ZWO_CAUSECODE
+  - name: zwo_causedesc
+    description: ZWO_CAUSEDESC
+  - name: zwo_actioncode
+    description: ZWO_ACTIONCODE
+  - name: zwo_actiondesc
+    description: ZWO_ACTIONDESC
+  - name: zwo_rtypecode
+    description: ZWO_RTYPECODE
+  - name: zwo_rtypedesc
+    description: ZWO_RTYPEDESC
+  - name: zwo_rstatuscode
+    description: ZWO_RSTATUSCODE
+  - name: zwo_rstatusdesc
+    description: ZWO_RSTATUSDESC
+  - name: zwo_key
+    description: ZWO_KEY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DWWORKORDERS

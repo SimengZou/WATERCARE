@@ -1,0 +1,189 @@
+version: 2
+models:
+- name: r5reportfilters
+  columns:
+  - name: rfi_lastsaved
+    description: RFI_LASTSAVED
+  - name: rfi_user
+    description: RFI_USER
+  - name: rfi_func
+    description: RFI_FUNC
+  - name: rfi_name
+    description: RFI_NAME
+  - name: rfi_default
+    description: RFI_DEFAULT
+  - name: rfi_param1
+    description: RFI_PARAM1
+  - name: rfi_param2
+    description: RFI_PARAM2
+  - name: rfi_param3
+    description: RFI_PARAM3
+  - name: rfi_param4
+    description: RFI_PARAM4
+  - name: rfi_param5
+    description: RFI_PARAM5
+  - name: rfi_param6
+    description: RFI_PARAM6
+  - name: rfi_param7
+    description: RFI_PARAM7
+  - name: rfi_param8
+    description: RFI_PARAM8
+  - name: rfi_param9
+    description: RFI_PARAM9
+  - name: rfi_param10
+    description: RFI_PARAM10
+  - name: rfi_param11
+    description: RFI_PARAM11
+  - name: rfi_param12
+    description: RFI_PARAM12
+  - name: rfi_param13
+    description: RFI_PARAM13
+  - name: rfi_param14
+    description: RFI_PARAM14
+  - name: rfi_param15
+    description: RFI_PARAM15
+  - name: rfi_param16
+    description: RFI_PARAM16
+  - name: rfi_param17
+    description: RFI_PARAM17
+  - name: rfi_param18
+    description: RFI_PARAM18
+  - name: rfi_param19
+    description: RFI_PARAM19
+  - name: rfi_param20
+    description: RFI_PARAM20
+  - name: rfi_param21
+    description: RFI_PARAM21
+  - name: rfi_param22
+    description: RFI_PARAM22
+  - name: rfi_param23
+    description: RFI_PARAM23
+  - name: rfi_param24
+    description: RFI_PARAM24
+  - name: rfi_param25
+    description: RFI_PARAM25
+  - name: rfi_param26
+    description: RFI_PARAM26
+  - name: rfi_param27
+    description: RFI_PARAM27
+  - name: rfi_param28
+    description: RFI_PARAM28
+  - name: rfi_param29
+    description: RFI_PARAM29
+  - name: rfi_param30
+    description: RFI_PARAM30
+  - name: rfi_chkbox1
+    description: RFI_CHKBOX1
+  - name: rfi_chkbox2
+    description: RFI_CHKBOX2
+  - name: rfi_chkbox3
+    description: RFI_CHKBOX3
+  - name: rfi_chkbox4
+    description: RFI_CHKBOX4
+  - name: rfi_chkbox5
+    description: RFI_CHKBOX5
+  - name: rfi_chkbox6
+    description: RFI_CHKBOX6
+  - name: rfi_radio
+    description: RFI_RADIO
+  - name: rfi_org
+    description: RFI_ORG
+  - name: rfi_fromdate
+    description: RFI_FROMDATE
+  - name: rfi_todate
+    description: RFI_TODATE
+  - name: rfi_chkbox7
+    description: RFI_CHKBOX7
+  - name: rfi_updatecount
+    description: RFI_UPDATECOUNT
+  - name: rfi_updated
+    description: RFI_UPDATED
+  - name: rfi_visflds
+    description: RFI_VISFLDS
+  - name: rfi_orderby
+    description: RFI_ORDERBY
+  - name: rfi_ordertype
+    description: RFI_ORDERTYPE
+  - name: rfi_groupby
+    description: RFI_GROUPBY
+  - name: rfi_chkbox8
+    description: RFI_CHKBOX8
+  - name: rfi_chkbox9
+    description: RFI_CHKBOX9
+  - name: rfi_chkbox10
+    description: RFI_CHKBOX10
+  - name: rfi_chkbox11
+    description: RFI_CHKBOX11
+  - name: rfi_chkbox12
+    description: RFI_CHKBOX12
+  - name: rfi_chkbox13
+    description: RFI_CHKBOX13
+  - name: rfi_chkbox14
+    description: RFI_CHKBOX14
+  - name: rfi_chkbox15
+    description: RFI_CHKBOX15
+  - name: rfi_param31
+    description: RFI_PARAM31
+  - name: rfi_param32
+    description: RFI_PARAM32
+  - name: rfi_param33
+    description: RFI_PARAM33
+  - name: rfi_param34
+    description: RFI_PARAM34
+  - name: rfi_param35
+    description: RFI_PARAM35
+  - name: rfi_param36
+    description: RFI_PARAM36
+  - name: rfi_param37
+    description: RFI_PARAM37
+  - name: rfi_param38
+    description: RFI_PARAM38
+  - name: rfi_param39
+    description: RFI_PARAM39
+  - name: rfi_param40
+    description: RFI_PARAM40
+  - name: rfi_chkbox16
+    description: RFI_CHKBOX16
+  - name: rfi_chkbox17
+    description: RFI_CHKBOX17
+  - name: rfi_chkbox18
+    description: RFI_CHKBOX18
+  - name: rfi_chkbox19
+    description: RFI_CHKBOX19
+  - name: rfi_chkbox20
+    description: RFI_CHKBOX20
+  - name: rfi_chkbox21
+    description: RFI_CHKBOX21
+  - name: rfi_chkbox22
+    description: RFI_CHKBOX22
+  - name: rfi_chkbox23
+    description: RFI_CHKBOX23
+  - name: rfi_chkbox24
+    description: RFI_CHKBOX24
+  - name: rfi_chkbox25
+    description: RFI_CHKBOX25
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5REPORTFILTERS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - rfi_user
+        - rfi_func
+        - rfi_name

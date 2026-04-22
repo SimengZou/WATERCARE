@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: r5mobileuserconfigs
+  columns:
+  - name: muc_lastsaved
+    description: MUC_LASTSAVED
+  - name: muc_group
+    description: MUC_GROUP
+  - name: muc_code
+    description: MUC_CODE
+  - name: muc_desk
+    description: MUC_DESK
+  - name: muc_comptype
+    description: MUC_COMPTYPE
+  - name: muc_created
+    description: MUC_CREATED
+  - name: muc_updated
+    description: MUC_UPDATED
+  - name: muc_updatecount
+    description: MUC_UPDATECOUNT
+  - name: muc_user
+    description: MUC_USER
+  - name: muc_rcode
+    description: MUC_RCODE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MOBILEUSERCONFIGS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - muc_user
+        - muc_group
+        - muc_code
+        - muc_desk

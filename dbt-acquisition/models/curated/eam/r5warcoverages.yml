@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5warcoverages
+  columns:
+  - name: wcv_lastsaved
+    description: WCV_LASTSAVED
+  - name: wcv_obtype
+    description: WCV_OBTYPE
+  - name: wcv_obrtype
+    description: WCV_OBRTYPE
+  - name: wcv_uom
+    description: WCV_UOM
+  - name: wcv_duration
+    description: WCV_DURATION
+  - name: wcv_expiration
+    description: WCV_EXPIRATION
+  - name: wcv_expirationdate
+    description: WCV_EXPIRATIONDATE
+  - name: wcv_nearthreshold
+    description: WCV_NEARTHRESHOLD
+  - name: wcv_startusage
+    description: WCV_STARTUSAGE
+  - name: wcv_seqno
+    description: WCV_SEQNO
+    data_tests:
+    - unique
+  - name: wcv_active
+    description: WCV_ACTIVE
+  - name: wcv_startdate
+    description: WCV_STARTDATE
+  - name: wcv_recorded
+    description: WCV_RECORDED
+  - name: wcv_user
+    description: WCV_USER
+  - name: wcv_object_org
+    description: WCV_OBJECT_ORG
+  - name: wcv_updatecount
+    description: WCV_UPDATECOUNT
+  - name: wcv_created
+    description: WCV_CREATED
+  - name: wcv_updated
+    description: WCV_UPDATED
+  - name: wcv_warranty
+    description: WCV_WARRANTY
+  - name: wcv_object
+    description: WCV_OBJECT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WARCOVERAGES

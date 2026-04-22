@@ -1,0 +1,87 @@
+version: 2
+models:
+- name: tcmcs048
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cpcp
+    description: '(required) Cost Component. Max length: 8'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cpus
+    description: 'Component Type. Allowed values: 10, 20, 30'
+  - name: cpus_kw
+    description: 'Component Type (keyword). Allowed values: tccpus.detail, tccpus.collect,
+      tccpus.aggregated'
+  - name: iinv
+    description: 'Included in Inventory Valuation. Allowed values: 1, 2'
+  - name: iinv_kw
+    description: 'Included in Inventory Valuation (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: fxvc
+    description: 'Fixed / Variable. Allowed values: 10, 20, 30, 100'
+  - name: fxvc_kw
+    description: 'Fixed / Variable (keyword). Allowed values: tcfxvc.fixed, tcfxvc.variable,
+      tcfxvc.both, tcfxvc.not.appl'
+  - name: dinc
+    description: 'Direct / Indirect. Allowed values: 10, 20, 30, 100'
+  - name: dinc_kw
+    description: 'Direct / Indirect (keyword). Allowed values: tcdinc.direct, tcdinc.indirect,
+      tcdinc.not.specified, tcdinc.not.appl'
+  - name: cref
+    description: 'Cost Type. Allowed values: 1, 2, 3, 4, 5, 6, 7'
+  - name: cref_kw
+    description: 'Cost Type (keyword). Allowed values: tccref.operation, tccref.material,
+      tccref.chg.operation, tccref.chg.material, tccref.transfer, tccref.general,
+      tccref.not.appl'
+  - name: tpoc
+    description: 'Cost Subtype. Allowed values: 10, 20, 30, 40, 42, 45, 50, 100'
+  - name: tpoc_kw
+    description: 'Cost Subtype (keyword). Allowed values: tctpoc.labor, tctpoc.machine,
+      tctpoc.ovhd.man.hours, tctpoc.ovhd.mach.hours, tctpoc.overhead, tctpoc.subcontract,
+      tctpoc.not.specified, tctpoc.not.appl'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs048 Cost Components table, Generated 2026-04-10T19:41:12Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cpcp

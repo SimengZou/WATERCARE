@@ -1,0 +1,333 @@
+version: 2
+models:
+- name: ttaad200
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: user
+    description: '(required) User. Max length: 12'
+    data_tests:
+    - not_null
+  - name: name__en_us
+    description: '(required) Name - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: uusr
+    description: 'System Login. Max length: 255'
+  - name: utyp
+    description: 'User Type. Allowed values: 1, 2'
+  - name: utyp_kw
+    description: 'User Type (keyword). Allowed values: ttaad.utyp.superuser, ttaad.utyp.normaluser'
+  - name: shtp
+    description: '* Obsolete *. Allowed values: 1, 2, 3'
+  - name: shtp_kw
+    description: '* Obsolete * (keyword). Allowed values: ttaad.shtp.no, ttaad.shtp.unix,
+      ttaad.shtp.session'
+  - name: shcm
+    description: '* Obsolete *. Max length: 20'
+  - name: sttm
+    description: '* Obsolete *'
+  - name: edtm
+    description: '* Obsolete *'
+  - name: hist
+    description: '* Obsolete *. Allowed values: 1, 2'
+  - name: hist_kw
+    description: '* Obsolete * (keyword). Allowed values: ttyeno.yes, ttyeno.no'
+  - name: pwyn
+    description: '* Obsolete *. Allowed values: 1, 2'
+  - name: pwyn_kw
+    description: '* Obsolete * (keyword). Allowed values: ttyeno.yes, ttyeno.no'
+  - name: pswd
+    description: 'Worklist Handler. Max length: 512'
+  - name: wait
+    description: Version
+  - name: delh
+    description: BW Startup Command
+  - name: prrt
+    description: Print Priority
+  - name: uids
+    description: 'User Interface. Allowed values: 1, 2'
+  - name: uids_kw
+    description: 'User Interface (keyword). Allowed values: ttaad.uids.ascii, ttaad.uids.xwindows11.4'
+  - name: pacc
+    description: 'Package Combination. Max length: 8'
+  - name: comp
+    description: Company
+  - name: clan
+    description: 'Language. Max length: 1'
+  - name: cpac
+    description: 'Start-Up Menu (Package). Max length: 2'
+  - name: cmod
+    description: 'Start-Up Menu (Module). Max length: 3'
+  - name: cmen
+    description: 'Start-Up Menu (Menu Code). Max length: 8'
+  - name: maxp
+    description: '* Obsolete *'
+  - name: intt
+    description: Application Toolbar (Text)
+  - name: csbn
+    description: 'Menu Browser. Allowed values: 1, 2'
+  - name: csbn_kw
+    description: 'Menu Browser (keyword). Allowed values: ttyeno.yes, ttyeno.no'
+  - name: csbh
+    description: 'Infor LN Process Browser (DEM). Allowed values: 1, 2'
+  - name: csbh_kw
+    description: 'Infor LN Process Browser (DEM) (keyword). Allowed values: ttyeno.yes,
+      ttyeno.no'
+  - name: palp
+    description: 'Infor LN Workflow. Allowed values: 1, 2'
+  - name: palp_kw
+    description: 'Infor LN Workflow (keyword). Allowed values: ttyeno.yes, ttyeno.no'
+  - name: loca
+    description: '* Obsolete *. Max length: 14'
+  - name: stpr
+    description: 'Startup Program. Allowed values: 2, 4, 5, 6, 7, 8'
+  - name: stpr_kw
+    description: 'Startup Program (keyword). Allowed values: ttaad.stpr.menu.browser,
+      ttaad.stpr.desktop, ttaad.stpr.org.browser, ttaad.stpr.org.workflow, ttaad.stpr.bi.browser,
+      ttaad.stpr.worktop'
+  - name: dskt
+    description: 'Startup Desktop Name. Max length: 20'
+  - name: stdp
+    description: 'Standard Program Type. Allowed values: 1, 2'
+  - name: stdp_kw
+    description: 'Standard Program Type (keyword). Allowed values: ttaad.stdp.ascii,
+      ttaad.stdp.graphical'
+  - name: tdir
+    description: '* Obsolete *. Allowed values: 0, 1, 2'
+  - name: tdir_kw
+    description: '* Obsolete * (keyword). Allowed values: , ttaad.tdir.ltor, ttaad.tdir.rtol'
+  - name: apsv
+    description: '* Obsolete *. Max length: 60'
+  - name: syst
+    description: '* Obsolete *. Max length: 80'
+  - name: s132
+    description: 'Remember the user''s settings. Allowed values: 0, 1, 2'
+  - name: s132_kw
+    description: 'Remember the user''s settings (keyword). Allowed values: , ttyeno.yes,
+      ttyeno.no'
+  - name: uoos
+    description: '* Obsolete *. Allowed values: 0, 1, 2'
+  - name: uoos_kw
+    description: '* Obsolete * (keyword). Allowed values: , ttyeno.yes, ttyeno.no'
+  - name: scdh
+    description: '* Obsolete *. Allowed values: 0, 1, 2'
+  - name: scdh_kw
+    description: '* Obsolete * (keyword). Allowed values: , ttyeno.yes, ttyeno.no'
+  - name: syst2
+    description: '* Obsolete *. Max length: 80'
+  - name: crol_1
+    description: 'Role. Max length: 13'
+  - name: crol_2
+    description: 'Role. Max length: 13'
+  - name: crol_3
+    description: 'Role. Max length: 13'
+  - name: crol_4
+    description: 'Role. Max length: 13'
+  - name: crol_5
+    description: 'Role. Max length: 13'
+  - name: crol_6
+    description: 'Role. Max length: 13'
+  - name: tusd
+    description: 'User Data. Max length: 13'
+  - name: ttxg
+    description: 'Default Text Groups. Max length: 13'
+  - name: ttxf
+    description: 'Default Text Fields. Max length: 13'
+  - name: ttxa
+    description: 'Text Group Authorizations. Max length: 13'
+  - name: tter
+    description: 'Terminal Authorizations. Max length: 13'
+  - name: tdvc
+    description: 'Device Preferences. Max length: 13'
+  - name: tdvp
+    description: 'Development Parameters. Max length: 13'
+  - name: tdva
+    description: 'Developer Authorizations. Max length: 13'
+  - name: allp
+    description: 'Default Authorization for all Package VRCs. Allowed values: 0, 1,
+      2'
+  - name: allp_kw
+    description: 'Default Authorization for all Package VRCs (keyword). Allowed values:
+      , ttyeno.yes, ttyeno.no'
+  - name: apud
+    description: 'Apply User Data. Allowed values: 1, 2'
+  - name: apud_kw
+    description: 'Apply User Data (keyword). Allowed values: ttyeno.yes, ttyeno.no'
+  - name: whlp
+    description: '* Obsolete *. Max length: 8'
+  - name: phlp__en_us
+    description: '(required) Path to Help Files / Help Server - base language. Max
+      length: 100'
+    data_tests:
+    - not_null
+  - name: tlb1
+    description: 'Standard Toolbar. Allowed values: 1, 2, 3, 4'
+  - name: tlb1_kw
+    description: 'Standard Toolbar (keyword). Allowed values: ttadv.tlbpos.top, ttadv.tlbpos.bottom,
+      ttadv.tlbpos.left, ttadv.tlbpos.right'
+  - name: tlb2
+    description: 'Application Toolbar (Icons). Allowed values: 1, 2, 3, 4'
+  - name: tlb2_kw
+    description: 'Application Toolbar (Icons) (keyword). Allowed values: ttadv.tlbpos.top,
+      ttadv.tlbpos.bottom, ttadv.tlbpos.left, ttadv.tlbpos.right'
+  - name: uico
+    description: 'UI Configuration. Allowed values: 1, 2'
+  - name: uico_kw
+    description: 'UI Configuration (keyword). Allowed values: ttuico.page, ttuico.field'
+  - name: wtit__en_us
+    description: '(required) Format of window title - base language. Max length: 70'
+    data_tests:
+    - not_null
+  - name: z_mmode
+    description: 'Message Mode. Allowed values: 1, 2, 3'
+  - name: z_mmode_kw
+    description: 'Message Mode (keyword). Allowed values: ttams.mmode.interactive,
+      ttams.mmode.non.interrupt, ttams.mmode.page.mode'
+  - name: z_pswd
+    description: 'Authorization Password. Max length: 512'
+  - name: za_dlan
+    description: 'Data Language. Max length: 5'
+  - name: zb_ssou__en_us
+    description: '(required) SSO User - base language. Max length: 132'
+    data_tests:
+    - not_null
+  - name: zb_ugsu
+    description: 'Use Generic System User. Allowed values: 1, 2'
+  - name: zb_ugsu_kw
+    description: 'Use Generic System User (keyword). Allowed values: ttyeno.yes, ttyeno.no'
+  - name: zc_fcom
+    description: Financial Company
+  - name: zc_lcom
+    description: Logistical Company
+  - name: zd_idnt
+    description: 'Identity (UUID). Max length: 36'
+  - name: role
+    description: 'Role ID. Max length: 20'
+  - name: ifsu
+    description: 'IFS User. Allowed values: 1, 2'
+  - name: ifsu_kw
+    description: 'IFS User (keyword). Allowed values: ttyeno.yes, ttyeno.no'
+  - name: ifss
+    description: 'IFS Status. Allowed values: 5, 10, 15, 99'
+  - name: ifss_kw
+    description: 'IFS Status (keyword). Allowed values: ttaad.ifss.enabled, ttaad.ifss.disabled,
+      ttaad.ifss.removed, ttaad.ifss.not.applicable'
+  - name: ifsi__en_us
+    description: '(required) IFS User ID - base language. Max length: 132'
+    data_tests:
+    - not_null
+  - name: mail__en_us
+    description: '(required) Email Address - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: mtyp
+    description: 'Email Type. Allowed values: 1, 2, 3, 4, 5, 6, 7'
+  - name: mtyp_kw
+    description: 'Email Type (keyword). Allowed values: ttcmf.etyp.smtp, ttcmf.etyp.x400,
+      ttcmf.etyp.notes, ttcmf.etyp.ccmail, ttcmf.etyp.mhs, ttcmf.etyp.ms, ttcmf.etyp.none'
+  - name: faxn
+    description: 'Fax Number. Max length: 15'
+  - name: telx
+    description: 'Telex Number. Max length: 15'
+  - name: sita
+    description: 'SITA Address. Max length: 7'
+  - name: smsa
+    description: 'SMS Address. Max length: 50'
+  - name: defa
+    description: 'Default Address Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8'
+  - name: defa_kw
+    description: 'Default Address Type (keyword). Allowed values: ttcmf.defa.email,
+      ttcmf.defa.fax, ttcmf.defa.telex, ttcmf.defa.sita, ttcmf.defa.sms, ttcmf.defa.telephone,
+      ttcmf.defa.pager, ttcmf.defa.none'
+  - name: tele
+    description: 'Telephone Number. Max length: 15'
+  - name: ucln
+    description: 'Use Browser Language. Allowed values: 1, 2'
+  - name: ucln_kw
+    description: 'Use Browser Language (keyword). Allowed values: ttyeno.yes, ttyeno.no'
+  - name: uspr
+    description: 'User Profile. Max length: 13'
+  - name: uhmd
+    description: 'Use Other Home Directory. Allowed values: 1, 2'
+  - name: uhmd_kw
+    description: 'Use Other Home Directory (keyword). Allowed values: ttyeno.yes,
+      ttyeno.no'
+  - name: hmdi__en_us
+    description: '(required) Home Directory - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: crdt
+    description: Creation Date
+  - name: crus
+    description: 'Created by. Max length: 12'
+  - name: ifsc
+    description: 'Created by IFS ID. Max length: 36'
+  - name: updt
+    description: Modified Date
+  - name: upus
+    description: 'Modified by. Max length: 12'
+  - name: ifsm
+    description: 'Modified by IFS ID. Max length: 36'
+  - name: user_role_ref_compnr
+    description: company number of primary key of table ttaad204 User Roles
+  - name: pacc_ref_compnr
+    description: company number of primary key of table ttaad120 Package Combinations
+  - name: comp_ref_compnr
+    description: company number of primary key of table ttaad100 Companies
+  - name: clan_ref_compnr
+    description: company number of primary key of table ttaad110 Languages
+  - name: cpac_ref_compnr
+    description: company number of primary key of table ttadv100 Packages
+  - name: loca_ref_compnr
+    description: company number of primary key of table tttss002 Locale Information
+  - name: tusd_ref_compnr
+    description: company number of primary key of table ttams110 User Data Template
+  - name: tdvp_ref_compnr
+    description: company number of primary key of table ttams150 Development Parameters
+      Template
+  - name: uspr_ref_compnr
+    description: company number of primary key of table ttams160 User Profile Template
+  - name: tenant
+    description: 'Max length: 22'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN ttaad200 User Data table, Generated 2026-04-10T19:42:39Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - user

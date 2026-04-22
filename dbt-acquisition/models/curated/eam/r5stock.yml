@@ -1,0 +1,261 @@
+version: 2
+models:
+- name: r5stock
+  columns:
+  - name: sto_lastsaved
+    description: STO_LASTSAVED
+  - name: sto_part
+    description: STO_PART
+  - name: sto_store
+    description: STO_STORE
+  - name: sto_forinv
+    description: STO_FORINV
+  - name: sto_minlev
+    description: STO_MINLEV
+  - name: sto_ordlev
+    description: STO_ORDLEV
+  - name: sto_ordqty
+    description: STO_ORDQTY
+  - name: sto_stocktake
+    description: STO_STOCKTAKE
+  - name: sto_prefstore
+    description: STO_PREFSTORE
+  - name: sto_prefprice
+    description: STO_PREFPRICE
+  - name: sto_prefsup
+    description: STO_PREFSUP
+  - name: sto_prefuom
+    description: STO_PREFUOM
+  - name: sto_leadtime
+    description: STO_LEADTIME
+  - name: sto_class
+    description: STO_CLASS
+  - name: sto_qty
+    description: STO_QTY
+  - name: sto_avgprice
+    description: STO_AVGPRICE
+  - name: sto_lastprice
+    description: STO_LASTPRICE
+  - name: sto_stdprice
+    description: STO_STDPRICE
+  - name: sto_baseprice
+    description: STO_BASEPRICE
+  - name: sto_stockout
+    description: STO_STOCKOUT
+  - name: sto_consignment
+    description: STO_CONSIGNMENT
+  - name: sto_abcclass
+    description: STO_ABCCLASS
+  - name: sto_class_org
+    description: STO_CLASS_ORG
+  - name: sto_prefsup_org
+    description: STO_PREFSUP_ORG
+  - name: sto_part_org
+    description: STO_PART_ORG
+  - name: sto_pricetype
+    description: STO_PRICETYPE
+  - name: sto_credit
+    description: STO_CREDIT
+  - name: sto_ondemand
+    description: STO_ONDEMAND
+  - name: sto_corevalue
+    description: STO_COREVALUE
+  - name: sto_repairqty
+    description: STO_REPAIRQTY
+  - name: sto_vendorqty
+    description: STO_VENDORQTY
+  - name: sto_shopqty
+    description: STO_SHOPQTY
+  - name: sto_repminqty
+    description: STO_REPMINQTY
+  - name: sto_repprice
+    description: STO_REPPRICE
+  - name: sto_repleadtime
+    description: STO_REPLEADTIME
+  - name: sto_repprefsup
+    description: STO_REPPREFSUP
+  - name: sto_repprefsup_org
+    description: STO_REPPREFSUP_ORG
+  - name: sto_repmrc
+    description: STO_REPMRC
+  - name: sto_repstandwork
+    description: STO_REPSTANDWORK
+  - name: sto_repobject
+    description: STO_REPOBJECT
+  - name: sto_repobject_org
+    description: STO_REPOBJECT_ORG
+  - name: sto_repairtype
+    description: STO_REPAIRTYPE
+  - name: sto_defaultbin
+    description: STO_DEFAULTBIN
+  - name: sto_updatecount
+    description: STO_UPDATECOUNT
+  - name: sto_created
+    description: STO_CREATED
+  - name: sto_updated
+    description: STO_UPDATED
+  - name: sto_maxqty
+    description: STO_MAXQTY
+  - name: sto_repdefaultbin
+    description: STO_REPDEFAULTBIN
+  - name: sto_repstockmethod
+    description: STO_REPSTOCKMETHOD
+  - name: sto_repautoassign
+    description: STO_REPAUTOASSIGN
+  - name: sto_printer
+    description: STO_PRINTER
+  - name: sto_issuetemplate
+    description: STO_ISSUETEMPLATE
+  - name: sto_receipttemplate
+    description: STO_RECEIPTTEMPLATE
+  - name: sto_nonpotemplate
+    description: STO_NONPOTEMPLATE
+  - name: sto_labeldefault
+    description: STO_LABELDEFAULT
+  - name: sto_prefmanufacturer
+    description: STO_PREFMANUFACTURER
+  - name: sto_prefmanufactpart
+    description: STO_PREFMANUFACTPART
+  - name: sto_streceipttemplate
+    description: STO_STRECEIPTTEMPLATE
+  - name: sto_udfchar01
+    description: STO_UDFCHAR01
+  - name: sto_udfchar02
+    description: STO_UDFCHAR02
+  - name: sto_udfchar03
+    description: STO_UDFCHAR03
+  - name: sto_udfchar04
+    description: STO_UDFCHAR04
+  - name: sto_udfchar05
+    description: STO_UDFCHAR05
+  - name: sto_udfchar06
+    description: STO_UDFCHAR06
+  - name: sto_udfchar07
+    description: STO_UDFCHAR07
+  - name: sto_udfchar08
+    description: STO_UDFCHAR08
+  - name: sto_udfchar09
+    description: STO_UDFCHAR09
+  - name: sto_udfchar10
+    description: STO_UDFCHAR10
+  - name: sto_udfchar11
+    description: STO_UDFCHAR11
+  - name: sto_udfchar12
+    description: STO_UDFCHAR12
+  - name: sto_udfchar13
+    description: STO_UDFCHAR13
+  - name: sto_udfchar14
+    description: STO_UDFCHAR14
+  - name: sto_udfchar15
+    description: STO_UDFCHAR15
+  - name: sto_udfchar16
+    description: STO_UDFCHAR16
+  - name: sto_udfchar17
+    description: STO_UDFCHAR17
+  - name: sto_udfchar18
+    description: STO_UDFCHAR18
+  - name: sto_udfchar19
+    description: STO_UDFCHAR19
+  - name: sto_udfchar20
+    description: STO_UDFCHAR20
+  - name: sto_udfchar21
+    description: STO_UDFCHAR21
+  - name: sto_udfchar22
+    description: STO_UDFCHAR22
+  - name: sto_udfchar23
+    description: STO_UDFCHAR23
+  - name: sto_udfchar24
+    description: STO_UDFCHAR24
+  - name: sto_udfchar25
+    description: STO_UDFCHAR25
+  - name: sto_udfchar26
+    description: STO_UDFCHAR26
+  - name: sto_udfchar27
+    description: STO_UDFCHAR27
+  - name: sto_udfchar28
+    description: STO_UDFCHAR28
+  - name: sto_udfchar29
+    description: STO_UDFCHAR29
+  - name: sto_udfchar30
+    description: STO_UDFCHAR30
+  - name: sto_udfnum01
+    description: STO_UDFNUM01
+  - name: sto_udfnum02
+    description: STO_UDFNUM02
+  - name: sto_udfnum03
+    description: STO_UDFNUM03
+  - name: sto_udfnum04
+    description: STO_UDFNUM04
+  - name: sto_udfnum05
+    description: STO_UDFNUM05
+  - name: sto_udfdate01
+    description: STO_UDFDATE01
+  - name: sto_udfdate02
+    description: STO_UDFDATE02
+  - name: sto_udfdate03
+    description: STO_UDFDATE03
+  - name: sto_udfdate04
+    description: STO_UDFDATE04
+  - name: sto_udfdate05
+    description: STO_UDFDATE05
+  - name: sto_udfchkbox01
+    description: STO_UDFCHKBOX01
+  - name: sto_udfchkbox02
+    description: STO_UDFCHKBOX02
+  - name: sto_udfchkbox03
+    description: STO_UDFCHKBOX03
+  - name: sto_udfchkbox04
+    description: STO_UDFCHKBOX04
+  - name: sto_udfchkbox05
+    description: STO_UDFCHKBOX05
+  - name: sto_preventissuedefrtnbin
+    description: STO_PREVENTISSUEDEFRTNBIN
+  - name: sto_defaultreturnbin
+    description: STO_DEFAULTRETURNBIN
+  - name: sto_partcondition
+    description: STO_PARTCONDITION
+  - name: sto_reorderconditions
+    description: STO_REORDERCONDITIONS
+  - name: sto_corereturntemplate
+    description: STO_CORERETURNTEMPLATE
+  - name: sto_warrantytemplate
+    description: STO_WARRANTYTEMPLATE
+  - name: sto_helditemspotemplate
+    description: STO_HELDITEMSPOTEMPLATE
+  - name: sto_helditemsnonpotemplate
+    description: STO_HELDITEMSNONPOTEMPLATE
+  - name: sto_helditemsstktrstemplate
+    description: STO_HELDITEMSSTKTRSTEMPLATE
+  - name: sto_helditemstrstemplate
+    description: STO_HELDITEMSTRSTEMPLATE
+  - name: sto_helditemstostktrstemplate
+    description: STO_HELDITEMSTOSTKTRSTEMPLATE
+  - name: sto_helditemsreceipttemplate
+    description: STO_HELDITEMSRECEIPTTEMPLATE
+  - name: sto_custandardprice
+    description: STO_CUSTANDARDPRICE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5STOCK
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - sto_part
+        - sto_part_org
+        - sto_store

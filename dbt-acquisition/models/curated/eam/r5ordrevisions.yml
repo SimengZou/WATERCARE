@@ -1,0 +1,235 @@
+version: 2
+models:
+- name: r5ordrevisions
+  columns:
+  - name: orr_lastsaved
+    description: ORR_LASTSAVED
+  - name: orr_order
+    description: ORR_ORDER
+  - name: orr_revision
+    description: ORR_REVISION
+  - name: orr_revised
+    description: ORR_REVISED
+  - name: orr_revisedorder
+    description: ORR_REVISEDORDER
+  - name: orr_revisedby
+    description: ORR_REVISEDBY
+  - name: orr_desc
+    description: ORR_DESC
+  - name: orr_class
+    description: ORR_CLASS
+  - name: orr_type
+    description: ORR_TYPE
+  - name: orr_rtype
+    description: ORR_RTYPE
+  - name: orr_supplier
+    description: ORR_SUPPLIER
+  - name: orr_date
+    description: ORR_DATE
+  - name: orr_due
+    description: ORR_DUE
+  - name: orr_approv
+    description: ORR_APPROV
+  - name: orr_status
+    description: ORR_STATUS
+  - name: orr_rstatus
+    description: ORR_RSTATUS
+  - name: orr_auth
+    description: ORR_AUTH
+  - name: orr_contract
+    description: ORR_CONTRACT
+  - name: orr_discperc
+    description: ORR_DISCPERC
+  - name: orr_discount
+    description: ORR_DISCOUNT
+  - name: orr_price
+    description: ORR_PRICE
+  - name: orr_curr
+    description: ORR_CURR
+  - name: orr_exch
+    description: ORR_EXCH
+  - name: orr_origin
+    description: ORR_ORIGIN
+  - name: orr_store
+    description: ORR_STORE
+  - name: orr_printed
+    description: ORR_PRINTED
+  - name: orr_buyer
+    description: ORR_BUYER
+  - name: orr_mailtosite
+    description: ORR_MAILTOSITE
+  - name: orr_paymentterms
+    description: ORR_PAYMENTTERMS
+  - name: orr_freightterms
+    description: ORR_FREIGHTTERMS
+  - name: orr_shipvia
+    description: ORR_SHIPVIA
+  - name: orr_fobpoint
+    description: ORR_FOBPOINT
+  - name: orr_blanketorder
+    description: ORR_BLANKETORDER
+  - name: orr_dfltauth
+    description: ORR_DFLTAUTH
+  - name: orr_exchtodual
+    description: ORR_EXCHTODUAL
+  - name: orr_exchfromdual
+    description: ORR_EXCHFROMDUAL
+  - name: orr_deladdress
+    description: ORR_DELADDRESS
+  - name: orr_class_org
+    description: ORR_CLASS_ORG
+  - name: orr_supplier_org
+    description: ORR_SUPPLIER_ORG
+  - name: orr_order_org
+    description: ORR_ORDER_ORG
+  - name: orr_paybymethod
+    description: ORR_PAYBYMETHOD
+  - name: orr_updatecount
+    description: ORR_UPDATECOUNT
+  - name: orr_controlno
+    description: ORR_CONTROLNO
+  - name: orr_blanketrelease
+    description: ORR_BLANKETRELEASE
+  - name: orr_sourcecode
+    description: ORR_SOURCECODE
+  - name: orr_iptransmitted
+    description: ORR_IPTRANSMITTED
+  - name: orr_udfchar01
+    description: ORR_UDFCHAR01
+  - name: orr_udfchar02
+    description: ORR_UDFCHAR02
+  - name: orr_udfchar03
+    description: ORR_UDFCHAR03
+  - name: orr_udfchar04
+    description: ORR_UDFCHAR04
+  - name: orr_udfchar05
+    description: ORR_UDFCHAR05
+  - name: orr_udfchar06
+    description: ORR_UDFCHAR06
+  - name: orr_udfchar07
+    description: ORR_UDFCHAR07
+  - name: orr_udfchar08
+    description: ORR_UDFCHAR08
+  - name: orr_udfchar09
+    description: ORR_UDFCHAR09
+  - name: orr_udfchar10
+    description: ORR_UDFCHAR10
+  - name: orr_udfchar11
+    description: ORR_UDFCHAR11
+  - name: orr_udfchar12
+    description: ORR_UDFCHAR12
+  - name: orr_udfchar13
+    description: ORR_UDFCHAR13
+  - name: orr_udfchar14
+    description: ORR_UDFCHAR14
+  - name: orr_udfchar15
+    description: ORR_UDFCHAR15
+  - name: orr_udfchar16
+    description: ORR_UDFCHAR16
+  - name: orr_udfchar17
+    description: ORR_UDFCHAR17
+  - name: orr_udfchar18
+    description: ORR_UDFCHAR18
+  - name: orr_udfchar19
+    description: ORR_UDFCHAR19
+  - name: orr_udfchar20
+    description: ORR_UDFCHAR20
+  - name: orr_udfchar21
+    description: ORR_UDFCHAR21
+  - name: orr_udfchar22
+    description: ORR_UDFCHAR22
+  - name: orr_udfchar23
+    description: ORR_UDFCHAR23
+  - name: orr_udfchar24
+    description: ORR_UDFCHAR24
+  - name: orr_udfchar25
+    description: ORR_UDFCHAR25
+  - name: orr_udfchar26
+    description: ORR_UDFCHAR26
+  - name: orr_udfchar27
+    description: ORR_UDFCHAR27
+  - name: orr_udfchar28
+    description: ORR_UDFCHAR28
+  - name: orr_udfchar29
+    description: ORR_UDFCHAR29
+  - name: orr_udfchar30
+    description: ORR_UDFCHAR30
+  - name: orr_udfnum01
+    description: ORR_UDFNUM01
+  - name: orr_udfnum02
+    description: ORR_UDFNUM02
+  - name: orr_udfnum03
+    description: ORR_UDFNUM03
+  - name: orr_udfnum04
+    description: ORR_UDFNUM04
+  - name: orr_udfnum05
+    description: ORR_UDFNUM05
+  - name: orr_udfdate01
+    description: ORR_UDFDATE01
+  - name: orr_udfdate02
+    description: ORR_UDFDATE02
+  - name: orr_udfdate03
+    description: ORR_UDFDATE03
+  - name: orr_udfdate04
+    description: ORR_UDFDATE04
+  - name: orr_udfdate05
+    description: ORR_UDFDATE05
+  - name: orr_udfchkbox01
+    description: ORR_UDFCHKBOX01
+  - name: orr_udfchkbox02
+    description: ORR_UDFCHKBOX02
+  - name: orr_udfchkbox03
+    description: ORR_UDFCHKBOX03
+  - name: orr_udfchkbox04
+    description: ORR_UDFCHKBOX04
+  - name: orr_udfchkbox05
+    description: ORR_UDFCHKBOX05
+  - name: orr_revisionreason
+    description: ORR_REVISIONREASON
+  - name: orr_laststatusupdate
+    description: ORR_LASTSTATUSUPDATE
+  - name: orr_packagetrackingnumber
+    description: ORR_PACKAGETRACKINGNUMBER
+  - name: orr_sourcesystem
+    description: ORR_SOURCESYSTEM
+  - name: orr_interface
+    description: ORR_INTERFACE
+  - name: orr_created
+    description: ORR_CREATED
+  - name: orr_updated
+    description: ORR_UPDATED
+  - name: orr_acd
+    description: ORR_ACD
+  - name: orr_jecategory
+    description: ORR_JECATEGORY
+  - name: orr_creditcard
+    description: ORR_CREDITCARD
+  - name: orr_jesource
+    description: ORR_JESOURCE
+  - name: orr_attentionto
+    description: ORR_ATTENTIONTO
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ORDREVISIONS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - orr_order
+        - orr_order_org
+        - orr_revision

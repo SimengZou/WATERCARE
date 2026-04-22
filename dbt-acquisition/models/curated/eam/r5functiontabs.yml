@@ -1,0 +1,72 @@
+version: 2
+models:
+- name: r5functiontabs
+  columns:
+  - name: ftb_lastsaved
+    description: FTB_LASTSAVED
+  - name: ftb_product
+    description: FTB_PRODUCT
+  - name: ftb_rentity
+    description: FTB_RENTITY
+  - name: ftb_visible
+    description: FTB_VISIBLE
+  - name: ftb_select
+    description: FTB_SELECT
+  - name: ftb_update
+    description: FTB_UPDATE
+  - name: ftb_insert
+    description: FTB_INSERT
+  - name: ftb_delete
+    description: FTB_DELETE
+  - name: ftb_displayft
+    description: FTB_DISPLAYFT
+  - name: ftb_sysrequired
+    description: FTB_SYSREQUIRED
+  - name: ftb_seq
+    description: FTB_SEQ
+  - name: ftb_sqlexist
+    description: FTB_SQLEXIST
+  - name: ftb_updatecount
+    description: FTB_UPDATECOUNT
+  - name: ftb_altersave
+    description: FTB_ALTERSAVE
+  - name: ftb_interfacecode
+    description: FTB_INTERFACECODE
+  - name: ftb_mekey
+    description: FTB_MEKEY
+  - name: ftb_ewsbtn
+    description: FTB_EWSBTN
+  - name: ftb_xtype
+    description: FTB_XTYPE
+  - name: ftb_nodesign
+    description: FTB_NODESIGN
+  - name: ftb_designpopup
+    description: FTB_DESIGNPOPUP
+  - name: ftb_function
+    description: FTB_FUNCTION
+  - name: ftb_tab
+    description: FTB_TAB
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5FUNCTIONTABS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - ftb_function
+        - ftb_tab

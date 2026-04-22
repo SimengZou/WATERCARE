@@ -1,0 +1,44 @@
+version: 2
+models:
+- name: r5dlvconclauses
+  columns:
+  - name: ccl_lastsaved
+    description: CCL_LASTSAVED
+  - name: ccl_desc
+    description: CCL_DESC
+  - name: ccl_class
+    description: CCL_CLASS
+  - name: ccl_parent
+    description: CCL_PARENT
+  - name: ccl_line
+    description: CCL_LINE
+  - name: ccl_org
+    description: CCL_ORG
+  - name: ccl_class_org
+    description: CCL_CLASS_ORG
+  - name: ccl_updatecount
+    description: CCL_UPDATECOUNT
+  - name: ccl_notused
+    description: CCL_NOTUSED
+  - name: ccl_code
+    description: CCL_CODE
+  - name: ccl_system
+    description: CCL_SYSTEM
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DLVCONCLAUSES

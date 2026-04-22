@@ -1,0 +1,146 @@
+version: 2
+models:
+- name: r5costcodes
+  columns:
+  - name: cst_lastsaved
+    description: CST_LASTSAVED
+  - name: cst_udfchkbox05
+    description: CST_UDFCHKBOX05
+  - name: cst_class
+    description: CST_CLASS
+  - name: cst_notused
+    description: CST_NOTUSED
+  - name: cst_org
+    description: CST_ORG
+  - name: cst_class_org
+    description: CST_CLASS_ORG
+  - name: cst_created
+    description: CST_CREATED
+  - name: cst_createdby
+    description: CST_CREATEDBY
+  - name: cst_updated
+    description: CST_UPDATED
+  - name: cst_updatedby
+    description: CST_UPDATEDBY
+  - name: cst_updatecount
+    description: CST_UPDATECOUNT
+  - name: cst_fleetcustomer
+    description: CST_FLEETCUSTOMER
+  - name: cst_fleetcustomer_org
+    description: CST_FLEETCUSTOMER_ORG
+  - name: cst_nonbillable
+    description: CST_NONBILLABLE
+  - name: cst_segmentvalue
+    description: CST_SEGMENTVALUE
+  - name: cst_udfchar01
+    description: CST_UDFCHAR01
+  - name: cst_udfchar02
+    description: CST_UDFCHAR02
+  - name: cst_udfchar03
+    description: CST_UDFCHAR03
+  - name: cst_udfchar04
+    description: CST_UDFCHAR04
+  - name: cst_udfchar05
+    description: CST_UDFCHAR05
+  - name: cst_udfchar06
+    description: CST_UDFCHAR06
+  - name: cst_udfchar07
+    description: CST_UDFCHAR07
+  - name: cst_udfchar08
+    description: CST_UDFCHAR08
+  - name: cst_udfchar09
+    description: CST_UDFCHAR09
+  - name: cst_udfchar10
+    description: CST_UDFCHAR10
+  - name: cst_udfchar12
+    description: CST_UDFCHAR12
+  - name: cst_udfchar13
+    description: CST_UDFCHAR13
+  - name: cst_udfchar14
+    description: CST_UDFCHAR14
+  - name: cst_udfchar15
+    description: CST_UDFCHAR15
+  - name: cst_udfchar16
+    description: CST_UDFCHAR16
+  - name: cst_udfchar17
+    description: CST_UDFCHAR17
+  - name: cst_udfchar18
+    description: CST_UDFCHAR18
+  - name: cst_udfchar19
+    description: CST_UDFCHAR19
+  - name: cst_udfchar20
+    description: CST_UDFCHAR20
+  - name: cst_udfchar21
+    description: CST_UDFCHAR21
+  - name: cst_udfchar22
+    description: CST_UDFCHAR22
+  - name: cst_udfchar23
+    description: CST_UDFCHAR23
+  - name: cst_udfchar24
+    description: CST_UDFCHAR24
+  - name: cst_udfchar25
+    description: CST_UDFCHAR25
+  - name: cst_udfchar26
+    description: CST_UDFCHAR26
+  - name: cst_udfchar27
+    description: CST_UDFCHAR27
+  - name: cst_udfchar28
+    description: CST_UDFCHAR28
+  - name: cst_udfchar29
+    description: CST_UDFCHAR29
+  - name: cst_udfchar30
+    description: CST_UDFCHAR30
+  - name: cst_udfnum01
+    description: CST_UDFNUM01
+  - name: cst_udfchar11
+    description: CST_UDFCHAR11
+  - name: cst_udfnum02
+    description: CST_UDFNUM02
+  - name: cst_udfnum03
+    description: CST_UDFNUM03
+  - name: cst_udfnum04
+    description: CST_UDFNUM04
+  - name: cst_udfnum05
+    description: CST_UDFNUM05
+  - name: cst_udfdate01
+    description: CST_UDFDATE01
+  - name: cst_udfdate02
+    description: CST_UDFDATE02
+  - name: cst_udfdate03
+    description: CST_UDFDATE03
+  - name: cst_udfdate04
+    description: CST_UDFDATE04
+  - name: cst_udfdate05
+    description: CST_UDFDATE05
+  - name: cst_udfchkbox01
+    description: CST_UDFCHKBOX01
+  - name: cst_udfchkbox02
+    description: CST_UDFCHKBOX02
+  - name: cst_udfchkbox03
+    description: CST_UDFCHKBOX03
+  - name: cst_udfchkbox04
+    description: CST_UDFCHKBOX04
+  - name: cst_code
+    description: CST_CODE
+    data_tests:
+    - unique
+  - name: cst_desc
+    description: CST_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5COSTCODES

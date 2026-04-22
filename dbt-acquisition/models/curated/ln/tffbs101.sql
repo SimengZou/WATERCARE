@@ -1,0 +1,93 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key='dbt_surrogate_key',
+    description='LN tffbs101 Budget Amounts and Quantities per Period table, Generated 2026-04-10T19:41:38Z from package combination ce01101',
+    tags=['auto-generated', 'ln', 'stage1']
+) }}
+
+with cte_flattened as (
+    select
+        {{ trx_json_extract('src', ['compnr'], type='int', alias='compnr') }},
+        {{ trx_json_extract('src', ['year'], type='int', alias='year') }},
+        {{ trx_json_extract('src', ['budg'], type='varchar', alias='budg') }},
+        {{ trx_json_extract('src', ['leac'], type='varchar', alias='leac') }},
+        {{ trx_json_extract('src', ['dim1'], type='varchar', alias='dim1') }},
+        {{ trx_json_extract('src', ['dim2'], type='varchar', alias='dim2') }},
+        {{ trx_json_extract('src', ['dim3'], type='varchar', alias='dim3') }},
+        {{ trx_json_extract('src', ['dim4'], type='varchar', alias='dim4') }},
+        {{ trx_json_extract('src', ['dim5'], type='varchar', alias='dim5') }},
+        {{ trx_json_extract('src', ['dim6'], type='varchar', alias='dim6') }},
+        {{ trx_json_extract('src', ['dim7'], type='varchar', alias='dim7') }},
+        {{ trx_json_extract('src', ['dim8'], type='varchar', alias='dim8') }},
+        {{ trx_json_extract('src', ['dim9'], type='varchar', alias='dim9') }},
+        {{ trx_json_extract('src', ['dm10'], type='varchar', alias='dm10') }},
+        {{ trx_json_extract('src', ['dm11'], type='varchar', alias='dm11') }},
+        {{ trx_json_extract('src', ['dm12'], type='varchar', alias='dm12') }},
+        {{ trx_json_extract('src', ['peri'], type='int', alias='peri') }},
+        {{ trx_json_extract('src', ['dbcr'], type='int', alias='dbcr') }},
+        {{ trx_json_extract('src', ['dbcr_kw'], type='varchar', alias='dbcr_kw') }},
+        {{ trx_json_extract('src', ['amnt'], type='float', alias='amnt') }},
+        {{ trx_json_extract('src', ['stam'], type='float', alias='stam') }},
+        {{ trx_json_extract('src', ['coam'], type='float', alias='coam') }},
+        {{ trx_json_extract('src', ['qan1'], type='float', alias='qan1') }},
+        {{ trx_json_extract('src', ['qan2'], type='float', alias='qan2') }},
+        {{ trx_json_extract('src', ['dty1'], type='int', alias='dty1') }},
+        {{ trx_json_extract('src', ['dty2'], type='int', alias='dty2') }},
+        {{ trx_json_extract('src', ['dty3'], type='int', alias='dty3') }},
+        {{ trx_json_extract('src', ['dty4'], type='int', alias='dty4') }},
+        {{ trx_json_extract('src', ['dty5'], type='int', alias='dty5') }},
+        {{ trx_json_extract('src', ['dty6'], type='int', alias='dty6') }},
+        {{ trx_json_extract('src', ['dty7'], type='int', alias='dty7') }},
+        {{ trx_json_extract('src', ['dty8'], type='int', alias='dty8') }},
+        {{ trx_json_extract('src', ['dty9'], type='int', alias='dty9') }},
+        {{ trx_json_extract('src', ['dt10'], type='int', alias='dt10') }},
+        {{ trx_json_extract('src', ['dt11'], type='int', alias='dt11') }},
+        {{ trx_json_extract('src', ['dt12'], type='int', alias='dt12') }},
+        {{ trx_json_extract('src', ['back'], type='int', alias='back') }},
+        {{ trx_json_extract('src', ['back_kw'], type='varchar', alias='back_kw') }},
+        {{ trx_json_extract('src', ['olap'], type='int', alias='olap') }},
+        {{ trx_json_extract('src', ['year_budg_ref_compnr'], type='int', alias='year_budg_ref_compnr') }},
+        {{ trx_json_extract('src', ['budg_ref_compnr'], type='int', alias='budg_ref_compnr') }},
+        {{ trx_json_extract('src', ['leac_ref_compnr'], type='int', alias='leac_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty1_dim1_ref_compnr'], type='int', alias='dty1_dim1_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty1_ref_compnr'], type='int', alias='dty1_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty2_dim2_ref_compnr'], type='int', alias='dty2_dim2_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty2_ref_compnr'], type='int', alias='dty2_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty3_dim3_ref_compnr'], type='int', alias='dty3_dim3_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty3_ref_compnr'], type='int', alias='dty3_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty4_dim4_ref_compnr'], type='int', alias='dty4_dim4_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty4_ref_compnr'], type='int', alias='dty4_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty5_dim5_ref_compnr'], type='int', alias='dty5_dim5_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty5_ref_compnr'], type='int', alias='dty5_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty6_dim6_ref_compnr'], type='int', alias='dty6_dim6_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty6_ref_compnr'], type='int', alias='dty6_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty7_dim7_ref_compnr'], type='int', alias='dty7_dim7_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty7_ref_compnr'], type='int', alias='dty7_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty8_dim8_ref_compnr'], type='int', alias='dty8_dim8_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty8_ref_compnr'], type='int', alias='dty8_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty9_dim9_ref_compnr'], type='int', alias='dty9_dim9_ref_compnr') }},
+        {{ trx_json_extract('src', ['dty9_ref_compnr'], type='int', alias='dty9_ref_compnr') }},
+        {{ trx_json_extract('src', ['dt10_dm10_ref_compnr'], type='int', alias='dt10_dm10_ref_compnr') }},
+        {{ trx_json_extract('src', ['dt10_ref_compnr'], type='int', alias='dt10_ref_compnr') }},
+        {{ trx_json_extract('src', ['dt11_dm11_ref_compnr'], type='int', alias='dt11_dm11_ref_compnr') }},
+        {{ trx_json_extract('src', ['dt11_ref_compnr'], type='int', alias='dt11_ref_compnr') }},
+        {{ trx_json_extract('src', ['dt12_dm12_ref_compnr'], type='int', alias='dt12_dm12_ref_compnr') }},
+        {{ trx_json_extract('src', ['dt12_ref_compnr'], type='int', alias='dt12_ref_compnr') }},
+        {{ trx_json_extract('src', ['deleted'], type='boolean', alias='deleted') }},
+        {{ trx_json_extract('src', ['username'], type='varchar', alias='username') }},
+        {{ trx_json_extract('src', ['timestamp'], type='timestamp_ntz', alias='timestamp') }},
+        {{ trx_json_extract('src', ['sequencenumber'], type='int', alias='sequencenumber') }},
+        {{ trx_etl_columns() }}
+    from {{ source('source_landing_ln', 'ln_tffbs101') }}
+)
+
+select
+    *,
+    {{ trx_audit_columns() }},
+    {{ trx_audit_surrogate(columns=['compnr', 'year', 'budg', 'leac', 'dim1', 'dim2', 'dim3', 'dim4', 'dim5', 'dim6', 'dim7', 'dim8', 'dim9', 'dm10', 'dm11', 'dm12', 'peri']) }}
+from cte_flattened
+{% if is_incremental() %}
+where etl_load_datetime > (select max(etl_load_datetime) from {{ this }})
+{% endif %}
+{{ trx_current_state(order_by=['sequencenumber']) }}

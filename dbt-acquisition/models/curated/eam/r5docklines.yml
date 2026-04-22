@@ -1,0 +1,218 @@
+version: 2
+models:
+- name: r5docklines
+  columns:
+  - name: dkl_lastsaved
+    description: DKL_LASTSAVED
+  - name: dkl_udfchar01
+    description: DKL_UDFCHAR01
+  - name: dkl_udfchar02
+    description: DKL_UDFCHAR02
+  - name: dkl_udfchar03
+    description: DKL_UDFCHAR03
+  - name: dkl_udfchar04
+    description: DKL_UDFCHAR04
+  - name: dkl_udfchar05
+    description: DKL_UDFCHAR05
+  - name: dkl_udfchar06
+    description: DKL_UDFCHAR06
+  - name: dkl_udfchar07
+    description: DKL_UDFCHAR07
+  - name: dkl_udfchar08
+    description: DKL_UDFCHAR08
+  - name: dkl_udfchar09
+    description: DKL_UDFCHAR09
+  - name: dkl_udfchar10
+    description: DKL_UDFCHAR10
+  - name: dkl_udfchar11
+    description: DKL_UDFCHAR11
+  - name: dkl_udfchar12
+    description: DKL_UDFCHAR12
+  - name: dkl_udfchar13
+    description: DKL_UDFCHAR13
+  - name: dkl_udfchar14
+    description: DKL_UDFCHAR14
+  - name: dkl_udfchar15
+    description: DKL_UDFCHAR15
+  - name: dkl_udfchar16
+    description: DKL_UDFCHAR16
+  - name: dkl_udfchar17
+    description: DKL_UDFCHAR17
+  - name: dkl_udfchar18
+    description: DKL_UDFCHAR18
+  - name: dkl_udfchar19
+    description: DKL_UDFCHAR19
+  - name: dkl_udfchar20
+    description: DKL_UDFCHAR20
+  - name: dkl_udfchar21
+    description: DKL_UDFCHAR21
+  - name: dkl_udfchar22
+    description: DKL_UDFCHAR22
+  - name: dkl_udfchar23
+    description: DKL_UDFCHAR23
+  - name: dkl_udfchar24
+    description: DKL_UDFCHAR24
+  - name: dkl_udfchar25
+    description: DKL_UDFCHAR25
+  - name: dkl_udfchar26
+    description: DKL_UDFCHAR26
+  - name: dkl_udfchar27
+    description: DKL_UDFCHAR27
+  - name: dkl_udfchar28
+    description: DKL_UDFCHAR28
+  - name: dkl_udfchar29
+    description: DKL_UDFCHAR29
+  - name: dkl_udfchar30
+    description: DKL_UDFCHAR30
+  - name: dkl_udfnum01
+    description: DKL_UDFNUM01
+  - name: dkl_udfnum02
+    description: DKL_UDFNUM02
+  - name: dkl_udfnum03
+    description: DKL_UDFNUM03
+  - name: dkl_udfnum04
+    description: DKL_UDFNUM04
+  - name: dkl_udfnum05
+    description: DKL_UDFNUM05
+  - name: dkl_udfdate01
+    description: DKL_UDFDATE01
+  - name: dkl_udfdate02
+    description: DKL_UDFDATE02
+  - name: dkl_udfdate03
+    description: DKL_UDFDATE03
+  - name: dkl_udfdate04
+    description: DKL_UDFDATE04
+  - name: dkl_udfdate05
+    description: DKL_UDFDATE05
+  - name: dkl_udfchkbox01
+    description: DKL_UDFCHKBOX01
+  - name: dkl_udfchkbox02
+    description: DKL_UDFCHKBOX02
+  - name: dkl_udfchkbox03
+    description: DKL_UDFCHKBOX03
+  - name: dkl_udfchkbox04
+    description: DKL_UDFCHKBOX04
+  - name: dkl_udfchkbox05
+    description: DKL_UDFCHKBOX05
+  - name: dkl_repaircondition
+    description: DKL_REPAIRCONDITION
+  - name: dkl_mobiledateupdated
+    description: DKL_MOBILEDATEUPDATED
+  - name: dkl_manufactpart
+    description: DKL_MANUFACTPART
+  - name: dkl_inspect
+    description: DKL_INSPECT
+  - name: dkl_retncode
+    description: DKL_RETNCODE
+  - name: dkl_class
+    description: DKL_CLASS
+  - name: dkl_class_org
+    description: DKL_CLASS_ORG
+  - name: dkl_scrapqty
+    description: DKL_SCRAPQTY
+  - name: dkl_acd
+    description: DKL_ACD
+  - name: dkl_updatecount
+    description: DKL_UPDATECOUNT
+  - name: dkl_repairprice
+    description: DKL_REPAIRPRICE
+  - name: dkl_person
+    description: DKL_PERSON
+  - name: dkl_manufacturer
+    description: DKL_MANUFACTURER
+  - name: dkl_line
+    description: DKL_LINE
+  - name: dkl_order
+    description: DKL_ORDER
+  - name: dkl_ordline
+    description: DKL_ORDLINE
+  - name: dkl_order_org
+    description: DKL_ORDER_ORG
+  - name: dkl_part
+    description: DKL_PART
+  - name: dkl_part_org
+    description: DKL_PART_ORG
+  - name: dkl_location
+    description: DKL_LOCATION
+  - name: dkl_inspstatus
+    description: DKL_INSPSTATUS
+  - name: dkl_insprstatus
+    description: DKL_INSPRSTATUS
+  - name: dkl_linestatus
+    description: DKL_LINESTATUS
+  - name: dkl_linerstatus
+    description: DKL_LINERSTATUS
+  - name: dkl_counted
+    description: DKL_COUNTED
+  - name: dkl_recvqty
+    description: DKL_RECVQTY
+  - name: dkl_countqty
+    description: DKL_COUNTQTY
+  - name: dkl_print
+    description: DKL_PRINT
+  - name: dkl_inspectedqty
+    description: DKL_INSPECTEDQTY
+  - name: dkl_insprejqty
+    description: DKL_INSPREJQTY
+  - name: dkl_rejreason
+    description: DKL_REJREASON
+  - name: dkl_inspector
+    description: DKL_INSPECTOR
+  - name: dkl_inspdate
+    description: DKL_INSPDATE
+  - name: dkl_upduser
+    description: DKL_UPDUSER
+  - name: dkl_updated
+    description: DKL_UPDATED
+  - name: dkl_retnqty
+    description: DKL_RETNQTY
+  - name: dkl_bin
+    description: DKL_BIN
+  - name: dkl_lot
+    description: DKL_LOT
+  - name: dkl_manlot
+    description: DKL_MANLOT
+  - name: dkl_manlotexp
+    description: DKL_MANLOTEXP
+  - name: dkl_direct
+    description: DKL_DIRECT
+  - name: dkl_obtype
+    description: DKL_OBTYPE
+  - name: dkl_obrtype
+    description: DKL_OBRTYPE
+  - name: dkl_object
+    description: DKL_OBJECT
+  - name: dkl_dckcode
+    description: DKL_DCKCODE
+  - name: dkl_object_org
+    description: DKL_OBJECT_ORG
+  - name: dkl_serial
+    description: DKL_SERIAL
+  - name: dkl_mrc
+    description: DKL_MRC
+  - name: dkl_recvcode
+    description: DKL_RECVCODE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DOCKLINES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - dkl_dckcode
+        - dkl_line

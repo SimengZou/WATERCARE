@@ -1,0 +1,624 @@
+version: 2
+models:
+- name: tppdm700
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: '(required) Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cnln
+    description: '(required) Contract Line. Max length: 8'
+    data_tests:
+    - not_null
+  - name: dlvr
+    description: (required) Deliverable
+    data_tests:
+    - not_null
+  - name: schd
+    description: (required) Schedule
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cspa
+    description: '(required) Element. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cpla
+    description: '(required) Plan. Max length: 3'
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: dlor
+    description: 'Origin. Allowed values: 10, 20'
+  - name: dlor_kw
+    description: 'Origin (keyword). Allowed values: tpctm.dlor.contract, tpctm.dlor.project'
+  - name: milt
+    description: 'Milestone. Max length: 16'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: delt
+    description: 'Delivery Type. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: delt_kw
+    description: 'Delivery Type (keyword). Allowed values: tppss.delt.wp, tppss.delt.pw,
+      tppss.delt.ww, tppss.delt.wb, tppss.delt.pwb, tppss.delt.bw'
+  - name: tdel
+    description: 'Type of Deliverable. Allowed values: 1, 2, 10'
+  - name: tdel_kw
+    description: 'Type of Deliverable (keyword). Allowed values: tppdm.tdel.hardware,
+      tppdm.tdel.nonhardware, tppdm.tdel.maintenance'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: cpva
+    description: Product Variant
+  - name: effn
+    description: Effectivity Unit
+  - name: sdsc
+    description: 'Standard Description. Allowed values: 1, 2'
+  - name: sdsc_kw
+    description: 'Standard Description (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oqan
+    description: Ordered Quantity
+  - name: ouni
+    description: 'Unit. Max length: 3'
+  - name: cqan
+    description: Completed Quantity
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: sqan
+    description: Delivered Quantity
+  - name: suni
+    description: 'Unit. Max length: 3'
+  - name: rqan
+    description: Returned Quantity
+  - name: aqan
+    description: Accepted Quantity
+  - name: bqan
+    description: Backorder Quantity
+  - name: buni
+    description: 'Unit. Max length: 3'
+  - name: baor
+    description: 'Backorder. Allowed values: 1, 2'
+  - name: baor_kw
+    description: 'Backorder (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: osch
+    description: Backorder Original Schedule
+  - name: rddt
+    description: Contract Delivery Date
+  - name: cddt
+    description: Confirmed Delivery Date
+  - name: iddt
+    description: Internal Delivery Date
+  - name: pddt
+    description: Planned Delivery Date
+  - name: prdt
+    description: Planned Receipt Date
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: mrlc
+    description: 'Maintenance Receipt Location. Max length: 6'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: stcn
+    description: 'Ship-to Contact. Max length: 9'
+  - name: pric
+    description: Unit Cost
+  - name: cocu
+    description: 'Cost Currency. Max length: 3'
+  - name: rtcc_1
+    description: Currency Rate (Cost)
+  - name: rtcc_2
+    description: Currency Rate (Cost)
+  - name: rtcc_3
+    description: Currency Rate (Cost)
+  - name: rtfc_1
+    description: Rate Factor Costs
+  - name: rtfc_2
+    description: Rate Factor Costs
+  - name: rtfc_3
+    description: Rate Factor Costs
+  - name: pris
+    description: Sales Price
+  - name: sacu
+    description: 'Currency. Max length: 3'
+  - name: rtcs_1
+    description: Currency Rate (Sls)
+  - name: rtcs_2
+    description: Currency Rate (Sls)
+  - name: rtcs_3
+    description: Currency Rate (Sls)
+  - name: rtfs_1
+    description: Rate Factor (Sales)
+  - name: rtfs_2
+    description: Rate Factor (Sales)
+  - name: rtfs_3
+    description: Rate Factor (Sales)
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: acpn
+    description: 'Acceptance Point. Allowed values: 10, 20, 30, 40'
+  - name: acpn_kw
+    description: 'Acceptance Point (keyword). Allowed values: tpctm.acpn.source, tpctm.acpn.destination,
+      tpctm.acpn.source.dest, tpctm.acpn.not.appl'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: stat
+    description: 'Status. Allowed values: 10, 20, 30, 35, 40, 50'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: tpctm.dlst.free, tpctm.dlst.active,
+      tpctm.dlst.released.to.wh, tpctm.dlst.delivered, tpctm.dlst.closed, tpctm.dlst.canceled'
+  - name: loco
+    description: 'User. Max length: 16'
+  - name: twar
+    description: 'To Warehouse. Max length: 6'
+  - name: tprj
+    description: 'To Project. Max length: 9'
+  - name: tpla
+    description: 'To Plan. Max length: 3'
+  - name: tspa
+    description: 'To Element. Max length: 16'
+  - name: tact
+    description: 'To Activity. Max length: 16'
+  - name: tstl
+    description: 'To Extension. Max length: 4'
+  - name: tcco
+    description: 'To Cost Component. Max length: 8'
+  - name: carr
+    description: 'Carrier/LSP. Max length: 3'
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: serv
+    description: 'Freight Service Level. Max length: 3'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: camt
+    description: Cost Amount
+  - name: samt
+    description: Sales Amount
+  - name: amts
+    description: Settlement Amount
+  - name: cstv
+    description: Customs Value
+  - name: citt
+    description: 'Item Coding System. Max length: 3'
+  - name: crbn
+    description: 'Carrier / LSP Binding. Allowed values: 0, 1, 2'
+  - name: crbn_kw
+    description: 'Carrier / LSP Binding (keyword). Allowed values: , tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: porg
+    description: 'Price Origin. Allowed values: 0, 2, 4, 6, 8, 10, 12, 13, 14, 16,
+      18, 20, 30, 50, 200, 205, 210, 215'
+  - name: porg_kw
+    description: 'Price Origin (keyword). Allowed values: , tpgen.porg.not.applicable,
+      tpgen.porg.manual, tpgen.porg.contract, tpgen.porg.variant, tpgen.porg.item.pur,
+      tpgen.porg.item.sls, tpgen.porg.item.service, tpgen.porg.supp.pr.book, tpgen.porg.def.pr.book,
+      tpgen.porg.price.structure, tpgen.porg.extern, tpgen.porg.generic.pr.list, tpgen.porg.budget,
+      tpgen.porg.equipment.proj, tpgen.porg.equipment.stand, tpgen.porg.subcontr.proj,
+      tpgen.porg.subcontr.stand'
+  - name: orno
+    description: 'Warehouse Order. Max length: 9'
+  - name: pono
+    description: Line
+  - name: seqn
+    description: Sequence
+  - name: ltsl
+    description: 'Lot Selection. Allowed values: 10, 20, 30, 40'
+  - name: ltsl_kw
+    description: 'Lot Selection (keyword). Allowed values: tpctm.ltsl.any, tpctm.ltsl.same,
+      tpctm.ltsl.specific, tpctm.ltsl.not.applicable'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: srsl
+    description: 'Serial Selection. Allowed values: 10, 20, 30'
+  - name: srsl_kw
+    description: 'Serial Selection (keyword). Allowed values: tpctm.srsl.any, tpctm.srsl.specific,
+      tpctm.srsl.not.applicable'
+  - name: serl
+    description: 'Serial Number. Max length: 30'
+  - name: lssn
+    description: 'Item Identification Set. Max length: 22'
+  - name: dlpt
+    description: 'Delivery Point. Max length: 9'
+  - name: shcn
+    description: 'Shipping Constraint. Allowed values: 10, 20, 30'
+  - name: shcn_kw
+    description: 'Shipping Constraint (keyword). Allowed values: tpctm.shcn.none,
+      tpctm.shcn.ship.line.compl, tpctm.shcn.ship.line.cancl'
+  - name: dspr
+    description: 'Delivery Schedule Present. Allowed values: 1, 2'
+  - name: dspr_kw
+    description: 'Delivery Schedule Present (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: unbd
+    description: 'Unit Binding. Allowed values: 1, 2'
+  - name: unbd_kw
+    description: 'Unit Binding (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cspg
+    description: 'Cost Pegged. Allowed values: 1, 2'
+  - name: cspg_kw
+    description: 'Cost Pegged (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crby
+    description: 'Created by. Max length: 16'
+  - name: crdt
+    description: Creation Date
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: lmdt
+    description: Last Modified on
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: exmt
+    description: 'Exempt. Allowed values: 1, 2'
+  - name: exmt_kw
+    description: 'Exempt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: bptc
+    description: 'BP Tax Country. Max length: 3'
+  - name: ceno
+    description: 'Exemption Certificate. Max length: 24'
+  - name: exrs
+    description: 'Exemption Reason. Max length: 6'
+  - name: cnpr
+    description: 'Contract Project. Max length: 9'
+  - name: cnel
+    description: 'Contract Element. Max length: 16'
+  - name: cnpl
+    description: 'Contract Plan. Max length: 3'
+  - name: cnac
+    description: 'Contract Activity. Max length: 16'
+  - name: inst
+    description: 'Installation Group. Max length: 9'
+  - name: rfcu__en_us
+    description: '(required) Customer Order - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: rlcu__en_us
+    description: '(required) Customer Order Line - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: rtor
+    description: 'Return Deliverable. Allowed values: 1, 2'
+  - name: rtor_kw
+    description: 'Return Deliverable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rfsh
+    description: 'Return From Shipment. Max length: 9'
+  - name: rfic
+    description: Return From Invoice Company
+  - name: rfit
+    description: 'Return From Invoice Transaction Type. Max length: 3'
+  - name: rfid
+    description: Return From Invoice Document
+  - name: rfdl
+    description: Return From Deliverable
+  - name: rfsc
+    description: Return From Schedule
+  - name: rrsn
+    description: 'Return Reason. Max length: 6'
+  - name: rown
+    description: 'Return Ownership. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: rown_kw
+    description: 'Return Ownership (keyword). Allowed values: tcowns.comp.owned, tcowns.consigned,
+      tcowns.cust.owned, tcowns.return.as.issue, tcowns.deferred, tcowns.not.appl'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: ccfm
+    description: 'Contains Customer Furnished Material. Allowed values: 1, 2'
+  - name: ccfm_kw
+    description: 'Contains Customer Furnished Material (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: sign
+    description: 'Planning Exception. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+      11, 12, 13, 14, 15, 20, 22, 25, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
+      40, 45, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66,
+      67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 250'
+  - name: sign_kw
+    description: 'Planning Exception (keyword). Allowed values: tprao.sign.inven.lo.zero,
+      tprao.sign.inven.lo.safety, tprao.sign.inven.hi.max, tprao.sign.actual.to.late,
+      tprao.sign.demf.dif.act, tprao.sign.astc.hi.pstc, tprao.sign.sfc.lo.zero, tprao.sign.dem.is.zero,
+      tprao.sign.dem.orders.zero, tprao.sign.orqa.lo.min, tprao.sign.orqa.hi.max,
+      tprao.sign.orqa.no.mult, tprao.sign.orqa.no.fix, tprao.sign.item.sup, tprao.sign.project,
+      tprao.sign.no.inbound, tprao.sign.no.outbound, tprao.sign.release.to.late, tprao.sign.cancel,
+      tprao.sign.reschedule.in, tprao.sign.reschedule.out, tprao.sign.order.in.safety,
+      tprao.sign.order.in.inter, tprao.sign.order.in.eltm, tprao.sign.order.late,
+      tprao.sign.over.util, tprao.sign.work.lo.norm, tprao.sign.work.hi.norm, tprao.sign.atp.lo.zero,
+      tprao.sign.transfer.fail, tprao.sign.supply.demand, tprao.sign.fatal, tprao.sign.rpt.error,
+      tprao.sign.no.supply, tprao.sign.no.bpid, tprao.sign.specification, tprao.sign.item,
+      tprao.sign.empty.plan.unit, tprao.sign.wlc.parameters, tprao.sign.wlc.cap.constr,
+      tprao.sign.wlc.mat.constr, tprao.sign.plan.failure, tprao.sign.peg.no.stock,
+      tprao.sign.peg.pot.stock.s, tprao.sign.peg.proj.stock, tprao.sign.peg.sup.in.past,
+      tprao.sign.peg.sup.late, tprao.sign.peg.sup.early, tprao.sign.peg.m.no.stock,
+      tprao.sign.peg.m.pot.stck, tprao.sign.peg.m.proj.stck, tprao.sign.peg.m.sup.in.pa,
+      tprao.sign.peg.m.sup.late, tprao.sign.peg.m.sup.early, tprao.sign.comm.quan.late,
+      tprao.sign.comm.quan.early, tprao.sign.comm.quan.hi, tprao.sign.comm.quan.lo,
+      tprao.sign.peg.sup.oversup, tprao.sign.peg.sup.over.fc, tprao.sign.peg.excluded,
+      tprao.sign.no.exception'
+  - name: prsg
+    description: 'Price Stage. Max length: 3'
+  - name: tcst
+    description: 'Document Compliance Status. Allowed values: 10, 20, 30, 40, 50'
+  - name: tcst_kw
+    description: 'Document Compliance Status (keyword). Allowed values: tcgtc.tcst.to.be.validated,
+      tcgtc.tcst.validating, tcgtc.tcst.valid.error, tcgtc.tcst.validated, tcgtc.tcst.not.appl'
+  - name: tcff
+    description: 'Compliance Failure for. Allowed values: 10, 20, 30, 40, 50, 60,
+      70'
+  - name: tcff_kw
+    description: 'Compliance Failure for (keyword). Allowed values: tpgtc.fail.src.not.applicable,
+      tpgtc.fail.src.trade.compl, tpgtc.fail.src.embargo, tpgtc.fail.src.boycott,
+      tpgtc.fail.src.letter.of.cred, tpgtc.fail.src.bank.guar.bene, tpgtc.fail.src.bank.guar.appl'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: pass
+    description: 'Process After Sales Service Automatically. Allowed values: 1, 2'
+  - name: pass_kw
+    description: 'Process After Sales Service Automatically (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: tatd
+    description: 'Turnaround Time Document. Max length: 9'
+  - name: lcrq
+    description: 'Letter of Credit Required. Allowed values: 1, 2'
+  - name: lcrq_kw
+    description: 'Letter of Credit Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: paym
+    description: 'Payment Method. Max length: 3'
+  - name: disc
+    description: Discount Percentage
+  - name: ldam
+    description: Discount Amount
+  - name: dorg
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12, 200, 205, 210,
+      215'
+  - name: dorg_kw
+    description: 'Discount Origin (keyword). Allowed values: tpgen.dorg.not.applicable,
+      tpgen.dorg.manual, tpgen.dorg.contract, tpgen.dorg.disc.structure, tpgen.dorg.disc.pr.book,
+      tpgen.dorg.extern, tpgen.dorg.equipment.proj, tpgen.dorg.equipment.stand, tpgen.dorg.subcontr.proj,
+      tpgen.dorg.subcontr.stand'
+  - name: bgrq
+    description: 'Bank Guarantee - Applicant Required. Allowed values: 1, 2'
+  - name: bgrq_kw
+    description: 'Bank Guarantee - Applicant Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bgrb
+    description: 'Bank Guarantee - Beneficiary Required. Allowed values: 1, 2'
+  - name: bgrb_kw
+    description: 'Bank Guarantee - Beneficiary Required (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: blck
+    description: 'Blocked. Allowed values: 1, 2'
+  - name: blck_kw
+    description: 'Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Text
+  - name: cono_cnln_ref_compnr
+    description: company number of primary key of table tpctm110 Contract Lines
+  - name: cono_ref_compnr
+    description: company number of primary key of table tpctm100 Contracts
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cprj_cpla_milt_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: item_site_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: ouni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: suni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: buni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: stad_dlpt_ref_compnr
+    description: company number of primary key of table tccom134 Delivery Points
+  - name: stcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: cocu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: sacu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: twar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: tprj_tstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: tprj_tpla_tact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: tprj_tspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: tprj_tpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: tprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: tcco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: carr_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: serv_ref_compnr
+    description: company number of primary key of table tcmcs075 Freight Service Levels
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: citt_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: lssn_ref_compnr
+    description: company number of primary key of table tcibd410 Item Identification
+      Sets
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: exrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cnpr_cnel_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cnpr_cnpl_cnac_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cnpr_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: rrsn_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: prsg_ref_compnr
+    description: company number of primary key of table tcmcs212 Price Stages
+  - name: tatd_ref_compnr
+    description: company number of primary key of table tcttm100 Turnaround Time Documents
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: samt_refc
+    description: 'CC: Sales Amount in Reference Currency'
+  - name: samt_cntc
+    description: 'CC: Sales Amount in Contract Currency'
+  - name: samt_prjc
+    description: 'CC: Sales Amount in Project Currency'
+  - name: samt_homc
+    description: 'CC: Sales Amount in Local Currency'
+  - name: samt_rpc1
+    description: 'CC: Sales Amount in Reporting Currency 1'
+  - name: samt_rpc2
+    description: 'CC: Sales Amount in Reporting Currency 2'
+  - name: samt_dwhc
+    description: 'CC: Sales Amount in Data Warehouse Currency'
+  - name: camt_refc
+    description: 'CC: Cost Amount in Reference Currency'
+  - name: camt_cntc
+    description: 'CC: Cost Amount in Contract Currency'
+  - name: camt_prjc
+    description: 'CC: Cost Amount in Project Currency'
+  - name: camt_homc
+    description: 'CC: Cost Amount in Local Currency'
+  - name: camt_rpc1
+    description: 'CC: Cost Amount in Reporting Currency 1'
+  - name: camt_rpc2
+    description: 'CC: Cost Amount in Reporting Currency 2'
+  - name: camt_dwhc
+    description: 'CC: Cost Amount in Data Warehouse Currency'
+  - name: amts_refc
+    description: 'CC: Settlement Amount in Reference Currency'
+  - name: amts_cntc
+    description: 'CC: Settlement Amount in Contract Currency'
+  - name: amts_prjc
+    description: 'CC: Settlement Amount in Project Currency'
+  - name: amts_homc
+    description: 'CC: Settlement Amount in Local Currency'
+  - name: amts_rpc1
+    description: 'CC: Settlement Amount in Reporting Currency 1'
+  - name: amts_rpc2
+    description: 'CC: Settlement Amount in Reporting Currency 2'
+  - name: amts_dwhc
+    description: 'CC: Settlement Amount in Data Warehouse Currency'
+  - name: cstv_refc
+    description: 'CC: Customs Value in Reference Currency'
+  - name: cstv_cntc
+    description: 'CC: Customs Value in Contract Currency'
+  - name: cstv_prjc
+    description: 'CC: Customs Value in Project Currency'
+  - name: cstv_homc
+    description: 'CC: Customs Value in Local Currency'
+  - name: cstv_rpc1
+    description: 'CC: Customs Value in Reporting Currency 1'
+  - name: cstv_rpc2
+    description: 'CC: Customs Value in Reporting Currency 2'
+  - name: cstv_dwhc
+    description: 'CC: Customs Value in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm700 Deliverables table, Generated 2026-04-10T19:42:03Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono
+        - cnln
+        - dlvr
+        - schd
+        - cprj
+        - cspa
+        - cpla
+        - cact
+        - sern

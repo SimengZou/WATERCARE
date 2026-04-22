@@ -1,0 +1,228 @@
+version: 2
+models:
+- name: tpptc220
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cpla
+    description: '(required) Plan. Max length: 3'
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: effn
+    description: Effectivity Unit
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: leng
+    description: Length
+  - name: widt
+    description: Width
+  - name: noun
+    description: Number of Units
+  - name: quan
+    description: Net Quantity
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: scpf
+    description: Scrap Factor
+  - name: clas
+    description: 'Landed Costs Classification. Max length: 12'
+  - name: lcta
+    description: Landed Cost Amount
+  - name: amoc
+    description: Cost Amount
+  - name: cocu
+    description: 'Currency. Max length: 3'
+  - name: pric
+    description: Unit Cost
+  - name: btdt
+    description: Budget Date
+  - name: pris
+    description: Sales Price
+  - name: amos
+    description: Sales Amount
+  - name: sacu
+    description: 'Sales Currency. Max length: 3'
+  - name: dfpc
+    description: 'Final Unit Cost. Allowed values: 1, 2'
+  - name: dfpc_kw
+    description: 'Final Unit Cost (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: stat
+    description: 'Budget Status. Allowed values: 1, 2, 3'
+  - name: stat_kw
+    description: 'Budget Status (keyword). Allowed values: tpptc.stat.free, tpptc.stat.actual,
+      tpptc.stat.definite'
+  - name: rsta
+    description: Related Start Date
+  - name: rfin
+    description: Related Finish Date
+  - name: ccal
+    description: 'Calendar. Max length: 9'
+  - name: dura
+    description: Duration
+  - name: tmud
+    description: 'Time Unit Duration. Max length: 3'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: snsb
+    description: Sequence Number Material Line in Element Budget
+  - name: copy
+    description: 'Item Line Copied. Allowed values: 1, 2'
+  - name: copy_kw
+    description: 'Item Line Copied (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cpva
+    description: Product Variant
+  - name: espp
+    description: 'Obsolete. Max length: 200'
+  - name: slnk
+    description: 'Obsolete. Allowed values: 1, 2, 3'
+  - name: slnk_kw
+    description: 'Obsolete (keyword). Allowed values: tppss.slnk.create, tppss.slnk.no.link,
+      tppss.slnk.linked'
+  - name: rtcc_1
+    description: Currency Rate (Costs)
+  - name: rtcc_2
+    description: Currency Rate (Costs)
+  - name: rtcc_3
+    description: Currency Rate (Costs)
+  - name: rtfc_1
+    description: Rate Factor (Costs)
+  - name: rtfc_2
+    description: Rate Factor (Costs)
+  - name: rtfc_3
+    description: Rate Factor (Costs)
+  - name: rtcs_1
+    description: Currency Rate (Sls)
+  - name: rtcs_2
+    description: Currency Rate (Sls)
+  - name: rtcs_3
+    description: Currency Rate (Sls)
+  - name: rtfs_1
+    description: Rate Factor (Sales)
+  - name: rtfs_2
+    description: Rate Factor (Sales)
+  - name: rtfs_3
+    description: Rate Factor (Sales)
+  - name: orno
+    description: 'Obsolete. Max length: 9'
+  - name: acln
+    description: Obsolete
+  - name: lino
+    description: Obsolete
+  - name: tsrl
+    description: 'Service Related. Allowed values: 1, 2'
+  - name: tsrl_kw
+    description: 'Service Related (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: trts
+    description: 'Transferred to Service. Allowed values: 1, 2'
+  - name: trts_kw
+    description: 'Transferred to Service (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cono
+    description: 'Contract. Max length: 9'
+  - name: cnln
+    description: 'Contract Line. Max length: 8'
+  - name: dlvr
+    description: Deliverable
+  - name: schd
+    description: Schedule
+  - name: dbgf
+    description: 'Deliverable Budget Generated From. Allowed values: 10, 20, 100'
+  - name: dbgf_kw
+    description: 'Deliverable Budget Generated From (keyword). Allowed values: tpptc.dbgf.item,
+      tpptc.dbgf.cost.component, tpptc.dbgf.not.applicable'
+  - name: cona
+    description: Contingency Amount
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: txta
+    description: Text
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: item_ref_compnr
+    description: company number of primary key of table tppdm005 Item Project Data
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: clas_ref_compnr
+    description: company number of primary key of table tclct020 Landed Costs Classifications
+  - name: cocu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: sacu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cono_ref_compnr
+    description: company number of primary key of table tpctm100 Contracts
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpptc220 Material Budget Lines by Activity table, Generated 2026-04-10T19:42:24Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cpla
+        - cact
+        - sern

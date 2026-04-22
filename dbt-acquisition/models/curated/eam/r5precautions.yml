@@ -1,0 +1,165 @@
+version: 2
+models:
+- name: r5precautions
+  columns:
+  - name: pca_lastsaved
+    description: PCA_LASTSAVED
+  - name: pca_code
+    description: PCA_CODE
+  - name: pca_org
+    description: PCA_ORG
+  - name: pca_revision
+    description: PCA_REVISION
+  - name: pca_desc
+    description: PCA_DESC
+  - name: pca_status
+    description: PCA_STATUS
+  - name: pca_rstatus
+    description: PCA_RSTATUS
+  - name: pca_notused
+    description: PCA_NOTUSED
+  - name: pca_timing
+    description: PCA_TIMING
+  - name: pca_class
+    description: PCA_CLASS
+  - name: pca_class_org
+    description: PCA_CLASS_ORG
+  - name: pca_reviewrequired
+    description: PCA_REVIEWREQUIRED
+  - name: pca_created
+    description: PCA_CREATED
+  - name: pca_createdby
+    description: PCA_CREATEDBY
+  - name: pca_updated
+    description: PCA_UPDATED
+  - name: pca_updatedby
+    description: PCA_UPDATEDBY
+  - name: pca_requested
+    description: PCA_REQUESTED
+  - name: pca_requestedby
+    description: PCA_REQUESTEDBY
+  - name: pca_approved
+    description: PCA_APPROVED
+  - name: pca_approvedby
+    description: PCA_APPROVEDBY
+  - name: pca_revisionreason
+    description: PCA_REVISIONREASON
+  - name: pca_udfchar01
+    description: PCA_UDFCHAR01
+  - name: pca_udfchar02
+    description: PCA_UDFCHAR02
+  - name: pca_udfchar03
+    description: PCA_UDFCHAR03
+  - name: pca_udfchar04
+    description: PCA_UDFCHAR04
+  - name: pca_udfchar05
+    description: PCA_UDFCHAR05
+  - name: pca_udfchar06
+    description: PCA_UDFCHAR06
+  - name: pca_udfchar07
+    description: PCA_UDFCHAR07
+  - name: pca_udfchar08
+    description: PCA_UDFCHAR08
+  - name: pca_udfchar09
+    description: PCA_UDFCHAR09
+  - name: pca_udfchar10
+    description: PCA_UDFCHAR10
+  - name: pca_udfchar11
+    description: PCA_UDFCHAR11
+  - name: pca_udfchar12
+    description: PCA_UDFCHAR12
+  - name: pca_udfchar13
+    description: PCA_UDFCHAR13
+  - name: pca_udfchar14
+    description: PCA_UDFCHAR14
+  - name: pca_udfchar15
+    description: PCA_UDFCHAR15
+  - name: pca_udfchar16
+    description: PCA_UDFCHAR16
+  - name: pca_udfchar17
+    description: PCA_UDFCHAR17
+  - name: pca_udfchar18
+    description: PCA_UDFCHAR18
+  - name: pca_udfchar19
+    description: PCA_UDFCHAR19
+  - name: pca_udfchar20
+    description: PCA_UDFCHAR20
+  - name: pca_udfchar21
+    description: PCA_UDFCHAR21
+  - name: pca_udfchar22
+    description: PCA_UDFCHAR22
+  - name: pca_udfchar23
+    description: PCA_UDFCHAR23
+  - name: pca_udfchar24
+    description: PCA_UDFCHAR24
+  - name: pca_udfchar25
+    description: PCA_UDFCHAR25
+  - name: pca_udfchar26
+    description: PCA_UDFCHAR26
+  - name: pca_udfchar27
+    description: PCA_UDFCHAR27
+  - name: pca_udfchar28
+    description: PCA_UDFCHAR28
+  - name: pca_udfchar29
+    description: PCA_UDFCHAR29
+  - name: pca_udfchar30
+    description: PCA_UDFCHAR30
+  - name: pca_udfnum01
+    description: PCA_UDFNUM01
+  - name: pca_udfnum02
+    description: PCA_UDFNUM02
+  - name: pca_udfnum03
+    description: PCA_UDFNUM03
+  - name: pca_udfnum04
+    description: PCA_UDFNUM04
+  - name: pca_udfnum05
+    description: PCA_UDFNUM05
+  - name: pca_udfdate01
+    description: PCA_UDFDATE01
+  - name: pca_udfdate02
+    description: PCA_UDFDATE02
+  - name: pca_udfdate03
+    description: PCA_UDFDATE03
+  - name: pca_udfdate04
+    description: PCA_UDFDATE04
+  - name: pca_udfdate05
+    description: PCA_UDFDATE05
+  - name: pca_udfchkbox01
+    description: PCA_UDFCHKBOX01
+  - name: pca_udfchkbox02
+    description: PCA_UDFCHKBOX02
+  - name: pca_udfchkbox03
+    description: PCA_UDFCHKBOX03
+  - name: pca_udfchkbox04
+    description: PCA_UDFCHKBOX04
+  - name: pca_udfchkbox05
+    description: PCA_UDFCHKBOX05
+  - name: pca_updatecount
+    description: PCA_UPDATECOUNT
+  - name: pca_responsibility
+    description: PCA_RESPONSIBILITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PRECAUTIONS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - pca_code
+        - pca_org
+        - pca_revision

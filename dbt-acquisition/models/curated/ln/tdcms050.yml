@@ -1,0 +1,223 @@
+version: 2
+models:
+- name: tdcms050
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: type
+    description: '(required) Type. Allowed values: 1, 2'
+    data_tests:
+    - not_null
+  - name: type_kw
+    description: 'Type (keyword). Allowed values: tdcms.type.commission, tdcms.type.rebate'
+  - name: orno
+    description: '(required) Sales Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: dsqn
+    description: (required) Actual Delivery Line Sequence Number
+    data_tests:
+    - not_null
+  - name: invl
+    description: (required) Invoice Line
+    data_tests:
+    - not_null
+  - name: reln
+    description: '(required) Relation. Max length: 9'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Serial Number
+    data_tests:
+    - not_null
+  - name: rlsq
+    description: Relation Sequence
+  - name: cmpr
+    description: Commission/Rebate Percentage
+  - name: cpdt
+    description: 'Period Table. Max length: 6'
+  - name: year
+    description: Statistical Year
+  - name: perd
+    description: Period
+  - name: grpc
+    description: Growing Percentage
+  - name: amnt
+    description: Amount
+  - name: amta
+    description: Fixed Agreement Amount in Sales Order Currency
+  - name: cmdt
+    description: Comm./Rebt Calculation Date
+  - name: cmam_1
+    description: Commission/Rebate Amount
+  - name: cmam_2
+    description: Commission/Rebate Amount
+  - name: cmam_3
+    description: Commission/Rebate Amount
+  - name: cmst
+    description: 'Comm./Rebt Status. Allowed values: 1, 2, 3, 4, 5, 6, 7'
+  - name: cmst_kw
+    description: 'Comm./Rebt Status (keyword). Allowed values: tdcms.cmst.calculated,
+      tdcms.cmst.manual, tdcms.cmst.approved, tdcms.cmst.reserved, tdcms.cmst.ready,
+      tdcms.cmst.closed, tdcms.cmst.reserv.approved'
+  - name: invn
+    description: Invoice
+  - name: invd
+    description: Invoice Date
+  - name: ttyp
+    description: 'Sales Invoice Transaction Type. Max length: 3'
+  - name: prty
+    description: 'Search Priority. Max length: 6'
+  - name: crtt
+    description: 'Comm./Rebt Transaction Type Invoice. Max length: 3'
+  - name: crin
+    description: Comm./Rebt Invoice
+  - name: resv
+    description: 'Reserve. Allowed values: 1, 2'
+  - name: resv_kw
+    description: 'Reserve (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crtp
+    description: 'Discount. Max length: 3'
+  - name: trdt
+    description: Reservation Date
+  - name: cofc
+    description: 'Sales Office. Max length: 6'
+  - name: fdpt
+    description: 'Financial Department. Max length: 6'
+  - name: reld
+    description: 'Released to SLI(Rebate). Allowed values: 1, 2'
+  - name: reld_kw
+    description: 'Released to SLI(Rebate) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: prdt
+    description: Printed Date
+  - name: upid
+    description: Process ID
+  - name: ccur
+    description: 'Sales Order Currency. Max length: 3'
+  - name: icur
+    description: 'Comm./Rebt. Invoice Currency. Max length: 3'
+  - name: amoc
+    description: Amount in Sales Order Currency
+  - name: amic
+    description: Amount in Comm./Rebt. Invoice Currency
+  - name: orat_1
+    description: Sales Order Rate
+  - name: orat_2
+    description: Sales Order Rate
+  - name: orat_3
+    description: Sales Order Rate
+  - name: oraf_1
+    description: Sales Order Rate Factor
+  - name: oraf_2
+    description: Sales Order Rate Factor
+  - name: oraf_3
+    description: Sales Order Rate Factor
+  - name: ordt
+    description: Sales Order Rate Date
+  - name: ortp
+    description: 'Sales Order Rate Type. Max length: 3'
+  - name: irat_1
+    description: Sales Invoice Rate
+  - name: irat_2
+    description: Sales Invoice Rate
+  - name: irat_3
+    description: Sales Invoice Rate
+  - name: iraf_1
+    description: Sales Invoice Rate Factor
+  - name: iraf_2
+    description: Sales Invoice Rate Factor
+  - name: iraf_3
+    description: Sales Invoice Rate Factor
+  - name: irdt
+    description: Sales Invoice Rate Date
+  - name: irtp
+    description: 'Sales Invoice Rate Type. Max length: 3'
+  - name: orno_ref_compnr
+    description: company number of primary key of table tdsls400 Sales Orders
+  - name: reln_ref_compnr
+    description: company number of primary key of table tdcms010 Relations
+  - name: cpdt_year_perd_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cpdt_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: crtp_ref_compnr
+    description: company number of primary key of table tcmcs021 Discount Codes
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tdsls012 Sales Offices
+  - name: fdpt_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: icur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ortp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: irtp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: cmam_trnc
+    description: 'CC: Commission/Rebate Amount in Transaction Currency'
+  - name: cmam_rpc1
+    description: 'CC: Commission/Rebate Amount in Reporting Currency 1'
+  - name: cmam_rpc2
+    description: 'CC: Commission/Rebate Amount in Reporting Currency 2'
+  - name: cmam_rfrc
+    description: 'CC: Commission/Rebate Amount in Reference Currency'
+  - name: cmam_dtwc
+    description: 'CC: Commission/Rebate Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdcms050 Commissions/Rebates table, Generated 2026-04-10T19:41:16Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - type
+        - orno
+        - pono
+        - sqnb
+        - dsqn
+        - invl
+        - reln
+        - sern

@@ -1,0 +1,75 @@
+version: 2
+models:
+- name: r5productionrequests
+  columns:
+  - name: prq_lastsaved
+    description: PRQ_LASTSAVED
+  - name: prq_org
+    description: PRQ_ORG
+  - name: prq_class
+    description: PRQ_CLASS
+  - name: prq_class_org
+    description: PRQ_CLASS_ORG
+  - name: prq_accountingentity
+    description: PRQ_ACCOUNTINGENTITY
+  - name: prq_status
+    description: PRQ_STATUS
+  - name: prq_rstatus
+    description: PRQ_RSTATUS
+  - name: prq_event
+    description: PRQ_EVENT
+  - name: prq_created
+    description: PRQ_CREATED
+  - name: prq_createdby
+    description: PRQ_CREATEDBY
+  - name: prq_prodrequeststart
+    description: PRQ_PRODREQUESTSTART
+  - name: prq_prodrequestend
+    description: PRQ_PRODREQUESTEND
+  - name: prq_productionstart
+    description: PRQ_PRODUCTIONSTART
+  - name: prq_productionend
+    description: PRQ_PRODUCTIONEND
+  - name: prq_priority
+    description: PRQ_PRIORITY
+  - name: prq_productionorder
+    description: PRQ_PRODUCTIONORDER
+  - name: prq_enterpriselocation
+    description: PRQ_ENTERPRISELOCATION
+  - name: prq_laststatusupdate
+    description: PRQ_LASTSTATUSUPDATE
+  - name: prq_updatecount
+    description: PRQ_UPDATECOUNT
+  - name: prq_revisionreason
+    description: PRQ_REVISIONREASON
+  - name: prq_code
+    description: PRQ_CODE
+  - name: prq_revision
+    description: PRQ_REVISION
+  - name: prq_desc
+    description: PRQ_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PRODUCTIONREQUESTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - prq_code
+        - prq_revision
+        - prq_org

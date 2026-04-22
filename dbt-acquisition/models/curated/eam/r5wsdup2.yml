@@ -1,0 +1,36 @@
+version: 2
+models:
+- name: r5wsdup2
+  columns:
+  - name: wd2_lastsaved
+    description: WD2_LASTSAVED
+  - name: wd2_desc
+    description: WD2_DESC
+  - name: wd2_type
+    description: WD2_TYPE
+  - name: wd2_updatecount
+    description: WD2_UPDATECOUNT
+  - name: wd2_code
+    description: WD2_CODE
+    data_tests:
+    - unique
+  - name: wd2_time
+    description: WD2_TIME
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WSDUP2

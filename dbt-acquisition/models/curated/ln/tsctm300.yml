@@ -1,0 +1,362 @@
+version: 2
+models:
+- name: tsctm300
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: csco
+    description: '(required) Service Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: sear__en_us
+    description: '(required) Search Argument - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: ctpc
+    description: 'Contract Type. Max length: 3'
+  - name: crdt
+    description: Creation Date
+  - name: efdt
+    description: Contract Effective Date
+  - name: exdt
+    description: Contract Expiry Date
+  - name: scon
+    description: 'Contract Status. Allowed values: 5, 10, 15, 20, 25'
+  - name: scon_kw
+    description: 'Contract Status (keyword). Allowed values: tsctm.scon.free, tsctm.scon.active,
+      tsctm.scon.expired, tsctm.scon.canceled, tsctm.scon.closed'
+  - name: cwoc
+    description: 'Service Office. Max length: 6'
+  - name: emno
+    description: 'Internal Sales Representative. Max length: 9'
+  - name: cplt
+    description: 'Sales Price List. Max length: 3'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: ofcn
+    description: 'Contact Person. Max length: 9'
+  - name: ofad
+    description: 'Address Code. Max length: 9'
+  - name: refa__en_us
+    description: '(required) First Invoice Reference - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: refb__en_us
+    description: '(required) Second Invoice Reference - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: cbrn
+    description: 'Line of Business. Max length: 6'
+  - name: ccqu
+    description: 'Derived from Quote. Max length: 9'
+  - name: nrpe
+    description: Number of Periods of Contract Duration
+  - name: peru
+    description: 'Period Unit of Contract Duration. Allowed values: 5, 10, 15, 20,
+      25'
+  - name: peru_kw
+    description: 'Period Unit of Contract Duration (keyword). Allowed values: tsmdm.peru.day,
+      tsmdm.peru.week, tsmdm.peru.month, tsmdm.peru.quarter, tsmdm.peru.year'
+  - name: prmt
+    description: 'Pricing Method. Allowed values: 5, 10, 15, 20'
+  - name: prmt_kw
+    description: 'Pricing Method (keyword). Allowed values: tsctm.prmt.sales, tsctm.prmt.budget,
+      tsctm.prmt.price, tsctm.prmt.template.price'
+  - name: perc
+    description: Percentage of Sales Value
+  - name: ovyn
+    description: 'Overtime Allowed. Allowed values: 1, 2'
+  - name: ovyn_kw
+    description: 'Overtime Allowed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cryn
+    description: 'Contract Renewal. Allowed values: 1, 2'
+  - name: cryn_kw
+    description: 'Contract Renewal (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crnp
+    description: Renewal Period
+  - name: crpu
+    description: 'Period Unit. Allowed values: 5, 10, 15, 20, 25'
+  - name: crpu_kw
+    description: 'Period Unit (keyword). Allowed values: tsmdm.peru.day, tsmdm.peru.week,
+      tsmdm.peru.month, tsmdm.peru.quarter, tsmdm.peru.year'
+  - name: dfpb
+    description: 'Discounts from Price Books. Allowed values: 1, 2'
+  - name: dfpb_kw
+    description: 'Discounts from Price Books (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bppr
+    description: 'Business Partner Prices and Discounts. Max length: 9'
+  - name: creg
+    description: 'Sales Area. Max length: 3'
+  - name: indx
+    description: 'Price Indexation. Allowed values: 1, 2'
+  - name: indx_kw
+    description: 'Price Indexation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: indt
+    description: Indexation Start Date
+  - name: innp
+    description: Indexation Interval
+  - name: inpu
+    description: 'Period Unit. Allowed values: 5, 10, 15, 20, 25'
+  - name: inpu_kw
+    description: 'Period Unit (keyword). Allowed values: tsmdm.peru.day, tsmdm.peru.week,
+      tsmdm.peru.month, tsmdm.peru.quarter, tsmdm.peru.year'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cind
+    description: 'Indexation Template. Max length: 3'
+  - name: inch
+    description: 'Incidental Changes. Allowed values: 1, 2'
+  - name: inch_kw
+    description: 'Incidental Changes (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: icpn
+    description: Penalty
+  - name: ditc
+    description: 'Define Installment Template per Configuration. Allowed values: 1,
+      2'
+  - name: ditc_kw
+    description: 'Define Installment Template per Configuration (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: ctin
+    description: 'Installment Template. Max length: 3'
+  - name: ccrs
+    description: 'Late Payment Surcharge. Max length: 3'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: ratc_1
+    description: Currency Rate
+  - name: ratc_2
+    description: Currency Rate
+  - name: ratc_3
+    description: Currency Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rtdt
+    description: Rate Date
+  - name: rtyp
+    description: 'Rate Type. Max length: 3'
+  - name: fcrt
+    description: 'Rate Determiner. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 10, 20'
+  - name: fcrt_kw
+    description: 'Rate Determiner (keyword). Allowed values: tcfcrt.fixedl, tcfcrt.fixedh,
+      tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd, tcfcrt.manual,
+      tcfcrt.fixed, tcfcrt.not.appl'
+  - name: ccty
+    description: 'Country. Max length: 3'
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: itad
+    description: 'Invoice-to Address. Max length: 9'
+  - name: itcn
+    description: 'Invoice-to Contact. Max length: 9'
+  - name: pfbp
+    description: 'Pay-by Business Partner. Max length: 9'
+  - name: pfad
+    description: 'Pay-by Address. Max length: 9'
+  - name: pfcn
+    description: 'Pay-by Contact. Max length: 9'
+  - name: cdis
+    description: 'Cancel Reason. Max length: 6'
+  - name: cadt
+    description: Cancel Date
+  - name: mexp
+    description: 'Marked for Expiry. Allowed values: 1, 2'
+  - name: mexp_kw
+    description: 'Marked for Expiry (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: styp
+    description: 'Sales Type. Max length: 6'
+  - name: rvmd
+    description: 'Revenue Recognition Based on. Allowed values: 5, 10, 15, 20, 50'
+  - name: rvmd_kw
+    description: 'Revenue Recognition Based on (keyword). Allowed values: tsctm.rvmd.day.per.period,
+      tsctm.rvmd.cumu.days, tsctm.rvmd.erf.per.period, tsctm.rvmd.erf.cumu.cost, tsctm.rvmd.not.appl'
+  - name: rrcr
+    description: 'Recognize Revenue per Contract Renewal. Allowed values: 1, 2'
+  - name: rrcr_kw
+    description: 'Recognize Revenue per Contract Renewal (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: rccg
+    description: 'Recognize Revenue per Configuration. Allowed values: 1, 2'
+  - name: rccg_kw
+    description: 'Recognize Revenue per Configuration (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: prov
+    description: Provision
+  - name: bptc
+    description: 'Business Partner Tax Country. Max length: 3'
+  - name: exmt
+    description: 'Exempt. Allowed values: 1, 2'
+  - name: exmt_kw
+    description: 'Exempt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ceno
+    description: 'Tax Exemption Certificate. Max length: 24'
+  - name: exrs
+    description: 'Tax Exemption Reason. Max length: 6'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: pcac
+    description: 'Activity. Max length: 16'
+  - name: crco
+    description: 'Obsolete. Max length: 9'
+  - name: crqu
+    description: 'Obsolete. Max length: 9'
+  - name: ctik
+    description: 'Obsolete. Max length: 9'
+  - name: inpc
+    description: Obsolete
+  - name: orsc
+    description: 'Obsolete. Max length: 9'
+  - name: txyn
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: txyn_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Service Contract Text
+  - name: txtb
+    description: Header Text
+  - name: txtc
+    description: Footer Text
+  - name: txtd
+    description: Installment Text
+  - name: txte
+    description: Cancel Text
+  - name: ctpc_ref_compnr
+    description: company number of primary key of table tsctm005 Contract Types
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: emno_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cplt_ref_compnr
+    description: company number of primary key of table tcmcs034 Price Lists
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: ofcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ofad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: cbrn_ref_compnr
+    description: company number of primary key of table tcmcs031 Lines of Business
+  - name: ccqu_ref_compnr
+    description: company number of primary key of table tsctm200 Contract Quotes
+  - name: bppr_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: creg_ref_compnr
+    description: company number of primary key of table tcmcs045 Areas
+  - name: cind_ref_compnr
+    description: company number of primary key of table tsctm060 Indexation Templates
+  - name: ctin_ref_compnr
+    description: company number of primary key of table tsctm410 Installment Templates
+  - name: ccrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccty_cvat_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: itad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: itcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: pfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: pfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: pfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: cdis_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: styp_ref_compnr
+    description: company number of primary key of table tcmcs202 Sales Types
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: exrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: orsc_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtc_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtd_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txte_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm300 Service Contracts table, Generated 2026-04-10T19:42:33Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - csco

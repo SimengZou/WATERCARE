@@ -1,0 +1,172 @@
+version: 2
+models:
+- name: cdr_project_projappl
+  columns:
+  - name: compval
+    description: Metadata for column COMPVAL
+  - name: statby
+    description: 'Metadata for column STATBY. Max length: 12'
+  - name: statreas
+    description: 'Metadata for column STATREAS. Max length: 30'
+  - name: billgrp
+    description: 'Metadata for column BILLGRP. Max length: 10'
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: locnotes
+    description: 'Metadata for column LOCNOTES. Max length: 300'
+  - name: statdttm
+    description: Metadata for column STATDTTM
+  - name: xcoordinate
+    description: Metadata for column XCOORDINATE
+  - name: coodttm
+    description: Metadata for column COODTTM
+  - name: nopages
+    description: Metadata for column NOPAGES
+  - name: phaseno
+    description: 'Metadata for column PHASENO. Max length: 10'
+  - name: areaum
+    description: 'Metadata for column AREAUM. Max length: 10'
+  - name: pri
+    description: 'Metadata for column PRI. Max length: 10'
+  - name: modelcharacteristicgroup
+    description: 'Metadata for column MODELCHARACTERISTICGROUP. Max length: 30'
+  - name: declvltn
+    description: Metadata for column DECLVLTN
+  - name: groupkey
+    description: Metadata for column GROUPKEY
+  - name: prpstopdt
+    description: Metadata for column PRPSTOPDT
+  - name: isportalproject
+    description: 'Metadata for column ISPORTALPROJECT. Max length: 1'
+  - name: tmpcoodttm
+    description: Metadata for column TMPCOODTTM
+  - name: propoccupkey
+    description: Metadata for column PROPOCCUPKEY
+  - name: planrev
+    description: 'Metadata for column PLANREV. Max length: 1'
+  - name: approjdefnkey
+    description: Metadata for column APPROJDEFNKEY
+  - name: cooby
+    description: 'Metadata for column COOBY. Max length: 12'
+  - name: relation
+    description: Metadata for column RELATION
+  - name: approjkey
+    description: (required) Metadata for column APPROJKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: linearfromm
+    description: Metadata for column LINEARFROMM
+  - name: worktype
+    description: 'Metadata for column WORKTYPE. Max length: 10'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 300'
+  - name: propertyfacade
+    description: Metadata for column PROPERTYFACADE
+  - name: ycoordinate
+    description: Metadata for column YCOORDINATE
+  - name: lstactdttm
+    description: Metadata for column LSTACTDTTM
+  - name: projapplicationstatus
+    description: 'Metadata for column PROJAPPLICATIONSTATUS. Max length: 10'
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: actlvltn
+    description: Metadata for column ACTLVLTN
+  - name: propertyconveyance
+    description: Metadata for column PROPERTYCONVEYANCE
+  - name: findttm
+    description: Metadata for column FINDTTM
+  - name: propertymaterial
+    description: Metadata for column PROPERTYMATERIAL
+  - name: tmpcooby
+    description: 'Metadata for column TMPCOOBY. Max length: 12'
+  - name: szdesc
+    description: 'Metadata for column SZDESC. Max length: 30'
+  - name: apkey
+    description: Metadata for column APKEY
+  - name: apno
+    description: 'Metadata for column APNO. Max length: 25'
+  - name: propertyequipment
+    description: Metadata for column PROPERTYEQUIPMENT
+  - name: lineartoft
+    description: Metadata for column LINEARTOFT
+  - name: propkey
+    description: Metadata for column PROPKEY
+  - name: linearfromft
+    description: Metadata for column LINEARFROMFT
+  - name: capacity
+    description: 'Metadata for column CAPACITY. Max length: 10'
+  - name: compkey
+    description: Metadata for column COMPKEY
+  - name: aprvby
+    description: 'Metadata for column APRVBY. Max length: 12'
+  - name: stat
+    description: 'Metadata for column STAT. Max length: 1'
+  - name: apdttm
+    description: Metadata for column APDTTM
+  - name: projname
+    description: 'Metadata for column PROJNAME. Max length: 50'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: propertyvessel
+    description: Metadata for column PROPERTYVESSEL
+  - name: calcvltn
+    description: Metadata for column CALCVLTN
+  - name: zcoordinate
+    description: Metadata for column ZCOORDINATE
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: prpstrtdt
+    description: Metadata for column PRPSTRTDT
+  - name: occupancytype
+    description: 'Metadata for column OCCUPANCYTYPE. Max length: 10'
+  - name: lineartom
+    description: Metadata for column LINEARTOM
+  - name: apby
+    description: 'Metadata for column APBY. Max length: 12'
+  - name: approjprocessstatekey
+    description: Metadata for column APPROJPROCESSSTATEKEY
+  - name: aprvdttm
+    description: Metadata for column APRVDTTM
+  - name: bldgarea
+    description: Metadata for column BLDGAREA
+  - name: subdivcode
+    description: 'Metadata for column SUBDIVCODE. Max length: 10'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: noprojects
+    description: Metadata for column NOPROJECTS
+  - name: expdttm
+    description: Metadata for column EXPDTTM
+  - name: finby
+    description: 'Metadata for column FINBY. Max length: 12'
+  - name: lstprndttm
+    description: Metadata for column LSTPRNDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table CDR_PROJECT.PROJAPPL on 2022-03-03T11:36:46.852

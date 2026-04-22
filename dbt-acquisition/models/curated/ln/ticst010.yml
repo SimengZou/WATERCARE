@@ -1,0 +1,128 @@
+version: 2
+models:
+- name: ticst010
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: pdno
+    description: '(required) Production Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cstv
+    description: '(required) Cost View. Allowed values: 1, 2'
+    data_tests:
+    - not_null
+  - name: cstv_kw
+    description: 'Cost View (keyword). Allowed values: ticst.cstv.item.based, ticst.cstv.cwoc.based'
+  - name: cwoc
+    description: '(required) Work Center. Max length: 6'
+    data_tests:
+    - not_null
+  - name: cpcp
+    description: '(required) Cost Component. Max length: 8'
+    data_tests:
+    - not_null
+  - name: addc
+    description: '(required) Added Costs. Allowed values: 1, 2'
+    data_tests:
+    - not_null
+  - name: addc_kw
+    description: 'Added Costs (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: csto
+    description: '(required) Customer Owned. Allowed values: 1, 2'
+    data_tests:
+    - not_null
+  - name: csto_kw
+    description: 'Customer Owned (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: nune
+    description: Estimated Number of Units
+  - name: eamt_1
+    description: Estimated Amount
+  - name: eamt_2
+    description: Estimated Amount
+  - name: eamt_3
+    description: Estimated Amount
+  - name: nuna
+    description: Actual Number of Units
+  - name: aamt_1
+    description: Actual Amount
+  - name: aamt_2
+    description: Actual Amount
+  - name: aamt_3
+    description: Actual Amount
+  - name: pdno_ref_compnr
+    description: company number of primary key of table tisfc001 Production Orders
+  - name: cpcp_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: eamt_lclc
+    description: 'CC: Estimated Amount Local Currency'
+  - name: eamt_rpc1
+    description: 'CC: Estimated Amount Reporting Currency 1'
+  - name: eamt_rpc2
+    description: 'CC: Estimated Amount Reporting Currency 2'
+  - name: eamt_refc
+    description: 'CC: Estimated Amount Reference Currency'
+  - name: eamt_dwhc
+    description: 'CC: Estimated Amount in Data Warehouse Currency'
+  - name: aamt_lclc
+    description: 'CC: Actual Amount in Local Currency'
+  - name: aamt_rpc1
+    description: 'CC: Actual Amount in Reporting Currency 1'
+  - name: aamt_rpc2
+    description: 'CC: Actual Amount in Reporting Currency 2'
+  - name: aamt_refc
+    description: 'CC: Actual Amount in Reference Currency'
+  - name: aamt_dwhc
+    description: 'CC: Actual Amount in Data Warehouse Currency'
+  - name: dptm_fcmp
+    description: 'CC: Financial Company of Department'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN ticst010 End Item Unit Costs table, Generated 2026-04-10T19:41:47Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - pdno
+        - cstv
+        - cwoc
+        - cpcp
+        - addc
+        - csto

@@ -1,0 +1,48 @@
+version: 2
+models:
+- name: r5entappheader
+  columns:
+  - name: eah_lastsaved
+    description: EAH_LASTSAVED
+  - name: eah_rentity
+    description: EAH_RENTITY
+  - name: eah_entity
+    description: EAH_ENTITY
+  - name: eah_code
+    description: EAH_CODE
+  - name: eah_revision
+    description: EAH_REVISION
+  - name: eah_appdate
+    description: EAH_APPDATE
+  - name: eah_user
+    description: EAH_USER
+  - name: eah_date
+    description: EAH_DATE
+  - name: eah_reason
+    description: EAH_REASON
+  - name: eah_updatecount
+    description: EAH_UPDATECOUNT
+  - name: eah_pk
+    description: EAH_PK
+    data_tests:
+    - unique
+  - name: eah_applist
+    description: EAH_APPLIST
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ENTAPPHEADER

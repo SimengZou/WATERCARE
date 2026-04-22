@@ -1,0 +1,88 @@
+version: 2
+models:
+- name: r5defaultpagelayout
+  columns:
+  - name: pld_lastsaved
+    description: PLD_LASTSAVED
+  - name: pld_responsexpath
+    description: PLD_RESPONSEXPATH
+  - name: pld_elementtype
+    description: PLD_ELEMENTTYPE
+  - name: pld_presentinjsp
+    description: PLD_PRESENTINJSP
+  - name: pld_attribute
+    description: PLD_ATTRIBUTE
+  - name: pld_fieldcontainer
+    description: PLD_FIELDCONTAINER
+  - name: pld_fieldgroup
+    description: PLD_FIELDGROUP
+  - name: pld_positioningroup
+    description: PLD_POSITIONINGROUP
+  - name: pld_fieldconttype
+    description: PLD_FIELDCONTTYPE
+  - name: pld_tabindex
+    description: PLD_TABINDEX
+  - name: pld_systemattribute
+    description: PLD_SYSTEMATTRIBUTE
+  - name: pld_updatecount
+    description: PLD_UPDATECOUNT
+  - name: pld_ddtablename
+    description: PLD_DDTABLENAME
+  - name: pld_ddfieldname
+    description: PLD_DDFIELDNAME
+  - name: pld_xpath
+    description: PLD_XPATH
+  - name: pld_fieldtype
+    description: PLD_FIELDTYPE
+  - name: pld_size
+    description: PLD_SIZE
+  - name: pld_maxlength
+    description: PLD_MAXLENGTH
+  - name: pld_case
+    description: PLD_CASE
+  - name: pld_otherattribs
+    description: PLD_OTHERATTRIBS
+  - name: pld_numbertype
+    description: PLD_NUMBERTYPE
+  - name: pld_onlookup
+    description: PLD_ONLOOKUP
+  - name: pld_onvalidate
+    description: PLD_ONVALIDATE
+  - name: pld_onclasschange
+    description: PLD_ONCLASSCHANGE
+  - name: pld_onchainedlookup
+    description: PLD_ONCHAINEDLOOKUP
+  - name: pld_jspfile
+    description: PLD_JSPFILE
+  - name: pld_othertags
+    description: PLD_OTHERTAGS
+  - name: pld_destxpath
+    description: PLD_DESTXPATH
+  - name: pld_pagename
+    description: PLD_PAGENAME
+  - name: pld_elementid
+    description: PLD_ELEMENTID
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DEFAULTPAGELAYOUT
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - pld_pagename
+        - pld_elementid

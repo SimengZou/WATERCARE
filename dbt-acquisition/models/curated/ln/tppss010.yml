@@ -1,0 +1,82 @@
+version: 2
+models:
+- name: tppss010
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cpla
+    description: '(required) Plan. Max length: 3'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: plnr
+    description: 'Planner. Max length: 9'
+  - name: stdt
+    description: Scheduled Start Date
+  - name: fidt
+    description: Scheduled Finish Date
+  - name: tpac
+    description: 'Top Activity. Max length: 16'
+  - name: plmd
+    description: 'Update Mode. Allowed values: 1, 2'
+  - name: plmd_kw
+    description: 'Update Mode (keyword). Allowed values: tppss.plmd.update, tppss.plmd.read.only'
+  - name: txta
+    description: Text
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: plnr_ref_compnr
+    description: company number of primary key of table tppdm801 Employee Project
+      Data
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppss010 Project Plans table, Generated 2026-04-10T19:42:18Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cpla

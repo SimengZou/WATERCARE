@@ -1,0 +1,94 @@
+version: 2
+models:
+- name: txptc903
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: creq
+    description: '(required) Change Request. Max length: 9'
+    data_tests:
+    - not_null
+  - name: proj
+    description: 'Project. Max length: 9'
+  - name: prma
+    description: 'Project manager. Max length: 9'
+  - name: prph
+    description: 'Project Phase. Max length: 3'
+  - name: pram
+    description: Change Amount
+  - name: fapp
+    description: 'First Approver. Max length: 9'
+  - name: requ
+    description: 'Requestor. Max length: 9'
+  - name: cdat
+    description: Creation Date
+  - name: stat
+    description: 'Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: txstat.created, txstat.sub.appr,
+      txstat.approved, txstat.processed, txstat.rejected, txstat.recall'
+  - name: sdat
+    description: Submission Date
+  - name: suby
+    description: 'Submitted by. Max length: 16'
+  - name: arda
+    description: Approval / Rejection Date
+  - name: arby
+    description: 'Approved / Rejected by. Max length: 16'
+  - name: fapr
+    description: 'Finance. Max length: 16'
+  - name: fadt
+    description: Finance Approved Date
+  - name: pmoa
+    description: 'Project Management Office. Max length: 16'
+  - name: padt
+    description: PMO Approved Date
+  - name: vamt
+    description: Variation Amount
+  - name: proj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: prph_ref_compnr
+    description: company number of primary key of table tppdm085 Phases
+  - name: fapp_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN txptc903 Change Request Header table, Generated 2026-04-10T19:42:43Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - creq

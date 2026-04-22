@@ -1,0 +1,113 @@
+version: 2
+models:
+- name: tirou101
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: mitm
+    description: '(required) Manufactured Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: opro
+    description: '(required) Routing. Max length: 6'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: stor
+    description: 'Standard Routing. Allowed values: 1, 2'
+  - name: stor_kw
+    description: 'Standard Routing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: strc
+    description: 'Standard Routing Code. Max length: 6'
+  - name: woar
+    description: 'Scheduling Area. Max length: 3'
+  - name: ruoq
+    description: Up to Order Quantity
+  - name: runi
+    description: Routing Unit
+  - name: rcal
+    description: Calculated Prod. Rate
+  - name: bwce
+    description: 'Calculated Bottleneck Work Center. Max length: 6'
+  - name: ract
+    description: Corrected Prod. Rate
+  - name: bwca
+    description: 'Corrected Bottleneck Work Center. Max length: 6'
+  - name: lcdr
+    description: Last Calculation Date Rate
+  - name: mrau
+    description: 'Automatic Update. Allowed values: 1, 2'
+  - name: mrau_kw
+    description: 'Automatic Update (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: lmdt
+    description: Last Modification Date
+  - name: unef
+    description: 'Exceptions Present. Allowed values: 1, 2'
+  - name: unef_kw
+    description: 'Exceptions Present (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: stcf
+    description: 'Standard Configuration. Allowed values: 1, 2'
+  - name: stcf_kw
+    description: 'Standard Configuration (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: wkbt
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: wkbt_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Routing Text
+  - name: mitm_ref_compnr
+    description: company number of primary key of table tiipd001 Items - Production
+  - name: woar_ref_compnr
+    description: company number of primary key of table tirpt003 Scheduling Areas
+  - name: bwce_ref_compnr
+    description: company number of primary key of table tirou001 Work Center
+  - name: bwca_ref_compnr
+    description: company number of primary key of table tirou001 Work Center
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tirou101 Routing Codes by Item table, Generated 2026-04-10T19:41:49Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - mitm
+        - opro

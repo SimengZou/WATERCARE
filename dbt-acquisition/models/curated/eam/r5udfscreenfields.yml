@@ -1,0 +1,80 @@
+version: 2
+models:
+- name: r5udfscreenfields
+  columns:
+  - name: usf_lastsaved
+    description: USF_LASTSAVED
+  - name: usf_desc
+    description: USF_DESC
+  - name: usf_sequence
+    description: USF_SEQUENCE
+  - name: usf_maxlength
+    description: USF_MAXLENGTH
+  - name: usf_precision
+    description: USF_PRECISION
+  - name: usf_scale
+    description: USF_SCALE
+  - name: usf_fieldlabel
+    description: USF_FIELDLABEL
+  - name: usf_fieldtype
+    description: USF_FIELDTYPE
+  - name: usf_primary
+    description: USF_PRIMARY
+  - name: usf_notused
+    description: USF_NOTUSED
+  - name: usf_nullable
+    description: USF_NULLABLE
+  - name: usf_parentfield
+    description: USF_PARENTFIELD
+  - name: usf_lookupsource
+    description: USF_LOOKUPSOURCE
+  - name: usf_lookupquery
+    description: USF_LOOKUPQUERY
+  - name: usf_computeddata
+    description: USF_COMPUTEDDATA
+  - name: usf_uppercase
+    description: USF_UPPERCASE
+  - name: usf_created
+    description: USF_CREATED
+  - name: usf_updated
+    description: USF_UPDATED
+  - name: usf_createdby
+    description: USF_CREATEDBY
+  - name: usf_updatedby
+    description: USF_UPDATEDBY
+  - name: usf_updatecount
+    description: USF_UPDATECOUNT
+  - name: usf_generated
+    description: USF_GENERATED
+  - name: usf_retrievedvaluelookup
+    description: USF_RETRIEVEDVALUELOOKUP
+  - name: usf_droppdown
+    description: USF_DROPPDOWN
+  - name: usf_screenname
+    description: USF_SCREENNAME
+  - name: usf_fieldname
+    description: USF_FIELDNAME
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5UDFSCREENFIELDS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - usf_screenname
+        - usf_fieldname

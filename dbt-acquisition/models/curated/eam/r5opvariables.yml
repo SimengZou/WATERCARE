@@ -1,0 +1,190 @@
+version: 2
+models:
+- name: r5opvariables
+  columns:
+  - name: ovd_lastsaved
+    description: OVD_LASTSAVED
+  - name: ovd_id
+    description: OVD_ID
+  - name: ovd_audituser
+    description: OVD_AUDITUSER
+  - name: ovd_audittimestamp
+    description: OVD_AUDITTIMESTAMP
+  - name: ovd_varnum
+    description: OVD_VARNUM
+  - name: ovd_name
+    description: OVD_NAME
+  - name: ovd_shortname
+    description: OVD_SHORTNAME
+  - name: ovd_vartype
+    description: OVD_VARTYPE
+  - name: ovd_allowsymbol
+    description: OVD_ALLOWSYMBOL
+  - name: ovd_units
+    description: OVD_UNITS
+  - name: ovd_entrymin
+    description: OVD_ENTRYMIN
+  - name: ovd_entrymax
+    description: OVD_ENTRYMAX
+  - name: ovd_qcucl
+    description: OVD_QCUCL
+  - name: ovd_qclcl
+    description: OVD_QCLCL
+  - name: ovd_qcuwl
+    description: OVD_QCUWL
+  - name: ovd_qclwl
+    description: OVD_QCLWL
+  - name: ovd_prithreshold
+    description: OVD_PRITHRESHOLD
+  - name: ovd_prioperator
+    description: OVD_PRIOPERATOR
+  - name: ovd_priopprt
+    description: OVD_PRIOPPRT
+  - name: ovd_secthreshold
+    description: OVD_SECTHRESHOLD
+  - name: ovd_secoperator
+    description: OVD_SECOPERATOR
+  - name: ovd_secopprt
+    description: OVD_SECOPPRT
+  - name: ovd_locid
+    description: OVD_LOCID
+  - name: ovd_location
+    description: OVD_LOCATION
+  - name: ovd_storetcode
+    description: OVD_STORETCODE
+  - name: ovd_list
+    description: OVD_LIST
+  - name: ovd_ud1
+    description: OVD_UD1
+  - name: ovd_ud2
+    description: OVD_UD2
+  - name: ovd_ud3
+    description: OVD_UD3
+  - name: ovd_ud4
+    description: OVD_UD4
+  - name: ovd_ud5
+    description: OVD_UD5
+  - name: ovd_ud6
+    description: OVD_UD6
+  - name: ovd_ud7
+    description: OVD_UD7
+  - name: ovd_ud8
+    description: OVD_UD8
+  - name: ovd_ud9
+    description: OVD_UD9
+  - name: ovd_description
+    description: OVD_DESCRIPTION
+  - name: ovd_eqinfix
+    description: OVD_EQINFIX
+  - name: ovd_eqpostfix
+    description: OVD_EQPOSTFIX
+  - name: ovd_eqtranslate
+    description: OVD_EQTRANSLATE
+  - name: ovd_calcflag
+    description: OVD_CALCFLAG
+  - name: ovd_decplaces
+    description: OVD_DECPLACES
+  - name: ovd_chkrollover
+    description: OVD_CHKROLLOVER
+  - name: ovd_parameter
+    description: OVD_PARAMETER
+  - name: ovd_cascaderule
+    description: OVD_CASCADERULE
+  - name: ovd_postyle
+    description: OVD_POSTYLE
+  - name: ovd_limit_to_list
+    description: OVD_LIMIT_TO_LIST
+  - name: ovd_barcode
+    description: OVD_BARCODE
+  - name: ovd_varscope
+    description: OVD_VARSCOPE
+  - name: ovd_delflag
+    description: OVD_DELFLAG
+  - name: ovd_modified
+    description: OVD_MODIFIED
+  - name: ovd_ddspyid
+    description: OVD_DDSPYID
+  - name: ovd_object
+    description: OVD_OBJECT
+  - name: ovd_obj_org
+    description: OVD_OBJ_ORG
+  - name: ovd_updatecount
+    description: OVD_UPDATECOUNT
+  - name: ovd_qcmean
+    description: OVD_QCMEAN
+  - name: ovd_org
+    description: OVD_ORG
+  - name: ovd_attr0id
+    description: OVD_ATTR0ID
+  - name: ovd_attr1id
+    description: OVD_ATTR1ID
+  - name: ovd_attr2id
+    description: OVD_ATTR2ID
+  - name: ovd_attr3id
+    description: OVD_ATTR3ID
+  - name: ovd_attr4id
+    description: OVD_ATTR4ID
+  - name: ovd_attr5id
+    description: OVD_ATTR5ID
+  - name: ovd_attr6id
+    description: OVD_ATTR6ID
+  - name: ovd_facttype
+    description: OVD_FACTTYPE
+  - name: ovd_storeresult
+    description: OVD_STORERESULT
+  - name: ovd_gridid
+    description: OVD_GRIDID
+  - name: ovd_dataspyfieldids
+    description: OVD_DATASPYFIELDIDS
+  - name: ovd_attr0entrymin
+    description: OVD_ATTR0ENTRYMIN
+  - name: ovd_attr0entrymax
+    description: OVD_ATTR0ENTRYMAX
+  - name: ovd_attr1entrymin
+    description: OVD_ATTR1ENTRYMIN
+  - name: ovd_attr1entrymax
+    description: OVD_ATTR1ENTRYMAX
+  - name: ovd_attr2entrymin
+    description: OVD_ATTR2ENTRYMIN
+  - name: ovd_attr2entrymax
+    description: OVD_ATTR2ENTRYMAX
+  - name: ovd_attr3entrymin
+    description: OVD_ATTR3ENTRYMIN
+  - name: ovd_attr3entrymax
+    description: OVD_ATTR3ENTRYMAX
+  - name: ovd_attr4entrymin
+    description: OVD_ATTR4ENTRYMIN
+  - name: ovd_attr4entrymax
+    description: OVD_ATTR4ENTRYMAX
+  - name: ovd_attr5entrymin
+    description: OVD_ATTR5ENTRYMIN
+  - name: ovd_attr5entrymax
+    description: OVD_ATTR5ENTRYMAX
+  - name: ovd_attr6entrymin
+    description: OVD_ATTR6ENTRYMIN
+  - name: ovd_attr6entrymax
+    description: OVD_ATTR6ENTRYMAX
+  - name: ovd_lastcalc
+    description: OVD_LASTCALC
+  - name: ovd_calcorder
+    description: OVD_CALCORDER
+  - name: ovd_dtresolution
+    description: OVD_DTRESOLUTION
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5OPVARIABLES

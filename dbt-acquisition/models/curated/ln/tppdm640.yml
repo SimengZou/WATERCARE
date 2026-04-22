@@ -1,0 +1,161 @@
+version: 2
+models:
+- name: tppdm640
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cico
+    description: '(required) Sundry Cost. Max length: 8'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: dfic
+    description: 'Derived from. Max length: 8'
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: pric
+    description: Unit Cost
+  - name: cccp
+    description: 'Unit Cost Currency. Max length: 3'
+  - name: ltpr
+    description: Unit Cost Transaction Date
+  - name: dpri
+    description: 'Final Unit Cost. Allowed values: 1, 2'
+  - name: dpri_kw
+    description: 'Final Unit Cost (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: pris
+    description: Sales Price
+  - name: ccsp
+    description: 'Sales Price Currency. Max length: 3'
+  - name: ltsp
+    description: Sales Price Transaction Date
+  - name: dspr
+    description: 'Final Sales Amount. Allowed values: 1, 2'
+  - name: dspr_kw
+    description: 'Final Sales Amount (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: prii
+    description: Intercompany Price
+  - name: ccip
+    description: 'Intercompany Price Currency. Max length: 3'
+  - name: ltip
+    description: Intercompany Price Transaction Date
+  - name: dipr
+    description: 'Final Intercompany Price. Allowed values: 1, 2'
+  - name: dipr_kw
+    description: 'Final Intercompany Price (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: ccic
+    description: 'Control Code Sundry Cost. Max length: 8'
+  - name: ccfu
+    description: 'Control Function. Allowed values: 1, 2, 3'
+  - name: ccfu_kw
+    description: 'Control Function (keyword). Allowed values: tppdm.ccfu.c.unit, tppdm.ccfu.c.unit.cc.code,
+      tppdm.ccfu.cc.code'
+  - name: prre
+    description: 'Register Progress. Allowed values: 1, 2'
+  - name: prre_kw
+    description: 'Register Progress (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: pcmc_1
+    description: Unit Cost Multi Currency
+  - name: pcmc_2
+    description: Unit Cost Multi Currency
+  - name: pcmc_3
+    description: Unit Cost Multi Currency
+  - name: psmc_1
+    description: Sales Price Multi Currency
+  - name: psmc_2
+    description: Sales Price Multi Currency
+  - name: psmc_3
+    description: Sales Price Multi Currency
+  - name: pimc_1
+    description: Intercompany Price Multi Currency
+  - name: pimc_2
+    description: Intercompany Price Multi Currency
+  - name: pimc_3
+    description: Intercompany Price Multi Currency
+  - name: blbl
+    description: 'Billable. Allowed values: 1, 2'
+  - name: blbl_kw
+    description: 'Billable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: txta
+    description: Text
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: dfic_ref_compnr
+    description: company number of primary key of table tppdm040 Sundry Costs
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cccp_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccsp_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccip_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: cprj_cico
+    description: 'CC: Project Sundry. Max length: 25'
+  - name: cprj_ccic
+    description: 'CC: Project Control Code Sundry. Max length: 25'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm640 Project Sundry Cost Codes table, Generated 2026-04-10T19:42:01Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cico

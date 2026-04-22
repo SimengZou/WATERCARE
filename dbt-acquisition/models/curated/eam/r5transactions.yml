@@ -1,0 +1,208 @@
+version: 2
+models:
+- name: r5transactions
+  columns:
+  - name: tra_lastsaved
+    description: TRA_LASTSAVED
+  - name: tra_code
+    description: TRA_CODE
+    data_tests:
+    - unique
+  - name: tra_desc
+    description: TRA_DESC
+  - name: tra_class
+    description: TRA_CLASS
+  - name: tra_type
+    description: TRA_TYPE
+  - name: tra_rtype
+    description: TRA_RTYPE
+  - name: tra_advice
+    description: TRA_ADVICE
+  - name: tra_auth
+    description: TRA_AUTH
+  - name: tra_date
+    description: TRA_DATE
+  - name: tra_order
+    description: TRA_ORDER
+  - name: tra_pridest
+    description: TRA_PRIDEST
+  - name: tra_priorig
+    description: TRA_PRIORIG
+  - name: tra_req
+    description: TRA_REQ
+  - name: tra_status
+    description: TRA_STATUS
+  - name: tra_rstatus
+    description: TRA_RSTATUS
+  - name: tra_fromentity
+    description: TRA_FROMENTITY
+  - name: tra_fromrentity
+    description: TRA_FROMRENTITY
+  - name: tra_fromtype
+    description: TRA_FROMTYPE
+  - name: tra_fromrtype
+    description: TRA_FROMRTYPE
+  - name: tra_fromcode
+    description: TRA_FROMCODE
+  - name: tra_toentity
+    description: TRA_TOENTITY
+  - name: tra_torentity
+    description: TRA_TORENTITY
+  - name: tra_totype
+    description: TRA_TOTYPE
+  - name: tra_tortype
+    description: TRA_TORTYPE
+  - name: tra_tocode
+    description: TRA_TOCODE
+  - name: tra_printed
+    description: TRA_PRINTED
+  - name: tra_sourcesystem
+    description: TRA_SOURCESYSTEM
+  - name: tra_sourcecode
+    description: TRA_SOURCECODE
+  - name: tra_interface
+    description: TRA_INTERFACE
+  - name: tra_acd
+    description: TRA_ACD
+  - name: tra_org
+    description: TRA_ORG
+  - name: tra_class_org
+    description: TRA_CLASS_ORG
+  - name: tra_tocode_org
+    description: TRA_TOCODE_ORG
+  - name: tra_fromcode_org
+    description: TRA_FROMCODE_ORG
+  - name: tra_order_org
+    description: TRA_ORDER_ORG
+  - name: tra_dckcode
+    description: TRA_DCKCODE
+  - name: tra_dckline
+    description: TRA_DCKLINE
+  - name: tra_pers
+    description: TRA_PERS
+  - name: tra_iptransmitted
+    description: TRA_IPTRANSMITTED
+  - name: tra_updatecount
+    description: TRA_UPDATECOUNT
+  - name: tra_created
+    description: TRA_CREATED
+  - name: tra_updated
+    description: TRA_UPDATED
+  - name: tra_jecategory
+    description: TRA_JECATEGORY
+  - name: tra_jesource
+    description: TRA_JESOURCE
+  - name: tra_routeparent
+    description: TRA_ROUTEPARENT
+  - name: tra_invallocation
+    description: TRA_INVALLOCATION
+  - name: tra_relatedwo
+    description: TRA_RELATEDWO
+  - name: tra_udfchar01
+    description: TRA_UDFCHAR01
+  - name: tra_udfchar02
+    description: TRA_UDFCHAR02
+  - name: tra_udfchar03
+    description: TRA_UDFCHAR03
+  - name: tra_udfchar04
+    description: TRA_UDFCHAR04
+  - name: tra_udfchar05
+    description: TRA_UDFCHAR05
+  - name: tra_udfchar06
+    description: TRA_UDFCHAR06
+  - name: tra_udfchar07
+    description: TRA_UDFCHAR07
+  - name: tra_udfchar08
+    description: TRA_UDFCHAR08
+  - name: tra_udfchar09
+    description: TRA_UDFCHAR09
+  - name: tra_udfchar10
+    description: TRA_UDFCHAR10
+  - name: tra_udfchar11
+    description: TRA_UDFCHAR11
+  - name: tra_udfchar12
+    description: TRA_UDFCHAR12
+  - name: tra_udfchar13
+    description: TRA_UDFCHAR13
+  - name: tra_udfchar14
+    description: TRA_UDFCHAR14
+  - name: tra_udfchar15
+    description: TRA_UDFCHAR15
+  - name: tra_udfchar16
+    description: TRA_UDFCHAR16
+  - name: tra_udfchar17
+    description: TRA_UDFCHAR17
+  - name: tra_udfchar18
+    description: TRA_UDFCHAR18
+  - name: tra_udfchar22
+    description: TRA_UDFCHAR22
+  - name: tra_udfchar19
+    description: TRA_UDFCHAR19
+  - name: tra_udfchar20
+    description: TRA_UDFCHAR20
+  - name: tra_udfchar21
+    description: TRA_UDFCHAR21
+  - name: tra_udfchar23
+    description: TRA_UDFCHAR23
+  - name: tra_udfchar24
+    description: TRA_UDFCHAR24
+  - name: tra_udfchar25
+    description: TRA_UDFCHAR25
+  - name: tra_udfchar26
+    description: TRA_UDFCHAR26
+  - name: tra_udfchar27
+    description: TRA_UDFCHAR27
+  - name: tra_udfchar28
+    description: TRA_UDFCHAR28
+  - name: tra_udfchar29
+    description: TRA_UDFCHAR29
+  - name: tra_udfchar30
+    description: TRA_UDFCHAR30
+  - name: tra_udfnum01
+    description: TRA_UDFNUM01
+  - name: tra_udfnum02
+    description: TRA_UDFNUM02
+  - name: tra_udfnum03
+    description: TRA_UDFNUM03
+  - name: tra_udfnum04
+    description: TRA_UDFNUM04
+  - name: tra_udfnum05
+    description: TRA_UDFNUM05
+  - name: tra_udfdate01
+    description: TRA_UDFDATE01
+  - name: tra_udfdate02
+    description: TRA_UDFDATE02
+  - name: tra_udfdate03
+    description: TRA_UDFDATE03
+  - name: tra_udfdate04
+    description: TRA_UDFDATE04
+  - name: tra_udfdate05
+    description: TRA_UDFDATE05
+  - name: tra_udfchkbox01
+    description: TRA_UDFCHKBOX01
+  - name: tra_udfchkbox02
+    description: TRA_UDFCHKBOX02
+  - name: tra_udfchkbox03
+    description: TRA_UDFCHKBOX03
+  - name: tra_udfchkbox04
+    description: TRA_UDFCHKBOX04
+  - name: tra_udfchkbox05
+    description: TRA_UDFCHKBOX05
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TRANSACTIONS

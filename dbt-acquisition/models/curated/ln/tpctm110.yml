@@ -1,0 +1,692 @@
+version: 2
+models:
+- name: tpctm110
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: '(required) Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cnln
+    description: '(required) Contract Line. Max length: 8'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: csts
+    description: 'Status. Allowed values: 10, 20, 30, 40, 50'
+  - name: csts_kw
+    description: 'Status (keyword). Allowed values: tpctm.csts.free, tpctm.csts.on.hold,
+      tpctm.csts.active, tpctm.csts.closed, tpctm.csts.canceled'
+  - name: prst
+    description: 'Previous Status. Allowed values: 10, 20, 30, 40, 50'
+  - name: prst_kw
+    description: 'Previous Status (keyword). Allowed values: tpctm.csts.free, tpctm.csts.on.hold,
+      tpctm.csts.active, tpctm.csts.closed, tpctm.csts.canceled'
+  - name: ctyp
+    description: 'Contract Type. Allowed values: 10, 20, 30'
+  - name: ctyp_kw
+    description: 'Contract Type (keyword). Allowed values: tpctm.ctyp.fixed.price,
+      tpctm.ctyp.cost.reimbrsmnt, tpctm.ctyp.time.materials'
+  - name: cofc
+    description: 'Sales Office. Max length: 6'
+  - name: cmng
+    description: 'Contract Manager. Max length: 9'
+  - name: crep
+    description: 'Internal Sales Representative. Max length: 9'
+  - name: osrp
+    description: 'External Sales Representative. Max length: 9'
+  - name: rfcu__en_us
+    description: '(required) Customer Order - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: refe__en_us
+    description: '(required) First Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refb__en_us
+    description: '(required) Second Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: pcnt
+    description: 'Prime Contractor. Max length: 9'
+  - name: pcrf__en_us
+    description: '(required) Prime Contract Reference - base language. Max length:
+      40'
+    data_tests:
+    - not_null
+  - name: prrt
+    description: 'DPAS. Max length: 9'
+  - name: coty
+    description: 'Contract Execution. Allowed values: 1, 2'
+  - name: coty_kw
+    description: 'Contract Execution (keyword). Allowed values: tppdm.coty.contract,
+      tppdm.coty.subcontract'
+  - name: codt
+    description: Contract Award Date
+  - name: efdt
+    description: Effective Date
+  - name: exdt
+    description: Expiry Date
+  - name: rddt
+    description: Contract Delivery Date
+  - name: invm
+    description: 'Invoice Type. Allowed values: 1, 2, 3, 4, 5, 20'
+  - name: invm_kw
+    description: 'Invoice Type (keyword). Allowed values: tppdm.invm.prime.cost, tppdm.invm.unit.rate,
+      tppdm.invm.instalment, tppdm.invm.inst.spec, tppdm.invm.delivery.based, tppdm.invm.na'
+  - name: cinm
+    description: 'Invoicing Method. Max length: 3'
+  - name: ppim
+    description: 'Progress Payment Invoicing Method. Max length: 3'
+  - name: disc
+    description: Invoice Discount
+  - name: cidm
+    description: 'Invoice Delivery Method. Max length: 3'
+  - name: styp
+    description: 'Sales Type. Max length: 6'
+  - name: frvt
+    description: Fee Revenue Threshold
+  - name: pgpm
+    description: 'Progress Payment. Allowed values: 1, 2'
+  - name: pgpm_kw
+    description: 'Progress Payment (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pppc
+    description: Progress Payment %
+  - name: plpc
+    description: Progress Liquidation %
+  - name: bcrp
+    description: 'Billable Cost Report. Allowed values: 1, 2'
+  - name: bcrp_kw
+    description: 'Billable Cost Report (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: fcrt
+    description: 'Rate Determiner. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 10, 20'
+  - name: fcrt_kw
+    description: 'Rate Determiner (keyword). Allowed values: tcfcrt.fixedl, tcfcrt.fixedh,
+      tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd, tcfcrt.manual,
+      tcfcrt.fixed, tcfcrt.not.appl'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: rate_1
+    description: Rate
+  - name: rate_2
+    description: Rate
+  - name: rate_3
+    description: Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rdat
+    description: Rate Date
+  - name: copr
+    description: Contract Amount
+  - name: pcwa
+    description: Labor Part of Contract Amount
+  - name: pcba
+    description: Labor B-Account
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: esam
+    description: Expected Sales Amount
+  - name: pfob
+    description: 'Base for Performance Obligation. Allowed values: 5, 10, 15'
+  - name: pfob_kw
+    description: 'Base for Performance Obligation (keyword). Allowed values: tpctm.pfob.contract.amount,
+      tpctm.pfob.trans.price, tpctm.pfob.not.applicable'
+  - name: trpr
+    description: Transaction Price
+  - name: ceil
+    description: 'Ceiling. Allowed values: 1, 2'
+  - name: ceil_kw
+    description: 'Ceiling (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: clam
+    description: Ceiling Amount
+  - name: ivam
+    description: Approved for Invoicing
+  - name: itod
+    description: Invoiced to Date
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: ofad
+    description: 'Sold-to Address. Max length: 9'
+  - name: ofcn
+    description: 'Sold-to Contact. Max length: 9'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: stcn
+    description: 'Ship-to Contact. Max length: 9'
+  - name: sadr
+    description: 'Ship-from Address. Max length: 9'
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: itad
+    description: 'Invoice-to Address. Max length: 9'
+  - name: itcn
+    description: 'Invoice-to Contact. Max length: 9'
+  - name: pfbp
+    description: 'Pay-by Business Partner. Max length: 9'
+  - name: pfad
+    description: 'Pay-by Address. Max length: 9'
+  - name: pfcn
+    description: 'Pay-by Contact. Max length: 9'
+  - name: spit
+    description: 'Sales Price for Material. Allowed values: 5, 10, 15'
+  - name: spit_kw
+    description: 'Sales Price for Material (keyword). Allowed values: tpctm.spcp.markup,
+      tpctm.spcp.sales.price, tpctm.spcp.not.applicable'
+  - name: pcit
+    description: Markup Material
+  - name: spts
+    description: 'Sales Price for Labor. Allowed values: 5, 10, 15'
+  - name: spts_kw
+    description: 'Sales Price for Labor (keyword). Allowed values: tpctm.spcp.markup,
+      tpctm.spcp.sales.price, tpctm.spcp.not.applicable'
+  - name: pcts
+    description: Markup Labor
+  - name: speq
+    description: 'Sales Price for Equipment. Allowed values: 5, 10, 15'
+  - name: speq_kw
+    description: 'Sales Price for Equipment (keyword). Allowed values: tpctm.spcp.markup,
+      tpctm.spcp.sales.price, tpctm.spcp.not.applicable'
+  - name: pceq
+    description: Markup Equipment
+  - name: spsb
+    description: 'Sales Price for Subcontracting. Allowed values: 5, 10, 15'
+  - name: spsb_kw
+    description: 'Sales Price for Subcontracting (keyword). Allowed values: tpctm.spcp.markup,
+      tpctm.spcp.sales.price, tpctm.spcp.not.applicable'
+  - name: pcsb
+    description: Markup Subcontracting
+  - name: spic
+    description: 'Sales Price for Sundry Cost. Allowed values: 5, 10, 15'
+  - name: spic_kw
+    description: 'Sales Price for Sundry Cost (keyword). Allowed values: tpctm.spcp.markup,
+      tpctm.spcp.sales.price, tpctm.spcp.not.applicable'
+  - name: pcic
+    description: Markup Sundry Cost
+  - name: enip
+    description: 'Enforce Invoicing Period. Allowed values: 1, 2'
+  - name: enip_kw
+    description: 'Enforce Invoicing Period (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: acpn
+    description: 'Acceptance Point. Allowed values: 10, 20, 30, 40'
+  - name: acpn_kw
+    description: 'Acceptance Point (keyword). Allowed values: tpctm.acpn.source, tpctm.acpn.destination,
+      tpctm.acpn.source.dest, tpctm.acpn.not.appl'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: cfrw
+    description: 'Carrier/LSP. Max length: 3'
+  - name: advn
+    description: 'Advance Payments. Allowed values: 10, 20, 30'
+  - name: advn_kw
+    description: 'Advance Payments (keyword). Allowed values: tpctm.adpr.no, tpctm.adpr.by.contract,
+      tpctm.adpr.by.contract.ln'
+  - name: adtp
+    description: 'Advance Payment Type. Allowed values: 10, 20, 30'
+  - name: adtp_kw
+    description: 'Advance Payment Type (keyword). Allowed values: tppin.adtp.request,
+      tppin.adtp.invoice, tppin.adtp.not.applicable'
+  - name: ulpd
+    description: 'Use Advance Liquidation Percentage. Allowed values: 5, 10'
+  - name: ulpd_kw
+    description: 'Use Advance Liquidation Percentage (keyword). Allowed values: tpctm.adv.liq.full.liq,
+      tpctm.adv.liq.liq.percentage'
+  - name: lpad
+    description: Liquidation % Advances
+  - name: tins
+    description: 'Installment Type. Allowed values: 10, 20, 30, 40'
+  - name: tins_kw
+    description: 'Installment Type (keyword). Allowed values: tpctm.intp.amount, tpctm.intp.percentage,
+      tpctm.intp.points, tpctm.intp.not.applicable'
+  - name: poin
+    description: Number of Points
+  - name: lpin
+    description: Liquidation % Installments
+  - name: dfis
+    description: 'Default Installment Schedule. Max length: 3'
+  - name: prtx
+    description: 'Project Text on Invoice. Allowed values: 1, 2'
+  - name: prtx_kw
+    description: 'Project Text on Invoice (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: hldb
+    description: 'Holdback. Allowed values: 10, 20, 30'
+  - name: hldb_kw
+    description: 'Holdback (keyword). Allowed values: tpctm.hldb.all.invoices, tpctm.hldb.based.on.progrs,
+      tpctm.hldb.no.holdback'
+  - name: hbpc
+    description: Holdback Percentage
+  - name: ptsh
+    description: Progress Threshold
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: exmt
+    description: 'Tax Exempt. Allowed values: 1, 2'
+  - name: exmt_kw
+    description: 'Tax Exempt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: bptc
+    description: 'BP Tax Country. Max length: 3'
+  - name: ceno
+    description: 'Exemption Certificate. Max length: 24'
+  - name: exrs
+    description: 'Exemption Reason. Max length: 6'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: ptpp
+    description: 'Payment Terms Progress Payment. Max length: 3'
+  - name: ccrs
+    description: 'Late Payment Surcharge. Max length: 3'
+  - name: paym
+    description: 'Payment Method. Max length: 3'
+  - name: cban
+    description: 'Bank Account Code. Max length: 3'
+  - name: ubnk
+    description: 'Use Bank Relation. Allowed values: 1, 2'
+  - name: ubnk_kw
+    description: 'Use Bank Relation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bank
+    description: 'Bank Relation. Max length: 3'
+  - name: cbrn
+    description: 'Line of Business. Max length: 6'
+  - name: ccam
+    description: 'Acquiring Method. Max length: 3'
+  - name: cfac
+    description: 'Financing Method. Max length: 6'
+  - name: creg
+    description: 'Geographical Area. Max length: 3'
+  - name: ccat
+    description: 'Category. Max length: 6'
+  - name: ccot
+    description: 'Group. Max length: 3'
+  - name: csec
+    description: 'Business Sector. Max length: 3'
+  - name: cstg
+    description: 'Phase. Max length: 3'
+  - name: hrsn
+    description: 'Hold Reason. Max length: 6'
+  - name: crby
+    description: 'Created by. Max length: 16'
+  - name: crdt
+    description: Creation Date
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: lmdt
+    description: Last Modified on
+  - name: lcrs
+    description: 'Last Change Reason. Max length: 6'
+  - name: ltti
+    description: Last Transferred to Invoicing
+  - name: blcl
+    description: 'Billing Cycle. Max length: 6'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: fdis
+    description: 'Funding Distribution. Allowed values: 5, 10, 15, 20'
+  - name: fdis_kw
+    description: 'Funding Distribution (keyword). Allowed values: tpctm.fdis.none,
+      tpctm.fdis.sequence, tpctm.fdis.percentage, tpctm.fdis.amount'
+  - name: flmt
+    description: Funded Amount
+  - name: mfea__en_us
+    description: '(required) External Address Code - base language. Max length: 12'
+    data_tests:
+    - not_null
+  - name: mftp
+    description: 'Marked For Type. Allowed values: 0, 10, 20'
+  - name: mftp_kw
+    description: 'Marked For Type (keyword). Allowed values: , tpctm.mftp.address,
+      tpctm.mftp.text'
+  - name: mfad
+    description: 'Marked For Address Code. Max length: 9'
+  - name: bver
+    description: 'Bid Version. Max length: 3'
+  - name: bnum
+    description: 'Bid Number. Max length: 8'
+  - name: esin
+    description: 'Extended Service Integration. Allowed values: 1, 2'
+  - name: esin_kw
+    description: 'Extended Service Integration (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bgrq
+    description: 'Bank Guarantee - Applicant Required. Allowed values: 1, 2'
+  - name: bgrq_kw
+    description: 'Bank Guarantee - Applicant Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bgrb
+    description: 'Bank Guarantee - Beneficiary Required. Allowed values: 1, 2'
+  - name: bgrb_kw
+    description: 'Bank Guarantee - Beneficiary Required (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: tcst
+    description: 'Document Compliance Status. Allowed values: 10, 20, 30, 40, 50'
+  - name: tcst_kw
+    description: 'Document Compliance Status (keyword). Allowed values: tcgtc.tcst.to.be.validated,
+      tcgtc.tcst.validating, tcgtc.tcst.valid.error, tcgtc.tcst.validated, tcgtc.tcst.not.appl'
+  - name: srvo
+    description: 'Service Office. Max length: 6'
+  - name: blck
+    description: 'Blocked. Allowed values: 1, 2'
+  - name: blck_kw
+    description: 'Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: swap
+    description: 'Scope of Work Applicable. Allowed values: 1, 2'
+  - name: swap_kw
+    description: 'Scope of Work Applicable (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: osla
+    description: 'One Scope Line Per Activity. Allowed values: 1, 2'
+  - name: osla_kw
+    description: 'One Scope Line Per Activity (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: afpa
+    description: 'Application for Payment Applicable. Allowed values: 1, 2'
+  - name: afpa_kw
+    description: 'Application for Payment Applicable (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: gapp
+    description: 'Generate AFP from Physical Progress. Allowed values: 1, 2'
+  - name: gapp_kw
+    description: 'Generate AFP from Physical Progress (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: laft
+    description: 'Log AFP Financial Transactions. Allowed values: 1, 2'
+  - name: laft_kw
+    description: 'Log AFP Financial Transactions (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: maas
+    description: 'Materials at Site. Allowed values: 1, 2'
+  - name: maas_kw
+    description: 'Materials at Site (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: acar
+    description: 'Architect/Consultant Approval Required. Allowed values: 1, 2'
+  - name: acar_kw
+    description: 'Architect/Consultant Approval Required (keyword). Allowed values:
+      tppdm.yeno.yes, tppdm.yeno.no'
+  - name: orna__en_us
+    description: '(required) Organization Name - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: arcn
+    description: 'Architect Contact. Max length: 9'
+  - name: chrq
+    description: 'Change Request Applicable. Allowed values: 1, 2'
+  - name: chrq_kw
+    description: 'Change Request Applicable (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: iscc
+    description: 'Is Contract Change Order. Allowed values: 1, 2'
+  - name: iscc_kw
+    description: 'Is Contract Change Order (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: ocon
+    description: 'Original Contract. Max length: 9'
+  - name: ocln
+    description: 'Original Contract Line. Max length: 8'
+  - name: tcoa
+    description: Total Change Order Amount
+  - name: ecam
+    description: Estimated Change Amount
+  - name: ecsm
+    description: Estimated Cost Amount
+  - name: mftx
+    description: Marked For Text
+  - name: text
+    description: Text
+  - name: cono_ref_compnr
+    description: company number of primary key of table tpctm100 Contracts
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: cmng_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: crep_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: osrp_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: pcnt_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: prrt_ref_compnr
+    description: company number of primary key of table tcmcs072 DPAS
+  - name: cinm_ref_compnr
+    description: company number of primary key of table tcmcs055 Invoicing Methods
+  - name: ppim_ref_compnr
+    description: company number of primary key of table tcmcs055 Invoicing Methods
+  - name: cidm_ref_compnr
+    description: company number of primary key of table tcmcs056 Invoice Delivery
+      Methods
+  - name: styp_ref_compnr
+    description: company number of primary key of table tcmcs202 Sales Types
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: cprj_bver_bnum_ref_compnr
+    description: company number of primary key of table tpest300 Bid Headers
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: ofad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ofcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: stcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: sadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: itad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: itcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: pfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: pfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: pfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: cfrw_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: dfis_ref_compnr
+    description: company number of primary key of table tcmcs240 Installment Schedules
+      Sets
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: exrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: ptpp_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: ccrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: cbrn_ref_compnr
+    description: company number of primary key of table tcmcs031 Lines of Business
+  - name: ccam_ref_compnr
+    description: company number of primary key of table tppdm063 Acquiring Methods
+  - name: cfac_ref_compnr
+    description: company number of primary key of table tppdm059 Financing Methods
+  - name: creg_ref_compnr
+    description: company number of primary key of table tcmcs045 Areas
+  - name: ccat_ref_compnr
+    description: company number of primary key of table tppdm075 Categories
+  - name: ccot_ref_compnr
+    description: company number of primary key of table tppdm065 Project Groups
+  - name: csec_ref_compnr
+    description: company number of primary key of table tppdm055 Business Sectors
+  - name: cstg_ref_compnr
+    description: company number of primary key of table tppdm085 Phases
+  - name: hrsn_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: lcrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: blcl_ref_compnr
+    description: company number of primary key of table tpctm030 Billing Cycles
+  - name: mfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: srvo_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: arcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: mftx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: copr_refc
+    description: 'CC: Contract Line Amount in Reference Currency'
+  - name: copr_cntc
+    description: 'CC: Contract Line Amount in Contract Currency'
+  - name: copr_prjc
+    description: 'CC: Contract Line Amount in Project Currency'
+  - name: copr_homc
+    description: 'CC: Contract Line Amount in Local currency'
+  - name: copr_rpc1
+    description: 'CC: Contract Line Amount in Reporting Currency 1'
+  - name: copr_rpc2
+    description: 'CC: Contract Line Amount in Reporting Currency 2'
+  - name: copr_dwhc
+    description: 'CC: Contract Line Amount in Data Warehouse Currency'
+  - name: flmt_refc
+    description: 'CC: Funded Amount in Reference Currency'
+  - name: flmt_cntc
+    description: 'CC: Funded Amount in Contract Currency'
+  - name: flmt_prjc
+    description: 'CC: Funded Amount in Project Currency'
+  - name: flmt_homc
+    description: 'CC: Funded Amount in Local Currency'
+  - name: flmt_rpc1
+    description: 'CC: Funded Amount in Reporting Currency 1'
+  - name: flmt_rpc2
+    description: 'CC: Funded Amount in Reporting Currency 2'
+  - name: flmt_dwhc
+    description: 'CC: Funded Amount in Data Warehouse Currency'
+  - name: esam_refc
+    description: 'CC: Expected Sales Amount in Reference Currency'
+  - name: esam_cntc
+    description: 'CC: Expected Sales Amount in Contract Currency'
+  - name: esam_prjc
+    description: 'CC: Expected Sales Amount in Project Currency'
+  - name: esam_homc
+    description: 'CC: Expected Sales Amount in Local Currency'
+  - name: esam_rpc1
+    description: 'CC: Expected Sales Amount in Reporting Currency 1'
+  - name: esam_rpc2
+    description: 'CC: Expected Sales Amount in Reporting Currency 2'
+  - name: esam_dwhc
+    description: 'CC: Expected Sales Amount in Data Warehouse Currency'
+  - name: clam_refc
+    description: 'CC: Ceiling Amount in Reference Currency'
+  - name: clam_cntc
+    description: 'CC: Ceiling Amount in Contract Currency'
+  - name: clam_prjc
+    description: 'CC: Ceiling Amount in Project Currency'
+  - name: clam_homc
+    description: 'CC: Ceiling Amount in Local Currency'
+  - name: clam_rpc1
+    description: 'CC: Ceiling Amount in Reporting Currency 1'
+  - name: clam_rpc2
+    description: 'CC: Ceiling Amount in Reporting Currency 2'
+  - name: clam_dwhc
+    description: 'CC: Ceiling Amount in Data Warehouse Currency'
+  - name: itod_refc
+    description: 'CC: Invoiced to Date Amount in Reference Currency'
+  - name: itod_cntc
+    description: 'CC: Invoiced to Date Amount in Contract Currency'
+  - name: itod_prjc
+    description: 'CC: Invoiced to Date Amount in Project Currency'
+  - name: itod_homc
+    description: 'CC: Invoiced to Date Amount in Local Currency'
+  - name: itod_rpc1
+    description: 'CC: Invoiced to Date Amount in Reporting Currency 1'
+  - name: itod_rpc2
+    description: 'CC: Invoiced to Date Amount in Reporting Currency 2'
+  - name: itod_dwhc
+    description: 'CC: Invoiced to Date Amount in Data Warehouse Currency'
+  - name: cnln_fcmp
+    description: 'CC: Contract Line Financial Company'
+  - name: next_bldt
+    description: 'CC: Next Invoice Date. Max length: 30'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpctm110 Contract Lines table, Generated 2026-04-10T19:41:51Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono
+        - cnln

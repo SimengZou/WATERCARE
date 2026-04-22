@@ -1,0 +1,140 @@
+version: 2
+models:
+- name: r5trades
+  columns:
+  - name: trd_lastsaved
+    description: TRD_LASTSAVED
+  - name: trd_udfchar27
+    description: TRD_UDFCHAR27
+  - name: trd_udfnum01
+    description: TRD_UDFNUM01
+  - name: trd_udfnum02
+    description: TRD_UDFNUM02
+  - name: trd_udfnum03
+    description: TRD_UDFNUM03
+  - name: trd_udfnum04
+    description: TRD_UDFNUM04
+  - name: trd_udfnum05
+    description: TRD_UDFNUM05
+  - name: trd_udfdate01
+    description: TRD_UDFDATE01
+  - name: trd_udfdate02
+    description: TRD_UDFDATE02
+  - name: trd_udfdate03
+    description: TRD_UDFDATE03
+  - name: trd_udfdate04
+    description: TRD_UDFDATE04
+  - name: trd_udfdate05
+    description: TRD_UDFDATE05
+  - name: trd_udfchkbox01
+    description: TRD_UDFCHKBOX01
+  - name: trd_udfchkbox02
+    description: TRD_UDFCHKBOX02
+  - name: trd_udfchkbox03
+    description: TRD_UDFCHKBOX03
+  - name: trd_udfchkbox04
+    description: TRD_UDFCHKBOX04
+  - name: trd_udfchkbox05
+    description: TRD_UDFCHKBOX05
+  - name: trd_availableforcus
+    description: TRD_AVAILABLEFORCUS
+  - name: trd_udfchar28
+    description: TRD_UDFCHAR28
+  - name: trd_code
+    description: TRD_CODE
+    data_tests:
+    - unique
+  - name: trd_desc
+    description: TRD_DESC
+  - name: trd_class
+    description: TRD_CLASS
+  - name: trd_org
+    description: TRD_ORG
+  - name: trd_class_org
+    description: TRD_CLASS_ORG
+  - name: trd_updatecount
+    description: TRD_UPDATECOUNT
+  - name: trd_created
+    description: TRD_CREATED
+  - name: trd_updated
+    description: TRD_UPDATED
+  - name: trd_notused
+    description: TRD_NOTUSED
+  - name: trd_laststatusupdate
+    description: TRD_LASTSTATUSUPDATE
+  - name: trd_abbreviation
+    description: TRD_ABBREVIATION
+  - name: trd_udfchar01
+    description: TRD_UDFCHAR01
+  - name: trd_udfchar02
+    description: TRD_UDFCHAR02
+  - name: trd_udfchar03
+    description: TRD_UDFCHAR03
+  - name: trd_udfchar04
+    description: TRD_UDFCHAR04
+  - name: trd_udfchar05
+    description: TRD_UDFCHAR05
+  - name: trd_udfchar06
+    description: TRD_UDFCHAR06
+  - name: trd_udfchar07
+    description: TRD_UDFCHAR07
+  - name: trd_udfchar08
+    description: TRD_UDFCHAR08
+  - name: trd_udfchar09
+    description: TRD_UDFCHAR09
+  - name: trd_udfchar10
+    description: TRD_UDFCHAR10
+  - name: trd_udfchar11
+    description: TRD_UDFCHAR11
+  - name: trd_udfchar12
+    description: TRD_UDFCHAR12
+  - name: trd_udfchar13
+    description: TRD_UDFCHAR13
+  - name: trd_udfchar14
+    description: TRD_UDFCHAR14
+  - name: trd_udfchar15
+    description: TRD_UDFCHAR15
+  - name: trd_udfchar16
+    description: TRD_UDFCHAR16
+  - name: trd_udfchar17
+    description: TRD_UDFCHAR17
+  - name: trd_udfchar18
+    description: TRD_UDFCHAR18
+  - name: trd_udfchar19
+    description: TRD_UDFCHAR19
+  - name: trd_udfchar20
+    description: TRD_UDFCHAR20
+  - name: trd_udfchar21
+    description: TRD_UDFCHAR21
+  - name: trd_udfchar22
+    description: TRD_UDFCHAR22
+  - name: trd_udfchar23
+    description: TRD_UDFCHAR23
+  - name: trd_udfchar24
+    description: TRD_UDFCHAR24
+  - name: trd_udfchar25
+    description: TRD_UDFCHAR25
+  - name: trd_udfchar26
+    description: TRD_UDFCHAR26
+  - name: trd_udfchar29
+    description: TRD_UDFCHAR29
+  - name: trd_udfchar30
+    description: TRD_UDFCHAR30
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TRADES

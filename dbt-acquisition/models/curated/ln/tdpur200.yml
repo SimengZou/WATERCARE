@@ -1,0 +1,175 @@
+version: 2
+models:
+- name: tdpur200
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: rqno
+    description: '(required) Requisition. Max length: 9'
+    data_tests:
+    - not_null
+  - name: orig
+    description: 'Origin. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+      14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 29, 30, 99'
+  - name: orig_kw
+    description: 'Origin (keyword). Allowed values: tdpur.corg.mrp, tdpur.corg.wcs,
+      tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries, tdpur.corg.eop,
+      tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls, tdpur.corg.sls.schedule,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.subc.pur.sched, tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit,
+      tdpur.corg.price.calc, tdpur.corg.not.appl'
+  - name: remn
+    description: 'Requester. Max length: 9'
+  - name: rdep
+    description: 'Requester Department. Max length: 6'
+  - name: cofc
+    description: 'Purchase Office. Max length: 6'
+  - name: rdat
+    description: Requisition Date
+  - name: aemn
+    description: 'Approver. Max length: 9'
+  - name: adep
+    description: 'Approver Department. Max length: 6'
+  - name: ltdt
+    description: Latest Transaction Date
+  - name: rqst
+    description: 'Requisition Status. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9'
+  - name: rqst_kw
+    description: 'Requisition Status (keyword). Allowed values: tdpur.rqst.created,
+      tdpur.rqst.submitted, tdpur.rqst.approved, tdpur.rqst.rejected, tdpur.rqst.modified,
+      tdpur.rqst.canceled, tdpur.rqst.converted, tdpur.rqst.closed, tdpur.rqst.in.process'
+  - name: conv
+    description: 'Allow Partial Rejection. Allowed values: 1, 2'
+  - name: conv_kw
+    description: 'Allow Partial Rejection (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: dadr
+    description: 'Receipt Address. Max length: 9'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: dldt
+    description: Requested Date
+  - name: refa__en_us
+    description: '(required) Reference A - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refb__en_us
+    description: '(required) Reference B - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: logn
+    description: 'Login Code. Max length: 16'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: ccon
+    description: 'Buyer. Max length: 9'
+  - name: urgt
+    description: 'Urgent. Allowed values: 1, 2'
+  - name: urgt_kw
+    description: 'Urgent (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cnty
+    description: 'Conversion Type. Allowed values: 1, 2, 3'
+  - name: cnty_kw
+    description: 'Conversion Type (keyword). Allowed values: tdpur.cnty.none, tdpur.cnty.rfq,
+      tdpur.cnty.pur'
+  - name: spap
+    description: 'Spend Approved. Allowed values: 1, 2'
+  - name: spap_kw
+    description: 'Spend Approved (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rcod
+    description: 'Reason for Rejection. Max length: 6'
+  - name: dral
+    description: 'Default Receipt Address for All Lines. Allowed values: 1, 2'
+  - name: dral_kw
+    description: 'Default Receipt Address for All Lines (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: ccty
+    description: 'Obsolete. Max length: 3'
+  - name: txta
+    description: Text
+  - name: remn_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: rdep_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tdpur012 Purchase Offices
+  - name: aemn_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: adep_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: dadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccon_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: rcod_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur200 Purchase Requisitions table, Generated 2026-04-10T19:41:19Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - rqno

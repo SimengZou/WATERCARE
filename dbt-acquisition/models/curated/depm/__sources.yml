@@ -1,0 +1,82 @@
+version: 2
+sources:
+- name: source_landing_depm
+  database: '{{ ''landing_prod'' if target.name == ''prod'' else (''landing_sit''
+    if target.name == ''sit'' else ''landing_dev'') }}'
+  schema: depm
+  tables:
+  - name: depm_amp
+    description: AMP Cube Data
+  - name: depm_b100
+  - name: depm_c100
+    description: Capitalization Cube
+  - name: depm_cube_ledger
+  - name: depm_cube_ledger_detail
+  - name: depm_dim_account
+  - name: depm_dim_amp_businessarea
+  - name: depm_dim_amp_codes
+  - name: depm_dim_amp_em_codes
+  - name: depm_dim_amp_meas
+  - name: depm_dim_amp_period
+  - name: depm_dim_amp_project
+  - name: depm_dim_amp_version
+  - name: depm_dim_amp_year
+  - name: depm_dim_analysis01
+  - name: depm_dim_analysis02
+  - name: depm_dim_analysis03
+  - name: depm_dim_analysis04
+  - name: depm_dim_analysis05
+  - name: depm_dim_analysis06
+  - name: depm_dim_analysis07
+  - name: depm_dim_analysis08
+  - name: depm_dim_analysis09
+  - name: depm_dim_analysis10
+  - name: depm_dim_asset
+  - name: depm_dim_assetbook
+  - name: depm_dim_capex_period
+  - name: depm_dim_capex_version
+  - name: depm_dim_cm100
+  - name: depm_dim_currency
+  - name: depm_dim_employeetype
+  - name: depm_dim_financialyear
+  - name: depm_dim_labourlineno
+  - name: depm_dim_labourmeas
+  - name: depm_dim_labourtrxtype
+  - name: depm_dim_ldgtrxtype
+  - name: depm_dim_ledgermeas
+  - name: depm_dim_measure_type
+  - name: depm_dim_opex_period
+  - name: depm_dim_opex_version
+  - name: depm_dim_pm100
+  - name: depm_dim_pm110
+  - name: depm_dim_position
+  - name: depm_dim_project
+  - name: depm_dim_ra
+  - name: depm_dim_rcat
+  - name: depm_dim_rid
+  - name: depm_dim_rm100
+  - name: depm_dim_wbs
+  - name: depm_dim_year
+  - name: depm_ips_asset_valuation
+    description: Generated from anySQL Connector dEPM_IPS_ASSET_VALUATION
+  - name: depm_labour
+    description: Labour Cube
+  - name: depm_p100
+    description: Generated from anySQL Connector dEPM_P100
+  - name: depm_p100_temp
+    description: Generated from anySQL Connector dEPM_P100_Temp
+  - name: depm_p101
+  - name: depm_p110
+    description: DEPM Cube P110
+  - name: depm_r100
+    description: Generated from anySQL Connector dEPM_R100
+  - name: depm_r100reporting
+    description: Generated from anySQL Connector dEPM_R100Reporting
+  - name: depm_r100reporting_temp
+    description: Generated from anySQL Connector dEPM_R100Reporting_Temp
+  - name: depm_r100_projectchange
+  - name: depm_r100_projectchange_testing
+    description: dEPM to IDL for ProjectRisk for change request
+  - name: depm_r100_temp
+    description: Generated from anySQL Connector dEPM_R100_Temp
+  - name: depm_test

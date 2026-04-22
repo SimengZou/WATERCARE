@@ -1,0 +1,139 @@
+version: 2
+models:
+- name: tppin050
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cspa
+    description: '(required) Element. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cpla
+    description: '(required) Plan. Max length: 3'
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Serial Number
+    data_tests:
+    - not_null
+  - name: pgdt
+    description: Registration Date
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: quan
+    description: Transferred Quantity
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: amos
+    description: Transferred Amount
+  - name: rate_1
+    description: Rate
+  - name: rate_2
+    description: Rate
+  - name: rate_3
+    description: Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rdat
+    description: Rate Date
+  - name: fcmp
+    description: Financial Company
+  - name: ityp
+    description: 'Transaction Type. Max length: 3'
+  - name: idoc
+    description: Invoice Document
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: amos_refc
+    description: 'CC: Transferred Amount in Reference Currency'
+  - name: amos_cntc
+    description: 'CC: Transferred Amount in Contract Currency'
+  - name: amos_prjc
+    description: 'CC: Transferred Amount in Project Currency'
+  - name: amos_homc
+    description: 'CC: Transferred Amount in Local Currency'
+  - name: amos_rpc1
+    description: 'CC: Transferred Amount in Reporting Currency 1'
+  - name: amos_rpc2
+    description: 'CC: Transferred Amount in Reporting Currency 2'
+  - name: amos_dwhc
+    description: 'CC: Transferred Amount in Data Warehouse Currency'
+  - name: quan_buar
+    description: 'CC: Transferred Quantity in Base Unit Area'
+  - name: quan_buvl
+    description: 'CC: Transferred Quantity in Base Unit Volume'
+  - name: quan_buln
+    description: 'CC: Transferred Quantity in Base Unit Length'
+  - name: quan_bupc
+    description: 'CC: Transferred Quantity in Base Unit Piece'
+  - name: quan_buwg
+    description: 'CC: Transferred Quantity in Base Unit Weight'
+  - name: quan_butm
+    description: 'CC: Transferred Quantity in Base Unit Time'
+  - name: quan_hour
+    description: 'CC: Transferred Quantity in Hours'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppin050 Transferred Unit Rate Invoice Lines table, Generated 2026-04-10T19:42:05Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cspa
+        - cpla
+        - cact
+        - sern

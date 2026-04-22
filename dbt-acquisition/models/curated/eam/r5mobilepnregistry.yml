@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: r5mobilepnregistry
+  columns:
+  - name: mpn_lastsaved
+    description: MPN_LASTSAVED
+  - name: mpn_deviceid
+    description: MPN_DEVICEID
+  - name: mpn_platform
+    description: MPN_PLATFORM
+  - name: mpn_token
+    description: 'MPN_TOKEN. Max length: 0'
+  - name: mpn_user
+    description: MPN_USER
+  - name: mpn_createdby
+    description: MPN_CREATEDBY
+  - name: mpn_updated
+    description: MPN_UPDATED
+  - name: mpn_updatedby
+    description: MPN_UPDATEDBY
+  - name: mpn_updatecount
+    description: MPN_UPDATECOUNT
+  - name: mpn_appid
+    description: MPN_APPID
+  - name: mpn_created
+    description: MPN_CREATED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MOBILEPNREGISTRY
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - mpn_appid
+        - mpn_deviceid

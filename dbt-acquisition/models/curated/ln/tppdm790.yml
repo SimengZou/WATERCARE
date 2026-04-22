@@ -1,0 +1,249 @@
+version: 2
+models:
+- name: tppdm790
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: comp
+    description: (required) Company
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dscb__en_us
+    description: '(required) Description II - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: padr
+    description: 'Address Code Project. Max length: 9'
+  - name: kopr
+    description: 'Hierarchy Type. Allowed values: 1, 2, 3'
+  - name: kopr_kw
+    description: 'Hierarchy Type (keyword). Allowed values: tppdm.kopr.main, tppdm.kopr.sub,
+      tppdm.kopr.single'
+  - name: tbdg
+    description: 'Main Project Budgeting. Allowed values: 1, 2'
+  - name: tbdg_kw
+    description: 'Main Project Budgeting (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: mprj
+    description: 'Main Project. Max length: 9'
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: seab__en_us
+    description: '(required) Search Key II - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: agty
+    description: 'Contract Type. Allowed values: 1, 2, 20'
+  - name: agty_kw
+    description: 'Contract Type (keyword). Allowed values: tppdm.agty.contract, tppdm.agty.prime.cost,
+      tppdm.agty.na'
+  - name: coty
+    description: 'Contract Execution. Allowed values: 1, 2'
+  - name: coty_kw
+    description: 'Contract Execution (keyword). Allowed values: tppdm.coty.contract,
+      tppdm.coty.subcontract'
+  - name: invm
+    description: 'Invoice Type. Allowed values: 1, 2, 3, 4, 5, 20'
+  - name: invm_kw
+    description: 'Invoice Type (keyword). Allowed values: tppdm.invm.prime.cost, tppdm.invm.unit.rate,
+      tppdm.invm.instalment, tppdm.invm.inst.spec, tppdm.invm.delivery.based, tppdm.invm.na'
+  - name: ccot
+    description: 'Group. Max length: 3'
+  - name: ccam
+    description: 'Acquiring Method. Max length: 3'
+  - name: creg
+    description: 'Geographical Area. Max length: 3'
+  - name: csec
+    description: 'Business Sector. Max length: 3'
+  - name: scun
+    description: 'Several Customers. Allowed values: 1, 2'
+  - name: scun_kw
+    description: 'Several Customers (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: pfbp
+    description: 'Pay-by Business Partner. Max length: 9'
+  - name: copr
+    description: Contract Amount
+  - name: rfcu__en_us
+    description: '(required) Customer Reference - base language. Max length: 15'
+    data_tests:
+    - not_null
+  - name: cfac
+    description: 'Financing Method. Max length: 6'
+  - name: cmud
+    description: 'Sufferance Tax. Max length: 3'
+  - name: ncmp
+    description: Receiving Company
+  - name: ccat
+    description: 'Category. Max length: 6'
+  - name: psta
+    description: 'Project Archive Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: psta_kw
+    description: 'Project Archive Status (keyword). Allowed values: tppdm.psta.free,
+      tppdm.psta.construction, tppdm.psta.finished, tppdm.psta.closed, tppdm.psta.archived,
+      tppdm.psta.removed'
+  - name: psdt
+    description: Project Status Date
+  - name: arch
+    description: 'Archived. Allowed values: 1, 2'
+  - name: arch_kw
+    description: 'Archived (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: ardt
+    description: Archive Date
+  - name: acmp
+    description: Archive-to Company
+  - name: aloc
+    description: 'Archive User. Max length: 16'
+  - name: ptcs
+    description: Lead Time
+  - name: espt
+    description: Estimated Lead Time
+  - name: rept
+    description: Actual Project Time
+  - name: rers
+    description: Actual Result
+  - name: kptm
+    description: 'Project Lead Time Type. Allowed values: 1, 2'
+  - name: kptm_kw
+    description: 'Project Lead Time Type (keyword). Allowed values: tppdm.kptm.workable.days,
+      tppdm.kptm.calendar.days'
+  - name: stdt
+    description: Start Time
+  - name: fddt
+    description: Substantial Completion Date
+  - name: cobs
+    description: 'Organization Breakdown Structure. Max length: 9'
+  - name: dldt
+    description: Finish Time
+  - name: ccur
+    description: 'Project Currency. Max length: 3'
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: rate_1
+    description: Currency Rate
+  - name: rate_2
+    description: Currency Rate
+  - name: rate_3
+    description: Currency Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rdat
+    description: Rate Date
+  - name: intp
+    description: 'Internal Project. Allowed values: 0, 1, 2'
+  - name: intp_kw
+    description: 'Internal Project (keyword). Allowed values: , tppdm.yeno.yes, tppdm.yeno.no'
+  - name: capp
+    description: 'Capital Project. Allowed values: 0, 1, 2'
+  - name: capp_kw
+    description: 'Capital Project (keyword). Allowed values: , tppdm.yeno.yes, tppdm.yeno.no'
+  - name: anbr
+    description: 'Asset Number. Max length: 15'
+  - name: aext
+    description: 'Asset Extension. Max length: 15'
+  - name: ipin
+    description: 'Invoicing via PIN. Allowed values: 0, 1, 2'
+  - name: ipin_kw
+    description: 'Invoicing via PIN (keyword). Allowed values: , tppdm.yeno.yes, tppdm.yeno.no'
+  - name: txta
+    description: Archive Text
+  - name: txtn
+    description: Project Text
+  - name: tmpl
+    description: 'Template. Allowed values: 0, 1, 2'
+  - name: tmpl_kw
+    description: 'Template (keyword). Allowed values: , tppdm.yeno.yes, tppdm.yeno.no'
+  - name: padr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccot_ref_compnr
+    description: company number of primary key of table tppdm065 Project Groups
+  - name: ccam_ref_compnr
+    description: company number of primary key of table tppdm063 Acquiring Methods
+  - name: creg_ref_compnr
+    description: company number of primary key of table tcmcs045 Areas
+  - name: csec_ref_compnr
+    description: company number of primary key of table tppdm055 Business Sectors
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: pfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cfac_ref_compnr
+    description: company number of primary key of table tppdm059 Financing Methods
+  - name: cmud_ref_compnr
+    description: company number of primary key of table tppdm057 Sufferance Tax
+  - name: ccat_ref_compnr
+    description: company number of primary key of table tppdm075 Categories
+  - name: cobs_ref_compnr
+    description: company number of primary key of table tppdm095 User Defined Structures
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtn_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm790 Archived Projects table, Generated 2026-04-10T19:42:03Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - comp
+        - cprj

@@ -1,0 +1,168 @@
+version: 2
+models:
+- name: tipcs030
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: psts
+    description: 'Project Status. Allowed values: 1, 2, 3, 4, 5, 6, 7, 9'
+  - name: psts_kw
+    description: 'Project Status (keyword). Allowed values: tcpsts.free, tcpsts.simulation,
+      tcpsts.active, tcpsts.cancelled, tcpsts.finished, tcpsts.closed, tcpsts.to.be.closed,
+      tcpsts.archived'
+  - name: psta
+    description: 'Project Stage. Max length: 3'
+  - name: sdat
+    description: Start Date
+  - name: ddat
+    description: Completion Date
+  - name: intp
+    description: 'Investment Project. Allowed values: 1, 2'
+  - name: intp_kw
+    description: 'Investment Project (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: erev
+    description: 'Revenue Expected. Allowed values: 1, 2'
+  - name: erev_kw
+    description: 'Revenue Expected (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bkcs
+    description: 'Post Project Transactions on Current Date. Allowed values: 1, 2'
+  - name: bkcs_kw
+    description: 'Post Project Transactions on Current Date (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: bkdt
+    description: Posting Date Cost/Turnover Sales
+  - name: tinv_1
+    description: Invoiced Amount
+  - name: tinv_2
+    description: Invoiced Amount
+  - name: tinv_3
+    description: Invoiced Amount
+  - name: ascp
+    description: Spent Critical Capacity
+  - name: ecpa
+    description: Estimated Capacity (Aggregated)
+  - name: ecpr
+    description: Estimated Capacity (Rough)
+  - name: cbdg
+    description: 'Budget. Max length: 9'
+  - name: plcd
+    description: 'Planning Method. Allowed values: 1, 2'
+  - name: plcd_kw
+    description: 'Planning Method (keyword). Allowed values: tcplcd.forward, tcplcd.backward'
+  - name: defc
+    description: 'Definitively Closed. Allowed values: 1, 2'
+  - name: defc_kw
+    description: 'Definitively Closed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cldt
+    description: Actual Closing date
+  - name: mib4
+    description: 'Migrated from Baan IV. Allowed values: 0, 1, 2'
+  - name: mib4_kw
+    description: 'Migrated from Baan IV (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: soco
+    description: Stage of Completion
+  - name: pocm
+    description: 'Percentage of Completion Calculation Method. Allowed values: 1,
+      2, 3, 4'
+  - name: pocm_kw
+    description: 'Percentage of Completion Calculation Method (keyword). Allowed values:
+      tipcs.pocm.none, tipcs.pocm.cost, tipcs.pocm.hours, tipcs.pocm.manual'
+  - name: intc
+    description: 'Post Interim COS and Revenues by Cost Component. Allowed values:
+      1, 2'
+  - name: intc_kw
+    description: 'Post Interim COS and Revenues by Cost Component (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: incp
+    description: 'General Cost Component for Interim Postings. Max length: 8'
+  - name: rrtp
+    description: 'Revenue Recognition by Transaction Price. Allowed values: 1, 2'
+  - name: rrtp_kw
+    description: 'Revenue Recognition by Transaction Price (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: otac
+    description: 'Over Time Accounting. Allowed values: 1, 2'
+  - name: otac_kw
+    description: 'Over Time Accounting (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: acdt
+    description: Actualization Date
+  - name: crfc
+    description: 'COS and Revenues Restricted to Financial Company of PCS Project.
+      Allowed values: 1, 2'
+  - name: crfc_kw
+    description: 'COS and Revenues Restricted to Financial Company of PCS Project
+      (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dstr
+    description: 'COS Distribution based on. Allowed values: 10, 20, 30'
+  - name: dstr_kw
+    description: 'COS Distribution based on (keyword). Allowed values: tipcs.distr.not.applicable,
+      tipcs.distr.manual, tipcs.distr.calculated'
+  - name: tpsr
+    description: 'Transfer between PCS Projects considered as Selling Relation. Allowed
+      values: 1, 2'
+  - name: tpsr_kw
+    description: 'Transfer between PCS Projects considered as Selling Relation (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aman
+    description: Actual Labor Hours
+  - name: amch
+    description: Actual Machine Hours
+  - name: ncac
+    description: 'Net Change Actual Costs. Allowed values: 1, 2'
+  - name: ncac_kw
+    description: 'Net Change Actual Costs (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tipcs020 General Project Data
+  - name: psta_ref_compnr
+    description: company number of primary key of table tipcs024 Project Stages
+  - name: cbdg_ref_compnr
+    description: company number of primary key of table tipcs020 General Project Data
+  - name: incp_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tipcs030 Project Details table, Generated 2026-04-10T19:41:48Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj

@@ -1,0 +1,42 @@
+version: 2
+models:
+- name: r5pmpsessionlines
+  columns:
+  - name: ppl_lastsaved
+    description: PPL_LASTSAVED
+  - name: ppl_object
+    description: PPL_OBJECT
+  - name: ppl_objorg
+    description: PPL_OBJORG
+  - name: ppl_ppm
+    description: PPL_PPM
+  - name: ppl_ppopk
+    description: PPL_PPOPK
+  - name: ppl_sessionid
+    description: PPL_SESSIONID
+  - name: ppl_updatecount
+    description: PPL_UPDATECOUNT
+  - name: ppl_line
+    description: PPL_LINE
+    data_tests:
+    - unique
+  - name: ppl_nestingref
+    description: PPL_NESTINGREF
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PMPSESSIONLINES

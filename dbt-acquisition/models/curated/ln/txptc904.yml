@@ -1,0 +1,284 @@
+version: 2
+models:
+- name: txptc904
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: creq
+    description: '(required) Change Request. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: rtyp
+    description: 'Request Type. Allowed values: 1, 2, 3'
+  - name: rtyp_kw
+    description: 'Request Type (keyword). Allowed values: txtype.creq, txtype.vreq,
+      txtype.not.app'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: risk
+    description: 'Risk. Max length: 9'
+  - name: cono
+    description: 'Purchase Contract. Max length: 9'
+  - name: cnln
+    description: Contract Line
+  - name: pdat
+    description: Processed Date
+  - name: bcav
+    description: 'Budget cost analysis version. Max length: 3'
+  - name: acti
+    description: 'Activity. Max length: 16'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: reqc
+    description: Required Change
+  - name: irej
+    description: Impact of Rejection
+  - name: pout
+    description: 'Project Outcome. Allowed values: 1, 2'
+  - name: pout_kw
+    description: 'Project Outcome (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cost
+    description: 'Cost. Allowed values: 1, 2'
+  - name: cost_kw
+    description: 'Cost (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sche
+    description: 'Schedule. Allowed values: 1, 2'
+  - name: sche_kw
+    description: 'Schedule (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: scpe
+    description: 'Scope. Allowed values: 1, 2'
+  - name: scpe_kw
+    description: 'Scope (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cont
+    description: 'Contract. Allowed values: 1, 2'
+  - name: cont_kw
+    description: 'Contract (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: camp
+    description: 'AMP. Allowed values: 0, 1, 2'
+  - name: camp_kw
+    description: 'AMP (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: ipou
+    description: Impact on Project outcome
+  - name: icos
+    description: Impact on Cost
+  - name: isch
+    description: Impact on Schedule
+  - name: iscp
+    description: Impact on Scope
+  - name: icon
+    description: Impact on Contract
+  - name: iamp
+    description: Imapct on AMP
+  - name: vamt
+    description: Variation Request Amount
+  - name: camt
+    description: Change Request Amount
+  - name: cacc_1
+    description: 'Control Account. Max length: 50'
+  - name: cacc_2
+    description: 'Control Account. Max length: 50'
+  - name: cacc_3
+    description: 'Control Account. Max length: 50'
+  - name: cacc_4
+    description: 'Control Account. Max length: 50'
+  - name: cacc_5
+    description: 'Control Account. Max length: 50'
+  - name: cacc_6
+    description: 'Control Account. Max length: 50'
+  - name: cacc_7
+    description: 'Control Account. Max length: 50'
+  - name: cacc_8
+    description: 'Control Account. Max length: 50'
+  - name: cacc_9
+    description: 'Control Account. Max length: 50'
+  - name: cacc_10
+    description: 'Control Account. Max length: 50'
+  - name: ssdt_1
+    description: Scheduled Start Date
+  - name: ssdt_2
+    description: Scheduled Start Date
+  - name: ssdt_3
+    description: Scheduled Start Date
+  - name: ssdt_4
+    description: Scheduled Start Date
+  - name: ssdt_5
+    description: Scheduled Start Date
+  - name: ssdt_6
+    description: Scheduled Start Date
+  - name: ssdt_7
+    description: Scheduled Start Date
+  - name: ssdt_8
+    description: Scheduled Start Date
+  - name: ssdt_9
+    description: Scheduled Start Date
+  - name: ssdt_10
+    description: Scheduled Start Date
+  - name: sfdt_1
+    description: Scheduled Finish Date
+  - name: sfdt_2
+    description: Scheduled Finish Date
+  - name: sfdt_3
+    description: Scheduled Finish Date
+  - name: sfdt_4
+    description: Scheduled Finish Date
+  - name: sfdt_5
+    description: Scheduled Finish Date
+  - name: sfdt_6
+    description: Scheduled Finish Date
+  - name: sfdt_7
+    description: Scheduled Finish Date
+  - name: sfdt_8
+    description: Scheduled Finish Date
+  - name: sfdt_9
+    description: Scheduled Finish Date
+  - name: sfdt_10
+    description: Scheduled Finish Date
+  - name: rsdt_1
+    description: Revised Start Date
+  - name: rsdt_2
+    description: Revised Start Date
+  - name: rsdt_3
+    description: Revised Start Date
+  - name: rsdt_4
+    description: Revised Start Date
+  - name: rsdt_5
+    description: Revised Start Date
+  - name: rsdt_6
+    description: Revised Start Date
+  - name: rsdt_7
+    description: Revised Start Date
+  - name: rsdt_8
+    description: Revised Start Date
+  - name: rsdt_9
+    description: Revised Start Date
+  - name: rsdt_10
+    description: Revised Start Date
+  - name: rfdt_1
+    description: Revised Finish Date
+  - name: rfdt_2
+    description: Revised Finish Date
+  - name: rfdt_3
+    description: Revised Finish Date
+  - name: rfdt_4
+    description: Revised Finish Date
+  - name: rfdt_5
+    description: Revised Finish Date
+  - name: rfdt_6
+    description: Revised Finish Date
+  - name: rfdt_7
+    description: Revised Finish Date
+  - name: rfdt_8
+    description: Revised Finish Date
+  - name: rfdt_9
+    description: Revised Finish Date
+  - name: rfdt_10
+    description: Revised Finish Date
+  - name: actp
+    description: 'Activity Details Present. Allowed values: 0, 1, 2'
+  - name: actp_kw
+    description: 'Activity Details Present (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: sact_1
+    description: 'Activity. Max length: 16'
+  - name: sact_2
+    description: 'Activity. Max length: 16'
+  - name: sact_3
+    description: 'Activity. Max length: 16'
+  - name: sact_4
+    description: 'Activity. Max length: 16'
+  - name: sact_5
+    description: 'Activity. Max length: 16'
+  - name: sact_6
+    description: 'Activity. Max length: 16'
+  - name: sact_7
+    description: 'Activity. Max length: 16'
+  - name: sact_8
+    description: 'Activity. Max length: 16'
+  - name: sact_9
+    description: 'Activity. Max length: 16'
+  - name: sact_10
+    description: 'Activity. Max length: 16'
+  - name: piba
+    description: 'Is the project included in Budget or AMP. Allowed values: 0, 1,
+      2'
+  - name: piba_kw
+    description: 'Is the project included in Budget or AMP (keyword). Allowed values:
+      , tcyesno.yes, tcyesno.no'
+  - name: creq_ref_compnr
+    description: company number of primary key of table txptc903 Change Request Header
+  - name: risk_ref_compnr
+    description: company number of primary key of table txptc902 Project Risks
+  - name: item_ref_compnr
+    description: company number of primary key of table tppdm005 Item Project Data
+  - name: reqc_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: irej_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: ipou_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: icos_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: isch_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: iscp_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: icon_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: iamp_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN txptc904 Change Request Lines table, Generated 2026-04-10T19:42:43Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - creq
+        - pono

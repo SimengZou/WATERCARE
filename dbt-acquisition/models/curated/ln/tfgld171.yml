@@ -1,0 +1,92 @@
+version: 2
+models:
+- name: tfgld171
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: taxo
+    description: '(required) Taxonomy. Max length: 9'
+    data_tests:
+    - not_null
+  - name: vers
+    description: (required) Version
+    data_tests:
+    - not_null
+  - name: acid
+    description: '(required) Account. Max length: 12'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: subl
+    description: Sublevel
+  - name: paci
+    description: 'Parent Account. Max length: 12'
+  - name: acty
+    description: 'Account Type. Allowed values: 10, 20, 30, 40, 50, 60, 70, 80'
+  - name: acty_kw
+    description: 'Account Type (keyword). Allowed values: tfgld.taxo.typ.asset, tfgld.taxo.typ.liability,
+      tfgld.taxo.typ.income, tfgld.taxo.typ.expense, tfgld.taxo.typ.intercompany,
+      tfgld.taxo.typ.intersegment, tfgld.taxo.typ.text, tfgld.taxo.typ.miscellaneous'
+  - name: mapp
+    description: 'Mapping Details. Allowed values: 1, 2'
+  - name: mapp_kw
+    description: 'Mapping Details (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: unas
+    description: 'Unassigned Account. Allowed values: 1, 2'
+  - name: unas_kw
+    description: 'Unassigned Account (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pseq
+    description: Print Sequence
+  - name: text
+    description: Text
+  - name: taxo_vers_ref_compnr
+    description: company number of primary key of table tfgld170 Taxonomies
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld171 Taxonomy Accounts table, Generated 2026-04-10T19:41:43Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - taxo
+        - vers
+        - acid

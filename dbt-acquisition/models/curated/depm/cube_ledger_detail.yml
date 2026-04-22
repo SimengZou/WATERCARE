@@ -1,0 +1,80 @@
+version: 2
+models:
+- name: cube_ledger_detail
+  columns:
+  - name: version
+    description: 'Max length: 25'
+  - name: year
+    description: 'Max length: 25'
+  - name: period
+    description: 'Max length: 25'
+  - name: ldgtrxtype
+    description: 'Max length: 25'
+  - name: currency
+    description: 'Max length: 25'
+  - name: analysis01
+    description: 'Max length: 25'
+  - name: analysis02
+    description: 'Max length: 25'
+  - name: analysis03
+    description: 'Max length: 25'
+  - name: analysis04
+    description: 'Max length: 25'
+  - name: analysis05
+    description: 'Max length: 25'
+  - name: analysis06
+    description: 'Max length: 25'
+  - name: analysis07
+    description: 'Max length: 25'
+  - name: analysis08
+    description: 'Max length: 25'
+  - name: analysis09
+    description: 'Max length: 25'
+  - name: analysis10
+    description: 'Max length: 25'
+  - name: _account
+    description: 'Max length: 25'
+  - name: ledgerdetaillineno
+    description: 'Max length: 25'
+  - name: ledgerdetailmeas
+    description: 'Max length: 25'
+  - name: value
+    description: 'Max length: 25'
+  - name: timestamp
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - version
+        - year
+        - period
+        - ldgtrxtype
+        - currency
+        - analysis01
+        - analysis02
+        - analysis03
+        - analysis04
+        - analysis05
+        - analysis06
+        - analysis07
+        - analysis08
+        - analysis09
+        - analysis10
+        - _account
+        - ledgerdetaillineno
+        - ledgerdetailmeas

@@ -1,0 +1,141 @@
+version: 2
+models:
+- name: tfacp600
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: pcom
+    description: (required) Original Payment Company
+    data_tests:
+    - not_null
+  - name: payt
+    description: '(required) Original Payment Transaction Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: payd
+    description: (required) Original Payment Document Number
+    data_tests:
+    - not_null
+  - name: payl
+    description: (required) Original Payment Line Number
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: sdat
+    description: Creation Date
+  - name: pyid
+    description: 'Original Payment ID. Max length: 15'
+  - name: ipco
+    description: Initial Payment Company
+  - name: ipty
+    description: 'Initial Payment Transaction Type. Max length: 3'
+  - name: ipdo
+    description: Initial Payment Document Number
+  - name: ipli
+    description: Initial Payment Line Number
+  - name: tpay
+    description: 'Type of Transaction. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 12, 13, 14, 15, 16'
+  - name: tpay_kw
+    description: 'Type of Transaction (keyword). Allowed values: tfacp.tpay.invoice,
+      tfacp.tpay.normal, tfacp.tpay.sales, tfacp.tpay.credit, tfacp.tpay.correction,
+      tfacp.tpay.currency, tfacp.tpay.payment, tfacp.tpay.anticipated, tfacp.tpay.advance,
+      tfacp.tpay.unallocated, tfacp.tpay.advance.ant, tfacp.tpay.unallocated.ant,
+      tfacp.tpay.standing, tfacp.tpay.assignment, tfacp.tpay.trade.notes, tfacp.tpay.cash.journal'
+  - name: pbcp
+    description: Payment Batch Company
+  - name: pbtn
+    description: Original Payment Batch
+  - name: paym
+    description: 'Payment Method. Max length: 3'
+  - name: bank
+    description: 'Bank Relation. Max length: 3'
+  - name: basu
+    description: 'Supplier''s Bank. Max length: 3'
+  - name: ptbp
+    description: 'Pay-to Business Partner. Max length: 9'
+  - name: tpbp
+    description: 'Top Parent Business Partner. Max length: 9'
+  - name: ddat
+    description: Document Date
+  - name: amnt
+    description: Amount in Document Currency
+  - name: curr
+    description: 'Transaction Currency. Max length: 3'
+  - name: amtl
+    description: Amount in Local Currency
+  - name: step
+    description: 'Payment Procedure Step. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8,
+      9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20'
+  - name: step_kw
+    description: 'Payment Procedure Step (keyword). Allowed values: tfcmg.step.doc.selected,
+      tfcmg.step.doc.open, tfcmg.step.doc.received, tfcmg.step.doc.issued, tfcmg.step.doc.to.cust,
+      tfcmg.step.doc.acc.by.cust, tfcmg.step.doc.acc.sent, tfcmg.step.doc.collateral,
+      tfcmg.step.doc.sent.disc, tfcmg.step.doc.to.bank, tfcmg.step.doc.endorsed, tfcmg.step.doc.discounted,
+      tfcmg.step.doc.cancelled, tfcmg.step.doc.matured, tfcmg.step.doc.void, tfcmg.step.doc.paid,
+      tfcmg.step.doc.rejected, tfcmg.step.doc.dishonored, tfcmg.step.doc.settled,
+      tfcmg.step.empty'
+  - name: gcom
+    description: Payment Company
+  - name: gtyp
+    description: 'Payment Transaction Type. Max length: 3'
+  - name: gdoc
+    description: Payment Document Number
+  - name: glin
+    description: Payment Line Number
+  - name: reas
+    description: 'Reason for Payment. Max length: 3'
+  - name: usrc
+    description: 'Created by. Max length: 16'
+  - name: ptbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: tpbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfacp600 Open Items Payment-related Documents A/P table, Generated
+    2026-04-10T19:41:31Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - pcom
+        - payt
+        - payd
+        - payl
+        - seqn

@@ -1,0 +1,260 @@
+version: 2
+models:
+- name: r5tasks
+  columns:
+  - name: tsk_lastsaved
+    description: TSK_LASTSAVED
+  - name: tsk_checklistrejectedwostatus
+    description: TSK_CHECKLISTREJECTEDWOSTATUS
+  - name: tsk_preventperformedbysign
+    description: TSK_PREVENTPERFORMEDBYSIGN
+  - name: tsk_preventreviewedbysign
+    description: TSK_PREVENTREVIEWEDBYSIGN
+  - name: tsk_code
+    description: TSK_CODE
+  - name: tsk_desc
+    description: TSK_DESC
+  - name: tsk_class
+    description: TSK_CLASS
+  - name: tsk_revision
+    description: TSK_REVISION
+  - name: tsk_revrstatus
+    description: TSK_REVRSTATUS
+  - name: tsk_revstatus
+    description: TSK_REVSTATUS
+  - name: tsk_trade
+    description: TSK_TRADE
+  - name: tsk_hours
+    description: TSK_HOURS
+  - name: tsk_uom
+    description: TSK_UOM
+  - name: tsk_persons
+    description: TSK_PERSONS
+  - name: tsk_commodity
+    description: TSK_COMMODITY
+  - name: tsk_buyer
+    description: TSK_BUYER
+  - name: tsk_price
+    description: TSK_PRICE
+  - name: tsk_prefsup
+    description: TSK_PREFSUP
+  - name: tsk_org
+    description: TSK_ORG
+  - name: tsk_class_org
+    description: TSK_CLASS_ORG
+  - name: tsk_prefsup_org
+    description: TSK_PREFSUP_ORG
+  - name: tsk_rpc
+    description: TSK_RPC
+  - name: tsk_wap
+    description: TSK_WAP
+  - name: tsk_tpf
+    description: TSK_TPF
+  - name: tsk_manufact
+    description: TSK_MANUFACT
+  - name: tsk_syslevel
+    description: TSK_SYSLEVEL
+  - name: tsk_asmlevel
+    description: TSK_ASMLEVEL
+  - name: tsk_complevel
+    description: TSK_COMPLEVEL
+  - name: tsk_updatecount
+    description: TSK_UPDATECOUNT
+  - name: tsk_created
+    description: TSK_CREATED
+  - name: tsk_updated
+    description: TSK_UPDATED
+  - name: tsk_notused
+    description: TSK_NOTUSED
+  - name: tsk_activechecklist
+    description: TSK_ACTIVECHECKLIST
+  - name: tsk_isolationmethod
+    description: TSK_ISOLATIONMETHOD
+  - name: tsk_checklistperfbyreq
+    description: TSK_CHECKLISTPERFBYREQ
+  - name: tsk_checklistrevbyreq
+    description: TSK_CHECKLISTREVBYREQ
+  - name: tsk_wotype
+    description: TSK_WOTYPE
+  - name: tsk_woclass
+    description: TSK_WOCLASS
+  - name: tsk_woclass_org
+    description: TSK_WOCLASS_ORG
+  - name: tsk_wostatus
+    description: TSK_WOSTATUS
+  - name: tsk_wopriority
+    description: TSK_WOPRIORITY
+  - name: tsk_wodesc
+    description: TSK_WODESC
+  - name: tsk_objtype
+    description: TSK_OBJTYPE
+  - name: tsk_objclass
+    description: TSK_OBJCLASS
+  - name: tsk_objclass_org
+    description: TSK_OBJCLASS_ORG
+  - name: tsk_matlist
+    description: TSK_MATLIST
+  - name: tsk_jobplan
+    description: TSK_JOBPLAN
+  - name: tsk_jobplantype
+    description: TSK_JOBPLANTYPE
+  - name: tsk_multipletrades
+    description: TSK_MULTIPLETRADES
+  - name: tsk_planningrecordsexist
+    description: TSK_PLANNINGRECORDSEXIST
+  - name: tsk_udfchar01
+    description: TSK_UDFCHAR01
+  - name: tsk_udfchar02
+    description: TSK_UDFCHAR02
+  - name: tsk_udfchar03
+    description: TSK_UDFCHAR03
+  - name: tsk_udfchar04
+    description: TSK_UDFCHAR04
+  - name: tsk_udfchar05
+    description: TSK_UDFCHAR05
+  - name: tsk_udfchar06
+    description: TSK_UDFCHAR06
+  - name: tsk_udfchar07
+    description: TSK_UDFCHAR07
+  - name: tsk_udfchar08
+    description: TSK_UDFCHAR08
+  - name: tsk_udfchar09
+    description: TSK_UDFCHAR09
+  - name: tsk_udfchar10
+    description: TSK_UDFCHAR10
+  - name: tsk_udfchar11
+    description: TSK_UDFCHAR11
+  - name: tsk_udfchar12
+    description: TSK_UDFCHAR12
+  - name: tsk_udfchar13
+    description: TSK_UDFCHAR13
+  - name: tsk_udfchar14
+    description: TSK_UDFCHAR14
+  - name: tsk_udfchar15
+    description: TSK_UDFCHAR15
+  - name: tsk_udfchar16
+    description: TSK_UDFCHAR16
+  - name: tsk_udfchar17
+    description: TSK_UDFCHAR17
+  - name: tsk_udfchar18
+    description: TSK_UDFCHAR18
+  - name: tsk_udfchar19
+    description: TSK_UDFCHAR19
+  - name: tsk_udfchar20
+    description: TSK_UDFCHAR20
+  - name: tsk_udfchar21
+    description: TSK_UDFCHAR21
+  - name: tsk_udfchar22
+    description: TSK_UDFCHAR22
+  - name: tsk_udfchar23
+    description: TSK_UDFCHAR23
+  - name: tsk_udfchar24
+    description: TSK_UDFCHAR24
+  - name: tsk_udfchar25
+    description: TSK_UDFCHAR25
+  - name: tsk_udfchar26
+    description: TSK_UDFCHAR26
+  - name: tsk_udfchar27
+    description: TSK_UDFCHAR27
+  - name: tsk_udfchar28
+    description: TSK_UDFCHAR28
+  - name: tsk_udfchar29
+    description: TSK_UDFCHAR29
+  - name: tsk_udfchar30
+    description: TSK_UDFCHAR30
+  - name: tsk_udfnum01
+    description: TSK_UDFNUM01
+  - name: tsk_udfnum02
+    description: TSK_UDFNUM02
+  - name: tsk_udfnum03
+    description: TSK_UDFNUM03
+  - name: tsk_udfnum04
+    description: TSK_UDFNUM04
+  - name: tsk_udfnum05
+    description: TSK_UDFNUM05
+  - name: tsk_udfdate01
+    description: TSK_UDFDATE01
+  - name: tsk_udfdate02
+    description: TSK_UDFDATE02
+  - name: tsk_udfdate03
+    description: TSK_UDFDATE03
+  - name: tsk_udfdate04
+    description: TSK_UDFDATE04
+  - name: tsk_udfdate05
+    description: TSK_UDFDATE05
+  - name: tsk_udfchkbox01
+    description: TSK_UDFCHKBOX01
+  - name: tsk_udfchkbox02
+    description: TSK_UDFCHKBOX02
+  - name: tsk_udfchkbox03
+    description: TSK_UDFCHKBOX03
+  - name: tsk_udfchkbox04
+    description: TSK_UDFCHKBOX04
+  - name: tsk_udfchkbox05
+    description: TSK_UDFCHKBOX05
+  - name: tsk_reusable
+    description: TSK_REUSABLE
+  - name: tsk_type
+    description: TSK_TYPE
+  - name: tsk_planninglevel
+    description: TSK_PLANNINGLEVEL
+  - name: tsk_complocation
+    description: TSK_COMPLOCATION
+  - name: tsk_enableenhancedplanning
+    description: TSK_ENABLEENHANCEDPLANNING
+  - name: tsk_casemanagementchecklist
+    description: TSK_CASEMANAGEMENTCHECKLIST
+  - name: tsk_workspacemoves
+    description: TSK_WORKSPACEMOVES
+  - name: tsk_tagheader
+    description: TSK_TAGHEADER
+  - name: tsk_tagline1
+    description: TSK_TAGLINE1
+  - name: tsk_tagline2
+    description: TSK_TAGLINE2
+  - name: tsk_tagline3
+    description: TSK_TAGLINE3
+  - name: tsk_tagline4
+    description: TSK_TAGLINE4
+  - name: tsk_defaulttag
+    description: TSK_DEFAULTTAG
+  - name: tsk_nonconformitychecklist
+    description: TSK_NONCONFORMITYCHECKLIST
+  - name: tsk_viewonlyresp
+    description: TSK_VIEWONLYRESP
+  - name: tsk_reviewresp
+    description: TSK_REVIEWRESP
+  - name: tsk_performbyresp
+    description: TSK_PERFORMBYRESP
+  - name: tsk_performby2resp
+    description: TSK_PERFORMBY2RESP
+  - name: tsk_disconnected_chklist
+    description: TSK_DISCONNECTED_CHKLIST
+  - name: tsk_performedbywostatus
+    description: TSK_PERFORMEDBYWOSTATUS
+  - name: tsk_reviewedbywostatus
+    description: TSK_REVIEWEDBYWOSTATUS
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TASKS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - tsk_code
+        - tsk_revision

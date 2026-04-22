@@ -1,0 +1,144 @@
+version: 2
+models:
+- name: tffst120
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: fstm
+    description: '(required) Financial Statement. Max length: 8'
+    data_tests:
+    - not_null
+  - name: accn
+    description: '(required) Statement Account. Max length: 12'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Account Description - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: subl
+    description: Sublevel
+  - name: pacc
+    description: 'Parent Statement Account. Max length: 12'
+  - name: dcsw
+    description: 'Obsolete. Allowed values: 0, 1, 2'
+  - name: dcsw_kw
+    description: 'Obsolete (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: rtyp
+    description: 'Rate Type. Max length: 3'
+  - name: rhis
+    description: 'Use Historical Rates. Allowed values: 1, 2'
+  - name: rhis_kw
+    description: 'Use Historical Rates (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: accs
+    description: 'Accounting Scheme. Allowed values: 1, 2, 3'
+  - name: accs_kw
+    description: 'Accounting Scheme (keyword). Allowed values: tfgld.duac.pr.statutory,
+      tfgld.duac.pr.complem, tfgld.duac.pr.both'
+  - name: acct
+    description: 'Account Type. Allowed values: 10, 15, 20, 25, 30, 35, 99'
+  - name: acct_kw
+    description: 'Account Type (keyword). Allowed values: tffst.acct.value, tffst.acct.text,
+      tffst.acct.ratio, tffst.acct.rounding, tffst.acct.gain.loss, tffst.acct.balancing,
+      tffst.acct.not.applicable'
+  - name: cfsa
+    description: 'Cash Flow Statement Account. Allowed values: 1, 2'
+  - name: cfsa_kw
+    description: 'Cash Flow Statement Account (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dbcr
+    description: 'Debit / Credit. Allowed values: 10, 20, 99'
+  - name: dbcr_kw
+    description: 'Debit / Credit (keyword). Allowed values: tffst.dbcr.debit, tffst.dbcr.credit,
+      tffst.dbcr.not.applicable'
+  - name: dcgl
+    description: 'Default Gain/Loss Account. Allowed values: 1, 2'
+  - name: dcgl_kw
+    description: 'Default Gain/Loss Account (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sign
+    description: 'Sign Switch. Allowed values: 1, 2, 3, 4, 5'
+  - name: sign_kw
+    description: 'Sign Switch (keyword). Allowed values: tffst.sign.no.switch, tffst.sign.in.selection,
+      tffst.sign.before.output, tffst.sign.select.bef.outp, tffst.sign.not.applicable'
+  - name: acca
+    description: 'Alternate Account. Max length: 12'
+  - name: muaa
+    description: 'Method of Alternate Account Usage. Allowed values: 1, 2, 3, 4'
+  - name: muaa_kw
+    description: 'Method of Alternate Account Usage (keyword). Allowed values: tffst.muaa.total,
+      tffst.muaa.individual, tffst.muaa.group, tffst.muaa.not.applicable'
+  - name: acrd
+    description: 'Rounding Difference Account. Max length: 12'
+  - name: cgla
+    description: 'Currency Gain and Loss Account. Max length: 12'
+  - name: facc
+    description: '100 Percent Account. Max length: 12'
+  - name: prta
+    description: 'Process Transactions for Account. Allowed values: 1, 2'
+  - name: prta_kw
+    description: 'Process Transactions for Account (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pseq
+    description: Print Sequence
+  - name: atxt
+    description: Account Text
+  - name: fstm_acca_ref_compnr
+    description: company number of primary key of table tffst120 Statement Accounts
+  - name: fstm_facc_ref_compnr
+    description: company number of primary key of table tffst120 Statement Accounts
+  - name: fstm_acrd_ref_compnr
+    description: company number of primary key of table tffst120 Statement Accounts
+  - name: fstm_pacc_ref_compnr
+    description: company number of primary key of table tffst120 Statement Accounts
+  - name: fstm_cgla_ref_compnr
+    description: company number of primary key of table tffst120 Statement Accounts
+  - name: fstm_ref_compnr
+    description: company number of primary key of table tffst100 Financial Statements
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: atxt_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffst120 Statement Accounts table, Generated 2026-04-10T19:41:38Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - fstm
+        - accn

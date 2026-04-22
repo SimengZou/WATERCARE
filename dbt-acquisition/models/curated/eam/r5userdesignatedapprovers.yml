@@ -1,0 +1,98 @@
+version: 2
+models:
+- name: r5userdesignatedapprovers
+  columns:
+  - name: uda_lastsaved
+    description: UDA_LASTSAVED
+  - name: uda_designatedapprover
+    description: UDA_DESIGNATEDAPPROVER
+  - name: uda_status
+    description: UDA_STATUS
+  - name: uda_rstatus
+    description: UDA_RSTATUS
+  - name: uda_startdate
+    description: UDA_STARTDATE
+  - name: uda_enddate
+    description: UDA_ENDDATE
+  - name: uda_reason
+    description: UDA_REASON
+  - name: uda_notes
+    description: UDA_NOTES
+  - name: uda_approvedby
+    description: UDA_APPROVEDBY
+  - name: uda_approved
+    description: UDA_APPROVED
+  - name: uda_createdby
+    description: UDA_CREATEDBY
+  - name: uda_created
+    description: UDA_CREATED
+  - name: uda_updatedby
+    description: UDA_UPDATEDBY
+  - name: uda_updated
+    description: UDA_UPDATED
+  - name: uda_udfchar01
+    description: UDA_UDFCHAR01
+  - name: uda_udfchar02
+    description: UDA_UDFCHAR02
+  - name: uda_udfchar03
+    description: UDA_UDFCHAR03
+  - name: uda_udfchar04
+    description: UDA_UDFCHAR04
+  - name: uda_udfchar05
+    description: UDA_UDFCHAR05
+  - name: uda_udfnum01
+    description: UDA_UDFNUM01
+  - name: uda_udfnum02
+    description: UDA_UDFNUM02
+  - name: uda_udfnum03
+    description: UDA_UDFNUM03
+  - name: uda_udfnum04
+    description: UDA_UDFNUM04
+  - name: uda_udfnum05
+    description: UDA_UDFNUM05
+  - name: uda_udfdate01
+    description: UDA_UDFDATE01
+  - name: uda_udfdate02
+    description: UDA_UDFDATE02
+  - name: uda_udfdate03
+    description: UDA_UDFDATE03
+  - name: uda_udfdate04
+    description: UDA_UDFDATE04
+  - name: uda_udfdate05
+    description: UDA_UDFDATE05
+  - name: uda_udfchkbox01
+    description: UDA_UDFCHKBOX01
+  - name: uda_udfchkbox02
+    description: UDA_UDFCHKBOX02
+  - name: uda_udfchkbox03
+    description: UDA_UDFCHKBOX03
+  - name: uda_udfchkbox04
+    description: UDA_UDFCHKBOX04
+  - name: uda_udfchkbox05
+    description: UDA_UDFCHKBOX05
+  - name: uda_updatecount
+    description: UDA_UPDATECOUNT
+  - name: uda_pk
+    description: UDA_PK
+    data_tests:
+    - unique
+  - name: uda_user
+    description: UDA_USER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5USERDESIGNATEDAPPROVERS

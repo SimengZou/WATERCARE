@@ -1,0 +1,72 @@
+version: 2
+models:
+- name: r5contracts
+  columns:
+  - name: con_lastsaved
+    description: CON_LASTSAVED
+  - name: con_class
+    description: CON_CLASS
+  - name: con_supplier
+    description: CON_SUPPLIER
+  - name: con_lang
+    description: CON_LANG
+  - name: con_curr
+    description: CON_CURR
+  - name: con_copy
+    description: CON_COPY
+  - name: con_store
+    description: CON_STORE
+  - name: con_status
+    description: CON_STATUS
+  - name: con_rstatus
+    description: CON_RSTATUS
+  - name: con_own
+    description: CON_OWN
+  - name: con_ref
+    description: CON_REF
+  - name: con_create
+    description: CON_CREATE
+  - name: con_start
+    description: CON_START
+  - name: con_end
+    description: CON_END
+  - name: con_renew
+    description: CON_RENEW
+  - name: con_printed
+    description: CON_PRINTED
+  - name: con_owncontact
+    description: CON_OWNCONTACT
+  - name: con_contact
+    description: CON_CONTACT
+  - name: con_org
+    description: CON_ORG
+  - name: con_class_org
+    description: CON_CLASS_ORG
+  - name: con_supplier_org
+    description: CON_SUPPLIER_ORG
+  - name: con_updatecount
+    description: CON_UPDATECOUNT
+  - name: con_code
+    description: CON_CODE
+    data_tests:
+    - unique
+  - name: con_desc
+    description: CON_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CONTRACTS

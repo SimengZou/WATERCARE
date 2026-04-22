@@ -1,0 +1,81 @@
+version: 2
+models:
+- name: tcmcs000
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Introduction Date
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: cwei
+    description: 'Base Weight Unit. Max length: 3'
+  - name: clen
+    description: 'Base Length Unit. Max length: 3'
+  - name: care
+    description: 'Base Area Unit. Max length: 3'
+  - name: cvol
+    description: 'Base Volume Unit. Max length: 3'
+  - name: ctim
+    description: 'Base Time Unit. Max length: 3'
+  - name: rtyp
+    description: 'Default Exchange Rate Type. Max length: 3'
+  - name: logn
+    description: 'Logname. Max length: 16'
+  - name: cwei_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: clen_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: care_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cvol_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ctim_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs000 MCS Parameters table, Generated 2026-04-10T19:41:08Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - indt

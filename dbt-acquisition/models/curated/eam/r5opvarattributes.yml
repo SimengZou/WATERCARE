@@ -1,0 +1,38 @@
+version: 2
+models:
+- name: r5opvarattributes
+  columns:
+  - name: oat_lastsaved
+    description: OAT_LASTSAVED
+  - name: oat_desc
+    description: OAT_DESC
+  - name: oat_type
+    description: OAT_TYPE
+  - name: oat_audituser
+    description: OAT_AUDITUSER
+  - name: oat_audittimestamp
+    description: OAT_AUDITTIMESTAMP
+  - name: oat_updatecount
+    description: OAT_UPDATECOUNT
+  - name: oat_id
+    description: OAT_ID
+  - name: oat_label
+    description: OAT_LABEL
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5OPVARATTRIBUTES

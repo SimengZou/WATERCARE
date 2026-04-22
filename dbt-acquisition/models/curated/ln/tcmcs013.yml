@@ -1,0 +1,145 @@
+version: 2
+models:
+- name: tcmcs013
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cpay
+    description: '(required) Payment Terms. Max length: 3'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: pper
+    description: Payment Period
+  - name: pash
+    description: 'Payment Schedule Header. Max length: 3'
+  - name: disa
+    description: Discount Period 1
+  - name: disb
+    description: Discount Period 2
+  - name: disc
+    description: Discount Period 3
+  - name: prca
+    description: Discount Percentage 1
+  - name: prcb
+    description: Discount Percentage 2
+  - name: prcc
+    description: Discount Percentage 3
+  - name: atie
+    description: 'Discount Including Tax. Allowed values: 1, 2'
+  - name: atie_kw
+    description: 'Discount Including Tax (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pdin
+    description: 'Tax After Discount. Allowed values: 1, 2'
+  - name: pdin_kw
+    description: 'Tax After Discount (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdde
+    description: 'Due Date Calculation Method. Allowed values: 1, 2, 3, 4, 5, 100'
+  - name: cdde_kw
+    description: 'Due Date Calculation Method (keyword). Allowed values: tccdde.direct,
+      tccdde.end.month, tccdde.end.fortnight, tccdde.end.ten.days, tccdde.end.week,
+      tccdde.not.appl'
+  - name: cdis
+    description: 'Discount Date Calculation Method. Allowed values: 1, 2, 3, 4, 5,
+      100'
+  - name: cdis_kw
+    description: 'Discount Date Calculation Method (keyword). Allowed values: tccdde.direct,
+      tccdde.end.month, tccdde.end.fortnight, tccdde.end.ten.days, tccdde.end.week,
+      tccdde.not.appl'
+  - name: fdue
+    description: Fence for Due Date
+  - name: fdis
+    description: Fence for Discount Date
+  - name: told
+    description: Tolerance for Discount Percentage
+  - name: tola
+    description: Tolerance for Discount Amount
+  - name: tolp
+    description: Tolerance for Discount Period
+  - name: tlsd
+    description: Tolerance for Shift in Due Date
+  - name: day1
+    description: Payment Day 1
+  - name: day2
+    description: Payment Day 2
+  - name: day3
+    description: Payment Day 3
+  - name: ptyp
+    description: 'Payment Period Type. Allowed values: 1, 2, 3'
+  - name: ptyp_kw
+    description: 'Payment Period Type (keyword). Allowed values: tcacp.ptyp.days,
+      tcacp.ptyp.months, tcacp.ptyp.periods'
+  - name: prio
+    description: 'Priority for Due Date Calc.. Allowed values: 1, 2, 3'
+  - name: prio_kw
+    description: 'Priority for Due Date Calc. (keyword). Allowed values: tcmcs.prio.not.app,
+      tcmcs.prio.end.month, tcmcs.prio.pay.period'
+  - name: pdyn
+    description: 'Use Payment Days for Discount Calculation. Allowed values: 1, 2'
+  - name: pdyn_kw
+    description: 'Use Payment Days for Discount Calculation (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: pdis
+    description: 'Discount Date Calculation Priority. Allowed values: 1, 2, 3'
+  - name: pdis_kw
+    description: 'Discount Date Calculation Priority (keyword). Allowed values: tcmcs.prio.not.app,
+      tcmcs.prio.end.month, tcmcs.prio.pay.period'
+  - name: dtbs
+    description: 'Distribute Tax Based on Schedule. Allowed values: 1, 2'
+  - name: dtbs_kw
+    description: 'Distribute Tax Based on Schedule (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: vtpm
+    description: 'VAT Payment Method. Max length: 3'
+  - name: txta
+    description: Payment Terms Text
+  - name: pash_ref_compnr
+    description: company number of primary key of table tcmcs220 Payment Schedule
+      Headers
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs013 Payment Terms table, Generated 2026-04-10T19:41:10Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cpay

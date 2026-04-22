@@ -1,0 +1,180 @@
+version: 2
+models:
+- name: tdpur100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: qono
+    description: '(required) RFQ. Max length: 9'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: rfqt
+    description: 'RFQ Type. Max length: 9'
+  - name: negt
+    description: 'Negotiation Type. Allowed values: 5, 10, 15'
+  - name: negt_kw
+    description: 'Negotiation Type (keyword). Allowed values: tcrfq.neg.type.traditional,
+      tcrfq.neg.type.sealed.bid, tcrfq.neg.type.reverse.auction'
+  - name: cneg
+    description: 'Contract Negotiation. Allowed values: 1, 2'
+  - name: cneg_kw
+    description: 'Contract Negotiation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: qdat
+    description: RFQ Date
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: qspa
+    description: 'Status. Allowed values: 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50,
+      55, 60'
+  - name: qspa_kw
+    description: 'Status (keyword). Allowed values: tdpur.rfqs.created, tdpur.rfqs.pending.resp,
+      tdpur.rfqs.sent, tdpur.rfqs.modified, tdpur.rfqs.responded, tdpur.rfqs.in.process,
+      tdpur.rfqs.no.bid, tdpur.rfqs.no.response, tdpur.rfqs.negotiating, tdpur.rfqs.accepted,
+      tdpur.rfqs.rejected, tdpur.rfqs.processed, tdpur.rfqs.cancelled'
+  - name: lcmp
+    description: Logistic Company
+  - name: site
+    description: 'Receiving Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: cadr
+    description: 'Receipt Address. Max length: 9'
+  - name: refa__en_us
+    description: '(required) Reference A - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refb__en_us
+    description: '(required) Reference B - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: rtdt
+    description: Response Date
+  - name: ccon
+    description: 'Buyer. Max length: 9'
+  - name: ddat
+    description: Receipt Date
+  - name: sdat
+    description: Start Date for Receipt Period
+  - name: edat
+    description: End Date for Receipt Period
+  - name: rdat
+    description: Reminder Date
+  - name: cofc
+    description: 'Purchase Office. Max length: 6'
+  - name: cset
+    description: 'Criteria Set. Max length: 6'
+  - name: ulcr
+    description: 'Apply Landed Costs. Allowed values: 1, 2'
+  - name: ulcr_kw
+    description: 'Apply Landed Costs (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: uptc
+    description: 'Use Payment Terms for Comparison. Allowed values: 1, 2'
+  - name: uptc_kw
+    description: 'Use Payment Terms for Comparison (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: crcd
+    description: 'Change Reason. Max length: 6'
+  - name: ctcd
+    description: 'Change Type. Max length: 6'
+  - name: enlh
+    description: 'Enhanced Line Handling. Allowed values: 1, 2'
+  - name: enlh_kw
+    description: 'Enhanced Line Handling (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: etpc
+    description: 'Exclude from Target Price Calculation. Allowed values: 1, 2'
+  - name: etpc_kw
+    description: 'Exclude from Target Price Calculation (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: tpbk
+    description: 'Target Price Book. Max length: 9'
+  - name: cotp
+    description: 'Obsolete. Max length: 3'
+  - name: txta
+    description: Header Text
+  - name: txtb
+    description: Footer Text
+  - name: rfqt_ref_compnr
+    description: company number of primary key of table tdpur096 RFQ Types
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: lcmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccon_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tdpur012 Purchase Offices
+  - name: cset_ref_compnr
+    description: company number of primary key of table tdpur190 RFQ Criterion Sets
+  - name: crcd_ref_compnr
+    description: company number of primary key of table tdpur097 Change Reasons
+  - name: ctcd_ref_compnr
+    description: company number of primary key of table tdpur098 Change Types
+  - name: tpbk_ref_compnr
+    description: company number of primary key of table tdpcg013 Target Price Books
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur100 Requests for Quotation table, Generated 2026-04-10T19:41:18Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - qono

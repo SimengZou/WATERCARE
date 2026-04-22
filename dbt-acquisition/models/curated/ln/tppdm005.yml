@@ -1,0 +1,118 @@
+version: 2
+models:
+- name: tppdm005
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: ccit
+    description: 'Control Code Material. Max length: 47'
+  - name: ccfu
+    description: 'Control Function. Allowed values: 1, 2, 3'
+  - name: ccfu_kw
+    description: 'Control Function (keyword). Allowed values: tppdm.ccfu.c.unit, tppdm.ccfu.c.unit.cc.code,
+      tppdm.ccfu.cc.code'
+  - name: prre
+    description: 'Register Progress. Allowed values: 1, 2'
+  - name: prre_kw
+    description: 'Register Progress (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: osys
+    description: 'Project Order System. Allowed values: 3, 5, 7, 9'
+  - name: osys_kw
+    description: 'Project Order System (keyword). Allowed values: tppdm.osyb.prp,
+      tppdm.osyb.prp.purchase, tppdm.osyb.prp.warehouse, tppdm.osyb.mnl'
+  - name: pgwh
+    description: 'Peg PRP Warehouse Order. Allowed values: 1, 2'
+  - name: pgwh_kw
+    description: 'Peg PRP Warehouse Order (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: copt
+    description: 'Standard Cost Type. Allowed values: 1, 2, 10'
+  - name: copt_kw
+    description: 'Standard Cost Type (keyword). Allowed values: tppdm.copt.manu, tppdm.copt.stock,
+      tppdm.copt.rocr'
+  - name: cprp
+    description: Manual Unit Cost
+  - name: ccur
+    description: 'Unit Cost Currency. Max length: 3'
+  - name: ltcp
+    description: Unit Cost Transaction Date
+  - name: cppp
+    description: 'Price Policy. Allowed values: 1, 2'
+  - name: cppp_kw
+    description: 'Price Policy (keyword). Allowed values: tppdm.cppp.cost.price, tppdm.cppp.purchase.price'
+  - name: cpmc_1
+    description: Manual Unit Cost Home Currencies
+  - name: cpmc_2
+    description: Manual Unit Cost Home Currencies
+  - name: cpmc_3
+    description: Manual Unit Cost Home Currencies
+  - name: usyn
+    description: 'Used in Schedule. Allowed values: 1, 2'
+  - name: usyn_kw
+    description: 'Used in Schedule (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: blbl
+    description: 'Billable. Allowed values: 1, 2'
+  - name: blbl_kw
+    description: 'Billable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cuti
+    description: 'Time Unit. Max length: 3'
+  - name: txta
+    description: Item Text
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cuti_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm005 Item Project Data table, Generated 2026-04-10T19:41:53Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - item

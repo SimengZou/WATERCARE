@@ -1,0 +1,197 @@
+version: 2
+models:
+- name: whwmd300
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cwar
+    description: '(required) Warehouse. Max length: 6'
+    data_tests:
+    - not_null
+  - name: loca
+    description: '(required) Location. Max length: 10'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: strt
+    description: 'Row. Max length: 2'
+  - name: coln
+    description: 'Level. Max length: 4'
+  - name: rack
+    description: 'Bin. Max length: 4'
+  - name: zone
+    description: 'Storage Zone. Max length: 8'
+  - name: loct
+    description: 'Location Type. Allowed values: 1, 3, 4, 5, 6, 7, 20'
+  - name: loct_kw
+    description: 'Location Type (keyword). Allowed values: whwmd.loct.inspection,
+      whwmd.loct.receiving, whwmd.loct.pick, whwmd.loct.bulk, whwmd.loct.staging,
+      whwmd.loct.reject, whwmd.loct.not.appl'
+  - name: pseq
+    description: Sequence on Picking List
+  - name: sseq
+    description: Sequence on Storage List
+  - name: ball
+    description: 'Blocked for All Transactions. Allowed values: 1, 2'
+  - name: ball_kw
+    description: 'Blocked for All Transactions (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: oclo
+    description: 'Location Occupied. Allowed values: 1, 2'
+  - name: oclo_kw
+    description: 'Location Occupied (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: inca
+    description: 'Infinite Capacity. Allowed values: 1, 2'
+  - name: inca_kw
+    description: 'Infinite Capacity (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: inlo
+    description: 'Inbound. Allowed values: 1, 2'
+  - name: inlo_kw
+    description: 'Inbound (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: binb
+    description: 'Blocked for Inbound. Allowed values: 1, 2'
+  - name: binb_kw
+    description: 'Blocked for Inbound (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: outl
+    description: 'Outbound. Allowed values: 1, 2'
+  - name: outl_kw
+    description: 'Outbound (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bout
+    description: 'Blocked for Outbound. Allowed values: 1, 2'
+  - name: bout_kw
+    description: 'Blocked for Outbound (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: trfr
+    description: 'Transfer (Receipt). Allowed values: 1, 2'
+  - name: trfr_kw
+    description: 'Transfer (Receipt) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: btrr
+    description: 'Blocked for Transfer (Receipt). Allowed values: 1, 2'
+  - name: btrr_kw
+    description: 'Blocked for Transfer (Receipt) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: trto
+    description: 'Transfer (Issue). Allowed values: 1, 2'
+  - name: trto_kw
+    description: 'Transfer (Issue) (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: btri
+    description: 'Blocked for Transfer (Issue). Allowed values: 1, 2'
+  - name: btri_kw
+    description: 'Blocked for Transfer (Issue) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: aslo
+    description: 'Assembly. Allowed values: 1, 2'
+  - name: aslo_kw
+    description: 'Assembly (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bass
+    description: 'Blocked for Assembly. Allowed values: 1, 2'
+  - name: bass_kw
+    description: 'Blocked for Assembly (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: filo
+    description: 'Fixed Location. Allowed values: 1, 2'
+  - name: filo_kw
+    description: 'Fixed Location (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aoit
+    description: 'Allow Other Items. Allowed values: 1, 2'
+  - name: aoit_kw
+    description: 'Allow Other Items (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: prio
+    description: Inbound Priority
+  - name: proo
+    description: Outbound Priority
+  - name: tran
+    description: Date of Last Status Change
+  - name: cmes
+    description: 'Remark. Max length: 3'
+  - name: itlo
+    description: 'Multi-Item Locations. Allowed values: 1, 2'
+  - name: itlo_kw
+    description: 'Multi-Item Locations (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: lolo
+    description: 'Multi-Lot by Item Locations. Allowed values: 1, 2'
+  - name: lolo_kw
+    description: 'Multi-Lot by Item Locations (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: _full
+    description: 'Location Full. Allowed values: 1, 2'
+  - name: full_kw
+    description: 'Location Full (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cadr
+    description: 'Address. Max length: 9'
+  - name: ownr
+    description: 'Owner. Max length: 9'
+  - name: rowc
+    description: Rental Owner Company
+  - name: rown
+    description: 'Rental Owner. Max length: 6'
+  - name: rntl
+    description: 'Rental. Allowed values: 1, 2, 3'
+  - name: rntl_kw
+    description: 'Rental (keyword). Allowed values: tcynna.yes, tcynna.no, tcynna.not.app'
+  - name: txta
+    description: Text
+  - name: cwar_zone_ref_compnr
+    description: company number of primary key of table whwmd310 Storage Zones
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: cmes_ref_compnr
+    description: company number of primary key of table whwmd130 Remarks
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ownr_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: rowc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: rown_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whwmd300 Locations table, Generated 2026-04-10T19:42:54Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cwar
+        - loca

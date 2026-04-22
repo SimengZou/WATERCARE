@@ -1,0 +1,232 @@
+version: 2
+models:
+- name: tppss600
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: date
+    description: (required) Planned Delivery Date
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: effn
+    description: Effectivity Unit
+  - name: phit
+    description: 'Phantom Item. Max length: 47'
+  - name: efph
+    description: Effectivity Unit Phantom
+  - name: quan
+    description: Planned Quantity
+  - name: kotr
+    description: 'Transaction Type. Allowed values: 1, 2'
+  - name: kotr_kw
+    description: 'Transaction Type (keyword). Allowed values: tckotr.receipt, tckotr.requirement'
+  - name: koor
+    description: 'Order Type. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+      12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 26, 28, 29, 30, 31, 32, 33, 34,
+      35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53,
+      54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 68, 69, 70, 71, 72, 74, 76, 78,
+      80, 82, 84, 86, 88, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100'
+  - name: koor_kw
+    description: 'Order Type (keyword). Allowed values: , tckoor.act.sfc, tckoor.act.pur,
+      tckoor.act.sls, tckoor.cp.sfc, tckoor.cp.pur, tckoor.act.pur.sched, tckoor.act.sls.sched,
+      tckoor.act.pur.adv, tckoor.act.asc, tckoor.services.proc, tckoor.mrp.sls, tckoor.mrp.atp,
+      tckoor.sls.quot, tckoor.pur.con, tckoor.sls.con, tckoor.wrh.order, tckoor.act.srv,
+      tckoor.pss.pur, tckoor.pss.wrh, tckoor.serv.proc.adv, tckoor.wrh.ass, tckoor.act.trf,
+      tckoor.act.pmg, tckoor.srv.call, tckoor.srv.planned.act, tckoor.cp.ipl, tckoor.cf.ap,
+      tckoor.act.sfc.man, tckoor.act.pur.man, tckoor.act.sls.man, tckoor.act.srv.man,
+      tckoor.act.trf.man, tckoor.act.srv.sls, tckoor.act.dpt.wrk, tckoor.act.srv.sls.man,
+      tckoor.pur.rfq, tckoor.act.sls.sched.f, tckoor.act.dpt.wrk.man, tckoor.freight,
+      tckoor.stock, tckoor.safety.stock, tckoor.act.asc.man, tckoor.act.pur.req, tckoor.epp.quote,
+      tckoor.mps.prod, tckoor.mps.pur, tckoor.cycle.count, tckoor.adjustment, tckoor.apl.asc,
+      tckoor.cp.rpt, tckoor.revaluation, tckoor.product.sched, tckoor.product.kanban,
+      tckoor.project, tckoor.project.man, tckoor.enterprise.plan, tckoor.intercomp.trade,
+      tckoor.cp.sub, tckoor.act.sub.sched, tckoor.pcs.project, tckoor.eus.change,
+      tckoor.alloc.change, tckoor.inv.own.change, tckoor.exp.supply, tckoor.conf.supply,
+      tckoor.bp.forecast, tckoor.aggr.demand, tckoor.bfbp.trf.pur, tckoor.bfbp.trf.sched,
+      tckoor.stbp.trf.sls, tckoor.stbp.trf.sched, tckoor.stbp.trf.wh.man, tckoor.stbp.trf.man,
+      tckoor.stbp.trf.wh.dis, tckoor.cp.cpt, tckoor.act.cpt, tckoor.tag.transfer,
+      tckoor.proj.contract, tckoor.customer.claim, tckoor.supplier.claim, tckoor.quarantine,
+      tckoor.transformation, tckoor.not.appl'
+  - name: orno
+    description: 'Order Number. Max length: 9'
+  - name: pono
+    description: Position No.
+  - name: sqnb
+    description: Sequence Number
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: bsqn
+    description: Budget Line Number
+  - name: dsit
+    description: 'Site of Project Warehouse. Max length: 9'
+  - name: dwar
+    description: 'Project Warehouse. Max length: 6'
+  - name: aitm
+    description: 'Item in Warehousing. Max length: 47'
+  - name: effw
+    description: Effectivity Unit in Warehousing
+  - name: buyr
+    description: 'Buyer. Max length: 9'
+  - name: plid
+    description: 'Planner. Max length: 9'
+  - name: deli
+    description: 'Deliverable. Allowed values: 0, 1, 2'
+  - name: deli_kw
+    description: 'Deliverable (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: rtdl
+    description: 'Return Deliverable. Allowed values: 1, 2'
+  - name: rtdl_kw
+    description: 'Return Deliverable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: tprj
+    description: 'To Project. Max length: 9'
+  - name: tspa
+    description: 'To Element. Max length: 16'
+  - name: tpla
+    description: 'To Plan. Max length: 3'
+  - name: tact
+    description: 'To Activity. Max length: 16'
+  - name: tstl
+    description: 'To Extension. Max length: 4'
+  - name: tcco
+    description: 'To Cost Component. Max length: 8'
+  - name: tsit
+    description: 'Site of To Warehouse. Max length: 9'
+  - name: twar
+    description: 'To Warehouse. Max length: 6'
+  - name: carr
+    description: 'Carrier/LSP. Max length: 3'
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: serv
+    description: 'Freight Service Level. Max length: 3'
+  - name: crbn
+    description: 'Carrier / LSP Binding. Allowed values: 0, 1, 2'
+  - name: crbn_kw
+    description: 'Carrier / LSP Binding (keyword). Allowed values: , tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: item_ref_compnr
+    description: company number of primary key of table tppdm005 Item Project Data
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: phit_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: efph_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: dsit_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: dwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: aitm_ref_compnr
+    description: company number of primary key of table tppdm005 Item Project Data
+  - name: effw_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: buyr_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: plid_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: tsit_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: twar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: carr_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: serv_ref_compnr
+    description: company number of primary key of table tcmcs075 Freight Service Levels
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppss600 Planned Material Transactions table, Generated 2026-04-10T19:42:20Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - item
+        - date
+        - sern

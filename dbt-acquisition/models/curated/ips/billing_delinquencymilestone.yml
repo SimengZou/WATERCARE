@@ -1,0 +1,128 @@
+version: 2
+models:
+- name: billing_delinquencymilestone
+  columns:
+  - name: dueafterdaytype
+    description: 'Metadata for column DUEAFTERDAYTYPE. Max length: 1'
+  - name: autodecrementmilestonekey
+    description: Metadata for column AUTODECREMENTMILESTONEKEY
+  - name: creditratingpoints
+    description: Metadata for column CREDITRATINGPOINTS
+  - name: resolutioncodespecifier
+    description: 'Metadata for column RESOLUTIONCODESPECIFIER. Max length: 1'
+  - name: autodecrementmsformula
+    description: Metadata for column AUTODECREMENTMSFORMULA
+  - name: decrementmilestoneformula
+    description: Metadata for column DECREMENTMILESTONEFORMULA
+  - name: nextmilestonespecifier
+    description: 'Metadata for column NEXTMILESTONESPECIFIER. Max length: 1'
+  - name: resolutioncode
+    description: 'Metadata for column RESOLUTIONCODE. Max length: 10'
+  - name: displayorder
+    description: Metadata for column DISPLAYORDER
+  - name: collectionsresolutioncode
+    description: 'Metadata for column COLLECTIONSRESOLUTIONCODE. Max length: 10'
+  - name: autodecrementmsspecifier
+    description: 'Metadata for column AUTODECREMENTMSSPECIFIER. Max length: 1'
+  - name: reversepaymsspecifier
+    description: 'Metadata for column REVERSEPAYMSSPECIFIER. Max length: 1'
+  - name: writeoffeligibleflag
+    description: 'Metadata for column WRITEOFFELIGIBLEFLAG. Max length: 1'
+  - name: collectionseligibleflag
+    description: 'Metadata for column COLLECTIONSELIGIBLEFLAG. Max length: 1'
+  - name: lienrescodespecifier
+    description: 'Metadata for column LIENRESCODESPECIFIER. Max length: 1'
+  - name: resolvebelowamt
+    description: Metadata for column RESOLVEBELOWAMT
+  - name: duration
+    description: Metadata for column DURATION
+  - name: delinquencylevel
+    description: 'Metadata for column DELINQUENCYLEVEL. Max length: 12'
+  - name: nextmilestoneformula
+    description: Metadata for column NEXTMILESTONEFORMULA
+  - name: collrescodespecifier
+    description: 'Metadata for column COLLRESCODESPECIFIER. Max length: 1'
+  - name: duedateendonvaliddaytype
+    description: 'Metadata for column DUEDATEENDONVALIDDAYTYPE. Max length: 1'
+  - name: decrementmilestonspecifier
+    description: 'Metadata for column DECREMENTMILESTONSPECIFIER. Max length: 1'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: creditratingpointsformula
+    description: Metadata for column CREDITRATINGPOINTSFORMULA
+  - name: nextmilestonekey
+    description: Metadata for column NEXTMILESTONEKEY
+  - name: decrementmilestonkey
+    description: Metadata for column DECREMENTMILESTONKEY
+  - name: autodecrementbelowamt
+    description: Metadata for column AUTODECREMENTBELOWAMT
+  - name: duedatesearchdirection
+    description: 'Metadata for column DUEDATESEARCHDIRECTION. Max length: 1'
+  - name: durationspecifier
+    description: 'Metadata for column DURATIONSPECIFIER. Max length: 1'
+  - name: durationformula
+    description: Metadata for column DURATIONFORMULA
+  - name: lienrescodeformulakey
+    description: Metadata for column LIENRESCODEFORMULAKEY
+  - name: schemekey
+    description: Metadata for column SCHEMEKEY
+  - name: reversepaymilestonekey
+    description: Metadata for column REVERSEPAYMILESTONEKEY
+  - name: lieneligibleflag
+    description: 'Metadata for column LIENELIGIBLEFLAG. Max length: 1'
+  - name: lienresolutioncode
+    description: 'Metadata for column LIENRESOLUTIONCODE. Max length: 10'
+  - name: disconnectmilestone
+    description: 'Metadata for column DISCONNECTMILESTONE. Max length: 1'
+  - name: dueafter
+    description: Metadata for column DUEAFTER
+  - name: code
+    description: 'Metadata for column CODE. Max length: 30'
+  - name: collrescodeformulakey
+    description: Metadata for column COLLRESCODEFORMULAKEY
+  - name: milestonekey
+    description: (required) Metadata for column MILESTONEKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: durationdaytype
+    description: 'Metadata for column DURATIONDAYTYPE. Max length: 1'
+  - name: reversepaymilestoneformula
+    description: Metadata for column REVERSEPAYMILESTONEFORMULA
+  - name: creditratingspecifier
+    description: 'Metadata for column CREDITRATINGSPECIFIER. Max length: 1'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: resolveformula
+    description: Metadata for column RESOLVEFORMULA
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: resolutioncodeformula
+    description: Metadata for column RESOLUTIONCODEFORMULA
+  - name: creditratingapplyto
+    description: 'Metadata for column CREDITRATINGAPPLYTO. Max length: 1'
+  - name: resolvespecifier
+    description: 'Metadata for column RESOLVESPECIFIER. Max length: 1'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.DELINQUENCYMILESTONE on 2022-03-03T11:33:19.915

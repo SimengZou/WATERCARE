@@ -1,0 +1,488 @@
+version: 2
+models:
+- name: qmncm100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ncmr
+    description: '(required) Non-Conformance Report. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: serl
+    description: 'Serial Number. Max length: 30'
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: revi
+    description: 'E-Item Revision. Max length: 6'
+  - name: effn
+    description: Effectivity Unit
+  - name: nqua
+    description: Non-Conforming Material Quantity
+  - name: nuom
+    description: 'Unit of Measure. Max length: 3'
+  - name: mitm
+    description: 'Parent Item. Max length: 47'
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: orgn
+    description: 'Order Origin. Allowed values: 1, 2, 3, 4, 50, 51, 53, 55, 56, 61,
+      62, 63, 64, 65, 71, 72, 75, 76, 78, 80, 81, 82, 90, 95, 96, 97, 100'
+  - name: orgn_kw
+    description: 'Order Origin (keyword). Allowed values: qmncm.orgn.sales, qmncm.orgn.sales.sched,
+      qmncm.orgn.sales.man, qmncm.orgn.adjustment, qmncm.orgn.production, qmncm.orgn.production.man,
+      qmncm.orgn.product.sched, qmncm.orgn.product.asc, qmncm.orgn.product.asc.man,
+      qmncm.orgn.service, qmncm.orgn.maint.work, qmncm.orgn.batch.repair, qmncm.orgn.maint.sales,
+      qmncm.orgn.call, qmncm.orgn.transfer, qmncm.orgn.transfer.man, qmncm.orgn.project,
+      qmncm.orgn.project.man, qmncm.orgn.proj.contract, qmncm.orgn.purchase, qmncm.orgn.purchase.sched,
+      qmncm.orgn.purchase.man, qmncm.orgn.enterprise.plan, qmncm.orgn.stor.insp, qmncm.orgn.warehouse.inv,
+      qmncm.orgn.inv.insp, qmncm.orgn.not.appl'
+  - name: orno
+    description: 'Origin Order. Max length: 9'
+  - name: pono
+    description: Order Position
+  - name: seqn
+    description: Sequence
+  - name: opno
+    description: Operation
+  - name: wstt
+    description: 'Work Station. Max length: 6'
+  - name: apno
+    description: 'Warehouse Inspection. Max length: 9'
+  - name: apsq
+    description: Warehouse Inspection Sequence
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: loca
+    description: 'Location. Max length: 10'
+  - name: cwoc
+    description: 'Department. Max length: 6'
+  - name: nctp
+    description: 'Non-Conforming Type. Max length: 9'
+  - name: slvl
+    description: 'Material Non-Conformance Severity. Max length: 9'
+  - name: mrbc
+    description: 'Review Board. Max length: 9'
+  - name: mrbr
+    description: 'MRB Responsible for Disposition. Allowed values: 1, 2'
+  - name: mrbr_kw
+    description: 'MRB Responsible for Disposition (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rptr
+    description: 'Reported By. Max length: 16'
+  - name: rpdt
+    description: Reported Date
+  - name: capc
+    description: 'Corrective Action Plan. Max length: 9'
+  - name: ownr
+    description: 'Owner. Max length: 9'
+  - name: prvd
+    description: Planned Review Date
+  - name: disp
+    description: 'Disposition. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 20'
+  - name: disp_kw
+    description: 'Disposition (keyword). Allowed values: qmncm.disp.rework.curr, qmncm.disp.rework.new,
+      qmncm.disp.reclassify, qmncm.disp.return.vendor, qmncm.disp.scrap, qmncm.disp.use.as.is,
+      qmncm.disp.repair, qmncm.disp.no.fault, qmncm.disp.undefined, qmncm.disp.not.appl'
+  - name: ncmc
+    description: 'Non-Conforming Material Cause. Max length: 9'
+  - name: ncrc
+    description: 'Non-Conforming Material Responsible. Max length: 9'
+  - name: rsbp
+    description: 'Responsible Business Partner. Max length: 9'
+  - name: wvbp
+    description: 'Sold-to Business Partner (Waiver). Max length: 9'
+  - name: wvrd
+    description: 'Waiver Required. Allowed values: 1, 2'
+  - name: wvrd_kw
+    description: 'Waiver Required (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: wvmd
+    description: 'Waiver Mandatory. Allowed values: 1, 2'
+  - name: wvmd_kw
+    description: 'Waiver Mandatory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: wvdr
+    description: Waiver Receipt Date
+  - name: stat
+    description: 'Non-Conforming Material Report Status. Allowed values: 1, 2, 3,
+      4, 5, 6'
+  - name: stat_kw
+    description: 'Non-Conforming Material Report Status (keyword). Allowed values:
+      qmncm.stat.open, qmncm.stat.submitted, qmncm.stat.assigned, qmncm.stat.dispositioned,
+      qmncm.stat.cancelled, qmncm.stat.closed'
+  - name: dorg
+    description: 'Disposition Order Origin. Allowed values: 1, 2, 3, 4, 50, 51, 53,
+      55, 56, 61, 62, 63, 64, 65, 71, 72, 75, 76, 78, 80, 81, 82, 90, 95, 96, 97,
+      100'
+  - name: dorg_kw
+    description: 'Disposition Order Origin (keyword). Allowed values: qmncm.orgn.sales,
+      qmncm.orgn.sales.sched, qmncm.orgn.sales.man, qmncm.orgn.adjustment, qmncm.orgn.production,
+      qmncm.orgn.production.man, qmncm.orgn.product.sched, qmncm.orgn.product.asc,
+      qmncm.orgn.product.asc.man, qmncm.orgn.service, qmncm.orgn.maint.work, qmncm.orgn.batch.repair,
+      qmncm.orgn.maint.sales, qmncm.orgn.call, qmncm.orgn.transfer, qmncm.orgn.transfer.man,
+      qmncm.orgn.project, qmncm.orgn.project.man, qmncm.orgn.proj.contract, qmncm.orgn.purchase,
+      qmncm.orgn.purchase.sched, qmncm.orgn.purchase.man, qmncm.orgn.enterprise.plan,
+      qmncm.orgn.stor.insp, qmncm.orgn.warehouse.inv, qmncm.orgn.inv.insp, qmncm.orgn.not.appl'
+  - name: dior
+    description: 'Disposition Order. Max length: 9'
+  - name: diln
+    description: Disposition Order Position
+  - name: didt
+    description: Disposition Date
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: resn
+    description: 'Reject Reason. Max length: 6'
+  - name: cldt
+    description: Closing Date
+  - name: suby
+    description: 'Last Submitted By. Max length: 16'
+  - name: asby
+    description: 'Last Assigned By. Max length: 16'
+  - name: diby
+    description: 'Last Dispositioned By. Max length: 16'
+  - name: reby
+    description: 'Last Reset By. Max length: 16'
+  - name: spby
+    description: 'Last Split By. Max length: 16'
+  - name: clby
+    description: 'Closed By. Max length: 16'
+  - name: caby
+    description: 'Cancelled By. Max length: 16'
+  - name: sudt
+    description: Submitted Date
+  - name: asdt
+    description: Assigned Date
+  - name: redt
+    description: Reset Date
+  - name: spdt
+    description: Split Date
+  - name: cadt
+    description: Cancelled Date
+  - name: pncm
+    description: 'Parent NCMR. Max length: 9'
+  - name: citw
+    description: 'Customer Item Code System. Max length: 3'
+  - name: criw__en_us
+    description: '(required) Cross Reference Item - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: docn
+    description: 'Document Number. Max length: 15'
+  - name: drdt
+    description: Document Received Date
+  - name: citd
+    description: 'Supplier Item Code System. Max length: 3'
+  - name: crid__en_us
+    description: '(required) Cross Reference Item - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: styp
+    description: 'Line Type. Allowed values: 1, 2, 3, 4, 5'
+  - name: styp_kw
+    description: 'Line Type (keyword). Allowed values: qmptc.styp.material.line, qmptc.styp.incoming.sub,
+      qmptc.styp.outgoing.sub, qmptc.styp.activity.line, qmptc.styp.not.appl'
+  - name: dept
+    description: 'Department(Internal). Max length: 6'
+  - name: bpty
+    description: 'Business Partner Type. Allowed values: 0, 10, 20, 30'
+  - name: bpty_kw
+    description: 'Business Partner Type (keyword). Allowed values: , qmncm.bpty.supplier,
+      qmncm.bpty.customer, qmncm.bpty.not.appl'
+  - name: ccnt
+    description: 'Contact. Max length: 9'
+  - name: rtbp
+    description: 'Reporting Business Partner. Max length: 9'
+  - name: ncmp__en_us
+    description: '(required) Company - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: telp
+    description: 'Phone. Max length: 32'
+  - name: mail__en_us
+    description: '(required) Mail - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: svty
+    description: 'Severity. Allowed values: 1, 2, 3, 4'
+  - name: svty_kw
+    description: 'Severity (keyword). Allowed values: qmncm.svty.critical, qmncm.svty.major,
+      qmncm.svty.minor, qmncm.svty.not.appl'
+  - name: owbp
+    description: 'Buy From Business Partner (Outgoing). Max length: 9'
+  - name: owrd
+    description: 'Waiver (outgoing) Required. Allowed values: 0, 1, 2'
+  - name: owrd_kw
+    description: 'Waiver (outgoing) Required (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: drst
+    description: Document Sent Date
+  - name: odoc
+    description: 'Document Number. Max length: 15'
+  - name: ncca
+    description: 'Non Conformance Cause. Max length: 9'
+  - name: ncrr
+    description: 'Non Conformance Responsible. Max length: 9'
+  - name: ndis
+    description: 'Non Conformance Disposition Code. Max length: 9'
+  - name: ncap
+    description: 'Non Conformance Corrective Action Plan. Max length: 9'
+  - name: mdis
+    description: 'Material Disposition. Max length: 9'
+  - name: disr
+    description: 'Reason. Max length: 6'
+  - name: ditm
+    description: 'New Item. Max length: 47'
+  - name: dist
+    description: Obsolete
+  - name: mskl
+    description: 'Skill Required - Material. Max length: 9'
+  - name: memp
+    description: 'Assigned Employee - Material. Max length: 9'
+  - name: mtpe
+    description: Time Estimate - Material
+  - name: mtun
+    description: 'Time Unit - Material. Max length: 3'
+  - name: msdt
+    description: Planned Start Date - Material
+  - name: mcdt
+    description: Planned Completion Date - Material
+  - name: mast
+    description: Actual Start Date - Material
+  - name: mact
+    description: Actual Completion Date - Material
+  - name: nskl
+    description: 'Skill Required - Non Material. Max length: 9'
+  - name: nemp
+    description: 'Assigned Employee - Non Material. Max length: 9'
+  - name: ntpe
+    description: Time Estimate - Non Material
+  - name: ntun
+    description: 'Time Unit - Non Material. Max length: 3'
+  - name: nsdt
+    description: Planned Start Date - Non Material
+  - name: ncdt
+    description: Planned Completion Date - Non Material
+  - name: nast
+    description: Actual Start Date - Non-Material
+  - name: nact
+    description: Actual Completion Date - Non-Material
+  - name: prmd
+    description: 'Production Model. Max length: 9'
+  - name: pmrv
+    description: 'Production Model Revision. Max length: 6'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: qtds
+    description: 'Quarantine Disposition. Allowed values: 1, 2'
+  - name: qtds_kw
+    description: 'Quarantine Disposition (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ncnm
+    description: 'Non-Material Only. Allowed values: 1, 2'
+  - name: ncnm_kw
+    description: 'Non-Material Only (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bpcm
+    description: 'Business Partner Communication Needed. Allowed values: 1, 2'
+  - name: bpcm_kw
+    description: 'Business Partner Communication Needed (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: scbp
+    description: 'Business Partner to be Communicated. Max length: 9'
+  - name: bprr
+    description: 'Business Partner Response Required. Allowed values: 1, 2'
+  - name: bprr_kw
+    description: 'Business Partner Response Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: plds
+    description: 'Planned Disposition. Max length: 9'
+  - name: bpsd
+    description: 'Business Partner Suggested Disposition. Max length: 9'
+  - name: erdt
+    description: Expected Response Date
+  - name: rsst
+    description: 'Response Status. Allowed values: 10, 20, 30, 40, 100'
+  - name: rsst_kw
+    description: 'Response Status (keyword). Allowed values: qmncm.rsst.awa, qmncm.rsst.rec,
+      qmncm.rsst.acc, qmncm.rsst.rej, qmncm.rsst.not.appl'
+  - name: dstx
+    description: Disposition Text
+  - name: nctx
+    description: Description of Non-Conformance
+  - name: edtx
+    description: Expected Disposition Text
+  - name: ndtx
+    description: Non Conformance Additional Details
+  - name: obtx
+    description: Observation
+  - name: attx
+    description: Attribution
+  - name: evtx
+    description: Objective Evidence
+  - name: intx
+    description: Internal Text
+  - name: bctx
+    description: Business Partner Communication Text
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: nuom_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: mitm_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: nctp_ref_compnr
+    description: company number of primary key of table qmncm001 Non-Conforming Material
+      Types
+  - name: slvl_ref_compnr
+    description: company number of primary key of table qmncm002 Severity
+  - name: ownr_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ncmc_ref_compnr
+    description: company number of primary key of table qmncm004 Non-Conforming Cause
+  - name: ncrc_ref_compnr
+    description: company number of primary key of table qmncm005 Responsibility
+  - name: rsbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: wvbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: resn_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: citw_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: citd_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: dept_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: ccnt_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: rtbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: owbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ncca_ref_compnr
+    description: company number of primary key of table qmncm004 Non-Conforming Cause
+  - name: ncrr_ref_compnr
+    description: company number of primary key of table qmncm005 Responsibility
+  - name: ndis_ref_compnr
+    description: company number of primary key of table qmncm006 Non Conformance Dispositions
+  - name: mdis_ref_compnr
+    description: company number of primary key of table qmncm007 Material Dispositions
+  - name: disr_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: ditm_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: mskl_ref_compnr
+    description: company number of primary key of table tcppl010 Skills
+  - name: memp_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: mtun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: nskl_ref_compnr
+    description: company number of primary key of table tcppl010 Skills
+  - name: nemp_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ntun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: scbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: plds_ref_compnr
+    description: company number of primary key of table qmncm007 Material Dispositions
+  - name: bpsd_ref_compnr
+    description: company number of primary key of table qmncm007 Material Dispositions
+  - name: dstx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: nctx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: edtx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: ndtx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: obtx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: attx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: evtx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: intx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: bctx_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: nqua_buar
+    description: 'CC: Non Confirming Material Quantity in Base Unit Area'
+  - name: nqua_buln
+    description: 'CC: Non Confirming Material Quantity in Base Unit Length'
+  - name: nqua_bupc
+    description: 'CC: Non Confirming Material Quantity in Base Unit Piece'
+  - name: nqua_butm
+    description: 'CC: Non Confirming Material Quantity in Base Unit Time'
+  - name: nqua_buvl
+    description: 'CC: Non Confirming Material Quantity in Base Unit Volume'
+  - name: nqua_buwg
+    description: 'CC: Non Confirming Material Quantity in Base Unit Weight'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmncm100 Non-Conformance Report (NCR) table, Generated 2022-06-15T01:21:02Z
+    from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ncmr

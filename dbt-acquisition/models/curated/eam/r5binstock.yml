@@ -1,0 +1,147 @@
+version: 2
+models:
+- name: r5binstock
+  columns:
+  - name: bis_lastsaved
+    description: BIS_LASTSAVED
+  - name: bis_bin
+    description: BIS_BIN
+  - name: bis_lot
+    description: BIS_LOT
+  - name: bis_qty
+    description: BIS_QTY
+  - name: bis_part_org
+    description: BIS_PART_ORG
+  - name: bis_repairqty
+    description: BIS_REPAIRQTY
+  - name: bis_created
+    description: BIS_CREATED
+  - name: bis_createdby
+    description: BIS_CREATEDBY
+  - name: bis_updated
+    description: BIS_UPDATED
+  - name: bis_updatedby
+    description: BIS_UPDATEDBY
+  - name: bis_updatecount
+    description: BIS_UPDATECOUNT
+  - name: bis_udfchar01
+    description: BIS_UDFCHAR01
+  - name: bis_udfchar02
+    description: BIS_UDFCHAR02
+  - name: bis_udfchar03
+    description: BIS_UDFCHAR03
+  - name: bis_udfchar04
+    description: BIS_UDFCHAR04
+  - name: bis_udfchar05
+    description: BIS_UDFCHAR05
+  - name: bis_udfchar06
+    description: BIS_UDFCHAR06
+  - name: bis_udfchar07
+    description: BIS_UDFCHAR07
+  - name: bis_udfchar08
+    description: BIS_UDFCHAR08
+  - name: bis_udfchar09
+    description: BIS_UDFCHAR09
+  - name: bis_udfchar10
+    description: BIS_UDFCHAR10
+  - name: bis_udfchar11
+    description: BIS_UDFCHAR11
+  - name: bis_udfchar12
+    description: BIS_UDFCHAR12
+  - name: bis_udfchar13
+    description: BIS_UDFCHAR13
+  - name: bis_udfchar14
+    description: BIS_UDFCHAR14
+  - name: bis_udfchar15
+    description: BIS_UDFCHAR15
+  - name: bis_udfchar16
+    description: BIS_UDFCHAR16
+  - name: bis_udfchar17
+    description: BIS_UDFCHAR17
+  - name: bis_udfchar18
+    description: BIS_UDFCHAR18
+  - name: bis_udfchar19
+    description: BIS_UDFCHAR19
+  - name: bis_udfchar20
+    description: BIS_UDFCHAR20
+  - name: bis_udfchar21
+    description: BIS_UDFCHAR21
+  - name: bis_udfchar22
+    description: BIS_UDFCHAR22
+  - name: bis_udfchar23
+    description: BIS_UDFCHAR23
+  - name: bis_udfchar24
+    description: BIS_UDFCHAR24
+  - name: bis_udfchar25
+    description: BIS_UDFCHAR25
+  - name: bis_udfchar26
+    description: BIS_UDFCHAR26
+  - name: bis_udfchar27
+    description: BIS_UDFCHAR27
+  - name: bis_udfchar28
+    description: BIS_UDFCHAR28
+  - name: bis_udfchar29
+    description: BIS_UDFCHAR29
+  - name: bis_udfchar30
+    description: BIS_UDFCHAR30
+  - name: bis_udfnum01
+    description: BIS_UDFNUM01
+  - name: bis_udfnum02
+    description: BIS_UDFNUM02
+  - name: bis_udfnum03
+    description: BIS_UDFNUM03
+  - name: bis_udfnum04
+    description: BIS_UDFNUM04
+  - name: bis_udfnum05
+    description: BIS_UDFNUM05
+  - name: bis_udfdate01
+    description: BIS_UDFDATE01
+  - name: bis_udfdate02
+    description: BIS_UDFDATE02
+  - name: bis_udfdate03
+    description: BIS_UDFDATE03
+  - name: bis_udfdate04
+    description: BIS_UDFDATE04
+  - name: bis_udfdate05
+    description: BIS_UDFDATE05
+  - name: bis_udfchkbox01
+    description: BIS_UDFCHKBOX01
+  - name: bis_udfchkbox02
+    description: BIS_UDFCHKBOX02
+  - name: bis_udfchkbox03
+    description: BIS_UDFCHKBOX03
+  - name: bis_udfchkbox04
+    description: BIS_UDFCHKBOX04
+  - name: bis_udfchkbox05
+    description: BIS_UDFCHKBOX05
+  - name: bis_part
+    description: BIS_PART
+  - name: bis_store
+    description: BIS_STORE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5BINSTOCK
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - bis_store
+        - bis_part
+        - bis_part_org
+        - bis_bin
+        - bis_lot

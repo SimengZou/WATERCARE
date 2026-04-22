@@ -1,0 +1,181 @@
+version: 2
+models:
+- name: tffam820
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: tkey
+    description: (required) Transaction Key
+    data_tests:
+    - not_null
+  - name: acmc_1
+    description: Accumulated Maintenance Cost
+  - name: acmc_2
+    description: Accumulated Maintenance Cost
+  - name: acmc_3
+    description: Accumulated Maintenance Cost
+  - name: acmz
+    description: 'Operator. Allowed values: 1, 2, 3, 4, 5, 8, 9'
+  - name: acmz_kw
+    description: 'Operator (keyword). Allowed values: tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: apam_1
+    description: Additional Posting Amount
+  - name: apam_2
+    description: Additional Posting Amount
+  - name: apam_3
+    description: Additional Posting Amount
+  - name: apaz
+    description: 'Operator. Allowed values: 1, 2, 3, 4, 5, 8, 9'
+  - name: apaz_kw
+    description: 'Operator (keyword). Allowed values: tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: capi_1
+    description: Capitalized Interest
+  - name: capi_2
+    description: Capitalized Interest
+  - name: capi_3
+    description: Capitalized Interest
+  - name: capz
+    description: 'Operator. Allowed values: 1, 2, 3, 4, 5, 8, 9'
+  - name: capz_kw
+    description: 'Operator (keyword). Allowed values: tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: cost_1
+    description: Asset Curr. Cost
+  - name: cost_2
+    description: Asset Curr. Cost
+  - name: cost_3
+    description: Asset Curr. Cost
+  - name: cosz
+    description: 'Operator. Allowed values: 1, 2, 3, 4, 5, 8, 9'
+  - name: cosz_kw
+    description: 'Operator (keyword). Allowed values: tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: curr
+    description: 'Transaction Currency. Max length: 3'
+  - name: itca_1
+    description: Current ITC Amount
+  - name: itca_2
+    description: Current ITC Amount
+  - name: itca_3
+    description: Current ITC Amount
+  - name: itcz
+    description: 'Operator. Allowed values: 1, 2, 3, 4, 5, 8, 9'
+  - name: itcz_kw
+    description: 'Operator (keyword). Allowed values: tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: life
+    description: Asset Life
+  - name: lifz
+    description: 'Operator. Allowed values: 0, 1, 2, 3, 4, 5, 8, 9'
+  - name: lifz_kw
+    description: 'Operator (keyword). Allowed values: , tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: ltdd_1
+    description: Accumulated Depreciation
+  - name: ltdd_2
+    description: Accumulated Depreciation
+  - name: ltdd_3
+    description: Accumulated Depreciation
+  - name: ltdz
+    description: 'Operator. Allowed values: 1, 2, 3, 4, 5, 8, 9'
+  - name: ltdz_kw
+    description: 'Operator (keyword). Allowed values: tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: ratd
+    description: Rate Date
+  - name: rate_1
+    description: Rate
+  - name: rate_2
+    description: Rate
+  - name: rate_3
+    description: Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: reas
+    description: 'Reason. Max length: 10'
+  - name: revl
+    description: 'Revaluation Adjustment. Allowed values: 0, 1, 2'
+  - name: revl_kw
+    description: 'Revaluation Adjustment (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: s179_1
+    description: Section 179 Value
+  - name: s179_2
+    description: Section 179 Value
+  - name: s179_3
+    description: Section 179 Value
+  - name: s17z
+    description: 'Operator. Allowed values: 1, 2, 3, 4, 5, 8, 9'
+  - name: s17z_kw
+    description: 'Operator (keyword). Allowed values: tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: salv_1
+    description: Salvage Value
+  - name: salv_2
+    description: Salvage Value
+  - name: salv_3
+    description: Salvage Value
+  - name: salz
+    description: 'Operator. Allowed values: 1, 2, 3, 4, 5, 8, 9'
+  - name: salz_kw
+    description: 'Operator (keyword). Allowed values: tffam.oper.add, tffam.oper.subt,
+      tffam.oper.mult, tffam.oper.divi, tffam.oper.repl, tffam.oper.no.change, tffam.oper.full.depr'
+  - name: traf
+    description: 'Tran Flag. Allowed values: 0, 1, 2'
+  - name: traf_kw
+    description: 'Tran Flag (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: user
+    description: 'User. Max length: 16'
+  - name: tkey_ref_compnr
+    description: company number of primary key of table tffam800 Transaction
+  - name: reas_ref_compnr
+    description: company number of primary key of table tffam650 Reasons
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam820 Adjustment Transaction table, Generated 2026-04-10T19:41:36Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - tkey

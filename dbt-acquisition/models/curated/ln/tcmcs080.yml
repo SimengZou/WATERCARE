@@ -1,0 +1,78 @@
+version: 2
+models:
+- name: tcmcs080
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cfrw
+    description: '(required) Carrier/LSP. Max length: 3'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: suno
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: trmd
+    description: 'Transport Category. Allowed values: 10, 15, 20, 25, 30, 35, 40,
+      45, 50, 52, 54, 56, 58, 60, 62, 70, 80, 83, 85, 87, 90, 93, 96, 98, 100'
+  - name: trmd_kw
+    description: 'Transport Category (keyword). Allowed values: tccom.trmd.water,
+      tccom.trmd.water.cont, tccom.trmd.rail, tccom.trmd.rail.cont, tccom.trmd.road,
+      tccom.trmd.road.cont, tccom.trmd.air, tccom.trmd.air.charter, tccom.trmd.post,
+      tccom.trmd.contract.carr, tccom.trmd.customer.pickup, tccom.trmd.truckload,
+      tccom.trmd.mail, tccom.trmd.intermodal, tccom.trmd.consolidation, tccom.trmd.instal,
+      tccom.trmd.inlwater, tccom.trmd.express.air, tccom.trmd.express.truck, tccom.trmd.express.rail,
+      tccom.trmd.own, tccom.trmd.pool.point, tccom.trmd.milk.run, tccom.trmd.piggy.back,
+      tccom.trmd.none'
+  - name: scac
+    description: 'Standard Carrier Alpha Code. Max length: 20'
+  - name: suno_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs080 Carriers/LSP table, Generated 2026-04-10T19:41:14Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cfrw

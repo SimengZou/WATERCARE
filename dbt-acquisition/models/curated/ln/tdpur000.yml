@@ -1,0 +1,1352 @@
+version: 2
+models:
+- name: tdpur000
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Effective Date
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: rqsi
+    description: 'Requisitions Module Implemented. Allowed values: 1, 2'
+  - name: rqsi_kw
+    description: 'Requisitions Module Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rfqi
+    description: 'Requests for Quotation Module Implemented. Allowed values: 1, 2'
+  - name: rfqi_kw
+    description: 'Requests for Quotation Module Implemented (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: conp_3
+    description: 'Contracts Module Implemented. Allowed values: 1, 2'
+  - name: conp_3_kw
+    description: 'Contracts Module Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sdli
+    description: 'Schedules Module Implemented. Allowed values: 1, 2'
+  - name: sdli_kw
+    description: 'Schedules Module Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: vdri
+    description: 'Vendor Rating Implemented. Allowed values: 1, 2'
+  - name: vdri_kw
+    description: 'Vendor Rating Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: tpim
+    description: 'Target Price Implemented. Allowed values: 1, 2'
+  - name: tpim_kw
+    description: 'Target Price Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: puom
+    description: 'Purchase Order Unit of Measure. Max length: 3'
+  - name: citt
+    description: 'Default Alternative Item Code System. Max length: 3'
+  - name: lpof
+    description: 'Log Financial Economic Transactions. Allowed values: 1, 2, 3'
+  - name: lpof_kw
+    description: 'Log Financial Economic Transactions (keyword). Allowed values: tdpur.lpof.no,
+      tdpur.lpof.orderprice, tdpur.lpof.costprice'
+  - name: nbol
+    description: Maximum Number of Phantom Levels to be Skipped
+  - name: clgr
+    description: 'List Group Purchase. Max length: 3'
+  - name: disf
+    description: 'Insertion of Default Item - Purchase Business Partner. Allowed values:
+      1, 2'
+  - name: disf_kw
+    description: 'Insertion of Default Item - Purchase Business Partner (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ract
+    description: 'Default Availability Type. Max length: 6'
+  - name: txct
+    description: 'Print Tax Text. Allowed values: 1, 2'
+  - name: txct_kw
+    description: 'Print Tax Text (keyword). Allowed values: tdcopt.mandatory, tdcopt.optional'
+  - name: codt
+    description: 'Configuration Date. Allowed values: 1, 2, 3'
+  - name: codt_kw
+    description: 'Configuration Date (keyword). Allowed values: tdpur.pric.order.date,
+      tdpur.pric.system.date, tdpur.pric.delivery.date'
+  - name: glcu
+    description: 'Use General Ledger Codes for Ledger Account Entry. Allowed values:
+      1, 2'
+  - name: glcu_kw
+    description: 'Use General Ledger Codes for Ledger Account Entry (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: glcm
+    description: 'General Ledger Codes Mandatory. Allowed values: 1, 2'
+  - name: glcm_kw
+    description: 'General Ledger Codes Mandatory (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: fstu
+    description: 'Use Full Supply Time. Allowed values: 1, 2'
+  - name: fstu_kw
+    description: 'Use Full Supply Time (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: prmp
+    description: 'Pricing by MPN. Allowed values: 1, 2'
+  - name: prmp_kw
+    description: 'Pricing by MPN (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: impn
+    description: 'Multiple Items per MPN. Allowed values: 1, 2'
+  - name: impn_kw
+    description: 'Multiple Items per MPN (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pegy
+    description: 'Always Project Peg Cost Items without Warehouse. Allowed values:
+      1, 2'
+  - name: pegy_kw
+    description: 'Always Project Peg Cost Items without Warehouse (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: rbim
+    description: 'Retro-Billing Implemented. Allowed values: 1, 2'
+  - name: rbim_kw
+    description: 'Retro-Billing Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rbng
+    description: 'Number Group for Retro-Billing Advices. Max length: 3'
+  - name: rbsr
+    description: 'Series for Retro-Billing Advices. Max length: 8'
+  - name: cald
+    description: 'Date for Generating Retro-Billed Advice. Allowed values: 1, 2, 3'
+  - name: cald_kw
+    description: 'Date for Generating Retro-Billed Advice (keyword). Allowed values:
+      tdsls.cald.delivery, tdsls.cald.transaction, tdsls.cald.invoice'
+  - name: rbap
+    description: 'Retro-Billing Cost/Service. Allowed values: 1, 2, 3, 4'
+  - name: rbap_kw
+    description: 'Retro-Billing Cost/Service (keyword). Allowed values: tdsls.rbap.cost,
+      tdsls.rbap.service, tdsls.rbap.both, tdsls.rbap.none'
+  - name: hisq_1
+    description: 'Log RFQ History. Allowed values: 1, 2'
+  - name: hisq_1_kw
+    description: 'Log RFQ History (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: arrh_1
+    description: 'RFQ History Archiving Implemented. Allowed values: 1, 2'
+  - name: arrh_1_kw
+    description: 'RFQ History Archiving Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rpds_1
+    description: Default Term for Returning RFQ's
+  - name: pqcp_1
+    description: Number of Extra RFQ Copies
+  - name: rmcp_1
+    description: Number of Extra RFQ Reminder Copies
+  - name: ngpi_1
+    description: 'Number Group for RFQs. Max length: 3'
+  - name: sspi_1
+    description: Step Size for RFQs
+  - name: capo_1
+    description: 'Check RFQ on Actual Purchase Orders. Allowed values: 1, 2'
+  - name: capo_1_kw
+    description: 'Check RFQ on Actual Purchase Orders (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: crfq_1
+    description: 'Check RFQ on Actual Requisitions. Allowed values: 1, 2'
+  - name: crfq_1_kw
+    description: 'Check RFQ on Actual Requisitions (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ccon_1
+    description: 'Check RFQ on Actual Contracts. Allowed values: 1, 2'
+  - name: ccon_1_kw
+    description: 'Check RFQ on Actual Contracts (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: csch_1
+    description: 'Check RFQ on Actual Schedules. Allowed values: 1, 2'
+  - name: csch_1_kw
+    description: 'Check RFQ on Actual Schedules (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: snas_l
+    description: 'Send RFQ to Not approved Buy-from Business Partner. Allowed values:
+      1, 2'
+  - name: snas_l_kw
+    description: 'Send RFQ to Not approved Buy-from Business Partner (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: cset_1
+    description: 'RFQ Criteria Set. Max length: 6'
+  - name: psmn_1
+    description: 'Price Stage Mandatory for RFQs. Allowed values: 1, 2'
+  - name: psmn_1_kw
+    description: 'Price Stage Mandatory for RFQs (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: enlh_1
+    description: 'Enhanced Line Handling. Allowed values: 1, 2'
+  - name: enlh_1_kw
+    description: 'Enhanced Line Handling (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: eint_1
+    description: 'External Integration. Allowed values: 1, 2'
+  - name: eint_1_kw
+    description: 'External Integration (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: borl_1
+    description: 'Buyer on RFQ Line. Allowed values: 1, 2'
+  - name: borl_1_kw
+    description: 'Buyer on RFQ Line (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ngpr_2
+    description: 'Number Group for Requisitions. Max length: 3'
+  - name: sspr_2
+    description: Step Size for Purchase Requisitions
+  - name: capo_2
+    description: 'Check Requisition on Actual Purchase Orders. Allowed values: 1,
+      2'
+  - name: capo_2_kw
+    description: 'Check Requisition on Actual Purchase Orders (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: crfq_2
+    description: 'Check Requisition on Actual RFQs. Allowed values: 1, 2'
+  - name: crfq_2_kw
+    description: 'Check Requisition on Actual RFQs (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: borl_2
+    description: 'Buyer on Requisition Line. Allowed values: 1, 2'
+  - name: borl_2_kw
+    description: 'Buyer on Requisition Line (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: hisr_2
+    description: 'Log Requisition History. Allowed values: 1, 2, 3'
+  - name: hisr_2_kw
+    description: 'Log Requisition History (keyword). Allowed values: tdpur.hist.no.logging,
+      tdpur.hist.only.last, tdpur.hist.all.changes'
+  - name: arrh_2
+    description: 'Requisition History Archiving Implemented. Allowed values: 1, 2'
+  - name: arrh_2_kw
+    description: 'Requisition History Archiving Implemented (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: lpof_2
+    description: 'Log Financial Economic Transactions for Requisitions. Allowed values:
+      1, 2'
+  - name: lpof_2_kw
+    description: 'Log Financial Economic Transactions for Requisitions (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: apau_2
+    description: 'Approval Authorizations. Allowed values: 1, 2, 3'
+  - name: apau_2_kw
+    description: 'Approval Authorizations (keyword). Allowed values: tdpur.auth.any.appr,
+      tdpur.auth.any.appr.of.dep, tdpur.auth.only.curr.appr'
+  - name: rssu_2
+    description: 'Requisition Series for Subcontracting. Max length: 8'
+  - name: rsss_2
+    description: 'Requisition Series for Service Subcontracting. Max length: 8'
+  - name: sgra_2
+    description: 'Submit Generated Requisitions Automatically. Allowed values: 1,
+      2'
+  - name: sgra_2_kw
+    description: 'Submit Generated Requisitions Automatically (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: ngco_3
+    description: 'Number Group for Call-offs. Max length: 3'
+  - name: ngpc_3
+    description: 'Number Group for Purchase Contracts. Max length: 3'
+  - name: ngsr_3
+    description: 'Number Group for Releases. Max length: 3'
+  - name: ucpc_3
+    description: 'Use Corporate Purchase Contracts. Allowed values: 1, 2'
+  - name: ucpc_3_kw
+    description: 'Use Corporate Purchase Contracts (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cabt_3
+    description: 'Maintaining Contracts Always Allowed. Allowed values: 1, 2'
+  - name: cabt_3_kw
+    description: 'Maintaining Contracts Always Allowed (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: cppy_3
+    description: 'Copy Special Contract to Normal Contract. Allowed values: 1, 2'
+  - name: cppy_3_kw
+    description: 'Copy Special Contract to Normal Contract (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: cpyp_3
+    description: 'Copy Normal Contract to Special Contract. Allowed values: 1, 2'
+  - name: cpyp_3_kw
+    description: 'Copy Normal Contract to Special Contract (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: ndbe_3
+    description: 'Evaluate Contract before Deleting. Allowed values: 1, 2'
+  - name: ndbe_3_kw
+    description: 'Evaluate Contract before Deleting (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: hish_3
+    description: 'Log Contract Transactions. Allowed values: 1, 2, 3'
+  - name: hish_3_kw
+    description: 'Log Contract Transactions (keyword). Allowed values: tdpur.hist.no.logging,
+      tdpur.hist.only.last, tdpur.hist.all.changes'
+  - name: hisl_3
+    description: 'Log Contract Line Transactions. Allowed values: 1, 2, 3'
+  - name: hisl_3_kw
+    description: 'Log Contract Line Transactions (keyword). Allowed values: tdpur.hist.no.logging,
+      tdpur.hist.only.last, tdpur.hist.all.changes'
+  - name: hist_3
+    description: 'Log Turnover on Contract. Allowed values: 1, 2'
+  - name: hist_3_kw
+    description: 'Log Turnover on Contract (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: arch_3
+    description: 'Purchase Contract History Archiving Implemented. Allowed values:
+      1, 2'
+  - name: arch_3_kw
+    description: 'Purchase Contract History Archiving Implemented (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: arco_3
+    description: 'Purchase Contract Archiving Implemented. Allowed values: 1, 2'
+  - name: arco_3_kw
+    description: 'Purchase Contract Archiving Implemented (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: pcac_3
+    description: 'Print Contract Acknowledgment. Allowed values: 1, 2'
+  - name: pcac_3_kw
+    description: 'Print Contract Acknowledgment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cmod_3
+    description: 'Reprint Contract Acknowledgement after Modification. Allowed values:
+      1, 2'
+  - name: cmod_3_kw
+    description: 'Reprint Contract Acknowledgement after Modification (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: copy_3
+    description: Number of Extra Contract Acknowledgment Copies
+  - name: rpcs_3
+    description: 'Link with PCS Module. Allowed values: 1, 2'
+  - name: rpcs_3_kw
+    description: 'Link with PCS Module (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: imae_3
+    description: 'Action on Exceeding Maximum Quantity. Allowed values: 1, 2, 3'
+  - name: imae_3_kw
+    description: 'Action on Exceeding Maximum Quantity (keyword). Allowed values:
+      tdpur.imae.take.contract, tdpur.imae.ask.for.it, tdpur.imae.skip.contract'
+  - name: muco_3
+    description: 'Interactive Contract Linking. Allowed values: 1, 2'
+  - name: muco_3_kw
+    description: 'Interactive Contract Linking (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sctp_3
+    description: 'Select Special Contract at Transfer from Planning. Allowed values:
+      1, 2'
+  - name: sctp_3_kw
+    description: 'Select Special Contract at Transfer from Planning (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: brla_3
+    description: 'Always Use Contract Price and Discount. Allowed values: 1, 2'
+  - name: brla_3_kw
+    description: 'Always Use Contract Price and Discount (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: conf_3
+    description: 'Confirmation Needed?. Allowed values: 1, 2'
+  - name: conf_3_kw
+    description: 'Confirmation Needed? (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sspc_3
+    description: Step Size for Purchase Contracts
+  - name: lfsc_3
+    description: 'Link Special Contract automatically. Allowed values: 1, 2'
+  - name: lfsc_3_kw
+    description: 'Link Special Contract automatically (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ccgo_3
+    description: 'Consider Purchase Contracts when generating Purchase Orders. Allowed
+      values: 1, 2'
+  - name: ccgo_3_kw
+    description: 'Consider Purchase Contracts when generating Purchase Orders (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: vrck_3
+    description: 'Check Contract on Vendor Rating. Allowed values: 1, 2'
+  - name: vrck_3_kw
+    description: 'Check Contract on Vendor Rating (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: vrmn_3
+    description: Warn if Vendor Rating is Below for Contract
+  - name: lpof_3
+    description: 'Log Financial Economic Transactions for Contracts. Allowed values:
+      1, 2'
+  - name: lpof_3_kw
+    description: 'Log Financial Economic Transactions for Contracts (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: uscr_3
+    description: 'Change Requests for Purchase Contracts. Allowed values: 1, 2'
+  - name: uscr_3_kw
+    description: 'Change Requests for Purchase Contracts (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: oscr_3
+    description: 'Series for Purchase Contract Change Requests. Max length: 8'
+  - name: apcr_3
+    description: 'Process Purchase Contract Change Requests Automatically. Allowed
+      values: 1, 2'
+  - name: apcr_3_kw
+    description: 'Process Purchase Contract Change Requests Automatically (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sedi_3
+    description: 'EDI Release Series. Max length: 8'
+  - name: grpi_3
+    description: 'Generate Release per Item. Allowed values: 0, 1, 2'
+  - name: grpi_3_kw
+    description: 'Generate Release per Item (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: ssps_3
+    description: Step Size for Purchase Schedule Lines
+  - name: segs_3
+    description: 'Segment Set for Shipping Schedule. Max length: 3'
+  - name: ssmr_3
+    description: 'Segment Set for Material Release. Max length: 3'
+  - name: ptss_3
+    description: 'Issue Pattern for Shipping Schedule. Max length: 6'
+  - name: pttr_3
+    description: 'Issue Pattern for Material Release. Max length: 6'
+  - name: uoia_3
+    description: 'Update Planned Inventory Transactions. Allowed values: 1, 2'
+  - name: uoia_3_kw
+    description: 'Update Planned Inventory Transactions (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: dftm_3
+    description: 'Default Template for Terms and Conditions. Max length: 9'
+  - name: crt1_3_1
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt1_3_kw_1
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crt1_3_2
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt1_3_kw_2
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crt1_3_3
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt1_3_kw_3
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crt1_3_4
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt1_3_kw_4
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crt1_3_5
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt1_3_kw_5
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crt1_3_6
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt1_3_kw_6
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crt1_3_7
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt1_3_kw_7
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crt1_3_8
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt1_3_kw_8
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crt2_3_1
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt2_3_kw_1
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit2.pur.contracts, tdbpsear.crit2.item.bp,
+      tdbpsear.crit2.not.applicable'
+  - name: crt2_3_2
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt2_3_kw_2
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit2.pur.contracts, tdbpsear.crit2.item.bp,
+      tdbpsear.crit2.not.applicable'
+  - name: crt2_3_3
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt2_3_kw_3
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit2.pur.contracts, tdbpsear.crit2.item.bp,
+      tdbpsear.crit2.not.applicable'
+  - name: crt2_3_4
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt2_3_kw_4
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit2.pur.contracts, tdbpsear.crit2.item.bp,
+      tdbpsear.crit2.not.applicable'
+  - name: crt2_3_5
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt2_3_kw_5
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit2.pur.contracts, tdbpsear.crit2.item.bp,
+      tdbpsear.crit2.not.applicable'
+  - name: crt2_3_6
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt2_3_kw_6
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit2.pur.contracts, tdbpsear.crit2.item.bp,
+      tdbpsear.crit2.not.applicable'
+  - name: crt2_3_7
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt2_3_kw_7
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit2.pur.contracts, tdbpsear.crit2.item.bp,
+      tdbpsear.crit2.not.applicable'
+  - name: crt2_3_8
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders.
+      Allowed values: 1, 2, 3'
+  - name: crt2_3_kw_8
+    description: 'Approved Business Partner Search Criteria 2 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit2.pur.contracts, tdbpsear.crit2.item.bp,
+      tdbpsear.crit2.not.applicable'
+  - name: crt3_3_1
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crt3_3_kw_1
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crt3_3_2
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crt3_3_kw_2
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crt3_3_3
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crt3_3_kw_3
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crt3_3_4
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crt3_3_kw_4
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crt3_3_5
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crt3_3_kw_5
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crt3_3_6
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crt3_3_kw_6
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crt3_3_7
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crt3_3_kw_7
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crt3_3_8
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crt3_3_kw_8
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Orders
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: sflo_3
+    description: 'Search All Defined Levels for Orders. Allowed values: 1, 2'
+  - name: sflo_3_kw
+    description: 'Search All Defined Levels for Orders (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: crr1_3_1
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Schedules.
+      Allowed values: 1, 2, 3'
+  - name: crr1_3_kw_1
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Schedules
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crr1_3_2
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Schedules.
+      Allowed values: 1, 2, 3'
+  - name: crr1_3_kw_2
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Schedules
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crr1_3_3
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Schedules.
+      Allowed values: 1, 2, 3'
+  - name: crr1_3_kw_3
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Schedules
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crr1_3_4
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Schedules.
+      Allowed values: 1, 2, 3'
+  - name: crr1_3_kw_4
+    description: 'Approved Business Partner Search Criteria 1 for Purchase Schedules
+      (keyword). Allowed values: tdbpsear.crit1.single.source, tdbpsear.crit1.preferred,
+      tdbpsear.crit1.not.applicable'
+  - name: crr3_3_1
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Schedules.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crr3_3_kw_1
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Schedules
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crr3_3_2
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Schedules.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crr3_3_kw_2
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Schedules
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crr3_3_3
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Schedules.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crr3_3_kw_3
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Schedules
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: crr3_3_4
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Schedules.
+      Allowed values: 1, 2, 3, 4, 5'
+  - name: crr3_3_kw_4
+    description: 'Approved Business Partner Search Criteria 3 for Purchase Schedules
+      (keyword). Allowed values: tdbpsear.crit3.central.contr, tdbpsear.crit3.decentral.contr,
+      tdbpsear.crit3.item, tdbpsear.crit3.item.group, tdbpsear.crit3.not.applicable'
+  - name: sadl_3
+    description: 'Search All Defined Levels for Schedules. Allowed values: 1, 2'
+  - name: sadl_3_kw
+    description: 'Search All Defined Levels for Schedules (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: azpr_3
+    description: 'Allow Zero Contract Price. Allowed values: 1, 2'
+  - name: azpr_3_kw
+    description: 'Allow Zero Contract Price (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: psmn_3
+    description: 'Price Stage Mandatory for Contracts. Allowed values: 1, 2'
+  - name: psmn_3_kw
+    description: 'Price Stage Mandatory for Contracts (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: hiss_3
+    description: 'Log Schedule History. Allowed values: 1, 2'
+  - name: hiss_3_kw
+    description: 'Log Schedule History (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ahis_3
+    description: 'Log Actual Schedule Receipt History. Allowed values: 1, 2'
+  - name: ahis_3_kw
+    description: 'Log Actual Schedule Receipt History (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: litk_3
+    description: 'Level of Schedule Intake History Logging. Allowed values: 10, 20'
+  - name: litk_3_kw
+    description: 'Level of Schedule Intake History Logging (keyword). Allowed values:
+      tdgen.litk.all, tdgen.litk.last'
+  - name: arpr_3
+    description: 'Purchase Release Archiving Implemented. Allowed values: 1, 2'
+  - name: arpr_3_kw
+    description: 'Purchase Release Archiving Implemented (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: arps_3
+    description: 'Purchase Schedule Archiving Implemented. Allowed values: 1, 2'
+  - name: arps_3_kw
+    description: 'Purchase Schedule Archiving Implemented (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: cumm
+    description: 'CUM Model used. Allowed values: 1, 2, 12'
+  - name: cumm_kw
+    description: 'CUM Model used (keyword). Allowed values: tdgen.cumm.order, tdgen.cumm.receipt,
+      tdgen.cumm.not.applicable'
+  - name: pagr_3
+    description: 'Process ASN During Goods Receipt. Allowed values: 1, 2'
+  - name: pagr_3_kw
+    description: 'Process ASN During Goods Receipt (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: nauc_3
+    description: 'Update Shipped CUM for Receipts without ASN. Allowed values: 1,
+      2'
+  - name: nauc_3_kw
+    description: 'Update Shipped CUM for Receipts without ASN (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: tprl
+    description: 'Tax Level Release Line. Allowed values: 1, 2'
+  - name: tprl_kw
+    description: 'Tax Level Release Line (keyword). Allowed values: tdpur.tprl.detail,
+      tdpur.tprl.line'
+  - name: cboa_4
+    description: 'Confirm Back Orders automatically. Allowed values: 1, 2'
+  - name: cboa_4_kw
+    description: 'Confirm Back Orders automatically (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: potd_4
+    description: 'Goods Amount/Discount on Purchase Orders. Allowed values: 1, 2,
+      3'
+  - name: potd_4_kw
+    description: 'Goods Amount/Discount on Purchase Orders (keyword). Allowed values:
+      tdpur.pram.nett.no.disc, tdpur.pram.gross.and.disc, tdpur.pram.nett.and.disc'
+  - name: csoc_4
+    description: 'Cost/Service Items on Claim Notes. Allowed values: 1, 2, 3, 4'
+  - name: csoc_4_kw
+    description: 'Cost/Service Items on Claim Notes (keyword). Allowed values: tdsls.cson.no,
+      tdsls.cson.only.cost, tdsls.cson.only.service, tdsls.cson.both'
+  - name: prcp_4
+    description: Number of Extra Reminder Copies
+  - name: back_4
+    description: 'Backorders Allowed. Allowed values: 1, 2'
+  - name: back_4_kw
+    description: 'Backorders Allowed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ngpo_4
+    description: 'Number Group for Purchase Orders / Purchase Schedules. Max length:
+      3'
+  - name: ngpi_4
+    description: 'Number Group for Purchase Invoice. Max length: 3'
+  - name: sepi_4
+    description: 'Series for Purchase Invoice. Max length: 8'
+  - name: sspo_4
+    description: Step Size for Purchase Order Lines
+  - name: ngar_4
+    description: 'Number Group for Approval Rules. Max length: 3'
+  - name: aarb
+    description: 'Basis for Approval Rules. Allowed values: 1, 2, 3'
+  - name: aarb_kw
+    description: 'Basis for Approval Rules (keyword). Allowed values: tdaar.basis.direct,
+      tdaar.basis.exceptions, tdaar.basis.none'
+  - name: aprm_4
+    description: 'Approval Rules Mandatory. Allowed values: 1, 2'
+  - name: aprm_4_kw
+    description: 'Approval Rules Mandatory (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cspn_4
+    description: First Position Number for Additional Costs Sets
+  - name: pitd_4
+    description: 'Goods Amount/Discount on Purchase Invoices. Allowed values: 1, 2,
+      3'
+  - name: pitd_4_kw
+    description: 'Goods Amount/Discount on Purchase Invoices (keyword). Allowed values:
+      tdpur.pram.nett.no.disc, tdpur.pram.gross.and.disc, tdpur.pram.nett.and.disc'
+  - name: arac_4
+    description: 'Automatic Recalculation of Additional Costs. Allowed values: 1,
+      2, 3'
+  - name: arac_4_kw
+    description: 'Automatic Recalculation of Additional Costs (keyword). Allowed values:
+      tdsls.acpd.no, tdsls.acpd.automatic, tdsls.acpd.interactive'
+  - name: erac_4
+    description: 'Engineering Revisions Active in Purchase. Allowed values: 1, 2'
+  - name: erac_4_kw
+    description: 'Engineering Revisions Active in Purchase (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: erdc_4
+    description: 'Engineering Revisions on Purchase Documents. Allowed values: 1,
+      2'
+  - name: erdc_4_kw
+    description: 'Engineering Revisions on Purchase Documents (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: mavp_4
+    description: 'Method of Calculating Average Purchase Price. Allowed values: 1,
+      2'
+  - name: mavp_4_kw
+    description: 'Method of Calculating Average Purchase Price (keyword). Allowed
+      values: tdpur.mavp.cum.purchase, tdpur.mavp.current.stock'
+  - name: clro_4
+    description: 'Delete Order Data if Received Completely. Allowed values: 1, 2'
+  - name: clro_4_kw
+    description: 'Delete Order Data if Received Completely (keyword). Allowed values:
+      tdpur.clro.order, tdpur.clro.orderline'
+  - name: mdoh_4
+    description: 'Method of Deleting Order History Data. Allowed values: 1, 2'
+  - name: mdoh_4_kw
+    description: 'Method of Deleting Order History Data (keyword). Allowed values:
+      tdpur.clro.order, tdpur.clro.orderline'
+  - name: caiq_4
+    description: 'Check Order on Actual Quotations. Allowed values: 1, 2'
+  - name: caiq_4_kw
+    description: 'Check Order on Actual Quotations (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: otpd_4
+    description: 'Purchase Order Type for Direct Deliveries. Max length: 3'
+  - name: otsd_4
+    description: 'Order Type for Service Direct Deliveries. Max length: 3'
+  - name: otdr_4
+    description: 'Return Order Type for Direct Deliveries. Max length: 3'
+  - name: otsr_4
+    description: 'Return Order Type for Service Direct Deliveries. Max length: 3'
+  - name: ospd_4
+    description: 'Purchase Order Series for Direct Deliveries. Max length: 8'
+  - name: ossd_4
+    description: 'Order Series for Service Direct Deliveries. Max length: 8'
+  - name: cnsp_4
+    description: 'Order Type for Consignment Payment. Max length: 3'
+  - name: comm_4_1
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_1
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_2
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_2
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_3
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_3
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_4
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_4
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_5
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_5
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_6
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_6
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_7
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_7
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_8
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_8
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_9
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_9
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_10
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_10
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_11
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_11
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_12
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_12
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_13
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_13
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_14
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_14
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_15
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_15
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_16
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_16
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_17
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_17
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_18
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_18
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_19
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_19
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: comm_4_20
+    description: 'Commingling for Origin. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 27, 29'
+  - name: comm_4_kw_20
+    description: 'Commingling for Origin (keyword). Allowed values: , tdpur.corg.mrp,
+      tdpur.corg.wcs, tdpur.corg.inv, tdpur.corg.contracts, tdpur.corg.inquiries,
+      tdpur.corg.eop, tdpur.corg.manual, tdpur.corg.sfc, tdpur.corg.project, tdpur.corg.sls,
+      tdpur.corg.sma, tdpur.corg.pmg, tdpur.corg.requisition, tdpur.corg.copy.actual,
+      tdpur.corg.copy.history, tdpur.corg.asc, tdpur.corg.comm, tdpur.corg.schedules,
+      tdpur.corg.extern, tdpur.corg.wh.receipt, tdpur.corg.payment, tdpur.corg.subc.pur.order,
+      tdpur.corg.serv.cust.claim, tdpur.corg.routing, tdpur.corg.lett.of.credit'
+  - name: vrck_4
+    description: 'Check Order on Vendor Rating. Allowed values: 1, 2'
+  - name: vrck_4_kw
+    description: 'Check Order on Vendor Rating (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: vrmn_4
+    description: Warn if Vendor Rating is Below for Order
+  - name: crcd_4
+    description: 'Change Reason for Backorders. Max length: 6'
+  - name: ctcd_4
+    description: 'Change Type for Backorders. Max length: 6'
+  - name: cral_4
+    description: 'Default Change Reason Code for Add Order Line. Max length: 6'
+  - name: crcl_4
+    description: 'Default Change Reason Code for Cancel Order Line. Max length: 6'
+  - name: crml_4
+    description: 'Default Change Reason Code for Change Order Line. Max length: 6'
+  - name: ctal_4
+    description: 'Default Change Type for Add Order Line. Max length: 6'
+  - name: ctcl_4
+    description: 'Default Change Type for Cancel Order Line. Max length: 6'
+  - name: ctml_4
+    description: 'Default Change Type for Change Order Line. Max length: 6'
+  - name: sdtc_4
+    description: 'Search Date for Terms and Conditions. Allowed values: 1, 2, 3'
+  - name: sdtc_4_kw
+    description: 'Search Date for Terms and Conditions (keyword). Allowed values:
+      tdsdtp.order.date, tdsdtp.system.date, tdsdtp.delivery.date'
+  - name: ccma_4
+    description: 'Change Codes Mandatory. Allowed values: 1, 2'
+  - name: ccma_4_kw
+    description: 'Change Codes Mandatory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aacn_4
+    description: 'Automatic Assignment of Change Order Sequence Numbers. Allowed values:
+      1, 2'
+  - name: aacn_4_kw
+    description: 'Automatic Assignment of Change Order Sequence Numbers (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdgo_4
+    description: 'Use Creation Date as Order Date when generating Purchase Order.
+      Allowed values: 1, 2'
+  - name: cdgo_4_kw
+    description: 'Use Creation Date as Order Date when generating Purchase Order (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rcpo_4
+    description: 'Reopen Closed Purchase Orders Allowed. Allowed values: 1, 2'
+  - name: rcpo_4_kw
+    description: 'Reopen Closed Purchase Orders Allowed (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: otsu_4
+    description: 'Order Type for Subcontracting. Max length: 3'
+  - name: ossu_4
+    description: 'Order Series for Subcontracting. Max length: 8'
+  - name: otss_4
+    description: 'Order Type for Service Subcontracting. Max length: 3'
+  - name: osss_4
+    description: 'Order Series for Service Subcontracting. Max length: 8'
+  - name: swip_4
+    description: 'Valuation for Subcontracting WIP. Allowed values: 1, 2'
+  - name: swip_4_kw
+    description: 'Valuation for Subcontracting WIP (keyword). Allowed values: tcwip.val.standard.costs,
+      tcwip.val.actual.costs'
+  - name: otcf_4
+    description: 'Order Type for Customer Furnished Materials. Max length: 3'
+  - name: oscf_4
+    description: 'Order Series for Customer Furnished Materials. Max length: 8'
+  - name: otrr_4
+    description: 'Order Type for Return Rejection. Max length: 3'
+  - name: osrr_4
+    description: 'Order Series for Return Rejection. Max length: 8'
+  - name: pdbo_4
+    description: 'Price Determination Based on. Allowed values: 10, 20, 90'
+  - name: pdbo_4_kw
+    description: 'Price Determination Based on (keyword). Allowed values: tcpdbo.replenishment,
+      tcpdbo.consumption, tcpdbo.not.appl'
+  - name: psmn_4
+    description: 'Price Stage Mandatory for Purchase Orders. Allowed values: 1, 2'
+  - name: psmn_4_kw
+    description: 'Price Stage Mandatory for Purchase Orders (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: craf_4
+    description: 'Confirm Receipt as Final. Allowed values: 1, 2'
+  - name: craf_4_kw
+    description: 'Confirm Receipt as Final (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: obli_4
+    description: 'Order Blocking Implemented. Allowed values: 1, 2'
+  - name: obli_4_kw
+    description: 'Order Blocking Implemented (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ichr_4
+    description: 'Import Compliance Hold Reason. Max length: 3'
+  - name: lchr_4
+    description: 'Letter of Credit Hold Reason. Max length: 3'
+  - name: uscr_4
+    description: 'Change Requests for Purchase Orders. Allowed values: 1, 2'
+  - name: uscr_4_kw
+    description: 'Change Requests for Purchase Orders (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: oscr_4
+    description: 'Series for Purchase Order Change Requests. Max length: 8'
+  - name: apcr_4
+    description: 'Process Purchase Order Change Requests Automatically. Allowed values:
+      1, 2'
+  - name: apcr_4_kw
+    description: 'Process Purchase Order Change Requests Automatically (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: hisp_5
+    description: 'Log Order History. Allowed values: 1, 2'
+  - name: hisp_5_kw
+    description: 'Log Order History (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ahis_5
+    description: 'Log Actual Order Receipt History. Allowed values: 1, 2'
+  - name: ahis_5_kw
+    description: 'Log Actual Order Receipt History (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: litk_5
+    description: 'Level of Order Intake History Logging. Allowed values: 10, 20'
+  - name: litk_5_kw
+    description: 'Level of Order Intake History Logging (keyword). Allowed values:
+      tdgen.litk.all, tdgen.litk.last'
+  - name: hism_5
+    description: 'Start Logging Order History at. Allowed values: 10, 20'
+  - name: hism_5_kw
+    description: 'Start Logging Order History at (keyword). Allowed values: tdgen.hism.entry,
+      tdgen.hism.approval'
+  - name: arpo_4
+    description: 'Purchase Order Archiving Implemented. Allowed values: 1, 2'
+  - name: arpo_4_kw
+    description: 'Purchase Order Archiving Implemented (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: pccd_5
+    description: 'Mandatory Entry of Change Codes. Allowed values: 1, 2'
+  - name: pccd_5_kw
+    description: 'Mandatory Entry of Change Codes (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ptax_5
+    description: 'Print Tax on External Purchase Documents. Allowed values: 1, 2'
+  - name: ptax_5_kw
+    description: 'Print Tax on External Purchase Documents (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: tcsp_5
+    description: 'Base Price for Gross Profit Calculation. Allowed values: 1, 2'
+  - name: tcsp_5_kw
+    description: 'Base Price for Gross Profit Calculation (keyword). Allowed values:
+      tdpur.tcsp.copr, tdpur.tcsp.prip'
+  - name: wdel_8
+    description: Delivery Time Weighting
+  - name: wdeq_8
+    description: Delivery Quantity Weighting
+  - name: wqly_8
+    description: Quality Weighting
+  - name: wcpr_8
+    description: Cost Performance Weighting
+  - name: wocf_8
+    description: Order Confirmation Weighting
+  - name: actp_8_1
+    description: Actual Percentage
+  - name: actp_8_2
+    description: Actual Percentage
+  - name: actp_8_3
+    description: Actual Percentage
+  - name: actp_8_4
+    description: Actual Percentage
+  - name: actp_8_5
+    description: Actual Percentage
+  - name: dtmt_8
+    description: 'Delivery Time Table. Allowed values: 1, 2'
+  - name: dtmt_8_kw
+    description: 'Delivery Time Table (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dqtt_8
+    description: 'Delivery Quantity Table. Allowed values: 1, 2'
+  - name: dqtt_8_kw
+    description: 'Delivery Quantity Table (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dqlt_8
+    description: 'Delivery Quality Table. Allowed values: 1, 2'
+  - name: dqlt_8_kw
+    description: 'Delivery Quality Table (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ocft_8
+    description: 'Order Confirmation Table. Allowed values: 1, 2'
+  - name: ocft_8_kw
+    description: 'Order Confirmation Table (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cprt_8
+    description: 'Cost Performance Table. Allowed values: 1, 2'
+  - name: cprt_8_kw
+    description: 'Cost Performance Table (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: wmth_8
+    description: 'Weighting Method. Allowed values: 1, 2, 3'
+  - name: wmth_8_kw
+    description: 'Weighting Method (keyword). Allowed values: tdpur.wmth.8.turnover,
+      tdpur.wmth.8.pieces, tdpur.wmth.8.poc'
+  - name: cpdt_8
+    description: 'Vendor Rating Period Table. Max length: 6'
+  - name: smth_8
+    description: 'Smoothing Method. Allowed values: 1, 2'
+  - name: smth_8_kw
+    description: 'Smoothing Method (keyword). Allowed values: tdpur.smth.8.moveaverage,
+      tdpur.smth.8.factor'
+  - name: sfac_8
+    description: Smoothing Factor
+  - name: wchd_8
+    description: 'Weightings Changed. Allowed values: 1, 2'
+  - name: wchd_8_kw
+    description: 'Weightings Changed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: smap_8
+    description: Moving Average Periods
+  - name: cnsr_4
+    description: 'Obsolete. Max length: 3'
+  - name: spoa_4
+    description: 'Obsolete. Max length: 8'
+  - name: cpdt_3
+    description: 'Obsolete. Max length: 6'
+  - name: clca_2
+    description: 'Obsolete. Allowed values: 0, 1, 2'
+  - name: clca_2_kw
+    description: 'Obsolete (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: drdd_4
+    description: 'Obsolete. Max length: 15'
+  - name: xapp_2
+    description: 'Obsolete. Allowed values: 0, 1, 2'
+  - name: xapp_2_kw
+    description: 'Obsolete (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: prcp_2
+    description: Obsolete
+  - name: puom_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: citt_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: clgr_ref_compnr
+    description: company number of primary key of table tcibd301 List Groups
+  - name: ract_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: rbng_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngpi_1_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: cset_1_ref_compnr
+    description: company number of primary key of table tdpur190 RFQ Criterion Sets
+  - name: ngpr_2_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngco_3_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngpc_3_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngsr_3_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: segs_3_ref_compnr
+    description: company number of primary key of table tdipu013 Segment Sets
+  - name: ssmr_3_ref_compnr
+    description: company number of primary key of table tdipu013 Segment Sets
+  - name: ptss_3_ref_compnr
+    description: company number of primary key of table tcccp090 Patterns
+  - name: pttr_3_ref_compnr
+    description: company number of primary key of table tcccp090 Patterns
+  - name: dftm_3_ref_compnr
+    description: company number of primary key of table tctrm100 Terms and Conditions
+  - name: ngpo_4_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngpi_4_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngar_4_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: otpd_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: otsd_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: otdr_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: otsr_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: cnsp_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: crcd_4_ref_compnr
+    description: company number of primary key of table tdpur097 Change Reasons
+  - name: ctcd_4_ref_compnr
+    description: company number of primary key of table tdpur098 Change Types
+  - name: cral_4_ref_compnr
+    description: company number of primary key of table tdpur097 Change Reasons
+  - name: crcl_4_ref_compnr
+    description: company number of primary key of table tdpur097 Change Reasons
+  - name: crml_4_ref_compnr
+    description: company number of primary key of table tdpur097 Change Reasons
+  - name: ctal_4_ref_compnr
+    description: company number of primary key of table tdpur098 Change Types
+  - name: ctcl_4_ref_compnr
+    description: company number of primary key of table tdpur098 Change Types
+  - name: ctml_4_ref_compnr
+    description: company number of primary key of table tdpur098 Change Types
+  - name: otsu_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: otss_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: otcf_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: otrr_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: ichr_4_ref_compnr
+    description: company number of primary key of table tcmcs210 Hold Reasons
+  - name: lchr_4_ref_compnr
+    description: company number of primary key of table tcmcs210 Hold Reasons
+  - name: cpdt_8_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: cnsr_4_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur000 Procurement Parameters table, Generated 2019-05-10T10:44:27Z
+    from package combination 1060016

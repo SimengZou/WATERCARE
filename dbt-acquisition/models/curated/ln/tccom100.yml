@@ -1,0 +1,305 @@
+version: 2
+models:
+- name: tccom100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: bpid
+    description: '(required) Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: ctit
+    description: 'Title. Max length: 3'
+  - name: nama__en_us
+    description: '(required) Name - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: prbp
+    description: 'Parent Business Partner. Max length: 9'
+  - name: prst
+    description: 'Business Partner Status. Allowed values: 1, 2, 3, 254'
+  - name: prst_kw
+    description: 'Business Partner Status (keyword). Allowed values: tccom.prst.potential,
+      tccom.prst.active, tccom.prst.inactive, tccom.prst.not.specified'
+  - name: stdt
+    description: Start Date
+  - name: endt
+    description: End Date
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: sndr
+    description: 'One-Time Business Partner. Allowed values: 1, 2'
+  - name: sndr_kw
+    description: 'One-Time Business Partner (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: edyn
+    description: 'EDI. Allowed values: 1, 2'
+  - name: edyn_kw
+    description: 'EDI (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: fovn
+    description: 'Obsolete. Max length: 35'
+  - name: lvdt
+    description: Obsolete
+  - name: inrl
+    description: 'Affiliated Company. Allowed values: 1, 2'
+  - name: inrl_kw
+    description: 'Affiliated Company (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: iscn
+    description: Affiliated Company No.
+  - name: lgid__en_us
+    description: '(required) Chamber of Commerce - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: cmid__en_us
+    description: '(required) Commercial Identification - base language. Max length:
+      20'
+    data_tests:
+    - not_null
+  - name: bptx
+    description: 'Business Partner for Texts. Max length: 9'
+  - name: cadr
+    description: 'Address Code. Max length: 9'
+  - name: telp
+    description: 'Phone Number. Max length: 32'
+  - name: tlcy
+    description: 'Country for Phone Number. Max length: 6'
+  - name: tlci
+    description: 'City/Area Code for Phone Number. Max length: 15'
+  - name: tlln
+    description: 'Local Number for Phone Number. Max length: 32'
+  - name: tlex
+    description: 'Extension for Phone Number. Max length: 15'
+  - name: tefx
+    description: 'Fax Number. Max length: 32'
+  - name: tfcy
+    description: 'Country for Fax Number. Max length: 6'
+  - name: tfci
+    description: 'City/Area Code for Fax Number. Max length: 15'
+  - name: tfln
+    description: 'Local Number for Fax Number. Max length: 32'
+  - name: tfex
+    description: 'Extension for Fax Number. Max length: 15'
+  - name: ccnt
+    description: 'Primary Contact. Max length: 9'
+  - name: cint
+    description: 'Internal Business Partner. Allowed values: 1, 2'
+  - name: cint_kw
+    description: 'Internal Business Partner (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: foid
+    description: Front Office ID
+  - name: crid
+    description: Creator's Unique System ID
+  - name: icst
+    description: 'Intercompany Settlement. Allowed values: 1, 2'
+  - name: icst_kw
+    description: 'Intercompany Settlement (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: icod
+    description: 'I-Code. Allowed values: 1, 2, 3, 4, 5, 6, 7, 254'
+  - name: icod_kw
+    description: 'I-Code (keyword). Allowed values: tcicod.goods, tcicod.triangle.trade,
+      tcicod.work.order, tcicod.none, tcicod.exempt.suppl, tcicod.consignm.invd, tcicod.assets,
+      tcicod.not.specified'
+  - name: fact
+    description: 'Factor. Allowed values: 1, 2'
+  - name: fact_kw
+    description: 'Factor (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ecmp
+    description: Enterprise Unit Company
+  - name: coff
+    description: 'Collection Office. Allowed values: 1, 2'
+  - name: coff_kw
+    description: 'Collection Office (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: csto
+    description: 'Customs Office. Allowed values: 1, 2'
+  - name: csto_kw
+    description: 'Customs Office (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crdt
+    description: Creation Date
+  - name: lmdt
+    description: Last Modification Date
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: bprl
+    description: 'Business Partner Role. Allowed values: 1, 2, 3, 4'
+  - name: bprl_kw
+    description: 'Business Partner Role (keyword). Allowed values: tcbprl.none, tcbprl.customer,
+      tcbprl.supplier, tcbprl.both'
+  - name: btbv
+    description: 'To be Verified. Allowed values: 1, 2'
+  - name: btbv_kw
+    description: 'To be Verified (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: usid
+    description: 'Created by. Max length: 16'
+  - name: clcd
+    description: 'Credit Limit Check Per Department. Allowed values: 1, 2'
+  - name: clcd_kw
+    description: 'Credit Limit Check Per Department (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cbcl
+    description: 'Currency for BP Balances/Credit Limits. Max length: 3'
+  - name: beid__en_us
+    description: '(required) Business Entity Identifier - base language. Max length:
+      15'
+    data_tests:
+    - not_null
+  - name: inet__en_us
+    description: '(required) Website - base language. Max length: 150'
+    data_tests:
+    - not_null
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: smt1
+    description: 'Social Media Type 1. Allowed values: 1, 2, 5, 10, 15, 20, 25, 99,
+      254'
+  - name: smt1_kw
+    description: 'Social Media Type 1 (keyword). Allowed values: tccom.smty.twitter,
+      tccom.smty.twitter.tags, tccom.smty.facebook, tccom.smty.linkedin, tccom.smty.myspace,
+      tccom.smty.hyves, tccom.smty.yammer, tccom.smty.other, tccom.smty.not.specified'
+  - name: sml1__en_us
+    description: '(required) Social Media Link 1 - base language. Max length: 150'
+    data_tests:
+    - not_null
+  - name: smt2
+    description: 'Social Media Type 2. Allowed values: 1, 2, 5, 10, 15, 20, 25, 99,
+      254'
+  - name: smt2_kw
+    description: 'Social Media Type 2 (keyword). Allowed values: tccom.smty.twitter,
+      tccom.smty.twitter.tags, tccom.smty.facebook, tccom.smty.linkedin, tccom.smty.myspace,
+      tccom.smty.hyves, tccom.smty.yammer, tccom.smty.other, tccom.smty.not.specified'
+  - name: sml2__en_us
+    description: '(required) Social Media Link 2 - base language. Max length: 150'
+    data_tests:
+    - not_null
+  - name: smt3
+    description: 'Social Media Type 3. Allowed values: 1, 2, 5, 10, 15, 20, 25, 99,
+      254'
+  - name: smt3_kw
+    description: 'Social Media Type 3 (keyword). Allowed values: tccom.smty.twitter,
+      tccom.smty.twitter.tags, tccom.smty.facebook, tccom.smty.linkedin, tccom.smty.myspace,
+      tccom.smty.hyves, tccom.smty.yammer, tccom.smty.other, tccom.smty.not.specified'
+  - name: sml3__en_us
+    description: '(required) Social Media Link 3 - base language. Max length: 150'
+    data_tests:
+    - not_null
+  - name: smt4
+    description: 'Social Media Type 4. Allowed values: 1, 2, 5, 10, 15, 20, 25, 99,
+      254'
+  - name: smt4_kw
+    description: 'Social Media Type 4 (keyword). Allowed values: tccom.smty.twitter,
+      tccom.smty.twitter.tags, tccom.smty.facebook, tccom.smty.linkedin, tccom.smty.myspace,
+      tccom.smty.hyves, tccom.smty.yammer, tccom.smty.other, tccom.smty.not.specified'
+  - name: sml4__en_us
+    description: '(required) Social Media Link 4 - base language. Max length: 150'
+    data_tests:
+    - not_null
+  - name: smt5
+    description: 'Social Media Type 5. Allowed values: 1, 2, 5, 10, 15, 20, 25, 99,
+      254'
+  - name: smt5_kw
+    description: 'Social Media Type 5 (keyword). Allowed values: tccom.smty.twitter,
+      tccom.smty.twitter.tags, tccom.smty.facebook, tccom.smty.linkedin, tccom.smty.myspace,
+      tccom.smty.hyves, tccom.smty.yammer, tccom.smty.other, tccom.smty.not.specified'
+  - name: sml5__en_us
+    description: '(required) Social Media Link 5 - base language. Max length: 150'
+    data_tests:
+    - not_null
+  - name: txta
+    description: Text
+  - name: cdf_bsrm
+    description: 'SRM. Allowed values: 1, 2, 3, 4'
+  - name: cdf_bsrm_kw
+    description: 'SRM (keyword). Allowed values: txcom.srm.high, txcom.srm.medium,
+      txcom.srm.low, txcom.srm.no'
+  - name: cdf_cond
+    description: Code of Conduct Date
+  - name: cdf_crtl
+    description: 'Critical. Allowed values: 1, 2'
+  - name: cdf_crtl_kw
+    description: 'Critical (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdf_emno
+    description: 'Employee. Allowed values: 1, 2'
+  - name: cdf_emno_kw
+    description: 'Employee (keyword). Allowed values: tccdf______chk.yes, tccdf______chk.no'
+  - name: cdf_exdt
+    description: Expiry Date
+  - name: cdf_hsst
+    description: 'H&S PreQual. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: cdf_hsst_kw
+    description: 'H&S PreQual (keyword). Allowed values: txstatus.cat1, txstatus.cat2,
+      txstatus.cat3, txstatus.cats, txstatus.intl, txstatus.nope'
+  - name: cdf_rrdt
+    description: Recall Requested Time
+  - name: cdf_wfst
+    description: 'Workflow Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: cdf_wfst_kw
+    description: 'Workflow Status (keyword). Allowed values: tccdf_lst003.not.applicable,
+      tccdf_lst003.approved, tccdf_lst003.rejected, tccdf_lst003.pending, tccdf_lst003.recall,
+      tccdf_lst003.appr.received'
+  - name: ctit_ref_compnr
+    description: company number of primary key of table tcmcs019 Titles
+  - name: prbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: bptx_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccnt_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: cbcl_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom100 Business Partners table, Generated 2026-04-10T19:41:00Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - bpid

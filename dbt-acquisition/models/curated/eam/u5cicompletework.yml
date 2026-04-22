@@ -1,0 +1,72 @@
+version: 2
+models:
+- name: u5cicompletework
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: cic_resultwonum
+    description: CIC_RESULTWONUM
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: cic_type
+    description: CIC_TYPE
+  - name: cic_transid
+    description: CIC_TRANSID
+    data_tests:
+    - unique
+  - name: cic_reference
+    description: CIC_REFERENCE
+  - name: cic_contractorcode
+    description: CIC_CONTRACTORCODE
+  - name: cic_object
+    description: CIC_OBJECT
+  - name: cic_comment
+    description: 'CIC_COMMENT. Max length: 0'
+  - name: cic_activitycode
+    description: CIC_ACTIVITYCODE
+  - name: cic_assetcondition
+    description: CIC_ASSETCONDITION
+  - name: cic_crew
+    description: CIC_CREW
+  - name: cic_initiateddate
+    description: CIC_INITIATEDDATE
+  - name: cic_startdate
+    description: CIC_STARTDATE
+  - name: cic_completeddate
+    description: CIC_COMPLETEDDATE
+  - name: cic_resultcode
+    description: CIC_RESULTCODE
+  - name: cic_variationno
+    description: CIC_VARIATIONNO
+  - name: cic_event
+    description: CIC_EVENT
+  - name: cic_completeby
+    description: CIC_COMPLETEBY
+  - name: cic_results
+    description: 'CIC_RESULTS. Max length: 0'
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5CICOMPLETEWORK

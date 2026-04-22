@@ -1,0 +1,66 @@
+version: 2
+models:
+- name: r5actschedules
+  columns:
+  - name: acs_lastsaved
+    description: ACS_LASTSAVED
+  - name: acs_comment
+    description: ACS_COMMENT
+  - name: acs_mrc
+    description: ACS_MRC
+  - name: acs_trade
+    description: ACS_TRADE
+  - name: acs_object
+    description: ACS_OBJECT
+  - name: acs_sched
+    description: ACS_SCHED
+  - name: acs_starttime
+    description: ACS_STARTTIME
+  - name: acs_endtime
+    description: ACS_ENDTIME
+  - name: acs_hours
+    description: ACS_HOURS
+  - name: acs_responsible
+    description: ACS_RESPONSIBLE
+  - name: acs_shift
+    description: ACS_SHIFT
+  - name: acs_scheduler
+    description: ACS_SCHEDULER
+  - name: acs_frozen
+    description: ACS_FROZEN
+  - name: acs_object_org
+    description: ACS_OBJECT_ORG
+  - name: acs_mpproj
+    description: ACS_MPPROJ
+  - name: acs_updatecount
+    description: ACS_UPDATECOUNT
+  - name: acs_code
+    description: ACS_CODE
+    data_tests:
+    - unique
+  - name: acs_updated
+    description: ACS_UPDATED
+  - name: acs_shiftschedulesession
+    description: ACS_SHIFTSCHEDULESESSION
+  - name: acs_event
+    description: ACS_EVENT
+  - name: acs_activity
+    description: ACS_ACTIVITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ACTSCHEDULES

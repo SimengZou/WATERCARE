@@ -1,0 +1,292 @@
+version: 2
+models:
+- name: tdpur300
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: '(required) Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: otad
+    description: 'Buy-from Address. Max length: 9'
+  - name: otcn
+    description: 'Buy-from Contact. Max length: 9'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: sfad
+    description: 'Ship-from Address. Max length: 9'
+  - name: sfcn
+    description: 'Ship-from Contact. Max length: 9'
+  - name: ifbp
+    description: 'Invoice-from Business Partner. Max length: 9'
+  - name: ifad
+    description: 'Invoice-from Address. Max length: 9'
+  - name: ifcn
+    description: 'Invoice-from Contact. Max length: 9'
+  - name: ptbp
+    description: 'Pay-to Business Partner. Max length: 9'
+  - name: ptad
+    description: 'Pay-to Address. Max length: 9'
+  - name: ptcn
+    description: 'Pay-to Contact. Max length: 9'
+  - name: cdes__en_us
+    description: '(required) Contract Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: icyp
+    description: 'Contract Type. Allowed values: 1, 2'
+  - name: icyp_kw
+    description: 'Contract Type (keyword). Allowed values: tcicyp.year, tcicyp.proj'
+  - name: icap
+    description: 'Contract Status. Allowed values: 1, 2, 3'
+  - name: icap_kw
+    description: 'Contract Status (keyword). Allowed values: tcicap.free, tcicap.active,
+      tcicap.closed'
+  - name: icpr
+    description: 'Contract Acknowledgement. Allowed values: 1, 2'
+  - name: icpr_kw
+    description: 'Contract Acknowledgement (keyword). Allowed values: tcicpr.print,
+      tcicpr.dont.print'
+  - name: csts
+    description: 'Print Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: csts_kw
+    description: 'Print Status (keyword). Allowed values: tccsts.printed, tccsts.not.printed,
+      tccsts.changed, tccsts.draft, tccsts.original, tccsts.changes.printed'
+  - name: lcmp
+    description: Logistic Company
+  - name: cofc
+    description: 'Purchase Office. Max length: 6'
+  - name: rcmp
+    description: Responsible Office Logistic Company
+  - name: rofc
+    description: 'Responsible Office. Max length: 6'
+  - name: refe__en_us
+    description: '(required) Reference A - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refb__en_us
+    description: '(required) Reference B - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cdat
+    description: Contract Date
+  - name: sdat
+    description: Effective Date
+  - name: edat
+    description: Expiry Date
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: rcsi
+    description: 'Receiving Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: cadr
+    description: 'Receipt Address. Max length: 9'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: ccon
+    description: 'Buyer. Max length: 9'
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: ccrs
+    description: 'Late Payment Surcharge. Max length: 3'
+  - name: cfrw
+    description: 'Carrier/LSP. Max length: 3'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: conf__en_us
+    description: '(required) Confirmation Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cotp
+    description: 'Purchase Order Type. Max length: 3'
+  - name: nope
+    description: Notice Period
+  - name: ocon
+    description: 'Original Contract. Max length: 9'
+  - name: trid
+    description: 'Terms and Conditions ID. Max length: 9'
+  - name: chrq
+    description: 'Change Request. Allowed values: 1, 2, 3'
+  - name: chrq_kw
+    description: 'Change Request (keyword). Allowed values: tcynna.yes, tcynna.no,
+      tcynna.not.app'
+  - name: revn
+    description: Revision
+  - name: crby
+    description: 'Change Request Created by. Max length: 16'
+  - name: crdt
+    description: Change Request Creation Date
+  - name: srcn
+    description: 'Original Purchase Contract. Max length: 9'
+  - name: crst
+    description: 'Change Request Status. Allowed values: 5, 10, 15, 20, 25, 28, 30,
+      35, 40, 45, 50'
+  - name: crst_kw
+    description: 'Change Request Status (keyword). Allowed values: tdpur.hdst.created,
+      tdpur.hdst.approved, tdpur.hdst.sent, tdpur.hdst.in.process, tdpur.hdst.closed,
+      tdpur.hdst.canc.in.proc, tdpur.hdst.cancelled, tdpur.hdst.modified, tdpur.hdst.blocked,
+      tdpur.hdst.released, tdpur.hdst.not.applicable'
+  - name: crrq
+    description: 'Change Request Required. Allowed values: 1, 2'
+  - name: crrq_kw
+    description: 'Change Request Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: crin
+    description: 'Internal Change Request. Allowed values: 1, 2'
+  - name: crin_kw
+    description: 'Internal Change Request (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: copc
+    description: 'Corporate Purchase Contract. Allowed values: 1, 2'
+  - name: copc_kw
+    description: 'Corporate Purchase Contract (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ccty
+    description: 'Obsolete. Max length: 3'
+  - name: cvyn
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: cvyn_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Header Text
+  - name: txtb
+    description: Footer Text
+  - name: txtt
+    description: Termination text
+  - name: crht
+    description: Change Request Text
+  - name: cdf_aval
+    description: Award Value
+  - name: cdf_camt
+    description: Contract Amount
+  - name: cdf_comt
+    description: Consumed Amount
+  - name: cdf_conn
+    description: 'Contract Name. Max length: 100'
+  - name: cdf_pwno
+    description: 'ProjectWise Number. Max length: 10'
+  - name: cdf_ramt
+    description: Remaining Amount
+  - name: cdf_vval
+    description: Variation Value
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: otad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: otcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom121 Ship-from Business
+      Partners
+  - name: sfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: sfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ifbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ifad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ifcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ptbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ptad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ptcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: lcmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tdpur012 Purchase Offices
+  - name: rcmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: rofc_ref_compnr
+    description: company number of primary key of table tdpur012 Purchase Offices
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: rcsi_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccon_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: ccrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: cfrw_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: cotp_ref_compnr
+    description: company number of primary key of table tdpur094 Purchase Order Types
+  - name: ocon_ref_compnr
+    description: company number of primary key of table tdpur300 Purchase Contracts
+  - name: trid_ref_compnr
+    description: company number of primary key of table tctrm100 Terms and Conditions
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtt_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: crht_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur300 Purchase Contracts table, Generated 2026-04-10T19:41:20Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono

@@ -1,0 +1,80 @@
+version: 2
+models:
+- name: u5servicerequest
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: crm_problemcode
+    description: CRM_PROBLEMCODE
+  - name: crm_servicerequest
+    description: CRM_SERVICEREQUEST
+  - name: crm_priority
+    description: CRM_PRIORITY
+  - name: crm_addresskey
+    description: CRM_ADDRESSKEY
+  - name: crm_flatno
+    description: CRM_FLATNO
+  - name: crm_streetno
+    description: CRM_STREETNO
+  - name: crm_stname
+    description: CRM_STNAME
+  - name: crm_suburb
+    description: CRM_SUBURB
+  - name: crm_city
+    description: CRM_CITY
+  - name: crm_postalcode
+    description: CRM_POSTALCODE
+  - name: crm_notes
+    description: 'CRM_NOTES. Max length: 0'
+  - name: crm_reporteddate
+    description: CRM_REPORTEDDATE
+  - name: crm_calltakenby
+    description: CRM_CALLTAKENBY
+  - name: crm_callerfistname
+    description: CRM_CALLERFISTNAME
+  - name: crm_callerlastname
+    description: CRM_CALLERLASTNAME
+  - name: crm_contactnumber
+    description: CRM_CONTACTNUMBER
+  - name: crm_alternatecontact
+    description: CRM_ALTERNATECONTACT
+  - name: crm_contactemail
+    description: CRM_CONTACTEMAIL
+  - name: crm_contactrequested
+    description: CRM_CONTACTREQUESTED
+  - name: crm_event
+    description: CRM_EVENT
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: crm_source
+    description: CRM_SOURCE
+  - name: crm_transactionid
+    description: CRM_TRANSACTIONID
+    data_tests:
+    - unique
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5SERVICEREQUEST

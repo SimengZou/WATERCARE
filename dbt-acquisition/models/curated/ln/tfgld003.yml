@@ -1,0 +1,163 @@
+version: 2
+models:
+- name: tfgld003
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Effective Date
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: dhcu__en_us
+    description: '(required) Short Description of Currency - base language. Max length:
+      9'
+    data_tests:
+    - not_null
+  - name: dim1
+    description: 'Dimension 1 Used Y/N. Allowed values: 1, 2'
+  - name: dim1_kw
+    description: 'Dimension 1 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dim2
+    description: 'Dimension 2 Used Y/N. Allowed values: 1, 2'
+  - name: dim2_kw
+    description: 'Dimension 2 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dim3
+    description: 'Dimension 3 Used Y/N. Allowed values: 1, 2'
+  - name: dim3_kw
+    description: 'Dimension 3 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dim4
+    description: 'Dimension 4 Used Y/N. Allowed values: 1, 2'
+  - name: dim4_kw
+    description: 'Dimension 4 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dim5
+    description: 'Dimension 5 Used Y/N. Allowed values: 1, 2'
+  - name: dim5_kw
+    description: 'Dimension 5 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dim6
+    description: 'Dimension 6 Used Y/N. Allowed values: 1, 2'
+  - name: dim6_kw
+    description: 'Dimension 6 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dim7
+    description: 'Dimension 7 Used Y/N. Allowed values: 1, 2'
+  - name: dim7_kw
+    description: 'Dimension 7 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dim8
+    description: 'Dimension 8 Used Y/N. Allowed values: 1, 2'
+  - name: dim8_kw
+    description: 'Dimension 8 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dim9
+    description: 'Dimension 9 Used Y/N. Allowed values: 1, 2'
+  - name: dim9_kw
+    description: 'Dimension 9 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dm10
+    description: 'Dimension 10 Used Y/N. Allowed values: 1, 2'
+  - name: dm10_kw
+    description: 'Dimension 10 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dm11
+    description: 'Dimension 11 Used Y/N. Allowed values: 1, 2'
+  - name: dm11_kw
+    description: 'Dimension 11 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dm12
+    description: 'Dimension 12 Used Y/N. Allowed values: 1, 2'
+  - name: dm12_kw
+    description: 'Dimension 12 Used Y/N (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rper
+    description: 'Reporting Periods. Allowed values: 1, 2'
+  - name: rper_kw
+    description: 'Reporting Periods (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: nfpr
+    description: Number of Fiscal Periods
+  - name: nrpr
+    description: Number of Reporting Periods
+  - name: nvpr
+    description: Number of Tax Periods
+  - name: sdat
+    description: Store Data for X Years
+  - name: bcmp
+    description: Base Company
+  - name: psep
+    description: 'Period Separator. Max length: 1'
+  - name: cfst
+    description: 'Cash Flow Statement. Allowed values: 1, 2'
+  - name: cfst_kw
+    description: 'Cash Flow Statement (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dcfi
+    description: 'Detailed Cash Flow Information. Allowed values: 1, 2'
+  - name: dcfi_kw
+    description: 'Detailed Cash Flow Information (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: papp
+    description: 'Payment Agreement. Allowed values: 1, 2'
+  - name: papp_kw
+    description: 'Payment Agreement (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: gmbi
+    description: 'Monthly Billing Invoices. Allowed values: 1, 2'
+  - name: gmbi_kw
+    description: 'Monthly Billing Invoices (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sgmr
+    description: 'Segment Reporting. Allowed values: 1, 2'
+  - name: sgmr_kw
+    description: 'Segment Reporting (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: psic
+    description: 'Prevent Intercompany Transactions by Segment. Allowed values: 1,
+      2'
+  - name: psic_kw
+    description: 'Prevent Intercompany Transactions by Segment (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: psbk
+    description: 'Prevent Bank Transactions by Segment. Allowed values: 1, 2'
+  - name: psbk_kw
+    description: 'Prevent Bank Transactions by Segment (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: pupt
+    description: 'Postpone Updating Period Totals - Cash Flow. Allowed values: 1,
+      2'
+  - name: pupt_kw
+    description: 'Postpone Updating Period Totals - Cash Flow (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld003 Group Company Parameters table, Generated 2026-04-10T19:41:39Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - indt

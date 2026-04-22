@@ -1,0 +1,520 @@
+version: 2
+models:
+- name: tdpur301
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: '(required) Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: cofc
+    description: '(required) Purchase Office. Max length: 6'
+    data_tests:
+    - not_null
+  - name: csqn
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: poff
+    description: 'Purchase Office. Max length: 6'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cltp
+    description: 'Contract Line Type. Allowed values: 1, 2, 3'
+  - name: cltp_kw
+    description: 'Contract Line Type (keyword). Allowed values: tdgen.cltp.total,
+      tdgen.cltp.detail, tdgen.cltp.contract.line'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: sfad
+    description: 'Ship-from Address. Max length: 9'
+  - name: sfcn
+    description: 'Ship-from Contact. Max length: 9'
+  - name: icap
+    description: 'Contract Line Status. Allowed values: 1, 2, 3'
+  - name: icap_kw
+    description: 'Contract Line Status (keyword). Allowed values: tcicap.free, tcicap.active,
+      tcicap.closed'
+  - name: icyp
+    description: 'Contract Type. Allowed values: 1, 2'
+  - name: icyp_kw
+    description: 'Contract Type (keyword). Allowed values: tcicyp.year, tcicyp.proj'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: crrf
+    description: 'Item Cross Reference. Allowed values: 1, 2, 3'
+  - name: crrf_kw
+    description: 'Item Cross Reference (keyword). Allowed values: tccrrf.ics, tccrrf.mpn,
+      tccrrf.na'
+  - name: citt
+    description: 'Code Item Type. Max length: 3'
+  - name: crit__en_us
+    description: '(required) Cross Reference Item - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: mpnr
+    description: 'Manufacturer Part Number. Max length: 35'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: acqm
+    description: 'Acquisition Method. Allowed values: 5, 10, 99'
+  - name: acqm_kw
+    description: 'Acquisition Method (keyword). Allowed values: tcacqm.buying, tcacqm.rental,
+      tcacqm.not.appl'
+  - name: subc
+    description: 'Subcontracted. Allowed values: 1, 2, 3'
+  - name: subc_kw
+    description: 'Subcontracted (keyword). Allowed values: tcynna.yes, tcynna.no,
+      tcynna.not.app'
+  - name: subs
+    description: 'Subcontractor Site. Max length: 9'
+  - name: ncmp
+    description: Company
+  - name: rcsi
+    description: 'Receiving Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: cadr
+    description: 'Warehouse Address. Max length: 9'
+  - name: effn
+    description: Effectivity Unit
+  - name: sdsc
+    description: 'Standard Description. Allowed values: 1, 2'
+  - name: sdsc_kw
+    description: 'Standard Description (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cpgp
+    description: 'Purchase Price Group. Max length: 6'
+  - name: cdat
+    description: Contract Date
+  - name: sdat
+    description: Effective Date
+  - name: edat
+    description: Expiry Date
+  - name: leng
+    description: Length
+  - name: widt
+    description: Width
+  - name: thic
+    description: Height
+  - name: qoor
+    description: Agreed Quantity
+  - name: qogo
+    description: Agreed Quantity
+  - name: qomn
+    description: Minimum Quantity
+  - name: qomx
+    description: Maximum Quantity
+  - name: aemq
+    description: 'Action on Exceeding Maximum Quantity. Allowed values: 1, 2, 3'
+  - name: aemq_kw
+    description: 'Action on Exceeding Maximum Quantity (keyword). Allowed values:
+      tdpur.imae.take.contract, tdpur.imae.ask.for.it, tdpur.imae.skip.contract'
+  - name: mqtl
+    description: Maximum Quantity Tolerance
+  - name: iqab
+    description: 'Quantity Binding. Allowed values: 1, 2'
+  - name: iqab_kw
+    description: 'Quantity Binding (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cuqp
+    description: 'Purchase Unit. Max length: 3'
+  - name: cvqp
+    description: Conversion Factor Purchase to Inventory Unit
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: qiap
+    description: Advised Quantity
+  - name: qicl
+    description: Called Quantity
+  - name: camt
+    description: Called Amount
+  - name: qiiv
+    description: Invoiced Quantity
+  - name: bamt
+    description: Invoiced Amount
+  - name: qigc
+    description: Called Quantity
+  - name: caga
+    description: Called Amount
+  - name: qigi
+    description: Invoiced Quantity
+  - name: iaga
+    description: Invoiced Amount
+  - name: ieva
+    description: 'Evaluation [y/n/repeat]. Allowed values: 1, 2, 3'
+  - name: ieva_kw
+    description: 'Evaluation [y/n/repeat] (keyword). Allowed values: tcieva.yes, tcieva.no,
+      tcieva.repeat'
+  - name: revi
+    description: 'Engineering Item. Max length: 6'
+  - name: ceno
+    description: 'Exempt Certificate. Max length: 24'
+  - name: owno__en_us
+    description: '(required) BP Order Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: rcod
+    description: 'Exempt Reason. Max length: 6'
+  - name: bptc
+    description: 'Business Partner Tax Country. Max length: 3'
+  - name: exmt
+    description: 'Exempt. Allowed values: 1, 2'
+  - name: exmt_kw
+    description: 'Exempt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: csts
+    description: 'Print Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: csts_kw
+    description: 'Print Status (keyword). Allowed values: tccsts.printed, tccsts.not.printed,
+      tccsts.changed, tccsts.draft, tccsts.original, tccsts.changes.printed'
+  - name: sbim
+    description: 'Self-Billing. Allowed values: 1, 2'
+  - name: sbim_kw
+    description: 'Self-Billing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: paft
+    description: 'Invoice after. Allowed values: 1, 2'
+  - name: paft_kw
+    description: 'Invoice after (keyword). Allowed values: tcpaft.approval, tcpaft.receipts'
+  - name: sbdt
+    description: 'Self-Billing Date Type. Allowed values: 10, 20'
+  - name: sbdt_kw
+    description: 'Self-Billing Date Type (keyword). Allowed values: tcsbdt.receipt.date,
+      tcsbdt.shipping.date'
+  - name: sbmt
+    description: 'Self-Billing Method. Max length: 3'
+  - name: rpdr
+    description: 'Redetermine Price and Discounts at Receipt. Allowed values: 1, 2'
+  - name: rpdr_kw
+    description: 'Redetermine Price and Discounts at Receipt (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: obpr
+    description: 'Option Based Pricing. Allowed values: 1, 2'
+  - name: obpr_kw
+    description: 'Option Based Pricing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: scus
+    description: 'Purchase Schedule in use. Allowed values: 1, 2'
+  - name: scus_kw
+    description: 'Purchase Schedule in use (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: qual
+    description: 'Inspection. Allowed values: 1, 2'
+  - name: qual_kw
+    description: 'Inspection (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: cons
+    description: 'Consigned. Allowed values: 1, 2'
+  - name: cons_kw
+    description: 'Consigned (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: qimf
+    description: Order Quantity Increment
+  - name: qimi
+    description: Minimum Order Quantity
+  - name: qima
+    description: Maximum Order Quantity
+  - name: qiec
+    description: Economic Order Quantity
+  - name: qifi
+    description: Fixed Order Quantity
+  - name: ccon
+    description: 'Buyer. Max length: 9'
+  - name: dsch
+    description: 'Delivery Contract Available. Allowed values: 1, 2'
+  - name: dsch_kw
+    description: 'Delivery Contract Available (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: txtt
+    description: Termination text
+  - name: txta
+    description: Contract Line Text
+  - name: cdf_cdsc__en_us
+    description: '(required) Sub-Category Description - base language. Max length:
+      250'
+    data_tests:
+    - not_null
+  - name: cdf_clmt
+    description: Contract Line Net Amount
+  - name: cdf_comt
+    description: Contract Line Consumed Amount
+  - name: cdf_idet
+    description: 'Item Detail. Max length: 100'
+  - name: cdf_ramt
+    description: Contract Line Remaining Amount
+  - name: cdf_refe__en_us
+    description: '(required) Procurement Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cdf_sctg
+    description: 'Sub-Category. Max length: 25'
+  - name: cono_ref_compnr
+    description: company number of primary key of table tdpur300 Purchase Contracts
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tdpur012 Purchase Offices
+  - name: poff_ref_compnr
+    description: company number of primary key of table tdpur012 Purchase Offices
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom121 Ship-from Business
+      Partners
+  - name: sfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: sfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: item_ref_compnr
+    description: company number of primary key of table tdipu001 Item - Purchase
+  - name: citt_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: mpnr_cmnf_ref_compnr
+    description: company number of primary key of table tdipu045 Manufacturer Part
+      Numbers
+  - name: cmnf_ref_compnr
+    description: company number of primary key of table tcmcs060 Manufacturers
+  - name: subs_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: ncmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: rcsi_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: cpgp_ref_compnr
+    description: company number of primary key of table tcmcs024 Price Groups
+  - name: cuqp_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccty_cvat_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: rcod_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: sbmt_ref_compnr
+    description: company number of primary key of table tcmcs057 Self-Billing Methods
+  - name: ccon_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: txtt_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: qoor_invu
+    description: 'CC: Agreed Quantity in Inventory Unit'
+  - name: qoor_buwg
+    description: 'CC: Agreed Quantity in Base Unit Weight'
+  - name: qoor_buln
+    description: 'CC: Agreed Quantity in Base Unit Length'
+  - name: qoor_buar
+    description: 'CC: Agreed Quantity in Base Unit Area'
+  - name: qoor_buvl
+    description: 'CC: Agreed Quantity in Base Unit Volume'
+  - name: qoor_butm
+    description: 'CC: Agreed Quantity in Base Unit Time'
+  - name: qoor_bupc
+    description: 'CC: Agreed Quantity in Base Unit Piece'
+  - name: qicl_trnu
+    description: 'CC: Called Quantity in Transaction Unit'
+  - name: qicl_buwg
+    description: 'CC: Called Quantity in Base Unit Weight'
+  - name: qicl_buln
+    description: 'CC: Called Quantity in Base Unit Length'
+  - name: qicl_buar
+    description: 'CC: Called Quantity in Base Unit Area'
+  - name: qicl_buvl
+    description: 'CC: Called Quantity in Base Unit Volume'
+  - name: qicl_butm
+    description: 'CC: Called Quantity in Base Unit Time'
+  - name: qicl_bupc
+    description: 'CC: Called Quantity in Base Unit Piece'
+  - name: qiiv_trnu
+    description: 'CC: Invoiced Quantity in Transaction Unit'
+  - name: qiiv_buwg
+    description: 'CC: Invoiced Quantity in Base Unit Weight'
+  - name: qiiv_buln
+    description: 'CC: Invoiced Quantity in Base Unit Length'
+  - name: qiiv_buar
+    description: 'CC: Invoiced Quantity in Base Unit Area'
+  - name: qiiv_buvl
+    description: 'CC: Invoiced Quantity in Base Unit Volume'
+  - name: qiiv_butm
+    description: 'CC: Invoiced Quantity in Base Unit Time'
+  - name: qiiv_bupc
+    description: 'CC: Invoiced Quantity in Base Unit Piece'
+  - name: camt_lclc
+    description: 'CC: Called Amount in Local Currency'
+  - name: camt_rpc1
+    description: 'CC: Called Amount in Reporting Currency 1'
+  - name: camt_rpc2
+    description: 'CC: Called Amount in Reporting Currency 2'
+  - name: camt_rfrc
+    description: 'CC: Called Amount in Reference Currency'
+  - name: camt_dtwc
+    description: 'CC: Called Amount in Data Warehouse Currency'
+  - name: bamt_lclc
+    description: 'CC: Invoiced Amount in Local Currency'
+  - name: bamt_rpc1
+    description: 'CC: Invoiced Amount in Reporting Currency 1'
+  - name: bamt_rpc2
+    description: 'CC: Invoiced Amount in Reporting Currency 2'
+  - name: bamt_rfrc
+    description: 'CC: Invoiced Amount in Reference Currency'
+  - name: bamt_dtwc
+    description: 'CC: Invoiced Amount in Data Warehouse Currency'
+  - name: qogo_invu
+    description: 'CC: Agreed Quantity (Total) in Inventory Unit'
+  - name: qogo_buwg
+    description: 'CC: Agreed Quantity (Total) in Base Unit Weight'
+  - name: qogo_buln
+    description: 'CC: Agreed Quantity (Total) in Base Unit Length'
+  - name: qogo_buar
+    description: 'CC: Agreed Quantity (Total) in Base Unit Area'
+  - name: qogo_buvl
+    description: 'CC: Agreed Quantity (Total) in Base Unit Volume'
+  - name: qogo_butm
+    description: 'CC: Agreed Quantity (Total) in Base Unit Time'
+  - name: qogo_bupc
+    description: 'CC: Agreed Quantity (Total) in Base Unit Piece'
+  - name: qigc_trnu
+    description: 'CC: Called Quantity (Total) in Transaction Unit'
+  - name: qigc_buwg
+    description: 'CC: Called Quantity (Total) in Base Unit Weight'
+  - name: qigc_buln
+    description: 'CC: Called Quantity (Total) in Base Unit Length'
+  - name: qigc_buar
+    description: 'CC: Called Quantity (Total) in Base Unit Area'
+  - name: qigc_buvl
+    description: 'CC: Called Quantity (Total) in Base Unit Volume'
+  - name: qigc_butm
+    description: 'CC: Called Quantity (Total) in Base Unit Time'
+  - name: qigc_bupc
+    description: 'CC: Called Quantity (Total) in Base Unit Piece'
+  - name: qigi_trnu
+    description: 'CC: Invoiced Quantity (Total) in Transaction Unit'
+  - name: qigi_buwg
+    description: 'CC: Invoiced Quantity (Total) in Base Unit Weight'
+  - name: qigi_buln
+    description: 'CC: Invoiced Quantity (Total) in Base Unit Length'
+  - name: qigi_buar
+    description: 'CC: Invoiced Quantity (Total) in Base Unit Area'
+  - name: qigi_buvl
+    description: 'CC: Invoiced Quantity (Total) in Base Unit Volume'
+  - name: qigi_butm
+    description: 'CC: Invoiced Quantity (Total) in Base Unit Time'
+  - name: qigi_bupc
+    description: 'CC: Invoiced Quantity (Total) in Base Unit Piece'
+  - name: caga_lclc
+    description: 'CC: Called Amount (Total) in Local Currency'
+  - name: caga_rpc1
+    description: 'CC: Called Amount (Total) in Reporting Currency 1'
+  - name: caga_rpc2
+    description: 'CC: Called Amount (Total) in Reporting Currency 2'
+  - name: caga_rfrc
+    description: 'CC: Called Amount (Total) in Reference Currency'
+  - name: caga_dtwc
+    description: 'CC: Called Amount (Total) in Data Warehouse Currency'
+  - name: iaga_lclc
+    description: 'CC: Invoiced Amount (Total) in Local Currency'
+  - name: iaga_rpc1
+    description: 'CC: Invoiced Amount (Total) in Reporting Currency 1'
+  - name: iaga_rpc2
+    description: 'CC: Invoiced Amount (Total) in Reporting Currency 2'
+  - name: iaga_rfrc
+    description: 'CC: Invoiced Amount (Total) in Reference Currency'
+  - name: iaga_dtwc
+    description: 'CC: Invoiced Amount (Total) in Data Warehouse Currency'
+  - name: gamt_trnc
+    description: 'CC: Gross Amount in Transaction Currency'
+  - name: gamt_lclc
+    description: 'CC: Gross Amount in Local Currency'
+  - name: gamt_rpc1
+    description: 'CC: Gross Amount in Reporting Currency 1'
+  - name: gamt_rpc2
+    description: 'CC: Gross Amount in Reporting Currency 2'
+  - name: gamt_rfrc
+    description: 'CC: Gross Amount in Reference Currency'
+  - name: gamt_dtwc
+    description: 'CC: Gross Amount in Data Warehouse Currency'
+  - name: namt_trnc
+    description: 'CC: Net Amount in Transaction Currency'
+  - name: namt_lclc
+    description: 'CC: Net Amount in Local Currency'
+  - name: namt_rpc1
+    description: 'CC: Net Amount in Reporting Currency 1'
+  - name: namt_rpc2
+    description: 'CC: Net Amount in Reporting Currency 2'
+  - name: namt_rfrc
+    description: 'CC: Net Amount in Reference Currency'
+  - name: namt_dtwc
+    description: 'CC: Net Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur301 Purchase Contract Lines table, Generated 2026-04-10T19:41:20Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono
+        - pono
+        - cofc
+        - csqn

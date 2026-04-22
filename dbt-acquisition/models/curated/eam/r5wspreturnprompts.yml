@@ -1,0 +1,45 @@
+version: 2
+models:
+- name: r5wspreturnprompts
+  columns:
+  - name: wpr_lastsaved
+    description: WPR_LASTSAVED
+  - name: wpr_sourceseq
+    description: WPR_SOURCESEQ
+  - name: wpr_targetseq
+    description: WPR_TARGETSEQ
+  - name: wpr_updated
+    description: WPR_UPDATED
+  - name: wpr_updatecount
+    description: WPR_UPDATECOUNT
+  - name: wpr_mobilequerycode
+    description: WPR_MOBILEQUERYCODE
+  - name: wpr_wspcode
+    description: WPR_WSPCODE
+  - name: wpr_querycode
+    description: WPR_QUERYCODE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WSPRETURNPROMPTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - wpr_wspcode
+        - wpr_sourceseq
+        - wpr_targetseq

@@ -1,0 +1,376 @@
+version: 2
+models:
+- name: r5eventpoints
+  columns:
+  - name: epo_lastsaved
+    description: EPO_LASTSAVED
+  - name: epo_event
+    description: EPO_EVENT
+  - name: epo_line
+    description: EPO_LINE
+  - name: epo_object
+    description: EPO_OBJECT
+  - name: epo_obrtype
+    description: EPO_OBRTYPE
+  - name: epo_obtype
+    description: EPO_OBTYPE
+  - name: epo_point
+    description: EPO_POINT
+  - name: epo_pointtype
+    description: EPO_POINTTYPE
+  - name: epo_aspect
+    description: EPO_ASPECT
+  - name: epo_avgslope
+    description: EPO_AVGSLOPE
+  - name: epo_comment
+    description: EPO_COMMENT
+  - name: epo_create
+    description: EPO_CREATE
+  - name: epo_date
+    description: EPO_DATE
+  - name: epo_finding
+    description: EPO_FINDING
+  - name: epo_job
+    description: EPO_JOB
+  - name: epo_lastslope
+    description: EPO_LASTSLOPE
+  - name: epo_max
+    description: EPO_MAX
+  - name: epo_varchar25
+    description: EPO_VARCHAR25
+  - name: epo_varchar26
+    description: EPO_VARCHAR26
+  - name: epo_varchar27
+    description: EPO_VARCHAR27
+  - name: epo_varchar28
+    description: EPO_VARCHAR28
+  - name: epo_varchar29
+    description: EPO_VARCHAR29
+  - name: epo_varchar30
+    description: EPO_VARCHAR30
+  - name: epo_varchar31
+    description: EPO_VARCHAR31
+  - name: epo_varchar32
+    description: EPO_VARCHAR32
+  - name: epo_varchar33
+    description: EPO_VARCHAR33
+  - name: epo_varchar34
+    description: EPO_VARCHAR34
+  - name: epo_varchar35
+    description: EPO_VARCHAR35
+  - name: epo_varnum11
+    description: EPO_VARNUM11
+  - name: epo_varnum12
+    description: EPO_VARNUM12
+  - name: epo_varnum13
+    description: EPO_VARNUM13
+  - name: epo_varnum14
+    description: EPO_VARNUM14
+  - name: epo_varnum15
+    description: EPO_VARNUM15
+  - name: epo_varnum16
+    description: EPO_VARNUM16
+  - name: epo_varnum17
+    description: EPO_VARNUM17
+  - name: epo_varnum18
+    description: EPO_VARNUM18
+  - name: epo_varnum19
+    description: EPO_VARNUM19
+  - name: epo_varnum20
+    description: EPO_VARNUM20
+  - name: epo_varnum21
+    description: EPO_VARNUM21
+  - name: epo_varnum22
+    description: EPO_VARNUM22
+  - name: epo_varnum23
+    description: EPO_VARNUM23
+  - name: epo_varnum24
+    description: EPO_VARNUM24
+  - name: epo_varnum25
+    description: EPO_VARNUM25
+  - name: epo_varnum26
+    description: EPO_VARNUM26
+  - name: epo_varnum27
+    description: EPO_VARNUM27
+  - name: epo_varnum28
+    description: EPO_VARNUM28
+  - name: epo_varnum29
+    description: EPO_VARNUM29
+  - name: epo_varnum30
+    description: EPO_VARNUM30
+  - name: epo_varnum31
+    description: EPO_VARNUM31
+  - name: epo_varnum32
+    description: EPO_VARNUM32
+  - name: epo_maxdate
+    description: EPO_MAXDATE
+  - name: epo_maxppm
+    description: EPO_MAXPPM
+  - name: epo_maxstwo
+    description: EPO_MAXSTWO
+  - name: epo_maxtol
+    description: EPO_MAXTOL
+  - name: epo_maxtoldate
+    description: EPO_MAXTOLDATE
+  - name: epo_method
+    description: EPO_METHOD
+  - name: epo_min
+    description: EPO_MIN
+  - name: epo_mindate
+    description: EPO_MINDATE
+  - name: epo_minppm
+    description: EPO_MINPPM
+  - name: epo_minstwo
+    description: EPO_MINSTWO
+  - name: epo_mintol
+    description: EPO_MINTOL
+  - name: epo_mintoldate
+    description: EPO_MINTOLDATE
+  - name: epo_result
+    description: EPO_RESULT
+  - name: epo_rresult
+    description: EPO_RRESULT
+  - name: epo_stwo
+    description: EPO_STWO
+  - name: epo_type
+    description: EPO_TYPE
+  - name: epo_uom
+    description: EPO_UOM
+  - name: epo_value
+    description: EPO_VALUE
+  - name: epo_object_org
+    description: EPO_OBJECT_ORG
+  - name: epo_inspector
+    description: EPO_INSPECTOR
+  - name: epo_location
+    description: EPO_LOCATION
+  - name: epo_class
+    description: EPO_CLASS
+  - name: epo_class_org
+    description: EPO_CLASS_ORG
+  - name: epo_code
+    description: EPO_CODE
+    data_tests:
+    - unique
+  - name: epo_origevent
+    description: EPO_ORIGEVENT
+  - name: epo_nidatemincrit
+    description: EPO_NIDATEMINCRIT
+  - name: epo_nidatemintol
+    description: EPO_NIDATEMINTOL
+  - name: epo_nidatemaxcrit
+    description: EPO_NIDATEMAXCRIT
+  - name: epo_nidatemaxtol
+    description: EPO_NIDATEMAXTOL
+  - name: epo_assessedslope
+    description: EPO_ASSESSEDSLOPE
+  - name: epo_varchar1
+    description: EPO_VARCHAR1
+  - name: epo_varchar2
+    description: EPO_VARCHAR2
+  - name: epo_varchar3
+    description: EPO_VARCHAR3
+  - name: epo_varchar4
+    description: EPO_VARCHAR4
+  - name: epo_varchar5
+    description: EPO_VARCHAR5
+  - name: epo_varchar6
+    description: EPO_VARCHAR6
+  - name: epo_varchar7
+    description: EPO_VARCHAR7
+  - name: epo_varchar8
+    description: EPO_VARCHAR8
+  - name: epo_varchar9
+    description: EPO_VARCHAR9
+  - name: epo_varchar10
+    description: EPO_VARCHAR10
+  - name: epo_varnum1
+    description: EPO_VARNUM1
+  - name: epo_varnum2
+    description: EPO_VARNUM2
+  - name: epo_varnum3
+    description: EPO_VARNUM3
+  - name: epo_varnum4
+    description: EPO_VARNUM4
+  - name: epo_varnum5
+    description: EPO_VARNUM5
+  - name: epo_varnum6
+    description: EPO_VARNUM6
+  - name: epo_varnum7
+    description: EPO_VARNUM7
+  - name: epo_varnum8
+    description: EPO_VARNUM8
+  - name: epo_varnum9
+    description: EPO_VARNUM9
+  - name: epo_varnum10
+    description: EPO_VARNUM10
+  - name: epo_vardate1
+    description: EPO_VARDATE1
+  - name: epo_vardate2
+    description: EPO_VARDATE2
+  - name: epo_vardate3
+    description: EPO_VARDATE3
+  - name: epo_vardate4
+    description: EPO_VARDATE4
+  - name: epo_vardate5
+    description: EPO_VARDATE5
+  - name: epo_confrating
+    description: EPO_CONFRATING
+  - name: epo_parent
+    description: EPO_PARENT
+  - name: epo_completed
+    description: EPO_COMPLETED
+  - name: epo_processed
+    description: EPO_PROCESSED
+  - name: epo_risk
+    description: EPO_RISK
+  - name: epo_updatecount
+    description: EPO_UPDATECOUNT
+  - name: epo_varchar11
+    description: EPO_VARCHAR11
+  - name: epo_varchar12
+    description: EPO_VARCHAR12
+  - name: epo_varchar13
+    description: EPO_VARCHAR13
+  - name: epo_varchar14
+    description: EPO_VARCHAR14
+  - name: epo_varchar15
+    description: EPO_VARCHAR15
+  - name: epo_varchar16
+    description: EPO_VARCHAR16
+  - name: epo_varchar17
+    description: EPO_VARCHAR17
+  - name: epo_varchar18
+    description: EPO_VARCHAR18
+  - name: epo_varchar19
+    description: EPO_VARCHAR19
+  - name: epo_varchar20
+    description: EPO_VARCHAR20
+  - name: epo_varchar21
+    description: EPO_VARCHAR21
+  - name: epo_varchar22
+    description: EPO_VARCHAR22
+  - name: epo_varchar23
+    description: EPO_VARCHAR23
+  - name: epo_varchar24
+    description: EPO_VARCHAR24
+  - name: epo_varnum33
+    description: EPO_VARNUM33
+  - name: epo_varnum34
+    description: EPO_VARNUM34
+  - name: epo_varnum35
+    description: EPO_VARNUM35
+  - name: epo_vardate6
+    description: EPO_VARDATE6
+  - name: epo_vardate7
+    description: EPO_VARDATE7
+  - name: epo_vardate8
+    description: EPO_VARDATE8
+  - name: epo_vardate9
+    description: EPO_VARDATE9
+  - name: epo_vardate10
+    description: EPO_VARDATE10
+  - name: epo_vardate11
+    description: EPO_VARDATE11
+  - name: epo_vardate12
+    description: EPO_VARDATE12
+  - name: epo_vardate13
+    description: EPO_VARDATE13
+  - name: epo_vardate14
+    description: EPO_VARDATE14
+  - name: epo_vardate15
+    description: EPO_VARDATE15
+  - name: epo_created
+    description: EPO_CREATED
+  - name: epo_updated
+    description: EPO_UPDATED
+  - name: epo_frompoint
+    description: EPO_FROMPOINT
+  - name: epo_fromrefdesc
+    description: EPO_FROMREFDESC
+  - name: epo_fromgeoref
+    description: EPO_FROMGEOREF
+  - name: epo_topoint
+    description: EPO_TOPOINT
+  - name: epo_torefdesc
+    description: EPO_TOREFDESC
+  - name: epo_togeoref
+    description: EPO_TOGEOREF
+  - name: epo_from_reference
+    description: EPO_FROM_REFERENCE
+  - name: epo_from_offset
+    description: EPO_FROM_OFFSET
+  - name: epo_from_offset_percentage
+    description: EPO_FROM_OFFSET_PERCENTAGE
+  - name: epo_from_offset_direction
+    description: EPO_FROM_OFFSET_DIRECTION
+  - name: epo_from_xcoordinate
+    description: EPO_FROM_XCOORDINATE
+  - name: epo_from_ycoordinate
+    description: EPO_FROM_YCOORDINATE
+  - name: epo_from_latitude
+    description: EPO_FROM_LATITUDE
+  - name: epo_from_longitude
+    description: EPO_FROM_LONGITUDE
+  - name: epo_from_relationship_type
+    description: EPO_FROM_RELATIONSHIP_TYPE
+  - name: epo_from_horizontal_offset
+    description: EPO_FROM_HORIZONTAL_OFFSET
+  - name: epo_from_horizontal_offsetuom
+    description: EPO_FROM_HORIZONTAL_OFFSETUOM
+  - name: epo_from_horizontal_offsettype
+    description: EPO_FROM_HORIZONTAL_OFFSETTYPE
+  - name: epo_from_vertical_offset
+    description: EPO_FROM_VERTICAL_OFFSET
+  - name: epo_from_vertical_offsetuom
+    description: EPO_FROM_VERTICAL_OFFSETUOM
+  - name: epo_from_vertical_offsettype
+    description: EPO_FROM_VERTICAL_OFFSETTYPE
+  - name: epo_to_reference
+    description: EPO_TO_REFERENCE
+  - name: epo_to_xcoordinate
+    description: EPO_TO_XCOORDINATE
+  - name: epo_to_offset
+    description: EPO_TO_OFFSET
+  - name: epo_to_offset_direction
+    description: EPO_TO_OFFSET_DIRECTION
+  - name: epo_to_offset_percentage
+    description: EPO_TO_OFFSET_PERCENTAGE
+  - name: epo_to_ycoordinate
+    description: EPO_TO_YCOORDINATE
+  - name: epo_to_latitude
+    description: EPO_TO_LATITUDE
+  - name: epo_to_longitude
+    description: EPO_TO_LONGITUDE
+  - name: epo_to_relationship_type
+    description: EPO_TO_RELATIONSHIP_TYPE
+  - name: epo_to_horizontal_offset
+    description: EPO_TO_HORIZONTAL_OFFSET
+  - name: epo_to_horizontal_offsetuom
+    description: EPO_TO_HORIZONTAL_OFFSETUOM
+  - name: epo_to_horizontal_offsettype
+    description: EPO_TO_HORIZONTAL_OFFSETTYPE
+  - name: epo_to_vertical_offset
+    description: EPO_TO_VERTICAL_OFFSET
+  - name: epo_to_vertical_offsetuom
+    description: EPO_TO_VERTICAL_OFFSETUOM
+  - name: epo_to_vertical_offsettype
+    description: EPO_TO_VERTICAL_OFFSETTYPE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EVENTPOINTS

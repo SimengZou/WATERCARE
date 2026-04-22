@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5schedules
+  columns:
+  - name: sch_lastsaved
+    description: SCH_LASTSAVED
+  - name: sch_name
+    description: SCH_NAME
+  - name: sch_description
+    description: SCH_DESCRIPTION
+  - name: sch_type
+    description: SCH_TYPE
+  - name: sch_month
+    description: SCH_MONTH
+  - name: sch_dayofweek
+    description: SCH_DAYOFWEEK
+  - name: sch_hour
+    description: SCH_HOUR
+  - name: sch_minute
+    description: SCH_MINUTE
+  - name: sch_updatecount
+    description: SCH_UPDATECOUNT
+  - name: sch_code
+    description: SCH_CODE
+    data_tests:
+    - unique
+  - name: sch_dayofmonth
+    description: SCH_DAYOFMONTH
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5SCHEDULES

@@ -1,0 +1,134 @@
+version: 2
+models:
+- name: r5objectservicecodes
+  columns:
+  - name: osc_lastsaved
+    description: OSC_LASTSAVED
+  - name: osc_object
+    description: OSC_OBJECT
+  - name: osc_object_org
+    description: OSC_OBJECT_ORG
+  - name: osc_servicecode
+    description: OSC_SERVICECODE
+  - name: osc_servicecode_org
+    description: OSC_SERVICECODE_ORG
+  - name: osc_applytochildren
+    description: OSC_APPLYTOCHILDREN
+  - name: osc_skipthislevel
+    description: OSC_SKIPTHISLEVEL
+  - name: osc_udfchar01
+    description: OSC_UDFCHAR01
+  - name: osc_udfchar02
+    description: OSC_UDFCHAR02
+  - name: osc_udfchar03
+    description: OSC_UDFCHAR03
+  - name: osc_udfchar04
+    description: OSC_UDFCHAR04
+  - name: osc_udfchar05
+    description: OSC_UDFCHAR05
+  - name: osc_udfchar06
+    description: OSC_UDFCHAR06
+  - name: osc_udfchar07
+    description: OSC_UDFCHAR07
+  - name: osc_udfchar08
+    description: OSC_UDFCHAR08
+  - name: osc_udfchar09
+    description: OSC_UDFCHAR09
+  - name: osc_udfchar10
+    description: OSC_UDFCHAR10
+  - name: osc_udfchar11
+    description: OSC_UDFCHAR11
+  - name: osc_udfchar12
+    description: OSC_UDFCHAR12
+  - name: osc_udfchar13
+    description: OSC_UDFCHAR13
+  - name: osc_udfchar14
+    description: OSC_UDFCHAR14
+  - name: osc_udfchar15
+    description: OSC_UDFCHAR15
+  - name: osc_udfchar16
+    description: OSC_UDFCHAR16
+  - name: osc_udfchar17
+    description: OSC_UDFCHAR17
+  - name: osc_udfchar18
+    description: OSC_UDFCHAR18
+  - name: osc_udfchar19
+    description: OSC_UDFCHAR19
+  - name: osc_udfchar20
+    description: OSC_UDFCHAR20
+  - name: osc_udfchar21
+    description: OSC_UDFCHAR21
+  - name: osc_udfchar22
+    description: OSC_UDFCHAR22
+  - name: osc_udfchar23
+    description: OSC_UDFCHAR23
+  - name: osc_udfchar24
+    description: OSC_UDFCHAR24
+  - name: osc_udfchar25
+    description: OSC_UDFCHAR25
+  - name: osc_udfchar26
+    description: OSC_UDFCHAR26
+  - name: osc_udfchar27
+    description: OSC_UDFCHAR27
+  - name: osc_udfchar28
+    description: OSC_UDFCHAR28
+  - name: osc_udfchar29
+    description: OSC_UDFCHAR29
+  - name: osc_udfchar30
+    description: OSC_UDFCHAR30
+  - name: osc_udfnum01
+    description: OSC_UDFNUM01
+  - name: osc_udfnum02
+    description: OSC_UDFNUM02
+  - name: osc_udfnum03
+    description: OSC_UDFNUM03
+  - name: osc_udfnum04
+    description: OSC_UDFNUM04
+  - name: osc_udfnum05
+    description: OSC_UDFNUM05
+  - name: osc_udfdate01
+    description: OSC_UDFDATE01
+  - name: osc_udfdate02
+    description: OSC_UDFDATE02
+  - name: osc_udfdate03
+    description: OSC_UDFDATE03
+  - name: osc_udfdate04
+    description: OSC_UDFDATE04
+  - name: osc_udfdate05
+    description: OSC_UDFDATE05
+  - name: osc_udfchkbox01
+    description: OSC_UDFCHKBOX01
+  - name: osc_udfchkbox02
+    description: OSC_UDFCHKBOX02
+  - name: osc_udfchkbox03
+    description: OSC_UDFCHKBOX03
+  - name: osc_udfchkbox04
+    description: OSC_UDFCHKBOX04
+  - name: osc_udfchkbox05
+    description: OSC_UDFCHKBOX05
+  - name: osc_updatecount
+    description: OSC_UPDATECOUNT
+  - name: osc_pk
+    description: OSC_PK
+    data_tests:
+    - unique
+  - name: osc_parent
+    description: OSC_PARENT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5OBJECTSERVICECODES

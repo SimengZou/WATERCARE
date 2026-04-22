@@ -1,0 +1,137 @@
+version: 2
+models:
+- name: tdpur094
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: potp
+    description: '(required) Purchase Order Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: drct
+    description: 'Direct Delivery. Allowed values: 1, 2'
+  - name: drct_kw
+    description: 'Direct Delivery (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: reto
+    description: 'Return Order. Allowed values: 1, 2, 3'
+  - name: reto_kw
+    description: 'Return Order (keyword). Allowed values: tdpur.reto.yes, tdpur.reto.no,
+      tdpur.reto.rejectgoods'
+  - name: coun
+    description: 'Collect Order. Allowed values: 1, 2'
+  - name: coun_kw
+    description: 'Collect Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sund
+    description: 'Cost Order. Allowed values: 1, 2'
+  - name: sund_kw
+    description: 'Cost Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cnsp
+    description: 'Consignment Payment. Allowed values: 1, 2'
+  - name: cnsp_kw
+    description: 'Consignment Payment (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cnsr
+    description: 'Consignment Replenish. Allowed values: 1, 2'
+  - name: cnsr_kw
+    description: 'Consignment Replenish (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: subc
+    description: 'Subcontracting Order. Allowed values: 1, 2'
+  - name: subc_kw
+    description: 'Subcontracting Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cfnm
+    description: 'Customer Furnished Materials. Allowed values: 1, 2'
+  - name: cfnm_kw
+    description: 'Customer Furnished Materials (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: wrhp
+    description: 'Warehousing Order Type. Max length: 3'
+  - name: slcp
+    description: 'Ship Lines Complete. Allowed values: 1, 2'
+  - name: slcp_kw
+    description: 'Ship Lines Complete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cbor
+    description: 'Combine Open Backorders. Allowed values: 1, 2'
+  - name: cbor_kw
+    description: 'Combine Open Backorders (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: etpc
+    description: 'Exclude from Target Price Calculation. Allowed values: 1, 2'
+  - name: etpc_kw
+    description: 'Exclude from Target Price Calculation (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: ngpo
+    description: 'Purchase Order Group. Max length: 3'
+  - name: sepo
+    description: 'Purchase Order Series. Max length: 8'
+  - name: ngpq
+    description: 'RFQ Group. Max length: 3'
+  - name: sepq
+    description: 'RFQ Series. Max length: 8'
+  - name: ngpc
+    description: 'Contract Group. Max length: 3'
+  - name: sepc
+    description: 'Contract Series. Max length: 8'
+  - name: efdt
+    description: Effective Date
+  - name: exdt
+    description: Expiry Date
+  - name: proc
+    description: 'Obsolete. Max length: 6'
+  - name: pmsk
+    description: 'Obsolete. Max length: 20'
+  - name: ngpo_sepo_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngpo_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngpq_sepq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngpq_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngpc_sepc_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngpc_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur094 Purchase Order Types table, Generated 2026-04-10T19:41:17Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - potp

@@ -1,0 +1,236 @@
+version: 2
+models:
+- name: tfgld495
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: guid
+    description: '(required) Unique Identifier. Max length: 22'
+    data_tests:
+    - not_null
+  - name: dbcr
+    description: '(required) Debit/Credit. Allowed values: 1, 2'
+    data_tests:
+    - not_null
+  - name: dbcr_kw
+    description: 'Debit/Credit (keyword). Allowed values: tfgld.dbcr.debit, tfgld.dbcr.credit'
+  - name: idtc
+    description: 'Integration Document Type. Max length: 8'
+  - name: ktrn
+    description: 'Kind of Entry. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+      12, 13, 14, 15, 16, 17, 18, 19, 20'
+  - name: ktrn_kw
+    description: 'Kind of Entry (keyword). Allowed values: tcktrn.integ.trans, tcktrn.approval,
+      tcktrn.unapproval, tcktrn.corr.non.final, tcktrn.cor.r.non.final, tcktrn.corr.final,
+      tcktrn.cost.trans, tcktrn.exp.tax, tcktrn.open.balance, tcktrn.curr.diff, tcktrn.rounding.diff,
+      tcktrn.sales.invoice, tcktrn.reversal.int.tr, tcktrn.reversed.int.tr, tcktrn.advance.cmg,
+      tcktrn.gain.loss, tcktrn.tax.corr, tcktrn.rec.asset.exp, tcktrn.rec.asset.cap,
+      tcktrn.rec.asset.cor'
+  - name: reco
+    description: 'Reconciliation Area. Allowed values: 1, 2, 5, 6, 7, 10, 11, 12,
+      15, 16, 20, 21, 22, 23, 28, 29, 30, 31, 33, 35, 36, 40, 42, 46, 48, 50, 52,
+      53, 57, 60, 99'
+  - name: reco_kw
+    description: 'Reconciliation Area (keyword). Allowed values: tcreco.inventory,
+      tcreco.cons.inventory, tcreco.inv.accr, tcreco.cons.accr, tcreco.borr.loan.accr,
+      tcreco.prod.order.wip, tcreco.prod.sched.wip, tcreco.pcs.wip, tcreco.ass.order.wip,
+      tcreco.ass.line.wip, tcreco.serv.order.wip, tcreco.serv.call.wip, tcreco.maint.sales.wip,
+      tcreco.maint.work.wip, tcreco.pur.order.wip, tcreco.pur.sched.wip, tcreco.proj.tp.wip,
+      tcreco.proj.prov.rev, tcreco.wrk.cl.doc.wip, tcreco.trf.order.wip, tcreco.inventory.wip,
+      tcreco.interim.cogs, tcreco.interim.rev, tcreco.interim.contr, tcreco.interim.var,
+      tcreco.interim.trans, tcreco.interim.cust.cl, tcreco.interim.supp.cl, tcreco.commitment,
+      tcreco.end.account, tcreco.not.applicable'
+  - name: recs
+    description: Reconciliation Subarea
+  - name: rbon
+    description: 'Business Object. Max length: 17'
+  - name: rbid
+    description: 'Business Object ID. Max length: 11'
+  - name: rpon
+    description: Sort Position
+  - name: obre
+    description: 'Business Object Reference. Max length: 90'
+  - name: buid
+    description: 'Business Object Reference GUID. Max length: 22'
+  - name: ocmp
+    description: Logistic Company
+  - name: trdt
+    description: Transaction date (UTC)
+  - name: crdt
+    description: Creation Date
+  - name: amnt
+    description: Transaction Amount
+  - name: ccur
+    description: 'Transaction Currency. Max length: 3'
+  - name: amth_1
+    description: Amount in Home Currency
+  - name: amth_2
+    description: Amount in Home Currency
+  - name: amth_3
+    description: Amount in Home Currency
+  - name: nuni
+    description: Quantity
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: leac
+    description: 'Ledger Account. Max length: 12'
+  - name: dim1
+    description: 'Dimension 1. Max length: 9'
+  - name: dim2
+    description: 'Dimension 2. Max length: 9'
+  - name: dim3
+    description: 'Dimension 3. Max length: 9'
+  - name: dim4
+    description: 'Dimension 4. Max length: 9'
+  - name: dim5
+    description: 'Dimension 5. Max length: 9'
+  - name: dim6
+    description: 'Dimension 6. Max length: 9'
+  - name: dim7
+    description: 'Dimension 7. Max length: 9'
+  - name: dim8
+    description: 'Dimension 8. Max length: 9'
+  - name: dim9
+    description: 'Dimension 9. Max length: 9'
+  - name: dm10
+    description: 'Dimension 10. Max length: 9'
+  - name: dm11
+    description: 'Dimension 11. Max length: 9'
+  - name: dm12
+    description: 'Dimension 12. Max length: 9'
+  - name: fyer
+    description: Fiscal Year
+  - name: fprd
+    description: Fiscal Period
+  - name: fcom
+    description: Finance Company
+  - name: year
+    description: Batch Year
+  - name: btno
+    description: Batch
+  - name: ttyp
+    description: 'Transaction Type. Max length: 3'
+  - name: docn
+    description: Document
+  - name: lino
+    description: Line
+  - name: serl
+    description: Sequence Number
+  - name: srno
+    description: Background Sequence No.
+  - name: dcdt
+    description: Document Date
+  - name: podt
+    description: Posting Date
+  - name: rev1
+    description: 'Reconciliation Value (Element 1). Max length: 50'
+  - name: rev2
+    description: 'Reconciliation Value (Element 2). Max length: 50'
+  - name: rev3
+    description: 'Reconciliation Value (Element 3). Max length: 50'
+  - name: rev4
+    description: 'Reconciliation Value (Element 4). Max length: 50'
+  - name: rev5
+    description: 'Reconciliation Value (Element 5). Max length: 50'
+  - name: urat_1
+    description: Used Currency Rate
+  - name: urat_2
+    description: Used Currency Rate
+  - name: urat_3
+    description: Used Currency Rate
+  - name: arat_1
+    description: Actual Currency Rate
+  - name: arat_2
+    description: Actual Currency Rate
+  - name: arat_3
+    description: Actual Currency Rate
+  - name: inic
+    description: 'Intercompany Indicator. Allowed values: 1, 2'
+  - name: inic_kw
+    description: 'Intercompany Indicator (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: inad
+    description: 'Antedating Indicator. Allowed values: 1, 2'
+  - name: inad_kw
+    description: 'Antedating Indicator (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: acce
+    description: 'Accepted. Allowed values: 1, 2'
+  - name: acce_kw
+    description: 'Accepted (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: accf
+    description: 'Final Accepted. Allowed values: 1, 2'
+  - name: accf_kw
+    description: 'Final Accepted (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rce1
+    description: 'Reconciliation (Element 1). Max length: 12'
+  - name: rce2
+    description: 'Reconciliation (Element 2). Max length: 12'
+  - name: rce3
+    description: 'Reconciliation (Element 3). Max length: 12'
+  - name: rce4
+    description: 'Reconciliation (Element 4). Max length: 12'
+  - name: rce5
+    description: 'Reconciliation (Element 5). Max length: 12'
+  - name: tdte
+    description: Transaction Date (Local)
+  - name: link
+    description: 'Reference Link. Max length: 22'
+  - name: proj
+    description: 'Project. Max length: 9'
+  - name: lcit
+    description: Logical Company of Integration Transaction
+  - name: ogui
+    description: 'Original GUID. Max length: 22'
+  - name: odbc
+    description: 'Original Debit/Credit. Allowed values: 1, 2'
+  - name: odbc_kw
+    description: 'Original Debit/Credit (keyword). Allowed values: tfgld.dbcr.debit,
+      tfgld.dbcr.credit'
+  - name: blrf
+    description: 'Balance Reference. Max length: 90'
+  - name: aobl
+    description: 'Automatic Opening Balance. Allowed values: 1, 2'
+  - name: aobl_kw
+    description: 'Automatic Opening Balance (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld495 Reconciliation Data table, Generated 2026-04-10T19:41:45Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - guid
+        - dbcr

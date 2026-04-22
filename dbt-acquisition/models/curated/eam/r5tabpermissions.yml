@@ -1,0 +1,59 @@
+version: 2
+models:
+- name: r5tabpermissions
+  columns:
+  - name: trp_lastsaved
+    description: TRP_LASTSAVED
+  - name: trp_group
+    description: TRP_GROUP
+  - name: trp_visible
+    description: TRP_VISIBLE
+  - name: trp_select
+    description: TRP_SELECT
+  - name: trp_update
+    description: TRP_UPDATE
+  - name: trp_insert
+    description: TRP_INSERT
+  - name: trp_delete
+    description: TRP_DELETE
+  - name: trp_sysrequired
+    description: TRP_SYSREQUIRED
+  - name: trp_updatecount
+    description: TRP_UPDATECOUNT
+  - name: trp_sequence
+    description: TRP_SEQUENCE
+  - name: trp_securityddspyid
+    description: TRP_SECURITYDDSPYID
+  - name: trp_altersave
+    description: TRP_ALTERSAVE
+  - name: trp_updated
+    description: TRP_UPDATED
+  - name: trp_function
+    description: TRP_FUNCTION
+  - name: trp_tab
+    description: TRP_TAB
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TABPERMISSIONS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - trp_function
+        - trp_group
+        - trp_tab

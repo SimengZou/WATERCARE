@@ -1,0 +1,113 @@
+version: 2
+models:
+- name: tfgld007
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ptyp
+    description: '(required) Period Type. Allowed values: 1, 2, 3'
+    data_tests:
+    - not_null
+  - name: ptyp_kw
+    description: 'Period Type (keyword). Allowed values: tfgld.ptyp.financial, tfgld.ptyp.reporting,
+      tfgld.ptyp.vat'
+  - name: year
+    description: (required) Fiscal Year
+    data_tests:
+    - not_null
+  - name: prno
+    description: (required) Period
+    data_tests:
+    - not_null
+  - name: sacp
+    description: 'Period Status ACP. Allowed values: 1, 2, 3'
+  - name: sacp_kw
+    description: 'Period Status ACP (keyword). Allowed values: tfgld.sper.open, tfgld.sper.closed,
+      tfgld.sper.finally.closed'
+  - name: dacp
+    description: Change Date ACP
+  - name: uacp
+    description: 'User ACP. Max length: 16'
+  - name: sacr
+    description: 'Period Status ACR. Allowed values: 1, 2, 3'
+  - name: sacr_kw
+    description: 'Period Status ACR (keyword). Allowed values: tfgld.sper.open, tfgld.sper.closed,
+      tfgld.sper.finally.closed'
+  - name: dacr
+    description: Change Date ACR
+  - name: uacr
+    description: 'User ACR. Max length: 16'
+  - name: scmg
+    description: 'Period Status CMG. Allowed values: 1, 2, 3'
+  - name: scmg_kw
+    description: 'Period Status CMG (keyword). Allowed values: tfgld.sper.open, tfgld.sper.closed,
+      tfgld.sper.finally.closed'
+  - name: dcmg
+    description: Change Date CMG
+  - name: ucmg
+    description: 'User CMG. Max length: 16'
+  - name: sgld
+    description: 'Period Status GLD. Allowed values: 1, 2, 3'
+  - name: sgld_kw
+    description: 'Period Status GLD (keyword). Allowed values: tfgld.sper.open, tfgld.sper.closed,
+      tfgld.sper.finally.closed'
+  - name: dgld
+    description: Change Date GLD
+  - name: ugld
+    description: 'User GLD. Max length: 16'
+  - name: sint
+    description: 'Period Status Integration. Allowed values: 1, 2, 3'
+  - name: sint_kw
+    description: 'Period Status Integration (keyword). Allowed values: tfgld.sper.open,
+      tfgld.sper.closed, tfgld.sper.finally.closed'
+  - name: dint
+    description: Change Date Integrations
+  - name: uint
+    description: 'User Integrations. Max length: 16'
+  - name: ptyp_year_prno_ref_compnr
+    description: company number of primary key of table tfgld005 Periods
+  - name: year_ref_compnr
+    description: company number of primary key of table tfgld006 End Dates by Year
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld007 Period Status table, Generated 2026-04-10T19:41:41Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ptyp
+        - year
+        - prno

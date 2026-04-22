@@ -1,0 +1,202 @@
+version: 2
+models:
+- name: r5mobilenotebooks
+  columns:
+  - name: mnb_lastsaved
+    description: MNB_LASTSAVED
+  - name: mnb_code
+    description: MNB_CODE
+    data_tests:
+    - unique
+  - name: mnb_org
+    description: MNB_ORG
+  - name: mnb_class
+    description: MNB_CLASS
+  - name: mnb_class_org
+    description: MNB_CLASS_ORG
+  - name: mnb_private
+    description: MNB_PRIVATE
+  - name: mnb_history
+    description: MNB_HISTORY
+  - name: mnb_note
+    description: MNB_NOTE
+  - name: mnb_defect
+    description: MNB_DEFECT
+  - name: mnb_object
+    description: MNB_OBJECT
+  - name: mnb_object_org
+    description: MNB_OBJECT_ORG
+  - name: mnb_ncfseverity
+    description: MNB_NCFSEVERITY
+  - name: mnb_mtaseverity
+    description: MNB_MTASEVERITY
+  - name: mnb_ncttype
+    description: MNB_NCTTYPE
+  - name: mnb_ncttype_org
+    description: MNB_NCTTYPE_ORG
+  - name: mnb_ncfclass
+    description: MNB_NCFCLASS
+  - name: mnb_ncfclass_org
+    description: MNB_NCFCLASS_ORG
+  - name: mnb_division
+    description: MNB_DIVISION
+  - name: mnb_line
+    description: MNB_LINE
+  - name: mnb_track
+    description: MNB_TRACK
+  - name: mnb_section
+    description: MNB_SECTION
+  - name: mnb_station
+    description: MNB_STATION
+  - name: mnb_stationing_major
+    description: MNB_STATIONING_MAJOR
+  - name: mnb_stationing_minor
+    description: MNB_STATIONING_MINOR
+  - name: mnb_detailed_location
+    description: MNB_DETAILED_LOCATION
+  - name: mnb_created
+    description: MNB_CREATED
+  - name: mnb_createdby
+    description: MNB_CREATEDBY
+  - name: mnb_mobilecreated
+    description: MNB_MOBILECREATED
+  - name: mnb_emailaddress
+    description: MNB_EMAILADDRESS
+  - name: mnb_mnecode
+    description: MNB_MNECODE
+  - name: mnb_udfchar01
+    description: MNB_UDFCHAR01
+  - name: mnb_udfchar02
+    description: MNB_UDFCHAR02
+  - name: mnb_udfchar03
+    description: MNB_UDFCHAR03
+  - name: mnb_udfchar04
+    description: MNB_UDFCHAR04
+  - name: mnb_udfchar05
+    description: MNB_UDFCHAR05
+  - name: mnb_udfchar06
+    description: MNB_UDFCHAR06
+  - name: mnb_udfchar07
+    description: MNB_UDFCHAR07
+  - name: mnb_udfchar08
+    description: MNB_UDFCHAR08
+  - name: mnb_udfchar09
+    description: MNB_UDFCHAR09
+  - name: mnb_udfchar10
+    description: MNB_UDFCHAR10
+  - name: mnb_udfchar11
+    description: MNB_UDFCHAR11
+  - name: mnb_udfchar12
+    description: MNB_UDFCHAR12
+  - name: mnb_udfchar13
+    description: MNB_UDFCHAR13
+  - name: mnb_udfchar14
+    description: MNB_UDFCHAR14
+  - name: mnb_udfchar15
+    description: MNB_UDFCHAR15
+  - name: mnb_udfchar16
+    description: MNB_UDFCHAR16
+  - name: mnb_udfchar17
+    description: MNB_UDFCHAR17
+  - name: mnb_udfchar18
+    description: MNB_UDFCHAR18
+  - name: mnb_udfchar19
+    description: MNB_UDFCHAR19
+  - name: mnb_udfchar20
+    description: MNB_UDFCHAR20
+  - name: mnb_udfchar21
+    description: MNB_UDFCHAR21
+  - name: mnb_udfchar22
+    description: MNB_UDFCHAR22
+  - name: mnb_udfchar23
+    description: MNB_UDFCHAR23
+  - name: mnb_udfchar24
+    description: MNB_UDFCHAR24
+  - name: mnb_udfchar25
+    description: MNB_UDFCHAR25
+  - name: mnb_udfchar26
+    description: MNB_UDFCHAR26
+  - name: mnb_udfchar27
+    description: MNB_UDFCHAR27
+  - name: mnb_udfchar28
+    description: MNB_UDFCHAR28
+  - name: mnb_udfchar29
+    description: MNB_UDFCHAR29
+  - name: mnb_udfchar30
+    description: MNB_UDFCHAR30
+  - name: mnb_udfnum01
+    description: MNB_UDFNUM01
+  - name: mnb_udfnum02
+    description: MNB_UDFNUM02
+  - name: mnb_udfnum03
+    description: MNB_UDFNUM03
+  - name: mnb_udfnum04
+    description: MNB_UDFNUM04
+  - name: mnb_udfnum05
+    description: MNB_UDFNUM05
+  - name: mnb_udfdate01
+    description: MNB_UDFDATE01
+  - name: mnb_udfdate02
+    description: MNB_UDFDATE02
+  - name: mnb_udfdate03
+    description: MNB_UDFDATE03
+  - name: mnb_udfdate04
+    description: MNB_UDFDATE04
+  - name: mnb_udfdate05
+    description: MNB_UDFDATE05
+  - name: mnb_udfchkbox01
+    description: MNB_UDFCHKBOX01
+  - name: mnb_udfchkbox02
+    description: MNB_UDFCHKBOX02
+  - name: mnb_udfchkbox03
+    description: MNB_UDFCHKBOX03
+  - name: mnb_udfchkbox04
+    description: MNB_UDFCHKBOX04
+  - name: mnb_udfchkbox05
+    description: MNB_UDFCHKBOX05
+  - name: mnb_updatecount
+    description: MNB_UPDATECOUNT
+  - name: mnb_level1
+    description: MNB_LEVEL1
+  - name: mnb_level1_org
+    description: MNB_LEVEL1_ORG
+  - name: mnb_level2
+    description: MNB_LEVEL2
+  - name: mnb_level2_org
+    description: MNB_LEVEL2_ORG
+  - name: mnb_level3
+    description: MNB_LEVEL3
+  - name: mnb_level3_org
+    description: MNB_LEVEL3_ORG
+  - name: mnb_level4
+    description: MNB_LEVEL4
+  - name: mnb_level4_org
+    description: MNB_LEVEL4_ORG
+  - name: mnb_level3a
+    description: MNB_LEVEL3A
+  - name: mnb_level3a_org
+    description: MNB_LEVEL3A_ORG
+  - name: mnb_updated
+    description: MNB_UPDATED
+  - name: mnb_updatedby
+    description: MNB_UPDATEDBY
+  - name: mnb_nonconformity_observation
+    description: MNB_NONCONFORMITY_OBSERVATION
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MOBILENOTEBOOKS

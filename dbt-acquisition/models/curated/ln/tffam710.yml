@@ -1,0 +1,214 @@
+version: 2
+models:
+- name: tffam710
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: meth
+    description: '(required) Depreciation Code. Max length: 20'
+    data_tests:
+    - not_null
+  - name: conv
+    description: 'Avg. Convention. Allowed values: 1, 2, 3, 4, 5, 8, 9, 10, 11, 12,
+      13'
+  - name: conv_kw
+    description: 'Avg. Convention (keyword). Allowed values: tffam.conv.none, tffam.conv.mid.mont,
+      tffam.conv.mid.quar, tffam.conv.half.year, tffam.conv.modi.half.year, tffam.conv.period.in,
+      tffam.conv.first.period, tffam.conv.next.first.per, tffam.conv.period.after,
+      tffam.conv.first.second, tffam.conv.second.half'
+  - name: dbpt
+    description: Declining Bal. Percent
+  - name: depl
+    description: 'Depreciate Last Year in Service. Allowed values: 1, 2'
+  - name: depl_kw
+    description: 'Depreciate Last Year in Service (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 60'
+    data_tests:
+    - not_null
+  - name: face
+    description: 'Federal Tax - U.S. (ACE). Allowed values: 0, 1, 2'
+  - name: face_kw
+    description: 'Federal Tax - U.S. (ACE) (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: famt
+    description: 'Federal Tax - U.S. (AMT). Allowed values: 0, 1, 2'
+  - name: famt_kw
+    description: 'Federal Tax - U.S. (AMT) (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: fcal
+    description: 'Calculatory. Allowed values: 0, 1, 2'
+  - name: fcal_kw
+    description: 'Calculatory (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: fcom
+    description: 'Commercial. Allowed values: 0, 1, 2'
+  - name: fcom_kw
+    description: 'Commercial (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: fixa_1
+    description: Fixed Amount
+  - name: fixa_2
+    description: Fixed Amount
+  - name: fixa_3
+    description: Fixed Amount
+  - name: ffin
+    description: 'Financial - U.S.. Allowed values: 0, 1, 2'
+  - name: ffin_kw
+    description: 'Financial - U.S. (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: foth
+    description: 'Other Tax - U.S.. Allowed values: 0, 1, 2'
+  - name: foth_kw
+    description: 'Other Tax - U.S. (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: fspe
+    description: 'Special. Allowed values: 0, 1, 2'
+  - name: fspe_kw
+    description: 'Special (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: fsta
+    description: 'Statutory. Allowed values: 0, 1, 2'
+  - name: fsta_kw
+    description: 'Statutory (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: fstd
+    description: 'Federal Tax - U.S. (Standard). Allowed values: 0, 1, 2'
+  - name: fstd_kw
+    description: 'Federal Tax - U.S. (Standard) (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: intr
+    description: Interest Rate
+  - name: life
+    description: Class Life YY/MM
+  - name: rtty
+    description: 'Rate Table Type. Allowed values: 1, 2, 3'
+  - name: rtty_kw
+    description: 'Rate Table Type (keyword). Allowed values: tffam.rtty.na, tffam.rtty.month,
+      tffam.rtty.year'
+  - name: swsl
+    description: 'Switch to SL. Allowed values: 1, 2'
+  - name: swsl_kw
+    description: 'Switch to SL (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: taxt
+    description: 'Tax Method Type. Allowed values: 1, 2, 3, 5'
+  - name: taxt_kw
+    description: 'Tax Method Type (keyword). Allowed values: tffam.taxt.na, tffam.taxt.macrs,
+      tffam.taxt.acrs, tffam.taxt.months'
+  - name: type
+    description: 'Depreciation Method. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 12, 13, 14, 15'
+  - name: type_kw
+    description: 'Depreciation Method (keyword). Allowed values: tffam.mtyp.sl, tffam.mtyp.db,
+      tffam.mtyp.syd, tffam.mtyp.uop, tffam.mtyp.gwg, tffam.mtyp.annuity, tffam.mtyp.fixed,
+      tffam.mtyp.custom, tffam.mtyp.none, tffam.mtyp.nbv, tffam.mtyp.generic, tffam.mtyp.gfac,
+      tffam.mtyp.cost.perc, tffam.mtyp.skloc, tffam.mtyp.czloc'
+  - name: updt
+    description: 'Allow Updates. Allowed values: 0, 1, 2'
+  - name: updt_kw
+    description: 'Allow Updates (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: post
+    description: 'Post Reversals. Allowed values: 0, 1, 2'
+  - name: post_kw
+    description: 'Post Reversals (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: disp
+    description: 'Disposal Conventions. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: disp_kw
+    description: 'Disposal Conventions (keyword). Allowed values: tffam.disp.none,
+      tffam.disp.disp.per, tffam.disp.prev.per, tffam.disp.first.second, tffam.disp.year.disp,
+      tffam.disp.prev.year'
+  - name: capp
+    description: 'Capping. Allowed values: 1, 2, 3, 4'
+  - name: capp_kw
+    description: 'Capping (keyword). Allowed values: tffam.capp.twice, tffam.capp.triple,
+      tffam.capp.na, tffam.capp.two.and.half'
+  - name: calb
+    description: 'Calculation Base. Allowed values: 1, 2, 3'
+  - name: calb_kw
+    description: 'Calculation Base (keyword). Allowed values: tffam.calb.yearly, tffam.calb.periodic,
+      tffam.calb.na'
+  - name: bnbv
+    description: 'Based on Book Value. Allowed values: 1, 2'
+  - name: bnbv_kw
+    description: 'Based on Book Value (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: didt
+    description: 'Include Disposal Date. Allowed values: 1, 2'
+  - name: didt_kw
+    description: 'Include Disposal Date (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: gfac
+    description: Guarantee Factor
+  - name: rdgf
+    description: Revi Dep Beyond Guarantee Factor
+  - name: nygf
+    description: No of Years Beyond Guarantee Factor
+  - name: dprc
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: dprc_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: perc
+    description: Obsolete
+  - name: sbsv
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: sbsv_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bdad
+    description: 'Obsolete. Allowed values: 1, 2, 3'
+  - name: bdad_kw
+    description: 'Obsolete (keyword). Allowed values: tffam.bdad.adj.period, tffam.bdad.next.period,
+      tffam.bdad.not.appl'
+  - name: cper
+    description: Cost Percentage
+  - name: stcp
+    description: 'Switch to Cost Percentage. Allowed values: 1, 2'
+  - name: stcp_kw
+    description: 'Switch to Cost Percentage (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: acnp
+    description: 'Apply Cost Adjustment in next Period. Allowed values: 1, 2'
+  - name: acnp_kw
+    description: 'Apply Cost Adjustment in next Period (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: silp
+    description: 'Salvage in last Period. Allowed values: 1, 2'
+  - name: silp_kw
+    description: 'Salvage in last Period (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rndy
+    description: 'Round Year Amount. Allowed values: 1, 2'
+  - name: rndy_kw
+    description: 'Round Year Amount (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam710 Depreciation Method table, Generated 2026-04-10T19:41:34Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - meth

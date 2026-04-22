@@ -1,0 +1,186 @@
+version: 2
+models:
+- name: tpppc236
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: rgdt
+    description: (required) Registration Date
+    data_tests:
+    - not_null
+  - name: task
+    description: '(required) Labor. Max length: 8'
+    data_tests:
+    - not_null
+  - name: cspa
+    description: '(required) Element. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: quan
+    description: No. of Hours
+  - name: ratc
+    description: Cost Rate
+  - name: amoc
+    description: Costs
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: cwgt
+    description: 'Labor Type. Max length: 3'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: rtcc_1
+    description: Currency Rate (Costs)
+  - name: rtcc_2
+    description: Currency Rate (Costs)
+  - name: rtcc_3
+    description: Currency Rate (Costs)
+  - name: rtfc_1
+    description: Rate Factor (Costs)
+  - name: rtfc_2
+    description: Rate Factor (Costs)
+  - name: rtfc_3
+    description: Rate Factor (Costs)
+  - name: rdat
+    description: Rate Date
+  - name: appr
+    description: 'Approved. Allowed values: 1, 2'
+  - name: appr_kw
+    description: 'Approved (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: frat
+    description: 'Final Rate. Allowed values: 1, 2'
+  - name: frat_kw
+    description: 'Final Rate (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Text
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cwgt_ref_compnr
+    description: company number of primary key of table tcppl030 Labor Types
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: pric_prjc
+    description: 'CC: Labor Cost Price in Project Currency'
+  - name: pric_cntc
+    description: 'CC: Labor Cost Price in Contract Currency'
+  - name: pric_dwhc
+    description: 'CC: Labor Cost Price in Data Warehouse Currency'
+  - name: pric_refc
+    description: 'CC: Labor Cost Price in Reference Currency'
+  - name: pric_homc
+    description: 'CC: Labor Cost Price in Local Currency'
+  - name: pric_rpc1
+    description: 'CC: Labor Cost Price in Reporting Currency 1'
+  - name: pric_rpc2
+    description: 'CC: Labor Cost Price in Reporting Currency 2'
+  - name: amoc_prjc
+    description: 'CC: Labor Cost Amount in Project Currency'
+  - name: amoc_cntc
+    description: 'CC: Labor Cost Amount in Contract Currency'
+  - name: amoc_dwhc
+    description: 'CC: Labor Cost Amount in Data Warehouse Currency'
+  - name: amoc_refc
+    description: 'CC: Labor Cost Amount in Reference Currency'
+  - name: amoc_homc
+    description: 'CC: Labor Cost Amount in Local Currency'
+  - name: amoc_rpc1
+    description: 'CC: Labor Cost Amount in Reporting Currency 1'
+  - name: amoc_rpc2
+    description: 'CC: Labor Cost Amount in Reporting Currency 2'
+  - name: feac_refc
+    description: 'CC: Estimate at Completion in Reference Currency'
+  - name: feac_trnc
+    description: 'CC: Estimate at Completion in Transaction Currency'
+  - name: feac_prjc
+    description: 'CC: Estimate at Completion in Project Currency'
+  - name: feac_cntc
+    description: 'CC: Estimate at Completion in Contract Currency'
+  - name: feac_dwhc
+    description: 'CC: Estimate at Completion in Data Warehouse Currency'
+  - name: feac_homc
+    description: 'CC: Estimate at Completion in Local Currency'
+  - name: feac_rpc1
+    description: 'CC: Estimate at Completion in Reporting Currency 1'
+  - name: feac_rpc2
+    description: 'CC: Estimate at Completion in Reporting Currency 2'
+  - name: feac_cuni_base
+    description: 'CC: Labor Hours in General Unit of Hours'
+  - name: task_rcmp
+    description: 'CC: Reference Company of Task'
+  - name: cprj_task
+    description: 'CC: Project Labor. Max length: 25'
+  - name: cprj_fcmp
+    description: 'CC: Project Financial Company'
+  - name: quan_buar
+    description: 'CC: Quantity in Base Unit Area'
+  - name: quan_buvl
+    description: 'CC: Quantity in Base Unit Volume'
+  - name: quan_buln
+    description: 'CC: Quantity in Base Unit Length'
+  - name: quan_bupc
+    description: 'CC: Quantity in Base Unit Piece'
+  - name: quan_buwg
+    description: 'CC: Quantity in Base Unit Weight'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpppc236 Labor Cost Forecast table, Generated 2026-04-10T19:42:09Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - rgdt
+        - task
+        - cspa
+        - cact

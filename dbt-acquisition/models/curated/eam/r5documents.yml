@@ -1,0 +1,236 @@
+version: 2
+models:
+- name: r5documents
+  columns:
+  - name: doc_lastsaved
+    description: DOC_LASTSAVED
+  - name: doc_code
+    description: DOC_CODE
+    data_tests:
+    - unique
+  - name: doc_desc
+    description: DOC_DESC
+  - name: doc_class
+    description: DOC_CLASS
+  - name: doc_origcode
+    description: DOC_ORIGCODE
+  - name: doc_revnumber
+    description: DOC_REVNUMBER
+  - name: doc_revision
+    description: DOC_REVISION
+  - name: doc_parent
+    description: DOC_PARENT
+  - name: doc_origin
+    description: DOC_ORIGIN
+  - name: doc_pages
+    description: DOC_PAGES
+  - name: doc_size
+    description: DOC_SIZE
+  - name: doc_cabinet
+    description: DOC_CABINET
+  - name: doc_filename
+    description: DOC_FILENAME
+  - name: doc_filetype
+    description: DOC_FILETYPE
+  - name: doc_expir
+    description: DOC_EXPIR
+  - name: doc_supplier
+    description: DOC_SUPPLIER
+  - name: doc_warstart
+    description: DOC_WARSTART
+  - name: doc_warranty
+    description: DOC_WARRANTY
+  - name: doc_duration
+    description: DOC_DURATION
+  - name: doc_threshold
+    description: DOC_THRESHOLD
+  - name: doc_manufacturer
+    description: DOC_MANUFACTURER
+  - name: doc_org
+    description: DOC_ORG
+  - name: doc_class_org
+    description: DOC_CLASS_ORG
+  - name: doc_supplier_org
+    description: DOC_SUPPLIER_ORG
+  - name: doc_type
+    description: DOC_TYPE
+  - name: doc_rtype
+    description: DOC_RTYPE
+  - name: doc_filesize
+    description: DOC_FILESIZE
+  - name: doc_lockuser
+    description: DOC_LOCKUSER
+  - name: doc_updatecount
+    description: DOC_UPDATECOUNT
+  - name: doc_labcharge
+    description: DOC_LABCHARGE
+  - name: doc_matcharge
+    description: DOC_MATCHARGE
+  - name: doc_hircharge
+    description: DOC_HIRCHARGE
+  - name: doc_dmacharge
+    description: DOC_DMACHARGE
+  - name: doc_servicecharge
+    description: DOC_SERVICECHARGE
+  - name: doc_toolcharge
+    description: DOC_TOOLCHARGE
+  - name: doc_notused
+    description: DOC_NOTUSED
+  - name: doc_origfilename
+    description: DOC_ORIGFILENAME
+  - name: doc_uploaded
+    description: DOC_UPLOADED
+  - name: doc_warrantytype
+    description: DOC_WARRANTYTYPE
+  - name: doc_controlnumber
+    description: DOC_CONTROLNUMBER
+  - name: doc_agreementtype
+    description: DOC_AGREEMENTTYPE
+  - name: doc_onsiterepair
+    description: DOC_ONSITEREPAIR
+  - name: doc_loanerprovided
+    description: DOC_LOANERPROVIDED
+  - name: doc_renewalalertemail
+    description: DOC_RENEWALALERTEMAIL
+  - name: doc_startdatebasis
+    description: DOC_STARTDATEBASIS
+  - name: doc_fixedlaborrate
+    description: DOC_FIXEDLABORRATE
+  - name: doc_fixedlaboramount
+    description: DOC_FIXEDLABORAMOUNT
+  - name: doc_maxlaboramount
+    description: DOC_MAXLABORAMOUNT
+  - name: doc_maxstockamount
+    description: DOC_MAXSTOCKAMOUNT
+  - name: doc_excludepmworkorder
+    description: DOC_EXCLUDEPMWORKORDER
+  - name: doc_partlistrequired
+    description: DOC_PARTLISTREQUIRED
+  - name: doc_rmarequired
+    description: DOC_RMAREQUIRED
+  - name: doc_udfchar01
+    description: DOC_UDFCHAR01
+  - name: doc_udfchar02
+    description: DOC_UDFCHAR02
+  - name: doc_udfchar03
+    description: DOC_UDFCHAR03
+  - name: doc_udfchar04
+    description: DOC_UDFCHAR04
+  - name: doc_udfchar05
+    description: DOC_UDFCHAR05
+  - name: doc_udfchar06
+    description: DOC_UDFCHAR06
+  - name: doc_udfchar07
+    description: DOC_UDFCHAR07
+  - name: doc_udfchar08
+    description: DOC_UDFCHAR08
+  - name: doc_udfchar09
+    description: DOC_UDFCHAR09
+  - name: doc_udfchar10
+    description: DOC_UDFCHAR10
+  - name: doc_udfchar11
+    description: DOC_UDFCHAR11
+  - name: doc_udfchar12
+    description: DOC_UDFCHAR12
+  - name: doc_udfchar13
+    description: DOC_UDFCHAR13
+  - name: doc_udfchar14
+    description: DOC_UDFCHAR14
+  - name: doc_udfchar15
+    description: DOC_UDFCHAR15
+  - name: doc_udfchar16
+    description: DOC_UDFCHAR16
+  - name: doc_udfchar17
+    description: DOC_UDFCHAR17
+  - name: doc_udfchar18
+    description: DOC_UDFCHAR18
+  - name: doc_udfchar19
+    description: DOC_UDFCHAR19
+  - name: doc_udfchar20
+    description: DOC_UDFCHAR20
+  - name: doc_udfchar21
+    description: DOC_UDFCHAR21
+  - name: doc_udfchar22
+    description: DOC_UDFCHAR22
+  - name: doc_udfchar23
+    description: DOC_UDFCHAR23
+  - name: doc_udfchar24
+    description: DOC_UDFCHAR24
+  - name: doc_udfchar25
+    description: DOC_UDFCHAR25
+  - name: doc_udfchar26
+    description: DOC_UDFCHAR26
+  - name: doc_udfchar27
+    description: DOC_UDFCHAR27
+  - name: doc_udfchar28
+    description: DOC_UDFCHAR28
+  - name: doc_udfchar29
+    description: DOC_UDFCHAR29
+  - name: doc_udfchar30
+    description: DOC_UDFCHAR30
+  - name: doc_udfnum01
+    description: DOC_UDFNUM01
+  - name: doc_udfnum02
+    description: DOC_UDFNUM02
+  - name: doc_udfnum03
+    description: DOC_UDFNUM03
+  - name: doc_fixedstockamount
+    description: DOC_FIXEDSTOCKAMOUNT
+  - name: doc_udfnum04
+    description: DOC_UDFNUM04
+  - name: doc_udfnum05
+    description: DOC_UDFNUM05
+  - name: doc_udfdate01
+    description: DOC_UDFDATE01
+  - name: doc_udfdate02
+    description: DOC_UDFDATE02
+  - name: doc_udfdate03
+    description: DOC_UDFDATE03
+  - name: doc_udfdate04
+    description: DOC_UDFDATE04
+  - name: doc_udfdate05
+    description: DOC_UDFDATE05
+  - name: doc_udfchkbox01
+    description: DOC_UDFCHKBOX01
+  - name: doc_udfchkbox02
+    description: DOC_UDFCHKBOX02
+  - name: doc_udfchkbox03
+    description: DOC_UDFCHKBOX03
+  - name: doc_udfchkbox04
+    description: DOC_UDFCHKBOX04
+  - name: doc_udfchkbox05
+    description: DOC_UDFCHKBOX05
+  - name: doc_content
+    description: 'DOC_CONTENT. Max length: 0'
+  - name: doc_idmtype
+    description: DOC_IDMTYPE
+  - name: doc_title
+    description: DOC_TITLE
+  - name: doc_dateeffective
+    description: DOC_DATEEFFECTIVE
+  - name: doc_dateexpired
+    description: DOC_DATEEXPIRED
+  - name: doc_isprofilepicture
+    description: DOC_ISPROFILEPICTURE
+  - name: doc_ismobilelog
+    description: DOC_ISMOBILELOG
+  - name: doc_isimage
+    description: DOC_ISIMAGE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DOCUMENTS

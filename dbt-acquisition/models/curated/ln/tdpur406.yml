@@ -1,0 +1,218 @@
+version: 2
+models:
+- name: tdpur406
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orno
+    description: '(required) Purchase Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: rsqn
+    description: (required) Receipt Sequence Number
+    data_tests:
+    - not_null
+  - name: ddte
+    description: Actual Receipt Date
+  - name: rcld
+    description: Receipt Log Date
+  - name: shdt
+    description: Shipping Date
+  - name: rcno
+    description: 'Receipt Number. Max length: 9'
+  - name: rseq
+    description: Receipt Line
+  - name: dino__en_us
+    description: '(required) Packing Slip - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: qpdl
+    description: Received Quantity in Piece Unit
+  - name: qidl
+    description: Received Quantity
+  - name: qpps
+    description: Packing Slip Quantity in Piece Unit
+  - name: qips
+    description: Packing Slip Quantity
+  - name: asno__en_us
+    description: '(required) Supplier ASN Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: asnl__en_us
+    description: '(required) Suppliers ASN Line - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: qpap
+    description: Approved Quantity in Piece Unit
+  - name: qiap
+    description: Approved Quantity
+  - name: qprj
+    description: Rejected Quantity in Piece Unit
+  - name: qirj
+    description: Rejected Quantity
+  - name: crej
+    description: 'Reason for Rejection. Max length: 6'
+  - name: cuva
+    description: Customs Value
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: lssn
+    description: 'Item Identification Set. Max length: 22'
+  - name: damt
+    description: Receipt Amount
+  - name: amld
+    description: Order Line Discount Amount
+  - name: amod
+    description: Order Discount Amount
+  - name: copr_1
+    description: Standard Cost
+  - name: copr_2
+    description: Standard Cost
+  - name: copr_3
+    description: Standard Cost
+  - name: coop_1
+    description: Operation Costs
+  - name: coop_2
+    description: Operation Costs
+  - name: coop_3
+    description: Operation Costs
+  - name: fire
+    description: 'Final Receipt. Allowed values: 1, 2'
+  - name: fire_kw
+    description: 'Final Receipt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: conf
+    description: 'Confirmed. Allowed values: 1, 2'
+  - name: conf_kw
+    description: 'Confirmed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: arej
+    description: 'Accepted Rejected Goods. Allowed values: 1, 2'
+  - name: arej_kw
+    description: 'Accepted Rejected Goods (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: qual
+    description: 'Inspection. Allowed values: 1, 2'
+  - name: qual_kw
+    description: 'Inspection (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: afrw
+    description: 'Actual Carrier. Max length: 3'
+  - name: load
+    description: 'Load. Max length: 9'
+  - name: shpm
+    description: 'Shipment. Max length: 9'
+  - name: ldat
+    description: Load Date
+  - name: wght
+    description: Weight
+  - name: wtun
+    description: 'Weight Unit. Max length: 3'
+  - name: refa__en_us
+    description: '(required) Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: deln
+    description: 'Delivery Note. Max length: 19'
+  - name: mpnr
+    description: 'Manufacturer Part Number. Max length: 35'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: revi
+    description: 'Engineering Item Revision. Max length: 6'
+  - name: onpr
+    description: Original Net Price in Order Currency
+  - name: bgxc
+    description: 'Budget Exception. Allowed values: 1, 2'
+  - name: bgxc_kw
+    description: 'Budget Exception (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Text
+  - name: cdf_adat
+    description: Approved Date
+  - name: cdf_aerr
+    description: 'Approval Error. Max length: 100'
+  - name: cdf_amnt
+    description: Correction Quantity
+  - name: cdf_ausr
+    description: 'Approved By. Max length: 16'
+  - name: cdf_idet__en_us
+    description: '(required) Item Detail - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: cdf_wfst
+    description: 'Workflow Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: cdf_wfst_kw
+    description: 'Workflow Status (keyword). Allowed values: tdcdf_lst003.not.applicable,
+      tdcdf_lst003.approved, tdcdf_lst003.rejected, tdcdf_lst003.pending, tdcdf_lst003.recall,
+      tdcdf_lst003.appr.received'
+  - name: orno_ref_compnr
+    description: company number of primary key of table tdpur400 Purchase Orders
+  - name: crej_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: lssn_ref_compnr
+    description: company number of primary key of table tcibd410 Item Identification
+      Sets
+  - name: afrw_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: wtun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: mpnr_cmnf_ref_compnr
+    description: company number of primary key of table tdipu045 Manufacturer Part
+      Numbers
+  - name: cmnf_ref_compnr
+    description: company number of primary key of table tcmcs060 Manufacturers
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur406 Purchase Actual Receipts table, Generated 2026-04-10T19:41:22Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orno
+        - pono
+        - sqnb
+        - rsqn

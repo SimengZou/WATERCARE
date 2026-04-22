@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5productversionhistory
+  columns:
+  - name: pvh_lastsaved
+    description: PVH_LASTSAVED
+  - name: pvh_changed
+    description: PVH_CHANGED
+  - name: pvh_desc
+    description: PVH_DESC
+  - name: pvh_version
+    description: PVH_VERSION
+  - name: pvh_patch
+    description: PVH_PATCH
+  - name: pvh_updatecount
+    description: PVH_UPDATECOUNT
+  - name: pvh_builddate
+    description: PVH_BUILDDATE
+  - name: pvh_productcode
+    description: PVH_PRODUCTCODE
+  - name: pvh_build
+    description: PVH_BUILD
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PRODUCTVERSIONHISTORY
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - pvh_productcode
+        - pvh_changed

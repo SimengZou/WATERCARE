@@ -1,0 +1,290 @@
+version: 2
+models:
+- name: tppin060
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: '(required) Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cnln
+    description: '(required) Contract Line. Max length: 8'
+    data_tests:
+    - not_null
+  - name: dlvr
+    description: (required) Deliverable
+    data_tests:
+    - not_null
+  - name: schd
+    description: (required) Schedule
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cspa
+    description: '(required) Element. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cpla
+    description: '(required) Plan. Max length: 3'
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: shpm
+    description: '(required) Shipment. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Shipment Line
+    data_tests:
+    - not_null
+  - name: rcno
+    description: '(required) Receipt. Max length: 9'
+    data_tests:
+    - not_null
+  - name: rcln
+    description: (required) Receipt Line
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Delivery Sequence
+    data_tests:
+    - not_null
+  - name: dlor
+    description: 'Origin. Allowed values: 10, 20'
+  - name: dlor_kw
+    description: 'Origin (keyword). Allowed values: tpctm.dlor.contract, tpctm.dlor.project'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: effn
+    description: Effectivity Unit
+  - name: lssn
+    description: 'Item Identification Set. Max length: 22'
+  - name: qshp
+    description: Delivered Quantity
+  - name: suni
+    description: 'Unit. Max length: 3'
+  - name: addt
+    description: Actual Delivery Time
+  - name: dlld
+    description: Delivery Log Date
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: sacu
+    description: 'Currency. Max length: 3'
+  - name: samt
+    description: Sales Amount
+  - name: nins
+    description: Installment
+  - name: icmp
+    description: Invoice Company
+  - name: fcmp
+    description: Invoice Document Company
+  - name: ityp
+    description: 'Invoice Document Transaction Type. Max length: 3'
+  - name: idoc
+    description: Invoice Document Number
+  - name: idln
+    description: Invoice Document Line
+  - name: link
+    description: 'Linked to Invoice. Allowed values: 0, 1, 2'
+  - name: link_kw
+    description: 'Linked to Invoice (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: twar
+    description: 'To Warehouse. Max length: 6'
+  - name: citt
+    description: 'Item Coding System. Max length: 3'
+  - name: srvc
+    description: 'Item is in Service. Allowed values: 1, 2'
+  - name: srvc_kw
+    description: 'Item is in Service (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: inst
+    description: 'Installation Group. Max length: 9'
+  - name: rtor
+    description: 'Return Deliverable. Allowed values: 1, 2'
+  - name: rtor_kw
+    description: 'Return Deliverable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: dlnt
+    description: 'Delivery Note. Max length: 19'
+  - name: wght
+    description: Gross Weight
+  - name: cwun
+    description: 'Weight Unit. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: carr
+    description: 'Carrier/LSP. Max length: 3'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: pris
+    description: Sales Price
+  - name: puni
+    description: 'Price Unit. Max length: 3'
+  - name: prsg
+    description: 'Price Stage. Max length: 3'
+  - name: porg
+    description: 'Price Origin. Allowed values: 2, 4, 6, 8, 10, 12, 13, 14, 16, 18,
+      20, 30, 50, 200, 205, 210, 215'
+  - name: porg_kw
+    description: 'Price Origin (keyword). Allowed values: tpgen.porg.not.applicable,
+      tpgen.porg.manual, tpgen.porg.contract, tpgen.porg.variant, tpgen.porg.item.pur,
+      tpgen.porg.item.sls, tpgen.porg.item.service, tpgen.porg.supp.pr.book, tpgen.porg.def.pr.book,
+      tpgen.porg.price.structure, tpgen.porg.extern, tpgen.porg.generic.pr.list, tpgen.porg.budget,
+      tpgen.porg.equipment.proj, tpgen.porg.equipment.stand, tpgen.porg.subcontr.proj,
+      tpgen.porg.subcontr.stand'
+  - name: ldam
+    description: Discount Amount
+  - name: disc
+    description: Discount Percentage
+  - name: dorg
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12, 200, 205, 210,
+      215'
+  - name: dorg_kw
+    description: 'Discount Origin (keyword). Allowed values: tpgen.dorg.not.applicable,
+      tpgen.dorg.manual, tpgen.dorg.contract, tpgen.dorg.disc.structure, tpgen.dorg.disc.pr.book,
+      tpgen.dorg.extern, tpgen.dorg.equipment.proj, tpgen.dorg.equipment.stand, tpgen.dorg.subcontr.proj,
+      tpgen.dorg.subcontr.stand'
+  - name: pcad
+    description: 'Price Changes Allowed. Allowed values: 1, 2'
+  - name: pcad_kw
+    description: 'Price Changes Allowed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pupd
+    description: 'Price Updated. Allowed values: 1, 2'
+  - name: pupd_kw
+    description: 'Price Updated (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cstv
+    description: Customs Value
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: cono_cnln_ref_compnr
+    description: company number of primary key of table tpctm110 Contract Lines
+  - name: cono_ref_compnr
+    description: company number of primary key of table tpctm100 Contracts
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: lssn_ref_compnr
+    description: company number of primary key of table tcibd410 Item Identification
+      Sets
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: twar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: citt_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cwun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: carr_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: samt_refc
+    description: 'CC: Sales Amount in Reference Currency'
+  - name: samt_cntc
+    description: 'CC: Sales Amount in Contract Currency'
+  - name: samt_prjc
+    description: 'CC: Sales Amount in Project Currency'
+  - name: samt_homc
+    description: 'CC: Sales Amount in Local Currency'
+  - name: samt_rpc1
+    description: 'CC: Sales Amount in Reporting Currency 1'
+  - name: samt_rpc2
+    description: 'CC: Sales Amount in Reporting Currency 2'
+  - name: samt_dwhc
+    description: 'CC: Sales Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppin060 Project Shipments table, Generated 2026-04-10T19:42:05Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono
+        - cnln
+        - dlvr
+        - schd
+        - cprj
+        - cspa
+        - cpla
+        - cact
+        - shpm
+        - pono
+        - rcno
+        - rcln
+        - sern

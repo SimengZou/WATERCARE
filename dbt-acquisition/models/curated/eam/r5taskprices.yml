@@ -1,0 +1,41 @@
+version: 2
+models:
+- name: r5taskprices
+  columns:
+  - name: tpr_lastsaved
+    description: TPR_LASTSAVED
+  - name: tpr_org
+    description: TPR_ORG
+  - name: tpr_task
+    description: TPR_TASK
+  - name: tpr_updatecount
+    description: TPR_UPDATECOUNT
+  - name: tpr_revision
+    description: TPR_REVISION
+  - name: tpr_price
+    description: TPR_PRICE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TASKPRICES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - tpr_task
+        - tpr_revision
+        - tpr_org

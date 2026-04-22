@@ -1,0 +1,31 @@
+# r5usegridsysdefault
+
+eam_R5USEGRIDSYSDEFAULT
+
+## Overview
+
+| Property | Value |
+|---|---|
+| **Source system** | `eam` |
+| **Source table** | `eam_r5usegridsysdefault` |
+| **Materialization** | `incremental` |
+| **Primary keys** | `usd_gridid`, `usd_userid`, `usd_dataspyfilter` |
+| **Column count** | 12 |
+
+## Columns
+
+| Column | dbt Type | Snowflake Type | Flags | Tests | Description |
+|---|---|---|---|---|---|
+| `usd_lastsaved` | `timestamp` | `timestamp_ntz` |  |  | USD_LASTSAVED |
+| `usd_userid` | `string` | `varchar` | `PK` |  | USD_USERID |
+| `usd_dataspyid` | `float` | `float` |  |  | USD_DATASPYID |
+| `usd_dataspyfilter` | `string` | `varchar` | `PK` |  | USD_DATASPYFILTER |
+| `usd_gridid` | `float` | `float` | `PK` |  | USD_GRIDID |
+| `usd_updatecount` | `float` | `float` |  |  | USD_UPDATECOUNT |
+| `_deleted` | `boolean` | `boolean` |  |  | Deleted Record Indicator |
+| `etl_load_datetime` | `datetime` | `timestamp_ntz` | `ADF` | | The datetime in which the ETL process loaded the data into the curated layer |
+| `etl_load_metadatafilename` | `string` | `varchar` | `ADF` | | The filename of the metadata file that was used to load the data into the curated layer. |
+| `dbt_record_updated_at` | `datetime` | `timestamp_ntz` | `dbt` | | The datetime in which the record was last updated by dbt. |
+| `dbt_record_created_at` | `datetime` | `timestamp_ntz` | `dbt` | | The datetime in which the record was created by dbt. |
+| `dbt_invocation_id` | `string` | `varchar` | `dbt` | | The invocation ID of the dbt run that created the record. |
+| `dbt_surrogate_key` | `string` | `varchar` | `dbt` | | Hashed key based on primary key/s of table, or all keys excluding dbt and etl metadata. |

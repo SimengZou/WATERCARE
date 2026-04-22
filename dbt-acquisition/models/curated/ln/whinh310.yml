@@ -1,0 +1,138 @@
+version: 2
+models:
+- name: whinh310
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: rcno
+    description: '(required) Receipt. Max length: 9'
+    data_tests:
+    - not_null
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: carr
+    description: 'Delivery Carrier/LSP. Max length: 3'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: shda
+    description: 'Delivery Address. Max length: 9'
+  - name: pddt
+    description: Planned Delivery Date
+  - name: shdt
+    description: Shipping Date
+  - name: fval
+    description: Freight Value
+  - name: curr
+    description: 'Currency. Max length: 3'
+  - name: wght
+    description: Gross Weight
+  - name: cwun
+    description: 'Unit of Measure. Max length: 3'
+  - name: crdt
+    description: Creation Date
+  - name: dino__en_us
+    description: '(required) Packing Slip - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: conf
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: conf_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: load
+    description: 'Load. Max length: 9'
+  - name: shid
+    description: 'Shipment. Max length: 9'
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: imre__en_us
+    description: '(required) Import Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: irdt
+    description: Import Reference Date
+  - name: imrk__en_us
+    description: '(required) Import Reference Key - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: port
+    description: 'Port of Entry. Max length: 9'
+  - name: stat
+    description: 'Status. Allowed values: 10, 20, 30, 100'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: whinh.rhst.open, whinh.rhst.confirmed,
+      whinh.rhst.under.review, whinh.rhst.not.appl'
+  - name: tcap
+    description: 'Localized Authorization Procedure Applicable. Allowed values: 1,
+      2'
+  - name: tcap_kw
+    description: 'Localized Authorization Procedure Applicable (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: tccp
+    description: 'Localized Authorization Procedure Complete. Allowed values: 1, 2'
+  - name: tccp_kw
+    description: 'Localized Authorization Procedure Complete (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: trcd
+    description: 'Authorization Number. Max length: 50'
+  - name: text
+    description: Text
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: carr_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: shda_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: curr_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cwun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: huid_ref_compnr
+    description: company number of primary key of table whwmd530 Handling Units
+  - name: port_ref_compnr
+    description: company number of primary key of table tcmcs043 Ports
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh310 Receipt Headers table, Generated 2026-04-10T19:42:48Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - rcno

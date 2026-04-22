@@ -1,0 +1,66 @@
+version: 2
+models:
+- name: r5udfscreens
+  columns:
+  - name: usc_lastsaved
+    description: USC_LASTSAVED
+  - name: usc_tablename
+    description: USC_TABLENAME
+  - name: usc_istab
+    description: USC_ISTAB
+  - name: usc_parentscreen
+    description: USC_PARENTSCREEN
+  - name: usc_generated
+    description: USC_GENERATED
+  - name: usc_notused
+    description: USC_NOTUSED
+  - name: usc_created
+    description: USC_CREATED
+  - name: usc_updated
+    description: USC_UPDATED
+  - name: usc_createdby
+    description: USC_CREATEDBY
+  - name: usc_updatedby
+    description: USC_UPDATEDBY
+  - name: usc_updatecount
+    description: USC_UPDATECOUNT
+  - name: usc_entity
+    description: USC_ENTITY
+  - name: usc_allowcomments
+    description: USC_ALLOWCOMMENTS
+  - name: usc_allowdocuments
+    description: USC_ALLOWDOCUMENTS
+  - name: usc_typeentity
+    description: USC_TYPEENTITY
+  - name: usc_statusentity
+    description: USC_STATUSENTITY
+  - name: usc_class
+    description: USC_CLASS
+  - name: usc_orgsecurity
+    description: USC_ORGSECURITY
+  - name: usc_autogeneratekey
+    description: USC_AUTOGENERATEKEY
+  - name: usc_screenname
+    description: USC_SCREENNAME
+    data_tests:
+    - unique
+  - name: usc_desc
+    description: USC_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5UDFSCREENS

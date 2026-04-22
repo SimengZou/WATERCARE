@@ -1,0 +1,214 @@
+version: 2
+models:
+- name: r5companies
+  columns:
+  - name: com_lastsaved
+    description: COM_LASTSAVED
+  - name: com_code
+    description: COM_CODE
+  - name: com_desc
+    description: COM_DESC
+  - name: com_class
+    description: COM_CLASS
+  - name: com_contact
+    description: COM_CONTACT
+  - name: com_ourcont
+    description: COM_OURCONT
+  - name: com_curr
+    description: COM_CURR
+  - name: com_lang
+    description: COM_LANG
+  - name: com_leadtime
+    description: COM_LEADTIME
+  - name: com_maxord
+    description: COM_MAXORD
+  - name: com_minord
+    description: COM_MINORD
+  - name: com_status
+    description: COM_STATUS
+  - name: com_phone
+    description: COM_PHONE
+  - name: com_fax
+    description: COM_FAX
+  - name: com_buyer
+    description: COM_BUYER
+  - name: com_parent
+    description: COM_PARENT
+  - name: com_paymentterms
+    description: COM_PAYMENTTERMS
+  - name: com_freightterms
+    description: COM_FREIGHTTERMS
+  - name: com_shipvia
+    description: COM_SHIPVIA
+  - name: com_fobpoint
+    description: COM_FOBPOINT
+  - name: com_purchasesite
+    description: COM_PURCHASESITE
+  - name: com_minoritygroup
+    description: COM_MINORITYGROUP
+  - name: com_edino
+    description: COM_EDINO
+  - name: com_sourcesystem
+    description: COM_SOURCESYSTEM
+  - name: com_sourcecode
+    description: COM_SOURCECODE
+  - name: com_interface
+    description: COM_INTERFACE
+  - name: com_notused
+    description: COM_NOTUSED
+  - name: com_capacity
+    description: COM_CAPACITY
+  - name: com_people
+    description: COM_PEOPLE
+  - name: com_org
+    description: COM_ORG
+  - name: com_class_org
+    description: COM_CLASS_ORG
+  - name: com_parent_org
+    description: COM_PARENT_ORG
+  - name: com_email
+    description: COM_EMAIL
+  - name: com_ipvendor
+    description: COM_IPVENDOR
+  - name: com_paybymethod
+    description: COM_PAYBYMETHOD
+  - name: com_ipaccount
+    description: COM_IPACCOUNT
+  - name: com_ipresponse
+    description: COM_IPRESPONSE
+  - name: com_updatecount
+    description: COM_UPDATECOUNT
+  - name: com_created
+    description: COM_CREATED
+  - name: com_updated
+    description: COM_UPDATED
+  - name: com_laststatusupdate
+    description: COM_LASTSTATUSUPDATE
+  - name: com_udfchar01
+    description: COM_UDFCHAR01
+  - name: com_udfchar02
+    description: COM_UDFCHAR02
+  - name: com_udfchar03
+    description: COM_UDFCHAR03
+  - name: com_type1099
+    description: COM_TYPE1099
+  - name: com_udfchar04
+    description: COM_UDFCHAR04
+  - name: com_udfchar05
+    description: COM_UDFCHAR05
+  - name: com_udfchar06
+    description: COM_UDFCHAR06
+  - name: com_udfchar07
+    description: COM_UDFCHAR07
+  - name: com_udfchar08
+    description: COM_UDFCHAR08
+  - name: com_udfchar09
+    description: COM_UDFCHAR09
+  - name: com_udfchar10
+    description: COM_UDFCHAR10
+  - name: com_udfchar11
+    description: COM_UDFCHAR11
+  - name: com_udfchar12
+    description: COM_UDFCHAR12
+  - name: com_udfchar13
+    description: COM_UDFCHAR13
+  - name: com_udfchar14
+    description: COM_UDFCHAR14
+  - name: com_udfchar15
+    description: COM_UDFCHAR15
+  - name: com_udfchar16
+    description: COM_UDFCHAR16
+  - name: com_udfchar17
+    description: COM_UDFCHAR17
+  - name: com_udfchar18
+    description: COM_UDFCHAR18
+  - name: com_udfchar19
+    description: COM_UDFCHAR19
+  - name: com_udfchar20
+    description: COM_UDFCHAR20
+  - name: com_udfchar21
+    description: COM_UDFCHAR21
+  - name: com_udfchar22
+    description: COM_UDFCHAR22
+  - name: com_udfchar23
+    description: COM_UDFCHAR23
+  - name: com_udfchar24
+    description: COM_UDFCHAR24
+  - name: com_udfchar25
+    description: COM_UDFCHAR25
+  - name: com_udfchar26
+    description: COM_UDFCHAR26
+  - name: com_udfchar27
+    description: COM_UDFCHAR27
+  - name: com_udfchar28
+    description: COM_UDFCHAR28
+  - name: com_udfchar29
+    description: COM_UDFCHAR29
+  - name: com_udfchar30
+    description: COM_UDFCHAR30
+  - name: com_udfnum01
+    description: COM_UDFNUM01
+  - name: com_udfnum02
+    description: COM_UDFNUM02
+  - name: com_udfnum03
+    description: COM_UDFNUM03
+  - name: com_udfnum04
+    description: COM_UDFNUM04
+  - name: com_udfnum05
+    description: COM_UDFNUM05
+  - name: com_udfdate01
+    description: COM_UDFDATE01
+  - name: com_udfdate02
+    description: COM_UDFDATE02
+  - name: com_udfdate03
+    description: COM_UDFDATE03
+  - name: com_udfdate04
+    description: COM_UDFDATE04
+  - name: com_udfdate05
+    description: COM_UDFDATE05
+  - name: com_udfchkbox01
+    description: COM_UDFCHKBOX01
+  - name: com_udfchkbox02
+    description: COM_UDFCHKBOX02
+  - name: com_udfchkbox03
+    description: COM_UDFCHKBOX03
+  - name: com_udfchkbox04
+    description: COM_UDFCHKBOX04
+  - name: com_costcenter
+    description: COM_COSTCENTER
+  - name: com_udfchkbox05
+    description: COM_UDFCHKBOX05
+  - name: com_customer
+    description: COM_CUSTOMER
+  - name: com_accountcode
+    description: COM_ACCOUNTCODE
+  - name: com_tax
+    description: COM_TAX
+  - name: com_grouppurchasingorg1
+    description: COM_GROUPPURCHASINGORG1
+  - name: com_grouppurchasingorg2
+    description: COM_GROUPPURCHASINGORG2
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5COMPANIES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - com_code
+        - com_org

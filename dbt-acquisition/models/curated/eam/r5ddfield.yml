@@ -1,0 +1,44 @@
+version: 2
+models:
+- name: r5ddfield
+  columns:
+  - name: ddf_lastsaved
+    description: DDF_LASTSAVED
+  - name: ddf_sourcename
+    description: DDF_SOURCENAME
+  - name: ddf_datatype
+    description: DDF_DATATYPE
+  - name: ddf_desc
+    description: DDF_DESC
+  - name: ddf_updatecount
+    description: DDF_UPDATECOUNT
+  - name: ddf_rentity
+    description: DDF_RENTITY
+  - name: ddf_lvgrid
+    description: DDF_LVGRID
+  - name: ddf_tablename
+    description: DDF_TABLENAME
+  - name: ddf_fieldid
+    description: DDF_FIELDID
+    data_tests:
+    - unique
+  - name: ddf_valuemapid
+    description: DDF_VALUEMAPID
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DDFIELD

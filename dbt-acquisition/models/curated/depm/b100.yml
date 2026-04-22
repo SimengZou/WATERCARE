@@ -1,0 +1,40 @@
+version: 2
+models:
+- name: b100
+  columns:
+  - name: version
+    description: 'Max length: 25'
+  - name: year
+    description: 'Max length: 25'
+  - name: period
+    description: 'Max length: 25'
+  - name: currency
+    description: 'Max length: 25'
+  - name: company
+    description: 'Max length: 25'
+  - name: cost_centre
+    description: 'Max length: 25'
+  - name: asset_group
+    description: 'Max length: 25'
+  - name: activity
+    description: 'Max length: 25'
+  - name: customer
+    description: 'Max length: 25'
+  - name: _account
+    description: 'Max length: 25'
+  - name: value
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.

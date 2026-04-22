@@ -1,0 +1,40 @@
+version: 2
+models:
+- name: r5revcntrlsetup
+  columns:
+  - name: rcs_lastsaved
+    description: RCS_LASTSAVED
+  - name: rcs_elementid
+    description: RCS_ELEMENTID
+  - name: rcs_protected
+    description: RCS_PROTECTED
+  - name: rcs_updatecount
+    description: RCS_UPDATECOUNT
+  - name: rcs_pagename
+    description: RCS_PAGENAME
+  - name: rcs_xpath
+    description: RCS_XPATH
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5REVCNTRLSETUP
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - rcs_pagename
+        - rcs_elementid

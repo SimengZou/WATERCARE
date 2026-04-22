@@ -1,0 +1,86 @@
+version: 2
+models:
+- name: r5roles
+  columns:
+  - name: rol_lastsaved
+    description: ROL_LASTSAVED
+  - name: rol_group
+    description: ROL_GROUP
+  - name: rol_defaultorg
+    description: ROL_DEFAULTORG
+  - name: rol_lang
+    description: ROL_LANG
+  - name: rol_successmsgtimeout
+    description: ROL_SUCCESSMSGTIMEOUT
+  - name: rol_locale
+    description: ROL_LOCALE
+  - name: rol_mrc
+    description: ROL_MRC
+  - name: rol_firstfunc
+    description: ROL_FIRSTFUNC
+  - name: rol_ewsfirstfunc
+    description: ROL_EWSFIRSTFUNC
+  - name: rol_reqappvlimit
+    description: ROL_REQAPPVLIMIT
+  - name: rol_reqauthappvlimit
+    description: ROL_REQAUTHAPPVLIMIT
+  - name: rol_invappvlimit
+    description: ROL_INVAPPVLIMIT
+  - name: rol_invappvlimitnonpo
+    description: ROL_INVAPPVLIMITNONPO
+  - name: rol_pordappvlimit
+    description: ROL_PORDAPPVLIMIT
+  - name: rol_pordauthappvlimit
+    description: ROL_PORDAUTHAPPVLIMIT
+  - name: rol_picappvlimit
+    description: ROL_PICAPPVLIMIT
+  - name: rol_buyer
+    description: ROL_BUYER
+  - name: rol_approver
+    description: ROL_APPROVER
+  - name: rol_requestor
+    description: ROL_REQUESTOR
+  - name: rol_router
+    description: ROL_ROUTER
+  - name: rol_updatecount
+    description: ROL_UPDATECOUNT
+  - name: rol_active
+    description: ROL_ACTIVE
+  - name: rol_mobile
+    description: ROL_MOBILE
+  - name: rol_connector
+    description: ROL_CONNECTOR
+  - name: rol_barcode
+    description: ROL_BARCODE
+  - name: rol_analytics
+    description: ROL_ANALYTICS
+  - name: rol_advrepauthor
+    description: ROL_ADVREPAUTHOR
+  - name: rol_advrepconsumer
+    description: ROL_ADVREPCONSUMER
+  - name: rol_mobileadm
+    description: ROL_MOBILEADM
+  - name: rol_code
+    description: ROL_CODE
+    data_tests:
+    - unique
+  - name: rol_desc
+    description: ROL_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ROLES

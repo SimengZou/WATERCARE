@@ -1,0 +1,150 @@
+version: 2
+models:
+- name: tcmcs010
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ccty
+    description: '(required) Country. Max length: 3'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ictc
+    description: 'ISO Code alpha-3. Max length: 3'
+  - name: tfcd
+    description: 'Telephone. Max length: 6'
+  - name: txcd
+    description: 'Telex. Max length: 6'
+  - name: fxcd
+    description: 'Fax. Max length: 6'
+  - name: ssgn
+    description: 'Starting Sign for City/Area Code. Max length: 1'
+  - name: esgn
+    description: 'Ending Sign for City/Area Code. Max length: 1'
+  - name: xsgn
+    description: 'Sign for Extension. Max length: 1'
+  - name: meec
+    description: 'EU Member State. Allowed values: 1, 2'
+  - name: meec_kw
+    description: 'EU Member State (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: geoc
+    description: 'Obsolete. Max length: 3'
+  - name: pltx
+    description: 'Print Line Tax. Allowed values: 1, 2'
+  - name: pltx_kw
+    description: 'Print Line Tax (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ptta
+    description: 'Print Tax by Tax Authority. Allowed values: 1, 2'
+  - name: ptta_kw
+    description: 'Print Tax by Tax Authority (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: txmp
+    description: 'Print Tax Exemption. Allowed values: 1, 2'
+  - name: txmp_kw
+    description: 'Print Tax Exemption (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: coaf
+    description: 'Address Format. Max length: 3'
+  - name: afal
+    description: 'Address Format for Address Lines. Max length: 3'
+  - name: zmsk
+    description: 'ZIP/Postal Code Mask. Max length: 10'
+  - name: ppcd
+    description: ZIP Code Base
+  - name: cgp1
+    description: 'BLWI Country Group. Max length: 3'
+  - name: cgp2
+    description: 'Tax Country Group. Max length: 3'
+  - name: vnch
+    description: 'VAT Number Check. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+      11, 12, 13, 14, 15, 16'
+  - name: vnch_kw
+    description: 'VAT Number Check (keyword). Allowed values: tcvnch.atu, tcvnch.be,
+      tcvnch.dk, tcvnch.fi, tcvnch.fr, tcvnch.de, tcvnch.el, tcvnch.ie, tcvnch.it,
+      tcvnch.lu, tcvnch.nl, tcvnch.pt, tcvnch.es, tcvnch.se, tcvnch.gb, tcvnch.none'
+  - name: bnch
+    description: 'Check on Bank Account No.. Allowed values: 1, 2, 4, 5, 6, 7'
+  - name: bnch_kw
+    description: 'Check on Bank Account No. (keyword). Allowed values: tccom.bnch.proof11,
+      tccom.bnch.proof97, tccom.bnch.proof11.nor, tccom.bnch.proof10.nor, tccom.bnch.proofk11,
+      tccom.bnch.none'
+  - name: awtn
+    description: 'Allow Wrong Tax Number. Allowed values: 1, 2'
+  - name: awtn_kw
+    description: 'Allow Wrong Tax Number (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tzid
+    description: 'Time Zone. Max length: 3'
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: ict2
+    description: 'ISO Code alpha-2. Max length: 2'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: natl__en_us
+    description: '(required) Nationality - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: ivrc
+    description: 'International Vehicle Registration Code. Max length: 3'
+  - name: uarc
+    description: 'Use Arrival Confirmation. Allowed values: 1, 2'
+  - name: uarc_kw
+    description: 'Use Arrival Confirmation (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: coaf_ref_compnr
+    description: company number of primary key of table tccom135 Address Formats
+  - name: afal_ref_compnr
+    description: company number of primary key of table tccom135 Address Formats
+  - name: cgp1_ref_compnr
+    description: company number of primary key of table tcmcs180 Country Groups
+  - name: cgp2_ref_compnr
+    description: company number of primary key of table tcmcs180 Country Groups
+  - name: tzid_ref_compnr
+    description: company number of primary key of table tcemm100 Time Zones
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs010 Countries table, Generated 2026-04-10T19:41:09Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ccty

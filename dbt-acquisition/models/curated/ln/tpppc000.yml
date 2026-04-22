@@ -1,0 +1,268 @@
+version: 2
+models:
+- name: tpppc000
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Introduction Date
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: pacc
+    description: 'Actual Cost Control Period. Allowed values: 10, 20, 30'
+  - name: pacc_kw
+    description: 'Actual Cost Control Period (keyword). Allowed values: tpppc.periods.specific.period,
+      tpppc.periods.current.period, tpppc.periods.previous.period'
+  - name: year
+    description: Year of Actual Cost Control
+  - name: peri
+    description: Period for Actual Cost Control
+  - name: hyea
+    description: Year for Hours Control
+  - name: hper
+    description: Actual Hours Control Period
+  - name: pfpp
+    description: 'Obsolete (Cost Control Period = Fiscal Period). Allowed values:
+      1, 2'
+  - name: pfpp_kw
+    description: 'Obsolete (Cost Control Period = Fiscal Period) (keyword). Allowed
+      values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: pgth
+    description: 'Physical Progress > 100% Allowed. Allowed values: 0, 1, 2'
+  - name: pgth_kw
+    description: 'Physical Progress > 100% Allowed (keyword). Allowed values: , tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: copr
+    description: 'Contract Amount in WIP. Allowed values: 1, 2, 3'
+  - name: copr_kw
+    description: 'Contract Amount in WIP (keyword). Allowed values: tpppc.dwip.plus,
+      tpppc.dwip.minus, tpppc.dwip.not'
+  - name: amoc
+    description: 'Costs in WIP. Allowed values: 1, 2, 3'
+  - name: amoc_kw
+    description: 'Costs in WIP (keyword). Allowed values: tpppc.dwip.plus, tpppc.dwip.minus,
+      tpppc.dwip.not'
+  - name: expc
+    description: 'Commitments in WIP. Allowed values: 1, 2, 3'
+  - name: expc_kw
+    description: 'Commitments in WIP (keyword). Allowed values: tpppc.dwip.plus, tpppc.dwip.minus,
+      tpppc.dwip.not'
+  - name: amos
+    description: 'Sales Value Surcharge Costs in WIP. Allowed values: 0, 1, 2, 3'
+  - name: amos_kw
+    description: 'Sales Value Surcharge Costs in WIP (keyword). Allowed values: ,
+      tpppc.dwip.plus, tpppc.dwip.minus, tpppc.dwip.not'
+  - name: amor
+    description: 'Revenues in WIP. Allowed values: 1, 2, 3'
+  - name: amor_kw
+    description: 'Revenues in WIP (keyword). Allowed values: tpppc.dwip.plus, tpppc.dwip.minus,
+      tpppc.dwip.not'
+  - name: cprp
+    description: 'Interim Result in WIP. Allowed values: 1, 2, 3'
+  - name: cprp_kw
+    description: 'Interim Result in WIP (keyword). Allowed values: tpppc.dwip.plus,
+      tpppc.dwip.minus, tpppc.dwip.not'
+  - name: ipiw
+    description: 'Project Inventory in Costs. Allowed values: 1, 2'
+  - name: ipiw_kw
+    description: 'Project Inventory in Costs (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: prhr
+    description: 'Physical Progress Labor based on Hours. Allowed values: 0, 1, 2'
+  - name: prhr_kw
+    description: 'Physical Progress Labor based on Hours (keyword). Allowed values:
+      , tppdm.yeno.yes, tppdm.yeno.no'
+  - name: qacc
+    description: 'Convert to Unit of Control Code. Allowed values: 1, 2'
+  - name: qacc_kw
+    description: 'Convert to Unit of Control Code (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cptc
+    description: 'Code Period Table for Cost Control Period. Max length: 6'
+  - name: cpth
+    description: 'Code Period Table for Hours Control Period. Max length: 6'
+  - name: tohc
+    description: 'Type of Hard Commitment. Allowed values: 1, 2'
+  - name: tohc_kw
+    description: 'Type of Hard Commitment (keyword). Allowed values: tpppc.tohc.cost,
+      tpppc.tohc.comm'
+  - name: cmif
+    description: 'Use Commitments as Basis for Forecast. Allowed values: 1, 2'
+  - name: cmif_kw
+    description: 'Use Commitments as Basis for Forecast (keyword). Allowed values:
+      tppdm.yeno.yes, tppdm.yeno.no'
+  - name: lfcm
+    description: 'Leading Forecast Method. Allowed values: 1, 2, 3'
+  - name: lfcm_kw
+    description: 'Leading Forecast Method (keyword). Allowed values: tppdm.lfcm.est.extra.costs,
+      tppdm.lfcm.est.to.compl, tppdm.lfcm.est.at.compl'
+  - name: awpp
+    description: 'Extra WIP Entry in Finance. Allowed values: 1, 2'
+  - name: awpp_kw
+    description: 'Extra WIP Entry in Finance (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: casd
+    description: 'Additional Tax Info. Max length: 3'
+  - name: casc
+    description: 'Additional Info Set. Max length: 3'
+  - name: cptf
+    description: 'Code Period Table for Fiscal Period. Max length: 6'
+  - name: urcc
+    description: 'Cost Component for Cost-Plus Invoicing from Revenue. Allowed values:
+      1, 2'
+  - name: urcc_kw
+    description: 'Cost Component for Cost-Plus Invoicing from Revenue (keyword). Allowed
+      values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: antp
+    description: 'Total Paid/Received Amount to Include Anticipated Amount. Allowed
+      values: 0, 1, 2'
+  - name: antp_kw
+    description: 'Total Paid/Received Amount to Include Anticipated Amount (keyword).
+      Allowed values: , tppdm.yeno.yes, tppdm.yeno.no'
+  - name: tsem
+    description: 'Default Employee. Max length: 9'
+  - name: ditm
+    description: 'Default Item. Max length: 47'
+  - name: tstk
+    description: 'Default Task. Max length: 8'
+  - name: dequ
+    description: 'Default Equipment. Max length: 47'
+  - name: dsub
+    description: 'Default Subcontracting. Max length: 47'
+  - name: dcic
+    description: 'Default Sundry Cost. Max length: 8'
+  - name: dtrl
+    description: 'Default Travel. Max length: 8'
+  - name: dfrt
+    description: 'Default Freight. Max length: 8'
+  - name: dhlp
+    description: 'Default Helpdesk. Max length: 8'
+  - name: ipcs
+    description: 'Include PCS WIP. Allowed values: 1, 2, 3'
+  - name: ipcs_kw
+    description: 'Include PCS WIP (keyword). Allowed values: tpppc.ipcs.inhc, tpppc.ipcs.insc,
+      tpppc.ipcs.not'
+  - name: revr
+    description: 'Post Interim Results. Allowed values: 10, 20, 30'
+  - name: revr_kw
+    description: 'Post Interim Results (keyword). Allowed values: tpppc.rev.rec.interim.result,
+      tpppc.rev.rec.balance, tpppc.rev.rec.interim.balance'
+  - name: cint
+    description: 'Post Completion Transactions Internal Project. Allowed values: 10,
+      20, 30'
+  - name: cint_kw
+    description: 'Post Completion Transactions Internal Project (keyword). Allowed
+      values: tpppc.cint.direct, tpppc.cint.close.structure, tpppc.cint.close.project'
+  - name: ccap
+    description: 'Post Completion Transactions Capital Project. Allowed values: 10,
+      20'
+  - name: ccap_kw
+    description: 'Post Completion Transactions Capital Project (keyword). Allowed
+      values: tpppc.ccap.close.structure, tpppc.ccap.close.project'
+  - name: ppht
+    description: 'Post Project Hours Transactions. Allowed values: 10, 20'
+  - name: ppht_kw
+    description: 'Post Project Hours Transactions (keyword). Allowed values: tpppc.ppht.by.calendar.day,
+      tpppc.ppht.aggregated'
+  - name: mfcr
+    description: 'Multi Financial Company Project. Allowed values: 1, 2'
+  - name: mfcr_kw
+    description: 'Multi Financial Company Project (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: scev
+    description: 'Include Soft Commitments in Earned Value. Allowed values: 1, 2'
+  - name: scev_kw
+    description: 'Include Soft Commitments in Earned Value (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: upsa
+    description: 'Use Progress Setting for all Projects. Allowed values: 1, 2'
+  - name: upsa_kw
+    description: 'Use Progress Setting for all Projects (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: text
+    description: Text
+  - name: mcpr
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: mcpr_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cptc_year_peri_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cptc_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: cpth_hyea_hper_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cpth_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: casd_ref_compnr
+    description: company number of primary key of table tccom705 Extra Intrastat Info
+  - name: casc_ref_compnr
+    description: company number of primary key of table tccom705 Extra Intrastat Info
+  - name: cptf_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: tsem_ref_compnr
+    description: company number of primary key of table tppdm801 Employee Project
+      Data
+  - name: ditm_ref_compnr
+    description: company number of primary key of table tppdm005 Item Project Data
+  - name: tstk_ref_compnr
+    description: company number of primary key of table tppdm015 Labor
+  - name: dequ_ref_compnr
+    description: company number of primary key of table tppdm025 Equipment
+  - name: dsub_ref_compnr
+    description: company number of primary key of table tppdm035 Subcontracting
+  - name: dcic_ref_compnr
+    description: company number of primary key of table tppdm040 Sundry Costs
+  - name: dtrl_ref_compnr
+    description: company number of primary key of table tppdm040 Sundry Costs
+  - name: dfrt_ref_compnr
+    description: company number of primary key of table tppdm040 Sundry Costs
+  - name: dhlp_ref_compnr
+    description: company number of primary key of table tppdm040 Sundry Costs
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpppc000 Parameters Project Production Control (PPC) table, Generated
+    2026-04-10T19:42:06Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - indt

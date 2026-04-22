@@ -1,0 +1,138 @@
+version: 2
+models:
+- name: r5aspects
+  columns:
+  - name: asp_lastsaved
+    description: ASP_LASTSAVED
+  - name: asp_class
+    description: ASP_CLASS
+  - name: asp_timedep
+    description: ASP_TIMEDEP
+  - name: asp_class_org
+    description: ASP_CLASS_ORG
+  - name: asp_parent
+    description: ASP_PARENT
+  - name: asp_notused
+    description: ASP_NOTUSED
+  - name: asp_random
+    description: ASP_RANDOM
+  - name: asp_updatecount
+    description: ASP_UPDATECOUNT
+  - name: asp_created
+    description: ASP_CREATED
+  - name: asp_updated
+    description: ASP_UPDATED
+  - name: asp_udfchar01
+    description: ASP_UDFCHAR01
+  - name: asp_udfchar02
+    description: ASP_UDFCHAR02
+  - name: asp_udfchar03
+    description: ASP_UDFCHAR03
+  - name: asp_udfchar04
+    description: ASP_UDFCHAR04
+  - name: asp_udfchar05
+    description: ASP_UDFCHAR05
+  - name: asp_udfchar06
+    description: ASP_UDFCHAR06
+  - name: asp_udfchar07
+    description: ASP_UDFCHAR07
+  - name: asp_udfchar08
+    description: ASP_UDFCHAR08
+  - name: asp_udfchar09
+    description: ASP_UDFCHAR09
+  - name: asp_udfchar10
+    description: ASP_UDFCHAR10
+  - name: asp_udfchar11
+    description: ASP_UDFCHAR11
+  - name: asp_udfchar12
+    description: ASP_UDFCHAR12
+  - name: asp_udfchar13
+    description: ASP_UDFCHAR13
+  - name: asp_udfchar14
+    description: ASP_UDFCHAR14
+  - name: asp_udfchar15
+    description: ASP_UDFCHAR15
+  - name: asp_udfchar16
+    description: ASP_UDFCHAR16
+  - name: asp_udfchar17
+    description: ASP_UDFCHAR17
+  - name: asp_udfchar18
+    description: ASP_UDFCHAR18
+  - name: asp_udfchar19
+    description: ASP_UDFCHAR19
+  - name: asp_udfchar20
+    description: ASP_UDFCHAR20
+  - name: asp_udfchar21
+    description: ASP_UDFCHAR21
+  - name: asp_udfchar22
+    description: ASP_UDFCHAR22
+  - name: asp_udfchar23
+    description: ASP_UDFCHAR23
+  - name: asp_udfchar24
+    description: ASP_UDFCHAR24
+  - name: asp_udfchar25
+    description: ASP_UDFCHAR25
+  - name: asp_udfchar26
+    description: ASP_UDFCHAR26
+  - name: asp_udfchar27
+    description: ASP_UDFCHAR27
+  - name: asp_udfchar28
+    description: ASP_UDFCHAR28
+  - name: asp_udfchar29
+    description: ASP_UDFCHAR29
+  - name: asp_udfchar30
+    description: ASP_UDFCHAR30
+  - name: asp_udfnum01
+    description: ASP_UDFNUM01
+  - name: asp_udfnum02
+    description: ASP_UDFNUM02
+  - name: asp_udfnum03
+    description: ASP_UDFNUM03
+  - name: asp_udfnum04
+    description: ASP_UDFNUM04
+  - name: asp_udfnum05
+    description: ASP_UDFNUM05
+  - name: asp_udfdate01
+    description: ASP_UDFDATE01
+  - name: asp_udfdate02
+    description: ASP_UDFDATE02
+  - name: asp_udfdate03
+    description: ASP_UDFDATE03
+  - name: asp_udfdate04
+    description: ASP_UDFDATE04
+  - name: asp_udfdate05
+    description: ASP_UDFDATE05
+  - name: asp_udfchkbox01
+    description: ASP_UDFCHKBOX01
+  - name: asp_udfchkbox02
+    description: ASP_UDFCHKBOX02
+  - name: asp_udfchkbox03
+    description: ASP_UDFCHKBOX03
+  - name: asp_udfchkbox04
+    description: ASP_UDFCHKBOX04
+  - name: asp_udfchkbox05
+    description: ASP_UDFCHKBOX05
+  - name: asp_code
+    description: ASP_CODE
+    data_tests:
+    - unique
+  - name: asp_desc
+    description: ASP_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ASPECTS

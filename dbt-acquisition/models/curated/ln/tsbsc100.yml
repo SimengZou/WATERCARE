@@ -1,0 +1,235 @@
+version: 2
+models:
+- name: tsbsc100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: clst
+    description: '(required) Installation Group. Max length: 9'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: sear__en_us
+    description: '(required) Search Argument - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: exin__en_us
+    description: '(required) Extra Information - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ofbp
+    description: 'Owner. Max length: 9'
+  - name: ofcn
+    description: 'Owner Contact. Max length: 9'
+  - name: ofad
+    description: 'Owner Address. Max length: 9'
+  - name: ubbp
+    description: 'In Use-by Business Partner. Max length: 9'
+  - name: ubad
+    description: 'In Use-by Business Partner Address. Max length: 9'
+  - name: ubcn
+    description: 'In Use-by Business Partner Contact. Max length: 9'
+  - name: ubop
+    description: 'In Use-by Business Partner Operator Contact. Max length: 9'
+  - name: ubpc
+    description: 'In Use-by Primary Contact. Allowed values: 10, 20'
+  - name: ubpc_kw
+    description: 'In Use-by Primary Contact (keyword). Allowed values: tscfg.pcnt.in.use.by,
+      tscfg.pcnt.operator'
+  - name: dler
+    description: 'Dealer. Max length: 9'
+  - name: dlad
+    description: 'Dealer Address. Max length: 9'
+  - name: dlcn
+    description: 'Dealer Contact. Max length: 9'
+  - name: bfbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: bfad
+    description: 'Buy-from Address. Max length: 9'
+  - name: bfcn
+    description: 'Buy-from Contact. Max length: 9'
+  - name: owtp
+    description: 'Type of Ownership. Allowed values: 1, 2'
+  - name: owtp_kw
+    description: 'Type of Ownership (keyword). Allowed values: tscfg.owtp.external,
+      tscfg.owtp.internal'
+  - name: dbpo
+    description: 'Default Business Partner for Order. Allowed values: 1, 2, 3, 4'
+  - name: dbpo_kw
+    description: 'Default Business Partner for Order (keyword). Allowed values: tscfg.dbpo.owner,
+      tscfg.dbpo.in.use.by, tscfg.dbpo.dealer, tscfg.dbpo.supplier'
+  - name: lcmp
+    description: Logistic Company
+  - name: odpt
+    description: 'Department. Max length: 6'
+  - name: soff
+    description: 'Service Office. Max length: 6'
+  - name: mdpt
+    description: 'Operations Department. Max length: 6'
+  - name: rste
+    description: 'Repair Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: lste
+    description: 'Location Site. Max length: 9'
+  - name: lcad
+    description: 'Location Address. Max length: 9'
+  - name: csar
+    description: 'Service Area. Max length: 3'
+  - name: trdt
+    description: Travel Distance
+  - name: trtm
+    description: Travel Time
+  - name: czon
+    description: 'Distance Zone. Max length: 3'
+  - name: ccha
+    description: Call-out Charge
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: cusc
+    description: 'Usage Class. Max length: 3'
+  - name: mdnr
+    description: 'Modem. Max length: 32'
+  - name: prfa
+    description: 'Preferred Engineer Field Service. Max length: 9'
+  - name: prfb
+    description: 'Preferred Engineer Depot Repair. Max length: 9'
+  - name: prio
+    description: Priority
+  - name: ccal
+    description: 'Calendar. Max length: 9'
+  - name: rspe
+    description: 'Responsible Engineer. Max length: 9'
+  - name: eftm
+    description: Effective Time
+  - name: clrt
+    description: 'Labor Rate Code. Max length: 6'
+  - name: ortp
+    description: 'Originating Order Type. Allowed values: 5, 10, 15, 99'
+  - name: ortp_kw
+    description: 'Originating Order Type (keyword). Allowed values: tscfg.ortp.sales,
+      tscfg.ortp.deliverable, tscfg.ortp.project, tscfg.ortp.not.applicable'
+  - name: srno
+    description: 'Originating Order. Max length: 9'
+  - name: cnln
+    description: 'Originating Contract Line. Max length: 8'
+  - name: spno
+    description: Originating Order Line
+  - name: sdno
+    description: Originating Detail Line
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: txta
+    description: Text
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: ofcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ofad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ubbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ubad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ubcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ubop_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: dler_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: dlad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: dlcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: bfbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: bfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: bfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: lcmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: odpt_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: soff_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: mdpt_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: rste_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: lste_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: lcad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: csar_ref_compnr
+    description: company number of primary key of table tsmdm105 Service Areas
+  - name: czon_ref_compnr
+    description: company number of primary key of table tsmdm120 Distance Zones
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cusc_ref_compnr
+    description: company number of primary key of table tsspc030 Usage Classes
+  - name: prfa_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: prfb_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: prio_ref_compnr
+    description: company number of primary key of table tcmcs070 Priorities
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: rspe_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: clrt_ref_compnr
+    description: company number of primary key of table tcppl090 Labor Rate Codes
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsbsc100 Installation Group table, Generated 2026-04-10T19:42:28Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - clst

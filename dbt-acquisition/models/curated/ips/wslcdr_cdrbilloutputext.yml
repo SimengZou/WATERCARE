@@ -1,0 +1,170 @@
+version: 2
+models:
+- name: wslcdr_cdrbilloutputext
+  columns:
+  - name: billtype
+    description: 'Metadata for column BILLTYPE. Max length: 10'
+  - name: billdate
+    description: Metadata for column BILLDATE
+  - name: toaddress
+    description: 'Metadata for column TOADDRESS. Max length: 100'
+  - name: ccaddress
+    description: 'Metadata for column CCADDRESS. Max length: 100'
+  - name: discamountdue
+    description: Metadata for column DISCAMOUNTDUE
+  - name: paymentamount
+    description: Metadata for column PAYMENTAMOUNT
+  - name: accountkey
+    description: Metadata for column ACCOUNTKEY
+  - name: billkey
+    description: Metadata for column BILLKEY
+  - name: controltotal
+    description: Metadata for column CONTROLTOTAL
+  - name: duedate
+    description: Metadata for column DUEDATE
+  - name: postalcode
+    description: 'Metadata for column POSTALCODE. Max length: 20'
+  - name: micrcheckdigit
+    description: 'Metadata for column MICRCHECKDIGIT. Max length: 10'
+  - name: currentbillkey
+    description: Metadata for column CURRENTBILLKEY
+  - name: parentacctkey
+    description: Metadata for column PARENTACCTKEY
+  - name: customerref
+    description: 'Metadata for column CUSTOMERREF. Max length: 100'
+  - name: country
+    description: 'Metadata for column COUNTRY. Max length: 20'
+  - name: ebilltype
+    description: 'Metadata for column EBILLTYPE. Max length: 50'
+  - name: prevbillamount
+    description: Metadata for column PREVBILLAMOUNT
+  - name: openbalance
+    description: Metadata for column OPENBALANCE
+  - name: billdeliverytype
+    description: 'Metadata for column BILLDELIVERYTYPE. Max length: 10'
+  - name: checkdigit
+    description: 'Metadata for column CHECKDIGIT. Max length: 10'
+  - name: state
+    description: 'Metadata for column STATE. Max length: 30'
+  - name: disctotaldue
+    description: Metadata for column DISCTOTALDUE
+  - name: barcodeaccountnumber
+    description: 'Metadata for column BARCODEACCOUNTNUMBER. Max length: 27'
+  - name: customerno
+    description: 'Metadata for column CUSTOMERNO. Max length: 35'
+  - name: gstamount
+    description: Metadata for column GSTAMOUNT
+  - name: billrunkey
+    description: Metadata for column BILLRUNKEY
+  - name: microaccountnumber
+    description: 'Metadata for column MICROACCOUNTNUMBER. Max length: 27'
+  - name: acctclass
+    description: 'Metadata for column ACCTCLASS. Max length: 10'
+  - name: xero
+    description: 'Metadata for column XERO. Max length: 1'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: oldestbilldate
+    description: Metadata for column OLDESTBILLDATE
+  - name: billnumber
+    description: 'Metadata for column BILLNUMBER. Max length: 9'
+  - name: addressline2
+    description: 'Metadata for column ADDRESSLINE2. Max length: 40'
+  - name: city
+    description: 'Metadata for column CITY. Max length: 30'
+  - name: accountnumber
+    description: 'Metadata for column ACCOUNTNUMBER. Max length: 27'
+  - name: oldestdebt
+    description: Metadata for column OLDESTDEBT
+  - name: address
+    description: 'Metadata for column ADDRESS. Max length: 200'
+  - name: balancecurrentcharge
+    description: Metadata for column BALANCECURRENTCHARGE
+  - name: totaldue
+    description: Metadata for column TOTALDUE
+  - name: applicationtype
+    description: 'Metadata for column APPLICATIONTYPE. Max length: 10'
+  - name: barcodecheckdigit
+    description: 'Metadata for column BARCODECHECKDIGIT. Max length: 10'
+  - name: filename
+    description: 'Metadata for column FILENAME. Max length: 50'
+  - name: parentapplicationnumber
+    description: 'Metadata for column PARENTAPPLICATIONNUMBER. Max length: 25'
+  - name: lot
+    description: 'Metadata for column LOT. Max length: 20'
+  - name: runnumber
+    description: Metadata for column RUNNUMBER
+  - name: emailaddress
+    description: 'Metadata for column EMAILADDRESS. Max length: 50'
+  - name: numberofinvoices
+    description: Metadata for column NUMBEROFINVOICES
+  - name: applicationnumber
+    description: 'Metadata for column APPLICATIONNUMBER. Max length: 25'
+  - name: cdrbilloutputextkey
+    description: (required) Metadata for column CDRBILLOUTPUTEXTKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: directdebitflag
+    description: 'Metadata for column DIRECTDEBITFLAG. Max length: 1'
+  - name: addressline1
+    description: 'Metadata for column ADDRESSLINE1. Max length: 40'
+  - name: parentcustomerno
+    description: 'Metadata for column PARENTCUSTOMERNO. Max length: 35'
+  - name: brfwrd
+    description: Metadata for column BRFWRD
+  - name: principaltotal
+    description: Metadata for column PRINCIPALTOTAL
+  - name: billamount
+    description: Metadata for column BILLAMOUNT
+  - name: parentapplicationreference
+    description: 'Metadata for column PARENTAPPLICATIONREFERENCE. Max length: 50'
+  - name: currpenamt
+    description: Metadata for column CURRPENAMT
+  - name: parentaddress
+    description: 'Metadata for column PARENTADDRESS. Max length: 100'
+  - name: barcodeduedate
+    description: Metadata for column BARCODEDUEDATE
+  - name: parentaccountnumber
+    description: 'Metadata for column PARENTACCOUNTNUMBER. Max length: 27'
+  - name: microamount
+    description: 'Metadata for column MICROAMOUNT. Max length: 10'
+  - name: billto
+    description: 'Metadata for column BILLTO. Max length: 90'
+  - name: lastpaymentdate
+    description: Metadata for column LASTPAYMENTDATE
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: applicationname
+    description: 'Metadata for column APPLICATIONNAME. Max length: 50'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: barcodeamount
+    description: 'Metadata for column BARCODEAMOUNT. Max length: 10'
+  - name: adjustmentamount
+    description: Metadata for column ADJUSTMENTAMOUNT
+  - name: acctnum
+    description: 'Metadata for column ACCTNUM. Max length: 27'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table WSLCDR.CDRBILLOUTPUTEXT on 2023-03-07T04:53:56.254

@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5structures
+  columns:
+  - name: stc_lastsaved
+    description: STC_LASTSAVED
+  - name: stc_child
+    description: STC_CHILD
+  - name: stc_parenttype
+    description: STC_PARENTTYPE
+  - name: stc_parentrtype
+    description: STC_PARENTRTYPE
+  - name: stc_parent
+    description: STC_PARENT
+  - name: stc_rolldown
+    description: STC_ROLLDOWN
+  - name: stc_rollup
+    description: STC_ROLLUP
+  - name: stc_equivalent
+    description: STC_EQUIVALENT
+  - name: stc_downtime
+    description: STC_DOWNTIME
+  - name: stc_child_org
+    description: STC_CHILD_ORG
+  - name: stc_parent_org
+    description: STC_PARENT_ORG
+  - name: stc_updatecount
+    description: STC_UPDATECOUNT
+  - name: stc_updated
+    description: STC_UPDATED
+  - name: stc_sequence
+    description: STC_SEQUENCE
+  - name: stc_mnbdefinition
+    description: STC_MNBDEFINITION
+  - name: stc_childtype
+    description: STC_CHILDTYPE
+  - name: stc_childrtype
+    description: STC_CHILDRTYPE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5STRUCTURES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - stc_child
+        - stc_child_org
+        - stc_parent
+        - stc_parent_org

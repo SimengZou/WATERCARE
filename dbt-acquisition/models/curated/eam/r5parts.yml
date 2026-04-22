@@ -1,0 +1,254 @@
+version: 2
+models:
+- name: r5parts
+  columns:
+  - name: par_lastsaved
+    description: PAR_LASTSAVED
+  - name: par_code
+    description: PAR_CODE
+  - name: par_desc
+    description: PAR_DESC
+  - name: par_class
+    description: PAR_CLASS
+  - name: par_uom
+    description: PAR_UOM
+  - name: par_byasset
+    description: PAR_BYASSET
+  - name: par_bylot
+    description: PAR_BYLOT
+  - name: par_category
+    description: PAR_CATEGORY
+  - name: par_baseprice
+    description: PAR_BASEPRICE
+  - name: par_avgprice
+    description: PAR_AVGPRICE
+  - name: par_lastprice
+    description: PAR_LASTPRICE
+  - name: par_stdprice
+    description: PAR_STDPRICE
+  - name: par_prefsup
+    description: PAR_PREFSUP
+  - name: par_prefsupprice
+    description: PAR_PREFSUPPRICE
+  - name: par_prefuom
+    description: PAR_PREFUOM
+  - name: par_commodity
+    description: PAR_COMMODITY
+  - name: par_subcommodity
+    description: PAR_SUBCOMMODITY
+  - name: par_tax
+    description: PAR_TAX
+  - name: par_buyer
+    description: PAR_BUYER
+  - name: par_sourcesystem
+    description: PAR_SOURCESYSTEM
+  - name: par_sourcecode
+    description: PAR_SOURCECODE
+  - name: par_interface
+    description: PAR_INTERFACE
+  - name: par_notused
+    description: PAR_NOTUSED
+  - name: par_tracktype
+    description: PAR_TRACKTYPE
+  - name: par_trackrtype
+    description: PAR_TRACKRTYPE
+  - name: par_tool
+    description: PAR_TOOL
+  - name: par_wardays
+    description: PAR_WARDAYS
+  - name: par_org
+    description: PAR_ORG
+  - name: par_class_org
+    description: PAR_CLASS_ORG
+  - name: par_prefsup_org
+    description: PAR_PREFSUP_ORG
+  - name: par_inspect
+    description: PAR_INSPECT
+  - name: par_insmethod
+    description: PAR_INSMETHOD
+  - name: par_codestructure
+    description: PAR_CODESTRUCTURE
+  - name: par_corevalue
+    description: PAR_COREVALUE
+  - name: par_repairable
+    description: PAR_REPAIRABLE
+  - name: par_created
+    description: PAR_CREATED
+  - name: par_createdby
+    description: PAR_CREATEDBY
+  - name: par_updated
+    description: PAR_UPDATED
+  - name: par_updatedby
+    description: PAR_UPDATEDBY
+  - name: par_updatecount
+    description: PAR_UPDATECOUNT
+  - name: par_savehistory
+    description: PAR_SAVEHISTORY
+  - name: par_calstandard
+    description: PAR_CALSTANDARD
+  - name: par_preventreorders
+    description: PAR_PREVENTREORDERS
+  - name: par_fugitiveemissiongas
+    description: PAR_FUGITIVEEMISSIONGAS
+  - name: par_syslevel
+    description: PAR_SYSLEVEL
+  - name: par_asmlevel
+    description: PAR_ASMLEVEL
+  - name: par_complevel
+    description: PAR_COMPLEVEL
+  - name: par_laststatusupdate
+    description: PAR_LASTSTATUSUPDATE
+  - name: par_udfchar01
+    description: PAR_UDFCHAR01
+  - name: par_udfchar02
+    description: PAR_UDFCHAR02
+  - name: par_udfchar03
+    description: PAR_UDFCHAR03
+  - name: par_udfchar04
+    description: PAR_UDFCHAR04
+  - name: par_udfchar05
+    description: PAR_UDFCHAR05
+  - name: par_udfchar06
+    description: PAR_UDFCHAR06
+  - name: par_udfchar07
+    description: PAR_UDFCHAR07
+  - name: par_udfchar08
+    description: PAR_UDFCHAR08
+  - name: par_udfchar09
+    description: PAR_UDFCHAR09
+  - name: par_udfchar10
+    description: PAR_UDFCHAR10
+  - name: par_udfchar11
+    description: PAR_UDFCHAR11
+  - name: par_udfchar12
+    description: PAR_UDFCHAR12
+  - name: par_udfchar13
+    description: PAR_UDFCHAR13
+  - name: par_udfchar14
+    description: PAR_UDFCHAR14
+  - name: par_udfchar15
+    description: PAR_UDFCHAR15
+  - name: par_udfchar16
+    description: PAR_UDFCHAR16
+  - name: par_udfchar17
+    description: PAR_UDFCHAR17
+  - name: par_udfchar18
+    description: PAR_UDFCHAR18
+  - name: par_udfchar19
+    description: PAR_UDFCHAR19
+  - name: par_udfchar20
+    description: PAR_UDFCHAR20
+  - name: par_udfchar21
+    description: PAR_UDFCHAR21
+  - name: par_udfchar22
+    description: PAR_UDFCHAR22
+  - name: par_udfchar23
+    description: PAR_UDFCHAR23
+  - name: par_udfchar24
+    description: PAR_UDFCHAR24
+  - name: par_udfchar25
+    description: PAR_UDFCHAR25
+  - name: par_udfchar26
+    description: PAR_UDFCHAR26
+  - name: par_udfchar27
+    description: PAR_UDFCHAR27
+  - name: par_udfchar28
+    description: PAR_UDFCHAR28
+  - name: par_udfchar29
+    description: PAR_UDFCHAR29
+  - name: par_udfchar30
+    description: PAR_UDFCHAR30
+  - name: par_udfnum01
+    description: PAR_UDFNUM01
+  - name: par_udfnum02
+    description: PAR_UDFNUM02
+  - name: par_udfnum03
+    description: PAR_UDFNUM03
+  - name: par_udfnum04
+    description: PAR_UDFNUM04
+  - name: par_udfnum05
+    description: PAR_UDFNUM05
+  - name: par_udfdate01
+    description: PAR_UDFDATE01
+  - name: par_udfdate02
+    description: PAR_UDFDATE02
+  - name: par_udfdate03
+    description: PAR_UDFDATE03
+  - name: par_udfdate04
+    description: PAR_UDFDATE04
+  - name: par_udfdate05
+    description: PAR_UDFDATE05
+  - name: par_udfchkbox01
+    description: PAR_UDFCHKBOX01
+  - name: par_udfchkbox02
+    description: PAR_UDFCHKBOX02
+  - name: par_udfchkbox03
+    description: PAR_UDFCHKBOX03
+  - name: par_udfchkbox04
+    description: PAR_UDFCHKBOX04
+  - name: par_udfchkbox05
+    description: PAR_UDFCHKBOX05
+  - name: par_kit
+    description: PAR_KIT
+  - name: par_safetyreviewrequired
+    description: PAR_SAFETYREVIEWREQUIRED
+  - name: par_safetyreviewed
+    description: PAR_SAFETYREVIEWED
+  - name: par_safetyreviewedby
+    description: PAR_SAFETYREVIEWEDBY
+  - name: par_safetyreviewedname
+    description: PAR_SAFETYREVIEWEDNAME
+  - name: par_safetyreviewedtype
+    description: PAR_SAFETYREVIEWEDTYPE
+  - name: par_trackbycondition
+    description: PAR_TRACKBYCONDITION
+  - name: par_parentpart
+    description: PAR_PARENTPART
+  - name: par_conditiontpl
+    description: PAR_CONDITIONTPL
+  - name: par_conditiontpl_org
+    description: PAR_CONDITIONTPL_ORG
+  - name: par_condition
+    description: PAR_CONDITION
+  - name: par_longdescription
+    description: PAR_LONGDESCRIPTION
+  - name: par_documoto_bookid
+    description: PAR_DOCUMOTO_BOOKID
+  - name: par_documoto_part
+    description: PAR_DOCUMOTO_PART
+  - name: par_importance
+    description: PAR_IMPORTANCE
+  - name: par_materialtype
+    description: PAR_MATERIALTYPE
+  - name: par_udfnote01
+    description: PAR_UDFNOTE01
+  - name: par_udfnote02
+    description: PAR_UDFNOTE02
+  - name: par_profilepicture
+    description: PAR_PROFILEPICTURE
+  - name: par_availableforcus
+    description: PAR_AVAILABLEFORCUS
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PARTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - par_code
+        - par_org

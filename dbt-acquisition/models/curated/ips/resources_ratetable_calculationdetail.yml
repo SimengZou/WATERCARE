@@ -1,0 +1,142 @@
+version: 2
+models:
+- name: resources_ratetable_calculationdetail
+  columns:
+  - name: rtproratestep8
+    description: Metadata for column RTPRORATESTEP8
+  - name: rtchg1
+    description: Metadata for column RTCHG1
+  - name: rtchg5
+    description: Metadata for column RTCHG5
+  - name: rtusg7
+    description: Metadata for column RTUSG7
+  - name: rtproratestep1
+    description: Metadata for column RTPRORATESTEP1
+  - name: rtusg6
+    description: Metadata for column RTUSG6
+  - name: daysbetweenreads
+    description: Metadata for column DAYSBETWEENREADS
+  - name: rtchg10
+    description: Metadata for column RTCHG10
+  - name: rtchg9
+    description: Metadata for column RTCHG9
+  - name: rtproratestep3
+    description: Metadata for column RTPRORATESTEP3
+  - name: rtratecode
+    description: 'Metadata for column RTRATECODE. Max length: 30'
+  - name: rtproratestep7
+    description: Metadata for column RTPRORATESTEP7
+  - name: rtusg8
+    description: Metadata for column RTUSG8
+  - name: rtusg9
+    description: Metadata for column RTUSG9
+  - name: ratetabledetailkey
+    description: Metadata for column RATETABLEDETAILKEY
+  - name: rtproratestep2
+    description: Metadata for column RTPRORATESTEP2
+  - name: rtminchg
+    description: Metadata for column RTMINCHG
+  - name: rtchg4
+    description: Metadata for column RTCHG4
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: efftodate
+    description: Metadata for column EFFTODATE
+  - name: rtproratestep4
+    description: Metadata for column RTPRORATESTEP4
+  - name: rtproratestep6
+    description: Metadata for column RTPRORATESTEP6
+  - name: rtchg8
+    description: Metadata for column RTCHG8
+  - name: rtusg1
+    description: Metadata for column RTUSG1
+  - name: convertedunits
+    description: Metadata for column CONVERTEDUNITS
+  - name: rtusg5
+    description: Metadata for column RTUSG5
+  - name: srvusgdays
+    description: Metadata for column SRVUSGDAYS
+  - name: rtstddays
+    description: Metadata for column RTSTDDAYS
+  - name: rtproratestep9
+    description: Metadata for column RTPRORATESTEP9
+  - name: rtchg7
+    description: Metadata for column RTCHG7
+  - name: rtchg3
+    description: Metadata for column RTCHG3
+  - name: rtusg3
+    description: Metadata for column RTUSG3
+  - name: totalusagedays
+    description: Metadata for column TOTALUSAGEDAYS
+  - name: prorateamt
+    description: Metadata for column PRORATEAMT
+  - name: rtchg6
+    description: Metadata for column RTCHG6
+  - name: calculationdetailkey
+    description: (required) Metadata for column CALCULATIONDETAILKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: rtusgdays
+    description: Metadata for column RTUSGDAYS
+  - name: basebillableusage
+    description: Metadata for column BASEBILLABLEUSAGE
+  - name: rtusg4
+    description: Metadata for column RTUSG4
+  - name: useforprorating
+    description: Metadata for column USEFORPRORATING
+  - name: fullamt
+    description: Metadata for column FULLAMT
+  - name: effdate
+    description: Metadata for column EFFDATE
+  - name: rtproratestep5
+    description: Metadata for column RTPRORATESTEP5
+  - name: isproratestepsratechange
+    description: 'Metadata for column ISPRORATESTEPSRATECHANGE. Max length: 1'
+  - name: rtusg2
+    description: Metadata for column RTUSG2
+  - name: totalbillableusage
+    description: Metadata for column TOTALBILLABLEUSAGE
+  - name: rtchg2
+    description: Metadata for column RTCHG2
+  - name: numberofsteps
+    description: Metadata for column NUMBEROFSTEPS
+  - name: rtmaxchg
+    description: Metadata for column RTMAXCHG
+  - name: rtunit
+    description: Metadata for column RTUNIT
+  - name: rtusg10
+    description: Metadata for column RTUSG10
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: calculationtable
+    description: Metadata for column CALCULATIONTABLE
+  - name: rtuom
+    description: 'Metadata for column RTUOM. Max length: 20'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: rtproratestep10
+    description: Metadata for column RTPRORATESTEP10
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table RESOURCES_RATETABLE.CALCULATIONDETAIL on 2021-07-09T15:16:59.121

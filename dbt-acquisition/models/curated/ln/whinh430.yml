@@ -1,0 +1,501 @@
+version: 2
+models:
+- name: whinh430
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: shpm
+    description: '(required) Shipment. Max length: 9'
+    data_tests:
+    - not_null
+  - name: load
+    description: 'Load. Max length: 9'
+  - name: seri
+    description: 'Series. Max length: 8'
+  - name: sfcp
+    description: Ship-from Company
+  - name: sfty
+    description: 'Ship-from Type. Allowed values: 1, 2, 3, 4, 10'
+  - name: sfty_kw
+    description: 'Ship-from Type (keyword). Allowed values: tctyps.warehouse, tctyps.partner,
+      tctyps.project, tctyps.work.center, tctyps.not.appl'
+  - name: sfco
+    description: 'Ship-from Code. Max length: 9'
+  - name: sfad
+    description: 'Ship-from Address. Max length: 9'
+  - name: sfsi
+    description: 'Ship-from Site. Max length: 9'
+  - name: stcp
+    description: Ship-to Company
+  - name: stty
+    description: 'Ship-to Type. Allowed values: 1, 2, 3, 4, 10'
+  - name: stty_kw
+    description: 'Ship-to Type (keyword). Allowed values: tctyps.warehouse, tctyps.partner,
+      tctyps.project, tctyps.work.center, tctyps.not.appl'
+  - name: stco
+    description: 'Ship-to Code. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: stsi
+    description: 'Ship-to Site. Max length: 9'
+  - name: dlpt
+    description: 'Delivery Point. Max length: 9'
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: carr
+    description: 'Carrier/LSP. Max length: 3'
+  - name: sdtf
+    description: Shipment Date From
+  - name: sdtt
+    description: Shipment Date To
+  - name: fxwt
+    description: 'Fixed Weight. Allowed values: 0, 1, 2'
+  - name: fxwt_kw
+    description: 'Fixed Weight (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: wght
+    description: Gross Weight
+  - name: ntwt
+    description: Net Weight
+  - name: cwun
+    description: 'Weight Unit. Max length: 3'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: shst
+    description: 'Status. Allowed values: 1, 2, 3, 10, 20, 30, 40'
+  - name: shst_kw
+    description: 'Status (keyword). Allowed values: whinh.shst.open, whinh.shst.frozen,
+      whinh.shst.confirmed, whinh.shst.part.frozen, whinh.shst.confirming, whinh.shst.projected,
+      whinh.shst.canceled'
+  - name: pddt
+    description: Planned Delivery Date
+  - name: prdt
+    description: Planned Receipt Date
+  - name: cdat
+    description: Date Confirmed
+  - name: koch
+    description: 'Kind of Charge. Allowed values: 1, 2, 3, 4, 10, 20, 30, 40, 150,
+      160, 200, 250'
+  - name: koch_kw
+    description: 'Kind of Charge (keyword). Allowed values: whinh.koch.surcharge,
+      whinh.koch.freight, whinh.koch.handling, whinh.koch.setup, whinh.koch.not.appl,
+      whinh.koch.packing, whinh.koch.insurance, whinh.koch.commission, whinh.koch.miscellaneous,
+      whinh.koch.other, whinh.koch.consolidated, whinh.koch.not.applicable'
+  - name: curr
+    description: 'Currency. Max length: 3'
+  - name: cham
+    description: Charge Amount
+  - name: stat
+    description: 'EDI Status. Allowed values: 1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 15,
+      20, 25, 30'
+  - name: stat_kw
+    description: 'EDI Status (keyword). Allowed values: whinh.stat.prepare, whinh.stat.confirmed,
+      whinh.stat.sent, whinh.stat.disapproved, whinh.stat.modify, whinh.stat.asn.received,
+      whinh.stat.scheduled, whinh.stat.scheduled.man, whinh.stat.received, whinh.stat.under.review,
+      whinh.stat.open, whinh.stat.cancelled, whinh.stat.replaced, whinh.stat.not.appl'
+  - name: hazm
+    description: 'Hazardous Material. Allowed values: 1, 2'
+  - name: hazm_kw
+    description: 'Hazardous Material (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: risk
+    description: 'Class of Risk. Max length: 15'
+  - name: bolp
+    description: 'Bill of Lading Printed. Allowed values: 1, 2'
+  - name: bolp_kw
+    description: 'Bill of Lading Printed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pcsp
+    description: 'Packing Slip Printed. Allowed values: 1, 2'
+  - name: pcsp_kw
+    description: 'Packing Slip Printed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pdat
+    description: Packing Slip Date
+  - name: delp
+    description: 'Delivery Note Printed. Allowed values: 1, 2'
+  - name: delp_kw
+    description: 'Delivery Note Printed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pclp
+    description: 'Packing List Printed. Allowed values: 1, 2'
+  - name: pclp_kw
+    description: 'Packing List Printed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mapr
+    description: 'Shipping Manifest Printed. Allowed values: 1, 2'
+  - name: mapr_kw
+    description: 'Shipping Manifest Printed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pfpr
+    description: 'Pro Forma Invoice Processed. Allowed values: 1, 2'
+  - name: pfpr_kw
+    description: 'Pro Forma Invoice Processed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sflp
+    description: 'Shipment Planned for Load Plan. Allowed values: 1, 2'
+  - name: sflp_kw
+    description: 'Shipment Planned for Load Plan (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: depc
+    description: Office Company
+  - name: wdep
+    description: 'Office. Max length: 6'
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: bptc
+    description: 'BP Tax Country. Max length: 3'
+  - name: taxs
+    description: 'Own Identification Number. Max length: 35'
+  - name: taxp
+    description: 'Business Partner Identification Number. Max length: 35'
+  - name: ttyp
+    description: 'Invoice Transaction Type. Max length: 3'
+  - name: incp
+    description: Invoice Company
+  - name: invn
+    description: Invoice Number
+  - name: invd
+    description: Invoice Date
+  - name: minv
+    description: 'Multiple Invoices. Allowed values: 1, 2'
+  - name: minv_kw
+    description: 'Multiple Invoices (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: fval
+    description: Freight Value
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: ispr
+    description: 'Shipment Procedure. Max length: 3'
+  - name: shrf
+    description: 'Shipping Sequence Shipment Reference. Max length: 9'
+  - name: llsq
+    description: Loading List Sequence
+  - name: motv
+    description: 'Motive of Transport. Max length: 6'
+  - name: delc
+    description: 'Delivery Code. Max length: 6'
+  - name: prdn
+    description: 'Preliminary Delivery Note. Max length: 9'
+  - name: manl
+    description: 'Manual. Allowed values: 1, 2'
+  - name: manl_kw
+    description: 'Manual (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cpro__en_us
+    description: '(required) Carrier Tracking Number - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: trnr__en_us
+    description: '(required) Tracking Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refs__en_us
+    description: '(required) Shipment Reference - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: exre__en_us
+    description: '(required) Export Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: erdt
+    description: Export Reference Date
+  - name: corn__en_us
+    description: '(required) Customer Order - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: cntr
+    description: 'Shipping Container. Max length: 4'
+  - name: pitm
+    description: 'Packaging Item. Max length: 47'
+  - name: qpac
+    description: Quantity of Packaging Items
+  - name: hght
+    description: Height
+  - name: wdth
+    description: Width
+  - name: dpth
+    description: Length
+  - name: cdun
+    description: 'Dimension Unit. Max length: 3'
+  - name: flsp
+    description: Floor Space
+  - name: volm
+    description: Volume
+  - name: sanl
+    description: 'Allow Changes to Shipment. Allowed values: 1, 2'
+  - name: sanl_kw
+    description: 'Allow Changes to Shipment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: srsh
+    description: 'Single Shipment Reference per Shipment. Allowed values: 1, 2'
+  - name: srsh_kw
+    description: 'Single Shipment Reference per Shipment (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: sdsh
+    description: 'Single Delivery Point per Shipment. Allowed values: 1, 2'
+  - name: sdsh_kw
+    description: 'Single Delivery Point per Shipment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: scsh
+    description: 'Single Customer Order per Shipment. Allowed values: 1, 2'
+  - name: scsh_kw
+    description: 'Single Customer Order per Shipment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: slsh
+    description: 'Single Line per Shipment. Allowed values: 1, 2'
+  - name: slsh_kw
+    description: 'Single Line per Shipment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: elsl
+    description: 'Exclude Lot in Inventory from Stock Point Consolidation in Shipment
+      Li. Allowed values: 1, 2'
+  - name: elsl_kw
+    description: 'Exclude Lot in Inventory from Stock Point Consolidation in Shipment
+      Li (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: essl
+    description: 'Exclude Serial in Inventory from Stock Point Consolidation in Shipment.
+      Allowed values: 1, 2'
+  - name: essl_kw
+    description: 'Exclude Serial in Inventory from Stock Point Consolidation in Shipment
+      (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: eisl
+    description: 'Exclude Inventory Date from Stock Point Consolidation in Shipment
+      Line. Allowed values: 1, 2'
+  - name: eisl_kw
+    description: 'Exclude Inventory Date from Stock Point Consolidation in Shipment
+      Line (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aclr
+    description: 'Additional Costs. Allowed values: 0, 10, 20, 30, 40'
+  - name: aclr_kw
+    description: 'Additional Costs (keyword). Allowed values: , whadd.costs.calculated,
+      whadd.costs.modified, whadd.costs.no, whadd.costs.not.applicable'
+  - name: runn
+    description: 'Run. Max length: 12'
+  - name: picm
+    description: Picking Mission
+  - name: eamt
+    description: Estimated Freight Costs
+  - name: eacu
+    description: 'Estimated Freight Costs Currency. Max length: 3'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: psts
+    description: 'Publishing Status. Allowed values: 10, 20, 30, 32, 34, 36, 40'
+  - name: psts_kw
+    description: 'Publishing Status (keyword). Allowed values: whinh.spst.to.be.published,
+      whinh.spst.published, whinh.spst.modified, whinh.spst.validating, whinh.spst.val.error,
+      whinh.spst.validated, whinh.spst.not.applicable'
+  - name: sarq
+    description: 'Source Acceptance Required. Allowed values: 1, 2'
+  - name: sarq_kw
+    description: 'Source Acceptance Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sacc
+    description: 'Source Accepted. Allowed values: 1, 2'
+  - name: sacc_kw
+    description: 'Source Accepted (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: saby
+    description: 'Source Acceptance by. Max length: 9'
+  - name: sadt
+    description: Source Acceptance Date
+  - name: darq
+    description: 'Destination Acceptance Required. Allowed values: 1, 2'
+  - name: darq_kw
+    description: 'Destination Acceptance Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dacc
+    description: 'Destination Accepted. Allowed values: 1, 2'
+  - name: dacc_kw
+    description: 'Destination Accepted (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: daby
+    description: 'Destination Acceptance by. Max length: 9'
+  - name: dadt
+    description: Destination Acceptance Date
+  - name: suba
+    description: 'Submitted for Acceptance. Allowed values: 1, 2'
+  - name: suba_kw
+    description: 'Submitted for Acceptance (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: frsm
+    description: 'Freeze Mandatory. Allowed values: 1, 2'
+  - name: frsm_kw
+    description: 'Freeze Mandatory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: hubc
+    description: 'Handling Unit Based Confirmation. Allowed values: 1, 2'
+  - name: hubc_kw
+    description: 'Handling Unit Based Confirmation (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: shvl
+    description: 'Shipment Validation. Allowed values: 1, 2'
+  - name: shvl_kw
+    description: 'Shipment Validation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: shvc
+    description: 'Shipment Validation Complete. Allowed values: 1, 2'
+  - name: shvc_kw
+    description: 'Shipment Validation Complete (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: shvo
+    description: 'Shipment Validation Overruled. Allowed values: 1, 2'
+  - name: shvo_kw
+    description: 'Shipment Validation Overruled (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rule
+    description: 'Validation Rule. Max length: 6'
+  - name: shvd
+    description: Shipment Validation Date
+  - name: ibpd
+    description: 'Ignore Block on Package Definition Deviation. Allowed values: 1,
+      2'
+  - name: ibpd_kw
+    description: 'Ignore Block on Package Definition Deviation (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: oshc
+    description: 'Overrule Shipping Constraints. Allowed values: 1, 2'
+  - name: oshc_kw
+    description: 'Overrule Shipping Constraints (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sqdp
+    description: 'Sequencing during Picking. Allowed values: 10, 20, 30'
+  - name: sqdp_kw
+    description: 'Sequencing during Picking (keyword). Allowed values: whinh.asds.ascending,
+      whinh.asds.descending, whinh.asds.not.applicable'
+  - name: sqdl
+    description: 'Sequencing during Loading. Allowed values: 10, 20, 30'
+  - name: sqdl_kw
+    description: 'Sequencing during Loading (keyword). Allowed values: whinh.asds.ascending,
+      whinh.asds.descending, whinh.asds.not.applicable'
+  - name: psde
+    description: 'Print Shipping Documents by External Application. Allowed values:
+      1, 2'
+  - name: psde_kw
+    description: 'Print Shipping Documents by External Application (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: psdd
+    description: 'Shipping Documents Printed by External Application. Allowed values:
+      1, 2'
+  - name: psdd_kw
+    description: 'Shipping Documents Printed by External Application (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: tcap
+    description: 'Localized Authorization Procedure Applicable. Allowed values: 1,
+      2'
+  - name: tcap_kw
+    description: 'Localized Authorization Procedure Applicable (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: tccp
+    description: 'Localized Authorization Procedure Complete. Allowed values: 1, 2'
+  - name: tccp_kw
+    description: 'Localized Authorization Procedure Complete (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: trcd
+    description: 'Authorization Number. Max length: 50'
+  - name: exfr
+    description: 'Expedited. Allowed values: 1, 2'
+  - name: exfr_kw
+    description: 'Expedited (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: text
+    description: Text
+  - name: iedi
+    description: EDI Information
+  - name: load_cntr_ref_compnr
+    description: company number of primary key of table whinh425 Shipping Containers
+  - name: load_ref_compnr
+    description: company number of primary key of table whinh440 Loads
+  - name: sfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: sfsi_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: stad_dlpt_ref_compnr
+    description: company number of primary key of table tccom134 Delivery Points
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: stsi_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: carr_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: cwun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: curr_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: depc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: huid_ref_compnr
+    description: company number of primary key of table whwmd530 Handling Units
+  - name: motv_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: delc_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: prdn_ref_compnr
+    description: company number of primary key of table whinh435 Delivery Notes
+  - name: pitm_ref_compnr
+    description: company number of primary key of table whwmd405 Packaging Items
+  - name: cdun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: saby_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: daby_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: rule_ref_compnr
+    description: company number of primary key of table whwmd150 Validation Rules
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: iedi_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh430 Shipments table, Generated 2026-04-10T19:42:49Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - shpm

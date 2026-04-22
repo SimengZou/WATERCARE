@@ -1,0 +1,308 @@
+version: 2
+models:
+- name: r5translines
+  columns:
+  - name: trl_lastsaved
+    description: TRL_LASTSAVED
+  - name: trl_trans
+    description: TRL_TRANS
+  - name: trl_type
+    description: TRL_TYPE
+  - name: trl_rtype
+    description: TRL_RTYPE
+  - name: trl_line
+    description: TRL_LINE
+  - name: trl_date
+    description: TRL_DATE
+  - name: trl_costcode
+    description: TRL_COSTCODE
+  - name: trl_project
+    description: TRL_PROJECT
+  - name: trl_projbud
+    description: TRL_PROJBUD
+  - name: trl_event
+    description: TRL_EVENT
+  - name: trl_act
+    description: TRL_ACT
+  - name: trl_part
+    description: TRL_PART
+  - name: trl_ordline
+    description: TRL_ORDLINE
+  - name: trl_reqline
+    description: TRL_REQLINE
+  - name: trl_obtype
+    description: TRL_OBTYPE
+  - name: trl_obrtype
+    description: TRL_OBRTYPE
+  - name: trl_object
+    description: TRL_OBJECT
+  - name: trl_lot
+    description: TRL_LOT
+  - name: trl_bin
+    description: TRL_BIN
+  - name: trl_store
+    description: TRL_STORE
+  - name: trl_price
+    description: TRL_PRICE
+  - name: trl_qty
+    description: TRL_QTY
+  - name: trl_stockprice
+    description: TRL_STOCKPRICE
+  - name: trl_order
+    description: TRL_ORDER
+  - name: trl_req
+    description: TRL_REQ
+  - name: trl_multiply
+    description: TRL_MULTIPLY
+  - name: trl_io
+    description: TRL_IO
+  - name: trl_acd
+    description: TRL_ACD
+  - name: trl_gltransferflag
+    description: TRL_GLTRANSFERFLAG
+  - name: trl_gltransfer
+    description: TRL_GLTRANSFER
+  - name: trl_interface
+    description: TRL_INTERFACE
+  - name: trl_sourcesystem
+    description: TRL_SOURCESYSTEM
+  - name: trl_sourcecode
+    description: TRL_SOURCECODE
+  - name: trl_consignment
+    description: TRL_CONSIGNMENT
+  - name: trl_consignsupplier
+    description: TRL_CONSIGNSUPPLIER
+  - name: trl_rejectreason
+    description: TRL_REJECTREASON
+  - name: trl_transorgid
+    description: TRL_TRANSORGID
+  - name: trl_transcode
+    description: TRL_TRANSCODE
+  - name: trl_transgroup
+    description: TRL_TRANSGROUP
+  - name: trl_warranty
+    description: TRL_WARRANTY
+  - name: trl_object_org
+    description: TRL_OBJECT_ORG
+  - name: trl_consignsupplier_org
+    description: TRL_CONSIGNSUPPLIER_ORG
+  - name: trl_order_org
+    description: TRL_ORDER_ORG
+  - name: trl_part_org
+    description: TRL_PART_ORG
+  - name: trl_picklist
+    description: TRL_PICKLIST
+  - name: trl_dckcode
+    description: TRL_DCKCODE
+  - name: trl_dckline
+    description: TRL_DCKLINE
+  - name: trl_allocate
+    description: TRL_ALLOCATE
+  - name: trl_repairprice
+    description: TRL_REPAIRPRICE
+  - name: trl_scrapqty
+    description: TRL_SCRAPQTY
+  - name: trl_evtalias
+    description: TRL_EVTALIAS
+  - name: trl_printqty
+    description: TRL_PRINTQTY
+  - name: trl_priceupdate
+    description: TRL_PRICEUPDATE
+  - name: trl_updatecount
+    description: TRL_UPDATECOUNT
+  - name: trl_origqty
+    description: TRL_ORIGQTY
+  - name: trl_routerec
+    description: TRL_ROUTEREC
+  - name: trl_created
+    description: TRL_CREATED
+  - name: trl_updated
+    description: TRL_UPDATED
+  - name: trl_newmrc
+    description: TRL_NEWMRC
+  - name: trl_newcostcode
+    description: TRL_NEWCOSTCODE
+  - name: trl_newmanufact
+    description: TRL_NEWMANUFACT
+  - name: trl_avgprice
+    description: TRL_AVGPRICE
+  - name: trl_jecategory
+    description: TRL_JECATEGORY
+  - name: trl_jesource
+    description: TRL_JESOURCE
+  - name: trl_billsubline
+    description: TRL_BILLSUBLINE
+  - name: trl_fleetchecked
+    description: TRL_FLEETCHECKED
+  - name: trl_fleetmarkup
+    description: TRL_FLEETMARKUP
+  - name: trl_splittrans
+    description: TRL_SPLITTRANS
+  - name: trl_desc
+    description: TRL_DESC
+  - name: trl_attachto
+    description: TRL_ATTACHTO
+  - name: trl_attachto_org
+    description: TRL_ATTACHTO_ORG
+  - name: trl_attach
+    description: TRL_ATTACH
+  - name: trl_scrapobject
+    description: TRL_SCRAPOBJECT
+  - name: trl_scrapobject_org
+    description: TRL_SCRAPOBJECT_ORG
+  - name: trl_manufacturer
+    description: TRL_MANUFACTURER
+  - name: trl_manufactpart
+    description: TRL_MANUFACTPART
+  - name: trl_leak
+    description: TRL_LEAK
+  - name: trl_udfchar01
+    description: TRL_UDFCHAR01
+  - name: trl_udfchar02
+    description: TRL_UDFCHAR02
+  - name: trl_udfchar03
+    description: TRL_UDFCHAR03
+  - name: trl_udfchar04
+    description: TRL_UDFCHAR04
+  - name: trl_udfchar05
+    description: TRL_UDFCHAR05
+  - name: trl_udfchar06
+    description: TRL_UDFCHAR06
+  - name: trl_udfchar07
+    description: TRL_UDFCHAR07
+  - name: trl_udfchar08
+    description: TRL_UDFCHAR08
+  - name: trl_udfchar09
+    description: TRL_UDFCHAR09
+  - name: trl_udfchar10
+    description: TRL_UDFCHAR10
+  - name: trl_udfchar11
+    description: TRL_UDFCHAR11
+  - name: trl_udfchar12
+    description: TRL_UDFCHAR12
+  - name: trl_udfchar14
+    description: TRL_UDFCHAR14
+  - name: trl_udfchar15
+    description: TRL_UDFCHAR15
+  - name: trl_udfchar16
+    description: TRL_UDFCHAR16
+  - name: trl_udfchar17
+    description: TRL_UDFCHAR17
+  - name: trl_udfchar18
+    description: TRL_UDFCHAR18
+  - name: trl_udfchar19
+    description: TRL_UDFCHAR19
+  - name: trl_udfchar20
+    description: TRL_UDFCHAR20
+  - name: trl_udfchar21
+    description: TRL_UDFCHAR21
+  - name: trl_udfchar22
+    description: TRL_UDFCHAR22
+  - name: trl_udfchar23
+    description: TRL_UDFCHAR23
+  - name: trl_udfchar24
+    description: TRL_UDFCHAR24
+  - name: trl_udfchar25
+    description: TRL_UDFCHAR25
+  - name: trl_udfchar26
+    description: TRL_UDFCHAR26
+  - name: trl_udfchar27
+    description: TRL_UDFCHAR27
+  - name: trl_udfchar28
+    description: TRL_UDFCHAR28
+  - name: trl_udfchar29
+    description: TRL_UDFCHAR29
+  - name: trl_udfchar30
+    description: TRL_UDFCHAR30
+  - name: trl_udfnum01
+    description: TRL_UDFNUM01
+  - name: trl_udfnum02
+    description: TRL_UDFNUM02
+  - name: trl_udfnum03
+    description: TRL_UDFNUM03
+  - name: trl_udfnum04
+    description: TRL_UDFNUM04
+  - name: trl_udfnum05
+    description: TRL_UDFNUM05
+  - name: trl_udfdate01
+    description: TRL_UDFDATE01
+  - name: trl_udfdate02
+    description: TRL_UDFDATE02
+  - name: trl_udfdate03
+    description: TRL_UDFDATE03
+  - name: trl_udfdate04
+    description: TRL_UDFDATE04
+  - name: trl_udfdate05
+    description: TRL_UDFDATE05
+  - name: trl_udfchkbox01
+    description: TRL_UDFCHKBOX01
+  - name: trl_udfchkbox02
+    description: TRL_UDFCHKBOX02
+  - name: trl_udfchkbox03
+    description: TRL_UDFCHKBOX03
+  - name: trl_udfchkbox04
+    description: TRL_UDFCHKBOX04
+  - name: trl_udfchkbox05
+    description: TRL_UDFCHKBOX05
+  - name: trl_invoice
+    description: TRL_INVOICE
+  - name: trl_invoice_org
+    description: TRL_INVOICE_ORG
+  - name: trl_invoice_revision
+    description: TRL_INVOICE_REVISION
+  - name: trl_invoiceline
+    description: TRL_INVOICELINE
+  - name: trl_issuedpart
+    description: TRL_ISSUEDPART
+  - name: trl_corereturnprintqty
+    description: TRL_CORERETURNPRINTQTY
+  - name: trl_poextracharges
+    description: TRL_POEXTRACHARGES
+  - name: trl_potaxamount
+    description: TRL_POTAXAMOUNT
+  - name: trl_partlocation
+    description: TRL_PARTLOCATION
+  - name: trl_supplier
+    description: TRL_SUPPLIER
+  - name: trl_supplier_org
+    description: TRL_SUPPLIER_ORG
+  - name: trl_package
+    description: TRL_PACKAGE
+  - name: trl_helditem
+    description: TRL_HELDITEM
+  - name: trl_calothercost
+    description: TRL_CALOTHERCOST
+  - name: trl_taxjurisdiction
+    description: TRL_TAXJURISDICTION
+  - name: trl_stocktake
+    description: TRL_STOCKTAKE
+  - name: trl_stocktakeaction
+    description: TRL_STOCKTAKEACTION
+  - name: trl_receivereq
+    description: TRL_RECEIVEREQ
+  - name: trl_udfchar13
+    description: TRL_UDFCHAR13
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TRANSLINES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - trl_trans
+        - trl_line

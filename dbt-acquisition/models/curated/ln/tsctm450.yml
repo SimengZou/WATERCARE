@@ -1,0 +1,115 @@
+version: 2
+models:
+- name: tsctm450
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: csco
+    description: '(required) Service Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cchn
+    description: (required) Origin Contract Change
+    data_tests:
+    - not_null
+  - name: cfln
+    description: (required) Configuration Line
+    data_tests:
+    - not_null
+  - name: fsyr
+    description: (required) Year
+    data_tests:
+    - not_null
+  - name: fspr
+    description: (required) Period
+    data_tests:
+    - not_null
+  - name: nody
+    description: Number of Days
+  - name: cvdy
+    description: Covered days
+  - name: esrv
+    description: Estimated Revenue
+  - name: rcrv
+    description: Recognized Revenue
+  - name: esco_1
+    description: Obsolete
+  - name: esco_2
+    description: Obsolete
+  - name: esco_3
+    description: Obsolete
+  - name: acpp_1
+    description: Obsolete
+  - name: acpp_2
+    description: Obsolete
+  - name: acpp_3
+    description: Obsolete
+  - name: csco_cchn_ref_compnr
+    description: company number of primary key of table tsctm320 Contract Changes
+  - name: csco_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: esrv_homc
+    description: 'CC: Estimated Revenue Amount in Local Currency'
+  - name: esrv_rpc1
+    description: 'CC: Estimated Revenue Amount in Reporting Currency 1'
+  - name: esrv_rpc2
+    description: 'CC: Estimated Revenue Amount in Reporting Currency 2'
+  - name: esrv_refc
+    description: 'CC: Estimated Revenue Amount in Reference Currency'
+  - name: esrv_dwhc
+    description: 'CC: Estimated Revenue Amount in Data Warehouse Currency'
+  - name: rcrv_homc
+    description: 'CC: Recognized Revenue Amount in Local Currency'
+  - name: rcrv_rpc1
+    description: 'CC: Recognized Revenue Amount in Reporting Currency 1'
+  - name: rcrv_rpc2
+    description: 'CC: Recognized Revenue Amount in Reporting Currency 2'
+  - name: rcrv_refc
+    description: 'CC: Recognized Revenue Amount in Reference Currency'
+  - name: rcrv_dwhc
+    description: 'CC: Recognized Revenue Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm450 Estimated Contract Revenues per Period table, Generated
+    2026-04-10T19:42:34Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - csco
+        - cchn
+        - cfln
+        - fsyr
+        - fspr

@@ -1,0 +1,798 @@
+version: 2
+sources:
+- name: source_landing_eam
+  database: '{{ ''landing_prod'' if target.name == ''prod'' else (''landing_sit''
+    if target.name == ''sit'' else ''landing_dev'') }}'
+  schema: eam
+  tables:
+  - name: eam_assetmedia
+  - name: eam_r5acdparams
+    description: eam_R5ACDPARAMS
+  - name: eam_r5actchecklists
+    description: eam_R5ACTCHECKLISTS
+  - name: eam_r5actclasses
+    description: eam_R5ACTCLASSES
+  - name: eam_r5actioncodes
+    description: eam_R5ACTIONCODES
+  - name: eam_r5activities
+    description: eam_R5ACTIVITIES
+  - name: eam_r5actorl
+    description: eam_R5ACTORL
+  - name: eam_r5actschedules
+    description: eam_R5ACTSCHEDULES
+  - name: eam_r5actschedulesview
+    description: eam_R5ACTSCHEDULESVIEW
+  - name: eam_r5addetails
+    description: eam_R5ADDETAILS
+  - name: eam_r5addproperties
+    description: eam_R5ADDPROPERTIES
+  - name: eam_r5address
+    description: eam_R5ADDRESS
+  - name: eam_r5adjustments
+    description: eam_R5ADJUSTMENTS
+  - name: eam_r5agreements
+    description: eam_R5AGREEMENTS
+  - name: eam_r5alertgeneratewo
+    description: eam_R5ALERTGENERATEWO
+  - name: eam_r5alertgriddata
+    description: eam_R5ALERTGRIDDATA
+  - name: eam_r5alertgridparams
+    description: eam_R5ALERTGRIDPARAMS
+  - name: eam_r5alerthistory
+    description: eam_R5ALERTHISTORY
+  - name: eam_r5alertionpulse
+    description: eam_R5ALERTIONPULSE
+  - name: eam_r5alertmail
+    description: eam_R5ALERTMAIL
+  - name: eam_r5alerts
+    description: eam_R5ALERTS
+  - name: eam_r5alertsql
+    description: eam_R5ALERTSQL
+  - name: eam_r5alerttextparams
+    description: eam_R5ALERTTEXTPARAMS
+  - name: eam_r5alertwo
+    description: eam_R5ALERTWO
+  - name: eam_r5alertwofieldmapping
+    description: eam_R5ALERTWOFIELDMAPPING
+  - name: eam_r5alltexts
+    description: eam_R5ALLTEXTS
+  - name: eam_r5aspectpoints
+    description: eam_R5ASPECTPOINTS
+  - name: eam_r5aspects
+    description: eam_R5ASPECTS
+  - name: eam_r5audattribs
+    description: eam_R5AUDATTRIBS
+  - name: eam_r5auditpk
+    description: eam_R5AUDITPK
+  - name: eam_r5audvalues
+    description: eam_R5AUDVALUES
+  - name: eam_r5auth
+    description: eam_R5AUTH
+  - name: eam_r5availability
+    description: eam_R5AVAILABILITY
+  - name: eam_r5baresc
+    description: eam_R5BARESC
+  - name: eam_r5bins
+    description: eam_R5BINS
+  - name: eam_r5binstock
+    description: eam_R5BINSTOCK
+  - name: eam_r5boilertexts
+    description: eam_R5BOILERTEXTS
+  - name: eam_r5bookedhours
+    description: eam_R5BOOKEDHOURS
+  - name: eam_r5bvdwboilertexts
+    description: eam_R5BVDWBOILERTEXTS
+  - name: eam_r5bvdwlabordailysnap
+    description: eam_R5BVDWLABORDAILYSNAP
+  - name: eam_r5bvdwmroinvpartstobystore
+    description: eam_R5BVDWMROINVPARTSTOBYSTORE
+  - name: eam_r5bvdworganization
+    description: eam_R5BVDWORGANIZATION
+  - name: eam_r5bvdwsparepartscount
+    description: eam_R5BVDWSPAREPARTSCOUNT
+  - name: eam_r5bvdwusers
+    description: eam_R5BVDWUSERS
+  - name: eam_r5bvdwwoaccumsnap
+    description: eam_R5BVDWWOACCUMSNAP
+  - name: eam_r5bvdwwocostdailysnap
+    description: eam_R5BVDWWOCOSTDAILYSNAP
+  - name: eam_r5catalogue
+    description: eam_R5CATALOGUE
+  - name: eam_r5causes
+    description: eam_R5CAUSES
+  - name: eam_r5chargedefsequence
+    description: eam_R5CHARGEDEFSEQUENCE
+  - name: eam_r5classes
+    description: eam_R5CLASSES
+  - name: eam_r5closingcodehierarchy
+    description: eam_R5CLOSINGCODEHIERARCHY
+  - name: eam_r5codestructure
+    description: eam_R5CODESTRUCTURE
+  - name: eam_r5companies
+    description: eam_R5COMPANIES
+  - name: eam_r5conclauses
+    description: eam_R5CONCLAUSES
+  - name: eam_r5configsettings
+    description: eam_R5CONFIGSETTINGS
+  - name: eam_r5connlock
+    description: eam_R5CONNLOCK
+  - name: eam_r5conparts
+    description: eam_R5CONPARTS
+  - name: eam_r5contactcenteroptions
+    description: eam_R5CONTACTCENTEROPTIONS
+  - name: eam_r5contracts
+    description: eam_R5CONTRACTS
+  - name: eam_r5costcodes
+    description: eam_R5COSTCODES
+  - name: eam_r5currencies
+    description: eam_R5CURRENCIES
+  - name: eam_r5custom
+    description: eam_R5CUSTOM
+  - name: eam_r5customerrequesthistory
+    description: eam_R5CUSTOMERREQUESTHISTORY
+  - name: eam_r5customtexts
+    description: eam_R5CUSTOMTEXTS
+  - name: eam_r5dddataspy
+    description: eam_R5DDDATASPY
+  - name: eam_r5ddfield
+    description: eam_R5DDFIELD
+  - name: eam_r5defaultpagelayout
+    description: eam_R5DEFAULTPAGELAYOUT
+  - name: eam_r5departmentsecurity
+    description: eam_R5DEPARTMENTSECURITY
+  - name: eam_r5descriptions
+    description: eam_R5DESCRIPTIONS
+  - name: eam_r5devices
+    description: eam_R5DEVICES
+  - name: eam_r5dlvconclauses
+    description: eam_R5DLVCONCLAUSES
+  - name: eam_r5dlventities
+    description: eam_R5DLVENTITIES
+  - name: eam_r5dlvextmenulang
+    description: eam_R5DLVEXTMENULANG
+  - name: eam_r5dlvfunctions
+    description: eam_R5DLVFUNCTIONS
+  - name: eam_r5dlvwsprompts
+    description: eam_R5DLVWSPROMPTS
+  - name: eam_r5docentities
+    description: eam_R5DOCENTITIES
+  - name: eam_r5docklines
+    description: eam_R5DOCKLINES
+  - name: eam_r5dockreceipts
+    description: eam_R5DOCKRECEIPTS
+  - name: eam_r5docsizes
+    description: eam_R5DOCSIZES
+  - name: eam_r5doctypes
+    description: eam_R5DOCTYPES
+  - name: eam_r5documents
+    description: eam_R5DOCUMENTS
+  - name: eam_r5driverctrl
+    description: eam_R5DRIVERCTRL
+  - name: eam_r5dschavail
+    description: eam_R5DSCHAVAIL
+  - name: eam_r5duxlayout
+    description: eam_R5DUXLAYOUT
+  - name: eam_r5dwdatamartdimensions
+    description: eam_R5DWDATAMARTDIMENSIONS
+  - name: eam_r5dwdatamarts
+    description: eam_R5DWDATAMARTS
+  - name: eam_r5dwdates
+    description: eam_R5DWDATES
+  - name: eam_r5dwdimensionfields
+    description: eam_R5DWDIMENSIONFIELDS
+  - name: eam_r5dwdimensions
+    description: eam_R5DWDIMENSIONS
+  - name: eam_r5dwetldatamarts
+    description: eam_R5DWETLDATAMARTS
+  - name: eam_r5dwfactfields
+    description: eam_R5DWFACTFIELDS
+  - name: eam_r5dwindexes
+    description: eam_R5DWINDEXES
+  - name: eam_r5dwmetastatuses
+    description: eam_R5DWMETASTATUSES
+  - name: eam_r5dwmrcs
+    description: eam_R5DWMRCS
+  - name: eam_r5dwobjects
+    description: eam_R5DWOBJECTS
+  - name: eam_r5dwoccupationtypes
+    description: eam_R5DWOCCUPATIONTYPES
+  - name: eam_r5dworganizations
+    description: eam_R5DWORGANIZATIONS
+  - name: eam_r5dwpersonnel
+    description: eam_R5DWPERSONNEL
+  - name: eam_r5dwstores
+    description: eam_R5DWSTORES
+  - name: eam_r5dwtrades
+    description: eam_R5DWTRADES
+  - name: eam_r5dwworkorders
+    description: eam_R5DWWORKORDERS
+  - name: eam_r5editionbackreps
+    description: eam_R5EDITIONBACKREPS
+  - name: eam_r5editionfilters
+    description: eam_R5EDITIONFILTERS
+  - name: eam_r5editionucodes
+    description: eam_R5EDITIONUCODES
+  - name: eam_r5elecarchive
+    description: eam_R5ELECARCHIVE
+  - name: eam_r5elecmapping
+    description: eam_R5ELECMAPPING
+  - name: eam_r5elecsign
+    description: eam_R5ELECSIGN
+  - name: eam_r5entappheader
+    description: eam_R5ENTAPPHEADER
+  - name: eam_r5entities
+    description: eam_R5ENTITIES
+  - name: eam_r5entityparts
+    description: eam_R5ENTITYPARTS
+  - name: eam_r5entitysafety
+    description: eam_R5ENTITYSAFETY
+  - name: eam_r5entitytables
+    description: eam_R5ENTITYTABLES
+  - name: eam_r5equipmentrankinghistory
+    description: eam_R5EQUIPMENTRANKINGHISTORY
+  - name: eam_r5equipmentrankings
+    description: eam_R5EQUIPMENTRANKINGS
+  - name: eam_r5errsource
+    description: eam_R5ERRSOURCE
+  - name: eam_r5errtexts
+    description: eam_R5ERRTEXTS
+  - name: eam_r5eventcost
+    description: eam_R5EVENTCOST
+  - name: eam_r5eventobjects
+    description: eam_R5EVENTOBJECTS
+  - name: eam_r5eventobjects_archive
+    description: eam_R5EVENTOBJECTS_ARCHIVE
+  - name: eam_r5eventpoints
+    description: eam_R5EVENTPOINTS
+  - name: eam_r5events
+    description: eam_R5EVENTS
+  - name: eam_r5events1
+    description: Generated from anySQL Connector eam_r5events1
+  - name: eam_r5events_eam1
+    description: eam_R5EVENTS_EAM1
+  - name: eam_r5events_laststatusupdate
+    description: eam_R5EVENTS_LASTSTATUSUPDATE
+  - name: eam_r5evtsystems
+    description: eam_R5EVTSYSTEMS
+  - name: eam_r5exchrates
+    description: eam_R5EXCHRATES
+  - name: eam_r5exportinfo
+    description: eam_R5EXPORTINFO
+  - name: eam_r5extensibleframework
+    description: eam_R5EXTENSIBLEFRAMEWORK
+  - name: eam_r5extmenulang
+    description: eam_R5EXTMENULANG
+  - name: eam_r5extmenus
+    description: eam_R5EXTMENUS
+  - name: eam_r5failures
+    description: eam_R5FAILURES
+  - name: eam_r5fieldfiltertype
+    description: eam_R5FIELDFILTERTYPE
+  - name: eam_r5filtertabcolumns
+    description: eam_R5FILTERTABCOLUMNS
+  - name: eam_r5filtertables
+    description: eam_R5FILTERTABLES
+  - name: eam_r5findings
+    description: eam_R5FINDINGS
+  - name: eam_r5findprofile
+    description: eam_R5FINDPROFILE
+  - name: eam_r5firstact
+    description: eam_R5FIRSTACT
+  - name: eam_r5flextables
+    description: eam_R5FLEXTABLES
+  - name: eam_r5foreignentity
+    description: eam_R5FOREIGNENTITY
+  - name: eam_r5functions
+    description: eam_R5FUNCTIONS
+  - name: eam_r5functiontabgrids
+    description: eam_R5FUNCTIONTABGRIDS
+  - name: eam_r5functiontabs
+    description: eam_R5FUNCTIONTABS
+  - name: eam_r5funcusers
+    description: eam_R5FUNCUSERS
+  - name: eam_r5funcviewmap
+    description: eam_R5FUNCVIEWMAP
+  - name: eam_r5funnoperm
+    description: eam_R5FUNNOPERM
+  - name: eam_r5futureduplicates
+    description: eam_R5FUTUREDUPLICATES
+  - name: eam_r5futureevents
+    description: eam_R5FUTUREEVENTS
+  - name: eam_r5glreferencesctrl
+    description: eam_R5GLREFERENCESCTRL
+  - name: eam_r5grid
+    description: eam_R5GRID
+  - name: eam_r5gridfield
+    description: eam_R5GRIDFIELD
+  - name: eam_r5gridparam
+    description: eam_R5GRIDPARAM
+  - name: eam_r5groups
+    description: eam_R5GROUPS
+  - name: eam_r5hazardprecautions
+    description: eam_R5HAZARDPRECAUTIONS
+  - name: eam_r5hazards
+    description: eam_R5HAZARDS
+  - name: eam_r5helptexts
+    description: eam_R5HELPTEXTS
+  - name: eam_r5hiddendataspies
+    description: eam_R5HIDDENDATASPIES
+  - name: eam_r5home
+    description: eam_R5HOME
+  - name: eam_r5homegroups
+    description: eam_R5HOMEGROUPS
+  - name: eam_r5homeusers
+    description: eam_R5HOMEUSERS
+  - name: eam_r5hyperlink
+    description: eam_R5HYPERLINK
+  - name: eam_r5iesinterestcenters
+    description: eam_R5IESINTERESTCENTERS
+  - name: eam_r5iesrepositories
+    description: eam_R5IESREPOSITORIES
+  - name: eam_r5iesrepositorycolumns
+    description: eam_R5IESREPOSITORYCOLUMNS
+  - name: eam_r5importdata
+    description: eam_R5IMPORTDATA
+  - name: eam_r5importdataspymap
+    description: eam_R5IMPORTDATASPYMAP
+  - name: eam_r5importddfieldmap
+    description: eam_R5IMPORTDDFIELDMAP
+  - name: eam_r5importexportgrpstatus
+    description: eam_R5IMPORTEXPORTGRPSTATUS
+  - name: eam_r5importexportstatus
+    description: eam_R5IMPORTEXPORTSTATUS
+  - name: eam_r5importgridmap
+    description: eam_R5IMPORTGRIDMAP
+  - name: eam_r5importheaderdata
+    description: eam_R5IMPORTHEADERDATA
+  - name: eam_r5importmenumap
+    description: eam_R5IMPORTMENUMAP
+  - name: eam_r5importmetadata
+    description: eam_R5IMPORTMETADATA
+  - name: eam_r5install
+    description: eam_R5INSTALL
+  - name: eam_r5ipfunctions
+    description: eam_R5IPFUNCTIONS
+  - name: eam_r5ipgrouppermissions
+    description: eam_R5IPGROUPPERMISSIONS
+  - name: eam_r5ippermissions
+    description: eam_R5IPPERMISSIONS
+  - name: eam_r5jobparam
+    description: eam_R5JOBPARAM
+  - name: eam_r5jobparamvalue
+    description: eam_R5JOBPARAMVALUE
+  - name: eam_r5jobs
+    description: eam_R5JOBS
+  - name: eam_r5jobtypeauth
+    description: eam_R5JOBTYPEAUTH
+  - name: eam_r5jspfields
+    description: eam_R5JSPFIELDS
+  - name: eam_r5labelformats
+    description: eam_R5LABELFORMATS
+  - name: eam_r5langinst
+    description: eam_R5LANGINST
+  - name: eam_r5languages
+    description: eam_R5LANGUAGES
+  - name: eam_r5levels
+    description: eam_R5LEVELS
+  - name: eam_r5locale
+    description: eam_R5LOCALE
+  - name: eam_r5localehotkeys
+    description: eam_R5LOCALEHOTKEYS
+  - name: eam_r5lots
+    description: eam_R5LOTS
+  - name: eam_r5mailattachmentmapping
+    description: eam_R5MAILATTACHMENTMAPPING
+  - name: eam_r5mailattribs
+    description: eam_R5MAILATTRIBS
+  - name: eam_r5mailconditions
+    description: eam_R5MAILCONDITIONS
+  - name: eam_r5mailevents
+    description: eam_R5MAILEVENTS
+  - name: eam_r5mailparameters
+    description: eam_R5MAILPARAMETERS
+  - name: eam_r5mailtemplate
+    description: eam_R5MAILTEMPLATE
+  - name: eam_r5mailurlmapping
+    description: eam_R5MAILURLMAPPING
+  - name: eam_r5manufacturers
+    description: eam_R5MANUFACTURERS
+  - name: eam_r5mapsconsent
+    description: eam_R5MAPSCONSENT
+  - name: eam_r5mobileconfigs
+    description: eam_R5MOBILECONFIGS
+  - name: eam_r5mobiledbsync
+    description: eam_R5MOBILEDBSYNC
+  - name: eam_r5mobilelistentities
+    description: eam_R5MOBILELISTENTITIES
+  - name: eam_r5mobilenotebooks
+    description: eam_R5MOBILENOTEBOOKS
+  - name: eam_r5mobilepnregistry
+    description: eam_R5MOBILEPNREGISTRY
+  - name: eam_r5mobilequeries
+    description: eam_R5MOBILEQUERIES
+  - name: eam_r5mobilesyncdelete
+    description: eam_R5MOBILESYNCDELETE
+  - name: eam_r5mobiletableupdates
+    description: eam_R5MOBILETABLEUPDATES
+  - name: eam_r5mobileuserconfigs
+    description: eam_R5MOBILEUSERCONFIGS
+  - name: eam_r5mrcs
+    description: eam_R5MRCS
+  - name: eam_r5nonconformitysetup
+    description: eam_R5NONCONFORMITYSETUP
+  - name: eam_r5objectaspects
+    description: eam_R5OBJECTASPECTS
+  - name: eam_r5objects
+    description: eam_R5OBJECTS
+  - name: eam_r5objectservicecodes
+    description: eam_R5OBJECTSERVICECODES
+  - name: eam_r5objectsurvey
+    description: eam_R5OBJECTSURVEY
+  - name: eam_r5objectupdate
+    description: eam_R5OBJECTUPDATE
+  - name: eam_r5opsettings
+    description: eam_R5OPSETTINGS
+  - name: eam_r5opsyncblock
+    description: eam_R5OPSYNCBLOCK
+  - name: eam_r5opvarattributes
+    description: eam_R5OPVARATTRIBUTES
+  - name: eam_r5opvariables
+    description: eam_R5OPVARIABLES
+  - name: eam_r5orderlines
+    description: eam_R5ORDERLINES
+  - name: eam_r5orders
+    description: eam_R5ORDERS
+  - name: eam_r5orders_revisions
+    description: eam_R5ORDERS_REVISIONS
+  - name: eam_r5ordrevisions
+    description: eam_R5ORDREVISIONS
+  - name: eam_r5organization
+    description: eam_R5ORGANIZATION
+  - name: eam_r5organizationoptions
+    description: eam_R5ORGANIZATIONOPTIONS
+  - name: eam_r5orglocation
+    description: eam_R5ORGLOCATION
+  - name: eam_r5orgtabcolumns
+    description: eam_R5ORGTABCOLUMNS
+  - name: eam_r5orgyears
+    description: eam_R5ORGYEARS
+  - name: eam_r5orlrevisions
+    description: eam_R5ORLREVISIONS
+  - name: eam_r5packingslip
+    description: eam_R5PACKINGSLIP
+  - name: eam_r5pagecache
+    description: eam_R5PAGECACHE
+  - name: eam_r5pagelayout
+    description: eam_R5PAGELAYOUT
+  - name: eam_r5pagelayout_bak
+    description: eam_R5PAGELAYOUT_BAK
+  - name: eam_r5parts
+    description: eam_R5PARTS
+  - name: eam_r5passwords
+    description: eam_R5PASSWORDS
+  - name: eam_r5permissions
+    description: eam_R5PERMISSIONS
+  - name: eam_r5personnel
+    description: eam_R5PERSONNEL
+  - name: eam_r5pmforecastequiplist
+    description: eam_R5PMFORECASTEQUIPLIST
+  - name: eam_r5pmforecastparams
+    description: eam_R5PMFORECASTPARAMS
+  - name: eam_r5pmforecastpreview
+    description: eam_R5PMFORECASTPREVIEW
+  - name: eam_r5pmplansession
+    description: eam_R5PMPLANSESSION
+  - name: eam_r5pmpsessiondates
+    description: eam_R5PMPSESSIONDATES
+  - name: eam_r5pmpsessionlines
+    description: eam_R5PMPSESSIONLINES
+  - name: eam_r5points
+    description: eam_R5POINTS
+  - name: eam_r5pointtypes
+    description: eam_R5POINTTYPES
+  - name: eam_r5ppmacts
+    description: eam_R5PPMACTS
+  - name: eam_r5ppmobjects
+    description: eam_R5PPMOBJECTS
+  - name: eam_r5ppmplan
+    description: eam_R5PPMPLAN
+  - name: eam_r5ppms
+    description: eam_R5PPMS
+  - name: eam_r5precautions
+    description: eam_R5PRECAUTIONS
+  - name: eam_r5preferences
+    description: eam_R5PREFERENCES
+  - name: eam_r5prefilterlookup
+    description: eam_R5PREFILTERLOOKUP
+  - name: eam_r5printertypes
+    description: eam_R5PRINTERTYPES
+  - name: eam_r5processlock
+    description: eam_R5PROCESSLOCK
+  - name: eam_r5productionrequests
+    description: eam_R5PRODUCTIONREQUESTS
+  - name: eam_r5productversion
+    description: eam_R5PRODUCTVERSION
+  - name: eam_r5productversionhistory
+    description: eam_R5PRODUCTVERSIONHISTORY
+  - name: eam_r5promptwebservices
+    description: eam_R5PROMPTWEBSERVICES
+  - name: eam_r5properties
+    description: eam_R5PROPERTIES
+  - name: eam_r5propertyvalues
+    description: eam_R5PROPERTYVALUES
+  - name: eam_r5queries
+    description: eam_R5QUERIES
+  - name: eam_r5queryfield
+    description: eam_R5QUERYFIELD
+  - name: eam_r5rcodes
+    description: eam_R5RCODES
+  - name: eam_r5reliabilityrankinganswer
+    description: eam_R5RELIABILITYRANKINGANSWER
+  - name: eam_r5reliabilityrankinglevels
+    description: eam_R5RELIABILITYRANKINGLEVELS
+  - name: eam_r5reliabilityrankingquests
+    description: eam_R5RELIABILITYRANKINGQUESTS
+  - name: eam_r5reliabilityrankingranks
+    description: eam_R5RELIABILITYRANKINGRANKS
+  - name: eam_r5reliabilityrankings
+    description: eam_R5RELIABILITYRANKINGS
+  - name: eam_r5remember
+    description: eam_R5REMEMBER
+  - name: eam_r5repoptions
+    description: eam_R5REPOPTIONS
+  - name: eam_r5reportfields
+    description: eam_R5REPORTFIELDS
+  - name: eam_r5reportfilters
+    description: eam_R5REPORTFILTERS
+  - name: eam_r5reportfunctions
+    description: eam_R5REPORTFUNCTIONS
+  - name: eam_r5reportgroupby
+    description: eam_R5REPORTGROUPBY
+  - name: eam_r5reportsubtotal
+    description: eam_R5REPORTSUBTOTAL
+  - name: eam_r5repparms
+    description: eam_R5REPPARMS
+  - name: eam_r5repprintflag
+    description: eam_R5REPPRINTFLAG
+  - name: eam_r5requircodes
+    description: eam_R5REQUIRCODES
+  - name: eam_r5revcntrlsetup
+    description: eam_R5REVCNTRLSETUP
+  - name: eam_r5roles
+    description: eam_R5ROLES
+  - name: eam_r5routes
+    description: eam_R5ROUTES
+  - name: eam_r5routobjects
+    description: eam_R5ROUTOBJECTS
+  - name: eam_r5schedgroups
+    description: eam_R5SCHEDGROUPS
+  - name: eam_r5scheduledjobs
+    description: eam_R5SCHEDULEDJOBS
+  - name: eam_r5scheduledjobslock
+    description: eam_R5SCHEDULEDJOBSLOCK
+  - name: eam_r5schedules
+    description: eam_R5SCHEDULES
+  - name: eam_r5screencache
+    description: eam_R5SCREENCACHE
+  - name: eam_r5scworkordercost
+    description: eam_R5SCWORKORDERCOST
+  - name: eam_r5scworkordersreported
+    description: eam_R5SCWORKORDERSREPORTED
+  - name: eam_r5seqinstallmapping
+    description: eam_R5SEQINSTALLMAPPING
+  - name: eam_r5serviceproblemcodes
+    description: eam_R5SERVICEPROBLEMCODES
+  - name: eam_r5shfdays
+    description: eam_R5SHFDAYS
+  - name: eam_r5shfpers
+    description: eam_R5SHFPERS
+  - name: eam_r5shifts
+    description: eam_R5SHIFTS
+  - name: eam_r5soauoms
+    description: eam_R5SOAUOMS
+  - name: eam_r5standwacts
+    description: eam_R5STANDWACTS
+  - name: eam_r5standworks
+    description: eam_R5STANDWORKS
+  - name: eam_r5stock
+    description: eam_R5STOCK
+  - name: eam_r5stores
+    description: eam_R5STORES
+  - name: eam_r5structures
+    description: eam_R5STRUCTURES
+  - name: eam_r5systemwsps
+    description: eam_R5SYSTEMWSPS
+  - name: eam_r5tabnoperm
+    description: eam_R5TABNOPERM
+  - name: eam_r5tabpermissions
+    description: eam_R5TABPERMISSIONS
+  - name: eam_r5taskchecklists
+    description: eam_R5TASKCHECKLISTS
+  - name: eam_r5taskprices
+    description: eam_R5TASKPRICES
+  - name: eam_r5tasks
+    description: eam_R5TASKS
+  - name: eam_r5tenantstatus
+    description: eam_R5TENANTSTATUS
+  - name: eam_r5trackingctrl
+    description: eam_R5TRACKINGCTRL
+  - name: eam_r5trackingdata
+    description: eam_R5TRACKINGDATA
+  - name: eam_r5trackinglovs
+    description: eam_R5TRACKINGLOVS
+  - name: eam_r5trackingprompts
+    description: eam_R5TRACKINGPROMPTS
+  - name: eam_r5traderates
+    description: eam_R5TRADERATES
+  - name: eam_r5trades
+    description: eam_R5TRADES
+  - name: eam_r5transactions
+    description: eam_R5TRANSACTIONS
+  - name: eam_r5translines
+    description: eam_R5TRANSLINES
+  - name: eam_r5ucodes
+    description: eam_R5UCODES
+  - name: eam_r5udfscreenfields
+    description: eam_R5UDFSCREENFIELDS
+  - name: eam_r5udfscreens
+    description: eam_R5UDFSCREENS
+  - name: eam_r5unavailablegridfields
+    description: eam_R5UNAVAILABLEGRIDFIELDS
+  - name: eam_r5uoms
+    description: eam_R5UOMS
+  - name: eam_r5urlparameters
+    description: eam_R5URLPARAMETERS
+  - name: eam_r5usage
+    description: eam_R5USAGE
+  - name: eam_r5usegridgisdefault
+    description: eam_R5USEGRIDGISDEFAULT
+  - name: eam_r5usegridsysdefault
+    description: eam_R5USEGRIDSYSDEFAULT
+  - name: eam_r5userdefinedfielddependencies
+    description: eam_R5USERDEFINEDFIELDDEPENDENCIES
+  - name: eam_r5userdefinedfieldlovvals
+    description: eam_R5USERDEFINEDFIELDLOVVALS
+  - name: eam_r5userdefinedfieldsetup
+    description: eam_R5USERDEFINEDFIELDSETUP
+  - name: eam_r5userdesignatedapprovers
+    description: eam_R5USERDESIGNATEDAPPROVERS
+  - name: eam_r5userfunctiondefs
+    description: eam_R5USERFUNCTIONDEFS
+  - name: eam_r5userlinearpreferences
+    description: eam_R5USERLINEARPREFERENCES
+  - name: eam_r5userlpftypes
+    description: eam_R5USERLPFTYPES
+  - name: eam_r5userobjects
+    description: eam_R5USEROBJECTS
+  - name: eam_r5userorganization
+    description: eam_R5USERORGANIZATION
+  - name: eam_r5userpreferences
+    description: eam_R5USERPREFERENCES
+  - name: eam_r5users
+    description: eam_R5USERS
+  - name: eam_r5usertabcolumns
+    description: eam_R5USERTABCOLUMNS
+  - name: eam_r5userviews
+    description: eam_R5USERVIEWS
+  - name: eam_r5violations
+    description: eam_R5VIOLATIONS
+  - name: eam_r5warcoverages
+    description: eam_R5WARCOVERAGES
+  - name: eam_r5warranties
+    description: eam_R5WARRANTIES
+  - name: eam_r5webservicemapping
+    description: eam_R5WEBSERVICEMAPPING
+  - name: eam_r5wolaborschedequip
+    description: eam_R5WOLABORSCHEDEQUIP
+  - name: eam_r5wolaborschedparams
+    description: eam_R5WOLABORSCHEDPARAMS
+  - name: eam_r5wolaborschedwo
+    description: eam_R5WOLABORSCHEDWO
+  - name: eam_r5workpackages
+    description: eam_R5WORKPACKAGES
+  - name: eam_r5worksafety
+    description: eam_R5WORKSAFETY
+  - name: eam_r5wsdup1
+    description: eam_R5WSDUP1
+  - name: eam_r5wsdup2
+    description: eam_R5WSDUP2
+  - name: eam_r5wsevents
+    description: eam_R5WSEVENTS
+  - name: eam_r5wspnotallowed
+    description: eam_R5WSPNOTALLOWED
+  - name: eam_r5wspreturnprompts
+    description: eam_R5WSPRETURNPROMPTS
+  - name: eam_r5wspromptfields
+    description: eam_R5WSPROMPTFIELDS
+  - name: eam_r5wsprompts
+    description: eam_R5WSPROMPTS
+  - name: eam_r5wsreqhist
+    description: eam_R5WSREQHIST
+  - name: eam_r5wsrequiredfields
+    description: eam_R5WSREQUIREDFIELDS
+  - name: eam_r5wsrsphist
+    description: eam_R5WSRSPHIST
+  - name: eam_u5address
+    description: eam_U5ADDRESS
+  - name: eam_u5assetclass
+    description: eam_U5ASSETCLASS
+  - name: eam_u5assetclass_activity
+    description: eam_U5ASSETCLASS_ACTIVITY
+  - name: eam_u5assetsubtypes
+    description: eam_U5ASSETSUBTYPES
+  - name: eam_u5astmapping
+    description: eam_U5ASTMAPPING
+  - name: eam_u5ciclaims
+    description: eam_U5CICLAIMS
+  - name: eam_u5cicompletework
+    description: eam_U5CICOMPLETEWORK
+  - name: eam_u5ciworesults
+    description: eam_U5CIWORESULTS
+  - name: eam_u5claimconfig
+    description: eam_U5CLAIMCONFIG
+  - name: eam_u5claimsetup
+    description: eam_U5CLAIMSETUP
+  - name: eam_u5compcerts
+    description: eam_U5COMPCERTS
+  - name: eam_u5contprojactivities
+    description: eam_U5CONTPROJACTIVITIES
+  - name: eam_u5contractors
+    description: eam_U5CONTRACTORS
+  - name: eam_u5dimension3
+    description: eam_U5DIMENSION3
+  - name: eam_u5dltcs
+    description: eam_U5DLTCS
+  - name: eam_u5dltdata
+    description: eam_U5DLTDATA
+  - name: eam_u5dtlcs
+    description: eam_U5DTLCS
+  - name: eam_u5dtldata
+    description: eam_U5DTLDATA
+  - name: eam_u5escdetails
+    description: eam_U5ESCDETAILS
+  - name: eam_u5gucicompletework
+    description: eam_U5GUCICOMPLETEWORK
+  - name: eam_u5gumrupd
+    description: eam_U5GUMRUPD
+  - name: eam_u5jobprresptime
+    description: eam_U5JOBPRRESPTIME
+  - name: eam_u5myfacilities
+    description: eam_U5MYFACILITIES
+  - name: eam_u5objcustcls
+    description: eam_U5OBJCUSTCLS
+  - name: eam_u5pmpriorties
+    description: eam_U5PMPRIORTIES
+  - name: eam_u5publicholidays
+    description: eam_U5PUBLICHOLIDAYS
+  - name: eam_u5reqaddresources
+    description: eam_U5REQADDRESOURCES
+  - name: eam_u5serviceproductcodes
+    description: eam_U5SERVICEPRODUCTCODES
+  - name: eam_u5servicerequest
+    description: eam_U5SERVICEREQUEST
+  - name: eam_u5spotcodes
+    description: eam_U5SPOTCODES
+  - name: eam_u5tasktypes
+    description: eam_U5TASKTYPES
+  - name: eam_u5warehouses
+    description: eam_U5WAREHOUSES
+  - name: eam_u5woclaims
+    description: eam_U5WOCLAIMS
+  - name: eam_u5wofinancialcategoryvw
+    description: eam_U5WOFINANCIALCATEGORYVW
+  - name: eam_u5wojournallabourvw
+    description: eam_U5WOJOURNALLABOURVW
+  - name: eam_u5wojournalmaterialvw
+    description: eam_U5WOJOURNALMATERIALVW
+  - name: eam_u5wojournalservicecontcostsvw
+    description: eam_U5WOJOURNALSERVICECONTCOSTSVW
+  - name: eam_u5wojournalservicencontcostsvw
+    description: eam_U5WOJOURNALSERVICENCONTCOSTSVW
+  - name: eam_u5wojournalservicerevenuevw
+    description: eam_U5WOJOURNALSERVICEREVENUEVW
+  - name: eam_u5wojournalsvw
+    description: eam_U5WOJOURNALSVW
+  - name: eam_u5wojournalvw
+    description: eam_U5WOJOURNALVW
+  - name: eam_u5wsl_scriptexec
+    description: eam_U5WSL_SCRIPTEXEC

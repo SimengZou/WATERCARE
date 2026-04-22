@@ -1,0 +1,163 @@
+version: 2
+models:
+- name: r5hazards
+  columns:
+  - name: haz_lastsaved
+    description: HAZ_LASTSAVED
+  - name: haz_code
+    description: HAZ_CODE
+  - name: haz_org
+    description: HAZ_ORG
+  - name: haz_revision
+    description: HAZ_REVISION
+  - name: haz_desc
+    description: HAZ_DESC
+  - name: haz_status
+    description: HAZ_STATUS
+  - name: haz_rstatus
+    description: HAZ_RSTATUS
+  - name: haz_notused
+    description: HAZ_NOTUSED
+  - name: haz_type
+    description: HAZ_TYPE
+  - name: haz_class
+    description: HAZ_CLASS
+  - name: haz_class_org
+    description: HAZ_CLASS_ORG
+  - name: haz_reviewrequired
+    description: HAZ_REVIEWREQUIRED
+  - name: haz_created
+    description: HAZ_CREATED
+  - name: haz_createdby
+    description: HAZ_CREATEDBY
+  - name: haz_updated
+    description: HAZ_UPDATED
+  - name: haz_updatedby
+    description: HAZ_UPDATEDBY
+  - name: haz_requested
+    description: HAZ_REQUESTED
+  - name: haz_requestedby
+    description: HAZ_REQUESTEDBY
+  - name: haz_approved
+    description: HAZ_APPROVED
+  - name: haz_approvedby
+    description: HAZ_APPROVEDBY
+  - name: haz_revisionreason
+    description: HAZ_REVISIONREASON
+  - name: haz_udfchar01
+    description: HAZ_UDFCHAR01
+  - name: haz_udfchar02
+    description: HAZ_UDFCHAR02
+  - name: haz_udfchar03
+    description: HAZ_UDFCHAR03
+  - name: haz_udfchar04
+    description: HAZ_UDFCHAR04
+  - name: haz_udfchar05
+    description: HAZ_UDFCHAR05
+  - name: haz_udfchar06
+    description: HAZ_UDFCHAR06
+  - name: haz_udfchar07
+    description: HAZ_UDFCHAR07
+  - name: haz_udfchar08
+    description: HAZ_UDFCHAR08
+  - name: haz_udfchar09
+    description: HAZ_UDFCHAR09
+  - name: haz_udfchar10
+    description: HAZ_UDFCHAR10
+  - name: haz_udfchar11
+    description: HAZ_UDFCHAR11
+  - name: haz_udfchar12
+    description: HAZ_UDFCHAR12
+  - name: haz_udfchar13
+    description: HAZ_UDFCHAR13
+  - name: haz_udfchar14
+    description: HAZ_UDFCHAR14
+  - name: haz_udfchar15
+    description: HAZ_UDFCHAR15
+  - name: haz_udfchar16
+    description: HAZ_UDFCHAR16
+  - name: haz_udfchar17
+    description: HAZ_UDFCHAR17
+  - name: haz_udfchar18
+    description: HAZ_UDFCHAR18
+  - name: haz_udfchar19
+    description: HAZ_UDFCHAR19
+  - name: haz_udfchar20
+    description: HAZ_UDFCHAR20
+  - name: haz_udfchar21
+    description: HAZ_UDFCHAR21
+  - name: haz_udfchar22
+    description: HAZ_UDFCHAR22
+  - name: haz_udfchar23
+    description: HAZ_UDFCHAR23
+  - name: haz_udfchar24
+    description: HAZ_UDFCHAR24
+  - name: haz_udfchar25
+    description: HAZ_UDFCHAR25
+  - name: haz_udfchar26
+    description: HAZ_UDFCHAR26
+  - name: haz_udfchar27
+    description: HAZ_UDFCHAR27
+  - name: haz_udfchar28
+    description: HAZ_UDFCHAR28
+  - name: haz_udfchar29
+    description: HAZ_UDFCHAR29
+  - name: haz_udfchar30
+    description: HAZ_UDFCHAR30
+  - name: haz_udfnum01
+    description: HAZ_UDFNUM01
+  - name: haz_udfnum02
+    description: HAZ_UDFNUM02
+  - name: haz_udfnum03
+    description: HAZ_UDFNUM03
+  - name: haz_udfnum04
+    description: HAZ_UDFNUM04
+  - name: haz_udfnum05
+    description: HAZ_UDFNUM05
+  - name: haz_udfdate01
+    description: HAZ_UDFDATE01
+  - name: haz_udfdate02
+    description: HAZ_UDFDATE02
+  - name: haz_udfdate03
+    description: HAZ_UDFDATE03
+  - name: haz_udfdate04
+    description: HAZ_UDFDATE04
+  - name: haz_udfdate05
+    description: HAZ_UDFDATE05
+  - name: haz_udfchkbox01
+    description: HAZ_UDFCHKBOX01
+  - name: haz_udfchkbox02
+    description: HAZ_UDFCHKBOX02
+  - name: haz_udfchkbox03
+    description: HAZ_UDFCHKBOX03
+  - name: haz_udfchkbox04
+    description: HAZ_UDFCHKBOX04
+  - name: haz_udfchkbox05
+    description: HAZ_UDFCHKBOX05
+  - name: haz_updatecount
+    description: HAZ_UPDATECOUNT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5HAZARDS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - haz_code
+        - haz_org
+        - haz_revision

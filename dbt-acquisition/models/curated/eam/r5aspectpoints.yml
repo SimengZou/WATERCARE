@@ -1,0 +1,180 @@
+version: 2
+models:
+- name: r5aspectpoints
+  columns:
+  - name: apo_lastsaved
+    description: APO_LASTSAVED
+  - name: apo_object
+    description: APO_OBJECT
+  - name: apo_obrtype
+    description: APO_OBRTYPE
+  - name: apo_obtype
+    description: APO_OBTYPE
+  - name: apo_aspect
+    description: APO_ASPECT
+  - name: apo_point
+    description: APO_POINT
+  - name: apo_pointtype
+    description: APO_POINTTYPE
+  - name: apo_max
+    description: APO_MAX
+  - name: apo_maxextr
+    description: APO_MAXEXTR
+  - name: apo_maxppm
+    description: APO_MAXPPM
+  - name: apo_maxstwo
+    description: APO_MAXSTWO
+  - name: apo_maxtol
+    description: APO_MAXTOL
+  - name: apo_method
+    description: APO_METHOD
+  - name: apo_min
+    description: APO_MIN
+  - name: apo_minextr
+    description: APO_MINEXTR
+  - name: apo_minppm
+    description: APO_MINPPM
+  - name: apo_minstwo
+    description: APO_MINSTWO
+  - name: apo_mintol
+    description: APO_MINTOL
+  - name: apo_nominal
+    description: APO_NOMINAL
+  - name: apo_uom
+    description: APO_UOM
+  - name: apo_object_org
+    description: APO_OBJECT_ORG
+  - name: apo_minformula
+    description: APO_MINFORMULA
+  - name: apo_maxformula
+    description: APO_MAXFORMULA
+  - name: apo_confrating
+    description: APO_CONFRATING
+  - name: apo_replacefreq
+    description: APO_REPLACEFREQ
+  - name: apo_factor
+    description: APO_FACTOR
+  - name: apo_risk
+    description: APO_RISK
+  - name: apo_updated
+    description: APO_UPDATED
+  - name: apo_updatecount
+    description: APO_UPDATECOUNT
+  - name: apo_udfchar01
+    description: APO_UDFCHAR01
+  - name: apo_udfchar02
+    description: APO_UDFCHAR02
+  - name: apo_udfchar03
+    description: APO_UDFCHAR03
+  - name: apo_udfchar04
+    description: APO_UDFCHAR04
+  - name: apo_udfchar05
+    description: APO_UDFCHAR05
+  - name: apo_udfchar06
+    description: APO_UDFCHAR06
+  - name: apo_udfchar07
+    description: APO_UDFCHAR07
+  - name: apo_udfchar08
+    description: APO_UDFCHAR08
+  - name: apo_udfchar09
+    description: APO_UDFCHAR09
+  - name: apo_udfchar10
+    description: APO_UDFCHAR10
+  - name: apo_udfchar12
+    description: APO_UDFCHAR12
+  - name: apo_udfchar13
+    description: APO_UDFCHAR13
+  - name: apo_udfchar14
+    description: APO_UDFCHAR14
+  - name: apo_udfchar15
+    description: APO_UDFCHAR15
+  - name: apo_udfchar16
+    description: APO_UDFCHAR16
+  - name: apo_udfchar17
+    description: APO_UDFCHAR17
+  - name: apo_udfchar18
+    description: APO_UDFCHAR18
+  - name: apo_udfchar19
+    description: APO_UDFCHAR19
+  - name: apo_udfchar20
+    description: APO_UDFCHAR20
+  - name: apo_udfchar21
+    description: APO_UDFCHAR21
+  - name: apo_udfchar22
+    description: APO_UDFCHAR22
+  - name: apo_udfchar23
+    description: APO_UDFCHAR23
+  - name: apo_udfchar24
+    description: APO_UDFCHAR24
+  - name: apo_udfchar25
+    description: APO_UDFCHAR25
+  - name: apo_udfchar26
+    description: APO_UDFCHAR26
+  - name: apo_udfchar27
+    description: APO_UDFCHAR27
+  - name: apo_udfchar28
+    description: APO_UDFCHAR28
+  - name: apo_udfchar29
+    description: APO_UDFCHAR29
+  - name: apo_udfchar30
+    description: APO_UDFCHAR30
+  - name: apo_udfnum01
+    description: APO_UDFNUM01
+  - name: apo_udfnum02
+    description: APO_UDFNUM02
+  - name: apo_udfnum03
+    description: APO_UDFNUM03
+  - name: apo_udfnum04
+    description: APO_UDFNUM04
+  - name: apo_udfnum05
+    description: APO_UDFNUM05
+  - name: apo_udfdate01
+    description: APO_UDFDATE01
+  - name: apo_udfdate02
+    description: APO_UDFDATE02
+  - name: apo_udfdate03
+    description: APO_UDFDATE03
+  - name: apo_udfdate04
+    description: APO_UDFDATE04
+  - name: apo_udfdate05
+    description: APO_UDFDATE05
+  - name: apo_udfchkbox01
+    description: APO_UDFCHKBOX01
+  - name: apo_udfchkbox02
+    description: APO_UDFCHKBOX02
+  - name: apo_udfchkbox03
+    description: APO_UDFCHKBOX03
+  - name: apo_udfchkbox04
+    description: APO_UDFCHKBOX04
+  - name: apo_udfchkbox05
+    description: APO_UDFCHKBOX05
+  - name: apo_udfchar11
+    description: APO_UDFCHAR11
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ASPECTPOINTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - apo_object
+        - apo_object_org
+        - apo_obtype
+        - apo_aspect
+        - apo_point
+        - apo_pointtype

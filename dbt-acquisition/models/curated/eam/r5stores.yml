@@ -1,0 +1,216 @@
+version: 2
+models:
+- name: r5stores
+  columns:
+  - name: str_lastsaved
+    description: STR_LASTSAVED
+  - name: str_code
+    description: STR_CODE
+    data_tests:
+    - unique
+  - name: str_desc
+    description: STR_DESC
+  - name: str_class
+    description: STR_CLASS
+  - name: str_leadtime
+    description: STR_LEADTIME
+  - name: str_location
+    description: STR_LOCATION
+  - name: str_ltype
+    description: STR_LTYPE
+  - name: str_parent
+    description: STR_PARENT
+  - name: str_pricecode
+    description: STR_PRICECODE
+  - name: str_facility
+    description: STR_FACILITY
+  - name: str_autoappvstatus
+    description: STR_AUTOAPPVSTATUS
+  - name: str_org
+    description: STR_ORG
+  - name: str_copy
+    description: STR_COPY
+  - name: str_class_org
+    description: STR_CLASS_ORG
+  - name: str_location_org
+    description: STR_LOCATION_ORG
+  - name: str_pricetype
+    description: STR_PRICETYPE
+  - name: str_updatecount
+    description: STR_UPDATECOUNT
+  - name: str_created
+    description: STR_CREATED
+  - name: str_updated
+    description: STR_UPDATED
+  - name: str_autopostatus
+    description: STR_AUTOPOSTATUS
+  - name: str_reservedpartbuffer
+    description: STR_RESERVEDPARTBUFFER
+  - name: str_internalleadtime
+    description: STR_INTERNALLEADTIME
+  - name: str_sunday
+    description: STR_SUNDAY
+  - name: str_monday
+    description: STR_MONDAY
+  - name: str_tuesday
+    description: STR_TUESDAY
+  - name: str_wednesday
+    description: STR_WEDNESDAY
+  - name: str_thursday
+    description: STR_THURSDAY
+  - name: str_friday
+    description: STR_FRIDAY
+  - name: str_saturday
+    description: STR_SATURDAY
+  - name: str_notused
+    description: STR_NOTUSED
+  - name: str_printer
+    description: STR_PRINTER
+  - name: str_printserver
+    description: STR_PRINTSERVER
+  - name: str_issuetemplate
+    description: STR_ISSUETEMPLATE
+  - name: str_receipttemplate
+    description: STR_RECEIPTTEMPLATE
+  - name: str_nonpotemplate
+    description: STR_NONPOTEMPLATE
+  - name: str_segmentvalue
+    description: STR_SEGMENTVALUE
+  - name: str_streceipttemplate
+    description: STR_STRECEIPTTEMPLATE
+  - name: str_enterpriselocation
+    description: STR_ENTERPRISELOCATION
+  - name: str_laststatusupdate
+    description: STR_LASTSTATUSUPDATE
+  - name: str_udfchar01
+    description: STR_UDFCHAR01
+  - name: str_udfchar02
+    description: STR_UDFCHAR02
+  - name: str_udfchar03
+    description: STR_UDFCHAR03
+  - name: str_udfchar04
+    description: STR_UDFCHAR04
+  - name: str_udfchar05
+    description: STR_UDFCHAR05
+  - name: str_udfchar06
+    description: STR_UDFCHAR06
+  - name: str_udfchar07
+    description: STR_UDFCHAR07
+  - name: str_udfchar08
+    description: STR_UDFCHAR08
+  - name: str_udfchar09
+    description: STR_UDFCHAR09
+  - name: str_udfchar10
+    description: STR_UDFCHAR10
+  - name: str_udfchar11
+    description: STR_UDFCHAR11
+  - name: str_udfchar12
+    description: STR_UDFCHAR12
+  - name: str_udfchar13
+    description: STR_UDFCHAR13
+  - name: str_udfchar14
+    description: STR_UDFCHAR14
+  - name: str_udfchar15
+    description: STR_UDFCHAR15
+  - name: str_udfchar16
+    description: STR_UDFCHAR16
+  - name: str_udfchar17
+    description: STR_UDFCHAR17
+  - name: str_udfchar18
+    description: STR_UDFCHAR18
+  - name: str_udfchar19
+    description: STR_UDFCHAR19
+  - name: str_udfchar20
+    description: STR_UDFCHAR20
+  - name: str_udfchar21
+    description: STR_UDFCHAR21
+  - name: str_udfchar22
+    description: STR_UDFCHAR22
+  - name: str_udfchar23
+    description: STR_UDFCHAR23
+  - name: str_udfchar24
+    description: STR_UDFCHAR24
+  - name: str_udfchar25
+    description: STR_UDFCHAR25
+  - name: str_udfchar26
+    description: STR_UDFCHAR26
+  - name: str_udfchar27
+    description: STR_UDFCHAR27
+  - name: str_udfchar28
+    description: STR_UDFCHAR28
+  - name: str_udfchar29
+    description: STR_UDFCHAR29
+  - name: str_udfchar30
+    description: STR_UDFCHAR30
+  - name: str_udfnum01
+    description: STR_UDFNUM01
+  - name: str_udfnum02
+    description: STR_UDFNUM02
+  - name: str_udfnum03
+    description: STR_UDFNUM03
+  - name: str_udfnum04
+    description: STR_UDFNUM04
+  - name: str_udfnum05
+    description: STR_UDFNUM05
+  - name: str_udfdate01
+    description: STR_UDFDATE01
+  - name: str_udfdate02
+    description: STR_UDFDATE02
+  - name: str_udfdate03
+    description: STR_UDFDATE03
+  - name: str_udfdate04
+    description: STR_UDFDATE04
+  - name: str_udfdate05
+    description: STR_UDFDATE05
+  - name: str_udfchkbox01
+    description: STR_UDFCHKBOX01
+  - name: str_udfchkbox02
+    description: STR_UDFCHKBOX02
+  - name: str_udfchkbox03
+    description: STR_UDFCHKBOX03
+  - name: str_udfchkbox04
+    description: STR_UDFCHKBOX04
+  - name: str_udfchkbox05
+    description: STR_UDFCHKBOX05
+  - name: str_tax_parts
+    description: STR_TAX_PARTS
+  - name: str_tax_services
+    description: STR_TAX_SERVICES
+  - name: str_warrantytemplate
+    description: STR_WARRANTYTEMPLATE
+  - name: str_system
+    description: STR_SYSTEM
+  - name: str_system_org
+    description: STR_SYSTEM_ORG
+  - name: str_helditemspotemplate
+    description: STR_HELDITEMSPOTEMPLATE
+  - name: str_helditemsnonpotemplate
+    description: STR_HELDITEMSNONPOTEMPLATE
+  - name: str_helditemsstktrstemplate
+    description: STR_HELDITEMSSTKTRSTEMPLATE
+  - name: str_helditemstrstemplate
+    description: STR_HELDITEMSTRSTEMPLATE
+  - name: str_helditemstostktrstemplate
+    description: STR_HELDITEMSTOSTKTRSTEMPLATE
+  - name: str_helditemsreceipttemplate
+    description: STR_HELDITEMSRECEIPTTEMPLATE
+  - name: str_directtowodefault
+    description: STR_DIRECTTOWODEFAULT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5STORES

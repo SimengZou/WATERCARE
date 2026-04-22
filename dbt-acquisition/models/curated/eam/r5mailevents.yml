@@ -1,0 +1,88 @@
+version: 2
+models:
+- name: r5mailevents
+  columns:
+  - name: mae_lastsaved
+    description: MAE_LASTSAVED
+  - name: mae_date
+    description: MAE_DATE
+  - name: mae_send
+    description: MAE_SEND
+  - name: mae_rstatus
+    description: MAE_RSTATUS
+  - name: mae_error
+    description: MAE_ERROR
+  - name: mae_param1
+    description: MAE_PARAM1
+  - name: mae_param2
+    description: MAE_PARAM2
+  - name: mae_param3
+    description: MAE_PARAM3
+  - name: mae_param4
+    description: MAE_PARAM4
+  - name: mae_param5
+    description: MAE_PARAM5
+  - name: mae_param6
+    description: MAE_PARAM6
+  - name: mae_param7
+    description: MAE_PARAM7
+  - name: mae_param8
+    description: MAE_PARAM8
+  - name: mae_param9
+    description: MAE_PARAM9
+  - name: mae_param10
+    description: MAE_PARAM10
+  - name: mae_param11
+    description: MAE_PARAM11
+  - name: mae_param12
+    description: MAE_PARAM12
+  - name: mae_param13
+    description: MAE_PARAM13
+  - name: mae_param14
+    description: MAE_PARAM14
+  - name: mae_param15
+    description: MAE_PARAM15
+  - name: mae_updatecount
+    description: MAE_UPDATECOUNT
+  - name: mae_attribpk
+    description: MAE_ATTRIBPK
+  - name: mae_ewsurl
+    description: MAE_EWSURL
+  - name: mae_emailrecipient
+    description: MAE_EMAILRECIPIENT
+  - name: mae_ptfsend
+    description: MAE_PTFSEND
+  - name: mae_ptferror
+    description: MAE_PTFERROR
+  - name: mae_docrentity
+    description: MAE_DOCRENTITY
+  - name: mae_docpk
+    description: MAE_DOCPK
+  - name: mae_emailerrcount
+    description: MAE_EMAILERRCOUNT
+  - name: mae_ptferrcount
+    description: MAE_PTFERRCOUNT
+  - name: mae_code
+    description: MAE_CODE
+    data_tests:
+    - unique
+  - name: mae_template
+    description: MAE_TEMPLATE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MAILEVENTS

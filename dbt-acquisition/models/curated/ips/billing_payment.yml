@@ -1,0 +1,148 @@
+version: 2
+models:
+- name: billing_payment
+  columns:
+  - name: billtype
+    description: Metadata for column BILLTYPE
+  - name: unmatcres
+    description: 'Metadata for column UNMATCRES. Max length: 4'
+  - name: amtconf
+    description: Metadata for column AMTCONF
+  - name: donateflag
+    description: 'Metadata for column DONATEFLAG. Max length: 1'
+  - name: accountkey
+    description: Metadata for column ACCOUNTKEY
+  - name: rescode
+    description: 'Metadata for column RESCODE. Max length: 10'
+  - name: checkbank
+    description: 'Metadata for column CHECKBANK. Max length: 50'
+  - name: unmatchedprocessby
+    description: 'Metadata for column UNMATCHEDPROCESSBY. Max length: 12'
+  - name: checkaccounttype
+    description: 'Metadata for column CHECKACCOUNTTYPE. Max length: 1'
+  - name: miscrefno
+    description: 'Metadata for column MISCREFNO. Max length: 12'
+  - name: accounttype
+    description: Metadata for column ACCOUNTTYPE
+  - name: paykey
+    description: (required) Metadata for column PAYKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: cardname
+    description: 'Metadata for column CARDNAME. Max length: 82'
+  - name: donateamt
+    description: Metadata for column DONATEAMT
+  - name: payspecificbillsflag
+    description: 'Metadata for column PAYSPECIFICBILLSFLAG. Max length: 1'
+  - name: miscissuedby
+    description: 'Metadata for column MISCISSUEDBY. Max length: 12'
+  - name: comments
+    description: 'Metadata for column COMMENTS. Max length: 300'
+  - name: escrowtrnno
+    description: Metadata for column ESCROWTRNNO
+  - name: adjflag
+    description: 'Metadata for column ADJFLAG. Max length: 1'
+  - name: status
+    description: 'Metadata for column STATUS. Max length: 8'
+  - name: unmatchedprocess
+    description: 'Metadata for column UNMATCHEDPROCESS. Max length: 4'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: cardbank
+    description: 'Metadata for column CARDBANK. Max length: 50'
+  - name: traceno
+    description: Metadata for column TRACENO
+  - name: accountnumber
+    description: 'Metadata for column ACCOUNTNUMBER. Max length: 27'
+  - name: checkidtype
+    description: 'Metadata for column CHECKIDTYPE. Max length: 10'
+  - name: checkno
+    description: 'Metadata for column CHECKNO. Max length: 12'
+  - name: applyconc
+    description: 'Metadata for column APPLYCONC. Max length: 1'
+  - name: cntctkey
+    description: Metadata for column CNTCTKEY
+  - name: method
+    description: 'Metadata for column METHOD. Max length: 15'
+  - name: unmatchedprocessexception
+    description: 'Metadata for column UNMATCHEDPROCESSEXCEPTION. Max length: 600'
+  - name: confdttm
+    description: Metadata for column CONFDTTM
+  - name: pendtype
+    description: 'Metadata for column PENDTYPE. Max length: 1'
+  - name: transferredfrompayment
+    description: Metadata for column TRANSFERREDFROMPAYMENT
+  - name: cardtype
+    description: 'Metadata for column CARDTYPE. Max length: 12'
+  - name: entno
+    description: 'Metadata for column ENTNO. Max length: 20'
+  - name: escrowaccountkey
+    description: Metadata for column ESCROWACCOUNTKEY
+  - name: source
+    description: 'Metadata for column SOURCE. Max length: 10'
+  - name: checkroutingnumber
+    description: 'Metadata for column CHECKROUTINGNUMBER. Max length: 50'
+  - name: drawertranno
+    description: Metadata for column DRAWERTRANNO
+  - name: checkaccountnumber
+    description: 'Metadata for column CHECKACCOUNTNUMBER. Max length: 17'
+  - name: resdttm
+    description: Metadata for column RESDTTM
+  - name: cardexpiredate
+    description: Metadata for column CARDEXPIREDATE
+  - name: resby
+    description: 'Metadata for column RESBY. Max length: 12'
+  - name: unmatchedprocessdatetime
+    description: Metadata for column UNMATCHEDPROCESSDATETIME
+  - name: misctype
+    description: 'Metadata for column MISCTYPE. Max length: 10'
+  - name: cardauth
+    description: 'Metadata for column CARDAUTH. Max length: 12'
+  - name: recddttm
+    description: Metadata for column RECDDTTM
+  - name: amount
+    description: Metadata for column AMOUNT
+  - name: checkname
+    description: 'Metadata for column CHECKNAME. Max length: 82'
+  - name: checkid
+    description: 'Metadata for column CHECKID. Max length: 20'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: cardno
+    description: 'Metadata for column CARDNO. Max length: 30'
+  - name: disputedflag
+    description: 'Metadata for column DISPUTEDFLAG. Max length: 1'
+  - name: paymentreversalcode
+    description: 'Metadata for column PAYMENTREVERSALCODE. Max length: 10'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: recdby
+    description: 'Metadata for column RECDBY. Max length: 12'
+  - name: regtranno
+    description: Metadata for column REGTRANNO
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: batchkey
+    description: Metadata for column BATCHKEY
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.PAYMENT on 2021-07-09T15:15:01.322

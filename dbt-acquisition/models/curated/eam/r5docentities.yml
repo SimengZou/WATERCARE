@@ -1,0 +1,57 @@
+version: 2
+models:
+- name: r5docentities
+  columns:
+  - name: dae_lastsaved
+    description: DAE_LASTSAVED
+  - name: dae_entity
+    description: DAE_ENTITY
+  - name: dae_rentity
+    description: DAE_RENTITY
+  - name: dae_type
+    description: DAE_TYPE
+  - name: dae_rtype
+    description: DAE_RTYPE
+  - name: dae_code
+    description: DAE_CODE
+  - name: dae_idmcopy
+    description: DAE_IDMCOPY
+  - name: dae_printonwo
+    description: DAE_PRINTONWO
+  - name: dae_copytopo
+    description: DAE_COPYTOPO
+  - name: dae_printonpo
+    description: DAE_PRINTONPO
+  - name: dae_updatecount
+    description: DAE_UPDATECOUNT
+  - name: dae_createcopytowo
+    description: DAE_CREATECOPYTOWO
+  - name: dae_document
+    description: DAE_DOCUMENT
+  - name: dae_copytowo
+    description: DAE_COPYTOWO
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DOCENTITIES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - dae_document
+        - dae_code
+        - dae_rentity

@@ -1,0 +1,112 @@
+version: 2
+models:
+- name: whinh500
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orno
+    description: '(required) Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cntn
+    description: (required) Count Number
+    data_tests:
+    - not_null
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: rcyn
+    description: 'Reconciliation. Allowed values: 1, 2'
+  - name: rcyn_kw
+    description: 'Reconciliation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: emno
+    description: 'Employee. Max length: 9'
+  - name: odat
+    description: Order Date
+  - name: prnt
+    description: 'Printed. Allowed values: 1, 2'
+  - name: prnt_kw
+    description: 'Printed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: prcc
+    description: 'Process Count. Allowed values: 1, 2'
+  - name: prcc_kw
+    description: 'Process Count (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccst
+    description: 'Status. Allowed values: 10, 20, 30'
+  - name: ccst_kw
+    description: 'Status (keyword). Allowed values: whinh.ccst.open, whinh.ccst.modified,
+      whinh.ccst.processed'
+  - name: refe__en_us
+    description: '(required) Reference Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: redt
+    description: Reference Date
+  - name: txta
+    description: Header Text
+  - name: cdf_adat
+    description: Approved Date
+  - name: cdf_ausr
+    description: 'Approved By. Max length: 16'
+  - name: cdf_rdte
+    description: Reviewed Date
+  - name: cdf_rfin
+    description: 'Reviewed by Finance. Allowed values: 1, 2'
+  - name: cdf_rfin_kw
+    description: 'Reviewed by Finance (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdf_rusr
+    description: 'Reviewed by User. Max length: 16'
+  - name: cdf_wfst
+    description: 'Workflow Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: cdf_wfst_kw
+    description: 'Workflow Status (keyword). Allowed values: whcdf_lst003.not.applicable,
+      whcdf_lst003.approved, whcdf_lst003.rejected, whcdf_lst003.pending, whcdf_lst003.recall,
+      whcdf_lst003.appr.received'
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: emno_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh500 Cycle Counting Orders table, Generated 2026-04-10T19:42:51Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orno
+        - cntn

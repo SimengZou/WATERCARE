@@ -1,0 +1,180 @@
+version: 2
+models:
+- name: r5standwacts
+  columns:
+  - name: wac_lastsaved
+    description: WAC_LASTSAVED
+  - name: wac_trade
+    description: WAC_TRADE
+  - name: wac_duration
+    description: WAC_DURATION
+  - name: wac_est
+    description: WAC_EST
+  - name: wac_task
+    description: WAC_TASK
+  - name: wac_matlist
+    description: WAC_MATLIST
+  - name: wac_special
+    description: WAC_SPECIAL
+  - name: wac_hire
+    description: WAC_HIRE
+  - name: wac_persons
+    description: WAC_PERSONS
+  - name: wac_start
+    description: WAC_START
+  - name: wac_qty
+    description: WAC_QTY
+  - name: wac_uom
+    description: WAC_UOM
+  - name: wac_rpc
+    description: WAC_RPC
+  - name: wac_wap
+    description: WAC_WAP
+  - name: wac_tpf
+    description: WAC_TPF
+  - name: wac_manufact
+    description: WAC_MANUFACT
+  - name: wac_syslevel
+    description: WAC_SYSLEVEL
+  - name: wac_asmlevel
+    description: WAC_ASMLEVEL
+  - name: wac_complevel
+    description: WAC_COMPLEVEL
+  - name: wac_updatecount
+    description: WAC_UPDATECOUNT
+  - name: wac_created
+    description: WAC_CREATED
+  - name: wac_updated
+    description: WAC_UPDATED
+  - name: wac_note
+    description: WAC_NOTE
+  - name: wac_udfchar01
+    description: WAC_UDFCHAR01
+  - name: wac_udfchar02
+    description: WAC_UDFCHAR02
+  - name: wac_udfchar03
+    description: WAC_UDFCHAR03
+  - name: wac_udfchar04
+    description: WAC_UDFCHAR04
+  - name: wac_udfchar05
+    description: WAC_UDFCHAR05
+  - name: wac_udfchar06
+    description: WAC_UDFCHAR06
+  - name: wac_udfchar07
+    description: WAC_UDFCHAR07
+  - name: wac_udfchar08
+    description: WAC_UDFCHAR08
+  - name: wac_udfchar09
+    description: WAC_UDFCHAR09
+  - name: wac_udfchar10
+    description: WAC_UDFCHAR10
+  - name: wac_udfchar11
+    description: WAC_UDFCHAR11
+  - name: wac_udfchar12
+    description: WAC_UDFCHAR12
+  - name: wac_udfchar13
+    description: WAC_UDFCHAR13
+  - name: wac_udfchar14
+    description: WAC_UDFCHAR14
+  - name: wac_udfchar15
+    description: WAC_UDFCHAR15
+  - name: wac_udfchar16
+    description: WAC_UDFCHAR16
+  - name: wac_udfchar17
+    description: WAC_UDFCHAR17
+  - name: wac_udfchar18
+    description: WAC_UDFCHAR18
+  - name: wac_udfchar19
+    description: WAC_UDFCHAR19
+  - name: wac_udfchar20
+    description: WAC_UDFCHAR20
+  - name: wac_udfchar21
+    description: WAC_UDFCHAR21
+  - name: wac_udfchar22
+    description: WAC_UDFCHAR22
+  - name: wac_udfchar23
+    description: WAC_UDFCHAR23
+  - name: wac_udfchar24
+    description: WAC_UDFCHAR24
+  - name: wac_udfchar25
+    description: WAC_UDFCHAR25
+  - name: wac_udfchar26
+    description: WAC_UDFCHAR26
+  - name: wac_udfchar27
+    description: WAC_UDFCHAR27
+  - name: wac_udfchar28
+    description: WAC_UDFCHAR28
+  - name: wac_udfchar29
+    description: WAC_UDFCHAR29
+  - name: wac_udfchar30
+    description: WAC_UDFCHAR30
+  - name: wac_udfnum01
+    description: WAC_UDFNUM01
+  - name: wac_udfnum02
+    description: WAC_UDFNUM02
+  - name: wac_udfnum03
+    description: WAC_UDFNUM03
+  - name: wac_udfnum04
+    description: WAC_UDFNUM04
+  - name: wac_udfnum05
+    description: WAC_UDFNUM05
+  - name: wac_udfdate01
+    description: WAC_UDFDATE01
+  - name: wac_udfdate02
+    description: WAC_UDFDATE02
+  - name: wac_udfdate03
+    description: WAC_UDFDATE03
+  - name: wac_udfdate04
+    description: WAC_UDFDATE04
+  - name: wac_udfdate05
+    description: WAC_UDFDATE05
+  - name: wac_udfchkbox01
+    description: WAC_UDFCHKBOX01
+  - name: wac_udfchkbox02
+    description: WAC_UDFCHKBOX02
+  - name: wac_udfchkbox03
+    description: WAC_UDFCHKBOX03
+  - name: wac_udfchkbox04
+    description: WAC_UDFCHKBOX04
+  - name: wac_udfchkbox05
+    description: WAC_UDFCHKBOX05
+  - name: wac_udfnote01
+    description: WAC_UDFNOTE01
+  - name: wac_udfnote02
+    description: WAC_UDFNOTE02
+  - name: wac_labortype
+    description: WAC_LABORTYPE
+  - name: wac_laborrtype
+    description: WAC_LABORRTYPE
+  - name: wac_supplier
+    description: WAC_SUPPLIER
+  - name: wac_supplier_org
+    description: WAC_SUPPLIER_ORG
+  - name: wac_standwork
+    description: WAC_STANDWORK
+  - name: wac_act
+    description: WAC_ACT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5STANDWACTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - wac_standwork
+        - wac_act

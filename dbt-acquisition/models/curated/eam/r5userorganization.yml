@@ -1,0 +1,63 @@
+version: 2
+models:
+- name: r5userorganization
+  columns:
+  - name: uog_lastsaved
+    description: UOG_LASTSAVED
+  - name: uog_role
+    description: UOG_ROLE
+  - name: uog_default
+    description: UOG_DEFAULT
+  - name: uog_common
+    description: UOG_COMMON
+  - name: uog_group
+    description: UOG_GROUP
+  - name: uog_reqappvlimit
+    description: UOG_REQAPPVLIMIT
+  - name: uog_reqauthappvlimit
+    description: UOG_REQAUTHAPPVLIMIT
+  - name: uog_pordappvlimit
+    description: UOG_PORDAPPVLIMIT
+  - name: uog_pordauthappvlimit
+    description: UOG_PORDAUTHAPPVLIMIT
+  - name: uog_picappvlimit
+    description: UOG_PICAPPVLIMIT
+  - name: uog_invappvlimit
+    description: UOG_INVAPPVLIMIT
+  - name: uog_invappvlimitnonpo
+    description: UOG_INVAPPVLIMITNONPO
+  - name: uog_updatecount
+    description: UOG_UPDATECOUNT
+  - name: uog_created
+    description: UOG_CREATED
+  - name: uog_updated
+    description: UOG_UPDATED
+  - name: uog_user
+    description: UOG_USER
+  - name: uog_org
+    description: UOG_ORG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5USERORGANIZATION
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - uog_user
+        - uog_org
+        - uog_role

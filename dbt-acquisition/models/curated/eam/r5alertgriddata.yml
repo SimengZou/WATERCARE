@@ -1,0 +1,42 @@
+version: 2
+models:
+- name: r5alertgriddata
+  columns:
+  - name: agd_lastsaved
+    description: AGD_LASTSAVED
+  - name: agd_alert
+    description: AGD_ALERT
+  - name: agd_gridid
+    description: AGD_GRIDID
+  - name: agd_dataspyid
+    description: AGD_DATASPYID
+  - name: agd_recipient
+    description: AGD_RECIPIENT
+  - name: agd_description
+    description: AGD_DESCRIPTION
+  - name: agd_data
+    description: 'AGD_DATA. Max length: 0'
+  - name: agd_pk
+    description: AGD_PK
+    data_tests:
+    - unique
+  - name: agd_date
+    description: AGD_DATE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ALERTGRIDDATA

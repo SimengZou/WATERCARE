@@ -1,0 +1,54 @@
+version: 2
+models:
+- name: r5routes
+  columns:
+  - name: rou_lastsaved
+    description: ROU_LASTSAVED
+  - name: rou_desc
+    description: ROU_DESC
+  - name: rou_category
+    description: ROU_CATEGORY
+  - name: rou_template
+    description: ROU_TEMPLATE
+  - name: rou_class
+    description: ROU_CLASS
+  - name: rou_revision
+    description: ROU_REVISION
+  - name: rou_revstatus
+    description: ROU_REVSTATUS
+  - name: rou_org
+    description: ROU_ORG
+  - name: rou_class_org
+    description: ROU_CLASS_ORG
+  - name: rou_updatecount
+    description: ROU_UPDATECOUNT
+  - name: rou_linkgiswo
+    description: ROU_LINKGISWO
+  - name: rou_code
+    description: ROU_CODE
+  - name: rou_revrstatus
+    description: ROU_REVRSTATUS
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ROUTES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - rou_code
+        - rou_revision

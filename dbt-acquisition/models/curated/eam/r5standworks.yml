@@ -1,0 +1,268 @@
+version: 2
+models:
+- name: r5standworks
+  columns:
+  - name: stw_lastsaved
+    description: STW_LASTSAVED
+  - name: stw_code
+    description: STW_CODE
+    data_tests:
+    - unique
+  - name: stw_desc
+    description: STW_DESC
+  - name: stw_class
+    description: STW_CLASS
+  - name: stw_obclass
+    description: STW_OBCLASS
+  - name: stw_duration
+    description: STW_DURATION
+  - name: stw_jobtype
+    description: STW_JOBTYPE
+  - name: stw_priority
+    description: STW_PRIORITY
+  - name: stw_obtype
+    description: STW_OBTYPE
+  - name: stw_obrtype
+    description: STW_OBRTYPE
+  - name: stw_object
+    description: STW_OBJECT
+  - name: stw_reqm
+    description: STW_REQM
+  - name: stw_org
+    description: STW_ORG
+  - name: stw_class_org
+    description: STW_CLASS_ORG
+  - name: stw_obclass_org
+    description: STW_OBCLASS_ORG
+  - name: stw_object_org
+    description: STW_OBJECT_ORG
+  - name: stw_created
+    description: STW_CREATED
+  - name: stw_createdby
+    description: STW_CREATEDBY
+  - name: stw_updated
+    description: STW_UPDATED
+  - name: stw_updatedby
+    description: STW_UPDATEDBY
+  - name: stw_woclass
+    description: STW_WOCLASS
+  - name: stw_woclass_org
+    description: STW_WOCLASS_ORG
+  - name: stw_updatecount
+    description: STW_UPDATECOUNT
+  - name: stw_notused
+    description: STW_NOTUSED
+  - name: stw_type
+    description: STW_TYPE
+  - name: stw_udfchar01
+    description: STW_UDFCHAR01
+  - name: stw_udfchar02
+    description: STW_UDFCHAR02
+  - name: stw_udfchar03
+    description: STW_UDFCHAR03
+  - name: stw_udfchar04
+    description: STW_UDFCHAR04
+  - name: stw_udfchar05
+    description: STW_UDFCHAR05
+  - name: stw_udfchar06
+    description: STW_UDFCHAR06
+  - name: stw_udfchar07
+    description: STW_UDFCHAR07
+  - name: stw_udfchar08
+    description: STW_UDFCHAR08
+  - name: stw_udfchar09
+    description: STW_UDFCHAR09
+  - name: stw_udfchar10
+    description: STW_UDFCHAR10
+  - name: stw_udfchar11
+    description: STW_UDFCHAR11
+  - name: stw_udfchar12
+    description: STW_UDFCHAR12
+  - name: stw_udfchar13
+    description: STW_UDFCHAR13
+  - name: stw_udfchar14
+    description: STW_UDFCHAR14
+  - name: stw_udfchar15
+    description: STW_UDFCHAR15
+  - name: stw_udfchar16
+    description: STW_UDFCHAR16
+  - name: stw_udfchar17
+    description: STW_UDFCHAR17
+  - name: stw_udfchar18
+    description: STW_UDFCHAR18
+  - name: stw_udfchar19
+    description: STW_UDFCHAR19
+  - name: stw_udfchar20
+    description: STW_UDFCHAR20
+  - name: stw_udfchar21
+    description: STW_UDFCHAR21
+  - name: stw_udfchar22
+    description: STW_UDFCHAR22
+  - name: stw_udfchar23
+    description: STW_UDFCHAR23
+  - name: stw_udfchar24
+    description: STW_UDFCHAR24
+  - name: stw_udfchar25
+    description: STW_UDFCHAR25
+  - name: stw_udfchar26
+    description: STW_UDFCHAR26
+  - name: stw_udfchar27
+    description: STW_UDFCHAR27
+  - name: stw_udfchar28
+    description: STW_UDFCHAR28
+  - name: stw_udfchar29
+    description: STW_UDFCHAR29
+  - name: stw_udfchar30
+    description: STW_UDFCHAR30
+  - name: stw_udfnum01
+    description: STW_UDFNUM01
+  - name: stw_udfnum02
+    description: STW_UDFNUM02
+  - name: stw_udfnum03
+    description: STW_UDFNUM03
+  - name: stw_udfnum04
+    description: STW_UDFNUM04
+  - name: stw_udfnum05
+    description: STW_UDFNUM05
+  - name: stw_udfdate01
+    description: STW_UDFDATE01
+  - name: stw_udfdate02
+    description: STW_UDFDATE02
+  - name: stw_udfdate03
+    description: STW_UDFDATE03
+  - name: stw_udfdate04
+    description: STW_UDFDATE04
+  - name: stw_udfdate05
+    description: STW_UDFDATE05
+  - name: stw_udfchkbox01
+    description: STW_UDFCHKBOX01
+  - name: stw_udfchkbox02
+    description: STW_UDFCHKBOX02
+  - name: stw_udfchkbox03
+    description: STW_UDFCHKBOX03
+  - name: stw_udfchkbox04
+    description: STW_UDFCHKBOX04
+  - name: stw_udfchkbox05
+    description: STW_UDFCHKBOX05
+  - name: stw_safetyreviewrequired
+    description: STW_SAFETYREVIEWREQUIRED
+  - name: stw_safetyreviewed
+    description: STW_SAFETYREVIEWED
+  - name: stw_permitreviewrequired
+    description: STW_PERMITREVIEWREQUIRED
+  - name: stw_safetyreviewedby
+    description: STW_SAFETYREVIEWEDBY
+  - name: stw_safetyreviewedname
+    description: STW_SAFETYREVIEWEDNAME
+  - name: stw_safetyreviewedtype
+    description: STW_SAFETYREVIEWEDTYPE
+  - name: stw_permitreviewed
+    description: STW_PERMITREVIEWED
+  - name: stw_permitreviewedby
+    description: STW_PERMITREVIEWEDBY
+  - name: stw_permitreviewedname
+    description: STW_PERMITREVIEWEDNAME
+  - name: stw_permitreviewedtype
+    description: STW_PERMITREVIEWEDTYPE
+  - name: stw_udfnote01
+    description: STW_UDFNOTE01
+  - name: stw_udfnote02
+    description: STW_UDFNOTE02
+  - name: stw_udfchar31
+    description: STW_UDFCHAR31
+  - name: stw_udfchar32
+    description: STW_UDFCHAR32
+  - name: stw_udfchar33
+    description: STW_UDFCHAR33
+  - name: stw_udfchar34
+    description: STW_UDFCHAR34
+  - name: stw_udfchar35
+    description: STW_UDFCHAR35
+  - name: stw_udfchar36
+    description: STW_UDFCHAR36
+  - name: stw_udfchar37
+    description: STW_UDFCHAR37
+  - name: stw_udfchar38
+    description: STW_UDFCHAR38
+  - name: stw_udfchar39
+    description: STW_UDFCHAR39
+  - name: stw_udfchar40
+    description: STW_UDFCHAR40
+  - name: stw_udfchar41
+    description: STW_UDFCHAR41
+  - name: stw_udfchar42
+    description: STW_UDFCHAR42
+  - name: stw_udfchar43
+    description: STW_UDFCHAR43
+  - name: stw_udfchar44
+    description: STW_UDFCHAR44
+  - name: stw_udfchar45
+    description: STW_UDFCHAR45
+  - name: stw_udfnum06
+    description: STW_UDFNUM06
+  - name: stw_udfnum07
+    description: STW_UDFNUM07
+  - name: stw_udfnum08
+    description: STW_UDFNUM08
+  - name: stw_udfnum09
+    description: STW_UDFNUM09
+  - name: stw_udfnum10
+    description: STW_UDFNUM10
+  - name: stw_udfdate06
+    description: STW_UDFDATE06
+  - name: stw_udfdate07
+    description: STW_UDFDATE07
+  - name: stw_udfdate08
+    description: STW_UDFDATE08
+  - name: stw_udfdate09
+    description: STW_UDFDATE09
+  - name: stw_udfdate10
+    description: STW_UDFDATE10
+  - name: stw_udfchkbox06
+    description: STW_UDFCHKBOX06
+  - name: stw_udfchkbox07
+    description: STW_UDFCHKBOX07
+  - name: stw_udfchkbox08
+    description: STW_UDFCHKBOX08
+  - name: stw_udfchkbox09
+    description: STW_UDFCHKBOX09
+  - name: stw_udfchkbox10
+    description: STW_UDFCHKBOX10
+  - name: stw_udfchar46
+    description: STW_UDFCHAR46
+  - name: stw_udfchar47
+    description: STW_UDFCHAR47
+  - name: stw_udfchar48
+    description: STW_UDFCHAR48
+  - name: stw_udfchar49
+    description: STW_UDFCHAR49
+  - name: stw_udfchar50
+    description: STW_UDFCHAR50
+  - name: stw_udfchar51
+    description: STW_UDFCHAR51
+  - name: stw_udfchar52
+    description: STW_UDFCHAR52
+  - name: stw_udfchar53
+    description: STW_UDFCHAR53
+  - name: stw_udfchar54
+    description: STW_UDFCHAR54
+  - name: stw_udfchar55
+    description: STW_UDFCHAR55
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5STANDWORKS

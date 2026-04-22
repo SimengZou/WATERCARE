@@ -1,0 +1,99 @@
+version: 2
+models:
+- name: tcmcs041
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cdec
+    description: '(required) Delivery Terms. Max length: 3'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cdyn
+    description: 'Cash on Delivery. Allowed values: 1, 2'
+  - name: cdyn_kw
+    description: 'Cash on Delivery (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crpd
+    description: 'Carriage Paid. Allowed values: 1, 2'
+  - name: crpd_kw
+    description: 'Carriage Paid (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cptp
+    description: 'Carriage Paid by 3rd Party. Allowed values: 1, 2'
+  - name: cptp_kw
+    description: 'Carriage Paid by 3rd Party (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: fcba
+    description: 'Freight Charges Bill-To Address. Max length: 9'
+  - name: potp
+    description: 'Point of Title Passage. Allowed values: 1, 2, 10'
+  - name: potp_kw
+    description: 'Point of Title Passage (keyword). Allowed values: tcpotp.point.of.orig,
+      tcpotp.point.of.dest, tcpotp.named.loc'
+  - name: tdgp
+    description: 'Delivery Terms Group. Allowed values: 5, 10, 15, 20, 25, 27, 28,
+      29, 30, 35, 40, 45, 50, 55, 60, 65, 70, 90'
+  - name: tdgp_kw
+    description: 'Delivery Terms Group (keyword). Allowed values: tctdgp.cif, tctdgp.cfr,
+      tctdgp.cpt, tctdgp.cip, tctdgp.daf, tctdgp.dap, tctdgp.dpu, tctdgp.dat, tctdgp.deq,
+      tctdgp.des, tctdgp.ddu, tctdgp.ddp, tctdgp.exw, tctdgp.fca, tctdgp.fas, tctdgp.fob,
+      tctdgp.oth, tctdgp.na'
+  - name: spec
+    description: 'Point of Title Passage Specification. Allowed values: 10, 20, 30,
+      40, 50, 60, 70, 80, 90, 100, 110, 120, 125, 127'
+  - name: spec_kw
+    description: 'Point of Title Passage Specification (keyword). Allowed values:
+      tcmcs.spec.adnm, tcmcs.spec.name2, tcmcs.spec.addr, tcmcs.spec.addr2, tcmcs.spec.city,
+      tcmcs.spec.city2, tcmcs.spec.prov, tcmcs.spec.ccty, tcmcs.spec.adnm.prov.ccty,
+      tcmcs.spec.addr2.prov.ccty, tcmcs.spec.city.prov.ccty, tcmcs.spec.city2.prov.ccty,
+      tcmcs.spec.named.loc, tcmcs.spec.not.appl'
+  - name: txta
+    description: Text
+  - name: fcba_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs041 Delivery Terms table, Generated 2026-04-10T19:41:11Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cdec

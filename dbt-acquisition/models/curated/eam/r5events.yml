@@ -1,0 +1,832 @@
+version: 2
+models:
+- name: r5events
+  columns:
+  - name: evt_lastsaved
+    description: EVT_LASTSAVED
+  - name: evt_code
+    description: EVT_CODE
+    data_tests:
+    - unique
+  - name: evt_desc
+    description: EVT_DESC
+  - name: evt_type
+    description: EVT_TYPE
+  - name: evt_rtype
+    description: EVT_RTYPE
+  - name: evt_date
+    description: EVT_DATE
+  - name: evt_status
+    description: EVT_STATUS
+  - name: evt_rstatus
+    description: EVT_RSTATUS
+  - name: evt_mrc
+    description: EVT_MRC
+  - name: evt_ltype
+    description: EVT_LTYPE
+  - name: evt_location
+    description: EVT_LOCATION
+  - name: evt_costcode
+    description: EVT_COSTCODE
+  - name: evt_printed
+    description: EVT_PRINTED
+  - name: evt_project
+    description: EVT_PROJECT
+  - name: evt_projbud
+    description: EVT_PROJBUD
+  - name: evt_obtype
+    description: EVT_OBTYPE
+  - name: evt_obrtype
+    description: EVT_OBRTYPE
+  - name: evt_object
+    description: EVT_OBJECT
+  - name: evt_standwork
+    description: EVT_STANDWORK
+  - name: evt_ppm
+    description: EVT_PPM
+  - name: evt_freq
+    description: EVT_FREQ
+  - name: evt_isstype
+    description: EVT_ISSTYPE
+  - name: evt_meter
+    description: EVT_METER
+  - name: evt_meterdue
+    description: EVT_METERDUE
+  - name: evt_class
+    description: EVT_CLASS
+  - name: evt_route
+    description: EVT_ROUTE
+  - name: evt_session
+    description: EVT_SESSION
+  - name: evt_schedno
+    description: EVT_SCHEDNO
+  - name: evt_planprio
+    description: EVT_PLANPRIO
+  - name: evt_fixed
+    description: EVT_FIXED
+  - name: evt_slack
+    description: EVT_SLACK
+  - name: evt_target
+    description: EVT_TARGET
+  - name: evt_newtarget
+    description: EVT_NEWTARGET
+  - name: evt_earlystart
+    description: EVT_EARLYSTART
+  - name: evt_lateend
+    description: EVT_LATEEND
+  - name: evt_mustend
+    description: EVT_MUSTEND
+  - name: evt_lastplan
+    description: EVT_LASTPLAN
+  - name: evt_duration
+    description: EVT_DURATION
+  - name: evt_newdur
+    description: EVT_NEWDUR
+  - name: evt_planstatus
+    description: EVT_PLANSTATUS
+  - name: evt_parent
+    description: EVT_PARENT
+  - name: evt_depend
+    description: EVT_DEPEND
+  - name: evt_origin
+    description: EVT_ORIGIN
+  - name: evt_reqm
+    description: EVT_REQM
+  - name: evt_cause
+    description: EVT_CAUSE
+  - name: evt_action
+    description: EVT_ACTION
+  - name: evt_jobtype
+    description: EVT_JOBTYPE
+  - name: evt_priority
+    description: EVT_PRIORITY
+  - name: evt_reported
+    description: EVT_REPORTED
+  - name: evt_start
+    description: EVT_START
+  - name: evt_matavail
+    description: EVT_MATAVAIL
+  - name: evt_due
+    description: EVT_DUE
+  - name: evt_completed
+    description: EVT_COMPLETED
+  - name: evt_downtime
+    description: EVT_DOWNTIME
+  - name: evt_labtotal
+    description: EVT_LABTOTAL
+  - name: evt_mattotal
+    description: EVT_MATTOTAL
+  - name: evt_shift
+    description: EVT_SHIFT
+  - name: evt_failureusage
+    description: EVT_FAILUREUSAGE
+  - name: evt_meterreading
+    description: EVT_METERREADING
+  - name: evt_metuom
+    description: EVT_METUOM
+  - name: evt_maxcost
+    description: EVT_MAXCOST
+  - name: evt_screener
+    description: EVT_SCREENER
+  - name: evt_routedfrom
+    description: EVT_ROUTEDFROM
+  - name: evt_routereason
+    description: EVT_ROUTEREASON
+  - name: evt_warranty
+    description: EVT_WARRANTY
+  - name: evt_okwinend
+    description: EVT_OKWINEND
+  - name: evt_nearwinstart
+    description: EVT_NEARWINSTART
+  - name: evt_genwinstart
+    description: EVT_GENWINSTART
+  - name: evt_okwinendval
+    description: EVT_OKWINENDVAL
+  - name: evt_nearwinbegval
+    description: EVT_NEARWINBEGVAL
+  - name: evt_genwinbegval
+    description: EVT_GENWINBEGVAL
+  - name: evt_routestatus
+    description: EVT_ROUTESTATUS
+  - name: evt_acd
+    description: EVT_ACD
+  - name: evt_rejectreason
+    description: EVT_REJECTREASON
+  - name: evt_enteredby
+    description: EVT_ENTEREDBY
+  - name: evt_failure
+    description: EVT_FAILURE
+  - name: evt_downtimehrs
+    description: EVT_DOWNTIMEHRS
+  - name: evt_safety
+    description: EVT_SAFETY
+  - name: evt_objcriticality
+    description: EVT_OBJCRITICALITY
+  - name: evt_mpproj
+    description: EVT_MPPROJ
+  - name: evt_transorgid
+    description: EVT_TRANSORGID
+  - name: evt_transcode
+    description: EVT_TRANSCODE
+  - name: evt_transgroup
+    description: EVT_TRANSGROUP
+  - name: evt_cn
+    description: EVT_CN
+  - name: evt_reopened
+    description: EVT_REOPENED
+  - name: evt_ppopk
+    description: EVT_PPOPK
+  - name: evt_ppmrev
+    description: EVT_PPMREV
+  - name: evt_routerev
+    description: EVT_ROUTEREV
+  - name: evt_org
+    description: EVT_ORG
+  - name: evt_class_org
+    description: EVT_CLASS_ORG
+  - name: evt_object_org
+    description: EVT_OBJECT_ORG
+  - name: evt_location_org
+    description: EVT_LOCATION_ORG
+  - name: evt_schedgrp
+    description: EVT_SCHEDGRP
+  - name: evt_requeststart
+    description: EVT_REQUESTSTART
+  - name: evt_schedend
+    description: EVT_SCHEDEND
+  - name: evt_requestend
+    description: EVT_REQUESTEND
+  - name: evt_mastercal
+    description: EVT_MASTERCAL
+  - name: evt_step
+    description: EVT_STEP
+  - name: evt_seq
+    description: EVT_SEQ
+  - name: evt_trigevent
+    description: EVT_TRIGEVENT
+  - name: evt_oldrstatus
+    description: EVT_OLDRSTATUS
+  - name: evt_oldstatus
+    description: EVT_OLDSTATUS
+  - name: evt_newrstatus
+    description: EVT_NEWRSTATUS
+  - name: evt_newstatus
+    description: EVT_NEWSTATUS
+  - name: evt_conflict
+    description: EVT_CONFLICT
+  - name: evt_conflictresolved
+    description: EVT_CONFLICTRESOLVED
+  - name: evt_conflictdesc
+    description: EVT_CONFLICTDESC
+  - name: evt_package
+    description: EVT_PACKAGE
+  - name: evt_code_alias
+    description: EVT_CODE_ALIAS
+  - name: evt_created
+    description: EVT_CREATED
+  - name: evt_createdby
+    description: EVT_CREATEDBY
+  - name: evt_updated
+    description: EVT_UPDATED
+  - name: evt_updatedby
+    description: EVT_UPDATEDBY
+  - name: evt_contname
+    description: EVT_CONTNAME
+  - name: evt_contphone
+    description: EVT_CONTPHONE
+  - name: evt_contemail
+    description: EVT_CONTEMAIL
+  - name: evt_contnotes
+    description: EVT_CONTNOTES
+  - name: evt_followup
+    description: EVT_FOLLOWUP
+  - name: evt_updatecount
+    description: EVT_UPDATECOUNT
+  - name: evt_servicerequest
+    description: EVT_SERVICEREQUEST
+  - name: evt_person
+    description: EVT_PERSON
+  - name: evt_print
+    description: EVT_PRINT
+  - name: evt_billable
+    description: EVT_BILLABLE
+  - name: evt_perioduom
+    description: EVT_PERIODUOM
+  - name: evt_meterdue2
+    description: EVT_METERDUE2
+  - name: evt_metuom2
+    description: EVT_METUOM2
+  - name: evt_routeparent
+    description: EVT_ROUTEPARENT
+  - name: evt_syslevel
+    description: EVT_SYSLEVEL
+  - name: evt_sourcecode
+    description: EVT_SOURCECODE
+  - name: evt_sourcesystem
+    description: EVT_SOURCESYSTEM
+  - name: evt_interface
+    description: EVT_INTERFACE
+  - name: evt_lastcal
+    description: EVT_LASTCAL
+  - name: evt_sopeffective
+    description: EVT_SOPEFFECTIVE
+  - name: evt_calstatus
+    description: EVT_CALSTATUS
+  - name: evt_increment
+    description: EVT_INCREMENT
+  - name: evt_precision
+    description: EVT_PRECISION
+  - name: evt_pidno
+    description: EVT_PIDNO
+  - name: evt_piddrawing
+    description: EVT_PIDDRAWING
+  - name: evt_serviceperc
+    description: EVT_SERVICEPERC
+  - name: evt_sop
+    description: EVT_SOP
+  - name: evt_routerstatus
+    description: EVT_ROUTERSTATUS
+  - name: evt_srqcallname
+    description: EVT_SRQCALLNAME
+  - name: evt_srqcustomer
+    description: EVT_SRQCUSTOMER
+  - name: evt_srqlevel1
+    description: EVT_SRQLEVEL1
+  - name: evt_firstbill
+    description: EVT_FIRSTBILL
+  - name: evt_jecategory
+    description: EVT_JECATEGORY
+  - name: evt_jesource
+    description: EVT_JESOURCE
+  - name: evt_gltransferflag
+    description: EVT_GLTRANSFERFLAG
+  - name: evt_gltransfer
+    description: EVT_GLTRANSFER
+  - name: evt_multiequip
+    description: EVT_MULTIEQUIP
+  - name: evt_agreement
+    description: EVT_AGREEMENT
+  - name: evt_sigpb
+    description: EVT_SIGPB
+  - name: evt_sigrb
+    description: EVT_SIGRB
+  - name: evt_lasttimepb
+    description: EVT_LASTTIMEPB
+  - name: evt_lasttimerb
+    description: EVT_LASTTIMERB
+  - name: evt_completed_trunc
+    description: EVT_COMPLETED_TRUNC
+  - name: evt_performedby
+    description: EVT_PERFORMEDBY
+  - name: evt_reviewedby
+    description: EVT_REVIEWEDBY
+  - name: evt_meterinterval
+    description: EVT_METERINTERVAL
+  - name: evt_meterinterval2
+    description: EVT_METERINTERVAL2
+  - name: evt_workaddress
+    description: EVT_WORKADDRESS
+  - name: evt_pfpromisedate
+    description: EVT_PFPROMISEDATE
+  - name: evt_tfpromisedate
+    description: EVT_TFPROMISEDATE
+  - name: evt_tfdatecompleted
+    description: EVT_TFDATECOMPLETED
+  - name: evt_equipmentusability
+    description: EVT_EQUIPMENTUSABILITY
+  - name: evt_equipmentusability_org
+    description: EVT_EQUIPMENTUSABILITY_ORG
+  - name: evt_provider
+    description: EVT_PROVIDER
+  - name: evt_provider_org
+    description: EVT_PROVIDER_ORG
+  - name: evt_serviceproblem
+    description: EVT_SERVICEPROBLEM
+  - name: evt_serviceproblem_org
+    description: EVT_SERVICEPROBLEM_ORG
+  - name: evt_servicecategory
+    description: EVT_SERVICECATEGORY
+  - name: evt_servicecategory_org
+    description: EVT_SERVICECATEGORY_ORG
+  - name: evt_udfchar01
+    description: EVT_UDFCHAR01
+  - name: evt_udfchar02
+    description: EVT_UDFCHAR02
+  - name: evt_udfchar03
+    description: EVT_UDFCHAR03
+  - name: evt_udfchar04
+    description: EVT_UDFCHAR04
+  - name: evt_udfchar05
+    description: EVT_UDFCHAR05
+  - name: evt_udfchar06
+    description: EVT_UDFCHAR06
+  - name: evt_udfchar07
+    description: EVT_UDFCHAR07
+  - name: evt_udfchar08
+    description: EVT_UDFCHAR08
+  - name: evt_udfchar09
+    description: EVT_UDFCHAR09
+  - name: evt_udfchar10
+    description: EVT_UDFCHAR10
+  - name: evt_udfchar11
+    description: EVT_UDFCHAR11
+  - name: evt_udfchar12
+    description: EVT_UDFCHAR12
+  - name: evt_udfchar13
+    description: EVT_UDFCHAR13
+  - name: evt_udfchar14
+    description: EVT_UDFCHAR14
+  - name: evt_udfchar15
+    description: EVT_UDFCHAR15
+  - name: evt_udfchar16
+    description: EVT_UDFCHAR16
+  - name: evt_udfchar17
+    description: EVT_UDFCHAR17
+  - name: evt_udfchar18
+    description: EVT_UDFCHAR18
+  - name: evt_udfchar19
+    description: EVT_UDFCHAR19
+  - name: evt_udfchar20
+    description: EVT_UDFCHAR20
+  - name: evt_udfchar21
+    description: EVT_UDFCHAR21
+  - name: evt_udfchar22
+    description: EVT_UDFCHAR22
+  - name: evt_udfchar23
+    description: EVT_UDFCHAR23
+  - name: evt_udfchar24
+    description: EVT_UDFCHAR24
+  - name: evt_udfchar25
+    description: EVT_UDFCHAR25
+  - name: evt_udfchar26
+    description: EVT_UDFCHAR26
+  - name: evt_udfchar30
+    description: EVT_UDFCHAR30
+  - name: evt_udfchar27
+    description: EVT_UDFCHAR27
+  - name: evt_udfchar28
+    description: EVT_UDFCHAR28
+  - name: evt_udfchar29
+    description: EVT_UDFCHAR29
+  - name: evt_udfnum01
+    description: EVT_UDFNUM01
+  - name: evt_udfnum02
+    description: EVT_UDFNUM02
+  - name: evt_udfnum03
+    description: EVT_UDFNUM03
+  - name: evt_udfnum04
+    description: EVT_UDFNUM04
+  - name: evt_udfnum05
+    description: EVT_UDFNUM05
+  - name: evt_udfdate01
+    description: EVT_UDFDATE01
+  - name: evt_udfdate02
+    description: EVT_UDFDATE02
+  - name: evt_udfdate03
+    description: EVT_UDFDATE03
+  - name: evt_udfdate04
+    description: EVT_UDFDATE04
+  - name: evt_udfdate05
+    description: EVT_UDFDATE05
+  - name: evt_udfchkbox01
+    description: EVT_UDFCHKBOX01
+  - name: evt_udfchkbox02
+    description: EVT_UDFCHKBOX02
+  - name: evt_udfchkbox03
+    description: EVT_UDFCHKBOX03
+  - name: evt_udfchkbox04
+    description: EVT_UDFCHKBOX04
+  - name: evt_udfchkbox05
+    description: EVT_UDFCHKBOX05
+  - name: evt_frompoint
+    description: EVT_FROMPOINT
+  - name: evt_fromrefdesc
+    description: EVT_FROMREFDESC
+  - name: evt_fromgeoref
+    description: EVT_FROMGEOREF
+  - name: evt_topoint
+    description: EVT_TOPOINT
+  - name: evt_torefdesc
+    description: EVT_TOREFDESC
+  - name: evt_togeoref
+    description: EVT_TOGEOREF
+  - name: evt_performonweek
+    description: EVT_PERFORMONWEEK
+  - name: evt_performonday
+    description: EVT_PERFORMONDAY
+  - name: evt_alert
+    description: EVT_ALERT
+  - name: evt_productionrequest
+    description: EVT_PRODUCTIONREQUEST
+  - name: evt_productionrequestrev
+    description: EVT_PRODUCTIONREQUESTREV
+  - name: evt_productionrequest_org
+    description: EVT_PRODUCTIONREQUEST_ORG
+  - name: evt_prodorder
+    description: EVT_PRODORDER
+  - name: evt_prodpriority
+    description: EVT_PRODPRIORITY
+  - name: evt_accountingentity
+    description: EVT_ACCOUNTINGENTITY
+  - name: evt_productionstart
+    description: EVT_PRODUCTIONSTART
+  - name: evt_productionend
+    description: EVT_PRODUCTIONEND
+  - name: evt_laststatusupdate
+    description: EVT_LASTSTATUSUPDATE
+  - name: evt_mp
+    description: EVT_MP
+  - name: evt_mp_org
+    description: EVT_MP_ORG
+  - name: evt_mp_rev
+    description: EVT_MP_REV
+  - name: evt_mp_seq
+    description: EVT_MP_SEQ
+  - name: evt_meterduedate
+    description: EVT_METERDUEDATE
+  - name: evt_meterduedate2
+    description: EVT_METERDUEDATE2
+  - name: evt_campaign
+    description: EVT_CAMPAIGN
+  - name: evt_campaign_org
+    description: EVT_CAMPAIGN_ORG
+  - name: evt_campaign_line
+    description: EVT_CAMPAIGN_LINE
+  - name: evt_campaign_survey
+    description: EVT_CAMPAIGN_SURVEY
+  - name: evt_mpprojtype
+    description: EVT_MPPROJTYPE
+  - name: evt_psqpk
+    description: EVT_PSQPK
+  - name: evt_okwinendval2
+    description: EVT_OKWINENDVAL2
+  - name: evt_nearwinbegval2
+    description: EVT_NEARWINBEGVAL2
+  - name: evt_genwinbegval2
+    description: EVT_GENWINBEGVAL2
+  - name: evt_outputcalctype
+    description: EVT_OUTPUTCALCTYPE
+  - name: evt_ceilpermit
+    description: EVT_CEILPERMIT
+  - name: evt_lifesafety
+    description: EVT_LIFESAFETY
+  - name: evt_infectcontrol
+    description: EVT_INFECTCONTROL
+  - name: evt_pcra
+    description: EVT_PCRA
+  - name: evt_pfi
+    description: EVT_PFI
+  - name: evt_burnpermit
+    description: EVT_BURNPERMIT
+  - name: evt_patientsafety
+    description: EVT_PATIENTSAFETY
+  - name: evt_recallnotice
+    description: EVT_RECALLNOTICE
+  - name: evt_smda
+    description: EVT_SMDA
+  - name: evt_visitorinjury
+    description: EVT_VISITORINJURY
+  - name: evt_staffinjury
+    description: EVT_STAFFINJURY
+  - name: evt_securityincident
+    description: EVT_SECURITYINCIDENT
+  - name: evt_propertydamage
+    description: EVT_PROPERTYDAMAGE
+  - name: evt_hazmatincident
+    description: EVT_HAZMATINCIDENT
+  - name: evt_fireincident
+    description: EVT_FIREINCIDENT
+  - name: evt_medicequipincident
+    description: EVT_MEDICEQUIPINCIDENT
+  - name: evt_utilityincident
+    description: EVT_UTILITYINCIDENT
+  - name: evt_invoice
+    description: EVT_INVOICE
+  - name: evt_invoice_org
+    description: EVT_INVOICE_ORG
+  - name: evt_invoice_revision
+    description: EVT_INVOICE_REVISION
+  - name: evt_invoiceline
+    description: EVT_INVOICELINE
+  - name: evt_phone
+    description: EVT_PHONE
+  - name: evt_email
+    description: EVT_EMAIL
+  - name: evt_lockout
+    description: EVT_LOCKOUT
+  - name: evt_personalprotectiveequip
+    description: EVT_PERSONALPROTECTIVEEQUIP
+  - name: evt_confinedspace
+    description: EVT_CONFINEDSPACE
+  - name: evt_statementofcond
+    description: EVT_STATEMENTOFCOND
+  - name: evt_buildmaintprogram
+    description: EVT_BUILDMAINTPROGRAM
+  - name: evt_hipaaconfidentiality
+    description: EVT_HIPAACONFIDENTIALITY
+  - name: evt_facility
+    description: EVT_FACILITY
+  - name: evt_facility_org
+    description: EVT_FACILITY_ORG
+  - name: evt_additionalinfo
+    description: EVT_ADDITIONALINFO
+  - name: evt_safetyreviewed
+    description: EVT_SAFETYREVIEWED
+  - name: evt_safetyreviewedby
+    description: EVT_SAFETYREVIEWEDBY
+  - name: evt_safetyreviewedname
+    description: EVT_SAFETYREVIEWEDNAME
+  - name: evt_safetyreviewedtype
+    description: EVT_SAFETYREVIEWEDTYPE
+  - name: evt_permitreviewed
+    description: EVT_PERMITREVIEWED
+  - name: evt_permitreviewedby
+    description: EVT_PERMITREVIEWEDBY
+  - name: evt_permitreviewedname
+    description: EVT_PERMITREVIEWEDNAME
+  - name: evt_permitreviewedtype
+    description: EVT_PERMITREVIEWEDTYPE
+  - name: evt_origwo
+    description: EVT_ORIGWO
+  - name: evt_origact
+    description: EVT_ORIGACT
+  - name: evt_calculatedpriority
+    description: EVT_CALCULATEDPRIORITY
+  - name: evt_minor
+    description: EVT_MINOR
+  - name: evt_inspectiondirection
+    description: EVT_INSPECTIONDIRECTION
+  - name: evt_flow
+    description: EVT_FLOW
+  - name: evt_preservecalcpriority
+    description: EVT_PRESERVECALCPRIORITY
+  - name: evt_guestprofileid
+    description: EVT_GUESTPROFILEID
+  - name: evt_managerprofileid
+    description: EVT_MANAGERPROFILEID
+  - name: evt_guestsalutation
+    description: EVT_GUESTSALUTATION
+  - name: evt_guestfirstname
+    description: EVT_GUESTFIRSTNAME
+  - name: evt_guestlastname
+    description: EVT_GUESTLASTNAME
+  - name: evt_guestmiddlename
+    description: EVT_GUESTMIDDLENAME
+  - name: evt_guestemail
+    description: EVT_GUESTEMAIL
+  - name: evt_guestphonenumber
+    description: EVT_GUESTPHONENUMBER
+  - name: evt_vipstatus
+    description: EVT_VIPSTATUS
+  - name: evt_reservationnum
+    description: EVT_RESERVATIONNUM
+  - name: evt_scheduledstarttime
+    description: EVT_SCHEDULEDSTARTTIME
+  - name: evt_scheduledendtime
+    description: EVT_SCHEDULEDENDTIME
+  - name: evt_supplier
+    description: EVT_SUPPLIER
+  - name: evt_supplier_org
+    description: EVT_SUPPLIER_ORG
+  - name: evt_casemanagement
+    description: EVT_CASEMANAGEMENT
+  - name: evt_casemanagementtask
+    description: EVT_CASEMANAGEMENTTASK
+  - name: evt_origcasemanagement
+    description: EVT_ORIGCASEMANAGEMENT
+  - name: evt_dupcasemanagement
+    description: EVT_DUPCASEMANAGEMENT
+  - name: evt_contactrecord
+    description: EVT_CONTACTRECORD
+  - name: evt_contactrecord_org
+    description: EVT_CONTACTRECORD_ORG
+  - name: evt_workspace
+    description: EVT_WORKSPACE
+  - name: evt_latitude
+    description: EVT_LATITUDE
+  - name: evt_longitude
+    description: EVT_LONGITUDE
+  - name: evt_from_reference
+    description: EVT_FROM_REFERENCE
+  - name: evt_from_offset
+    description: EVT_FROM_OFFSET
+  - name: evt_from_offset_percentage
+    description: EVT_FROM_OFFSET_PERCENTAGE
+  - name: evt_from_offset_direction
+    description: EVT_FROM_OFFSET_DIRECTION
+  - name: evt_from_xcoordinate
+    description: EVT_FROM_XCOORDINATE
+  - name: evt_from_ycoordinate
+    description: EVT_FROM_YCOORDINATE
+  - name: evt_from_latitude
+    description: EVT_FROM_LATITUDE
+  - name: evt_from_longitude
+    description: EVT_FROM_LONGITUDE
+  - name: evt_from_relationship_type
+    description: EVT_FROM_RELATIONSHIP_TYPE
+  - name: evt_from_horizontal_offset
+    description: EVT_FROM_HORIZONTAL_OFFSET
+  - name: evt_from_horizontal_offsetuom
+    description: EVT_FROM_HORIZONTAL_OFFSETUOM
+  - name: evt_from_horizontal_offsettype
+    description: EVT_FROM_HORIZONTAL_OFFSETTYPE
+  - name: evt_from_vertical_offset
+    description: EVT_FROM_VERTICAL_OFFSET
+  - name: evt_from_vertical_offsetuom
+    description: EVT_FROM_VERTICAL_OFFSETUOM
+  - name: evt_from_vertical_offsettype
+    description: EVT_FROM_VERTICAL_OFFSETTYPE
+  - name: evt_to_reference
+    description: EVT_TO_REFERENCE
+  - name: evt_to_offset
+    description: EVT_TO_OFFSET
+  - name: evt_to_offset_direction
+    description: EVT_TO_OFFSET_DIRECTION
+  - name: evt_to_offset_percentage
+    description: EVT_TO_OFFSET_PERCENTAGE
+  - name: evt_to_xcoordinate
+    description: EVT_TO_XCOORDINATE
+  - name: evt_to_ycoordinate
+    description: EVT_TO_YCOORDINATE
+  - name: evt_to_latitude
+    description: EVT_TO_LATITUDE
+  - name: evt_to_longitude
+    description: EVT_TO_LONGITUDE
+  - name: evt_to_relationship_type
+    description: EVT_TO_RELATIONSHIP_TYPE
+  - name: evt_to_horizontal_offset
+    description: EVT_TO_HORIZONTAL_OFFSET
+  - name: evt_to_horizontal_offsetuom
+    description: EVT_TO_HORIZONTAL_OFFSETUOM
+  - name: evt_to_horizontal_offsettype
+    description: EVT_TO_HORIZONTAL_OFFSETTYPE
+  - name: evt_to_vertical_offset
+    description: EVT_TO_VERTICAL_OFFSET
+  - name: evt_to_vertical_offsetuom
+    description: EVT_TO_VERTICAL_OFFSETUOM
+  - name: evt_to_vertical_offsettype
+    description: EVT_TO_VERTICAL_OFFSETTYPE
+  - name: evt_relationship_type
+    description: EVT_RELATIONSHIP_TYPE
+  - name: evt_typecategory
+    description: EVT_TYPECATEGORY
+  - name: evt_udfnote01
+    description: EVT_UDFNOTE01
+  - name: evt_udfnote02
+    description: EVT_UDFNOTE02
+  - name: evt_udfchar34
+    description: EVT_UDFCHAR34
+  - name: evt_udfchar31
+    description: EVT_UDFCHAR31
+  - name: evt_udfchar32
+    description: EVT_UDFCHAR32
+  - name: evt_udfchar33
+    description: EVT_UDFCHAR33
+  - name: evt_udfchar35
+    description: EVT_UDFCHAR35
+  - name: evt_udfchar36
+    description: EVT_UDFCHAR36
+  - name: evt_udfchar37
+    description: EVT_UDFCHAR37
+  - name: evt_udfchar38
+    description: EVT_UDFCHAR38
+  - name: evt_udfchar39
+    description: EVT_UDFCHAR39
+  - name: evt_udfchar40
+    description: EVT_UDFCHAR40
+  - name: evt_udfchar41
+    description: EVT_UDFCHAR41
+  - name: evt_udfchar42
+    description: EVT_UDFCHAR42
+  - name: evt_udfchar43
+    description: EVT_UDFCHAR43
+  - name: evt_udfchar44
+    description: EVT_UDFCHAR44
+  - name: evt_udfchar45
+    description: EVT_UDFCHAR45
+  - name: evt_udfnum06
+    description: EVT_UDFNUM06
+  - name: evt_udfnum07
+    description: EVT_UDFNUM07
+  - name: evt_udfnum08
+    description: EVT_UDFNUM08
+  - name: evt_udfnum09
+    description: EVT_UDFNUM09
+  - name: evt_udfnum10
+    description: EVT_UDFNUM10
+  - name: evt_udfdate06
+    description: EVT_UDFDATE06
+  - name: evt_udfdate07
+    description: EVT_UDFDATE07
+  - name: evt_udfdate08
+    description: EVT_UDFDATE08
+  - name: evt_udfdate09
+    description: EVT_UDFDATE09
+  - name: evt_udfdate10
+    description: EVT_UDFDATE10
+  - name: evt_udfchkbox06
+    description: EVT_UDFCHKBOX06
+  - name: evt_udfchkbox07
+    description: EVT_UDFCHKBOX07
+  - name: evt_udfchkbox08
+    description: EVT_UDFCHKBOX08
+  - name: evt_udfchkbox09
+    description: EVT_UDFCHKBOX09
+  - name: evt_udfchkbox10
+    description: EVT_UDFCHKBOX10
+  - name: evt_failuremode
+    description: EVT_FAILUREMODE
+  - name: evt_symptom
+    description: EVT_SYMPTOM
+  - name: evt_tacticalcause
+    description: EVT_TACTICALCAUSE
+  - name: evt_humanfactor
+    description: EVT_HUMANFACTOR
+  - name: evt_workmanship
+    description: EVT_WORKMANSHIP
+  - name: evt_humanoversight
+    description: EVT_HUMANOVERSIGHT
+  - name: evt_methodofdetection
+    description: EVT_METHODOFDETECTION
+  - name: evt_closinglatitude
+    description: EVT_CLOSINGLATITUDE
+  - name: evt_closinglongitude
+    description: EVT_CLOSINGLONGITUDE
+  - name: evt_udfchar46
+    description: EVT_UDFCHAR46
+  - name: evt_udfchar50
+    description: EVT_UDFCHAR50
+  - name: evt_udfchar47
+    description: EVT_UDFCHAR47
+  - name: evt_udfchar48
+    description: EVT_UDFCHAR48
+  - name: evt_udfchar49
+    description: EVT_UDFCHAR49
+  - name: evt_udfchar51
+    description: EVT_UDFCHAR51
+  - name: evt_udfchar52
+    description: EVT_UDFCHAR52
+  - name: evt_udfchar53
+    description: EVT_UDFCHAR53
+  - name: evt_udfchar54
+    description: EVT_UDFCHAR54
+  - name: evt_udfchar55
+    description: EVT_UDFCHAR55
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EVENTS

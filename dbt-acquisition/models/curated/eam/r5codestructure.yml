@@ -1,0 +1,68 @@
+version: 2
+models:
+- name: r5codestructure
+  columns:
+  - name: csr_lastsaved
+    description: CSR_LASTSAVED
+  - name: csr_image
+    description: CSR_IMAGE
+  - name: csr_rentity
+    description: CSR_RENTITY
+  - name: csr_entity
+    description: CSR_ENTITY
+  - name: csr_strlevel1
+    description: CSR_STRLEVEL1
+  - name: csr_strlevel2
+    description: CSR_STRLEVEL2
+  - name: csr_strlevel3
+    description: CSR_STRLEVEL3
+  - name: csr_strlevel4
+    description: CSR_STRLEVEL4
+  - name: csr_strlevel5
+    description: CSR_STRLEVEL5
+  - name: csr_strlevel6
+    description: CSR_STRLEVEL6
+  - name: csr_strlevel7
+    description: CSR_STRLEVEL7
+  - name: csr_strlevel8
+    description: CSR_STRLEVEL8
+  - name: csr_structure
+    description: CSR_STRUCTURE
+  - name: csr_updatecount
+    description: CSR_UPDATECOUNT
+  - name: csr_updated
+    description: CSR_UPDATED
+  - name: csr_icon
+    description: CSR_ICON
+  - name: csr_iconpath
+    description: CSR_ICONPATH
+  - name: csr_importance
+    description: CSR_IMPORTANCE
+  - name: csr_materialtype
+    description: CSR_MATERIALTYPE
+  - name: csr_notused
+    description: CSR_NOTUSED
+  - name: csr_code
+    description: CSR_CODE
+    data_tests:
+    - unique
+  - name: csr_desc
+    description: CSR_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CODESTRUCTURE

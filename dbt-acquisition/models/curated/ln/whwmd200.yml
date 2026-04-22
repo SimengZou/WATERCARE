@@ -1,0 +1,717 @@
+version: 2
+models:
+- name: whwmd200
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cwar
+    description: '(required) Warehouse. Max length: 6'
+    data_tests:
+    - not_null
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: sloc
+    description: 'Locations. Allowed values: 1, 2'
+  - name: sloc_kw
+    description: 'Locations (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: usse
+    description: 'Use Site Settings. Allowed values: 1, 2'
+  - name: usse_kw
+    description: 'Use Site Settings (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: itlo
+    description: 'Multi-Item Locations. Allowed values: 1, 2'
+  - name: itlo_kw
+    description: 'Multi-Item Locations (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: lolo
+    description: 'Multi-Lot by Item Locations. Allowed values: 1, 2'
+  - name: lolo_kw
+    description: 'Multi-Lot by Item Locations (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: free
+    description: Minimum % Free for Inbound Advice
+  - name: ccal
+    description: 'Calendar Code. Max length: 9'
+  - name: ract
+    description: 'Availability Type. Max length: 6'
+  - name: arlo
+    description: 'Receiving Location. Max length: 10'
+  - name: stlo
+    description: 'Staging Location. Max length: 10'
+  - name: relo
+    description: 'Quarantine Location. Max length: 10'
+  - name: palo
+    description: 'Prepacking Advice Location. Max length: 10'
+  - name: ialt
+    description: 'Default Location Type for Inbound Advice. Allowed values: 1, 3,
+      4, 5, 6, 7, 20'
+  - name: ialt_kw
+    description: 'Default Location Type for Inbound Advice (keyword). Allowed values:
+      whwmd.loct.inspection, whwmd.loct.receiving, whwmd.loct.pick, whwmd.loct.bulk,
+      whwmd.loct.staging, whwmd.loct.reject, whwmd.loct.not.appl'
+  - name: uolo
+    description: 'Use Only Unoccupied Locations when Generating Inbound Advice. Allowed
+      values: 1, 2'
+  - name: uolo_kw
+    description: 'Use Only Unoccupied Locations when Generating Inbound Advice (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: uudl
+    description: 'Use Only Unoccupied Dock Locations. Allowed values: 1, 2'
+  - name: uudl_kw
+    description: 'Use Only Unoccupied Dock Locations (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ieod
+    description: 'Ignore Expected Decrease of Location Occupation. Allowed values:
+      1, 2'
+  - name: ieod_kw
+    description: 'Ignore Expected Decrease of Location Occupation (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: frlo
+    description: 'Inbound Advice for Free (Unfixed) Locations. Allowed values: 1,
+      2'
+  - name: frlo_kw
+    description: 'Inbound Advice for Free (Unfixed) Locations (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: aoit
+    description: 'Allow Other Items on Fixed Multi-Item Locations. Allowed values:
+      1, 2'
+  - name: aoit_kw
+    description: 'Allow Other Items on Fixed Multi-Item Locations (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: diws
+    description: 'Default Item Warehouse Status. Allowed values: 1, 2'
+  - name: diws_kw
+    description: 'Default Item Warehouse Status (keyword). Allowed values: whwmd.iwhs.tentative,
+      whwmd.iwhs.active'
+  - name: iltm
+    description: Inbound Lead Time
+  - name: iltu
+    description: 'Inbound Lead-time Unit. Allowed values: 5, 10'
+  - name: iltu_kw
+    description: 'Inbound Lead-time Unit (keyword). Allowed values: tctope.hours,
+      tctope.days'
+  - name: oltm
+    description: Outbound Lead Time
+  - name: oltu
+    description: 'Outbound Lead-time Unit. Allowed values: 5, 10'
+  - name: oltu_kw
+    description: 'Outbound Lead-time Unit (keyword). Allowed values: tctope.hours,
+      tctope.days'
+  - name: rilt
+    description: Rental Inbound Lead Time
+  - name: rilu
+    description: 'Rental Inbound Lead Time Unit. Allowed values: 5, 10'
+  - name: rilu_kw
+    description: 'Rental Inbound Lead Time Unit (keyword). Allowed values: tctope.hours,
+      tctope.days'
+  - name: rolt
+    description: Rental Outbound Lead Time
+  - name: rolu
+    description: 'Rental Outbound Lead Time Unit. Allowed values: 5, 10'
+  - name: rolu_kw
+    description: 'Rental Outbound Lead Time Unit (keyword). Allowed values: tctope.hours,
+      tctope.days'
+  - name: reje
+    description: 'Quarantine Inventory. Allowed values: 1, 2'
+  - name: reje_kw
+    description: 'Quarantine Inventory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: qwrh
+    description: 'Quarantine Warehouse. Max length: 6'
+  - name: uhri
+    description: 'Use Handling Units in Quarantine Inventory. Allowed values: 1, 2'
+  - name: uhri_kw
+    description: 'Use Handling Units in Quarantine Inventory (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: zere
+    description: 'Zero Receipt Allowed. Allowed values: 1, 2'
+  - name: zere_kw
+    description: 'Zero Receipt Allowed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cons
+    description: 'Confirm on Scan. Allowed values: 1, 2'
+  - name: cons_kw
+    description: 'Confirm on Scan (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: olmc
+    description: 'Shipment Handling Unit Mask. Max length: 9'
+  - name: sscc
+    description: 'Shipment Handling Unit Mask according to SSCC Standard. Allowed
+      values: 1, 2'
+  - name: sscc_kw
+    description: 'Shipment Handling Unit Mask according to SSCC Standard (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ilmc
+    description: 'Internal Handling Unit Mask. Max length: 9'
+  - name: kmsk
+    description: 'Kanban Signal ID Mask. Max length: 9'
+  - name: kdev
+    description: 'Kanban Signal Label Device. Max length: 15'
+  - name: coka
+    description: Number of Copies of Kanban Signals
+  - name: rkbs
+    description: 'Reuse Kanban Signals. Allowed values: 1, 2'
+  - name: rkbs_kw
+    description: 'Reuse Kanban Signals (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: karu
+    description: 'Kanban Run Number. Max length: 12'
+  - name: gnsh
+    description: 'Generate Shipments For. Allowed values: 1, 2, 3, 4'
+  - name: gnsh_kw
+    description: 'Generate Shipments For (keyword). Allowed values: whinh.gnsh.exact,
+      whinh.gnsh.current, whinh.gnsh.upto, whinh.gnsh.interval'
+  - name: misi
+    description: Shipment Interval Lower Boundary
+  - name: misu
+    description: 'Shipment Interval Lower Boundary Unit. Allowed values: 5, 10'
+  - name: misu_kw
+    description: 'Shipment Interval Lower Boundary Unit (keyword). Allowed values:
+      tctope.hours, tctope.days'
+  - name: masi
+    description: Shipment Interval Upper Boundary
+  - name: masu
+    description: 'Shipment Interval Upper Boundary Unit. Allowed values: 5, 10'
+  - name: masu_kw
+    description: 'Shipment Interval Upper Boundary Unit (keyword). Allowed values:
+      tctope.hours, tctope.days'
+  - name: orbo
+    description: 'Add Orders Based On. Allowed values: 1, 2'
+  - name: orbo_kw
+    description: 'Add Orders Based On (keyword). Allowed values: whinh.orbo.pick,
+      whinh.orbo.pddt'
+  - name: smsh
+    description: 'Single Picking Mission per Shipment. Allowed values: 1, 2'
+  - name: smsh_kw
+    description: 'Single Picking Mission per Shipment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: imdp
+    description: 'Inventory Management Department. Max length: 6'
+  - name: wvgr
+    description: 'Warehouse Valuation Group. Max length: 6'
+  - name: dycd
+    description: 'Dynamic Cross-docking. Allowed values: 1, 2'
+  - name: dycd_kw
+    description: 'Dynamic Cross-docking (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdro
+    description: 'Generate Cross-dock Order when Releasing Order to Warehousing. Allowed
+      values: 1, 2, 3, 4'
+  - name: cdro_kw
+    description: 'Generate Cross-dock Order when Releasing Order to Warehousing (keyword).
+      Allowed values: whinh.cgtr.never, whinh.cgtr.always, whinh.cgtr.time.phased,
+      whinh.cgtr.time.phased.igr'
+  - name: cdoa
+    description: 'Generate Cross-dock Order for Outbound Advice Shortage. Allowed
+      values: 1, 2'
+  - name: cdoa_kw
+    description: 'Generate Cross-dock Order for Outbound Advice Shortage (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdcr
+    description: 'Generate Cross-dock Order Lines when Confirming Receipt. Allowed
+      values: 1, 2'
+  - name: cdcr_kw
+    description: 'Generate Cross-dock Order Lines when Confirming Receipt (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdap
+    description: 'Automatically Approve Cross-dock Order Lines. Allowed values: 1,
+      2'
+  - name: cdap_kw
+    description: 'Automatically Approve Cross-dock Order Lines (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: cdpd
+    description: 'Priority Definition. Max length: 3'
+  - name: cdrd
+    description: 'Cross-dock Restriction Definition. Max length: 3'
+  - name: cdlt
+    description: Cross-dock Lead Time
+  - name: cdlu
+    description: 'Cross-dock Lead Time Unit. Allowed values: 5, 10'
+  - name: cdlu_kw
+    description: 'Cross-dock Lead Time Unit (keyword). Allowed values: tctope.hours,
+      tctope.days'
+  - name: uhnd
+    description: 'Handling Units in Use. Allowed values: 1, 2'
+  - name: uhnd_kw
+    description: 'Handling Units in Use (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: uhir
+    description: 'Use Handling Unit in Receipt. Allowed values: 1, 2'
+  - name: uhir_kw
+    description: 'Use Handling Unit in Receipt (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: uhii
+    description: 'Use Handling Unit in Inbound Inspection. Allowed values: 1, 2'
+  - name: uhii_kw
+    description: 'Use Handling Unit in Inbound Inspection (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: uhin
+    description: 'Use Handling Unit in Inventory. Allowed values: 1, 2'
+  - name: uhin_kw
+    description: 'Use Handling Unit in Inventory (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: uhoa
+    description: 'Use Handling Unit in Outbound Inspection. Allowed values: 1, 2'
+  - name: uhoa_kw
+    description: 'Use Handling Unit in Outbound Inspection (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: uhis
+    description: 'Use Handling Unit in Shipment. Allowed values: 1, 2'
+  - name: uhis_kw
+    description: 'Use Handling Unit in Shipment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: gehu
+    description: 'Generate Handling Unit Automatically from ASNs. Allowed values:
+      1, 2, 3, 4'
+  - name: gehu_kw
+    description: 'Generate Handling Unit Automatically from ASNs (keyword). Allowed
+      values: whinh.gehu.always, whinh.gehu.exhu.received, whinh.gehu.no, whinh.gehu.register'
+  - name: gehr
+    description: 'Generate Handling Unit Automatically during Receipt. Allowed values:
+      1, 2, 3'
+  - name: gehr_kw
+    description: 'Generate Handling Unit Automatically during Receipt (keyword). Allowed
+      values: whinh.gehu.aut.always, whinh.gehu.aut.register, whinh.gehu.aut.never'
+  - name: gehp
+    description: 'Generate Handling Unit Automatically during Picking. Allowed values:
+      1, 2'
+  - name: gehp_kw
+    description: 'Generate Handling Unit Automatically during Picking (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: geha
+    description: 'Generate Handling Unit Automatically during Adjustment. Allowed
+      values: 1, 2, 3'
+  - name: geha_kw
+    description: 'Generate Handling Unit Automatically during Adjustment (keyword).
+      Allowed values: whinh.gehu.aut.always, whinh.gehu.aut.register, whinh.gehu.aut.never'
+  - name: gehc
+    description: 'Generate Handling Unit Automatically during Cycle Counting. Allowed
+      values: 1, 2, 3'
+  - name: gehc_kw
+    description: 'Generate Handling Unit Automatically during Cycle Counting (keyword).
+      Allowed values: whinh.gehu.aut.always, whinh.gehu.aut.register, whinh.gehu.aut.never'
+  - name: ghps
+    description: 'Generate Handling Unit Automatically during Projected Shipments.
+      Allowed values: 1, 2'
+  - name: ghps_kw
+    description: 'Generate Handling Unit Automatically during Projected Shipments
+      (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: prlu
+    description: 'Print Label during ASN Creation. Allowed values: 1, 2, 10'
+  - name: prlu_kw
+    description: 'Print Label during ASN Creation (keyword). Allowed values: whinh.prla.yes,
+      whinh.prla.no, whinh.prla.hu.only'
+  - name: prlr
+    description: 'Print Label during Receipt. Allowed values: 1, 2, 10'
+  - name: prlr_kw
+    description: 'Print Label during Receipt (keyword). Allowed values: whinh.prla.yes,
+      whinh.prla.no, whinh.prla.hu.only'
+  - name: prlp
+    description: 'Print Label during Picking. Allowed values: 1, 2, 10'
+  - name: prlp_kw
+    description: 'Print Label during Picking (keyword). Allowed values: whinh.prla.yes,
+      whinh.prla.no, whinh.prla.hu.only'
+  - name: prla
+    description: 'Print Handling Unit Label during Adjustment. Allowed values: 1,
+      2, 10'
+  - name: prla_kw
+    description: 'Print Handling Unit Label during Adjustment (keyword). Allowed values:
+      whinh.prla.yes, whinh.prla.no, whinh.prla.hu.only'
+  - name: prlc
+    description: 'Print Handling Unit Label during Cycle Counting. Allowed values:
+      1, 2, 10'
+  - name: prlc_kw
+    description: 'Print Handling Unit Label during Cycle Counting (keyword). Allowed
+      values: whinh.prla.yes, whinh.prla.no, whinh.prla.hu.only'
+  - name: copu
+    description: Number of Copies of Labels during ASN Creation
+  - name: copr
+    description: Number of Copies of Labels during Receipt
+  - name: copp
+    description: Number of Copies of Labels during Picking
+  - name: copa
+    description: Number of Copies of Labels for Handling Units during Adjustment
+  - name: copc
+    description: Number of Copies of Labels for Handling Units during Cycle Counting
+  - name: lpas
+    description: 'Label printed by during creation ASN. Allowed values: 10, 20'
+  - name: lpas_kw
+    description: 'Label printed by during creation ASN (keyword). Allowed values:
+      whwmd.lbpb.internal, whwmd.lbpb.external'
+  - name: lpre
+    description: 'Label printed by during confirm receipts. Allowed values: 10, 20'
+  - name: lpre_kw
+    description: 'Label printed by during confirm receipts (keyword). Allowed values:
+      whwmd.lbpb.internal, whwmd.lbpb.external'
+  - name: lppi
+    description: 'Label printed by during confirm picking. Allowed values: 10, 20'
+  - name: lppi_kw
+    description: 'Label printed by during confirm picking (keyword). Allowed values:
+      whwmd.lbpb.internal, whwmd.lbpb.external'
+  - name: lpad
+    description: 'Label printed by during process adjustment orders. Allowed values:
+      10, 20'
+  - name: lpad_kw
+    description: 'Label printed by during process adjustment orders (keyword). Allowed
+      values: whwmd.lbpb.internal, whwmd.lbpb.external'
+  - name: lpcc
+    description: 'Label printed by during process cycle counting orders. Allowed values:
+      10, 20'
+  - name: lpcc_kw
+    description: 'Label printed by during process cycle counting orders (keyword).
+      Allowed values: whwmd.lbpb.internal, whwmd.lbpb.external'
+  - name: prmu
+    description: 'Printing Method for Labels during ASN Creation. Allowed values:
+      10, 20, 30'
+  - name: prmu_kw
+    description: 'Printing Method for Labels during ASN Creation (keyword). Allowed
+      values: whinh.prmt.by.line, whinh.prmt.by.unit, whinh.prmt.not.appl'
+  - name: prmr
+    description: 'Printing Method for Labels during Receipts. Allowed values: 10,
+      20, 30'
+  - name: prmr_kw
+    description: 'Printing Method for Labels during Receipts (keyword). Allowed values:
+      whinh.prmt.by.line, whinh.prmt.by.unit, whinh.prmt.not.appl'
+  - name: prmp
+    description: 'Printing Method for Labels during Picking. Allowed values: 10, 20,
+      30'
+  - name: prmp_kw
+    description: 'Printing Method for Labels during Picking (keyword). Allowed values:
+      whinh.prmt.by.line, whinh.prmt.by.unit, whinh.prmt.not.appl'
+  - name: labr
+    description: 'Default Label Layout in Inbound. Max length: 3'
+  - name: labi
+    description: 'Obsolete. Max length: 3'
+  - name: laba
+    description: 'Default Label Layout for Handling Unit in Adjustment. Max length:
+      3'
+  - name: labc
+    description: 'Default Label Layout for Handling Unit in Cycle Counting. Max length:
+      3'
+  - name: labo
+    description: 'Default Label Layout in Outbound. Max length: 3'
+  - name: flhu
+    description: 'Automatic Labeling of Multi-Item Handling Unit. Allowed values:
+      1, 2'
+  - name: flhu_kw
+    description: 'Automatic Labeling of Multi-Item Handling Unit (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: aipd
+    description: 'Advise Alternative Package Definition Allowed. Allowed values: 1,
+      2'
+  - name: aipd_kw
+    description: 'Advise Alternative Package Definition Allowed (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: shhu
+    description: 'Generate Handling Unit for Shipment Header during Picking. Allowed
+      values: 1, 2'
+  - name: shhu_kw
+    description: 'Generate Handling Unit for Shipment Header during Picking (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mrhu
+    description: 'Consolidate Handling Units in one Shipment Line during Picking.
+      Allowed values: 1, 2'
+  - name: mrhu_kw
+    description: 'Consolidate Handling Units in one Shipment Line during Picking (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: flup
+    description: 'Fill Up Staged Handling Units with Newly Picked Items. Allowed values:
+      1, 2'
+  - name: flup_kw
+    description: 'Fill Up Staged Handling Units with Newly Picked Items (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: trdc
+    description: 'Transport Document. Allowed values: 1, 2, 5, 10'
+  - name: trdc_kw
+    description: 'Transport Document (keyword). Allowed values: whwmd.tran.doc.del.note,
+      whwmd.tran.doc.invoice, whwmd.tran.doc.order.procedure, whwmd.tran.doc.not.appl'
+  - name: spps
+    description: 'Suppress Printing Packing Slip. Allowed values: 1, 2, 3'
+  - name: spps_kw
+    description: 'Suppress Printing Packing Slip (keyword). Allowed values: tcynna.yes,
+      tcynna.no, tcynna.not.app'
+  - name: usmd
+    description: 'Update Shipping Material Account during. Allowed values: 10, 20,
+      100'
+  - name: usmd_kw
+    description: 'Update Shipping Material Account during (keyword). Allowed values:
+      whwmd.usmd.ship.to.vmi.wh, whwmd.usmd.consume.vmi.wh, whwmd.usmd.not.appl'
+  - name: rsdn
+    description: 'Reset Delivery Note Number. Allowed values: 1, 2'
+  - name: rsdn_kw
+    description: 'Reset Delivery Note Number (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rtcf
+    description: 'Return Certificate. Allowed values: 1, 2'
+  - name: rtcf_kw
+    description: 'Return Certificate (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rsrc
+    description: 'Reset Return Certificate. Allowed values: 1, 2'
+  - name: rsrc_kw
+    description: 'Reset Return Certificate (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dmsp
+    description: 'DMS Supplied. Allowed values: 1, 2'
+  - name: dmsp_kw
+    description: 'DMS Supplied (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dmsr
+    description: 'DMS upon Receipt. Allowed values: 10, 20, 30, 40'
+  - name: dmsr_kw
+    description: 'DMS upon Receipt (keyword). Allowed values: whwmd.dmsr.no, whwmd.dmsr.automatic,
+      whwmd.dmsr.interactive, whwmd.dmsr.manual'
+  - name: dmss
+    description: 'DMS upon JSC Receipt. Allowed values: 10, 20, 30, 40'
+  - name: dmss_kw
+    description: 'DMS upon JSC Receipt (keyword). Allowed values: whwmd.dmsr.no, whwmd.dmsr.automatic,
+      whwmd.dmsr.interactive, whwmd.dmsr.manual'
+  - name: dmsi
+    description: 'DMS on Inventory. Allowed values: 10, 20, 30'
+  - name: dmsi_kw
+    description: 'DMS on Inventory (keyword). Allowed values: whwmd.dmsi.no, whwmd.dmsi.outbound,
+      whwmd.dmsi.rec.and.outb'
+  - name: dmdt
+    description: 'Demand Type for DMS upon Receipt. Allowed values: 10, 20, 30, 40,
+      100'
+  - name: dmdt_kw
+    description: 'Demand Type for DMS upon Receipt (keyword). Allowed values: whwmd.dmdt.wh.order,
+      whwmd.dmdt.plan.inv.trans, whwmd.dmdt.planned.order, whwmd.dmdt.forecast, whwmd.dmdt.not.appl'
+  - name: ddwr
+    description: 'DMS upon Receipt for Warehousing Orders from Status. Allowed values:
+      2, 3, 5, 10, 15, 20, 22, 23, 25, 30'
+  - name: ddwr_kw
+    description: 'DMS upon Receipt for Warehousing Orders from Status (keyword). Allowed
+      values: whinh.lstb.planned, whinh.lstb.tag.linked, whinh.lstb.open, whinh.lstb.adviced,
+      whinh.lstb.released, whinh.lstb.picked, whinh.lstb.to.be.inspected, whinh.lstb.inspected,
+      whinh.lstb.staged, whinh.lstb.shipped'
+  - name: ddti
+    description: 'Demand Type for DMS on Inventory. Allowed values: 10, 20, 30, 40,
+      100'
+  - name: ddti_kw
+    description: 'Demand Type for DMS on Inventory (keyword). Allowed values: whwmd.dmdt.wh.order,
+      whwmd.dmdt.plan.inv.trans, whwmd.dmdt.planned.order, whwmd.dmdt.forecast, whwmd.dmdt.not.appl'
+  - name: ddwi
+    description: 'DMS on Inventory for Warehousing Orders from Status. Allowed values:
+      2, 3, 5, 10, 15, 20, 22, 23, 25, 30'
+  - name: ddwi_kw
+    description: 'DMS on Inventory for Warehousing Orders from Status (keyword). Allowed
+      values: whinh.lstb.planned, whinh.lstb.tag.linked, whinh.lstb.open, whinh.lstb.adviced,
+      whinh.lstb.released, whinh.lstb.picked, whinh.lstb.to.be.inspected, whinh.lstb.inspected,
+      whinh.lstb.staged, whinh.lstb.shipped'
+  - name: dmph
+    description: Planning Horizon for DMS upon Receipt
+  - name: dphi
+    description: Planning Horizon for DMS on Inventory
+  - name: dprl
+    description: 'Print Direct Material Supply Label. Allowed values: 1, 2'
+  - name: dprl_kw
+    description: 'Print Direct Material Supply Label (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dmsl
+    description: 'Direct Material Supply Label Layout. Max length: 3'
+  - name: dptr
+    description: 'Print Direct Material Supply Transfer Report. Allowed values: 1,
+      2'
+  - name: dptr_kw
+    description: 'Print Direct Material Supply Transfer Report (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: mitt
+    description: Minimum Time Fence Tolerance
+  - name: mitu
+    description: 'Minimum Time Fence Tolerance Unit. Allowed values: 5, 10'
+  - name: mitu_kw
+    description: 'Minimum Time Fence Tolerance Unit (keyword). Allowed values: tctope.hours,
+      tctope.days'
+  - name: matt
+    description: Maximum Time Fence Tolerance
+  - name: matu
+    description: 'Maximum Time Fence Tolerance Unit. Allowed values: 5, 10'
+  - name: matu_kw
+    description: 'Maximum Time Fence Tolerance Unit (keyword). Allowed values: tctope.hours,
+      tctope.days'
+  - name: qfmi
+    description: Force Cross-dock Minimum Quantity
+  - name: qfma
+    description: Force Cross-dock Maximum Quantity
+  - name: prva
+    description: 'Process Inventory Variances Automatically. Allowed values: 1, 2'
+  - name: prva_kw
+    description: 'Process Inventory Variances Automatically (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: fire
+    description: 'Confirm Receipt as Final. Allowed values: 1, 2'
+  - name: fire_kw
+    description: 'Confirm Receipt as Final (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mipa
+    description: 'Manual Inbound Process Allowed. Allowed values: 1, 2, 3'
+  - name: mipa_kw
+    description: 'Manual Inbound Process Allowed (keyword). Allowed values: tcynna.yes,
+      tcynna.no, tcynna.not.app'
+  - name: mopa
+    description: 'Manual Outbound Process Allowed. Allowed values: 1, 2, 3'
+  - name: mopa_kw
+    description: 'Manual Outbound Process Allowed (keyword). Allowed values: tcynna.yes,
+      tcynna.no, tcynna.not.app'
+  - name: mada
+    description: 'Manual Adjustments Allowed. Allowed values: 1, 2, 3'
+  - name: mada_kw
+    description: 'Manual Adjustments Allowed (keyword). Allowed values: tcynna.yes,
+      tcynna.no, tcynna.not.app'
+  - name: vpad
+    description: 'Obsolete. Allowed values: 10, 20'
+  - name: vpad_kw
+    description: 'Obsolete (keyword). Allowed values: whinh.vpad.ftp, whinh.vpad.inv.value'
+  - name: mcca
+    description: 'Manual Cycle Counting Allowed. Allowed values: 1, 2, 3'
+  - name: mcca_kw
+    description: 'Manual Cycle Counting Allowed (keyword). Allowed values: tcynna.yes,
+      tcynna.no, tcynna.not.app'
+  - name: vpcc
+    description: 'Obsolete. Allowed values: 10, 20'
+  - name: vpcc_kw
+    description: 'Obsolete (keyword). Allowed values: whinh.vpad.ftp, whinh.vpad.inv.value'
+  - name: bcyc
+    description: 'Block During Warehouse Cycle Counting. Allowed values: 1, 2'
+  - name: bcyc_kw
+    description: 'Block During Warehouse Cycle Counting (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: uwtr
+    description: 'Usage at Warehouse Transfer. Allowed values: 10, 20, 30, 40, 70,
+      90'
+  - name: uwtr_kw
+    description: 'Usage at Warehouse Transfer (keyword). Allowed values: tcuwtr.always,
+      tcuwtr.cluster, tcuwtr.enterprise.unit, tcuwtr.fin.company, tcuwtr.no, tcuwtr.not.appl'
+  - name: binb
+    description: 'Blocked for Inbound. Allowed values: 10, 20, 30'
+  - name: binb_kw
+    description: 'Blocked for Inbound (keyword). Allowed values: whwmd.byni.yes, whwmd.byni.interactive,
+      whwmd.byni.no'
+  - name: bout
+    description: 'Blocked for Outbound. Allowed values: 10, 20, 30'
+  - name: bout_kw
+    description: 'Blocked for Outbound (keyword). Allowed values: whwmd.byni.yes,
+      whwmd.byni.interactive, whwmd.byni.no'
+  - name: bloc
+    description: 'Reason for Blocking. Max length: 6'
+  - name: ufpl
+    description: 'Use Fulfillment Plan. Allowed values: 1, 2'
+  - name: ufpl_kw
+    description: 'Use Fulfillment Plan (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sups
+    description: 'Default Supply System. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: sups_kw
+    description: 'Default Supply System (keyword). Allowed values: tcsups.tpop, tcsups.kanban,
+      tcsups.batch, tcsups.sils, tcsups.single, tcsups.none'
+  - name: sfwh
+    description: 'Supply from Warehouse. Allowed values: 1, 2'
+  - name: sfwh_kw
+    description: 'Supply from Warehouse (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: scom
+    description: Supply Company
+  - name: supw
+    description: 'Supply Warehouse. Max length: 6'
+  - name: uidt
+    description: 'Use Item Ordering Data. Allowed values: 1, 2'
+  - name: uidt_kw
+    description: 'Use Item Ordering Data (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: shtw
+    description: 'Shipment through Warehouse. Max length: 6'
+  - name: qmoo
+    description: 'QM Overrules Warehouse Inbound Order Type. Allowed values: 1, 2'
+  - name: qmoo_kw
+    description: 'QM Overrules Warehouse Inbound Order Type (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: rfsa
+    description: 'RFID during Shipping Applicable. Allowed values: 1, 2'
+  - name: rfsa_kw
+    description: 'RFID during Shipping Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cwar_arlo_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_stlo_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_relo_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_palo_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: ract_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: qwrh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: olmc_ref_compnr
+    description: company number of primary key of table tcibd402 Masks
+  - name: ilmc_ref_compnr
+    description: company number of primary key of table tcibd402 Masks
+  - name: kmsk_ref_compnr
+    description: company number of primary key of table tcibd402 Masks
+  - name: karu_ref_compnr
+    description: company number of primary key of table whinh400 Runs
+  - name: imdp_ref_compnr
+    description: company number of primary key of table whwmd020 Inventory Management
+      Departments
+  - name: wvgr_ref_compnr
+    description: company number of primary key of table whina102 Warehouse Valuation
+      Groups
+  - name: cdpd_ref_compnr
+    description: company number of primary key of table whinh620 Priority Definitions
+  - name: cdrd_ref_compnr
+    description: company number of primary key of table whinh650 Cross-dock Restriction
+      Definitions
+  - name: labr_ref_compnr
+    description: company number of primary key of table whwmd520 Label Layouts
+  - name: labi_ref_compnr
+    description: company number of primary key of table whwmd520 Label Layouts
+  - name: laba_ref_compnr
+    description: company number of primary key of table whwmd520 Label Layouts
+  - name: labc_ref_compnr
+    description: company number of primary key of table whwmd520 Label Layouts
+  - name: labo_ref_compnr
+    description: company number of primary key of table whwmd520 Label Layouts
+  - name: dmsl_ref_compnr
+    description: company number of primary key of table whwmd520 Label Layouts
+  - name: bloc_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: supw_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: shtw_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whwmd200 Warehouses table, Generated 2026-04-10T19:42:53Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cwar

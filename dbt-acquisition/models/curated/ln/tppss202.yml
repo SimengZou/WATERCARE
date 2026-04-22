@@ -1,0 +1,388 @@
+version: 2
+models:
+- name: tppss202
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cpla
+    description: '(required) Plan. Max length: 3'
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: hdat
+    description: (required) Modified on
+    data_tests:
+    - not_null
+  - name: hsts
+    description: 'History Status. Allowed values: 10, 20, 30'
+  - name: hsts_kw
+    description: 'History Status (keyword). Allowed values: tpctm.hist.created, tpctm.hist.modified,
+      tpctm.hist.deleted'
+  - name: husr
+    description: 'Modified by. Max length: 16'
+  - name: actp
+    description: Activity Position
+  - name: levl
+    description: Level Number
+  - name: cloc
+    description: 'Project Location. Max length: 6'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: tact
+    description: 'Activity Type. Allowed values: 1, 2, 3, 4, 5'
+  - name: tact_kw
+    description: 'Activity Type (keyword). Allowed values: tppdm.tact.wbsel, tppdm.tact.cosac,
+      tppdm.tact.plapa, tppdm.tact.worpa, tppdm.tact.milst'
+  - name: capt
+    description: 'Critical Capacity Type. Allowed values: 1, 2, 3, 4, 5, 20'
+  - name: capt_kw
+    description: 'Critical Capacity Type (keyword). Allowed values: tppdm.capt.tasks,
+      tppdm.capt.materials, tppdm.capt.equipment, tppdm.capt.subcontracting, tppdm.capt.indirect,
+      tppdm.capt.na'
+  - name: pact
+    description: 'Parent Activity. Max length: 16'
+  - name: dfac
+    description: 'Derived from Standard Activity. Max length: 16'
+  - name: quan
+    description: Quantity
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: prsp
+    description: Production Rate
+  - name: cuti
+    description: 'Time Unit. Max length: 3'
+  - name: mevl
+    description: 'Earned Value Method. Allowed values: 1, 2, 3, 4, 5'
+  - name: mevl_kw
+    description: 'Earned Value Method (keyword). Allowed values: tppss.mevl.milst,
+      tppss.mevl.dsepr, tppss.mevl.perco, tppss.mevl.levef, tppss.mevl.appor'
+  - name: lact
+    description: 'Linked Activity. Max length: 16'
+  - name: litm
+    description: 'Customized Item. Max length: 47'
+  - name: pcom
+    description: Percentage Completed
+  - name: stat
+    description: 'Budget Status. Allowed values: 1, 2, 3'
+  - name: stat_kw
+    description: 'Budget Status (keyword). Allowed values: tpptc.stat.free, tpptc.stat.actual,
+      tpptc.stat.definite'
+  - name: coel
+    description: 'OBS Element. Max length: 8'
+  - name: dwar
+    description: 'Project Warehouse. Max length: 6'
+  - name: lvps
+    description: 'Physical Progress Registration. Allowed values: 1, 2, 20'
+  - name: lvps_kw
+    description: 'Physical Progress Registration (keyword). Allowed values: tppss.lvps.activity,
+      tppss.lvps.activit.costctr, tppss.lvps.na'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: cctr
+    description: 'Cost Control. Allowed values: 1, 2'
+  - name: cctr_kw
+    description: 'Cost Control (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ssdt
+    description: Scheduled Start Date
+  - name: sfdt
+    description: Scheduled Finish Date
+  - name: esdt
+    description: Earliest Start Date
+  - name: lsdt
+    description: Latest Start Date
+  - name: efdt
+    description: Earliest Finish Date
+  - name: lfdt
+    description: Latest Finish Date
+  - name: fref
+    description: Free Float
+  - name: totf
+    description: Total Float
+  - name: tfhr
+    description: Total Float in Hours
+  - name: ffhr
+    description: Free Float in Hours
+  - name: ccal
+    description: 'Calendar. Max length: 9'
+  - name: avtp
+    description: 'Availability Type. Max length: 6'
+  - name: dura
+    description: Duration
+  - name: tmud
+    description: 'Time Unit Duration. Max length: 3'
+  - name: asdt
+    description: Actual Start Date
+  - name: afdt
+    description: Actual Finish Date
+  - name: cnst
+    description: 'Constraint Type. Allowed values: 10, 20, 30, 40, 50, 60, 70, 80'
+  - name: cnst_kw
+    description: 'Constraint Type (keyword). Allowed values: tppss.cnst.as.soon.as.poss,
+      tppss.cnst.as.late.as.poss, tppss.cnst.must.start.on, tppss.cnst.must.finish.on,
+      tppss.cnst.start.no.earl, tppss.cnst.start.no.later, tppss.cnst.finish.no.earl,
+      tppss.cnst.finish.no.later'
+  - name: cnsd
+    description: Constraint Date
+  - name: ddln
+    description: Deadline Date
+  - name: qutm
+    description: Number of Time Units
+  - name: sdch
+    description: 'Scheduled Start Date is Changed. Allowed values: 1, 2'
+  - name: sdch_kw
+    description: 'Scheduled Start Date is Changed (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: qans
+    description: Physical Progress Quantity
+  - name: blbl
+    description: 'Billable. Allowed values: 1, 2'
+  - name: blbl_kw
+    description: 'Billable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sacu
+    description: 'Sales Currency. Max length: 3'
+  - name: pris
+    description: Sales Price
+  - name: rtsa_1
+    description: Currency Rate Sales Price
+  - name: rtsa_2
+    description: Currency Rate Sales Price
+  - name: rtsa_3
+    description: Currency Rate Sales Price
+  - name: rfsa_1
+    description: Rate Factor Sales Price
+  - name: rfsa_2
+    description: Rate Factor Sales Price
+  - name: rfsa_3
+    description: Rate Factor Sales Price
+  - name: rdas
+    description: Rate Date (Sales)
+  - name: setl
+    description: 'To be Settled. Allowed values: 1, 2'
+  - name: setl_kw
+    description: 'To be Settled (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: secu
+    description: 'Settlement Currency. Max length: 3'
+  - name: prss
+    description: Settlement Price
+  - name: rtse_1
+    description: Currency Rate Settlement Price
+  - name: rtse_2
+    description: Currency Rate Settlement Price
+  - name: rtse_3
+    description: Currency Rate Settlement Price
+  - name: rfse_1
+    description: Rate Factor Settlement Price
+  - name: rfse_2
+    description: Rate Factor Settlement Price
+  - name: rfse_3
+    description: Rate Factor Settlement Price
+  - name: rdse
+    description: Rate Date Settlement
+  - name: cspt
+    description: 'Progress for Invoice. Allowed values: 1, 2, 3'
+  - name: cspt_kw
+    description: 'Progress for Invoice (keyword). Allowed values: tpptc.cspt.direct,
+      tpptc.cspt.indirect, tpptc.cspt.na'
+  - name: gris
+    description: Group Indirect Work
+  - name: prin
+    description: 'Progress based Invoicing. Allowed values: 1, 2, 3, 4'
+  - name: prin_kw
+    description: 'Progress based Invoicing (keyword). Allowed values: tppdm.prin.yes,
+      tppdm.prin.no, tppdm.prin.project.stage, tppdm.prin.na'
+  - name: hbyn
+    description: 'Use Holdback. Allowed values: 1, 2'
+  - name: hbyn_kw
+    description: 'Use Holdback (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: mamt
+    description: Milestone Amount
+  - name: wast
+    description: 'Work Authorization Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: wast_kw
+    description: 'Work Authorization Status (keyword). Allowed values: tppdm.wast.free,
+      tppdm.wast.onhold, tppdm.wast.released, tppdm.wast.finished, tppdm.wast.closed'
+  - name: rcod
+    description: 'Reason. Max length: 6'
+  - name: ohdt
+    description: On Hold Date
+  - name: rfac
+    description: 'Reference Activity. Max length: 16'
+  - name: freq
+    description: Frequency
+  - name: afrt
+    description: 'Apply Frequency to. Allowed values: 1, 2, 3, 10'
+  - name: afrt_kw
+    description: 'Apply Frequency to (keyword). Allowed values: tppdm.afrt.multiply,
+      tppdm.afrt.create.act, tppdm.afrt.create.ord, tppdm.afrt.na'
+  - name: pwar
+    description: 'Priority Supply Warehouse. Max length: 6'
+  - name: capa
+    description: 'Capital Activity. Allowed values: 1, 2'
+  - name: capa_kw
+    description: 'Capital Activity (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: anbr
+    description: 'Asset Number. Max length: 15'
+  - name: aext
+    description: 'Asset Extension. Max length: 15'
+  - name: prst
+    description: Start Percentage
+  - name: prnd
+    description: End Percentage
+  - name: prms
+    description: Milestone Percentage
+  - name: scmd
+    description: 'Schedule Mode. Allowed values: 0, 5, 10'
+  - name: scmd_kw
+    description: 'Schedule Mode (keyword). Allowed values: , tppss.scmd.manual, tppss.scmd.auto'
+  - name: acmn
+    description: 'Activity Manager. Max length: 9'
+  - name: ccat
+    description: 'Category. Max length: 6'
+  - name: csec
+    description: 'Business Sector. Max length: 3'
+  - name: creg
+    description: 'Geographical Area. Max length: 3'
+  - name: cstg
+    description: 'Phase. Max length: 3'
+  - name: addr
+    description: 'Address. Max length: 9'
+  - name: glat
+    description: GPS Latitude (WGS84)
+  - name: glon
+    description: GPS Longitude (WGS84)
+  - name: eoty
+    description: 'Business Process Type. Allowed values: 10, 20, 30, 40, 50, 60, 255'
+  - name: eoty_kw
+    description: 'Business Process Type (keyword). Allowed values: tpplm.eoty.ecn,
+      tpplm.eoty.eco, tpplm.eoty.ecp, tpplm.eoty.appr.proc, tpplm.eoty.ecr, tpplm.eoty.npi,
+      tpplm.eoty.na'
+  - name: plmc
+    description: PLM Company
+  - name: pbpt__en_us
+    description: '(required) Business Process Type - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: plmp
+    description: 'PLM Project. Max length: 15'
+  - name: rout
+    description: 'Workflow Template. Max length: 30'
+  - name: eoid
+    description: 'PLM Business Process. Max length: 30'
+  - name: rent
+    description: 'Equipment Rental. Allowed values: 1, 2'
+  - name: rent_kw
+    description: 'Equipment Rental (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cstv
+    description: Customs Value
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: txta
+    description: Text
+  - name: cprj_cpla_pact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_cpla_lact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cprj_cloc_ref_compnr
+    description: company number of primary key of table tppdm742 Locations by Project
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: dfac_ref_compnr
+    description: company number of primary key of table tppdm110 Standard Activities
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuti_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: litm_ref_compnr
+    description: company number of primary key of table tppdm005 Item Project Data
+  - name: dwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: avtp_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: tmud_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: sacu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: secu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rcod_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: pwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: acmn_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ccat_ref_compnr
+    description: company number of primary key of table tppdm075 Categories
+  - name: csec_ref_compnr
+    description: company number of primary key of table tppdm055 Business Sectors
+  - name: creg_ref_compnr
+    description: company number of primary key of table tcmcs045 Areas
+  - name: cstg_ref_compnr
+    description: company number of primary key of table tppdm085 Phases
+  - name: addr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppss202 Activity History table, Generated 2026-04-10T19:42:19Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cpla
+        - cact
+        - hdat

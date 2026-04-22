@@ -1,0 +1,116 @@
+version: 2
+models:
+- name: r5dwobjects
+  columns:
+  - name: zob_lastsaved
+    description: ZOB_LASTSAVED
+  - name: zob_variable3
+    description: ZOB_VARIABLE3
+  - name: zob_variable4
+    description: ZOB_VARIABLE4
+  - name: zob_variable5
+    description: ZOB_VARIABLE5
+  - name: zob_variable6
+    description: ZOB_VARIABLE6
+  - name: zob_key
+    description: ZOB_KEY
+  - name: zob_code
+    description: ZOB_CODE
+  - name: zob_desc
+    description: ZOB_DESC
+  - name: zob_orgcode
+    description: ZOB_ORGCODE
+  - name: zob_orgdesc
+    description: ZOB_ORGDESC
+  - name: zob_typecode
+    description: ZOB_TYPECODE
+  - name: zob_typedesc
+    description: ZOB_TYPEDESC
+  - name: zob_classcode
+    description: ZOB_CLASSCODE
+  - name: zob_classorg
+    description: ZOB_CLASSORG
+  - name: zob_classdesc
+    description: ZOB_CLASSDESC
+  - name: zob_locationcode
+    description: ZOB_LOCATIONCODE
+  - name: zob_locationorg
+    description: ZOB_LOCATIONORG
+  - name: zob_locationdesc
+    description: ZOB_LOCATIONDESC
+  - name: zob_manufacturercode
+    description: ZOB_MANUFACTURERCODE
+  - name: zob_manufacturerdesc
+    description: ZOB_MANUFACTURERDESC
+  - name: zob_costcode
+    description: ZOB_COSTCODE
+  - name: zob_costcodedesc
+    description: ZOB_COSTCODEDESC
+  - name: zob_statuscode
+    description: ZOB_STATUSCODE
+  - name: zob_statusdesc
+    description: ZOB_STATUSDESC
+  - name: zob_statecode
+    description: ZOB_STATECODE
+  - name: zob_statedesc
+    description: ZOB_STATEDESC
+  - name: zob_productionrelated
+    description: ZOB_PRODUCTIONRELATED
+  - name: zob_safetyrelated
+    description: ZOB_SAFETYRELATED
+  - name: zob_criticality
+    description: ZOB_CRITICALITY
+  - name: zob_valuedefcur
+    description: ZOB_VALUEDEFCUR
+  - name: zob_defcur
+    description: ZOB_DEFCUR
+  - name: zob_valueorgcur
+    description: ZOB_VALUEORGCUR
+  - name: zob_orgcur
+    description: ZOB_ORGCUR
+  - name: zob_assignedtocode
+    description: ZOB_ASSIGNEDTOCODE
+  - name: zob_assignedtoname
+    description: ZOB_ASSIGNEDTONAME
+  - name: zob_commissiondate
+    description: ZOB_COMMISSIONDATE
+  - name: zob_withdrawaldate
+    description: ZOB_WITHDRAWALDATE
+  - name: zob_category
+    description: ZOB_CATEGORY
+  - name: zob_categorydesc
+    description: ZOB_CATEGORYDESC
+  - name: zob_rtypecode
+    description: ZOB_RTYPECODE
+  - name: zob_rtypedesc
+    description: ZOB_RTYPEDESC
+  - name: zob_rstatuscode
+    description: ZOB_RSTATUSCODE
+  - name: zob_rstatusdesc
+    description: ZOB_RSTATUSDESC
+  - name: zob_rstatecode
+    description: ZOB_RSTATECODE
+  - name: zob_rstatedesc
+    description: ZOB_RSTATEDESC
+  - name: zob_variable1
+    description: ZOB_VARIABLE1
+  - name: zob_variable2
+    description: ZOB_VARIABLE2
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DWOBJECTS

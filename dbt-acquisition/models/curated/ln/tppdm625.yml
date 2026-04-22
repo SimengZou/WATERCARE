@@ -1,0 +1,332 @@
+version: 2
+models:
+- name: tppdm625
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cequ
+    description: '(required) Equipment. Max length: 47'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 60'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: dfeq
+    description: 'Derived from. Max length: 47'
+  - name: ceqg
+    description: 'Equipment Group. Max length: 47'
+  - name: citg
+    description: 'Item Group. Max length: 6'
+  - name: csel
+    description: 'Selection Code. Max length: 3'
+  - name: csig
+    description: 'Item Signal. Max length: 3'
+  - name: uset
+    description: 'Unit Set. Max length: 6'
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: cuti
+    description: 'Time Unit. Max length: 3'
+  - name: ratc
+    description: Cost Rate
+  - name: cccr
+    description: 'Cost Rate Currency. Max length: 3'
+  - name: ratp
+    description: Purchase Rate
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: rats
+    description: Sales Rate
+  - name: ccsr
+    description: 'Sales Rate Currency. Max length: 3'
+  - name: csgp
+    description: 'Purchase Statistics Group. Max length: 6'
+  - name: csgs
+    description: 'Sales Statistics Group. Max length: 6'
+  - name: dfrc
+    description: 'Final Cost Rate. Allowed values: 1, 2'
+  - name: dfrc_kw
+    description: 'Final Cost Rate (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: dfrp
+    description: 'Final Purchase Rate. Allowed values: 1, 2'
+  - name: dfrp_kw
+    description: 'Final Purchase Rate (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: dfrs
+    description: 'Final Sales Rate. Allowed values: 1, 2'
+  - name: dfrs_kw
+    description: 'Final Sales Rate (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: ltrp
+    description: Purchase Rate Trans. Date
+  - name: ltrc
+    description: Cost Rate Transaction Date
+  - name: ltrs
+    description: Sales Rate Transaction Date
+  - name: cceq
+    description: 'Control Code Equipment. Max length: 47'
+  - name: ccfu
+    description: 'Control Function. Allowed values: 1, 2, 3'
+  - name: ccfu_kw
+    description: 'Control Function (keyword). Allowed values: tppdm.ccfu.c.unit, tppdm.ccfu.c.unit.cc.code,
+      tppdm.ccfu.cc.code'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: unav
+    description: Number of Units Available
+  - name: dcpu
+    description: Normal Cap. Utilization by Day
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: dsbc
+    description: 'Cost Determination. Allowed values: 1, 2, 10, 20'
+  - name: dsbc_kw
+    description: 'Cost Determination (keyword). Allowed values: tppdm.dsbc.quantity,
+      tppdm.dsbc.time, tppdm.dsbc.amount.only, tppdm.dsbc.rate.only'
+  - name: prby
+    description: 'Procurement by. Allowed values: 10, 20, 30'
+  - name: prby_kw
+    description: 'Procurement by (keyword). Allowed values: tppdm.prby.po, tppdm.prby.sub.po,
+      tppdm.prby.eqp.po'
+  - name: srtr
+    description: 'Services Trade. Max length: 9'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: exeq
+    description: 'External Equipment. Allowed values: 1, 2'
+  - name: exeq_kw
+    description: 'External Equipment (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: osys
+    description: 'Order System. Allowed values: 3, 5, 7, 9'
+  - name: osys_kw
+    description: 'Order System (keyword). Allowed values: tppdm.osyb.prp, tppdm.osyb.prp.purchase,
+      tppdm.osyb.prp.warehouse, tppdm.osyb.mnl'
+  - name: prre
+    description: 'Register Progress. Allowed values: 1, 2'
+  - name: prre_kw
+    description: 'Register Progress (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cppp
+    description: 'Price Policy. Allowed values: 1, 2'
+  - name: cppp_kw
+    description: 'Price Policy (keyword). Allowed values: tppdm.cppp.cost.price, tppdm.cppp.purchase.price'
+  - name: ccal
+    description: 'Calendar. Max length: 9'
+  - name: avtp
+    description: 'Availability Type. Max length: 6'
+  - name: oltm
+    description: Order Lead Time
+  - name: cpgp
+    description: 'Purchase Price Group. Max length: 6'
+  - name: cpgs
+    description: 'Sales Price Group. Max length: 6'
+  - name: rcmc_1
+    description: Cost Rate Multi Currency
+  - name: rcmc_2
+    description: Cost Rate Multi Currency
+  - name: rcmc_3
+    description: Cost Rate Multi Currency
+  - name: rpmc_1
+    description: Purchase Rate Multi Currency
+  - name: rpmc_2
+    description: Purchase Rate Multi Currency
+  - name: rpmc_3
+    description: Purchase Rate Multi Currency
+  - name: rsmc_1
+    description: Sales Rate Multi Currency
+  - name: rsmc_2
+    description: Sales Rate Multi Currency
+  - name: rsmc_3
+    description: Sales Rate Multi Currency
+  - name: svat
+    description: 'Tax Code. Max length: 9'
+  - name: blbl
+    description: 'Billable. Allowed values: 1, 2'
+  - name: blbl_kw
+    description: 'Billable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: ctyp
+    description: 'Product Type. Max length: 3'
+  - name: cpcl
+    description: 'Product Class. Max length: 6'
+  - name: cpln
+    description: 'Product Line. Max length: 6'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: cood
+    description: 'Technical Coordinator. Max length: 9'
+  - name: wght
+    description: Weight
+  - name: cwun
+    description: 'Weight Unit. Max length: 3'
+  - name: dscb__en_us
+    description: '(required) Material - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dscc__en_us
+    description: '(required) Size - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dscd__en_us
+    description: '(required) Standard - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ctyo
+    description: 'Country of Origin. Max length: 3'
+  - name: cean
+    description: 'EAN Code. Max length: 14'
+  - name: envc
+    description: 'Environmental Compliance. Allowed values: 5, 10, 15, 20, 25, 30,
+      35, 40'
+  - name: envc_kw
+    description: 'Environmental Compliance (keyword). Allowed values: tcenvc.not.appl,
+      tcenvc.not.valid, tcenvc.compliant, tcenvc.compl.except, tcenvc.not.compl, tcenvc.cond.fail,
+      tcenvc.part.fail, tcenvc.not.rele'
+  - name: exin
+    description: 'Extra Information. Max length: 8'
+  - name: ccde
+    description: 'Harmonized System Code. Max length: 25'
+  - name: icsi
+    description: 'Critical Safety Item. Allowed values: 1, 2'
+  - name: icsi_kw
+    description: 'Critical Safety Item (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rdpt
+    description: 'Responsible Department. Max length: 6'
+  - name: pleq
+    description: 'Planner. Max length: 9'
+  - name: mequ
+    description: 'Operated Equipment. Allowed values: 1, 2'
+  - name: mequ_kw
+    description: 'Operated Equipment (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: seri
+    description: 'Serialized. Allowed values: 1, 2'
+  - name: seri_kw
+    description: 'Serialized (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sprp
+    description: 'Self-Propelled. Allowed values: 1, 2'
+  - name: sprp_kw
+    description: 'Self-Propelled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Text
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: dfeq_ref_compnr
+    description: company number of primary key of table tppdm025 Equipment
+  - name: citg_ref_compnr
+    description: company number of primary key of table tcmcs023 Item Groups
+  - name: csel_ref_compnr
+    description: company number of primary key of table tcmcs022 Selection Codes
+  - name: csig_ref_compnr
+    description: company number of primary key of table tcmcs018 Item Signals
+  - name: uset_cuni_ref_compnr
+    description: company number of primary key of table tcmcs012 Units by Unit Set
+  - name: uset_ref_compnr
+    description: company number of primary key of table tcmcs006 Unit Sets
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuti_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cccr_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccsr_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: csgp_ref_compnr
+    description: company number of primary key of table tcmcs044 Statistical Groups
+  - name: csgs_ref_compnr
+    description: company number of primary key of table tcmcs044 Statistical Groups
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: srtr_ref_compnr
+    description: company number of primary key of table tcmcs213 Services Trades
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: avtp_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: cpgp_ref_compnr
+    description: company number of primary key of table tcmcs024 Price Groups
+  - name: cpgs_ref_compnr
+    description: company number of primary key of table tcmcs024 Price Groups
+  - name: svat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: ctyp_ref_compnr
+    description: company number of primary key of table tcmcs015 Product Types
+  - name: cpcl_ref_compnr
+    description: company number of primary key of table tcmcs062 Product Classes
+  - name: cpln_ref_compnr
+    description: company number of primary key of table tcmcs061 Product Lines
+  - name: cmnf_ref_compnr
+    description: company number of primary key of table tcmcs060 Manufacturers
+  - name: cood_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cwun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ctyo_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccde_ref_compnr
+    description: company number of primary key of table tcmcs028 Harmonized System
+      Codes
+  - name: rdpt_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: pleq_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: cequ_rcmp
+    description: 'CC: Reference Company of Equipment'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm625 Project Equipment table, Generated 2026-04-10T19:42:00Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cequ

@@ -1,0 +1,224 @@
+version: 2
+models:
+- name: r5bookedhours
+  columns:
+  - name: boo_lastsaved
+    description: BOO_LASTSAVED
+  - name: boo_gltransferflag
+    description: BOO_GLTRANSFERFLAG
+  - name: boo_gltransfer
+    description: BOO_GLTRANSFER
+  - name: boo_transorgid
+    description: BOO_TRANSORGID
+  - name: boo_transcode
+    description: BOO_TRANSCODE
+  - name: boo_transgroup
+    description: BOO_TRANSGROUP
+  - name: boo_correction
+    description: BOO_CORRECTION
+  - name: boo_order
+    description: BOO_ORDER
+  - name: boo_ordline
+    description: BOO_ORDLINE
+  - name: boo_order_org
+    description: BOO_ORDER_ORG
+  - name: boo_evtalias
+    description: BOO_EVTALIAS
+  - name: boo_updatecount
+    description: BOO_UPDATECOUNT
+  - name: boo_orighours
+    description: BOO_ORIGHOURS
+  - name: boo_routertype
+    description: BOO_ROUTERTYPE
+  - name: boo_routerec
+    description: BOO_ROUTEREC
+  - name: boo_billsubline
+    description: BOO_BILLSUBLINE
+  - name: boo_fleetchecked
+    description: BOO_FLEETCHECKED
+  - name: boo_jecategory
+    description: BOO_JECATEGORY
+  - name: boo_jesource
+    description: BOO_JESOURCE
+  - name: boo_fleetmarkup
+    description: BOO_FLEETMARKUP
+  - name: boo_splithours
+    description: BOO_SPLITHOURS
+  - name: boo_desc
+    description: BOO_DESC
+  - name: boo_code
+    description: BOO_CODE
+    data_tests:
+    - unique
+  - name: boo_routeparent
+    description: BOO_ROUTEPARENT
+  - name: boo_misc
+    description: BOO_MISC
+  - name: boo_origtaxamount
+    description: BOO_ORIGTAXAMOUNT
+  - name: boo_taxamount
+    description: BOO_TAXAMOUNT
+  - name: boo_udfchar01
+    description: BOO_UDFCHAR01
+  - name: boo_udfchar02
+    description: BOO_UDFCHAR02
+  - name: boo_udfchar03
+    description: BOO_UDFCHAR03
+  - name: boo_udfchar04
+    description: BOO_UDFCHAR04
+  - name: boo_udfchar05
+    description: BOO_UDFCHAR05
+  - name: boo_udfchar06
+    description: BOO_UDFCHAR06
+  - name: boo_udfchar07
+    description: BOO_UDFCHAR07
+  - name: boo_udfchar08
+    description: BOO_UDFCHAR08
+  - name: boo_udfchar09
+    description: BOO_UDFCHAR09
+  - name: boo_udfchar10
+    description: BOO_UDFCHAR10
+  - name: boo_udfchar11
+    description: BOO_UDFCHAR11
+  - name: boo_udfchar12
+    description: BOO_UDFCHAR12
+  - name: boo_udfchar13
+    description: BOO_UDFCHAR13
+  - name: boo_udfchar14
+    description: BOO_UDFCHAR14
+  - name: boo_udfchar15
+    description: BOO_UDFCHAR15
+  - name: boo_udfchar16
+    description: BOO_UDFCHAR16
+  - name: boo_udfchar17
+    description: BOO_UDFCHAR17
+  - name: boo_udfchar18
+    description: BOO_UDFCHAR18
+  - name: boo_udfchar19
+    description: BOO_UDFCHAR19
+  - name: boo_udfchar20
+    description: BOO_UDFCHAR20
+  - name: boo_udfchar21
+    description: BOO_UDFCHAR21
+  - name: boo_udfchar22
+    description: BOO_UDFCHAR22
+  - name: boo_udfchar23
+    description: BOO_UDFCHAR23
+  - name: boo_udfchar24
+    description: BOO_UDFCHAR24
+  - name: boo_udfchar25
+    description: BOO_UDFCHAR25
+  - name: boo_udfchar26
+    description: BOO_UDFCHAR26
+  - name: boo_udfchar27
+    description: BOO_UDFCHAR27
+  - name: boo_udfchar28
+    description: BOO_UDFCHAR28
+  - name: boo_udfchar29
+    description: BOO_UDFCHAR29
+  - name: boo_udfchar30
+    description: BOO_UDFCHAR30
+  - name: boo_udfnum01
+    description: BOO_UDFNUM01
+  - name: boo_udfnum02
+    description: BOO_UDFNUM02
+  - name: boo_udfnum03
+    description: BOO_UDFNUM03
+  - name: boo_udfnum04
+    description: BOO_UDFNUM04
+  - name: boo_udfnum05
+    description: BOO_UDFNUM05
+  - name: boo_udfdate01
+    description: BOO_UDFDATE01
+  - name: boo_udfdate02
+    description: BOO_UDFDATE02
+  - name: boo_udfdate03
+    description: BOO_UDFDATE03
+  - name: boo_udfdate04
+    description: BOO_UDFDATE04
+  - name: boo_udfdate05
+    description: BOO_UDFDATE05
+  - name: boo_udfchkbox01
+    description: BOO_UDFCHKBOX01
+  - name: boo_udfchkbox02
+    description: BOO_UDFCHKBOX02
+  - name: boo_udfchkbox03
+    description: BOO_UDFCHKBOX03
+  - name: boo_udfchkbox04
+    description: BOO_UDFCHKBOX04
+  - name: boo_udfchkbox05
+    description: BOO_UDFCHKBOX05
+  - name: boo_invoice
+    description: BOO_INVOICE
+  - name: boo_invoice_org
+    description: BOO_INVOICE_ORG
+  - name: boo_invoice_revision
+    description: BOO_INVOICE_REVISION
+  - name: boo_invoiceline
+    description: BOO_INVOICELINE
+  - name: boo_correctiondate
+    description: BOO_CORRECTIONDATE
+  - name: boo_unmatchedinvoice
+    description: BOO_UNMATCHEDINVOICE
+  - name: boo_unmatchedinvoice_org
+    description: BOO_UNMATCHEDINVOICE_ORG
+  - name: boo_unmatchedinvoiceline
+    description: BOO_UNMATCHEDINVOICELINE
+  - name: boo_currentcrew
+    description: BOO_CURRENTCREW
+  - name: boo_currentcrew_org
+    description: BOO_CURRENTCREW_ORG
+  - name: boo_crew
+    description: BOO_CREW
+  - name: boo_crew_org
+    description: BOO_CREW_ORG
+  - name: boo_correction_ref
+    description: BOO_CORRECTION_REF
+  - name: boo_event
+    description: BOO_EVENT
+  - name: boo_act
+    description: BOO_ACT
+  - name: boo_date
+    description: BOO_DATE
+  - name: boo_trade
+    description: BOO_TRADE
+  - name: boo_mrc
+    description: BOO_MRC
+  - name: boo_person
+    description: BOO_PERSON
+  - name: boo_octype
+    description: BOO_OCTYPE
+  - name: boo_ocrtype
+    description: BOO_OCRTYPE
+  - name: boo_on
+    description: BOO_ON
+  - name: boo_off
+    description: BOO_OFF
+  - name: boo_hours
+    description: BOO_HOURS
+  - name: boo_rate
+    description: BOO_RATE
+  - name: boo_cost
+    description: BOO_COST
+  - name: boo_entered
+    description: BOO_ENTERED
+  - name: boo_acd
+    description: BOO_ACD
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5BOOKEDHOURS

@@ -1,0 +1,948 @@
+version: 2
+models:
+- name: r5elecarchive
+  columns:
+  - name: ela_lastsaved
+    description: ELA_LASTSAVED
+  - name: ela_code
+    description: ELA_CODE
+  - name: ela_user
+    description: ELA_USER
+  - name: ela_date
+    description: ELA_DATE
+  - name: ela_signtype
+    description: ELA_SIGNTYPE
+  - name: ela_scode
+    description: ELA_SCODE
+  - name: ela_acode
+    description: ELA_ACODE
+  - name: ela_entity
+    description: ELA_ENTITY
+  - name: ela_entcode
+    description: ELA_ENTCODE
+  - name: ela_entorg
+    description: ELA_ENTORG
+  - name: ela_status
+    description: ELA_STATUS
+  - name: ela_parent
+    description: ELA_PARENT
+  - name: ela_fld1
+    description: ELA_FLD1
+  - name: ela_fld2
+    description: ELA_FLD2
+  - name: ela_fld3
+    description: ELA_FLD3
+  - name: ela_fld4
+    description: ELA_FLD4
+  - name: ela_fld5
+    description: ELA_FLD5
+  - name: ela_fld6
+    description: ELA_FLD6
+  - name: ela_fld7
+    description: ELA_FLD7
+  - name: ela_fld8
+    description: ELA_FLD8
+  - name: ela_fld9
+    description: ELA_FLD9
+  - name: ela_fld10
+    description: ELA_FLD10
+  - name: ela_fld11
+    description: ELA_FLD11
+  - name: ela_fld12
+    description: ELA_FLD12
+  - name: ela_fld13
+    description: ELA_FLD13
+  - name: ela_fld14
+    description: ELA_FLD14
+  - name: ela_fld15
+    description: ELA_FLD15
+  - name: ela_fld16
+    description: ELA_FLD16
+  - name: ela_fld17
+    description: ELA_FLD17
+  - name: ela_fld18
+    description: ELA_FLD18
+  - name: ela_fld19
+    description: ELA_FLD19
+  - name: ela_fld20
+    description: ELA_FLD20
+  - name: ela_fld21
+    description: ELA_FLD21
+  - name: ela_fld22
+    description: ELA_FLD22
+  - name: ela_fld23
+    description: ELA_FLD23
+  - name: ela_fld24
+    description: ELA_FLD24
+  - name: ela_fld25
+    description: ELA_FLD25
+  - name: ela_fld26
+    description: ELA_FLD26
+  - name: ela_fld27
+    description: ELA_FLD27
+  - name: ela_fld28
+    description: ELA_FLD28
+  - name: ela_fld29
+    description: ELA_FLD29
+  - name: ela_fld30
+    description: ELA_FLD30
+  - name: ela_fld31
+    description: ELA_FLD31
+  - name: ela_fld32
+    description: ELA_FLD32
+  - name: ela_fld33
+    description: ELA_FLD33
+  - name: ela_fld34
+    description: ELA_FLD34
+  - name: ela_fld35
+    description: ELA_FLD35
+  - name: ela_fld36
+    description: ELA_FLD36
+  - name: ela_fld37
+    description: ELA_FLD37
+  - name: ela_fld38
+    description: ELA_FLD38
+  - name: ela_fld39
+    description: ELA_FLD39
+  - name: ela_fld40
+    description: ELA_FLD40
+  - name: ela_fld41
+    description: ELA_FLD41
+  - name: ela_fld42
+    description: ELA_FLD42
+  - name: ela_fld43
+    description: ELA_FLD43
+  - name: ela_fld44
+    description: ELA_FLD44
+  - name: ela_fld45
+    description: ELA_FLD45
+  - name: ela_fld46
+    description: ELA_FLD46
+  - name: ela_fld47
+    description: ELA_FLD47
+  - name: ela_fld48
+    description: ELA_FLD48
+  - name: ela_fld49
+    description: ELA_FLD49
+  - name: ela_fld50
+    description: ELA_FLD50
+  - name: ela_fld51
+    description: ELA_FLD51
+  - name: ela_fld52
+    description: ELA_FLD52
+  - name: ela_fld53
+    description: ELA_FLD53
+  - name: ela_fld54
+    description: ELA_FLD54
+  - name: ela_fld55
+    description: ELA_FLD55
+  - name: ela_fld56
+    description: ELA_FLD56
+  - name: ela_fld57
+    description: ELA_FLD57
+  - name: ela_fld58
+    description: ELA_FLD58
+  - name: ela_fld59
+    description: ELA_FLD59
+  - name: ela_fld60
+    description: ELA_FLD60
+  - name: ela_fld61
+    description: ELA_FLD61
+  - name: ela_fld62
+    description: ELA_FLD62
+  - name: ela_fld63
+    description: ELA_FLD63
+  - name: ela_fld64
+    description: ELA_FLD64
+  - name: ela_fld65
+    description: ELA_FLD65
+  - name: ela_fld66
+    description: ELA_FLD66
+  - name: ela_fld67
+    description: ELA_FLD67
+  - name: ela_fld68
+    description: ELA_FLD68
+  - name: ela_fld69
+    description: ELA_FLD69
+  - name: ela_fld70
+    description: ELA_FLD70
+  - name: ela_fld71
+    description: ELA_FLD71
+  - name: ela_fld72
+    description: ELA_FLD72
+  - name: ela_fld73
+    description: ELA_FLD73
+  - name: ela_fld74
+    description: ELA_FLD74
+  - name: ela_fld75
+    description: ELA_FLD75
+  - name: ela_fld76
+    description: ELA_FLD76
+  - name: ela_fld77
+    description: ELA_FLD77
+  - name: ela_fld78
+    description: ELA_FLD78
+  - name: ela_fld79
+    description: ELA_FLD79
+  - name: ela_fld80
+    description: ELA_FLD80
+  - name: ela_fld81
+    description: ELA_FLD81
+  - name: ela_fld82
+    description: ELA_FLD82
+  - name: ela_fld83
+    description: ELA_FLD83
+  - name: ela_fld84
+    description: ELA_FLD84
+  - name: ela_fld85
+    description: ELA_FLD85
+  - name: ela_fld86
+    description: ELA_FLD86
+  - name: ela_fld87
+    description: ELA_FLD87
+  - name: ela_fld88
+    description: ELA_FLD88
+  - name: ela_fld89
+    description: ELA_FLD89
+  - name: ela_fld90
+    description: ELA_FLD90
+  - name: ela_fld91
+    description: ELA_FLD91
+  - name: ela_fld92
+    description: ELA_FLD92
+  - name: ela_fld93
+    description: ELA_FLD93
+  - name: ela_fld94
+    description: ELA_FLD94
+  - name: ela_fld95
+    description: ELA_FLD95
+  - name: ela_fld96
+    description: ELA_FLD96
+  - name: ela_fld97
+    description: ELA_FLD97
+  - name: ela_fld98
+    description: ELA_FLD98
+  - name: ela_fld99
+    description: ELA_FLD99
+  - name: ela_fld100
+    description: ELA_FLD100
+  - name: ela_fld101
+    description: ELA_FLD101
+  - name: ela_fld102
+    description: ELA_FLD102
+  - name: ela_fld103
+    description: ELA_FLD103
+  - name: ela_fld104
+    description: ELA_FLD104
+  - name: ela_fld105
+    description: ELA_FLD105
+  - name: ela_fld106
+    description: ELA_FLD106
+  - name: ela_fld107
+    description: ELA_FLD107
+  - name: ela_fld108
+    description: ELA_FLD108
+  - name: ela_fld109
+    description: ELA_FLD109
+  - name: ela_fld110
+    description: ELA_FLD110
+  - name: ela_fld111
+    description: ELA_FLD111
+  - name: ela_fld112
+    description: ELA_FLD112
+  - name: ela_fld113
+    description: ELA_FLD113
+  - name: ela_fld114
+    description: ELA_FLD114
+  - name: ela_fld115
+    description: ELA_FLD115
+  - name: ela_fld116
+    description: ELA_FLD116
+  - name: ela_fld117
+    description: ELA_FLD117
+  - name: ela_fld118
+    description: ELA_FLD118
+  - name: ela_fld119
+    description: ELA_FLD119
+  - name: ela_fld120
+    description: ELA_FLD120
+  - name: ela_fld121
+    description: ELA_FLD121
+  - name: ela_fld122
+    description: ELA_FLD122
+  - name: ela_fld123
+    description: ELA_FLD123
+  - name: ela_fld124
+    description: ELA_FLD124
+  - name: ela_fld125
+    description: ELA_FLD125
+  - name: ela_fld126
+    description: ELA_FLD126
+  - name: ela_fld127
+    description: ELA_FLD127
+  - name: ela_fld128
+    description: ELA_FLD128
+  - name: ela_fld129
+    description: ELA_FLD129
+  - name: ela_fld130
+    description: ELA_FLD130
+  - name: ela_fld131
+    description: ELA_FLD131
+  - name: ela_fld132
+    description: ELA_FLD132
+  - name: ela_fld133
+    description: ELA_FLD133
+  - name: ela_fld134
+    description: ELA_FLD134
+  - name: ela_fld135
+    description: ELA_FLD135
+  - name: ela_fld136
+    description: ELA_FLD136
+  - name: ela_fld137
+    description: ELA_FLD137
+  - name: ela_fld138
+    description: ELA_FLD138
+  - name: ela_fld139
+    description: ELA_FLD139
+  - name: ela_fld140
+    description: ELA_FLD140
+  - name: ela_fld141
+    description: ELA_FLD141
+  - name: ela_fld142
+    description: ELA_FLD142
+  - name: ela_fld143
+    description: ELA_FLD143
+  - name: ela_fld144
+    description: ELA_FLD144
+  - name: ela_fld148
+    description: ELA_FLD148
+  - name: ela_fld145
+    description: ELA_FLD145
+  - name: ela_fld146
+    description: ELA_FLD146
+  - name: ela_fld147
+    description: ELA_FLD147
+  - name: ela_fld149
+    description: ELA_FLD149
+  - name: ela_fld150
+    description: ELA_FLD150
+  - name: ela_fld151
+    description: ELA_FLD151
+  - name: ela_fld152
+    description: ELA_FLD152
+  - name: ela_fld153
+    description: ELA_FLD153
+  - name: ela_fld154
+    description: ELA_FLD154
+  - name: ela_fld155
+    description: ELA_FLD155
+  - name: ela_fld156
+    description: ELA_FLD156
+  - name: ela_fld157
+    description: ELA_FLD157
+  - name: ela_fld158
+    description: ELA_FLD158
+  - name: ela_fld159
+    description: ELA_FLD159
+  - name: ela_fld160
+    description: ELA_FLD160
+  - name: ela_fld161
+    description: ELA_FLD161
+  - name: ela_fld162
+    description: ELA_FLD162
+  - name: ela_fld163
+    description: ELA_FLD163
+  - name: ela_fld164
+    description: ELA_FLD164
+  - name: ela_fld165
+    description: ELA_FLD165
+  - name: ela_fld166
+    description: ELA_FLD166
+  - name: ela_fld167
+    description: ELA_FLD167
+  - name: ela_fld168
+    description: ELA_FLD168
+  - name: ela_fld169
+    description: ELA_FLD169
+  - name: ela_fld170
+    description: ELA_FLD170
+  - name: ela_fld171
+    description: ELA_FLD171
+  - name: ela_fld172
+    description: ELA_FLD172
+  - name: ela_fld173
+    description: ELA_FLD173
+  - name: ela_fld174
+    description: ELA_FLD174
+  - name: ela_fld175
+    description: ELA_FLD175
+  - name: ela_fld176
+    description: ELA_FLD176
+  - name: ela_fld177
+    description: ELA_FLD177
+  - name: ela_fld178
+    description: ELA_FLD178
+  - name: ela_fld179
+    description: ELA_FLD179
+  - name: ela_fld180
+    description: ELA_FLD180
+  - name: ela_fld181
+    description: ELA_FLD181
+  - name: ela_fld182
+    description: ELA_FLD182
+  - name: ela_fld183
+    description: ELA_FLD183
+  - name: ela_fld184
+    description: ELA_FLD184
+  - name: ela_fld185
+    description: ELA_FLD185
+  - name: ela_fld186
+    description: ELA_FLD186
+  - name: ela_fld187
+    description: ELA_FLD187
+  - name: ela_fld188
+    description: ELA_FLD188
+  - name: ela_fld189
+    description: ELA_FLD189
+  - name: ela_fld190
+    description: ELA_FLD190
+  - name: ela_fld191
+    description: ELA_FLD191
+  - name: ela_fld192
+    description: ELA_FLD192
+  - name: ela_fld193
+    description: ELA_FLD193
+  - name: ela_fld194
+    description: ELA_FLD194
+  - name: ela_fld195
+    description: ELA_FLD195
+  - name: ela_fld196
+    description: ELA_FLD196
+  - name: ela_fld197
+    description: ELA_FLD197
+  - name: ela_fld198
+    description: ELA_FLD198
+  - name: ela_fld199
+    description: ELA_FLD199
+  - name: ela_fld200
+    description: ELA_FLD200
+  - name: ela_certifynum
+    description: ELA_CERTIFYNUM
+  - name: ela_certifytype
+    description: ELA_CERTIFYTYPE
+  - name: ela_long
+    description: 'ELA_LONG. Max length: 0'
+  - name: ela_lcode
+    description: ELA_LCODE
+  - name: ela_fld201
+    description: ELA_FLD201
+  - name: ela_fld202
+    description: ELA_FLD202
+  - name: ela_fld203
+    description: ELA_FLD203
+  - name: ela_fld204
+    description: ELA_FLD204
+  - name: ela_fld205
+    description: ELA_FLD205
+  - name: ela_fld206
+    description: ELA_FLD206
+  - name: ela_fld207
+    description: ELA_FLD207
+  - name: ela_fld208
+    description: ELA_FLD208
+  - name: ela_fld209
+    description: ELA_FLD209
+  - name: ela_fld210
+    description: ELA_FLD210
+  - name: ela_fld211
+    description: ELA_FLD211
+  - name: ela_fld212
+    description: ELA_FLD212
+  - name: ela_fld213
+    description: ELA_FLD213
+  - name: ela_fld214
+    description: ELA_FLD214
+  - name: ela_fld215
+    description: ELA_FLD215
+  - name: ela_fld216
+    description: ELA_FLD216
+  - name: ela_fld217
+    description: ELA_FLD217
+  - name: ela_fld218
+    description: ELA_FLD218
+  - name: ela_fld219
+    description: ELA_FLD219
+  - name: ela_fld220
+    description: ELA_FLD220
+  - name: ela_fld221
+    description: ELA_FLD221
+  - name: ela_fld222
+    description: ELA_FLD222
+  - name: ela_fld223
+    description: ELA_FLD223
+  - name: ela_fld224
+    description: ELA_FLD224
+  - name: ela_fld225
+    description: ELA_FLD225
+  - name: ela_fld226
+    description: ELA_FLD226
+  - name: ela_fld227
+    description: ELA_FLD227
+  - name: ela_fld228
+    description: ELA_FLD228
+  - name: ela_fld229
+    description: ELA_FLD229
+  - name: ela_fld230
+    description: ELA_FLD230
+  - name: ela_fld231
+    description: ELA_FLD231
+  - name: ela_fld232
+    description: ELA_FLD232
+  - name: ela_fld233
+    description: ELA_FLD233
+  - name: ela_fld234
+    description: ELA_FLD234
+  - name: ela_fld235
+    description: ELA_FLD235
+  - name: ela_fld236
+    description: ELA_FLD236
+  - name: ela_userdesc
+    description: ELA_USERDESC
+  - name: ela_signtypedesc
+    description: ELA_SIGNTYPEDESC
+  - name: ela_fld237
+    description: ELA_FLD237
+  - name: ela_fld238
+    description: ELA_FLD238
+  - name: ela_fld239
+    description: ELA_FLD239
+  - name: ela_fld240
+    description: ELA_FLD240
+  - name: ela_fld241
+    description: ELA_FLD241
+  - name: ela_fld242
+    description: ELA_FLD242
+  - name: ela_fld243
+    description: ELA_FLD243
+  - name: ela_fld244
+    description: ELA_FLD244
+  - name: ela_fld245
+    description: ELA_FLD245
+  - name: ela_fld246
+    description: ELA_FLD246
+  - name: ela_fld247
+    description: ELA_FLD247
+  - name: ela_fld248
+    description: ELA_FLD248
+  - name: ela_fld252
+    description: ELA_FLD252
+  - name: ela_fld249
+    description: ELA_FLD249
+  - name: ela_fld250
+    description: ELA_FLD250
+  - name: ela_fld251
+    description: ELA_FLD251
+  - name: ela_fld253
+    description: ELA_FLD253
+  - name: ela_fld254
+    description: ELA_FLD254
+  - name: ela_fld255
+    description: ELA_FLD255
+  - name: ela_fld256
+    description: ELA_FLD256
+  - name: ela_fld257
+    description: ELA_FLD257
+  - name: ela_fld258
+    description: ELA_FLD258
+  - name: ela_fld259
+    description: ELA_FLD259
+  - name: ela_fld260
+    description: ELA_FLD260
+  - name: ela_fld261
+    description: ELA_FLD261
+  - name: ela_fld262
+    description: ELA_FLD262
+  - name: ela_fld263
+    description: ELA_FLD263
+  - name: ela_fld264
+    description: ELA_FLD264
+  - name: ela_fld265
+    description: ELA_FLD265
+  - name: ela_fld266
+    description: ELA_FLD266
+  - name: ela_fld267
+    description: ELA_FLD267
+  - name: ela_fld268
+    description: ELA_FLD268
+  - name: ela_fld269
+    description: ELA_FLD269
+  - name: ela_fld270
+    description: ELA_FLD270
+  - name: ela_fld271
+    description: ELA_FLD271
+  - name: ela_fld272
+    description: ELA_FLD272
+  - name: ela_fld273
+    description: ELA_FLD273
+  - name: ela_fld274
+    description: ELA_FLD274
+  - name: ela_fld275
+    description: ELA_FLD275
+  - name: ela_fld276
+    description: ELA_FLD276
+  - name: ela_fld277
+    description: ELA_FLD277
+  - name: ela_fld278
+    description: ELA_FLD278
+  - name: ela_fld279
+    description: ELA_FLD279
+  - name: ela_fld280
+    description: ELA_FLD280
+  - name: ela_fld281
+    description: ELA_FLD281
+  - name: ela_fld282
+    description: ELA_FLD282
+  - name: ela_fld283
+    description: ELA_FLD283
+  - name: ela_fld284
+    description: ELA_FLD284
+  - name: ela_fld285
+    description: ELA_FLD285
+  - name: ela_fld286
+    description: ELA_FLD286
+  - name: ela_fld287
+    description: ELA_FLD287
+  - name: ela_fld288
+    description: ELA_FLD288
+  - name: ela_fld289
+    description: ELA_FLD289
+  - name: ela_fld290
+    description: ELA_FLD290
+  - name: ela_fld291
+    description: ELA_FLD291
+  - name: ela_fld292
+    description: ELA_FLD292
+  - name: ela_fld293
+    description: ELA_FLD293
+  - name: ela_fld294
+    description: ELA_FLD294
+  - name: ela_fld295
+    description: ELA_FLD295
+  - name: ela_fld296
+    description: ELA_FLD296
+  - name: ela_fld297
+    description: ELA_FLD297
+  - name: ela_fld298
+    description: ELA_FLD298
+  - name: ela_fld299
+    description: ELA_FLD299
+  - name: ela_fld300
+    description: ELA_FLD300
+  - name: ela_fld301
+    description: ELA_FLD301
+  - name: ela_fld302
+    description: ELA_FLD302
+  - name: ela_fld303
+    description: ELA_FLD303
+  - name: ela_fld304
+    description: ELA_FLD304
+  - name: ela_fld305
+    description: ELA_FLD305
+  - name: ela_fld306
+    description: ELA_FLD306
+  - name: ela_fld307
+    description: ELA_FLD307
+  - name: ela_fld308
+    description: ELA_FLD308
+  - name: ela_fld309
+    description: ELA_FLD309
+  - name: ela_fld310
+    description: ELA_FLD310
+  - name: ela_fld311
+    description: ELA_FLD311
+  - name: ela_fld312
+    description: ELA_FLD312
+  - name: ela_fld313
+    description: ELA_FLD313
+  - name: ela_fld314
+    description: ELA_FLD314
+  - name: ela_fld315
+    description: ELA_FLD315
+  - name: ela_fld316
+    description: ELA_FLD316
+  - name: ela_fld317
+    description: ELA_FLD317
+  - name: ela_fld318
+    description: ELA_FLD318
+  - name: ela_fld319
+    description: ELA_FLD319
+  - name: ela_fld320
+    description: ELA_FLD320
+  - name: ela_fld321
+    description: ELA_FLD321
+  - name: ela_fld322
+    description: ELA_FLD322
+  - name: ela_fld323
+    description: ELA_FLD323
+  - name: ela_fld324
+    description: ELA_FLD324
+  - name: ela_fld325
+    description: ELA_FLD325
+  - name: ela_fld326
+    description: ELA_FLD326
+  - name: ela_fld327
+    description: ELA_FLD327
+  - name: ela_fld328
+    description: ELA_FLD328
+  - name: ela_fld329
+    description: ELA_FLD329
+  - name: ela_fld330
+    description: ELA_FLD330
+  - name: ela_fld331
+    description: ELA_FLD331
+  - name: ela_fld400
+    description: ELA_FLD400
+  - name: ela_fld401
+    description: ELA_FLD401
+  - name: ela_fld402
+    description: ELA_FLD402
+  - name: ela_fld403
+    description: ELA_FLD403
+  - name: ela_fld404
+    description: ELA_FLD404
+  - name: ela_fld405
+    description: ELA_FLD405
+  - name: ela_fld406
+    description: ELA_FLD406
+  - name: ela_fld407
+    description: ELA_FLD407
+  - name: ela_fld408
+    description: ELA_FLD408
+  - name: ela_fld409
+    description: ELA_FLD409
+  - name: ela_fld410
+    description: ELA_FLD410
+  - name: ela_fld411
+    description: ELA_FLD411
+  - name: ela_fld412
+    description: ELA_FLD412
+  - name: ela_fld413
+    description: ELA_FLD413
+  - name: ela_fld414
+    description: ELA_FLD414
+  - name: ela_fld415
+    description: ELA_FLD415
+  - name: ela_fld416
+    description: ELA_FLD416
+  - name: ela_fld417
+    description: ELA_FLD417
+  - name: ela_fld418
+    description: ELA_FLD418
+  - name: ela_fld419
+    description: ELA_FLD419
+  - name: ela_fld420
+    description: ELA_FLD420
+  - name: ela_fld421
+    description: ELA_FLD421
+  - name: ela_fld422
+    description: ELA_FLD422
+  - name: ela_fld423
+    description: ELA_FLD423
+  - name: ela_fld424
+    description: ELA_FLD424
+  - name: ela_fld425
+    description: ELA_FLD425
+  - name: ela_fld426
+    description: ELA_FLD426
+  - name: ela_fld427
+    description: ELA_FLD427
+  - name: ela_fld431
+    description: ELA_FLD431
+  - name: ela_fld428
+    description: ELA_FLD428
+  - name: ela_fld429
+    description: ELA_FLD429
+  - name: ela_fld430
+    description: ELA_FLD430
+  - name: ela_fld432
+    description: ELA_FLD432
+  - name: ela_fld433
+    description: ELA_FLD433
+  - name: ela_fld434
+    description: ELA_FLD434
+  - name: ela_fld435
+    description: ELA_FLD435
+  - name: ela_fld436
+    description: ELA_FLD436
+  - name: ela_fld437
+    description: ELA_FLD437
+  - name: ela_fld438
+    description: ELA_FLD438
+  - name: ela_fld439
+    description: ELA_FLD439
+  - name: ela_fld440
+    description: ELA_FLD440
+  - name: ela_fld441
+    description: ELA_FLD441
+  - name: ela_fld442
+    description: ELA_FLD442
+  - name: ela_fld443
+    description: ELA_FLD443
+  - name: ela_fld332
+    description: ELA_FLD332
+  - name: ela_fld333
+    description: ELA_FLD333
+  - name: ela_fld334
+    description: ELA_FLD334
+  - name: ela_fld335
+    description: ELA_FLD335
+  - name: ela_fld336
+    description: ELA_FLD336
+  - name: ela_fld337
+    description: ELA_FLD337
+  - name: ela_fld338
+    description: ELA_FLD338
+  - name: ela_fld339
+    description: ELA_FLD339
+  - name: ela_fld340
+    description: ELA_FLD340
+  - name: ela_fld341
+    description: ELA_FLD341
+  - name: ela_fld342
+    description: ELA_FLD342
+  - name: ela_fld343
+    description: ELA_FLD343
+  - name: ela_fld344
+    description: ELA_FLD344
+  - name: ela_fld345
+    description: ELA_FLD345
+  - name: ela_fld346
+    description: ELA_FLD346
+  - name: ela_fld347
+    description: ELA_FLD347
+  - name: ela_fld348
+    description: ELA_FLD348
+  - name: ela_fld349
+    description: ELA_FLD349
+  - name: ela_fld350
+    description: ELA_FLD350
+  - name: ela_fld351
+    description: ELA_FLD351
+  - name: ela_fld352
+    description: ELA_FLD352
+  - name: ela_fld353
+    description: ELA_FLD353
+  - name: ela_fld354
+    description: ELA_FLD354
+  - name: ela_fld355
+    description: ELA_FLD355
+  - name: ela_fld356
+    description: ELA_FLD356
+  - name: ela_fld357
+    description: ELA_FLD357
+  - name: ela_fld358
+    description: ELA_FLD358
+  - name: ela_fld359
+    description: ELA_FLD359
+  - name: ela_fld360
+    description: ELA_FLD360
+  - name: ela_fld361
+    description: ELA_FLD361
+  - name: ela_fld362
+    description: ELA_FLD362
+  - name: ela_fld363
+    description: ELA_FLD363
+  - name: ela_fld364
+    description: ELA_FLD364
+  - name: ela_fld365
+    description: ELA_FLD365
+  - name: ela_fld366
+    description: ELA_FLD366
+  - name: ela_fld367
+    description: ELA_FLD367
+  - name: ela_fld368
+    description: ELA_FLD368
+  - name: ela_fld369
+    description: ELA_FLD369
+  - name: ela_fld370
+    description: ELA_FLD370
+  - name: ela_fld371
+    description: ELA_FLD371
+  - name: ela_fld372
+    description: ELA_FLD372
+  - name: ela_fld373
+    description: ELA_FLD373
+  - name: ela_fld374
+    description: ELA_FLD374
+  - name: ela_fld375
+    description: ELA_FLD375
+  - name: ela_fld376
+    description: ELA_FLD376
+  - name: ela_fld377
+    description: ELA_FLD377
+  - name: ela_fld378
+    description: ELA_FLD378
+  - name: ela_fld379
+    description: ELA_FLD379
+  - name: ela_fld380
+    description: ELA_FLD380
+  - name: ela_fld381
+    description: ELA_FLD381
+  - name: ela_fld382
+    description: ELA_FLD382
+  - name: ela_fld383
+    description: ELA_FLD383
+  - name: ela_fld384
+    description: ELA_FLD384
+  - name: ela_fld385
+    description: ELA_FLD385
+  - name: ela_fld386
+    description: ELA_FLD386
+  - name: ela_fld387
+    description: ELA_FLD387
+  - name: ela_fld388
+    description: ELA_FLD388
+  - name: ela_fld389
+    description: ELA_FLD389
+  - name: ela_fld390
+    description: ELA_FLD390
+  - name: ela_fld391
+    description: ELA_FLD391
+  - name: ela_fld392
+    description: ELA_FLD392
+  - name: ela_fld393
+    description: ELA_FLD393
+  - name: ela_fld394
+    description: ELA_FLD394
+  - name: ela_fld395
+    description: ELA_FLD395
+  - name: ela_fld396
+    description: ELA_FLD396
+  - name: ela_fld397
+    description: ELA_FLD397
+  - name: ela_fld398
+    description: ELA_FLD398
+  - name: ela_fld399
+    description: ELA_FLD399
+  - name: ela_fld444
+    description: ELA_FLD444
+  - name: ela_fld445
+    description: ELA_FLD445
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ELECARCHIVE

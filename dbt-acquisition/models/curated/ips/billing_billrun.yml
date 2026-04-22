@@ -1,0 +1,132 @@
+version: 2
+models:
+- name: billing_billrun
+  columns:
+  - name: billdate
+    description: Metadata for column BILLDATE
+  - name: accountkey
+    description: Metadata for column ACCOUNTKEY
+  - name: billkey
+    description: Metadata for column BILLKEY
+  - name: description
+    description: 'Metadata for column DESCRIPTION. Max length: 300'
+  - name: duedate
+    description: Metadata for column DUEDATE
+  - name: schedulekey
+    description: Metadata for column SCHEDULEKEY
+  - name: billingperiodfromdate
+    description: Metadata for column BILLINGPERIODFROMDATE
+  - name: billtypekey
+    description: Metadata for column BILLTYPEKEY
+  - name: includesubbilltypesflag
+    description: 'Metadata for column INCLUDESUBBILLTYPESFLAG. Max length: 1'
+  - name: reversedflag
+    description: 'Metadata for column REVERSEDFLAG. Max length: 1'
+  - name: accountgroup
+    description: 'Metadata for column ACCOUNTGROUP. Max length: 10'
+  - name: processingflag
+    description: 'Metadata for column PROCESSINGFLAG. Max length: 1'
+  - name: routekey
+    description: Metadata for column ROUTEKEY
+  - name: initiatedttm
+    description: Metadata for column INITIATEDTTM
+  - name: runaveragebillsperminute
+    description: Metadata for column RUNAVERAGEBILLSPERMINUTE
+  - name: accountclass
+    description: 'Metadata for column ACCOUNTCLASS. Max length: 10'
+  - name: reversekey
+    description: Metadata for column REVERSEKEY
+  - name: initiatedby
+    description: 'Metadata for column INITIATEDBY. Max length: 12'
+  - name: commitnumber
+    description: Metadata for column COMMITNUMBER
+  - name: outputtedflag
+    description: 'Metadata for column OUTPUTTEDFLAG. Max length: 1'
+  - name: wassecondstepposted
+    description: 'Metadata for column WASSECONDSTEPPOSTED. Max length: 1'
+  - name: billingstatus
+    description: 'Metadata for column BILLINGSTATUS. Max length: 10'
+  - name: billrunkey
+    description: (required) Metadata for column BILLRUNKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: accountsubgroup
+    description: 'Metadata for column ACCOUNTSUBGROUP. Max length: 10'
+  - name: billingperiodtodate
+    description: Metadata for column BILLINGPERIODTODATE
+  - name: refreshbillmailtoinfoflag
+    description: 'Metadata for column REFRESHBILLMAILTOINFOFLAG. Max length: 1'
+  - name: cdrprodfamily
+    description: Metadata for column CDRPRODFAMILY
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: preselectedflag
+    description: 'Metadata for column PRESELECTEDFLAG. Max length: 1'
+  - name: wasresumed
+    description: 'Metadata for column WASRESUMED. Max length: 1'
+  - name: numberofbillsinrun
+    description: Metadata for column NUMBEROFBILLSINRUN
+  - name: cdrapprocessstatekey
+    description: Metadata for column CDRAPPROCESSSTATEKEY
+  - name: refreshbillbalancesflag
+    description: 'Metadata for column REFRESHBILLBALANCESFLAG. Max length: 1'
+  - name: lastinvocationstatus
+    description: Metadata for column LASTINVOCATIONSTATUS
+  - name: postedflag
+    description: 'Metadata for column POSTEDFLAG. Max length: 1'
+  - name: postingflag
+    description: 'Metadata for column POSTINGFLAG. Max length: 1'
+  - name: calculatingflag
+    description: 'Metadata for column CALCULATINGFLAG. Max length: 1'
+  - name: principaltotal
+    description: Metadata for column PRINCIPALTOTAL
+  - name: numberofexceptions
+    description: Metadata for column NUMBEROFEXCEPTIONS
+  - name: billingcycle
+    description: 'Metadata for column BILLINGCYCLE. Max length: 10'
+  - name: calculatedflag
+    description: 'Metadata for column CALCULATEDFLAG. Max length: 1'
+  - name: cdrapdefnkey
+    description: Metadata for column CDRAPDEFNKEY
+  - name: initializephaseflag
+    description: 'Metadata for column INITIALIZEPHASEFLAG. Max length: 1'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: excludefinalbillsflag
+    description: 'Metadata for column EXCLUDEFINALBILLSFLAG. Max length: 1'
+  - name: billrunschedulekey
+    description: Metadata for column BILLRUNSCHEDULEKEY
+  - name: runtype
+    description: 'Metadata for column RUNTYPE. Max length: 1'
+  - name: totalnumberofbills
+    description: Metadata for column TOTALNUMBEROFBILLS
+  - name: outputtingflag
+    description: 'Metadata for column OUTPUTTINGFLAG. Max length: 1'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: accountarea
+    description: 'Metadata for column ACCOUNTAREA. Max length: 10'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.BILLRUN on 2021-07-09T15:14:56.338

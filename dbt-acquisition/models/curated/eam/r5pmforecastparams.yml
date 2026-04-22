@@ -1,0 +1,126 @@
+version: 2
+models:
+- name: r5pmforecastparams
+  columns:
+  - name: pfp_lastsaved
+    description: PFP_LASTSAVED
+  - name: pfp_parameter
+    description: PFP_PARAMETER
+  - name: pfp_defparam
+    description: PFP_DEFPARAM
+  - name: pfp_sessionid
+    description: PFP_SESSIONID
+  - name: pfp_startdate
+    description: PFP_STARTDATE
+  - name: pfp_enddate
+    description: PFP_ENDDATE
+  - name: pfp_objects
+    description: PFP_OBJECTS
+  - name: pfp_obtypes
+    description: PFP_OBTYPES
+  - name: pfp_obclasses
+    description: PFP_OBCLASSES
+  - name: pfp_toplevel
+    description: PFP_TOPLEVEL
+  - name: pfp_toplevel_org
+    description: PFP_TOPLEVEL_ORG
+  - name: pfp_categories
+    description: PFP_CATEGORIES
+  - name: pfp_criticalities
+    description: PFP_CRITICALITIES
+  - name: pfp_pmschedules
+    description: PFP_PMSCHEDULES
+  - name: pfp_pmclasses
+    description: PFP_PMCLASSES
+  - name: pfp_nested
+    description: PFP_NESTED
+  - name: pfp_priorities
+    description: PFP_PRIORITIES
+  - name: pfp_jobtypes
+    description: PFP_JOBTYPES
+  - name: pfp_event_org
+    description: PFP_EVENT_ORG
+  - name: pfp_event_classes
+    description: PFP_EVENT_CLASSES
+  - name: pfp_mrcs
+    description: PFP_MRCS
+  - name: pfp_locations
+    description: PFP_LOCATIONS
+  - name: pfp_persons
+    description: PFP_PERSONS
+  - name: pfp_costcodes
+    description: PFP_COSTCODES
+  - name: pfp_schedgrps
+    description: PFP_SCHEDGRPS
+  - name: pfp_parenttype
+    description: PFP_PARENTTYPE
+  - name: pfp_workhours
+    description: PFP_WORKHOURS
+  - name: pfp_min_freq
+    description: PFP_MIN_FREQ
+  - name: pfp_inc_children
+    description: PFP_INC_CHILDREN
+  - name: pfp_workorder_bgcolor
+    description: PFP_WORKORDER_BGCOLOR
+  - name: pfp_actduedt_bgcolor
+    description: PFP_ACTDUEDT_BGCOLOR
+  - name: pfp_forecastpm_bgcolor
+    description: PFP_FORECASTPM_BGCOLOR
+  - name: pfp_weekend_bgcolor
+    description: PFP_WEEKEND_BGCOLOR
+  - name: pfp_lkdpmduedt_txtcolor
+    description: PFP_LKDPMDUEDT_TXTCOLOR
+  - name: pfp_cal_day
+    description: PFP_CAL_DAY
+  - name: pfp_year_dsg
+    description: PFP_YEAR_DSG
+  - name: pfp_qtr_dsg
+    description: PFP_QTR_DSG
+  - name: pfp_month_dsg
+    description: PFP_MONTH_DSG
+  - name: pfp_week_dsg
+    description: PFP_WEEK_DSG
+  - name: pfp_daily_dsg
+    description: PFP_DAILY_DSG
+  - name: pfp_backfilling
+    description: PFP_BACKFILLING
+  - name: pfp_forwardfilling
+    description: PFP_FORWARDFILLING
+  - name: pfp_session_aprv
+    description: PFP_SESSION_APRV
+  - name: pfp_forecasting
+    description: PFP_FORECASTING
+  - name: pfp_created
+    description: PFP_CREATED
+  - name: pfp_enablechildequiptab
+    description: PFP_ENABLECHILDEQUIPTAB
+  - name: pfp_screenhsplit
+    description: PFP_SCREENHSPLIT
+  - name: pfp_pagesize
+    description: PFP_PAGESIZE
+  - name: pfp_updatecount
+    description: PFP_UPDATECOUNT
+  - name: pfp_code
+    description: PFP_CODE
+    data_tests:
+    - unique
+  - name: pfp_user
+    description: PFP_USER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PMFORECASTPARAMS

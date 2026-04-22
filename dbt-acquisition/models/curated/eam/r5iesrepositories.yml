@@ -1,0 +1,58 @@
+version: 2
+models:
+- name: r5iesrepositories
+  columns:
+  - name: ens_lastsaved
+    description: ENS_LASTSAVED
+  - name: ens_dateupdatedcol
+    description: ENS_DATEUPDATEDCOL
+  - name: ens_interestcenter
+    description: ENS_INTERESTCENTER
+  - name: ens_notused
+    description: ENS_NOTUSED
+  - name: ens_isincremental
+    description: ENS_ISINCREMENTAL
+  - name: ens_ispopup
+    description: ENS_ISPOPUP
+  - name: ens_datelastcrawl
+    description: ENS_DATELASTCRAWL
+  - name: ens_updatecount
+    description: ENS_UPDATECOUNT
+  - name: ens_code
+    description: ENS_CODE
+    data_tests:
+    - unique
+  - name: ens_desc
+    description: ENS_DESC
+  - name: ens_tablename
+    description: ENS_TABLENAME
+  - name: ens_userfunction
+    description: ENS_USERFUNCTION
+  - name: ens_tab
+    description: ENS_TAB
+  - name: ens_thumbnail
+    description: ENS_THUMBNAIL
+  - name: ens_datecreatedcol
+    description: ENS_DATECREATEDCOL
+  - name: ens_orgcol
+    description: ENS_ORGCOL
+  - name: ens_tableprefix
+    description: ENS_TABLEPREFIX
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5IESREPOSITORIES

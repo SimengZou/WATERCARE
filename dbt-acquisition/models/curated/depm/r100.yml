@@ -1,0 +1,48 @@
+version: 2
+models:
+- name: r100
+  columns:
+  - name: version
+    description: 'From table depm_R100 and column Version. Max length: 100'
+  - name: project
+    description: 'From table depm_R100 and column Project. Max length: 100'
+  - name: wbs
+    description: 'From table depm_R100 and column WBS. Max length: 100'
+  - name: category
+    description: 'From table depm_R100 and column Category. Max length: 100'
+  - name: riskid
+    description: 'From table depm_R100 and column RiskID. Max length: 100'
+  - name: riskactionid
+    description: 'From table depm_R100 and column RiskActionID. Max length: 100'
+  - name: measure
+    description: 'From table depm_R100 and column Measure. Max length: 100'
+  - name: value
+    description: 'From table depm_R100 and column MEasure RM100. Max length: 100'
+  - name: timestamp
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated from anySQL Connector dEPM_R100
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - version
+        - project
+        - wbs
+        - category
+        - riskid
+        - riskactionid
+        - measure

@@ -1,0 +1,55 @@
+version: 2
+models:
+- name: r5foreignentity
+  columns:
+  - name: fen_lastsaved
+    description: FEN_LASTSAVED
+  - name: fen_systemfunction
+    description: FEN_SYSTEMFUNCTION
+  - name: fen_foreignuserfunction
+    description: FEN_FOREIGNUSERFUNCTION
+  - name: fen_foreignsystemfunction
+    description: FEN_FOREIGNSYSTEMFUNCTION
+  - name: fen_elementid
+    description: FEN_ELEMENTID
+  - name: fen_orgfield
+    description: FEN_ORGFIELD
+  - name: fen_rentity
+    description: FEN_RENTITY
+  - name: fen_updatecount
+    description: FEN_UPDATECOUNT
+  - name: fen_allowdrillback
+    description: FEN_ALLOWDRILLBACK
+  - name: fen_userfunction
+    description: FEN_USERFUNCTION
+  - name: fen_foreignelementid
+    description: FEN_FOREIGNELEMENTID
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5FOREIGNENTITY
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - fen_userfunction
+        - fen_systemfunction
+        - fen_foreignuserfunction
+        - fen_foreignsystemfunction
+        - fen_elementid
+        - fen_foreignelementid
+        - fen_rentity

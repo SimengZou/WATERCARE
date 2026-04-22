@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5causes
+  columns:
+  - name: cau_lastsaved
+    description: CAU_LASTSAVED
+  - name: cau_desc
+    description: CAU_DESC
+  - name: cau_gen
+    description: CAU_GEN
+  - name: cau_updatecount
+    description: CAU_UPDATECOUNT
+  - name: cau_created
+    description: CAU_CREATED
+  - name: cau_partfailure
+    description: CAU_PARTFAILURE
+  - name: cau_notused
+    description: CAU_NOTUSED
+  - name: cau_enableworkorders
+    description: CAU_ENABLEWORKORDERS
+  - name: cau_group
+    description: CAU_GROUP
+  - name: cau_code
+    description: CAU_CODE
+    data_tests:
+    - unique
+  - name: cau_updated
+    description: CAU_UPDATED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CAUSES

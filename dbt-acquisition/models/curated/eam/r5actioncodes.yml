@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: r5actioncodes
+  columns:
+  - name: acc_lastsaved
+    description: ACC_LASTSAVED
+  - name: acc_desc
+    description: ACC_DESC
+  - name: acc_class
+    description: ACC_CLASS
+  - name: acc_gen
+    description: ACC_GEN
+  - name: acc_class_org
+    description: ACC_CLASS_ORG
+  - name: acc_updatecount
+    description: ACC_UPDATECOUNT
+  - name: acc_updated
+    description: ACC_UPDATED
+  - name: acc_partfailure
+    description: ACC_PARTFAILURE
+  - name: acc_notused
+    description: ACC_NOTUSED
+  - name: acc_enableworkorders
+    description: ACC_ENABLEWORKORDERS
+  - name: acc_group
+    description: ACC_GROUP
+  - name: acc_code
+    description: ACC_CODE
+    data_tests:
+    - unique
+  - name: acc_created
+    description: ACC_CREATED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ACTIONCODES

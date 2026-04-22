@@ -1,0 +1,160 @@
+version: 2
+models:
+- name: assetmanagement_reservoir_compremb
+  columns:
+  - name: complexkey
+    description: Metadata for column COMPLEXKEY
+  - name: wavewallht
+    description: Metadata for column WAVEWALLHT
+  - name: freebrdwwuom
+    description: 'Metadata for column FREEBRDWWUOM. Max length: 10'
+  - name: cabtenfrcd
+    description: Metadata for column CABTENFRCD
+  - name: freebrdww
+    description: Metadata for column FREEBRDWW
+  - name: zcoord
+    description: Metadata for column ZCOORD
+  - name: usgareakey
+    description: Metadata for column USGAREAKEY
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: subarea
+    description: 'Metadata for column SUBAREA. Max length: 10'
+  - name: wavewallth
+    description: Metadata for column WAVEWALLTH
+  - name: cutoffdpth
+    description: Metadata for column CUTOFFDPTH
+  - name: freebrdnrmuom
+    description: 'Metadata for column FREEBRDNRMUOM. Max length: 10'
+  - name: dwnfltrlyr
+    description: 'Metadata for column DWNFLTRLYR. Max length: 1'
+  - name: emblen
+    description: Metadata for column EMBLEN
+  - name: seismicres
+    description: Metadata for column SEISMICRES
+  - name: unitdesc
+    description: 'Metadata for column UNITDESC. Max length: 300'
+  - name: cabtenfrcauom
+    description: 'Metadata for column CABTENFRCAUOM. Max length: 10'
+  - name: instdate
+    description: Metadata for column INSTDATE
+  - name: cutoffthuom
+    description: 'Metadata for column CUTOFFTHUOM. Max length: 10'
+  - name: toplevrl
+    description: Metadata for column TOPLEVRL
+  - name: unittype
+    description: 'Metadata for column UNITTYPE. Max length: 10'
+  - name: own
+    description: 'Metadata for column OWN. Max length: 10'
+  - name: foundtype
+    description: 'Metadata for column FOUNDTYPE. Max length: 10'
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: wavewallhtuom
+    description: 'Metadata for column WAVEWALLHTUOM. Max length: 10'
+  - name: asblt
+    description: 'Metadata for column ASBLT. Max length: 10'
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 10'
+  - name: cutoffdpthuom
+    description: 'Metadata for column CUTOFFDPTHUOM. Max length: 10'
+  - name: servstat
+    description: 'Metadata for column SERVSTAT. Max length: 10'
+  - name: mapno
+    description: 'Metadata for column MAPNO. Max length: 14'
+  - name: unitid
+    description: 'Metadata for column UNITID. Max length: 50'
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: ycoord
+    description: Metadata for column YCOORD
+  - name: embwiduom
+    description: 'Metadata for column EMBWIDUOM. Max length: 10'
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: freebrdnrm
+    description: Metadata for column FREEBRDNRM
+  - name: tunnel
+    description: 'Metadata for column TUNNEL. Max length: 10'
+  - name: emblenuom
+    description: 'Metadata for column EMBLENUOM. Max length: 10'
+  - name: embht
+    description: Metadata for column EMBHT
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: sitekey
+    description: Metadata for column SITEKEY
+  - name: cutoffth
+    description: Metadata for column CUTOFFTH
+  - name: cabtenfrcduom
+    description: 'Metadata for column CABTENFRCDUOM. Max length: 10'
+  - name: dwnslp
+    description: 'Metadata for column DWNSLP. Max length: 10'
+  - name: upsslp
+    description: 'Metadata for column UPSSLP. Max length: 10'
+  - name: upsfltrlyr
+    description: 'Metadata for column UPSFLTRLYR. Max length: 1'
+  - name: addrqual
+    description: 'Metadata for column ADDRQUAL. Max length: 300'
+  - name: compkey
+    description: (required) Metadata for column COMPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: gisstatic
+    description: Metadata for column GISSTATIC
+  - name: position
+    description: Metadata for column POSITION
+  - name: xcoord
+    description: Metadata for column XCOORD
+  - name: expby
+    description: 'Metadata for column EXPBY. Max length: 12'
+  - name: cutofftype
+    description: 'Metadata for column CUTOFFTYPE. Max length: 10'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: cabtenfrca
+    description: Metadata for column CABTENFRCA
+  - name: crestcamb
+    description: Metadata for column CRESTCAMB
+  - name: district
+    description: 'Metadata for column DISTRICT. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: embwid
+    description: Metadata for column EMBWID
+  - name: wavewallthuom
+    description: 'Metadata for column WAVEWALLTHUOM. Max length: 10'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: embhtuom
+    description: 'Metadata for column EMBHTUOM. Max length: 10'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table ASSETMANAGEMENT_RESERVOIR.COMPREMB on 2022-01-07T14:04:08.015

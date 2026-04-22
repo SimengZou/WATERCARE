@@ -1,0 +1,156 @@
+version: 2
+models:
+- name: assetmanagement_railway_comprsgn
+  columns:
+  - name: complexkey
+    description: Metadata for column COMPLEXKEY
+  - name: illumbulb
+    description: 'Metadata for column ILLUMBULB. Max length: 10'
+  - name: zcoord
+    description: Metadata for column ZCOORD
+  - name: usgareakey
+    description: Metadata for column USGAREAKEY
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: rsegkey
+    description: Metadata for column RSEGKEY
+  - name: subarea
+    description: 'Metadata for column SUBAREA. Max length: 10'
+  - name: symblcolor
+    description: 'Metadata for column SYMBLCOLOR. Max length: 10'
+  - name: suppid
+    description: 'Metadata for column SUPPID. Max length: 10'
+  - name: bkgrncolor
+    description: 'Metadata for column BKGRNCOLOR. Max length: 10'
+  - name: mounttype
+    description: 'Metadata for column MOUNTTYPE. Max length: 10'
+  - name: suppmatl
+    description: 'Metadata for column SUPPMATL. Max length: 10'
+  - name: unitdesc
+    description: 'Metadata for column UNITDESC. Max length: 300'
+  - name: instdate
+    description: Metadata for column INSTDATE
+  - name: signtype
+    description: 'Metadata for column SIGNTYPE. Max length: 10'
+  - name: illumtype
+    description: 'Metadata for column ILLUMTYPE. Max length: 10'
+  - name: signtext
+    description: 'Metadata for column SIGNTEXT. Max length: 300'
+  - name: unittype
+    description: 'Metadata for column UNITTYPE. Max length: 10'
+  - name: own
+    description: 'Metadata for column OWN. Max length: 10'
+  - name: symbl
+    description: 'Metadata for column SYMBL. Max length: 10'
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: facing
+    description: 'Metadata for column FACING. Max length: 3'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: asblt
+    description: 'Metadata for column ASBLT. Max length: 10'
+  - name: basetype
+    description: 'Metadata for column BASETYPE. Max length: 10'
+  - name: facematl
+    description: 'Metadata for column FACEMATL. Max length: 10'
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 10'
+  - name: servstat
+    description: 'Metadata for column SERVSTAT. Max length: 10'
+  - name: vertfrom
+    description: 'Metadata for column VERTFROM. Max length: 12'
+  - name: mapno
+    description: 'Metadata for column MAPNO. Max length: 14'
+  - name: textcolor
+    description: 'Metadata for column TEXTCOLOR. Max length: 10'
+  - name: unitid
+    description: 'Metadata for column UNITID. Max length: 50'
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: ycoord
+    description: Metadata for column YCOORD
+  - name: signct
+    description: Metadata for column SIGNCT
+  - name: symblsz
+    description: 'Metadata for column SYMBLSZ. Max length: 10'
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: reflrat
+    description: Metadata for column REFLRAT
+  - name: horizfrom
+    description: 'Metadata for column HORIZFROM. Max length: 12'
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: horizclear
+    description: 'Metadata for column HORIZCLEAR. Max length: 12'
+  - name: vertclear
+    description: 'Metadata for column VERTCLEAR. Max length: 12'
+  - name: sitekey
+    description: Metadata for column SITEKEY
+  - name: textsz
+    description: 'Metadata for column TEXTSZ. Max length: 10'
+  - name: signsz
+    description: 'Metadata for column SIGNSZ. Max length: 15'
+  - name: reflcoat
+    description: 'Metadata for column REFLCOAT. Max length: 10'
+  - name: addrqual
+    description: 'Metadata for column ADDRQUAL. Max length: 300'
+  - name: compkey
+    description: (required) Metadata for column COMPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: gisstatic
+    description: Metadata for column GISSTATIC
+  - name: xcoord
+    description: Metadata for column XCOORD
+  - name: expby
+    description: 'Metadata for column EXPBY. Max length: 12'
+  - name: reference
+    description: Metadata for column REFERENCE
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: district
+    description: 'Metadata for column DISTRICT. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: blankmatl
+    description: 'Metadata for column BLANKMATL. Max length: 10'
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: supptype
+    description: 'Metadata for column SUPPTYPE. Max length: 10'
+  - name: xingkey
+    description: Metadata for column XINGKEY
+  - name: mfgkey
+    description: Metadata for column MFGKEY
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: custom
+    description: 'Metadata for column CUSTOM. Max length: 1'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table ASSETMANAGEMENT_RAILWAY.COMPRSGN on 2022-01-07T14:04:06.194

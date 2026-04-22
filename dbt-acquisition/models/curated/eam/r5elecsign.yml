@@ -1,0 +1,58 @@
+version: 2
+models:
+- name: r5elecsign
+  columns:
+  - name: els_lastsaved
+    description: ELS_LASTSAVED
+  - name: els_org
+    description: ELS_ORG
+  - name: els_user
+    description: ELS_USER
+  - name: els_date
+    description: ELS_DATE
+  - name: els_entity
+    description: ELS_ENTITY
+  - name: els_signtype
+    description: ELS_SIGNTYPE
+  - name: els_status
+    description: ELS_STATUS
+  - name: els_parent
+    description: ELS_PARENT
+  - name: els_certifynum
+    description: ELS_CERTIFYNUM
+  - name: els_certifytype
+    description: ELS_CERTIFYTYPE
+  - name: els_externaldate
+    description: ELS_EXTERNALDATE
+  - name: els_userdesc
+    description: ELS_USERDESC
+  - name: els_signtypedesc
+    description: ELS_SIGNTYPEDESC
+  - name: els_lastchanged
+    description: ELS_LASTCHANGED
+  - name: els_entcode2
+    description: ELS_ENTCODE2
+  - name: els_code
+    description: ELS_CODE
+    data_tests:
+    - unique
+  - name: els_entcode
+    description: ELS_ENTCODE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ELECSIGN

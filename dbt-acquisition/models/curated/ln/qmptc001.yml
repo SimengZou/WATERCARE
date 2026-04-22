@@ -1,0 +1,148 @@
+version: 2
+models:
+- name: qmptc001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: char
+    description: '(required) Characteristic. Max length: 8'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: ctyp
+    description: 'Characteristic Type. Allowed values: 1, 2, 3'
+  - name: ctyp_kw
+    description: 'Characteristic Type (keyword). Allowed values: qmptc.ctyp.fraction,
+      qmptc.ctyp.integer, qmptc.ctyp.option'
+  - name: mthd
+    description: 'Method. Allowed values: 1, 2, 3'
+  - name: mthd_kw
+    description: 'Method (keyword). Allowed values: qmptc.mthd.fixed, qmptc.mthd.variable,
+      qmptc.mthd.algorithm'
+  - name: algo
+    description: 'Algorithm. Max length: 6'
+  - name: cstd__en_us
+    description: '(required) Characteristic Standard - base language. Max length:
+      8'
+    data_tests:
+    - not_null
+  - name: dtst
+    description: 'Default Test. Max length: 8'
+  - name: chun
+    description: 'Characteristic Unit. Max length: 3'
+  - name: fcvl
+    description: Fixed Characteristic Value
+  - name: falg
+    description: 'For Algorithm. Allowed values: 0, 1, 2'
+  - name: falg_kw
+    description: 'For Algorithm (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: oset
+    description: 'Option Set. Max length: 6'
+  - name: cusg
+    description: 'Characteristic Usage. Allowed values: 10, 20'
+  - name: cusg_kw
+    description: 'Characteristic Usage (keyword). Allowed values: qmptc.usag.anal,
+      qmptc.usag.var'
+  - name: vaty
+    description: 'Value Type. Allowed values: 1, 2, 3'
+  - name: vaty_kw
+    description: 'Value Type (keyword). Allowed values: qmptc.vaty.norm, qmptc.vaty.nominal,
+      qmptc.vaty.not.appl'
+  - name: kolt
+    description: 'Limit Type. Allowed values: 1, 2, 3'
+  - name: kolt_kw
+    description: 'Limit Type (keyword). Allowed values: qmptc.kolt.value, qmptc.kolt.tolerance,
+      qmptc.kolt.not.appl'
+  - name: norm
+    description: Norm
+  - name: chrt
+    description: 'Chart Name. Max length: 10'
+  - name: chty
+    description: 'Chart Type. Max length: 10'
+  - name: tost
+    description: 'Tolerance Standard. Max length: 10'
+  - name: nomi
+    description: Nominal Value
+  - name: ulmt
+    description: Upper Limit
+  - name: llmt
+    description: Lower Limit
+  - name: utln
+    description: Upper Tolerance
+  - name: ltln
+    description: Lower Tolerance
+  - name: utwa
+    description: Upper Warning
+  - name: ltwa
+    description: Lower Warning
+  - name: utlw
+    description: Upper Tolerance Warning
+  - name: ltlw
+    description: Lower Tolerance Warning
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: txta
+    description: Characteristic Text
+  - name: algo_ref_compnr
+    description: company number of primary key of table qmptc021 Algorithms
+  - name: dtst_ref_compnr
+    description: company number of primary key of table qmptc006 Tests
+  - name: chun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: oset_ref_compnr
+    description: company number of primary key of table qmptc013 Option Sets
+  - name: chrt_ref_compnr
+    description: company number of primary key of table qmptc081 Chart Name
+  - name: chty_ref_compnr
+    description: company number of primary key of table qmptc082 Chart Type
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmptc001 Characteristics table, Generated 2022-06-15T01:21:04Z from
+    package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - char

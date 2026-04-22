@@ -1,0 +1,225 @@
+version: 2
+models:
+- name: tfgld482
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: guid
+    description: '(required) GUID. Max length: 22'
+    data_tests:
+    - not_null
+  - name: dbcr
+    description: '(required) Debit/Credit Indicator. Allowed values: 1, 2'
+    data_tests:
+    - not_null
+  - name: dbcr_kw
+    description: 'Debit/Credit Indicator (keyword). Allowed values: tfgld.dbcr.debit,
+      tfgld.dbcr.credit'
+  - name: ocmp
+    description: Business Object Company
+  - name: idtc
+    description: 'Integration Document Type. Max length: 8'
+  - name: trdt
+    description: Transaction Date
+  - name: tcmp
+    description: Business Object Company
+  - name: secd
+    description: 'Sort Element. Max length: 12'
+  - name: seva
+    description: 'Sort Element Value. Max length: 50'
+  - name: rbon
+    description: 'Business Object. Max length: 17'
+  - name: rbid
+    description: 'Business Object ID. Max length: 11'
+  - name: rpon
+    description: Position
+  - name: obre
+    description: 'Business Object Reference. Max length: 90'
+  - name: buid
+    description: 'Business Object Reference GUID. Max length: 22'
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: ttyp
+    description: 'Transaction Type. Max length: 3'
+  - name: docn
+    description: Document Number
+  - name: btno
+    description: Batch
+  - name: lino
+    description: Line
+  - name: sint
+    description: 'Transaction Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: sint_kw
+    description: 'Transaction Status (keyword). Allowed values: tfgld.ints.logged,
+      tfgld.ints.mapped, tfgld.ints.posted, tfgld.ints.err.log, tfgld.ints.err.map,
+      tfgld.ints.err.post'
+  - name: crdt
+    description: Creation Date
+  - name: crus
+    description: 'User (created). Max length: 16'
+  - name: usgr
+    description: 'Financial User Group. Max length: 6'
+  - name: pous
+    description: 'User (posted). Max length: 16'
+  - name: podt
+    description: Posting Date
+  - name: prin
+    description: 'Printed. Allowed values: 1, 2'
+  - name: prin_kw
+    description: 'Printed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: glcu
+    description: 'GL Code Used. Allowed values: 1, 2'
+  - name: glcu_kw
+    description: 'GL Code Used (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: alam
+    description: 'Allow Ledger Mapping. Allowed values: 1, 2'
+  - name: alam_kw
+    description: 'Allow Ledger Mapping (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: admm
+    description: 'Allow Dimension Mapping. Allowed values: 1, 2'
+  - name: admm_kw
+    description: 'Allow Dimension Mapping (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: fcom
+    description: Financial Company
+  - name: leac
+    description: 'Ledger Account. Max length: 12'
+  - name: dim1
+    description: 'Dimension 1. Max length: 9'
+  - name: dim2
+    description: 'Dimension 2. Max length: 9'
+  - name: dim3
+    description: 'Dimension 3. Max length: 9'
+  - name: dim4
+    description: 'Dimension 4. Max length: 9'
+  - name: dim5
+    description: 'Dimension 5. Max length: 9'
+  - name: dim6
+    description: 'Dimension 6. Max length: 9'
+  - name: dim7
+    description: 'Dimension 7. Max length: 9'
+  - name: dim8
+    description: 'Dimension 8. Max length: 9'
+  - name: dim9
+    description: 'Dimension 9. Max length: 9'
+  - name: dm10
+    description: 'Dimension 10. Max length: 9'
+  - name: dm11
+    description: 'Dimension 11. Max length: 9'
+  - name: dm12
+    description: 'Dimension 12. Max length: 9'
+  - name: amnt
+    description: Transaction Amount
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: ratd
+    description: Currency Rate Date
+  - name: rtyp
+    description: 'Currency Rate Type. Max length: 3'
+  - name: rate_1
+    description: Currency Rate
+  - name: rate_2
+    description: Currency Rate
+  - name: rate_3
+    description: Currency Rate
+  - name: ratf_1
+    description: Currency Rate Factor
+  - name: ratf_2
+    description: Currency Rate Factor
+  - name: ratf_3
+    description: Currency Rate Factor
+  - name: eibc_1
+    description: 'Express in Base Currency. Allowed values: 0, 1, 2'
+  - name: eibc_kw_1
+    description: 'Express in Base Currency (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: eibc_2
+    description: 'Express in Base Currency. Allowed values: 0, 1, 2'
+  - name: eibc_kw_2
+    description: 'Express in Base Currency (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: eibc_3
+    description: 'Express in Base Currency. Allowed values: 0, 1, 2'
+  - name: eibc_kw_3
+    description: 'Express in Base Currency (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: amth_1
+    description: Amount in Home Currency
+  - name: amth_2
+    description: Amount in Home Currency
+  - name: amth_3
+    description: Amount in Home Currency
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: nuni
+    description: Quantity
+  - name: fyer
+    description: Financial Year
+  - name: fprd
+    description: Financial Period
+  - name: ryer
+    description: Reporting Year
+  - name: rprd
+    description: Reporting Period
+  - name: tyer
+    description: Tax Year
+  - name: tprd
+    description: Tax Period
+  - name: mscd
+    description: 'Used Mapping Scheme Code. Max length: 6'
+  - name: msvs
+    description: Used Mapping Scheme Version
+  - name: idtc_ref_compnr
+    description: company number of primary key of table tfgld457 Integration Document
+      Types
+  - name: rbon_ref_compnr
+    description: company number of primary key of table tfgld454 Business Objects
+  - name: usgr_ref_compnr
+    description: company number of primary key of table tfgld435 Integration User
+      Groups
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld482 Integration Transactions table, Generated 2026-04-10T19:41:45Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - guid
+        - dbcr

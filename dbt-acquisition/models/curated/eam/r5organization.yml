@@ -1,0 +1,128 @@
+version: 2
+models:
+- name: r5organization
+  columns:
+  - name: org_lastsaved
+    description: ORG_LASTSAVED
+  - name: org_requestrecalcdep
+    description: ORG_REQUESTRECALCDEP
+  - name: org_curr
+    description: ORG_CURR
+  - name: org_common
+    description: ORG_COMMON
+  - name: org_coderef
+    description: ORG_CODEREF
+  - name: org_bookid
+    description: ORG_BOOKID
+  - name: org_matchlta
+    description: ORG_MATCHLTA
+  - name: org_matchltp
+    description: ORG_MATCHLTP
+  - name: org_timezone
+    description: ORG_TIMEZONE
+  - name: org_latitude
+    description: ORG_LATITUDE
+  - name: org_longitude
+    description: ORG_LONGITUDE
+  - name: org_externalorg
+    description: ORG_EXTERNALORG
+  - name: org_invqtytol
+    description: ORG_INVQTYTOL
+  - name: org_dunsnum
+    description: ORG_DUNSNUM
+  - name: org_updatecount
+    description: ORG_UPDATECOUNT
+  - name: org_created
+    description: ORG_CREATED
+  - name: org_updated
+    description: ORG_UPDATED
+  - name: org_locale
+    description: ORG_LOCALE
+  - name: org_depmethod
+    description: ORG_DEPMETHOD
+  - name: org_deprmethod
+    description: ORG_DEPRMETHOD
+  - name: org_segmentvalue
+    description: ORG_SEGMENTVALUE
+  - name: org_udfchar01
+    description: ORG_UDFCHAR01
+  - name: org_udfchar02
+    description: ORG_UDFCHAR02
+  - name: org_udfchar03
+    description: ORG_UDFCHAR03
+  - name: org_udfchar04
+    description: ORG_UDFCHAR04
+  - name: org_udfchar05
+    description: ORG_UDFCHAR05
+  - name: org_udfchar06
+    description: ORG_UDFCHAR06
+  - name: org_udfchar07
+    description: ORG_UDFCHAR07
+  - name: org_udfchar08
+    description: ORG_UDFCHAR08
+  - name: org_udfchar09
+    description: ORG_UDFCHAR09
+  - name: org_udfchar10
+    description: ORG_UDFCHAR10
+  - name: org_udfnum01
+    description: ORG_UDFNUM01
+  - name: org_udfnum02
+    description: ORG_UDFNUM02
+  - name: org_udfnum03
+    description: ORG_UDFNUM03
+  - name: org_udfnum04
+    description: ORG_UDFNUM04
+  - name: org_udfnum05
+    description: ORG_UDFNUM05
+  - name: org_udfdate01
+    description: ORG_UDFDATE01
+  - name: org_udfdate02
+    description: ORG_UDFDATE02
+  - name: org_udfdate03
+    description: ORG_UDFDATE03
+  - name: org_udfdate04
+    description: ORG_UDFDATE04
+  - name: org_udfdate05
+    description: ORG_UDFDATE05
+  - name: org_udfchkbox01
+    description: ORG_UDFCHKBOX01
+  - name: org_udfchkbox02
+    description: ORG_UDFCHKBOX02
+  - name: org_udfchkbox03
+    description: ORG_UDFCHKBOX03
+  - name: org_udfchkbox04
+    description: ORG_UDFCHKBOX04
+  - name: org_udfchkbox05
+    description: ORG_UDFCHKBOX05
+  - name: org_accountingentity
+    description: ORG_ACCOUNTINGENTITY
+  - name: org_streamplusproject
+    description: ORG_STREAMPLUSPROJECT
+  - name: org_calgroupcode
+    description: ORG_CALGROUPCODE
+  - name: org_calgrouporg
+    description: ORG_CALGROUPORG
+  - name: org_code
+    description: ORG_CODE
+    data_tests:
+    - unique
+  - name: org_desc
+    description: ORG_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ORGANIZATION

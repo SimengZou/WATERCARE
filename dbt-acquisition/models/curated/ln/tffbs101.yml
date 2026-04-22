@@ -1,0 +1,225 @@
+version: 2
+models:
+- name: tffbs101
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: year
+    description: (required) Year
+    data_tests:
+    - not_null
+  - name: budg
+    description: '(required) Budget. Max length: 3'
+    data_tests:
+    - not_null
+  - name: leac
+    description: '(required) Ledger Account. Max length: 12'
+    data_tests:
+    - not_null
+  - name: dim1
+    description: '(required) Dimension 1. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dim2
+    description: '(required) Dimension 2. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dim3
+    description: '(required) Dimension 3. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dim4
+    description: '(required) Dimension 4. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dim5
+    description: '(required) Dimension 5. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dim6
+    description: '(required) Dimension 6. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dim7
+    description: '(required) Dimension 7. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dim8
+    description: '(required) Dimension 8. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dim9
+    description: '(required) Dimension 9. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dm10
+    description: '(required) Dimension 10. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dm11
+    description: '(required) Dimension 11. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dm12
+    description: '(required) Dimension 12. Max length: 9'
+    data_tests:
+    - not_null
+  - name: peri
+    description: (required) Period
+    data_tests:
+    - not_null
+  - name: dbcr
+    description: 'Debit/Credit Indicator. Allowed values: 1, 2'
+  - name: dbcr_kw
+    description: 'Debit/Credit Indicator (keyword). Allowed values: tfgld.dbcr.debit,
+      tfgld.dbcr.credit'
+  - name: amnt
+    description: Amount
+  - name: stam
+    description: Statutory Amount
+  - name: coam
+    description: Complementary Amount
+  - name: qan1
+    description: Quantity 1
+  - name: qan2
+    description: Quantity 2
+  - name: dty1
+    description: Dimension Type 1
+  - name: dty2
+    description: Dimension Type 2
+  - name: dty3
+    description: Dimension Type 3
+  - name: dty4
+    description: Dimension Type 4
+  - name: dty5
+    description: Dimension Type 5
+  - name: dty6
+    description: Dimension Type 6
+  - name: dty7
+    description: Dimension Type 7
+  - name: dty8
+    description: Dimension Type 8
+  - name: dty9
+    description: Dimension Type 9
+  - name: dt10
+    description: Dimension Type 10
+  - name: dt11
+    description: Dimension Type 11
+  - name: dt12
+    description: Dimension Type 12
+  - name: back
+    description: 'Created in Background. Allowed values: 1, 2'
+  - name: back_kw
+    description: 'Created in Background (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: olap
+    description: Send to OLAP
+  - name: year_budg_ref_compnr
+    description: company number of primary key of table tffbs005 Budgets per Year
+  - name: budg_ref_compnr
+    description: company number of primary key of table tffbs003 Budget
+  - name: leac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: dty1_dim1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty1_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dty2_dim2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty2_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dty3_dim3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty3_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dty4_dim4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty4_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dty5_dim5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty5_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dty6_dim6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty6_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dty7_dim7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty7_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dty8_dim8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty8_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dty9_dim9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dty9_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dt10_dm10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dt10_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dt11_dm11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dt11_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: dt12_dm12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dt12_ref_compnr
+    description: company number of primary key of table tfgld002 Dimension Descriptions
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffbs101 Budget Amounts and Quantities per Period table, Generated
+    2026-04-10T19:41:38Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - year
+        - budg
+        - leac
+        - dim1
+        - dim2
+        - dim3
+        - dim4
+        - dim5
+        - dim6
+        - dim7
+        - dim8
+        - dim9
+        - dm10
+        - dm11
+        - dm12
+        - peri

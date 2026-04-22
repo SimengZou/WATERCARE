@@ -1,0 +1,83 @@
+version: 2
+models:
+- name: r5wolaborschedwo
+  columns:
+  - name: lsw_lastsaved
+    description: LSW_LASTSAVED
+  - name: lsw_act
+    description: LSW_ACT
+  - name: lsw_select
+    description: LSW_SELECT
+  - name: lsw_hrsrem
+    description: LSW_HRSREM
+  - name: lsw_status
+    description: LSW_STATUS
+  - name: lsw_newstatus
+    description: LSW_NEWSTATUS
+  - name: lsw_pplrem
+    description: LSW_PPLREM
+  - name: lsw_acthrsrem
+    description: LSW_ACTHRSREM
+  - name: lsw_actpplreq
+    description: LSW_ACTPPLREQ
+  - name: lsw_prevschedhrs
+    description: LSW_PREVSCHEDHRS
+  - name: lsw_prevschedppl
+    description: LSW_PREVSCHEDPPL
+  - name: lsw_totalschedhrs
+    description: LSW_TOTALSCHEDHRS
+  - name: lsw_lastscheddate
+    description: LSW_LASTSCHEDDATE
+  - name: lsw_matavail
+    description: LSW_MATAVAIL
+  - name: lsw_related
+    description: LSW_RELATED
+  - name: lsw_ignore
+    description: LSW_IGNORE
+  - name: lsw_esignuser
+    description: LSW_ESIGNUSER
+  - name: lsw_esigntype
+    description: LSW_ESIGNTYPE
+  - name: lsw_esigndate
+    description: LSW_ESIGNDATE
+  - name: lsw_esigncertifynum
+    description: LSW_ESIGNCERTIFYNUM
+  - name: lsw_esigncertifytype
+    description: LSW_ESIGNCERTIFYTYPE
+  - name: lsw_actcompleted
+    description: LSW_ACTCOMPLETED
+  - name: lsw_updatecount
+    description: LSW_UPDATECOUNT
+  - name: lsw_contnextshift
+    description: LSW_CONTNEXTSHIFT
+  - name: lsw_dueperc
+    description: LSW_DUEPERC
+  - name: lsw_sessionid
+    description: LSW_SESSIONID
+  - name: lsw_event
+    description: LSW_EVENT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WOLABORSCHEDWO
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - lsw_sessionid
+        - lsw_event
+        - lsw_act

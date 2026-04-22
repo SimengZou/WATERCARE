@@ -1,0 +1,418 @@
+version: 2
+models:
+- name: tfacp240
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: loco
+    description: (required) Logistic Company
+    data_tests:
+    - not_null
+  - name: otyp
+    description: '(required) Order Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21'
+    data_tests:
+    - not_null
+  - name: otyp_kw
+    description: 'Order Type (keyword). Allowed values: tfacp.otyp.purchase, tfacp.otyp.sales,
+      tfacp.otyp.trans, tfacp.otyp.trans.man, tfacp.otyp.trans.wip, tfacp.otyp.freight,
+      tfacp.otyp.commissions, tfacp.otyp.project, tfacp.otyp.project.man, tfacp.otyp.ent.planning,
+      tfacp.otyp.assembly, tfacp.otyp.production, tfacp.otyp.service, tfacp.otyp.maint.sales,
+      tfacp.otyp.pcs.project, tfacp.otyp.maint.work, tfacp.otyp.not.applicable, tfacp.otyp.proj.contract,
+      tfacp.otyp.customer.claim, tfacp.otyp.intercomp.trade, tfacp.otyp.services.procm'
+  - name: orno
+    description: '(required) Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Position
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: fcpo
+    description: Financial Company Purchase Office
+  - name: ifbp
+    description: 'Invoice-from Business Partner. Max length: 9'
+  - name: koor
+    description: 'Type of Purchase order. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8,
+      9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 26, 28, 29, 30, 31, 32,
+      33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+      52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 68, 69, 70, 71, 72, 74,
+      76, 78, 80, 82, 84, 86, 88, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100'
+  - name: koor_kw
+    description: 'Type of Purchase order (keyword). Allowed values: tckoor.act.sfc,
+      tckoor.act.pur, tckoor.act.sls, tckoor.cp.sfc, tckoor.cp.pur, tckoor.act.pur.sched,
+      tckoor.act.sls.sched, tckoor.act.pur.adv, tckoor.act.asc, tckoor.services.proc,
+      tckoor.mrp.sls, tckoor.mrp.atp, tckoor.sls.quot, tckoor.pur.con, tckoor.sls.con,
+      tckoor.wrh.order, tckoor.act.srv, tckoor.pss.pur, tckoor.pss.wrh, tckoor.serv.proc.adv,
+      tckoor.wrh.ass, tckoor.act.trf, tckoor.act.pmg, tckoor.srv.call, tckoor.srv.planned.act,
+      tckoor.cp.ipl, tckoor.cf.ap, tckoor.act.sfc.man, tckoor.act.pur.man, tckoor.act.sls.man,
+      tckoor.act.srv.man, tckoor.act.trf.man, tckoor.act.srv.sls, tckoor.act.dpt.wrk,
+      tckoor.act.srv.sls.man, tckoor.pur.rfq, tckoor.act.sls.sched.f, tckoor.act.dpt.wrk.man,
+      tckoor.freight, tckoor.stock, tckoor.safety.stock, tckoor.act.asc.man, tckoor.act.pur.req,
+      tckoor.epp.quote, tckoor.mps.prod, tckoor.mps.pur, tckoor.cycle.count, tckoor.adjustment,
+      tckoor.apl.asc, tckoor.cp.rpt, tckoor.revaluation, tckoor.product.sched, tckoor.product.kanban,
+      tckoor.project, tckoor.project.man, tckoor.enterprise.plan, tckoor.intercomp.trade,
+      tckoor.cp.sub, tckoor.act.sub.sched, tckoor.pcs.project, tckoor.eus.change,
+      tckoor.alloc.change, tckoor.inv.own.change, tckoor.exp.supply, tckoor.conf.supply,
+      tckoor.bp.forecast, tckoor.aggr.demand, tckoor.bfbp.trf.pur, tckoor.bfbp.trf.sched,
+      tckoor.stbp.trf.sls, tckoor.stbp.trf.sched, tckoor.stbp.trf.wh.man, tckoor.stbp.trf.man,
+      tckoor.stbp.trf.wh.dis, tckoor.cp.cpt, tckoor.act.cpt, tckoor.tag.transfer,
+      tckoor.proj.contract, tckoor.customer.claim, tckoor.supplier.claim, tckoor.quarantine,
+      tckoor.transformation, tckoor.not.appl'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: sfad
+    description: 'Ship- from address. Max length: 9'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: proj
+    description: 'Project. Max length: 9'
+  - name: bppr
+    description: 'Infor LN Project. Allowed values: 1, 2'
+  - name: bppr_kw
+    description: 'Infor LN Project (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: itgr
+    description: 'Item Group. Max length: 6'
+  - name: glco
+    description: 'GL Code. Max length: 135'
+  - name: poff
+    description: 'Invoice-from Department. Max length: 6'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: cadr
+    description: 'Ship-to Address. Max length: 9'
+  - name: cvyn
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: cvyn_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: vatc
+    description: 'Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: bptc
+    description: 'Business Partner''s Tax Country. Max length: 3'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: mcfr
+    description: 'Rate Determiner. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 10, 20'
+  - name: mcfr_kw
+    description: 'Rate Determiner (keyword). Allowed values: tcfcrt.fixedl, tcfcrt.fixedh,
+      tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd, tcfcrt.manual,
+      tcfcrt.fixed, tcfcrt.not.appl'
+  - name: rate_1
+    description: Rate
+  - name: rate_2
+    description: Rate
+  - name: rate_3
+    description: Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: ratd
+    description: Rate Date
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: iuni
+    description: 'Inventory Unit. Max length: 3'
+  - name: pcun
+    description: 'Piece Unit. Max length: 3'
+  - name: unit
+    description: 'Purchase Unit. Max length: 3'
+  - name: oqan
+    description: Order Quantity in inventory unit
+  - name: oqpc
+    description: Order Quantity in Piece Unit
+  - name: oamt
+    description: Order Amount in Order Currency
+  - name: amth_1
+    description: Amount in Home Currency
+  - name: amth_2
+    description: Amount in Home Currency
+  - name: amth_3
+    description: Amount in Home Currency
+  - name: rqty
+    description: Total Goods Received Quantity in Inventory Unit
+  - name: rqpc
+    description: Total Received Quantity in Piece Unit
+  - name: tapq
+    description: Total Approved Goods Received Quantity in Inventory Unit
+  - name: aqpc
+    description: Total Approved Quantity in Piece Unit
+  - name: trqu
+    description: Total Rejected Quantity in Inventory Unit (Goods)
+  - name: rjpc
+    description: Total Rejected Quantity in Piece Unit
+  - name: fire
+    description: 'Final goods receipt. Allowed values: 1, 2'
+  - name: fire_kw
+    description: 'Final goods receipt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: byer
+    description: 'Buyer. Max length: 9'
+  - name: ladt
+    description: Latest Good Rcpt Date
+  - name: toma
+    description: 'Total Matched. Allowed values: 1, 2'
+  - name: toma_kw
+    description: 'Total Matched (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sfbl
+    description: 'Self-billed Order. Allowed values: 1, 2'
+  - name: sfbl_kw
+    description: 'Self-billed Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: paft
+    description: 'Pay after approval. Allowed values: 1, 2'
+  - name: paft_kw
+    description: 'Pay after approval (keyword). Allowed values: tcpaft.approval, tcpaft.receipts'
+  - name: rcod
+    description: 'Exempt Reason. Max length: 6'
+  - name: ceno
+    description: 'Tax Exemption Certificate Number. Max length: 24'
+  - name: ppvp
+    description: 'Purchase Price Variance Posted. Allowed values: 1, 2'
+  - name: ppvp_kw
+    description: 'Purchase Price Variance Posted (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ptyp
+    description: 'Purchase Type. Max length: 6'
+  - name: fsli
+    description: Financial Company Central Invoicing
+  - name: slcp
+    description: Source Company Central Invoicing
+  - name: srtp
+    description: 'Source Type Central Invoicing. Allowed values: 10, 20, 30, 34, 40,
+      43, 44, 48, 52, 60, 64, 66, 68, 70, 72, 80, 90, 100, 110, 120, 130, 190, 200'
+  - name: srtp_kw
+    description: 'Source Type Central Invoicing (keyword). Allowed values: tcsli.srtp.interest,
+      tcsli.srtp.manual.sales, tcsli.srtp.project.contr, tcsli.srtp.project, tcsli.srtp.sales.order,
+      tcsli.srtp.int.trade.order, tcsli.srtp.wareh.order, tcsli.srtp.purchase.order,
+      tcsli.srtp.pcs.order, tcsli.srtp.service.order, tcsli.srtp.maint.sales.ord,
+      tcsli.srtp.maint.wrk.ord, tcsli.srtp.service.call, tcsli.srtp.customer.claim,
+      tcsli.srtp.supplier.claim, tcsli.srtp.service.contr, tcsli.srtp.freight, tcsli.srtp.debit.credit,
+      tcsli.srtp.rebate, tcsli.srtp.shipment, tcsli.srtp.receive.sls.inv, tcsli.srtp.all,
+      tcsli.srtp.not.appl'
+  - name: slso
+    description: 'Order Number Central Invoicing. Max length: 9'
+  - name: cipo
+    description: Order Line Central Invoicing
+  - name: oref
+    description: 'Order Reference Central Invoicing. Max length: 9'
+  - name: tref
+    description: 'Technical Reference Central Invoicing. Max length: 70'
+  - name: ciko
+    description: 'Obsolete. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+      13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 26, 28, 29, 30, 31, 32, 33, 34, 35,
+      36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54,
+      55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 68, 69, 70, 71, 72, 74, 76, 78, 80,
+      82, 84, 86, 88, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100'
+  - name: ciko_kw
+    description: 'Obsolete (keyword). Allowed values: tckoor.act.sfc, tckoor.act.pur,
+      tckoor.act.sls, tckoor.cp.sfc, tckoor.cp.pur, tckoor.act.pur.sched, tckoor.act.sls.sched,
+      tckoor.act.pur.adv, tckoor.act.asc, tckoor.services.proc, tckoor.mrp.sls, tckoor.mrp.atp,
+      tckoor.sls.quot, tckoor.pur.con, tckoor.sls.con, tckoor.wrh.order, tckoor.act.srv,
+      tckoor.pss.pur, tckoor.pss.wrh, tckoor.serv.proc.adv, tckoor.wrh.ass, tckoor.act.trf,
+      tckoor.act.pmg, tckoor.srv.call, tckoor.srv.planned.act, tckoor.cp.ipl, tckoor.cf.ap,
+      tckoor.act.sfc.man, tckoor.act.pur.man, tckoor.act.sls.man, tckoor.act.srv.man,
+      tckoor.act.trf.man, tckoor.act.srv.sls, tckoor.act.dpt.wrk, tckoor.act.srv.sls.man,
+      tckoor.pur.rfq, tckoor.act.sls.sched.f, tckoor.act.dpt.wrk.man, tckoor.freight,
+      tckoor.stock, tckoor.safety.stock, tckoor.act.asc.man, tckoor.act.pur.req, tckoor.epp.quote,
+      tckoor.mps.prod, tckoor.mps.pur, tckoor.cycle.count, tckoor.adjustment, tckoor.apl.asc,
+      tckoor.cp.rpt, tckoor.revaluation, tckoor.product.sched, tckoor.product.kanban,
+      tckoor.project, tckoor.project.man, tckoor.enterprise.plan, tckoor.intercomp.trade,
+      tckoor.cp.sub, tckoor.act.sub.sched, tckoor.pcs.project, tckoor.eus.change,
+      tckoor.alloc.change, tckoor.inv.own.change, tckoor.exp.supply, tckoor.conf.supply,
+      tckoor.bp.forecast, tckoor.aggr.demand, tckoor.bfbp.trf.pur, tckoor.bfbp.trf.sched,
+      tckoor.stbp.trf.sls, tckoor.stbp.trf.sched, tckoor.stbp.trf.wh.man, tckoor.stbp.trf.man,
+      tckoor.stbp.trf.wh.dis, tckoor.cp.cpt, tckoor.act.cpt, tckoor.tag.transfer,
+      tckoor.proj.contract, tckoor.customer.claim, tckoor.supplier.claim, tckoor.quarantine,
+      tckoor.transformation, tckoor.not.appl'
+  - name: cisq
+    description: Obsolete
+  - name: ortp
+    description: 'Obsolete. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9'
+  - name: ortp_kw
+    description: 'Obsolete (keyword). Allowed values: cisli.ortp.sales, cisli.ortp.warehouse,
+      cisli.ortp.serv.ord, cisli.ortp.serv.call, cisli.ortp.maint.sales.ord, cisli.ortp.purchase,
+      cisli.ortp.rebate, cisli.ortp.not.app, cisli.ortp.pcs.order'
+  - name: oset
+    description: Obsolete
+  - name: cish
+    description: 'Obsolete. Max length: 9'
+  - name: paya
+    description: 'Payment Agreement. Max length: 3'
+  - name: mpnr
+    description: 'Manufacturer Part Number. Max length: 35'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: mcpr
+    description: 'Multiple Consumptions per Goods Receipt. Allowed values: 1, 2'
+  - name: mcpr_kw
+    description: 'Multiple Consumptions per Goods Receipt (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: damt
+    description: Total Discount Amount in Order Currency
+  - name: ityp
+    description: 'Invoicing Type. Allowed values: 1, 2, 3'
+  - name: ityp_kw
+    description: 'Invoicing Type (keyword). Allowed values: tfacp.ityp.manual, tfacp.ityp.self.billing,
+      tfacp.ityp.internal'
+  - name: itsc
+    description: 'Intercompany Trade Scenario. Allowed values: 10, 15, 20, 30, 40,
+      60, 65, 80, 85, 90, 95, 98, 102, 103, 108, 110, 130, 150, 200'
+  - name: itsc_kw
+    description: 'Intercompany Trade Scenario (keyword). Allowed values: tcitr.scen.ext.mat.del.sls,
+      tcitr.scen.ext.mat.del.pur, tcitr.scen.ext.mat.dir.del, tcitr.scen.int.mat.del,
+      tcitr.scen.freight, tcitr.scen.subc.dep.rep, tcitr.scen.int.srv.del, tcitr.scen.labor,
+      tcitr.scen.expenses, tcitr.scen.other, tcitr.scen.subcon, tcitr.scen.tool, tcitr.scen.trav.time,
+      tcitr.scen.trav.other, tcitr.scen.helpdesk, tcitr.scen.rental, tcitr.scen.pcs.del,
+      tcitr.scen.wip.transfer, tcitr.scen.not.appl'
+  - name: sorn__en_us
+    description: '(required) Buy-from Business Partner Order - base language. Max
+      length: 30'
+    data_tests:
+    - not_null
+  - name: odat
+    description: Order Date
+  - name: crrf
+    description: 'Item Cross Reference. Allowed values: 0, 1, 2, 3'
+  - name: crrf_kw
+    description: 'Item Cross Reference (keyword). Allowed values: , tccrrf.ics, tccrrf.mpn,
+      tccrrf.na'
+  - name: citt
+    description: 'Code Item Type. Max length: 3'
+  - name: crit__en_us
+    description: '(required) Cross Reference Item - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: prrc
+    description: 'Price per Goods Receipt. Allowed values: 1, 2'
+  - name: prrc_kw
+    description: 'Price per Goods Receipt (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: issp
+    description: 'Invoice by Stage Payment. Allowed values: 1, 2'
+  - name: issp_kw
+    description: 'Invoice by Stage Payment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mtch
+    description: 'Match. Allowed values: 1, 2'
+  - name: mtch_kw
+    description: 'Match (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: maqu
+    description: Match Quantity
+  - name: mqpc
+    description: Match Quantity in Piece Unit
+  - name: mqpu
+    description: Match Quantity in Purchase Unit
+  - name: maam
+    description: Match Amount
+  - name: lmat
+    description: 'Level of Match. Allowed values: 10, 20'
+  - name: lmat_kw
+    description: 'Level of Match (keyword). Allowed values: tfacp.lmat.inv.header,
+      tfacp.lmat.inv.line'
+  - name: omti
+    description: 'Overwrite Match of Invoice Header. Allowed values: 1, 2'
+  - name: omti_kw
+    description: 'Overwrite Match of Invoice Header (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: uppr
+    description: 'Update Average/Last Purchase Price. Allowed values: 1, 2'
+  - name: uppr_kw
+    description: 'Update Average/Last Purchase Price (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: clas
+    description: 'Classification Scheme. Max length: 9'
+  - name: clsc
+    description: 'Classification Scheme Code. Max length: 25'
+  - name: clsb
+    description: 'Classification Scheme Base. Allowed values: 10, 20, 100'
+  - name: clsb_kw
+    description: 'Classification Scheme Base (keyword). Allowed values: tctax.vtbo.services,
+      tctax.vtbo.goods, tctax.vtbo.not.appl'
+  - name: trgu
+    description: 'GUID. Max length: 22'
+  - name: cvlo
+    description: Customs Value in Order Currency
+  - name: ifbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: iuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: unit_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: rcod_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: ptyp_ref_compnr
+    description: company number of primary key of table tcmcs201 Purchase Types
+  - name: paya_ref_compnr
+    description: company number of primary key of table tcmcs206 Payment Agreements
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: clas_ref_compnr
+    description: company number of primary key of table tccls010 Classification Schemes
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfacp240 Order Data for Approval table, Generated 2026-04-10T19:41:28Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - loco
+        - otyp
+        - orno
+        - pono
+        - sqnb

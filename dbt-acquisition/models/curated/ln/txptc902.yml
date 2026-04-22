@@ -1,0 +1,88 @@
+version: 2
+models:
+- name: txptc902
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: prsk
+    description: '(required) Project Risk. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: ersk
+    description: 'd/EPM Risk. Max length: 20'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: text
+    description: Risk Text
+  - name: creq
+    description: 'Change Request. Allowed values: 1, 2'
+  - name: creq_kw
+    description: 'Change Request (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: vreq
+    description: 'Variation Request. Allowed values: 1, 2'
+  - name: vreq_kw
+    description: 'Variation Request (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rcat
+    description: 'Risk Category. Max length: 50'
+  - name: tdat
+    description: Target Closure Date
+  - name: cdat
+    description: Creation Date
+  - name: crno
+    description: 'Change Request - CR. Max length: 9'
+  - name: crpo
+    description: CR Line
+  - name: vrno
+    description: 'Change Request - VR. Max length: 9'
+  - name: vrpo
+    description: VR Line
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN txptc902 Project Risks table, Generated 2026-04-10T19:42:42Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - prsk

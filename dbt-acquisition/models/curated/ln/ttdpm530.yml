@@ -1,0 +1,77 @@
+version: 2
+models:
+- name: ttdpm530
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: sequ
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: burl
+    description: 'Base URL. Max length: 999'
+  - name: oack
+    description: 'Base OAuth Consumer Key. Max length: 999'
+  - name: oask
+    description: 'Base OAuth Secret Key. Max length: 999'
+  - name: loid
+    description: 'Logical ID. Max length: 250'
+  - name: llid
+    description: 'Local Logical ID. Max length: 250'
+  - name: rurl
+    description: 'Data Catalog URL. Max length: 999'
+  - name: rack
+    description: 'Data Catalog OAuth Consumer Key. Max length: 999'
+  - name: rask
+    description: 'Data Catalog OAuth Secret Key. Max length: 999'
+  - name: pmil
+    description: 'Publish Method Initial Load. Allowed values: 5, 10, 15'
+  - name: pmil_kw
+    description: 'Publish Method Initial Load (keyword). Allowed values: ttdpm.pmth.batch,
+      ttdpm.pmth.streaming, ttdpm.pmth.ims'
+  - name: pmch
+    description: 'Publish Method Changes. Allowed values: 5, 10, 15'
+  - name: pmch_kw
+    description: 'Publish Method Changes (keyword). Allowed values: ttdpm.pmth.batch,
+      ttdpm.pmth.streaming, ttdpm.pmth.ims'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN ttdpm530 IMS Parameters table, Generated 2026-04-10T19:42:40Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - sequ

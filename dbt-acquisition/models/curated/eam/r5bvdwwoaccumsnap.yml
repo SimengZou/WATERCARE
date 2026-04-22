@@ -1,0 +1,94 @@
+version: 2
+models:
+- name: r5bvdwwoaccumsnap
+  columns:
+  - name: zob_key
+    description: ZOB_KEY
+  - name: zwo_key
+    description: ZWO_KEY
+  - name: zdt_key
+    description: ZDT_KEY
+  - name: zor_key
+    description: ZOR_KEY
+  - name: zmr_key
+    description: ZMR_KEY
+  - name: zws_actduration
+    description: ZWS_ACTDURATION
+  - name: zws_actlaborcostdefcur
+    description: ZWS_ACTLABORCOSTDEFCUR
+  - name: zws_actlaborcostorgcur
+    description: ZWS_ACTLABORCOSTORGCUR
+  - name: zws_actlaborhours
+    description: ZWS_ACTLABORHOURS
+  - name: zws_actmatlcostdefcur
+    description: ZWS_ACTMATLCOSTDEFCUR
+  - name: zws_actmatlcostorgcur
+    description: ZWS_ACTMATLCOSTORGCUR
+  - name: zws_actualcompdatekey
+    description: ZWS_ACTUALCOMPDATEKEY
+  - name: zws_actualstartdatekey
+    description: ZWS_ACTUALSTARTDATEKEY
+  - name: zws_defcur
+    description: ZWS_DEFCUR
+  - name: zws_downtime
+    description: ZWS_DOWNTIME
+  - name: zws_downtimecostdefcur
+    description: ZWS_DOWNTIMECOSTDEFCUR
+  - name: zws_downtimecostorgcur
+    description: ZWS_DOWNTIMECOSTORGCUR
+  - name: zws_estlaborcostdefcur
+    description: ZWS_ESTLABORCOSTDEFCUR
+  - name: zws_estlaborcostorgcur
+    description: ZWS_ESTLABORCOSTORGCUR
+  - name: zws_estlaborhours
+    description: ZWS_ESTLABORHOURS
+  - name: zws_estmatlcostdefcur
+    description: ZWS_ESTMATLCOSTDEFCUR
+  - name: zws_estmatlcostorgcur
+    description: ZWS_ESTMATLCOSTORGCUR
+  - name: zws_orgcur
+    description: ZWS_ORGCUR
+  - name: zws_schedcompdatekey
+    description: ZWS_SCHEDCOMPDATEKEY
+  - name: zws_schedduration
+    description: ZWS_SCHEDDURATION
+  - name: zws_scheduledhours
+    description: ZWS_SCHEDULEDHOURS
+  - name: zws_srdaterequestedkey
+    description: ZWS_SRDATEREQUESTEDKEY
+  - name: zws_srestcostdefcur
+    description: ZWS_SRESTCOSTDEFCUR
+  - name: zws_srestcostorgcur
+    description: ZWS_SRESTCOSTORGCUR
+  - name: zws_srkey
+    description: ZWS_SRKEY
+  - name: zws_srresponsetime
+    description: ZWS_SRRESPONSETIME
+  - name: zws_wocreatetoactcomplag
+    description: ZWS_WOCREATETOACTCOMPLAG
+  - name: zws_wocreatetoactstartlag
+    description: ZWS_WOCREATETOACTSTARTLAG
+  - name: zws_wocreatetoschedstartlag
+    description: ZWS_WOCREATETOSCHEDSTARTLAG
+  - name: zws_wodatecreatedkey
+    description: ZWS_WODATECREATEDKEY
+  - name: zws_wocode
+    description: ZWS_WOCODE
+  - name: zws_lastsaved
+    description: ZWS_LASTSAVED
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5BVDWWOACCUMSNAP

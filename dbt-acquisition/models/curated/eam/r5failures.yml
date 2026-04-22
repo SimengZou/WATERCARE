@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5failures
+  columns:
+  - name: fal_lastsaved
+    description: FAL_LASTSAVED
+  - name: fal_desc
+    description: FAL_DESC
+  - name: fal_gen
+    description: FAL_GEN
+  - name: fal_updatecount
+    description: FAL_UPDATECOUNT
+  - name: fal_created
+    description: FAL_CREATED
+  - name: fal_partfailure
+    description: FAL_PARTFAILURE
+  - name: fal_notused
+    description: FAL_NOTUSED
+  - name: fal_enableworkorders
+    description: FAL_ENABLEWORKORDERS
+  - name: fal_group
+    description: FAL_GROUP
+  - name: fal_code
+    description: FAL_CODE
+    data_tests:
+    - unique
+  - name: fal_updated
+    description: FAL_UPDATED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5FAILURES

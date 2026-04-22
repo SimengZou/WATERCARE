@@ -1,0 +1,113 @@
+version: 2
+models:
+- name: tsctm111
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: term
+    description: (required) TermID
+    data_tests:
+    - not_null
+  - name: cfln
+    description: (required) Configuration Line
+    data_tests:
+    - not_null
+  - name: cseq
+    description: (required) Fixed Price Line
+    data_tests:
+    - not_null
+  - name: fplv
+    description: 'Price Level. Allowed values: 5, 10, 15, 20, 25'
+  - name: fplv_kw
+    description: 'Price Level (keyword). Allowed values: tsctm.fplv.ref.activity,
+      tsctm.fplv.master.routing, tsctm.fplv.routing.option, tsctm.fplv.any.activity,
+      tsctm.fplv.any.order'
+  - name: cact
+    description: 'Reference Activity. Max length: 16'
+  - name: camr
+    description: 'Master Routing. Max length: 16'
+  - name: caro
+    description: 'Routing Option. Max length: 16'
+  - name: pris
+    description: Sales Price
+  - name: txta
+    description: Text
+  - name: term_cfln_ref_compnr
+    description: company number of primary key of table tsctm110 Configuration Lines
+  - name: cact_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: camr_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: caro_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: pris_homc
+    description: 'CC: Sales Price in Local Currency'
+  - name: pris_rpc1
+    description: 'CC: Sales Price in Reporting Currency 1'
+  - name: pris_rpc2
+    description: 'CC: Sales Price in Reporting Currency 2'
+  - name: pris_refc
+    description: 'CC: Sales Price in Reference Currency'
+  - name: pris_dwhc
+    description: 'CC: Sales Price in Data Warehouse Currency'
+  - name: camt_cntc
+    description: 'CC: Cost Amount in Contract Currency'
+  - name: camt_homc
+    description: 'CC: Cost Amount in Local Currency'
+  - name: camt_rpc1
+    description: 'CC: Cost Amount in Reporting Currency 1'
+  - name: camt_rpc2
+    description: 'CC: Cost Amount in Reporting Currency 2'
+  - name: camt_refc
+    description: 'CC: Cost Amount in Reference Currency'
+  - name: camt_dwhc
+    description: 'CC: Cost Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm111 Fixed Price Terms table, Generated 2026-04-10T19:42:30Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - term
+        - cfln
+        - cseq

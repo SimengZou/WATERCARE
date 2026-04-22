@@ -1,0 +1,91 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key='dbt_surrogate_key',
+    description='LN tccom114 Pay-by Business Partners table, Generated 2026-04-10T19:41:02Z from package combination ce01101',
+    tags=['auto-generated', 'ln', 'stage1']
+) }}
+
+with cte_flattened as (
+    select
+        {{ trx_json_extract('src', ['compnr'], type='int', alias='compnr') }},
+        {{ trx_json_extract('src', ['pfbp'], type='varchar', alias='pfbp') }},
+        {{ trx_json_extract('src', ['cofc'], type='varchar', alias='cofc') }},
+        {{ trx_json_extract('src', ['bpst'], type='int', alias='bpst') }},
+        {{ trx_json_extract('src', ['bpst_kw'], type='varchar', alias='bpst_kw') }},
+        {{ trx_json_extract('src', ['stdt'], type='timestamp_ntz', alias='stdt') }},
+        {{ trx_json_extract('src', ['endt'], type='timestamp_ntz', alias='endt') }},
+        {{ trx_json_extract('src', ['clan'], type='varchar', alias='clan') }},
+        {{ trx_json_extract('src', ['cbps'], type='varchar', alias='cbps') }},
+        {{ trx_json_extract('src', ['cbtp'], type='varchar', alias='cbtp') }},
+        {{ trx_json_extract('src', ['cadr'], type='varchar', alias='cadr') }},
+        {{ trx_json_extract('src', ['telp'], type='varchar', alias='telp') }},
+        {{ trx_json_extract('src', ['tlcy'], type='varchar', alias='tlcy') }},
+        {{ trx_json_extract('src', ['tlci'], type='varchar', alias='tlci') }},
+        {{ trx_json_extract('src', ['tlln'], type='varchar', alias='tlln') }},
+        {{ trx_json_extract('src', ['tlex'], type='varchar', alias='tlex') }},
+        {{ trx_json_extract('src', ['tefx'], type='varchar', alias='tefx') }},
+        {{ trx_json_extract('src', ['tfcy'], type='varchar', alias='tfcy') }},
+        {{ trx_json_extract('src', ['tfci'], type='varchar', alias='tfci') }},
+        {{ trx_json_extract('src', ['tfln'], type='varchar', alias='tfln') }},
+        {{ trx_json_extract('src', ['tfex'], type='varchar', alias='tfex') }},
+        {{ trx_json_extract('src', ['ccal'], type='varchar', alias='ccal') }},
+        {{ trx_json_extract('src', ['ccnt'], type='varchar', alias='ccnt') }},
+        {{ trx_json_extract('src', ['ccur'], type='varchar', alias='ccur') }},
+        {{ trx_json_extract('src', ['rtyp'], type='varchar', alias='rtyp') }},
+        {{ trx_json_extract('src', ['cban'], type='varchar', alias='cban') }},
+        {{ trx_json_extract('src', ['bank'], type='varchar', alias='bank') }},
+        {{ trx_json_extract('src', ['eded'], type='int', alias='eded') }},
+        {{ trx_json_extract('src', ['mrem'], type='varchar', alias='mrem') }},
+        {{ trx_json_extract('src', ['rtad'], type='varchar', alias='rtad') }},
+        {{ trx_json_extract('src', ['prra'], type='int', alias='prra') }},
+        {{ trx_json_extract('src', ['prra_kw'], type='varchar', alias='prra_kw') }},
+        {{ trx_json_extract('src', ['vtcb'], type='int', alias='vtcb') }},
+        {{ trx_json_extract('src', ['vtcb_kw'], type='varchar', alias='vtcb_kw') }},
+        {{ trx_json_extract('src', ['stxa'], type='int', alias='stxa') }},
+        {{ trx_json_extract('src', ['stxa_kw'], type='varchar', alias='stxa_kw') }},
+        {{ trx_json_extract('src', ['tndm'], type='int', alias='tndm') }},
+        {{ trx_json_extract('src', ['tndm_kw'], type='varchar', alias='tndm_kw') }},
+        {{ trx_json_extract('src', ['mxtn'], type='int', alias='mxtn') }},
+        {{ trx_json_extract('src', ['ppsl'], type='int', alias='ppsl') }},
+        {{ trx_json_extract('src', ['ppsl_kw'], type='varchar', alias='ppsl_kw') }},
+        {{ trx_json_extract('src', ['aofc'], type='varchar', alias='aofc') }},
+        {{ trx_json_extract('src', ['seak', 'en_US'], type='varchar', alias='seak__en_us') }},
+        {{ trx_json_extract('src', ['user'], type='varchar', alias='user') }},
+        {{ trx_json_extract('src', ['crdt'], type='timestamp_ntz', alias='crdt') }},
+        {{ trx_json_extract('src', ['lmus'], type='varchar', alias='lmus') }},
+        {{ trx_json_extract('src', ['lmdt'], type='timestamp_ntz', alias='lmdt') }},
+        {{ trx_json_extract('src', ['setl'], type='int', alias='setl') }},
+        {{ trx_json_extract('src', ['setl_kw'], type='varchar', alias='setl_kw') }},
+        {{ trx_json_extract('src', ['txta'], type='int', alias='txta') }},
+        {{ trx_json_extract('src', ['pfbp_cban_ref_compnr'], type='int', alias='pfbp_cban_ref_compnr') }},
+        {{ trx_json_extract('src', ['pfbp_ref_compnr'], type='int', alias='pfbp_ref_compnr') }},
+        {{ trx_json_extract('src', ['cofc_ref_compnr'], type='int', alias='cofc_ref_compnr') }},
+        {{ trx_json_extract('src', ['clan_ref_compnr'], type='int', alias='clan_ref_compnr') }},
+        {{ trx_json_extract('src', ['cbps_ref_compnr'], type='int', alias='cbps_ref_compnr') }},
+        {{ trx_json_extract('src', ['cbtp_ref_compnr'], type='int', alias='cbtp_ref_compnr') }},
+        {{ trx_json_extract('src', ['cadr_ref_compnr'], type='int', alias='cadr_ref_compnr') }},
+        {{ trx_json_extract('src', ['ccal_ref_compnr'], type='int', alias='ccal_ref_compnr') }},
+        {{ trx_json_extract('src', ['ccnt_ref_compnr'], type='int', alias='ccnt_ref_compnr') }},
+        {{ trx_json_extract('src', ['ccur_ref_compnr'], type='int', alias='ccur_ref_compnr') }},
+        {{ trx_json_extract('src', ['rtyp_ref_compnr'], type='int', alias='rtyp_ref_compnr') }},
+        {{ trx_json_extract('src', ['rtad_ref_compnr'], type='int', alias='rtad_ref_compnr') }},
+        {{ trx_json_extract('src', ['aofc_ref_compnr'], type='int', alias='aofc_ref_compnr') }},
+        {{ trx_json_extract('src', ['txta_ref_compnr'], type='int', alias='txta_ref_compnr') }},
+        {{ trx_json_extract('src', ['deleted'], type='boolean', alias='deleted') }},
+        {{ trx_json_extract('src', ['username'], type='varchar', alias='username') }},
+        {{ trx_json_extract('src', ['timestamp'], type='timestamp_ntz', alias='timestamp') }},
+        {{ trx_json_extract('src', ['sequencenumber'], type='int', alias='sequencenumber') }},
+        {{ trx_etl_columns() }}
+    from {{ source('source_landing_ln', 'ln_tccom114') }}
+)
+
+select
+    *,
+    {{ trx_audit_columns() }},
+    {{ trx_audit_surrogate(columns=['compnr', 'pfbp', 'cofc']) }}
+from cte_flattened
+{% if is_incremental() %}
+where etl_load_datetime > (select max(etl_load_datetime) from {{ this }})
+{% endif %}
+{{ trx_current_state(order_by=['sequencenumber']) }}

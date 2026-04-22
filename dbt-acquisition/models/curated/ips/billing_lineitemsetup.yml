@@ -1,0 +1,130 @@
+version: 2
+models:
+- name: billing_lineitemsetup
+  columns:
+  - name: description
+    description: 'Metadata for column DESCRIPTION. Max length: 30'
+  - name: includeinbudgetedamountflag
+    description: 'Metadata for column INCLUDEINBUDGETEDAMOUNTFLAG. Max length: 1'
+  - name: commentskey
+    description: Metadata for column COMMENTSKEY
+  - name: automatedflag
+    description: 'Metadata for column AUTOMATEDFLAG. Max length: 1'
+  - name: roundto
+    description: Metadata for column ROUNDTO
+  - name: typeindicator
+    description: Metadata for column TYPEINDICATOR
+  - name: taxarea
+    description: 'Metadata for column TAXAREA. Max length: 6'
+  - name: propertybasedflag
+    description: 'Metadata for column PROPERTYBASEDFLAG. Max length: 1'
+  - name: settlementlineitemsetupkey
+    description: Metadata for column SETTLEMENTLINEITEMSETUPKEY
+  - name: serviceoptionskey
+    description: Metadata for column SERVICEOPTIONSKEY
+  - name: applydepositflag
+    description: 'Metadata for column APPLYDEPOSITFLAG. Max length: 1'
+  - name: designation
+    description: 'Metadata for column DESIGNATION. Max length: 2'
+  - name: oneoffoptionindicator
+    description: Metadata for column ONEOFFOPTIONINDICATOR
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: billingfamily
+    description: Metadata for column BILLINGFAMILY
+  - name: fortransferflag
+    description: 'Metadata for column FORTRANSFERFLAG. Max length: 1'
+  - name: donationflag
+    description: 'Metadata for column DONATIONFLAG. Max length: 1'
+  - name: budgetbillingvariantflag
+    description: 'Metadata for column BUDGETBILLINGVARIANTFLAG. Max length: 1'
+  - name: approvalgroup
+    description: Metadata for column APPROVALGROUP
+  - name: lineitem
+    description: 'Metadata for column LINEITEM. Max length: 70'
+  - name: numberofpromptpaidbills
+    description: Metadata for column NUMBEROFPROMPTPAIDBILLS
+  - name: ratechangealgorithm
+    description: Metadata for column RATECHANGEALGORITHM
+  - name: initialdepositchargeflag
+    description: 'Metadata for column INITIALDEPOSITCHARGEFLAG. Max length: 1'
+  - name: conditionformulakey
+    description: Metadata for column CONDITIONFORMULAKEY
+  - name: quantitybasedflag
+    description: 'Metadata for column QUANTITYBASEDFLAG. Max length: 1'
+  - name: lineitemgroup
+    description: 'Metadata for column LINEITEMGROUP. Max length: 10'
+  - name: fortransferpaymentflag
+    description: 'Metadata for column FORTRANSFERPAYMENTFLAG. Max length: 1'
+  - name: defaultquantity
+    description: Metadata for column DEFAULTQUANTITY
+  - name: feetypekey
+    description: Metadata for column FEETYPEKEY
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: isprinttexteditable
+    description: 'Metadata for column ISPRINTTEXTEDITABLE. Max length: 1'
+  - name: penaltycodekey
+    description: Metadata for column PENALTYCODEKEY
+  - name: lineitemtype
+    description: 'Metadata for column LINEITEMTYPE. Max length: 10'
+  - name: effdate
+    description: Metadata for column EFFDATE
+  - name: bbsetlflag
+    description: 'Metadata for column BBSETLFLAG. Max length: 1'
+  - name: lineitemsetupkey
+    description: (required) Metadata for column LINEITEMSETUPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: valuebasedflag
+    description: 'Metadata for column VALUEBASEDFLAG. Max length: 1'
+  - name: defaultadjustmentsetupkey
+    description: Metadata for column DEFAULTADJUSTMENTSETUPKEY
+  - name: srvbasedoptionindicator
+    description: Metadata for column SRVBASEDOPTIONINDICATOR
+  - name: approvalscheme
+    description: Metadata for column APPROVALSCHEME
+  - name: valueformulakey
+    description: Metadata for column VALUEFORMULAKEY
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: delinquencyexemptflag
+    description: 'Metadata for column DELINQUENCYEXEMPTFLAG. Max length: 1'
+  - name: ratecodekey
+    description: Metadata for column RATECODEKEY
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: printtext
+    description: 'Metadata for column PRINTTEXT. Max length: 300'
+  - name: promptpaidperiod
+    description: Metadata for column PROMPTPAIDPERIOD
+  - name: taxinclusiveflag
+    description: 'Metadata for column TAXINCLUSIVEFLAG. Max length: 1'
+  - name: multidistributiolnalflag
+    description: 'Metadata for column MULTIDISTRIBUTIOLNALFLAG. Max length: 1'
+  - name: rebategroup
+    description: 'Metadata for column REBATEGROUP. Max length: 15'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.LINEITEMSETUP on 2021-07-09T15:14:58.639

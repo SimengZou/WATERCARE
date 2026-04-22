@@ -1,0 +1,43 @@
+version: 2
+models:
+- name: r5alltexts
+  columns:
+  - name: atx_lastsaved
+    description: ATX_LASTSAVED
+  - name: atx_texttype
+    description: ATX_TEXTTYPE
+  - name: atx_lang
+    description: ATX_LANG
+  - name: atx_lastmodified
+    description: ATX_LASTMODIFIED
+  - name: atx_updatecount
+    description: ATX_UPDATECOUNT
+  - name: atx_code
+    description: ATX_CODE
+  - name: atx_text
+    description: ATX_TEXT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ALLTEXTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - atx_code
+        - atx_texttype
+        - atx_lang

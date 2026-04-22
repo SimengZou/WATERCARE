@@ -1,0 +1,56 @@
+version: 2
+models:
+- name: r5audvalues
+  columns:
+  - name: ava_lastsaved
+    description: AVA_LASTSAVED
+  - name: ava_primaryid
+    description: AVA_PRIMARYID
+  - name: ava_secondaryid
+    description: AVA_SECONDARYID
+  - name: ava_from
+    description: AVA_FROM
+  - name: ava_to
+    description: AVA_TO
+  - name: ava_changed
+    description: AVA_CHANGED
+  - name: ava_modifiedby
+    description: AVA_MODIFIEDBY
+  - name: ava_function
+    description: AVA_FUNCTION
+  - name: ava_updated
+    description: AVA_UPDATED
+  - name: ava_inserted
+    description: AVA_INSERTED
+  - name: ava_deleted
+    description: AVA_DELETED
+  - name: ava_updatecount
+    description: AVA_UPDATECOUNT
+  - name: ava_scode
+    description: AVA_SCODE
+  - name: ava_mobile
+    description: AVA_MOBILE
+  - name: ava_primaryid2
+    description: AVA_PRIMARYID2
+  - name: ava_attribute
+    description: AVA_ATTRIBUTE
+  - name: ava_table
+    description: AVA_TABLE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5AUDVALUES

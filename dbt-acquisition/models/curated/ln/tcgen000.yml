@@ -1,0 +1,158 @@
+version: 2
+models:
+- name: tcgen000
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Effective Date
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: awdt
+    description: 'Active WS for Transportation Docs (WDT). Allowed values: 1, 2'
+  - name: awdt_kw
+    description: 'Active WS for Transportation Docs (WDT) (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: wdto__en_us
+    description: '(required) Path for WDT Outbox - base language. Max length: 132'
+    data_tests:
+    - not_null
+  - name: wdti__en_us
+    description: '(required) Path for WDT Inbox (Registered Responses) - base language.
+      Max length: 132'
+    data_tests:
+    - not_null
+  - name: wdte__en_us
+    description: '(required) Path for WDT Inbox (Unregistered Responses) - base language.
+      Max length: 132'
+    data_tests:
+    - not_null
+  - name: wdtr__en_us
+    description: '(required) Path for WDT Archive (Registered Responses) - base language.
+      Max length: 132'
+    data_tests:
+    - not_null
+  - name: awfa
+    description: 'Active WS for Sales Invoices (WFA). Allowed values: 1, 2'
+  - name: awfa_kw
+    description: 'Active WS for Sales Invoices (WFA) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: wfao__en_us
+    description: '(required) Path for WFA Outbox - base language. Max length: 132'
+    data_tests:
+    - not_null
+  - name: wfai__en_us
+    description: '(required) Path for WFA Inbox (Registered Responses) - base language.
+      Max length: 132'
+    data_tests:
+    - not_null
+  - name: wfae__en_us
+    description: '(required) Path for WFA Inbox (Unregistered Responses) - base language.
+      Max length: 132'
+    data_tests:
+    - not_null
+  - name: wfar__en_us
+    description: '(required) Path for WFA Archive (Registered Responses) - base language.
+      Max length: 132'
+    data_tests:
+    - not_null
+  - name: time
+    description: Seconds for Timeout
+  - name: crpd
+    description: Retention Period [Days]
+  - name: clcd
+    description: Latest Cleanup Date
+  - name: cvfd
+    description: Valid From Date
+  - name: dcur
+    description: 'Data Warehouse Currency. Max length: 3'
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: cpie
+    description: 'Piece. Max length: 3'
+  - name: dcmp
+    description: Data Warehouse Setup in Company
+  - name: urtp
+    description: 'Use Specific Exchange Rate Type. Allowed values: 1, 2'
+  - name: urtp_kw
+    description: 'Use Specific Exchange Rate Type (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: udwc
+    description: 'Use Data Warehouse Currency. Allowed values: 1, 2'
+  - name: udwc_kw
+    description: 'Use Data Warehouse Currency (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: urfc
+    description: 'Use Reference Currency. Allowed values: 1, 2'
+  - name: urfc_kw
+    description: 'Use Reference Currency (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: uslc
+    description: 'Use Local Currency. Allowed values: 1, 2'
+  - name: uslc_kw
+    description: 'Use Local Currency (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: urc1
+    description: 'Use Reporting Currency 1. Allowed values: 1, 2'
+  - name: urc1_kw
+    description: 'Use Reporting Currency 1 (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: urc2
+    description: 'Use Reporting Currency 2. Allowed values: 1, 2'
+  - name: urc2_kw
+    description: 'Use Reporting Currency 2 (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ustc
+    description: 'Use Transaction Currency. Allowed values: 1, 2'
+  - name: ustc_kw
+    description: 'Use Transaction Currency (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dcur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: cpie_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcgen000 Generic Parameters table, Generated 2026-04-10T19:41:07Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - indt

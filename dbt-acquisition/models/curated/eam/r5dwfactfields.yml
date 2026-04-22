@@ -1,0 +1,36 @@
+version: 2
+models:
+- name: r5dwfactfields
+  columns:
+  - name: ffl_lastsaved
+    description: FFL_LASTSAVED
+  - name: ffl_dmttable
+    description: FFL_DMTTABLE
+  - name: ffl_desc
+    description: FFL_DESC
+  - name: ffl_botnumber
+    description: FFL_BOTNUMBER
+  - name: ffl_fieldid
+    description: FFL_FIELDID
+  - name: ffl_field
+    description: FFL_FIELD
+  - name: ffl_additivity
+    description: FFL_ADDITIVITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DWFACTFIELDS

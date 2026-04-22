@@ -1,0 +1,60 @@
+version: 2
+models:
+- name: r5acdparams
+  columns:
+  - name: adp_lastsaved
+    description: ADP_LASTSAVED
+  - name: adp_datatype
+    description: ADP_DATATYPE
+  - name: adp_prompt
+    description: ADP_PROMPT
+  - name: adp_promptx
+    description: ADP_PROMPTX
+  - name: adp_prompty
+    description: ADP_PROMPTY
+  - name: adp_segmentx
+    description: ADP_SEGMENTX
+  - name: adp_segmenty
+    description: ADP_SEGMENTY
+  - name: adp_seq
+    description: ADP_SEQ
+  - name: adp_required
+    description: ADP_REQUIRED
+  - name: adp_default
+    description: ADP_DEFAULT
+  - name: adp_hint
+    description: ADP_HINT
+  - name: adp_lovsql
+    description: ADP_LOVSQL
+  - name: adp_descsql
+    description: ADP_DESCSQL
+  - name: adp_updatecount
+    description: ADP_UPDATECOUNT
+  - name: adp_query
+    description: ADP_QUERY
+  - name: adp_valuelookup
+    description: ADP_VALUELOOKUP
+  - name: adp_segment
+    description: ADP_SEGMENT
+    data_tests:
+    - unique
+  - name: adp_length
+    description: ADP_LENGTH
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ACDPARAMS

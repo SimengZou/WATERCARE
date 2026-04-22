@@ -1,0 +1,343 @@
+version: 2
+models:
+- name: tpptc311
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ccal
+    description: '(required) Budget Cost Analysis. Max length: 3'
+    data_tests:
+    - not_null
+  - name: cptc
+    description: '(required) Code Period Table for Cost Control Period. Max length:
+      6'
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: year
+    description: (required) Year of Actual Cost Control
+    data_tests:
+    - not_null
+  - name: peri
+    description: (required) Period for Actual Cost Control
+    data_tests:
+    - not_null
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: cotp
+    description: 'Cost Type. Allowed values: 1, 2, 3, 4, 5, 10'
+  - name: cotp_kw
+    description: 'Cost Type (keyword). Allowed values: tppdm.cotp.tasks, tppdm.cotp.materials,
+      tppdm.cotp.equipment, tppdm.cotp.subcontracting, tppdm.cotp.indirect, tppdm.cotp.overhead'
+  - name: refr
+    description: 'Original Budget Line Reference. Max length: 50'
+  - name: item
+    description: 'Cost Object. Max length: 47'
+  - name: task
+    description: 'Labor. Max length: 8'
+  - name: cico
+    description: 'Sundry Cost Code. Max length: 8'
+  - name: quan
+    description: Net Quantity
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: qutm
+    description: Amount of Time
+  - name: cuti
+    description: 'Time Unit. Max length: 3'
+  - name: norm
+    description: Norm
+  - name: unrt
+    description: 'Cost Rate Unit. Max length: 3'
+  - name: scpf
+    description: Scrap Factor
+  - name: stat
+    description: 'Budget Status. Allowed values: 1, 2, 3'
+  - name: stat_kw
+    description: 'Budget Status (keyword). Allowed values: tpptc.stat.free, tpptc.stat.actual,
+      tpptc.stat.definite'
+  - name: rsta
+    description: Related Start Date
+  - name: rfin
+    description: Related Finish Date
+  - name: btdt
+    description: Budget Date
+  - name: cocu
+    description: 'Cost Currency. Max length: 3'
+  - name: amoc
+    description: Cost Amount
+  - name: aaoc_1
+    description: Cost Amount in Home Currency
+  - name: aaoc_2
+    description: Cost Amount in Home Currency
+  - name: aaoc_3
+    description: Cost Amount in Home Currency
+  - name: aaoc_4
+    description: Cost Amount in Home Currency
+  - name: lcta
+    description: Landed Cost Amount
+  - name: lcaa_1
+    description: Landed Cost Amount in Home Currency
+  - name: lcaa_2
+    description: Landed Cost Amount in Home Currency
+  - name: lcaa_3
+    description: Landed Cost Amount in Home Currency
+  - name: lcaa_4
+    description: Landed Cost Amount in Home Currency
+  - name: clas
+    description: 'Landed Costs Classification. Max length: 12'
+  - name: cona
+    description: Contingency Amount
+  - name: cohc_1
+    description: Contingency Amount in Home Currency
+  - name: cohc_2
+    description: Contingency Amount in Home Currency
+  - name: cohc_3
+    description: Contingency Amount in Home Currency
+  - name: cohc_4
+    description: Contingency Amount in Home Currency
+  - name: prca_1
+    description: Unit Cost
+  - name: prca_2
+    description: Unit Cost
+  - name: prca_3
+    description: Unit Cost
+  - name: prca_4
+    description: Unit Cost
+  - name: pric
+    description: Unit Cost in Cost Currency
+  - name: ratc
+    description: Cost Rate in Cost Currency
+  - name: rtca_1
+    description: Cost Rate
+  - name: rtca_2
+    description: Cost Rate
+  - name: rtca_3
+    description: Cost Rate
+  - name: rtca_4
+    description: Cost Rate
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: sacu
+    description: 'Sales Currency. Max length: 3'
+  - name: amos
+    description: Sales Amount in Sales Currency
+  - name: aaos_1
+    description: Sales Amount
+  - name: aaos_2
+    description: Sales Amount
+  - name: aaos_3
+    description: Sales Amount
+  - name: aaos_4
+    description: Sales Amount
+  - name: pris
+    description: Sales Price in Sales Currency
+  - name: prsa_1
+    description: Sales Price
+  - name: prsa_2
+    description: Sales Price
+  - name: prsa_3
+    description: Sales Price
+  - name: prsa_4
+    description: Sales Price
+  - name: rats
+    description: Sales Rate in Sales Currency
+  - name: rtsa_1
+    description: Sales Rate
+  - name: rtsa_2
+    description: Sales Rate
+  - name: rtsa_3
+    description: Sales Rate
+  - name: rtsa_4
+    description: Sales Rate
+  - name: emno
+    description: 'Employee. Max length: 9'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: exeq
+    description: 'External Equipment. Allowed values: 1, 2, 3'
+  - name: exeq_kw
+    description: 'External Equipment (keyword). Allowed values: tcynna.yes, tcynna.no,
+      tcynna.not.app'
+  - name: adjm
+    description: 'Adjustment Indicator. Allowed values: 1, 2'
+  - name: adjm_kw
+    description: 'Adjustment Indicator (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: user
+    description: 'User. Max length: 16'
+  - name: dura
+    description: Duration
+  - name: tmud
+    description: 'Time Unit Duration. Max length: 3'
+  - name: basn
+    description: Baseline
+  - name: cptc_year_peri_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cptc_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: cprj_ccal_ref_compnr
+    description: company number of primary key of table tpptc300 Budget Cost Analysis
+      Versions by Project
+  - name: cprj_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_basn_ref_compnr
+    description: company number of primary key of table tppss020 Baselines
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: item_ref_compnr
+    description: company number of primary key of table tppdm005 Item Project Data
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuti_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: unrt_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cocu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: clas_ref_compnr
+    description: company number of primary key of table tclct020 Landed Costs Classifications
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: sacu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: emno_ref_compnr
+    description: company number of primary key of table tppdm801 Employee Project
+      Data
+  - name: tmud_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: pric_prjc
+    description: 'CC: Cost Price in Project Currency'
+  - name: amoc_prjc
+    description: 'CC: Cost Amount in Project Currency'
+  - name: lcos_prjc
+    description: 'CC: Landed Cost Amount in Project Currency'
+  - name: pris_prjc
+    description: 'CC: Sales Price in Project Currency'
+  - name: amos_prjc
+    description: 'CC: Sales Amount in Project Currency'
+  - name: cona_prjc
+    description: 'CC: Contingency Amount in Project Currency'
+  - name: pric_refc
+    description: 'CC: Cost Price in Reference Currency'
+  - name: amoc_refc
+    description: 'CC: Cost Amount in Reference Currency'
+  - name: lcos_refc
+    description: 'CC: Landed Cost Amount in Reference Currency'
+  - name: pris_refc
+    description: 'CC: Sales Price in Reference Currency'
+  - name: amos_refc
+    description: 'CC: Sales Amount in Reference Currency'
+  - name: cona_refc
+    description: 'CC: Contingency Amount in Reference Currency'
+  - name: pric_cntc
+    description: 'CC: Cost Price in Contract Currency'
+  - name: amoc_cntc
+    description: 'CC: Cost Amount in Contract Currency'
+  - name: lcos_cntc
+    description: 'CC: Landed Cost Amount in Contract Currency'
+  - name: pris_cntc
+    description: 'CC: Sales Price in Contract Currency'
+  - name: amos_cntc
+    description: 'CC: Sales Amount in Contract Currency'
+  - name: cona_cntc
+    description: 'CC: Contingency Amount in Contract Currency'
+  - name: pric_dwhc
+    description: 'CC: Cost Price in Data Warehouse Currency'
+  - name: amoc_dwhc
+    description: 'CC: Cost Amount in Data Warehouse Currency'
+  - name: lcos_dwhc
+    description: 'CC: Landed Cost Amount in Data Warehouse Currency'
+  - name: pris_dwhc
+    description: 'CC: Sales Price in Data Warehouse Currency'
+  - name: amos_dwhc
+    description: 'CC: Sales Amount in Data Warehouse Currency'
+  - name: cona_dwhc
+    description: 'CC: Contingency Amount in Data Warehouse Currency'
+  - name: quan_ctut
+    description: 'CC: Labor Hours in General Unit of Hours'
+  - name: cprj_task
+    description: 'CC: Project Labor. Max length: 25'
+  - name: cprj_cico
+    description: 'CC: Project Sundry. Max length: 25'
+  - name: task_rcmp
+    description: 'CC: Reference Company of Task'
+  - name: cico_rcmp
+    description: 'CC: Reference Company of Sundry'
+  - name: quan_base_time
+    description: 'CC: Labor Hours in General Unit of Hours'
+  - name: cprj_fcmp
+    description: 'CC: Project Financial Company'
+  - name: quan_buar
+    description: 'CC: Net Quantity in Base Unit Area'
+  - name: quan_buvl
+    description: 'CC: Net Quantity in Base Unit Volume'
+  - name: quan_buln
+    description: 'CC: Net Quantity in Base Unit Length'
+  - name: quan_bupc
+    description: 'CC: Net Quantity in Base Unit Piece'
+  - name: quan_buwg
+    description: 'CC: Net Quantity in Base Unit Weight'
+  - name: quan_invu
+    description: 'CC: Net Quantity in Inventory Unit'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpptc311 Project Budget (IMS) table, Generated 2026-04-10T19:42:25Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ccal
+        - cptc
+        - cprj
+        - sern
+        - year
+        - peri

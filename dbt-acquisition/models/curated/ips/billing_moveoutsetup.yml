@@ -1,0 +1,120 @@
+version: 2
+models:
+- name: billing_moveoutsetup
+  columns:
+  - name: stayinareaprompt
+    description: 'Metadata for column STAYINAREAPROMPT. Max length: 300'
+  - name: logtypecode
+    description: 'Metadata for column LOGTYPECODE. Max length: 10'
+  - name: newacctsrvssectorder
+    description: Metadata for column NEWACCTSRVSSECTORDER
+  - name: maxdayspasttoallowmodify
+    description: Metadata for column MAXDAYSPASTTOALLOWMODIFY
+  - name: moveoutsetupkey
+    description: (required) Metadata for column MOVEOUTSETUPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: movetoaddrprompt
+    description: 'Metadata for column MOVETOADDRPROMPT. Max length: 300'
+  - name: newsrvflag
+    description: 'Metadata for column NEWSRVFLAG. Max length: 1'
+  - name: readingrequestresolution
+    description: 'Metadata for column READINGREQUESTRESOLUTION. Max length: 10'
+  - name: moveoutdateprompt
+    description: 'Metadata for column MOVEOUTDATEPROMPT. Max length: 300'
+  - name: copycntctsdefaultflag
+    description: 'Metadata for column COPYCNTCTSDEFAULTFLAG. Max length: 1'
+  - name: showcancelcnfrmcntctflag
+    description: 'Metadata for column SHOWCANCELCNFRMCNTCTFLAG. Max length: 1'
+  - name: cancellogtype
+    description: 'Metadata for column CANCELLOGTYPE. Max length: 10'
+  - name: cancelcnfrmcntctsectorder
+    description: Metadata for column CANCELCNFRMCNTCTSECTORDER
+  - name: modmoveoutcntctsectorder
+    description: Metadata for column MODMOVEOUTCNTCTSECTORDER
+  - name: showmoveinaddralrtsflag
+    description: 'Metadata for column SHOWMOVEINADDRALRTSFLAG. Max length: 1'
+  - name: acctprefsectorder
+    description: Metadata for column ACCTPREFSECTORDER
+  - name: createacctdefaultflag
+    description: 'Metadata for column CREATEACCTDEFAULTFLAG. Max length: 1'
+  - name: directdebitprompt
+    description: 'Metadata for column DIRECTDEBITPROMPT. Max length: 300'
+  - name: maxtenantintervaldays
+    description: Metadata for column MAXTENANTINTERVALDAYS
+  - name: billingstatus
+    description: 'Metadata for column BILLINGSTATUS. Max length: 10'
+  - name: moveoutinstrsectorder
+    description: Metadata for column MOVEOUTINSTRSECTORDER
+  - name: fowardcntctsectorder
+    description: Metadata for column FOWARDCNTCTSECTORDER
+  - name: maxdayspasttoallowcancel
+    description: Metadata for column MAXDAYSPASTTOALLOWCANCEL
+  - name: stayinareadefaultflag
+    description: 'Metadata for column STAYINAREADEFAULTFLAG. Max length: 1'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: moveindateprompt
+    description: 'Metadata for column MOVEINDATEPROMPT. Max length: 300'
+  - name: copywafromprevacctflag
+    description: 'Metadata for column COPYWAFROMPREVACCTFLAG. Max length: 1'
+  - name: servicestatus
+    description: 'Metadata for column SERVICESTATUS. Max length: 10'
+  - name: copycntctsprompt
+    description: 'Metadata for column COPYCNTCTSPROMPT. Max length: 300'
+  - name: forwardinfosectorder
+    description: Metadata for column FORWARDINFOSECTORDER
+  - name: confirmcntctsectorder
+    description: Metadata for column CONFIRMCNTCTSECTORDER
+  - name: modifyconfirmationmsgkey
+    description: Metadata for column MODIFYCONFIRMATIONMSGKEY
+  - name: cancelrequestresolution
+    description: 'Metadata for column CANCELREQUESTRESOLUTION. Max length: 10'
+  - name: moveoutsrvinstflag
+    description: 'Metadata for column MOVEOUTSRVINSTFLAG. Max length: 1'
+  - name: modifylogtype
+    description: 'Metadata for column MODIFYLOGTYPE. Max length: 10'
+  - name: createacctprompt
+    description: 'Metadata for column CREATEACCTPROMPT. Max length: 300'
+  - name: showconfirmcntctinfoflag
+    description: 'Metadata for column SHOWCONFIRMCNTCTINFOFLAG. Max length: 1'
+  - name: delinquencyschemekey
+    description: Metadata for column DELINQUENCYSCHEMEKEY
+  - name: cancelconfirmationmsgkey
+    description: Metadata for column CANCELCONFIRMATIONMSGKEY
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: forwardinfoprompt
+    description: 'Metadata for column FORWARDINFOPROMPT. Max length: 300'
+  - name: cancelservicessectorder
+    description: Metadata for column CANCELSERVICESSECTORDER
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: modifyservicessectorder
+    description: Metadata for column MODIFYSERVICESSECTORDER
+  - name: modifymaxintfornewrequest
+    description: Metadata for column MODIFYMAXINTFORNEWREQUEST
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.MOVEOUTSETUP on 2022-03-24T08:59:47.036

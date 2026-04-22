@@ -1,0 +1,285 @@
+version: 2
+models:
+- name: r5orderlines
+  columns:
+  - name: orl_lastsaved
+    description: ORL_LASTSAVED
+  - name: orl_udfdate01
+    description: ORL_UDFDATE01
+  - name: orl_udfdate02
+    description: ORL_UDFDATE02
+  - name: orl_udfdate03
+    description: ORL_UDFDATE03
+  - name: orl_udfdate04
+    description: ORL_UDFDATE04
+  - name: orl_udfdate05
+    description: ORL_UDFDATE05
+  - name: orl_udfchkbox01
+    description: ORL_UDFCHKBOX01
+  - name: orl_udfchkbox02
+    description: ORL_UDFCHKBOX02
+  - name: orl_udfchkbox03
+    description: ORL_UDFCHKBOX03
+  - name: orl_udfchkbox04
+    description: ORL_UDFCHKBOX04
+  - name: orl_udfchkbox05
+    description: ORL_UDFCHKBOX05
+  - name: orl_packagetrackingnumber
+    description: ORL_PACKAGETRACKINGNUMBER
+  - name: orl_allowprepayment
+    description: ORL_ALLOWPREPAYMENT
+  - name: orl_paymentnumber
+    description: ORL_PAYMENTNUMBER
+  - name: orl_note
+    description: ORL_NOTE
+  - name: orl_longdescription
+    description: ORL_LONGDESCRIPTION
+  - name: orl_unspsccode
+    description: ORL_UNSPSCCODE
+  - name: orl_req
+    description: ORL_REQ
+  - name: orl_reqline
+    description: ORL_REQLINE
+  - name: orl_supplier
+    description: ORL_SUPPLIER
+  - name: orl_part
+    description: ORL_PART
+  - name: orl_due
+    description: ORL_DUE
+  - name: orl_price
+    description: ORL_PRICE
+  - name: orl_curr
+    description: ORL_CURR
+  - name: orl_exch
+    description: ORL_EXCH
+  - name: orl_ordqty
+    description: ORL_ORDQTY
+  - name: orl_recvqty
+    description: ORL_RECVQTY
+  - name: orl_recvvalue
+    description: ORL_RECVVALUE
+  - name: orl_invqty
+    description: ORL_INVQTY
+  - name: orl_contract
+    description: ORL_CONTRACT
+  - name: orl_costcode
+    description: ORL_COSTCODE
+  - name: orl_project
+    description: ORL_PROJECT
+  - name: orl_projbud
+    description: ORL_PROJBUD
+  - name: orl_discperc
+    description: ORL_DISCPERC
+  - name: orl_event
+    description: ORL_EVENT
+  - name: orl_act
+    description: ORL_ACT
+  - name: orl_store
+    description: ORL_STORE
+  - name: orl_puruom
+    description: ORL_PURUOM
+  - name: orl_invvalue
+    description: ORL_INVVALUE
+  - name: orl_rtype
+    description: ORL_RTYPE
+  - name: orl_type
+    description: ORL_TYPE
+  - name: orl_active
+    description: ORL_ACTIVE
+  - name: orl_multiply
+    description: ORL_MULTIPLY
+  - name: orl_tax
+    description: ORL_TAX
+  - name: orl_rstatus
+    description: ORL_RSTATUS
+  - name: orl_status
+    description: ORL_STATUS
+  - name: orl_revision
+    description: ORL_REVISION
+  - name: orl_revised
+    description: ORL_REVISED
+  - name: orl_blanketorder
+    description: ORL_BLANKETORDER
+  - name: orl_blanketline
+    description: ORL_BLANKETLINE
+  - name: orl_sourcesystem
+    description: ORL_SOURCESYSTEM
+  - name: orl_sourcecode
+    description: ORL_SOURCECODE
+  - name: orl_acd
+    description: ORL_ACD
+  - name: orl_interface
+    description: ORL_INTERFACE
+  - name: orl_exchtodual
+    description: ORL_EXCHTODUAL
+  - name: orl_exchfromdual
+    description: ORL_EXCHFROMDUAL
+  - name: orl_ref
+    description: ORL_REF
+  - name: orl_task
+    description: ORL_TASK
+  - name: orl_taskrev
+    description: ORL_TASKREV
+  - name: orl_taskqty
+    description: ORL_TASKQTY
+  - name: orl_trade
+    description: ORL_TRADE
+  - name: orl_recvtaskqty
+    description: ORL_RECVTASKQTY
+  - name: orl_deladdress
+    description: ORL_DELADDRESS
+  - name: orl_supplier_org
+    description: ORL_SUPPLIER_ORG
+  - name: orl_order_org
+    description: ORL_ORDER_ORG
+  - name: orl_part_org
+    description: ORL_PART_ORG
+  - name: orl_inspect
+    description: ORL_INSPECT
+  - name: orl_dckrecvqty
+    description: ORL_DCKRECVQTY
+  - name: orl_exchfix
+    description: ORL_EXCHFIX
+  - name: orl_tax2
+    description: ORL_TAX2
+  - name: orl_tottaxamount
+    description: ORL_TOTTAXAMOUNT
+  - name: orl_totextra
+    description: ORL_TOTEXTRA
+  - name: orl_scrapqty
+    description: ORL_SCRAPQTY
+  - name: orl_iptransmitted
+    description: ORL_IPTRANSMITTED
+  - name: orl_ipcurrprice
+    description: ORL_IPCURRPRICE
+  - name: orl_updatecount
+    description: ORL_UPDATECOUNT
+  - name: orl_invcalctaxamount
+    description: ORL_INVCALCTAXAMOUNT
+  - name: orl_jecategory
+    description: ORL_JECATEGORY
+  - name: orl_jesource
+    description: ORL_JESOURCE
+  - name: orl_gltransferflag
+    description: ORL_GLTRANSFERFLAG
+  - name: orl_gltransfer
+    description: ORL_GLTRANSFER
+  - name: orl_iplastupdate
+    description: ORL_IPLASTUPDATE
+  - name: orl_ipupdatestatus
+    description: ORL_IPUPDATESTATUS
+  - name: orl_relatedwo
+    description: ORL_RELATEDWO
+  - name: orl_attentionto
+    description: ORL_ATTENTIONTO
+  - name: orl_iperror
+    description: ORL_IPERROR
+  - name: orl_iperrormessage
+    description: ORL_IPERRORMESSAGE
+  - name: orl_quotid
+    description: ORL_QUOTID
+  - name: orl_quotline
+    description: ORL_QUOTLINE
+  - name: orl_manufacturer
+    description: ORL_MANUFACTURER
+  - name: orl_manufactpart
+    description: ORL_MANUFACTPART
+  - name: orl_udfchar01
+    description: ORL_UDFCHAR01
+  - name: orl_udfchar02
+    description: ORL_UDFCHAR02
+  - name: orl_udfchar03
+    description: ORL_UDFCHAR03
+  - name: orl_udfchar04
+    description: ORL_UDFCHAR04
+  - name: orl_udfchar05
+    description: ORL_UDFCHAR05
+  - name: orl_udfchar06
+    description: ORL_UDFCHAR06
+  - name: orl_udfchar07
+    description: ORL_UDFCHAR07
+  - name: orl_udfchar08
+    description: ORL_UDFCHAR08
+  - name: orl_udfchar09
+    description: ORL_UDFCHAR09
+  - name: orl_udfchar10
+    description: ORL_UDFCHAR10
+  - name: orl_udfchar11
+    description: ORL_UDFCHAR11
+  - name: orl_udfchar12
+    description: ORL_UDFCHAR12
+  - name: orl_udfchar13
+    description: ORL_UDFCHAR13
+  - name: orl_udfchar14
+    description: ORL_UDFCHAR14
+  - name: orl_udfchar15
+    description: ORL_UDFCHAR15
+  - name: orl_udfchar16
+    description: ORL_UDFCHAR16
+  - name: orl_udfchar17
+    description: ORL_UDFCHAR17
+  - name: orl_udfchar18
+    description: ORL_UDFCHAR18
+  - name: orl_udfchar19
+    description: ORL_UDFCHAR19
+  - name: orl_udfchar20
+    description: ORL_UDFCHAR20
+  - name: orl_udfchar21
+    description: ORL_UDFCHAR21
+  - name: orl_udfchar22
+    description: ORL_UDFCHAR22
+  - name: orl_udfchar23
+    description: ORL_UDFCHAR23
+  - name: orl_udfchar24
+    description: ORL_UDFCHAR24
+  - name: orl_udfchar25
+    description: ORL_UDFCHAR25
+  - name: orl_udfchar26
+    description: ORL_UDFCHAR26
+  - name: orl_udfchar27
+    description: ORL_UDFCHAR27
+  - name: orl_udfchar28
+    description: ORL_UDFCHAR28
+  - name: orl_udfchar29
+    description: ORL_UDFCHAR29
+  - name: orl_udfchar30
+    description: ORL_UDFCHAR30
+  - name: orl_udfnum01
+    description: ORL_UDFNUM01
+  - name: orl_udfnum02
+    description: ORL_UDFNUM02
+  - name: orl_udfnum03
+    description: ORL_UDFNUM03
+  - name: orl_udfnum04
+    description: ORL_UDFNUM04
+  - name: orl_udfnum05
+    description: ORL_UDFNUM05
+  - name: orl_order
+    description: ORL_ORDER
+  - name: orl_ordline
+    description: ORL_ORDLINE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ORDERLINES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - orl_order
+        - orl_order_org
+        - orl_ordline

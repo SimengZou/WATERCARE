@@ -1,0 +1,569 @@
+version: 2
+models:
+- name: tisfc001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: pdno
+    description: '(required) Production Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: mitm
+    description: 'Item. Max length: 47'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: qrdr
+    description: Quantity Ordered
+  - name: rdld
+    description: Requested Delivery Date
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: revi
+    description: 'Engineering Item Revision. Max length: 6'
+  - name: rwko
+    description: 'Rework Order. Allowed values: 1, 2'
+  - name: rwko_kw
+    description: 'Rework Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rwtp
+    description: 'Rework Type. Allowed values: 10, 20, 30, 40, 50, 240'
+  - name: rwtp_kw
+    description: 'Rework Type (keyword). Allowed values: tisfc.rwtp.not.appl, tisfc.rwtp.manual,
+      tisfc.rwtp.quar.t.exist, tisfc.rwtp.quar.t.new, tisfc.rwtp.refurbish.tool, tisfc.rwtp.disassembly'
+  - name: opro
+    description: 'Routing. Max length: 6'
+  - name: efdt
+    description: Reference Date
+  - name: rgrp
+    description: 'Routing Group. Max length: 6'
+  - name: mfre
+    description: 'Moment Freezing Estimates. Allowed values: 1, 2, 3'
+  - name: mfre_kw
+    description: 'Moment Freezing Estimates (keyword). Allowed values: tisfc.mfre.at.creation,
+      tisfc.mfre.at.release, tisfc.mfre.bef.first.wipt'
+  - name: shsp
+    description: 'Split Hours in Setup and Production. Allowed values: 1, 2'
+  - name: shsp_kw
+    description: 'Split Hours in Setup and Production (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: prcd
+    description: Priority
+  - name: prlb
+    description: 'Print Labels. Allowed values: 1, 2'
+  - name: prlb_kw
+    description: 'Print Labels (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: lbtp
+    description: 'Label Type. Allowed values: 10, 20, 100'
+  - name: lbtp_kw
+    description: 'Label Type (keyword). Allowed values: tirou.lbtp.internal, tirou.lbtp.customer,
+      tirou.lbtp.not.appl'
+  - name: lbpr
+    description: 'Procedure. Allowed values: 10, 20, 30, 100'
+  - name: lbpr_kw
+    description: 'Procedure (keyword). Allowed values: tirou.lbpr.scan.book, tirou.lbpr.wh.receipt,
+      tirou.lbpr.rep.order, tirou.lbpr.not.appl'
+  - name: lbpb
+    description: 'Label Printed By. Allowed values: 10, 20, 100'
+  - name: lbpb_kw
+    description: 'Label Printed By (keyword). Allowed values: tirou.lbpb.internal,
+      tirou.lbpb.external, tirou.lbpb.not.appl'
+  - name: lblo
+    description: 'Label Layout. Max length: 3'
+  - name: lbdv
+    description: 'Label Device. Max length: 14'
+  - name: lbnc
+    description: Number of Copies
+  - name: aapd
+    description: 'Allow Alternative Package Definition. Allowed values: 1, 2'
+  - name: aapd_kw
+    description: 'Allow Alternative Package Definition (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: pkdf
+    description: 'Package Definition. Max length: 6'
+  - name: clpd
+    description: 'Customer Labels Printed. Allowed values: 10, 20, 30'
+  - name: clpd_kw
+    description: 'Customer Labels Printed (keyword). Allowed values: tisfc.clpd.no,
+      tisfc.clpd.partial, tisfc.clpd.yes'
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: huqt
+    description: Handling Unit Quantity
+  - name: bfep
+    description: 'Backflush Materials. Allowed values: 1, 2'
+  - name: bfep_kw
+    description: 'Backflush Materials (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bfhr
+    description: 'Backflush Hours. Allowed values: 1, 2'
+  - name: bfhr_kw
+    description: 'Backflush Hours (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rswc
+    description: 'Financial Transactions by Work Center. Allowed values: 0, 1, 2'
+  - name: rswc_kw
+    description: 'Financial Transactions by Work Center (keyword). Allowed values:
+      , tcyesno.yes, tcyesno.no'
+  - name: trcp
+    description: 'Obsolete. Max length: 8'
+  - name: clco
+    description: 'Calculation Office. Max length: 6'
+  - name: cctt
+    description: 'Update Method. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+      15, 16, 17, 18, 20, 21, 23, 24, 25, 26, 30, 31, 32, 33, 34, 35, 40, 45, 47'
+  - name: cctt_kw
+    description: 'Update Method (keyword). Allowed values: tisfc.updm.generate, tisfc.updm.recalc,
+      tisfc.updm.regen, tisfc.updm.doc.printed, tisfc.updm.release, tisfc.updm.activate,
+      tisfc.updm.rep.compl, tisfc.updm.close, tisfc.updm.archive, tisfc.updm.no.action,
+      tisfc.updm.schedule, tisfc.updm.wip.printed, tisfc.updm.act.cst.printed, tisfc.updm.res.wc.printed,
+      tisfc.updm.tim.dev.printed, tisfc.updm.update, tisfc.updm.cancel, tisfc.updm.set.def.close,
+      tisfc.updm.set.oper.pres, tisfc.updm.set.dist.pres, tisfc.updm.set.prt.label,
+      tisfc.updm.reset.all.docs, tisfc.updm.reset.mat.docs, tisfc.updm.reset.ser.list,
+      tisfc.updm.reset.sub.note, tisfc.updm.reset.stat.clos, tisfc.updm.reset.stat.comp,
+      tisfc.updm.split.order, tisfc.updm.prod.sched, tisfc.updm.sched.plus'
+  - name: grid
+    description: 'Production Order Group. Max length: 9'
+  - name: osta
+    description: 'Order Status. Allowed values: 1, 2, 3, 4, 6, 7, 8, 9, 10, 20, 30,
+      40, 50, 60, 70, 80, 90, 100, 110'
+  - name: osta_kw
+    description: 'Order Status (keyword). Allowed values: tcosta.old.planned, tcosta.old.scheduled,
+      tcosta.old.printed, tcosta.old.in.prod, tcosta.old.active, tcosta.old.to.be.compl,
+      tcosta.old.completed, tcosta.old.closed, tcosta.old.archived, tcosta.planned,
+      tcosta.modify, tcosta.scheduled, tcosta.printed, tcosta.in.prod, tcosta.active,
+      tcosta.to.be.completed, tcosta.completed, tcosta.closed, tcosta.archived'
+  - name: vers
+    description: Version
+  - name: cdld
+    description: Confirmed Delivery Date
+  - name: cada
+    description: Calculation Date
+  - name: fres
+    description: 'Estimated Costs Frozen. Allowed values: 1, 2'
+  - name: fres_kw
+    description: 'Estimated Costs Frozen (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: clot
+    description: 'Lot Code. Max length: 20'
+  - name: lbid
+    description: 'Obsolete. Max length: 25'
+  - name: defc
+    description: 'Definitively Closed. Allowed values: 1, 2'
+  - name: defc_kw
+    description: 'Definitively Closed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bloc
+    description: 'Operations Blocked. Allowed values: 1, 2'
+  - name: bloc_kw
+    description: 'Operations Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oprp
+    description: 'Operations Present. Allowed values: 0, 1, 2'
+  - name: oprp_kw
+    description: 'Operations Present (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: dstp
+    description: 'Distribution Type. Allowed values: 10, 20, 30, 40, 50, 60'
+  - name: dstp_kw
+    description: 'Distribution Type (keyword). Allowed values: tcdstp.not.appl, tcdstp.units,
+      tcdstp.pegs, tcdstp.units.pegs, tcdstp.cost.pegs, tcdstp.units.cost.pegs'
+  - name: odpr
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: odpr_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cpla
+    description: 'Planning Method. Allowed values: 1, 2'
+  - name: cpla_kw
+    description: 'Planning Method (keyword). Allowed values: tcplcd.forward, tcplcd.backward'
+  - name: prdt
+    description: Production Start Date and Time
+  - name: pldt
+    description: Planned Delivery Date
+  - name: mmno
+    description: 'Moving Method Next Operations. Allowed values: 1, 2, 3, 4, 10'
+  - name: mmno_kw
+    description: 'Moving Method Next Operations (keyword). Allowed values: tisfc.mmop.not,
+      tisfc.mmop.all, tisfc.mmop.overlap.occ, tisfc.mmop.overlap.hundred, tisfc.mmop.dynamic'
+  - name: mmpo
+    description: 'Moving Method Previous Operations. Allowed values: 1, 2, 3, 4, 10'
+  - name: mmpo_kw
+    description: 'Moving Method Previous Operations (keyword). Allowed values: tisfc.mmop.not,
+      tisfc.mmop.all, tisfc.mmop.overlap.occ, tisfc.mmop.overlap.hundred, tisfc.mmop.dynamic'
+  - name: plid
+    description: 'Planner. Max length: 9'
+  - name: sfpl
+    description: 'Shop Floor Planner. Max length: 9'
+  - name: apdt
+    description: Actual Production Start Date
+  - name: cmdt
+    description: Completion Date
+  - name: adld
+    description: Actual Delivery Date
+  - name: cldt
+    description: Actual Closing date
+  - name: qntl
+    description: Quantity Initial
+  - name: qtdl
+    description: Quantity to Deliver
+  - name: qdlv
+    description: Quantity Delivered
+  - name: qrjc
+    description: Quantity Scrapped
+  - name: qtor
+    description: Quantity Rejected
+  - name: qqar
+    description: Quantity Quarantined
+  - name: qtbf
+    description: Quantity to Backflush
+  - name: qbfd
+    description: Quantity Backflushed
+  - name: qoor
+    description: Obsolete
+  - name: covn
+    description: 'Covering Note Printed. Allowed values: 1, 2, 3'
+  - name: covn_kw
+    description: 'Covering Note Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: roul
+    description: 'Routing Sheet Printed. Allowed values: 1, 2, 3'
+  - name: roul_kw
+    description: 'Routing Sheet Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: oprn
+    description: 'Operation Note Printed. Allowed values: 1, 2, 3'
+  - name: oprn_kw
+    description: 'Operation Note Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: matl
+    description: 'Material List Printed. Allowed values: 1, 2, 3'
+  - name: matl_kw
+    description: 'Material List Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: matn
+    description: 'Material Issue Note Printed. Allowed values: 1, 2, 3'
+  - name: matn_kw
+    description: 'Material Issue Note Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: subn
+    description: 'Subcontracting Note Printed. Allowed values: 1, 2, 3'
+  - name: subn_kw
+    description: 'Subcontracting Note Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: chel
+    description: 'Checklist Printed. Allowed values: 1, 2, 3'
+  - name: chel_kw
+    description: 'Checklist Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: sawl
+    description: 'Sawing List Printed. Allowed values: 1, 2, 3'
+  - name: sawl_kw
+    description: 'Sawing List Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: cutl
+    description: 'Cutting List Printed. Allowed values: 1, 2, 3'
+  - name: cutl_kw
+    description: 'Cutting List Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: recn
+    description: 'Receipt Note Printed. Allowed values: 1, 2, 3'
+  - name: recn_kw
+    description: 'Receipt Note Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: insn
+    description: 'Inspection Note Printed. Allowed values: 1, 2, 3'
+  - name: insn_kw
+    description: 'Inspection Note Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: srnl
+    description: 'Serial Number List Printed. Allowed values: 1, 2, 3'
+  - name: srnl_kw
+    description: 'Serial Number List Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: odpt
+    description: 'Order Distribution Printed. Allowed values: 1, 2, 3'
+  - name: odpt_kw
+    description: 'Order Distribution Printed (keyword). Allowed values: tisfc.pdst.original.doc,
+      tisfc.pdst.modified.doc, tisfc.pdst.doc.printed'
+  - name: crpr_1
+    description: 'Costing Reports Printed. Allowed values: 1, 2'
+  - name: crpr_kw_1
+    description: 'Costing Reports Printed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: crpr_2
+    description: 'Costing Reports Printed. Allowed values: 1, 2'
+  - name: crpr_kw_2
+    description: 'Costing Reports Printed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: crpr_3
+    description: 'Costing Reports Printed. Allowed values: 1, 2'
+  - name: crpr_kw_3
+    description: 'Costing Reports Printed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: crpr_4
+    description: 'Costing Reports Printed. Allowed values: 1, 2'
+  - name: crpr_kw_4
+    description: 'Costing Reports Printed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: aprp
+    description: 'Use Actual Cost for Receipt Posting. Allowed values: 1, 2'
+  - name: aprp_kw
+    description: 'Use Actual Cost for Receipt Posting (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: spcn
+    description: 'Specifications Number. Max length: 22'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: subc
+    description: 'Contains Customer Furnished Material. Allowed values: 1, 2'
+  - name: subc_kw
+    description: 'Contains Customer Furnished Material (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: owns
+    description: 'Obsolete. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: owns_kw
+    description: 'Obsolete (keyword). Allowed values: tcowns.comp.owned, tcowns.consigned,
+      tcowns.cust.owned, tcowns.return.as.issue, tcowns.deferred, tcowns.not.appl'
+  - name: mocp
+    description: 'Moment of Completion Posting. Allowed values: 2, 4'
+  - name: mocp_kw
+    description: 'Moment of Completion Posting (keyword). Allowed values: tisfc.mocp.qty.compl,
+      tisfc.mocp.osta.compl'
+  - name: reco
+    description: 'Reason for Rejects. Max length: 6'
+  - name: poas
+    description: 'Parent Order. Max length: 9'
+  - name: smfs
+    description: 'Subcontracting with Material Flow. Allowed values: 1, 2'
+  - name: smfs_kw
+    description: 'Subcontracting with Material Flow (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: asrp
+    description: 'Use Actual Valuation for Subassembly Receipt Posting. Allowed values:
+      1, 2'
+  - name: asrp_kw
+    description: 'Use Actual Valuation for Subassembly Receipt Posting (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: awtc
+    description: 'Use Actual Valuation for WIP Transfers. Allowed values: 1, 2'
+  - name: awtc_kw
+    description: 'Use Actual Valuation for WIP Transfers (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: insp
+    description: 'Receipt Inspection Required. Allowed values: 1, 2'
+  - name: insp_kw
+    description: 'Receipt Inspection Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: fain
+    description: 'First Article Inspection. Allowed values: 0, 1, 2'
+  - name: fain_kw
+    description: 'First Article Inspection (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: bmdl
+    description: 'BOM Model. Max length: 9'
+  - name: bmrv
+    description: 'BOM Revision. Max length: 6'
+  - name: rouc
+    description: 'Routing Code. Max length: 9'
+  - name: rorv
+    description: 'Routing Revision. Max length: 6'
+  - name: plgr
+    description: 'Plan Group. Max length: 6'
+  - name: schd
+    description: 'Scheduled. Allowed values: 1, 2'
+  - name: schd_kw
+    description: 'Scheduled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: irev
+    description: 'Item Engineering Revision. Max length: 6'
+  - name: txta
+    description: Production Order Text
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tipcs030 Project Details
+  - name: mitm_site_ref_compnr
+    description: company number of primary key of table tiipd051 Items - Production
+      by Site
+  - name: mitm_ref_compnr
+    description: company number of primary key of table tiipd001 Items - Production
+  - name: site_plgr_ref_compnr
+    description: company number of primary key of table tisch040 Work Center Plan
+      Groups
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: rgrp_ref_compnr
+    description: company number of primary key of table tcmcs145 Routing Groups
+  - name: clco_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: grid_ref_compnr
+    description: company number of primary key of table tisfc350 Production Order
+      Groups
+  - name: plid_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: sfpl_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: reco_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: pldt_pltd
+    description: 'CC: Planned Throughput Duration in Days'
+  - name: adld_actd
+    description: 'CC: Actual Throughput Duration in Days'
+  - name: adld_dela
+    description: 'CC: Delivered Late in Days'
+  - name: adld_deea
+    description: 'CC: Delivered Early in Days'
+  - name: qbfd_buar
+    description: 'CC: Quantity Backflushed in Base Unit Area'
+  - name: qbfd_buln
+    description: 'CC: Quantity Backflushed in Base Unit Length'
+  - name: qbfd_bupc
+    description: 'CC: Quantity Backflushed in Base Unit Piece'
+  - name: qbfd_butm
+    description: 'CC: Quantity Backflushed in Base Unit Time'
+  - name: qbfd_buvl
+    description: 'CC: Quantity Backflushed in Base Unit Volume'
+  - name: qbfd_buwg
+    description: 'CC: Quantity Backflushed in Base Unit Weight'
+  - name: qdlv_buar
+    description: 'CC: Quantity Delivered in Base Unit Area'
+  - name: qdlv_buln
+    description: 'CC: Quantity Delivered in Base Unit Length'
+  - name: qdlv_bupc
+    description: 'CC: Quantity Delivered in Base Unit Piece'
+  - name: qdlv_butm
+    description: 'CC: Quantity Delivered in Base Unit Time'
+  - name: qdlv_buvl
+    description: 'CC: Quantity Delivered in Base Unit Volume'
+  - name: qdlv_buwg
+    description: 'CC: Quantity Delivered in Base Unit Weight'
+  - name: qntl_buar
+    description: 'CC: Quantity Initial in Base Unit Area'
+  - name: qntl_buln
+    description: 'CC: Quantity Initial in Base Unit Length'
+  - name: qntl_bupc
+    description: 'CC: Quantity Initial in Base Unit Piece'
+  - name: qntl_butm
+    description: 'CC: Quantity Initial in Base Unit Time'
+  - name: qntl_buvl
+    description: 'CC: Quantity Initial in Base Unit Volume'
+  - name: qntl_buwg
+    description: 'CC: Quantity Initial in Base Unit Weight'
+  - name: qrdr_buar
+    description: 'CC: Quantity Ordered in Base Unit Area'
+  - name: qrdr_buln
+    description: 'CC: Quantity Ordered in Base Unit Length'
+  - name: qrdr_bupc
+    description: 'CC: Quantity Ordered in Base Unit Piece'
+  - name: qrdr_butm
+    description: 'CC: Quantity Ordered in Base Unit Time'
+  - name: qrdr_buvl
+    description: 'CC: Quantity Ordered in Base Unit Volume'
+  - name: qrdr_buwg
+    description: 'CC: Quantity Ordered in Base Unit Weight'
+  - name: qqar_buar
+    description: 'CC: Quantity Quarantined in Base Unit Area'
+  - name: qqar_buln
+    description: 'CC: Quantity Quarantined in Base Unit Length'
+  - name: qqar_bupc
+    description: 'CC: Quantity Quarantined in Base Unit Piece'
+  - name: qqar_butm
+    description: 'CC: Quantity Quarantined in Base Unit Time'
+  - name: qqar_buvl
+    description: 'CC: Quantity Quarantined in Base Unit Volume'
+  - name: qqar_buwg
+    description: 'CC: Quantity Quarantined in Base Unit Weight'
+  - name: qtor_buar
+    description: 'CC: Quantity Rejected in Base Unit Area'
+  - name: qtor_buln
+    description: 'CC: Quantity Rejected in Base Unit Length'
+  - name: qtor_bupc
+    description: 'CC: Quantity Rejected in Base Unit Piece'
+  - name: qtor_butm
+    description: 'CC: Quantity Rejected in Base Unit Time'
+  - name: qtor_buvl
+    description: 'CC: Quantity Rejected in Base Unit Volume'
+  - name: qtor_buwg
+    description: 'CC: Quantity Rejected in Base Unit Weight'
+  - name: qrjc_buar
+    description: 'CC: Quantity Scrapped in Base Unit Area'
+  - name: qrjc_buln
+    description: 'CC: Quantity Scrapped in Base Unit Length'
+  - name: qrjc_bupc
+    description: 'CC: Quantity Scrapped in Base Unit Piece'
+  - name: qrjc_butm
+    description: 'CC: Quantity Scrapped in Base Unit Time'
+  - name: qrjc_buvl
+    description: 'CC: Quantity Scrapped in Base Unit Volume'
+  - name: qrjc_buwg
+    description: 'CC: Quantity Scrapped in Base Unit Weight'
+  - name: qtbf_buar
+    description: 'CC: Quantity to Backflush in Base Unit Area'
+  - name: qtbf_buln
+    description: 'CC: Quantity to Backflush in Base Unit Length'
+  - name: qtbf_bupc
+    description: 'CC: Quantity to Backflush in Base Unit Piece'
+  - name: qtbf_butm
+    description: 'CC: Quantity to Backflush in Base Unit Time'
+  - name: qtbf_buvl
+    description: 'CC: Quantity to Backflush in Base Unit Volume'
+  - name: qtbf_buwg
+    description: 'CC: Quantity to Backflush in Base Unit Weight'
+  - name: qtdl_buar
+    description: 'CC: Quantity to Deliver in Base Unit Area'
+  - name: qtdl_buln
+    description: 'CC: Quantity to Deliver in Base Unit Length'
+  - name: qtdl_bupc
+    description: 'CC: Quantity to Deliver in Base Unit Piece'
+  - name: qtdl_butm
+    description: 'CC: Quantity to Deliver in Base Unit Time'
+  - name: qtdl_buvl
+    description: 'CC: Quantity to Deliver in Base Unit Volume'
+  - name: qtdl_buwg
+    description: 'CC: Quantity to Deliver in Base Unit Weight'
+  - name: mitm_opro_rcmp
+    description: 'CC: Reference Company of Routing'
+  - name: clco_fcmp
+    description: 'CC: Financial Company of Calculation Office'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tisfc001 Production Orders table, Generated 2026-04-10T19:41:50Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - pdno

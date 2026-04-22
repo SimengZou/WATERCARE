@@ -1,0 +1,52 @@
+version: 2
+models:
+- name: u5pmpriorties
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: pmp_cycle_uom
+    description: PMP_CYCLE_UOM
+  - name: pmp_cycle_text
+    description: PMP_CYCLE_TEXT
+  - name: pmp_release_days
+    description: PMP_RELEASE_DAYS
+  - name: pmp_priority
+    description: PMP_PRIORITY
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: pmp_cycle_length
+    description: PMP_CYCLE_LENGTH
+  - name: pmp_complete_days
+    description: PMP_COMPLETE_DAYS
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5PMPRIORTIES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - pmp_cycle_length
+        - pmp_cycle_uom

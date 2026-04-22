@@ -1,0 +1,56 @@
+version: 2
+models:
+- name: r5locale
+  columns:
+  - name: loc_lastsaved
+    description: LOC_LASTSAVED
+  - name: loc_decsym
+    description: LOC_DECSYM
+  - name: loc_mondecsym
+    description: LOC_MONDECSYM
+  - name: loc_grpsym
+    description: LOC_GRPSYM
+  - name: loc_grpdigits
+    description: LOC_GRPDIGITS
+  - name: loc_fractdigits
+    description: LOC_FRACTDIGITS
+  - name: loc_monfract
+    description: LOC_MONFRACT
+  - name: loc_negsym
+    description: LOC_NEGSYM
+  - name: loc_possym
+    description: LOC_POSSYM
+  - name: loc_datefmt
+    description: LOC_DATEFMT
+  - name: loc_startday
+    description: LOC_STARTDAY
+  - name: loc_updatecount
+    description: LOC_UPDATECOUNT
+  - name: loc_montgrpseparator
+    description: LOC_MONTGRPSEPARATOR
+  - name: loc_montgrpdigits
+    description: LOC_MONTGRPDIGITS
+  - name: loc_code
+    description: LOC_CODE
+    data_tests:
+    - unique
+  - name: loc_desc
+    description: LOC_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5LOCALE

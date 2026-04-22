@@ -1,0 +1,1224 @@
+version: 2
+models:
+- name: tfgld004
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: indt
+    description: (required) Effective Date
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: year
+    description: Current Fiscal Year
+  - name: gcmp
+    description: Group Company
+  - name: budg
+    description: 'Actual Budget. Max length: 3'
+  - name: hcmp
+    description: Obsolete
+  - name: acdp
+    description: 'Accounting Department. Max length: 6'
+  - name: addr
+    description: 'Declarant''s Address. Max length: 9'
+  - name: btyp
+    description: 'Default Access by Batch. Allowed values: 1, 2'
+  - name: btyp_kw
+    description: 'Default Access by Batch (keyword). Allowed values: tfgld.btyp.multi.user,
+      tfgld.btyp.single.user'
+  - name: tbat
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: tbat_kw
+    description: 'Obsolete (keyword). Allowed values: tfgld.tbat.multi.user, tfgld.tbat.single.user'
+  - name: jprt
+    description: 'Journal Print With Finalization. Allowed values: 1, 2'
+  - name: jprt_kw
+    description: 'Journal Print With Finalization (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sprt
+    description: 'Status Report with Finalization. Allowed values: 0, 1, 2'
+  - name: sprt_kw
+    description: 'Status Report with Finalization (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: plat
+    description: 'Print Ledger Account Totals Report. Allowed values: 1, 2'
+  - name: plat_kw
+    description: 'Print Ledger Account Totals Report (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cdif
+    description: 'Ledger Accounts Currency Differences by Currency. Allowed values:
+      1, 2'
+  - name: cdif_kw
+    description: 'Ledger Accounts Currency Differences by Currency (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: clac
+    description: 'Currency Difference Profit Account. Max length: 12'
+  - name: cla1
+    description: 'Dimension 1. Max length: 9'
+  - name: cla2
+    description: 'Dimension 2. Max length: 9'
+  - name: cla3
+    description: 'Dimension 3. Max length: 9'
+  - name: cla4
+    description: 'Dimension 4. Max length: 9'
+  - name: cla5
+    description: 'Dimension 5. Max length: 9'
+  - name: cla6
+    description: 'Dimension 6. Max length: 9'
+  - name: cla7
+    description: 'Dimension 7. Max length: 9'
+  - name: cla8
+    description: 'Dimension 8. Max length: 9'
+  - name: cla9
+    description: 'Dimension 9. Max length: 9'
+  - name: ca10
+    description: 'Dimension 10. Max length: 9'
+  - name: ca11
+    description: 'Dimension 11. Max length: 9'
+  - name: ca12
+    description: 'Dimension 12. Max length: 9'
+  - name: clcl
+    description: 'Currency Difference Loss Account. Max length: 12'
+  - name: clc1
+    description: 'Dimension 1. Max length: 9'
+  - name: clc2
+    description: 'Dimension 2. Max length: 9'
+  - name: clc3
+    description: 'Dimension 3. Max length: 9'
+  - name: clc4
+    description: 'Dimension 4. Max length: 9'
+  - name: clc5
+    description: 'Dimension 5. Max length: 9'
+  - name: clc6
+    description: 'Dimension 6. Max length: 9'
+  - name: clc7
+    description: 'Dimension 7. Max length: 9'
+  - name: clc8
+    description: 'Dimension 8. Max length: 9'
+  - name: clc9
+    description: 'Dimension 9. Max length: 9'
+  - name: cc10
+    description: 'Dimension 10. Max length: 9'
+  - name: cc11
+    description: 'Dimension 11. Max length: 9'
+  - name: cc12
+    description: 'Dimension 12. Max length: 9'
+  - name: ctyp
+    description: 'Currency Diff. Transaction Type. Max length: 3'
+  - name: fpor
+    description: 'Interim AC Fisc. Period Change - Original. Max length: 12'
+  - name: fpnw
+    description: 'Interim AC Fisc. Period Change - New. Max length: 12'
+  - name: rpor
+    description: 'Interim A/C Rep. Period Change - Original. Max length: 12'
+  - name: rpnw
+    description: 'Interim A/C Rep. Period Change - New. Max length: 12'
+  - name: ilac
+    description: 'Retained Earnings Account Statutory. Max length: 12'
+  - name: rsd1
+    description: 'Dimension 1. Max length: 9'
+  - name: rsd2
+    description: 'Dimension 2. Max length: 9'
+  - name: rsd3
+    description: 'Dimension 3. Max length: 9'
+  - name: rsd4
+    description: 'Dimension 4. Max length: 9'
+  - name: rsd5
+    description: 'Dimension 5. Max length: 9'
+  - name: rsd6
+    description: 'Dimension 6. Max length: 9'
+  - name: rsd7
+    description: 'Dimension 7. Max length: 9'
+  - name: rsd8
+    description: 'Dimension 8. Max length: 9'
+  - name: rsd9
+    description: 'Dimension 9. Max length: 9'
+  - name: rs10
+    description: 'Dimension 10. Max length: 9'
+  - name: rs11
+    description: 'Dimension 11. Max length: 9'
+  - name: rs12
+    description: 'Dimension 12. Max length: 9'
+  - name: inac
+    description: 'Currency Translation Account. Max length: 12'
+  - name: incc
+    description: 'Currency Translation Account Complementary. Max length: 12'
+  - name: ind1
+    description: 'Dimension 1. Max length: 9'
+  - name: ind2
+    description: 'Dimension 2. Max length: 9'
+  - name: ind3
+    description: 'Dimension 3. Max length: 9'
+  - name: ind4
+    description: 'Dimension 4. Max length: 9'
+  - name: ind5
+    description: 'Dimension 5. Max length: 9'
+  - name: ind6
+    description: 'Dimension 6. Max length: 9'
+  - name: ind7
+    description: 'Dimension 7. Max length: 9'
+  - name: ind8
+    description: 'Dimension 8. Max length: 9'
+  - name: ind9
+    description: 'Dimension 9. Max length: 9'
+  - name: id10
+    description: 'Dimension 10. Max length: 9'
+  - name: id11
+    description: 'Dimension 11. Max length: 9'
+  - name: id12
+    description: 'Dimension 12. Max length: 9'
+  - name: inc1
+    description: 'Dimension 1. Max length: 9'
+  - name: inc2
+    description: 'Dimension 2. Max length: 9'
+  - name: inc3
+    description: 'Dimension 3. Max length: 9'
+  - name: inc4
+    description: 'Dimension 4. Max length: 9'
+  - name: inc5
+    description: 'Dimension 5. Max length: 9'
+  - name: inc6
+    description: 'Dimension 6. Max length: 9'
+  - name: inc7
+    description: 'Dimension 7. Max length: 9'
+  - name: inc8
+    description: 'Dimension 8. Max length: 9'
+  - name: inc9
+    description: 'Dimension 9. Max length: 9'
+  - name: ic10
+    description: 'Dimension 10. Max length: 9'
+  - name: ic11
+    description: 'Dimension 11. Max length: 9'
+  - name: ic12
+    description: 'Dimension 12. Max length: 9'
+  - name: roda
+    description: 'Rounding Difference Account  Statutory. Max length: 12'
+  - name: rod1
+    description: 'Dimension 1. Max length: 9'
+  - name: rod2
+    description: 'Dimension 2. Max length: 9'
+  - name: rod3
+    description: 'Dimension 3. Max length: 9'
+  - name: rod4
+    description: 'Dimension 4. Max length: 9'
+  - name: rod5
+    description: 'Dimension 5. Max length: 9'
+  - name: rod6
+    description: 'Dimension 6. Max length: 9'
+  - name: rod7
+    description: 'Dimension 7. Max length: 9'
+  - name: rod8
+    description: 'Dimension 8. Max length: 9'
+  - name: rod9
+    description: 'Dimension 9. Max length: 9'
+  - name: rd10
+    description: 'Dimension 10. Max length: 9'
+  - name: rd11
+    description: 'Dimension 11. Max length: 9'
+  - name: rd12
+    description: 'Dimension 12. Max length: 9'
+  - name: blpl
+    description: 'Balancing of Profit & Loss. Allowed values: 1, 2, 3, 4'
+  - name: blpl_kw
+    description: 'Balancing of Profit & Loss (keyword). Allowed values: tfgld.blpl.individual,
+      tfgld.blpl.subtotal, tfgld.blpl.earnings, tfgld.blpl.indiv.close.bal'
+  - name: blac
+    description: 'Balancing Account Profit &  Loss Statutory. Max length: 12'
+  - name: bld1
+    description: 'Dimension 1. Max length: 9'
+  - name: bld2
+    description: 'Dimension 2. Max length: 9'
+  - name: bld3
+    description: 'Dimension 3. Max length: 9'
+  - name: bld4
+    description: 'Dimension 4. Max length: 9'
+  - name: bld5
+    description: 'Dimension 5. Max length: 9'
+  - name: bld6
+    description: 'Dimension 6. Max length: 9'
+  - name: bld7
+    description: 'Dimension 7. Max length: 9'
+  - name: bld8
+    description: 'Dimension 8. Max length: 9'
+  - name: bld9
+    description: 'Dimension 9. Max length: 9'
+  - name: bd10
+    description: 'Dimension 10. Max length: 9'
+  - name: bd11
+    description: 'Dimension 11. Max length: 9'
+  - name: bd12
+    description: 'Dimension 12. Max length: 9'
+  - name: typ1
+    description: Dimension Type 1
+  - name: typ2
+    description: Dimension Type 2
+  - name: typ3
+    description: Dimension Type 3
+  - name: typ4
+    description: Dimension Type 4
+  - name: typ5
+    description: Dimension Type 5
+  - name: typ6
+    description: Dimension Type 6
+  - name: typ7
+    description: Dimension Type 7
+  - name: typ8
+    description: Dimension Type 8
+  - name: typ9
+    description: Dimension Type 9
+  - name: tp10
+    description: Dimension Type 10
+  - name: tp11
+    description: Dimension Type 11
+  - name: tp12
+    description: Dimension Type 12
+  - name: dga1
+    description: 'Destination Gain Account 1. Max length: 12'
+  - name: dga2
+    description: 'Destination Gain Account 21. Max length: 12'
+  - name: dla1
+    description: 'Destination Loss Account 1. Max length: 12'
+  - name: dla2
+    description: 'Destination Loss Account 2. Max length: 12'
+  - name: bref
+    description: 'Bank Reference Check. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9'
+  - name: bref_kw
+    description: 'Bank Reference Check (keyword). Allowed values: tfgld.bref.10.check,
+      tfgld.bref.11.check, tfgld.bref.no.check, tfgld.bref.finnish.check, tfgld.bref.not.applicable,
+      tfgld.bref.modulo.10.check, tfgld.bref.10.or.11.check, tfgld.bref.strd.ref.check,
+      tfgld.bref.default'
+  - name: glty
+    description: 'Gain/Loss Transaction Type. Max length: 3'
+  - name: mcfa
+    description: 'Interim Stat/Local AC Fisc. Period Change-Original. Max length:
+      12'
+  - name: mcfb
+    description: 'Interim Stat/Local AC Fisc. Period Change-New. Max length: 12'
+  - name: mcra
+    description: 'Interim Stat/Local A/C Report Period Change-Original. Max length:
+      12'
+  - name: mcrb
+    description: 'Interim Stat/Local A/C Report Period Change-New. Max length: 12'
+  - name: mcfo
+    description: 'Interim Compl/Both A/C Fiscal Period Change-Original. Max length:
+      12'
+  - name: mcfn
+    description: 'Interim Compl/Both AC Fisc. Period Change-New. Max length: 12'
+  - name: mcro
+    description: 'Interim Compl/Both A/C Report Period Change-Original. Max length:
+      12'
+  - name: mcrn
+    description: 'Interim Compl/Both A/C Report Period Change-New. Max length: 12'
+  - name: mcfc
+    description: 'Interim Compl/Rep AC Fisc. Period Change-Original. Max length: 12'
+  - name: mcfd
+    description: 'Interim Compl/Rep AC Fisc. Period Change-New. Max length: 12'
+  - name: mcrc
+    description: 'Interim Compl/Rep A/C Report Period Change-Original. Max length:
+      12'
+  - name: mcrd
+    description: 'Interim Compl/Rep A/C Report Period Change-New. Max length: 12'
+  - name: roca
+    description: 'Rounding Difference Account Complementary. Max length: 12'
+  - name: roc1
+    description: 'Dimension 1. Max length: 9'
+  - name: roc2
+    description: 'Dimension 2. Max length: 9'
+  - name: roc3
+    description: 'Dimension 3. Max length: 9'
+  - name: roc4
+    description: 'Dimension 4. Max length: 9'
+  - name: roc5
+    description: 'Dimension 4. Max length: 9'
+  - name: roc6
+    description: 'Dimension 6. Max length: 9'
+  - name: roc7
+    description: 'Dimension 7. Max length: 9'
+  - name: roc8
+    description: 'Dimension 8. Max length: 9'
+  - name: roc9
+    description: 'Dimension 9. Max length: 9'
+  - name: ro10
+    description: 'Dimension 10. Max length: 9'
+  - name: ro11
+    description: 'Dimension 11. Max length: 9'
+  - name: ro12
+    description: 'Dimension 12. Max length: 9'
+  - name: blca
+    description: 'Balancing Account Profit &amp; Loss Complementary. Max length: 12'
+  - name: blc1
+    description: 'Dimension 1. Max length: 9'
+  - name: blc2
+    description: 'Dimension 2. Max length: 9'
+  - name: blc3
+    description: 'Dimension 3. Max length: 9'
+  - name: blc4
+    description: 'Dimension 4. Max length: 9'
+  - name: blc5
+    description: 'Dimension 5. Max length: 9'
+  - name: blc6
+    description: 'Dimension 6. Max length: 9'
+  - name: blc7
+    description: 'Dimension 7. Max length: 9'
+  - name: blc8
+    description: 'Dimension 8. Max length: 9'
+  - name: blc9
+    description: 'Dimension 9. Max length: 9'
+  - name: bc10
+    description: 'Dimension 10. Max length: 9'
+  - name: bc11
+    description: 'Dimension 11. Max length: 9'
+  - name: bc12
+    description: 'Dimension 12. Max length: 9'
+  - name: ilcc
+    description: 'Retained Earnings Account Complementary. Max length: 12'
+  - name: rcd1
+    description: 'Dimension 1. Max length: 9'
+  - name: rcd2
+    description: 'Dimension 2. Max length: 9'
+  - name: rcd3
+    description: 'Dimension 3. Max length: 9'
+  - name: rcd4
+    description: 'Dimension 4. Max length: 9'
+  - name: rcd5
+    description: 'Dimension 5. Max length: 9'
+  - name: rcd6
+    description: 'Dimension 6. Max length: 9'
+  - name: rcd7
+    description: 'Dimension 7. Max length: 9'
+  - name: rcd8
+    description: 'Dimension 8. Max length: 9'
+  - name: rcd9
+    description: 'Dimension 9. Max length: 9'
+  - name: rc10
+    description: 'Dimension 10. Max length: 9'
+  - name: rc11
+    description: 'Dimension 11. Max length: 9'
+  - name: rc12
+    description: 'Dimension 12. Max length: 9'
+  - name: smac
+    description: 'Statutory Matching Account. Max length: 12'
+  - name: cmac
+    description: 'Complementary Matching Account. Max length: 12'
+  - name: mtol
+    description: Matching Tolerance (Percentage)
+  - name: atol
+    description: Absolute Tolerance Amount
+  - name: mtyp
+    description: 'Matching Transaction Type. Max length: 3'
+  - name: mpie
+    description: 'Prevent Incomplete Matching for the same Transaction Currencies.
+      Allowed values: 1, 2'
+  - name: mpie_kw
+    description: 'Prevent Incomplete Matching for the same Transaction Currencies
+      (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: made
+    description: 'Allow Matching Based on Difference for the same Transaction Currencies.
+      Allowed values: 1, 2'
+  - name: made_kw
+    description: 'Allow Matching Based on Difference for the same Transaction Currencies
+      (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mauc
+    description: 'Allow Matching for different Transaction Currencies. Allowed values:
+      1, 2'
+  - name: mauc_kw
+    description: 'Allow Matching for different Transaction Currencies (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: mpiu
+    description: 'Prevent Incomplete Matching for different Transaction Currencies.
+      Allowed values: 1, 2'
+  - name: mpiu_kw
+    description: 'Prevent Incomplete Matching for different Transaction Currencies
+      (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: madu
+    description: 'Allow Matching Based on Difference for different Trans. Currencies.
+      Allowed values: 1, 2'
+  - name: madu_kw
+    description: 'Allow Matching Based on Difference for different Trans. Currencies
+      (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mucu
+    description: 'Matching Currency for different Transaction Currency. Max length:
+      3'
+  - name: srac
+    description: 'Dimension Accounting on Retained Earnings. Allowed values: 0, 1,
+      2'
+  - name: srac_kw
+    description: 'Dimension Accounting on Retained Earnings (keyword). Allowed values:
+      , tcyesno.yes, tcyesno.no'
+  - name: taut
+    description: 'Tran. Type for Auto Balancing. Max length: 3'
+  - name: infa
+    description: 'Factor Invoices. Allowed values: 0, 1, 2'
+  - name: infa_kw
+    description: 'Factor Invoices (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: glac
+    description: 'Gain/Loss Account by Currency. Allowed values: 1, 2'
+  - name: glac_kw
+    description: 'Gain/Loss Account by Currency (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dgla
+    description: 'Statutory Exchange Gain/Loss Account. Max length: 12'
+  - name: dst1
+    description: 'Dimension 1. Max length: 9'
+  - name: dst2
+    description: 'Dimension 2. Max length: 9'
+  - name: dst3
+    description: 'Dimension 3. Max length: 9'
+  - name: dst4
+    description: 'Dimension 4. Max length: 9'
+  - name: dst5
+    description: 'Dimension 5. Max length: 9'
+  - name: dst6
+    description: 'Dimension 6. Max length: 9'
+  - name: dst7
+    description: 'Dimension 7. Max length: 9'
+  - name: dst8
+    description: 'Dimension 8. Max length: 9'
+  - name: dst9
+    description: 'Dimension 9. Max length: 9'
+  - name: ds10
+    description: 'Dimension 10. Max length: 9'
+  - name: ds11
+    description: 'Dimension 11. Max length: 9'
+  - name: ds12
+    description: 'Dimension 12. Max length: 9'
+  - name: dglc
+    description: 'Complementary Exchange Gain/Loss Account. Max length: 12'
+  - name: dcm1
+    description: 'Dimension 1. Max length: 9'
+  - name: dcm2
+    description: 'Dimension 2. Max length: 9'
+  - name: dcm3
+    description: 'Dimension 3. Max length: 9'
+  - name: dcm4
+    description: 'Dimension 4. Max length: 9'
+  - name: dcm5
+    description: 'Dimension 5. Max length: 9'
+  - name: dcm6
+    description: 'Dimension 6. Max length: 9'
+  - name: dcm7
+    description: 'Dimension 7. Max length: 9'
+  - name: dcm8
+    description: 'Dimension 8. Max length: 9'
+  - name: dcm9
+    description: 'Dimension 9. Max length: 9'
+  - name: dc10
+    description: 'Dimension 10. Max length: 9'
+  - name: dc11
+    description: 'Dimension 11. Max length: 9'
+  - name: dc12
+    description: 'Dimension 12. Max length: 9'
+  - name: jrbk
+    description: 'Journal Book. Allowed values: 0, 1, 2'
+  - name: jrbk_kw
+    description: 'Journal Book (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: vabk
+    description: 'VAT Book. Allowed values: 1, 2'
+  - name: vabk_kw
+    description: 'VAT Book (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sapi
+    description: 'Separate Account for Paid Advance Installments. Allowed values:
+      1, 2'
+  - name: sapi_kw
+    description: 'Separate Account for Paid Advance Installments (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: schm
+    description: 'Schedules Mandatory. Allowed values: 1, 2'
+  - name: schm_kw
+    description: 'Schedules Mandatory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: paym
+    description: 'Payment Method Mandatory. Allowed values: 1, 2'
+  - name: paym_kw
+    description: 'Payment Method Mandatory (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ause
+    description: 'Authorized User for External Journals. Max length: 16'
+  - name: etyp
+    description: 'Default Transaction Type for External Journals. Max length: 3'
+  - name: esrn
+    description: Default Series for External Journals
+  - name: ttcj
+    description: 'Transaction Type for Transaction Currency Journals. Max length:
+      3'
+  - name: tmfc
+    description: 'Transaction Type for Multi-Functional Currencies Journals. Max length:
+      3'
+  - name: badm
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: badm_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: usac
+    description: 'Use Suspense Account. Allowed values: 1, 2'
+  - name: usac_kw
+    description: 'Use Suspense Account (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: spac
+    description: 'Suspense Account. Max length: 12'
+  - name: acmn
+    description: 'New Account Matching Functionality Active. Allowed values: 1, 2'
+  - name: acmn_kw
+    description: 'New Account Matching Functionality Active (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: amfn
+    description: 'Account Matching. Allowed values: 1, 2'
+  - name: amfn_kw
+    description: 'Account Matching (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: fbya
+    description: 'Finalization by Administrator. Allowed values: 1, 2'
+  - name: fbya_kw
+    description: 'Finalization by Administrator (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rjic
+    description: 'Recurring Journal Invoice Creation. Allowed values: 1, 2'
+  - name: rjic_kw
+    description: 'Recurring Journal Invoice Creation (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rvtt
+    description: 'Reversal Transaction Type. Max length: 3'
+  - name: rvse
+    description: Reversal Series
+  - name: indm
+    description: 'Copy Interperiod Dimensions from Original Transactions. Allowed
+      values: 1, 2'
+  - name: indm_kw
+    description: 'Copy Interperiod Dimensions from Original Transactions (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crvr
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: crvr_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: isgm
+    description: 'Intersegment Account Statutory. Max length: 12'
+  - name: isgc
+    description: 'Intersegment Account Complementary. Max length: 12'
+  - name: sbct
+    description: 'Clearing/Correction Transaction Type. Max length: 3'
+  - name: bsjv
+    description: 'Block Segmented Unbalanced Journal Voucher. Allowed values: 1, 2'
+  - name: bsjv_kw
+    description: 'Block Segmented Unbalanced Journal Voucher (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: cfac
+    description: 'Currency Difference FIFO Profit Account. Max length: 12'
+  - name: cfa1
+    description: 'Dimension 1. Max length: 9'
+  - name: cfa2
+    description: 'Dimension 2. Max length: 9'
+  - name: cfa3
+    description: 'Dimension 3. Max length: 9'
+  - name: cfa4
+    description: 'Dimension 4. Max length: 9'
+  - name: cfa5
+    description: 'Dimension 5. Max length: 9'
+  - name: cfa6
+    description: 'Dimension 6. Max length: 9'
+  - name: cfa7
+    description: 'Dimension 7. Max length: 9'
+  - name: cfa8
+    description: 'Dimension 8. Max length: 9'
+  - name: cfa9
+    description: 'Dimension 9. Max length: 9'
+  - name: fa10
+    description: 'Dimension 10. Max length: 9'
+  - name: fa11
+    description: 'Dimension 11. Max length: 9'
+  - name: fa12
+    description: 'Dimension 12. Max length: 9'
+  - name: cfcl
+    description: 'Currency Difference FIFO Loss Account. Max length: 12'
+  - name: cfc1
+    description: 'Dimension 1. Max length: 9'
+  - name: cfc2
+    description: 'Dimension 2. Max length: 9'
+  - name: cfc3
+    description: 'Dimension 3. Max length: 9'
+  - name: cfc4
+    description: 'Dimension 4. Max length: 9'
+  - name: cfc5
+    description: 'Dimension 5. Max length: 9'
+  - name: cfc6
+    description: 'Dimension 6. Max length: 9'
+  - name: cfc7
+    description: 'Dimension 7. Max length: 9'
+  - name: cfc8
+    description: 'Dimension 8. Max length: 9'
+  - name: cfc9
+    description: 'Dimension 9. Max length: 9'
+  - name: fc10
+    description: 'Dimension 10. Max length: 9'
+  - name: fc11
+    description: 'Dimension 11. Max length: 9'
+  - name: fc12
+    description: 'Dimension 12. Max length: 9'
+  - name: cftp
+    description: 'Currency Difference FIFO Transaction Type. Max length: 3'
+  - name: pfdm
+    description: 'Pre-fill Dimensions. Allowed values: 1, 2'
+  - name: pfdm_kw
+    description: 'Pre-fill Dimensions (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: obst
+    description: 'Opening Balance Statutory. Max length: 12'
+  - name: obcp
+    description: 'Opening Balance Complementary. Max length: 12'
+  - name: rest
+    description: 'Closing Balance Statutory. Max length: 12'
+  - name: recp
+    description: 'Closing Balance Complementary. Max length: 12'
+  - name: nftr
+    description: 'Calculate Currency Difference if Non-Finalized Transactions exist.
+      Allowed values: 1, 2'
+  - name: nftr_kw
+    description: 'Calculate Currency Difference if Non-Finalized Transactions exist
+      (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: latg
+    description: 'Ledger Accounts by Target Account Group. Allowed values: 1, 2'
+  - name: latg_kw
+    description: 'Ledger Accounts by Target Account Group (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: rcac
+    description: 'Report Contra Accounts. Allowed values: 1, 2'
+  - name: rcac_kw
+    description: 'Report Contra Accounts (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rcbp
+    description: 'Replace AP/AR Control Account with Business Partner. Allowed values:
+      0, 1, 2'
+  - name: rcbp_kw
+    description: 'Replace AP/AR Control Account with Business Partner (keyword). Allowed
+      values: , tcyesno.yes, tcyesno.no'
+  - name: drpf
+    description: 'Descriptive References for Purchase and Freight Cost Lines. Allowed
+      values: 1, 2'
+  - name: drpf_kw
+    description: 'Descriptive References for Purchase and Freight Cost Lines (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dfdm
+    description: 'Default Dimension. Allowed values: 1, 2'
+  - name: dfdm_kw
+    description: 'Default Dimension (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dssq_1
+    description: 'Sequences. Allowed values: 10, 20, 30, 40, 255'
+  - name: dssq_kw_1
+    description: 'Sequences (keyword). Allowed values: tfgld.dfds.dimn.leac, tfgld.dfds.dimn,
+      tfgld.dfds.bpid.leac, tfgld.dfds.user.leac, tfgld.dfds.not.appl'
+  - name: dssq_2
+    description: 'Sequences. Allowed values: 10, 20, 30, 40, 255'
+  - name: dssq_kw_2
+    description: 'Sequences (keyword). Allowed values: tfgld.dfds.dimn.leac, tfgld.dfds.dimn,
+      tfgld.dfds.bpid.leac, tfgld.dfds.user.leac, tfgld.dfds.not.appl'
+  - name: dssq_3
+    description: 'Sequences. Allowed values: 10, 20, 30, 40, 255'
+  - name: dssq_kw_3
+    description: 'Sequences (keyword). Allowed values: tfgld.dfds.dimn.leac, tfgld.dfds.dimn,
+      tfgld.dfds.bpid.leac, tfgld.dfds.user.leac, tfgld.dfds.not.appl'
+  - name: dssq_4
+    description: 'Sequences. Allowed values: 10, 20, 30, 40, 255'
+  - name: dssq_kw_4
+    description: 'Sequences (keyword). Allowed values: tfgld.dfds.dimn.leac, tfgld.dfds.dimn,
+      tfgld.dfds.bpid.leac, tfgld.dfds.user.leac, tfgld.dfds.not.appl'
+  - name: cdf_pryp
+    description: 'Project Rev Transaction Type. Max length: 3'
+  - name: cdf_ptyp
+    description: 'Project Transaction Type. Max length: 3'
+  - name: cdf_ttyp
+    description: 'Transaction Type. Max length: 3'
+  - name: cdf_typr
+    description: 'Reversal Transaction Type. Max length: 3'
+  - name: year_ref_compnr
+    description: company number of primary key of table tfgld006 End Dates by Year
+  - name: addr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: clac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: clcl_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: ctyp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: fpor_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: fpnw_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: rpor_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: rpnw_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: ilac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: inac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: incc_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: roda_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: blac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: typ1_cla1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_clc1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_ind1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_bld1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_rod1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_roc1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_blc1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_inc1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_rsd1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_rcd1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_dst1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_dcm1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_cfa1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ1_cfc1_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_cla2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_clc2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_ind2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_bld2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_rod2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_roc2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_blc2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_inc2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_rsd2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_rcd2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_dst2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_dcm2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_cfa2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ2_cfc2_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_cla3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_clc3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_ind3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_bld3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_rod3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_roc3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_blc3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_inc3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_rsd3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_rcd3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_dst3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_dcm3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_cfa3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ3_cfc3_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_cla4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_clc4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_ind4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_bld4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_rod4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_roc4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_blc4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_inc4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_rsd4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_rcd4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_dst4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_dcm4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_cfa4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ4_cfc4_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_cla5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_clc5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_ind5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_bld5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_rod5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_roc5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_blc5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_inc5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_rsd5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_rcd5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_dst5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_dcm5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_cfa5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ5_cfc5_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_cla6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_clc6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_ind6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_bld6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_rod6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_roc6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_blc6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_inc6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_rsd6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_rcd6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_dst6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_dcm6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_cfa6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ6_cfc6_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_cla7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_clc7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_ind7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_bld7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_rod7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_roc7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_blc7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_inc7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_rsd7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_rcd7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_dst7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_dcm7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_cfa7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ7_cfc7_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_cla8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_clc8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_ind8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_bld8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_rod8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_roc8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_blc8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_inc8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_rsd8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_rcd8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_dst8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_dcm8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_cfa8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ8_cfc8_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_cla9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_clc9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_ind9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_bld9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_rod9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_roc9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_blc9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_inc9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_rsd9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_rcd9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_dst9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_dcm9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_cfa9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: typ9_cfc9_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_ca10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_cc10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_id10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_bd10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_rd10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_ro10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_bc10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_ic10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_rs10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_rc10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_ds10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_dc10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_fa10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp10_fc10_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_ca11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_cc11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_id11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_bd11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_rd11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_ro11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_bc11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_ic11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_rs11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_rc11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_ds11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_dc11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_fa11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp11_fc11_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_ca12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_cc12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_id12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_bd12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_rd12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_ro12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_bc12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_ic12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_rs12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_rc12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_ds12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_dc12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_fa12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: tp12_fc12_ref_compnr
+    description: company number of primary key of table tfgld010 Dimensions
+  - name: dga1_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: dga2_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: dla1_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: dla2_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: glty_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: mcfa_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcfb_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcra_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcrb_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcfo_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcfn_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcro_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcrn_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcfc_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcfd_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcrc_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mcrd_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: roca_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: blca_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: ilcc_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: smac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: cmac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: mtyp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: taut_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: dgla_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: dglc_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: etyp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: ttcj_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: tmfc_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: spac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: rvtt_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: isgm_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: isgc_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: sbct_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: cfac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: cfcl_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: cftp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: obst_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: obcp_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: rest_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: recp_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: cdf_pryp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: cdf_ptyp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: cdf_ttyp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: cdf_typr_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: gcmp_rcmp
+    description: 'CC: Reference Company of Company'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld004 Financial Companies table, Generated 2026-04-10T19:41:40Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - indt

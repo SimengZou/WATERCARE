@@ -1,0 +1,39 @@
+version: 2
+models:
+- name: r5evtsystems
+  columns:
+  - name: esy_lastsaved
+    description: ESY_LASTSAVED
+  - name: esy_system
+    description: ESY_SYSTEM
+  - name: esy_updatecount
+    description: ESY_UPDATECOUNT
+  - name: esy_event
+    description: ESY_EVENT
+  - name: esy_system_org
+    description: ESY_SYSTEM_ORG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EVTSYSTEMS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - esy_event
+        - esy_system
+        - esy_system_org

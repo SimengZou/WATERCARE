@@ -1,0 +1,184 @@
+version: 2
+models:
+- name: tfacp245
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: shpm
+    description: '(required) Packing Slip. Max length: 30'
+    data_tests:
+    - not_null
+  - name: otyp
+    description: '(required) Order Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21'
+    data_tests:
+    - not_null
+  - name: otyp_kw
+    description: 'Order Type (keyword). Allowed values: tfacp.otyp.purchase, tfacp.otyp.sales,
+      tfacp.otyp.trans, tfacp.otyp.trans.man, tfacp.otyp.trans.wip, tfacp.otyp.freight,
+      tfacp.otyp.commissions, tfacp.otyp.project, tfacp.otyp.project.man, tfacp.otyp.ent.planning,
+      tfacp.otyp.assembly, tfacp.otyp.production, tfacp.otyp.service, tfacp.otyp.maint.sales,
+      tfacp.otyp.pcs.project, tfacp.otyp.maint.work, tfacp.otyp.not.applicable, tfacp.otyp.proj.contract,
+      tfacp.otyp.customer.claim, tfacp.otyp.intercomp.trade, tfacp.otyp.services.procm'
+  - name: orno
+    description: '(required) Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Order Position
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: loco
+    description: (required) Logistic Company
+    data_tests:
+    - not_null
+  - name: rcno
+    description: '(required) Goods Receipt. Max length: 9'
+    data_tests:
+    - not_null
+  - name: rseq
+    description: (required) Receipt Line
+    data_tests:
+    - not_null
+  - name: bonm
+    description: 'Obsolete. Max length: 17'
+  - name: boid
+    description: 'Obsolete. Max length: 11'
+  - name: borf
+    description: 'Obsolete. Max length: 90'
+  - name: rgui
+    description: 'Obsolete. Max length: 22'
+  - name: fcpo
+    description: Financial Company Purchase Office
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: rqty
+    description: Received Quantity in Inventory Unit
+  - name: rqpc
+    description: Received Quantity in Piece Unit
+  - name: quan
+    description: Approved Quantity in Inventory Unit (Goods)
+  - name: aqpc
+    description: Approved Quantity in Piece Unit
+  - name: trqn
+    description: Rejected Quantity in Inventory Unit
+  - name: rjpc
+    description: Rejected Quantity in Piece Unit
+  - name: toma
+    description: 'Totally Matched. Allowed values: 1, 2'
+  - name: toma_kw
+    description: 'Totally Matched (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sfbl
+    description: 'Self-billed/Internal Order. Allowed values: 1, 2'
+  - name: sfbl_kw
+    description: 'Self-billed/Internal Order (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rdat
+    description: Goods Rcpt Date
+  - name: mpnr
+    description: 'Manufacturer Part Number. Max length: 35'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: sdat
+    description: Shipping Date
+  - name: sbdt
+    description: 'Self Billing Date Type. Allowed values: 0, 10, 20'
+  - name: sbdt_kw
+    description: 'Self Billing Date Type (keyword). Allowed values: , tcsbdt.receipt.date,
+      tcsbdt.shipping.date'
+  - name: imrf__en_us
+    description: '(required) Import Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: mtch
+    description: 'Match. Allowed values: 1, 2'
+  - name: mtch_kw
+    description: 'Match (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: maqu
+    description: Match Quantity
+  - name: mqpc
+    description: Match Quantity in Piece Unit
+  - name: mqpu
+    description: Match Quantity in Purchase Unit
+  - name: maam
+    description: Match Amount
+  - name: lmat
+    description: 'Level of Match. Allowed values: 10, 20'
+  - name: lmat_kw
+    description: 'Level of Match (keyword). Allowed values: tfacp.lmat.inv.header,
+      tfacp.lmat.inv.line'
+  - name: omti
+    description: 'Overwrite Match of Invoice Header. Allowed values: 1, 2'
+  - name: omti_kw
+    description: 'Overwrite Match of Invoice Header (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: uppr
+    description: 'Update Average/Last Purchase Price. Allowed values: 1, 2'
+  - name: uppr_kw
+    description: 'Update Average/Last Purchase Price (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cval
+    description: Customs Value
+  - name: cvlc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: cdf_txta
+    description: Text
+  - name: loco_otyp_orno_pono_sqnb_ref_compnr
+    description: company number of primary key of table tfacp240 Order Data for Approval
+  - name: cvlc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cdf_txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfacp245 Goods Receipts table, Generated 2026-04-10T19:41:29Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - shpm
+        - otyp
+        - orno
+        - pono
+        - sqnb
+        - loco
+        - rcno
+        - rseq

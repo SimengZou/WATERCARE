@@ -1,0 +1,54 @@
+version: 2
+models:
+- name: r5eventcost
+  columns:
+  - name: evo_lastsaved
+    description: EVO_LASTSAVED
+  - name: evo_directmaterial
+    description: EVO_DIRECTMATERIAL
+  - name: evo_costcalculated
+    description: EVO_COSTCALCULATED
+  - name: evo_labor
+    description: EVO_LABOR
+  - name: evo_material
+    description: EVO_MATERIAL
+  - name: evo_tool
+    description: EVO_TOOL
+  - name: evo_total
+    description: EVO_TOTAL
+  - name: evo_hours
+    description: EVO_HOURS
+  - name: evo_updated
+    description: EVO_UPDATED
+  - name: evo_ownlabor
+    description: EVO_OWNLABOR
+  - name: evo_hiredlabor
+    description: EVO_HIREDLABOR
+  - name: evo_serviceslabor
+    description: EVO_SERVICESLABOR
+  - name: evo_stockmaterial
+    description: EVO_STOCKMATERIAL
+  - name: evo_event
+    description: EVO_EVENT
+    data_tests:
+    - unique
+  - name: evo_recalccost
+    description: EVO_RECALCCOST
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EVENTCOST

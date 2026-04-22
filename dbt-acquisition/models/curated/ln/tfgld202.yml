@@ -1,0 +1,144 @@
+version: 2
+models:
+- name: tfgld202
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: (required) Company
+    data_tests:
+    - not_null
+  - name: ptyp
+    description: '(required) Period Type. Allowed values: 0, 1, 2, 3'
+    data_tests:
+    - not_null
+  - name: ptyp_kw
+    description: 'Period Type (keyword). Allowed values: , tfgld.ptyp.financial, tfgld.ptyp.reporting,
+      tfgld.ptyp.vat'
+  - name: year
+    description: (required) Fiscal Year
+    data_tests:
+    - not_null
+  - name: prno
+    description: (required) Period
+    data_tests:
+    - not_null
+  - name: dtyp
+    description: (required) Dimension Type
+    data_tests:
+    - not_null
+  - name: dimx
+    description: '(required) Dimension. Max length: 9'
+    data_tests:
+    - not_null
+  - name: leac
+    description: '(required) Ledger Account. Max length: 12'
+    data_tests:
+    - not_null
+  - name: ccur
+    description: '(required) Currency. Max length: 3'
+    data_tests:
+    - not_null
+  - name: duac
+    description: '(required) Dual Accounting Indicator. Allowed values: 0, 1, 2'
+    data_tests:
+    - not_null
+  - name: duac_kw
+    description: 'Dual Accounting Indicator (keyword). Allowed values: , tfgld.duac.statutory,
+      tfgld.duac.complem'
+  - name: bpid
+    description: '(required) Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: fdam
+    description: Finalized Debit Amount
+  - name: fcam
+    description: Finalized Credit Amount
+  - name: fdah_1
+    description: Finalized Debit Amount in HC
+  - name: fdah_2
+    description: Finalized Debit Amount in HC
+  - name: fdah_3
+    description: Finalized Debit Amount in HC
+  - name: fcah_1
+    description: Finalized Credit Amount in HC
+  - name: fcah_2
+    description: Finalized Credit Amount in HC
+  - name: fcah_3
+    description: Finalized Credit Amount in HC
+  - name: fqt1
+    description: Finalized Quantity 1
+  - name: fqt2
+    description: Finalized Quantity 2
+  - name: ndam
+    description: Not Final Debit Amount
+  - name: ncam
+    description: Not Final Credit Amount
+  - name: ndah_1
+    description: Not Final Debit Amount in HC
+  - name: ndah_2
+    description: Not Final Debit Amount in HC
+  - name: ndah_3
+    description: Not Final Debit Amount in HC
+  - name: ncah_1
+    description: Not Final Credit Amount in HC
+  - name: ncah_2
+    description: Not Final Credit Amount in HC
+  - name: ncah_3
+    description: Not Final Credit Amount in HC
+  - name: nqt1
+    description: Not Final Quantity 1
+  - name: nqt2
+    description: Not Final Quantity 2
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld202 History - Dimension/Ledger Account Totals table, Generated
+    2026-04-10T19:41:43Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono
+        - ptyp
+        - year
+        - prno
+        - dtyp
+        - dimx
+        - leac
+        - ccur
+        - duac
+        - bpid

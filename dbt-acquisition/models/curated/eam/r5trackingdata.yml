@@ -1,0 +1,146 @@
+version: 2
+models:
+- name: r5trackingdata
+  columns:
+  - name: tkd_lastsaved
+    description: TKD_LASTSAVED
+  - name: tkd_sourcesystem
+    description: TKD_SOURCESYSTEM
+  - name: tkd_sourcecode
+    description: TKD_SOURCECODE
+  - name: tkd_trans
+    description: TKD_TRANS
+  - name: tkd_trackdate
+    description: TKD_TRACKDATE
+  - name: tkd_promptdata1
+    description: TKD_PROMPTDATA1
+  - name: tkd_promptdata2
+    description: TKD_PROMPTDATA2
+  - name: tkd_promptdata3
+    description: TKD_PROMPTDATA3
+  - name: tkd_promptdata4
+    description: TKD_PROMPTDATA4
+  - name: tkd_promptdata5
+    description: TKD_PROMPTDATA5
+  - name: tkd_promptdata6
+    description: TKD_PROMPTDATA6
+  - name: tkd_promptdata7
+    description: TKD_PROMPTDATA7
+  - name: tkd_promptdata8
+    description: TKD_PROMPTDATA8
+  - name: tkd_promptdata9
+    description: TKD_PROMPTDATA9
+  - name: tkd_promptdata10
+    description: TKD_PROMPTDATA10
+  - name: tkd_promptdata11
+    description: TKD_PROMPTDATA11
+  - name: tkd_promptdata12
+    description: TKD_PROMPTDATA12
+  - name: tkd_promptdata13
+    description: TKD_PROMPTDATA13
+  - name: tkd_promptdata14
+    description: TKD_PROMPTDATA14
+  - name: tkd_promptdata15
+    description: TKD_PROMPTDATA15
+  - name: tkd_promptdata16
+    description: TKD_PROMPTDATA16
+  - name: tkd_promptdata17
+    description: TKD_PROMPTDATA17
+  - name: tkd_promptdata18
+    description: TKD_PROMPTDATA18
+  - name: tkd_promptdata19
+    description: TKD_PROMPTDATA19
+  - name: tkd_promptdata20
+    description: TKD_PROMPTDATA20
+  - name: tkd_promptdata21
+    description: TKD_PROMPTDATA21
+  - name: tkd_promptdata22
+    description: TKD_PROMPTDATA22
+  - name: tkd_promptdata23
+    description: TKD_PROMPTDATA23
+  - name: tkd_promptdata24
+    description: TKD_PROMPTDATA24
+  - name: tkd_promptdata25
+    description: TKD_PROMPTDATA25
+  - name: tkd_promptdata26
+    description: TKD_PROMPTDATA26
+  - name: tkd_promptdata27
+    description: TKD_PROMPTDATA27
+  - name: tkd_promptdata28
+    description: TKD_PROMPTDATA28
+  - name: tkd_promptdata29
+    description: TKD_PROMPTDATA29
+  - name: tkd_promptdata30
+    description: TKD_PROMPTDATA30
+  - name: tkd_promptdata31
+    description: TKD_PROMPTDATA31
+  - name: tkd_promptdata32
+    description: TKD_PROMPTDATA32
+  - name: tkd_promptdata33
+    description: TKD_PROMPTDATA33
+  - name: tkd_promptdata34
+    description: TKD_PROMPTDATA34
+  - name: tkd_promptdata35
+    description: TKD_PROMPTDATA35
+  - name: tkd_promptdata36
+    description: TKD_PROMPTDATA36
+  - name: tkd_promptdata37
+    description: TKD_PROMPTDATA37
+  - name: tkd_promptdata38
+    description: TKD_PROMPTDATA38
+  - name: tkd_promptdata39
+    description: TKD_PROMPTDATA39
+  - name: tkd_promptdata40
+    description: TKD_PROMPTDATA40
+  - name: tkd_promptdata41
+    description: TKD_PROMPTDATA41
+  - name: tkd_promptdata42
+    description: TKD_PROMPTDATA42
+  - name: tkd_promptdata43
+    description: TKD_PROMPTDATA43
+  - name: tkd_promptdata44
+    description: TKD_PROMPTDATA44
+  - name: tkd_promptdata45
+    description: TKD_PROMPTDATA45
+  - name: tkd_promptdata46
+    description: TKD_PROMPTDATA46
+  - name: tkd_promptdata47
+    description: TKD_PROMPTDATA47
+  - name: tkd_promptdata48
+    description: TKD_PROMPTDATA48
+  - name: tkd_promptdata49
+    description: TKD_PROMPTDATA49
+  - name: tkd_promptdata50
+    description: TKD_PROMPTDATA50
+  - name: tkd_sessionid
+    description: TKD_SESSIONID
+  - name: tkd_rstatus
+    description: TKD_RSTATUS
+  - name: tkd_changed
+    description: TKD_CHANGED
+  - name: tkd_promptdata51
+    description: 'TKD_PROMPTDATA51. Max length: 0'
+  - name: tkd_transid
+    description: TKD_TRANSID
+    data_tests:
+    - unique
+  - name: tkd_created
+    description: TKD_CREATED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TRACKINGDATA

@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5addproperties
+  columns:
+  - name: apr_lastsaved
+    description: APR_LASTSAVED
+  - name: apr_nonupdcat
+    description: APR_NONUPDCAT
+  - name: apr_created
+    description: APR_CREATED
+  - name: apr_updated
+    description: APR_UPDATED
+  - name: apr_grouplabel
+    description: APR_GROUPLABEL
+  - name: apr_status
+    description: APR_STATUS
+  - name: apr_class_org
+    description: APR_CLASS_ORG
+  - name: apr_property
+    description: APR_PROPERTY
+  - name: apr_rentity
+    description: APR_RENTITY
+  - name: apr_class
+    description: APR_CLASS
+  - name: apr_line
+    description: APR_LINE
+  - name: apr_uom
+    description: APR_UOM
+  - name: apr_list
+    description: APR_LIST
+  - name: apr_listvalid
+    description: APR_LISTVALID
+  - name: apr_required
+    description: APR_REQUIRED
+  - name: apr_wodisp
+    description: APR_WODISP
+  - name: apr_updatecount
+    description: APR_UPDATECOUNT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ADDPROPERTIES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - apr_property
+        - apr_rentity
+        - apr_class
+        - apr_class_org

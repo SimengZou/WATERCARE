@@ -1,0 +1,107 @@
+version: 2
+models:
+- name: whinh439
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: oorg
+    description: '(required) Order Origin. Allowed values: 1, 2, 3, 11, 12, 31, 32,
+      33, 34, 40, 41, 50, 51, 53, 55, 56, 58, 60, 61, 71, 72, 75, 76, 78, 80, 81,
+      82, 90, 100'
+    data_tests:
+    - not_null
+  - name: oorg_kw
+    description: 'Order Origin (keyword). Allowed values: whinh.oorg.sales, whinh.oorg.sales.sched,
+      whinh.oorg.sales.man, whinh.oorg.service, whinh.oorg.service.man, whinh.oorg.maint.sales,
+      whinh.oorg.maint.sales.man, whinh.oorg.maint.work, whinh.oorg.maint.work.man,
+      whinh.oorg.customer.claim, whinh.oorg.supplier.claim, whinh.oorg.production,
+      whinh.oorg.production.man, whinh.oorg.product.sched, whinh.oorg.product.asc,
+      whinh.oorg.product.asc.man, whinh.oorg.product.kanban, whinh.oorg.transformation,
+      whinh.oorg.assembly, whinh.oorg.transfer, whinh.oorg.transfer.man, whinh.oorg.project,
+      whinh.oorg.project.man, whinh.oorg.proj.contract, whinh.oorg.purchase, whinh.oorg.purchase.sched,
+      whinh.oorg.purchase.man, whinh.oorg.enterprise.plan, whinh.oorg.not.appl'
+  - name: orno
+    description: '(required) Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Delivery Line
+    data_tests:
+    - not_null
+  - name: shpm
+    description: '(required) Shipment. Max length: 9'
+    data_tests:
+    - not_null
+  - name: shln
+    description: (required) Shipment Line
+    data_tests:
+    - not_null
+  - name: fshp
+    description: 'Final Shipment. Allowed values: 1, 2'
+  - name: fshp_kw
+    description: 'Final Shipment (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdat
+    description: Confirmed Date
+  - name: ldat
+    description: Log Date
+  - name: mess__en_us
+    description: '(required) Errors Logged - base language. Max length: 132'
+    data_tests:
+    - not_null
+  - name: shpm_shln_ref_compnr
+    description: company number of primary key of table whinh431 Shipment Lines
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh439 Deliveries table, Generated 2026-04-10T19:42:50Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - oorg
+        - orno
+        - pono
+        - seqn
+        - sqnb
+        - shpm
+        - shln

@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5packingslip
+  columns:
+  - name: psl_lastsaved
+    description: PSL_LASTSAVED
+  - name: psl_bin
+    description: PSL_BIN
+  - name: psl_order
+    description: PSL_ORDER
+  - name: psl_ordline
+    description: PSL_ORDLINE
+  - name: psl_order_org
+    description: PSL_ORDER_ORG
+  - name: psl_part
+    description: PSL_PART
+  - name: psl_part_org
+    description: PSL_PART_ORG
+  - name: psl_manlot
+    description: PSL_MANLOT
+  - name: psl_manlotexp
+    description: PSL_MANLOTEXP
+  - name: psl_supplierref
+    description: PSL_SUPPLIERREF
+  - name: psl_deluom
+    description: PSL_DELUOM
+  - name: psl_delqty
+    description: PSL_DELQTY
+  - name: psl_recvqty
+    description: PSL_RECVQTY
+  - name: psl_multiply
+    description: PSL_MULTIPLY
+  - name: psl_comment
+    description: PSL_COMMENT
+  - name: psl_updatecount
+    description: PSL_UPDATECOUNT
+  - name: psl_dock
+    description: PSL_DOCK
+  - name: psl_line
+    description: PSL_LINE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PACKINGSLIP
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - psl_dock
+        - psl_line

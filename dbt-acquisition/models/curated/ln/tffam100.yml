@@ -1,0 +1,307 @@
+version: 2
+models:
+- name: tffam100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: anbr
+    description: '(required) Asset Number. Max length: 15'
+    data_tests:
+    - not_null
+  - name: aext
+    description: '(required) Asset Extension. Max length: 15'
+    data_tests:
+    - not_null
+  - name: acmc_1
+    description: Accumulated Maintenance Cost
+  - name: acmc_2
+    description: Accumulated Maintenance Cost
+  - name: acmc_3
+    description: Accumulated Maintenance Cost
+  - name: acmd
+    description: Last Maintenance Date
+  - name: agrp
+    description: 'Group. Max length: 10'
+  - name: ascd
+    description: 'Asset Source. Allowed values: 1, 2, 3, 4, 5, 10'
+  - name: ascd_kw
+    description: 'Asset Source (keyword). Allowed values: tffam.ascd.manu, tffam.ascd.ap,
+      tffam.ascd.gl, tffam.ascd.feed, tffam.ascd.cmg, tffam.ascd.rec.asset'
+  - name: auto
+    description: 'Automobile. Allowed values: 1, 2'
+  - name: auto_kw
+    description: 'Automobile (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bpct
+    description: Business Percentage
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: c263
+    description: Comment
+  - name: capi
+    description: Comment
+  - name: comp
+    description: Company
+  - name: cost
+    description: Transaction Cost
+  - name: ctgy
+    description: 'Category. Max length: 10'
+  - name: curr
+    description: 'Transaction Currency. Max length: 3'
+  - name: date
+    description: Date
+  - name: dbfg
+    description: 'Asset Distribution By. Allowed values: 1, 2'
+  - name: dbfg_kw
+    description: 'Asset Distribution By (keyword). Allowed values: tffam.byqp.quantity,
+      tffam.byqp.percent'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: itca
+    description: Current ITC Amount
+  - name: itcd
+    description: 'ITC Method. Allowed values: 1, 2, 3'
+  - name: itcd_kw
+    description: 'ITC Method (keyword). Allowed values: tffam.itcc.none, tffam.itcc.redu.basi,
+      tffam.itcc.redu.cred'
+  - name: item__en_us
+    description: '(required) Purchase Order Part - base language. Max length: 15'
+    data_tests:
+    - not_null
+  - name: list
+    description: 'Listed. Allowed values: 1, 2'
+  - name: list_kw
+    description: 'Listed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ltdd
+    description: New
+  - name: newu
+    description: 'New. Allowed values: 1, 2'
+  - name: newu_kw
+    description: 'New (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oqty
+    description: Original Quantity
+  - name: ownc
+    description: 'Owner. Allowed values: 1, 2, 3, 4'
+  - name: ownc_kw
+    description: 'Owner (keyword). Allowed values: tffam.ownc.owne, tffam.ownc.oper.leas,
+      tffam.ownc.capi.leas, tffam.ownc.thir.part'
+  - name: pnbr
+    description: 'Purchase Order. Max length: 20'
+  - name: prod
+    description: Period
+  - name: prcm
+    description: Project Company
+  - name: proj
+    description: 'Project. Max length: 9'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: pudt
+    description: Purchase Date
+  - name: ratd
+    description: Rate Date
+  - name: rate_1
+    description: Rate
+  - name: rate_2
+    description: Rate
+  - name: rate_3
+    description: Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: rcmp
+    description: Reference Company
+  - name: rext
+    description: 'Reference Asset Ext. Max length: 15'
+  - name: rnbr
+    description: 'Reference Asset Nbr. Max length: 15'
+  - name: s179
+    description: Section 179 Value
+  - name: salv
+    description: Salvage Value
+  - name: sctg
+    description: 'Default Subcategory. Max length: 10'
+  - name: shft
+    description: Shift Factor
+  - name: snbr
+    description: 'Serial Number. Max length: 30'
+  - name: srvc
+    description: In Service Date
+  - name: stat
+    description: 'Status. Allowed values: 1, 2, 3, 4'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: tffam.asta.ente, tffam.asta.capi,
+      tffam.asta.full.disp, tffam.asta.remo'
+  - name: tagn__en_us
+    description: '(required) Tag Number - base language. Max length: 15'
+    data_tests:
+    - not_null
+  - name: tqty
+    description: Current Quantity
+  - name: trfg
+    description: 'Transferred. Allowed values: 1, 2'
+  - name: trfg_kw
+    description: 'Transferred (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: vinb
+    description: 'Is or was vintage. Allowed values: 1, 2'
+  - name: vinb_kw
+    description: 'Is or was vintage (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: vint
+    description: 'Vintage/Group Account. Max length: 20'
+  - name: year
+    description: Year
+  - name: simu
+    description: 'Simulated. Allowed values: 1, 2'
+  - name: simu_kw
+    description: 'Simulated (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ramt
+    description: Reinvestment Amount
+  - name: ryer
+    description: Reinvestment Year
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: cola
+    description: 'Collective Asset. Allowed values: 1, 2'
+  - name: cola_kw
+    description: 'Collective Asset (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ratu
+    description: 'Register Asset Technical Upgrades. Allowed values: 1, 2'
+  - name: ratu_kw
+    description: 'Register Asset Technical Upgrades (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: atbc_1
+    description: Amount to be Capitalized
+  - name: atbc_2
+    description: Amount to be Capitalized
+  - name: atbc_3
+    description: Amount to be Capitalized
+  - name: aacq_1
+    description: Additional Acquisition
+  - name: aacq_2
+    description: Additional Acquisition
+  - name: aacq_3
+    description: Additional Acquisition
+  - name: tuam_1
+    description: Technical Upgrade
+  - name: tuam_2
+    description: Technical Upgrade
+  - name: tuam_3
+    description: Technical Upgrade
+  - name: owco
+    description: Owning Company
+  - name: ownd
+    description: 'Owning Department. Max length: 6'
+  - name: ucsh
+    description: 'Use Transaction Costs in HC. Allowed values: 1, 2'
+  - name: ucsh_kw
+    description: 'Use Transaction Costs in HC (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: csth_1
+    description: Transaction Cost in HC
+  - name: csth_2
+    description: Transaction Cost in HC
+  - name: csth_3
+    description: Transaction Cost in HC
+  - name: txta
+    description: Comment
+  - name: txtb
+    description: Assoc. Notes
+  - name: cdf_aid1__en_us
+    description: '(required) IPS ID1 - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cdf_akey__en_us
+    description: '(required) AssetValuationKey - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cdf_asid__en_us
+    description: '(required) IPS ID - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cdf_atyp
+    description: 'AssetType. Max length: 50'
+  - name: cdf_htir
+    description: 'Hierarchy Tier. Max length: 50'
+  - name: cdf_ipst
+    description: 'Operational Status. Allowed values: 1, 2, 3, 4, 5, 6, 7'
+  - name: cdf_ipst_kw
+    description: 'Operational Status (keyword). Allowed values: tfcdf_lst009.ent,
+      tfcdf_lst009.av, tfcdf_lst009.acq, tfcdf_lst009.op, tfcdf_lst009.out, tfcdf_lst009.disp,
+      tfcdf_lst009.ab'
+  - name: cdf_utyp
+    description: 'UnitType. Max length: 50'
+  - name: agrp_ref_compnr
+    description: company number of primary key of table tffam400 Asset Groups
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ctgy_sctg_ref_compnr
+    description: company number of primary key of table tffam220 Subcategory
+  - name: ctgy_ref_compnr
+    description: company number of primary key of table tffam200 Categories
+  - name: curr_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: vint_ref_compnr
+    description: company number of primary key of table tffam770 Vintage/Group Account
+  - name: owco_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: ownd_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: cdf_atyp_ref_compnr
+    description: company number of primary key of table txfam001 Asset Types
+  - name: cdf_utyp_ref_compnr
+    description: company number of primary key of table txfam002 Unit Types
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam100 Asset table, Generated 2026-04-10T19:41:31Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - anbr
+        - aext

@@ -1,0 +1,269 @@
+version: 2
+models:
+- name: tfacp256
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: icom
+    description: (required) Financial Company Purchase Invoice
+    data_tests:
+    - not_null
+  - name: ityp
+    description: '(required) Invoice Transaction Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: idoc
+    description: (required) Invoice Document
+    data_tests:
+    - not_null
+  - name: ilin
+    description: (required) Segment/Payment Line Number
+    data_tests:
+    - not_null
+  - name: idln
+    description: (required) Invoice Detail Line
+    data_tests:
+    - not_null
+  - name: iseq
+    description: (required) Invoice Sequence
+    data_tests:
+    - not_null
+  - name: sort
+    description: Sort Order
+  - name: lmat
+    description: 'Level of Match. Allowed values: 10, 20'
+  - name: lmat_kw
+    description: 'Level of Match (keyword). Allowed values: tfacp.lmat.inv.header,
+      tfacp.lmat.inv.line'
+  - name: mtyp
+    description: 'Matching Type. Allowed values: 5, 10, 20, 30, 40, 50, 60, 65, 70'
+  - name: mtyp_kw
+    description: 'Matching Type (keyword). Allowed values: tfacp.mtyp.add.costs, tfacp.mtyp.order,
+      tfacp.mtyp.receipt, tfacp.mtyp.consumption, tfacp.mtyp.landed.cost, tfacp.mtyp.freight,
+      tfacp.mtyp.stage.payment, tfacp.mtyp.services.procm, tfacp.mtyp.not.applicable'
+  - name: mtrc
+    description: 'Matching Result Complete. Allowed values: 1, 2'
+  - name: mtrc_kw
+    description: 'Matching Result Complete (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: loco
+    description: Logistic Company
+  - name: otyp
+    description: 'Order Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+      13, 14, 15, 16, 17, 18, 19, 20, 21'
+  - name: otyp_kw
+    description: 'Order Type (keyword). Allowed values: tfacp.otyp.purchase, tfacp.otyp.sales,
+      tfacp.otyp.trans, tfacp.otyp.trans.man, tfacp.otyp.trans.wip, tfacp.otyp.freight,
+      tfacp.otyp.commissions, tfacp.otyp.project, tfacp.otyp.project.man, tfacp.otyp.ent.planning,
+      tfacp.otyp.assembly, tfacp.otyp.production, tfacp.otyp.service, tfacp.otyp.maint.sales,
+      tfacp.otyp.pcs.project, tfacp.otyp.maint.work, tfacp.otyp.not.applicable, tfacp.otyp.proj.contract,
+      tfacp.otyp.customer.claim, tfacp.otyp.intercomp.trade, tfacp.otyp.services.procm'
+  - name: orno
+    description: 'Order. Max length: 9'
+  - name: afpn
+    description: 'Application for Payment. Max length: 9'
+  - name: pono
+    description: Position
+  - name: sqnb
+    description: Sequence Number
+  - name: vrln
+    description: Variation Line
+  - name: clin
+    description: Call-Off Line
+  - name: rlin
+    description: Retention Line Number
+  - name: rttp
+    description: 'Retention Type. Allowed values: 10, 20, 255'
+  - name: rttp_kw
+    description: 'Retention Type (keyword). Allowed values: tcrttp.deducted, tcrttp.released,
+      tcrttp.not.appl'
+  - name: rcno
+    description: 'Goods Receipt. Max length: 9'
+  - name: rseq
+    description: Receipt Line
+  - name: shpm__en_us
+    description: '(required) Packing Slip - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cseq
+    description: Consumption Sequence
+  - name: cisq
+    description: Consumption Inspection Sequence
+  - name: lcln
+    description: Landed Cost Line Number
+  - name: spln
+    description: Stage Payment Line
+  - name: boty
+    description: 'Business Object Type. Allowed values: 1, 2, 3, 6, 7, 10, 11, 15,
+      16, 20, 21, 30, 31, 32, 33, 34, 40, 41, 90'
+  - name: boty_kw
+    description: 'Business Object Type (keyword). Allowed values: tclct.bo.type.tdpur400,
+      tclct.bo.type.tdpur401, tclct.bo.type.tdpur406, tclct.bo.type.tdpur311, tclct.bo.type.tdpur315,
+      tclct.bo.type.whinh200, tclct.bo.type.whinh210, tclct.bo.type.whinh300, tclct.bo.type.whinh301,
+      tclct.bo.type.whinh310, tclct.bo.type.whinh312, tclct.bo.type.tdpur105, tclct.bo.type.tdpur106,
+      tclct.bo.type.tdpur109.r, tclct.bo.type.tdpur109.c, tclct.bo.type.tdpur371,
+      tclct.bo.type.tdpcg200, tclct.bo.type.tdpcg201, tclct.bo.type.not.appl'
+  - name: boor
+    description: 'Business Object Origin. Allowed values: 1, 2, 10, 20, 25, 30, 31,
+      100'
+  - name: boor_kw
+    description: 'Business Object Origin (keyword). Allowed values: tclct.boor.wh.trf,
+      tclct.boor.wh.trf.man, tclct.boor.ep.distr, tclct.boor.sales, tclct.boor.sales.sched,
+      tclct.boor.project, tclct.boor.project.man, tclct.boor.not.appl'
+  - name: bobj
+    description: 'Business Object. Max length: 25'
+  - name: borf
+    description: 'Business Object Reference. Max length: 90'
+  - name: load
+    description: 'Load. Max length: 9'
+  - name: shpi
+    description: 'Shipment. Max length: 9'
+  - name: clus
+    description: 'Freight Order Cluster. Max length: 9'
+  - name: shln
+    description: Shipment Line
+  - name: clln
+    description: Freight Order Cluster Line
+  - name: iamt
+    description: Invoiced Amount
+  - name: icur
+    description: 'Invoice Currency. Max length: 3'
+  - name: iqan
+    description: Invoiced Quantity
+  - name: iqpc
+    description: Invoiced Quantity in Piece Unit
+  - name: maam
+    description: Matched Landed Cost Amount in IC
+  - name: rdam
+    description: Retention Discount Amount
+  - name: data
+    description: Date of Approval
+  - name: apry
+    description: Approval Year
+  - name: aprp
+    description: Approval Period
+  - name: pric
+    description: 'Update Average/Last Purchase Price. Allowed values: 0, 1, 2'
+  - name: pric_kw
+    description: 'Update Average/Last Purchase Price (keyword). Allowed values: ,
+      tcyesno.yes, tcyesno.no'
+  - name: oamt
+    description: Order Amount in IC
+  - name: ocur
+    description: 'Order Currency. Max length: 3'
+  - name: oqan
+    description: Order Quantity in inventory unit
+  - name: oqpc
+    description: Order Quantity in Piece Unit
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: iuni
+    description: 'Inventory Unit. Max length: 3'
+  - name: itdo
+    description: 'Invoice Related Transaction Type. Max length: 3'
+  - name: pcun
+    description: 'Piece Unit. Max length: 3'
+  - name: idcn
+    description: Invoice Related Document Number
+  - name: ilno
+    description: Invoice Related Line Number
+  - name: vatc
+    description: 'Matched Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Matched Tax Code. Max length: 9'
+  - name: tbai
+    description: Matched Tax Base Amount in IC
+  - name: ovtc
+    description: 'Tax Country from Order. Max length: 3'
+  - name: ocvt
+    description: 'Tax Code from Order. Max length: 9'
+  - name: cvli
+    description: Customs Value in Invoice Currency
+  - name: sern
+    description: Additional Cost Transaction Number
+  - name: dbcr
+    description: 'Debit/Credit. Allowed values: 1, 2'
+  - name: dbcr_kw
+    description: 'Debit/Credit (keyword). Allowed values: tfgld.dbcr.debit, tfgld.dbcr.credit'
+  - name: trgu
+    description: 'GUID. Max length: 22'
+  - name: tctc
+    description: 'Tax Consistent. Allowed values: 10, 20, 30, 40, 255'
+  - name: tctc_kw
+    description: 'Tax Consistent (keyword). Allowed values: tfacp.tcnl.not.checked,
+      tfacp.tcnl.no.match, tfacp.tcnl.accepted, tfacp.tcnl.yes, tfacp.tcnl.not.appl'
+  - name: tcrd
+    description: 'Registration Data Consistent. Allowed values: 10, 20, 30, 40, 255'
+  - name: tcrd_kw
+    description: 'Registration Data Consistent (keyword). Allowed values: tfacp.tcnl.not.checked,
+      tfacp.tcnl.no.match, tfacp.tcnl.accepted, tfacp.tcnl.yes, tfacp.tcnl.not.appl'
+  - name: tcna
+    description: 'Net Amount Consistent. Allowed values: 10, 20, 30, 40, 255'
+  - name: tcna_kw
+    description: 'Net Amount Consistent (keyword). Allowed values: tfacp.tcnl.not.checked,
+      tfacp.tcnl.no.match, tfacp.tcnl.accepted, tfacp.tcnl.yes, tfacp.tcnl.not.appl'
+  - name: tctb
+    description: 'Tax Base Amount Consistent. Allowed values: 10, 20, 30, 40, 255'
+  - name: tctb_kw
+    description: 'Tax Base Amount Consistent (keyword). Allowed values: tfacp.tcnl.not.checked,
+      tfacp.tcnl.no.match, tfacp.tcnl.accepted, tfacp.tcnl.yes, tfacp.tcnl.not.appl'
+  - name: vatc_cvat_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: vatc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: ovtc_ocvt_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: ovtc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ocvt_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfacp256 Matching Data by Invoice table, Generated 2026-04-10T19:41:30Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - icom
+        - ityp
+        - idoc
+        - ilin
+        - idln
+        - iseq

@@ -1,0 +1,155 @@
+version: 2
+models:
+- name: tipcf500
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cpva
+    description: (required) Product Variant
+    data_tests:
+    - not_null
+  - name: cuid__en_us
+    description: '(required) configuration UID - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: reft
+    description: 'Reference Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9'
+  - name: reft_kw
+    description: 'Reference Type (keyword). Allowed values: tcreft.sls.quotation,
+      tcreft.sls.order, tcreft.budget, tcreft.project, tcreft.standard, tcreft.tp,
+      tcreft.psd.ord, tcreft.contract, tcreft.sls.rco'
+  - name: refo
+    description: 'Reference Order. Max length: 9'
+  - name: refp
+    description: Reference Position
+  - name: altn
+    description: Alternative Sales Quotation
+  - name: sost
+    description: 'Sales Options Status. Allowed values: 0, 12, 24, 36'
+  - name: sost_kw
+    description: 'Sales Options Status (keyword). Allowed values: , tipcf.sost.not.present,
+      tipcf.sost.to.be.processed, tipcf.sost.processed'
+  - name: cuno
+    description: 'Business Partner. Max length: 9'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: slpr
+    description: Sales Price
+  - name: lnst
+    description: 'Status. Allowed values: 0, 5, 10, 15, 20, 25, 30, 35'
+  - name: lnst_kw
+    description: 'Status (keyword). Allowed values: , tipcf.elns.unspecified, tipcf.elns.initial,
+      tipcf.elns.configured, tipcf.elns.part.solved, tipcf.elns.solved, tipcf.elns.connection.err,
+      tipcf.elns.error'
+  - name: vali
+    description: 'Product Variant Valid. Allowed values: 1, 2'
+  - name: vali_kw
+    description: 'Product Variant Valid (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pcfd
+    description: Configuration Date
+  - name: olid
+    description: 'Configuration. Max length: 9'
+  - name: acfv
+    description: 'CPQ Configurator Variant. Allowed values: 1, 2'
+  - name: acfv_kw
+    description: 'CPQ Configurator Variant (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: acfs
+    description: 'CPQ Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: acfs_kw
+    description: 'CPQ Status (keyword). Allowed values: tipcf.acfs.not.applicable,
+      tipcf.acfs.initial, tipcf.acfs.success, tipcf.acfs.partial.save, tipcf.acfs.error'
+  - name: spcf
+    description: 'Structure by PCF. Allowed values: 1, 2'
+  - name: spcf_kw
+    description: 'Structure by PCF (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: irft
+    description: 'Initial Reference Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8,
+      9'
+  - name: irft_kw
+    description: 'Initial Reference Type (keyword). Allowed values: tcreft.sls.quotation,
+      tcreft.sls.order, tcreft.budget, tcreft.project, tcreft.standard, tcreft.tp,
+      tcreft.psd.ord, tcreft.contract, tcreft.sls.rco'
+  - name: irfo
+    description: 'Initial Reference Order. Max length: 9'
+  - name: enho
+    description: 'Engineering Hold. Allowed values: 1, 2'
+  - name: enho_kw
+    description: 'Engineering Hold (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: qana
+    description: Quantity
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: site
+    description: 'Sales Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: ccty
+    description: 'Ship to Country. Max length: 3'
+  - name: prds
+    description: 'Production Site. Max length: 9'
+  - name: alws__en_us
+    description: '(required) Alternative Workspace - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: txta
+    description: Product Variant Text
+  - name: item_ref_compnr
+    description: company number of primary key of table tiipd001 Items - Production
+  - name: cuno_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tipcf500 Product Variant IDs table, Generated 2026-04-10T19:41:47Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cpva

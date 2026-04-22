@@ -1,0 +1,136 @@
+version: 2
+models:
+- name: core_correspondence_billoutput
+  columns:
+  - name: totfixvol
+    description: Metadata for column TOTFIXVOL
+  - name: billkey
+    description: Metadata for column BILLKEY
+  - name: postalcode
+    description: 'Metadata for column POSTALCODE. Max length: 20'
+  - name: prevbillamt
+    description: Metadata for column PREVBILLAMT
+  - name: penexempt
+    description: 'Metadata for column PENEXEMPT. Max length: 1'
+  - name: balstillowe
+    description: Metadata for column BALSTILLOWE
+  - name: checkdigit
+    description: Metadata for column CHECKDIGIT
+  - name: subtotwvol
+    description: Metadata for column SUBTOTWVOL
+  - name: dishonours
+    description: Metadata for column DISHONOURS
+  - name: ddflag
+    description: 'Metadata for column DDFLAG. Max length: 1'
+  - name: lastpaydate
+    description: Metadata for column LASTPAYDATE
+  - name: billoutputkey
+    description: (required) Metadata for column BILLOUTPUTKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: totpayadj
+    description: Metadata for column TOTPAYADJ
+  - name: totfixrate
+    description: Metadata for column TOTFIXRATE
+  - name: numberofmeters
+    description: Metadata for column NUMBEROFMETERS
+  - name: acctclass
+    description: 'Metadata for column ACCTCLASS. Max length: 10'
+  - name: othchgs
+    description: Metadata for column OTHCHGS
+  - name: adjustments
+    description: Metadata for column ADJUSTMENTS
+  - name: amtdue
+    description: Metadata for column AMTDUE
+  - name: nextreaddate
+    description: Metadata for column NEXTREADDATE
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: budgetreviewdate
+    description: Metadata for column BUDGETREVIEWDATE
+  - name: oldestbilldate
+    description: Metadata for column OLDESTBILLDATE
+  - name: sewerkl
+    description: Metadata for column SEWERKL
+  - name: acctarea
+    description: 'Metadata for column ACCTAREA. Max length: 10'
+  - name: oldestdebt
+    description: Metadata for column OLDESTDEBT
+  - name: custref
+    description: 'Metadata for column CUSTREF. Max length: 24'
+  - name: refunds
+    description: Metadata for column REFUNDS
+  - name: totalaop
+    description: Metadata for column TOTALAOP
+  - name: propaddr
+    description: 'Metadata for column PROPADDR. Max length: 60'
+  - name: subtotvol
+    description: Metadata for column SUBTOTVOL
+  - name: prevbillkey
+    description: Metadata for column PREVBILLKEY
+  - name: budgetedamt
+    description: Metadata for column BUDGETEDAMT
+  - name: subtotsvol
+    description: Metadata for column SUBTOTSVOL
+  - name: billrev
+    description: Metadata for column BILLREV
+  - name: ccflag
+    description: 'Metadata for column CCFLAG. Max length: 1'
+  - name: acctkey
+    description: Metadata for column ACCTKEY
+  - name: gstamt
+    description: Metadata for column GSTAMT
+  - name: penamt
+    description: Metadata for column PENAMT
+  - name: sparetxt
+    description: 'Metadata for column SPARETXT. Max length: 100'
+  - name: spareint
+    description: Metadata for column SPAREINT
+  - name: spareamt
+    description: Metadata for column SPAREAMT
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: nextpaydate
+    description: Metadata for column NEXTPAYDATE
+  - name: delinqbal
+    description: Metadata for column DELINQBAL
+  - name: waterkl
+    description: Metadata for column WATERKL
+  - name: subtotfix
+    description: Metadata for column SUBTOTFIX
+  - name: racctclass
+    description: 'Metadata for column RACCTCLASS. Max length: 10'
+  - name: totdue
+    description: Metadata for column TOTDUE
+  - name: payments
+    description: Metadata for column PAYMENTS
+  - name: arngflag
+    description: 'Metadata for column ARNGFLAG. Max length: 1'
+  - name: paytfr
+    description: Metadata for column PAYTFR
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table CORE_CORRESPONDENCE.BILLOUTPUT on 2022-06-01T05:11:08.916

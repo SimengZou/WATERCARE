@@ -1,0 +1,344 @@
+version: 2
+models:
+- name: ticst002
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: pdno
+    description: '(required) Production Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: opno
+    description: (required) Operation
+    data_tests:
+    - not_null
+  - name: tano
+    description: 'Reference Operation. Max length: 8'
+  - name: cwoc
+    description: 'Work Center. Max length: 6'
+  - name: mcno
+    description: 'Machine Type. Max length: 9'
+  - name: oprc
+    description: 'Operation Rate Code. Max length: 6'
+  - name: prte
+    description: Production Rate
+  - name: rutm
+    description: Cycle Time
+  - name: sutm
+    description: Setup Time
+  - name: subr
+    description: Subcontracting Rate Factor
+  - name: most
+    description: Man Occupation for Setup
+  - name: mopr
+    description: Man Occupation for Production
+  - name: mcoc
+    description: Machine Occupation
+  - name: nomc
+    description: Number of Machines
+  - name: bpid
+    description: 'Subcontractor. Max length: 9'
+  - name: qpln
+    description: Quantity Planned
+  - name: qcmp
+    description: Quantity Completed
+  - name: qrjc
+    description: Quantity Scrapped
+  - name: qqar
+    description: Quantity Quarantined
+  - name: cums
+    description: Cumulative Scrap
+  - name: scpq
+    description: Scrap quantity
+  - name: yldp
+    description: Yield Percentage
+  - name: hrem
+    description: Estimated Labor Hours (Production)
+  - name: hrmc
+    description: Estimated Machine Hours (Production)
+  - name: eshm
+    description: Estimated Labor Hours (Setup)
+  - name: eshc
+    description: Estimated Machine Hours (Setup)
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: wgcs_1
+    description: Estimated Labor Costs
+  - name: wgcs_2
+    description: Estimated Labor Costs
+  - name: wgcs_3
+    description: Estimated Labor Costs
+  - name: mccs_1
+    description: Estimated Machine Costs
+  - name: mccs_2
+    description: Estimated Machine Costs
+  - name: mccs_3
+    description: Estimated Machine Costs
+  - name: ohcs_1
+    description: Estimated Overhead Costs
+  - name: ohcs_2
+    description: Estimated Overhead Costs
+  - name: ohcs_3
+    description: Estimated Overhead Costs
+  - name: sccs_1
+    description: Estimated Subcontracting Costs
+  - name: sccs_2
+    description: Estimated Subcontracting Costs
+  - name: sccs_3
+    description: Estimated Subcontracting Costs
+  - name: ahma
+    description: Actual Labor Hours (Production)
+  - name: ahws
+    description: Delta Actual Split Labor Hours (Production)
+  - name: ahwq
+    description: Delta Actual Labor Hours to Quarantine(Production)
+  - name: ahmc
+    description: Actual Machine Hours (Production)
+  - name: ahms
+    description: Delta Actual Split Machine Hours (Production)
+  - name: ahmq
+    description: Delta Actual Machine Hours to Quarantine(Production)
+  - name: ashm
+    description: Actual Labor Hours (Setup)
+  - name: ashs
+    description: Delta Actual Split Labor Hours (Setup)
+  - name: ashq
+    description: Delta Actual Labor Hours to Quarantine(Setup)
+  - name: ashc
+    description: Actual Machine Hours (Setup)
+  - name: asms
+    description: Delta Actual Split Machine Hours (Setup)
+  - name: asmq
+    description: Delta Actual Machine Hours to Quarantine(Setup)
+  - name: amcc_1
+    description: Actual Machine Costs (Aggregated)
+  - name: amcc_2
+    description: Actual Machine Costs (Aggregated)
+  - name: amcc_3
+    description: Actual Machine Costs (Aggregated)
+  - name: aohc_1
+    description: Actual Overhead Costs (Aggregated)
+  - name: aohc_2
+    description: Actual Overhead Costs (Aggregated)
+  - name: aohc_3
+    description: Actual Overhead Costs (Aggregated)
+  - name: awgc_1
+    description: Actual Labor Costs (Aggregated)
+  - name: awgc_2
+    description: Actual Labor Costs (Aggregated)
+  - name: awgc_3
+    description: Actual Labor Costs (Aggregated)
+  - name: ascc_1
+    description: Actual Subcontracting Costs (Aggregated)
+  - name: ascc_2
+    description: Actual Subcontracting Costs (Aggregated)
+  - name: ascc_3
+    description: Actual Subcontracting Costs (Aggregated)
+  - name: ascq_1
+    description: Delta Actual Subcontracting Costs to Quarantine
+  - name: ascq_2
+    description: Delta Actual Subcontracting Costs to Quarantine
+  - name: ascq_3
+    description: Delta Actual Subcontracting Costs to Quarantine
+  - name: runi
+    description: Routing Unit
+  - name: cmdt
+    description: Completion Date
+  - name: pcdt
+    description: Partial Completion Date
+  - name: fdur
+    description: 'Fixed Duration. Allowed values: 1, 2'
+  - name: fdur_kw
+    description: 'Fixed Duration (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cowc
+    description: 'Costing Work Center. Max length: 6'
+  - name: frso
+    description: 'Frozen Operation. Allowed values: 1, 2'
+  - name: frso_kw
+    description: 'Frozen Operation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pdno_ref_compnr
+    description: company number of primary key of table tisfc001 Production Orders
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tirou001 Work Center
+  - name: oprc_ref_compnr
+    description: company number of primary key of table ticpr050 Operation Rate Codes
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: wgcs_lclc
+    description: 'CC: Estimate Labor Costs in Local Currency'
+  - name: wgcs_rpc1
+    description: 'CC: Estimate Labor Costs in Reporting Currency 1'
+  - name: wgcs_rpc2
+    description: 'CC: Estimate Labor Costs in Reporting Currency 2'
+  - name: wgcs_refc
+    description: 'CC: Estimate Labor Costs in Reference Currency'
+  - name: wgcs_dwhc
+    description: 'CC: Estimate Labor Costs in Data Warehouse Currency'
+  - name: mccs_lclc
+    description: 'CC: Estimate Machine Costs in Local Currency'
+  - name: mccs_rpc1
+    description: 'CC: Estimate Machine Costs in Reporting Currency 1'
+  - name: mccs_rpc2
+    description: 'CC: Estimate Machine Costs in Reporting Currency 2'
+  - name: mccs_refc
+    description: 'CC: Estimate Machine Costs in Reference Currency'
+  - name: mccs_dwhc
+    description: 'CC: Estimate Machine Costs in Data Warehouse Currency'
+  - name: ohcs_lclc
+    description: 'CC: Estimate Overhead Costs in Local Currency'
+  - name: ohcs_rpc1
+    description: 'CC: Estimate Overhead Costs in Reporting Currency 1'
+  - name: ohcs_rpc2
+    description: 'CC: Estimate Overhead Costs in Reporting Currency 2'
+  - name: ohcs_refc
+    description: 'CC: Estimate Overhead Costs in Reference Currency'
+  - name: ohcs_dwhc
+    description: 'CC: Estimate Overhead Costs in Data Warehouse Currency'
+  - name: sccs_lclc
+    description: 'CC: Estimate Subcontracting Costs in Local Currency'
+  - name: sccs_rpc1
+    description: 'CC: Estimate Subcontracting Costs in Reporting Currency 1'
+  - name: sccs_rpc2
+    description: 'CC: Estimate Subcontracting Costs in Reporting Currency 2'
+  - name: sccs_refc
+    description: 'CC: Estimate Subcontracting Costs in Reference Currency'
+  - name: sccs_dwhc
+    description: 'CC: Estimate Subcontracting Costs in Data Warehouse Currency'
+  - name: amcc_lclc
+    description: 'CC: Actual Machine Costs (Aggregated) in Local Currency'
+  - name: amcc_rpc1
+    description: 'CC: Actual Machine Costs (Aggregated) in Reporting Currency 1'
+  - name: amcc_rpc2
+    description: 'CC: Actual Machine Costs (Aggregated) in Reporting Currency 2'
+  - name: amcc_refc
+    description: 'CC: Actual Machine Costs (Aggregated) in Reference Currency'
+  - name: amcc_dwhc
+    description: 'CC: Actual Machine Costs (Aggregated) in Data Warehouse Currency'
+  - name: aohc_lclc
+    description: 'CC: Actual Overhead Costs (Aggregated) in Local Currency'
+  - name: aohc_rpc1
+    description: 'CC: Actual Overhead Costs (Aggregated) in Reporting Currency 1'
+  - name: aohc_rpc2
+    description: 'CC: Actual Overhead Costs (Aggregated) in Reporting Currency 2'
+  - name: aohc_refc
+    description: 'CC: Actual Overhead Costs (Aggregated) in Reference Currency'
+  - name: aohc_dwhc
+    description: 'CC: Actual Overhead Costs (Aggregated) in Data Warehouse Currency'
+  - name: awgc_lclc
+    description: 'CC: Actual Labor Costs (Aggregated) in Local Currency'
+  - name: awgc_rpc1
+    description: 'CC: Actual Labor Costs (Aggregated) in Reporting Currency 1'
+  - name: awgc_rpc2
+    description: 'CC: Actual Labor Costs (Aggregated) in Reporting Currency 2'
+  - name: awgc_refc
+    description: 'CC: Actual Labor Costs (Aggregated) in Reference Currency'
+  - name: awgc_dwhc
+    description: 'CC: Actual Labor Costs (Aggregated) in Data Warehouse Currency'
+  - name: ascc_lclc
+    description: 'CC: Actual Subcontract Costs (Aggregated) in Local Currency'
+  - name: ascc_rpc1
+    description: 'CC: Actual Subcontract Costs (Aggregated) in Reporting Currency
+      1'
+  - name: ascc_rpc2
+    description: 'CC: Actual Subcontract Costs (Aggregated) in Reporting Currency
+      2'
+  - name: ascc_refc
+    description: 'CC: Actual Subcontract Costs (Aggregated) in Reference Currency'
+  - name: ascc_dwhc
+    description: 'CC: Actual Subcontract Costs (Aggregated) in Data Warehouse Currency'
+  - name: ascq_lclc
+    description: 'CC: Delta Actual Subcontract Costs to Quarantine in Local Currency'
+  - name: ascq_rpc1
+    description: 'CC: Delta Actual Subcontract Costs to Quarantine in Reporting Currency'
+  - name: ascq_rpc2
+    description: 'CC: Delta Actual Subcontract Costs to Quarantine in Reporting Currency'
+  - name: ascq_refc
+    description: 'CC: Delta Actual Subcontract Costs to Quarantine in Reference Currency'
+  - name: ascq_dwhc
+    description: 'CC: Delta Actual Subcontract Costs to Quarantine in Data Warehouse
+      Cur'
+  - name: dptm_fcmp
+    description: 'CC: Financial Company of Department'
+  - name: scpq_buar
+    description: 'CC: Scrap Quantity in Base Unit Area'
+  - name: scpq_buln
+    description: 'CC: Scrap Quantity in Base Unit Length'
+  - name: scpq_bupc
+    description: 'CC: Scrap Quantity in Base Unit Piece'
+  - name: scpq_butm
+    description: 'CC: Scrap Quantity in Base Unit Time'
+  - name: scpq_buvl
+    description: 'CC: Scrap Quantity in Base Unit Volume'
+  - name: scpq_buwg
+    description: 'CC: Scrap Quantity in Base Unit Weight'
+  - name: qrjc_buar
+    description: 'CC: Quantity Scrapped in Base Unit Area'
+  - name: qrjc_buln
+    description: 'CC: Quantity Scrapped in Base Unit Length'
+  - name: qrjc_bupc
+    description: 'CC: Quantity Scrapped in Base Unit Piece'
+  - name: qrjc_butm
+    description: 'CC: Quantity Scrapped in Base Unit Time'
+  - name: qrjc_buvl
+    description: 'CC: Quantity Scrapped in Base Unit Volume'
+  - name: qrjc_buwg
+    description: 'CC: Quantity Scrapped in Base Unit Weight'
+  - name: qqar_buar
+    description: 'CC: Quantity Quarantined in Base Unit Area'
+  - name: qqar_buln
+    description: 'CC: Quantity Quarantined in Base Unit Length'
+  - name: qqar_bupc
+    description: 'CC: Quantity Quarantined in Base Unit Piece'
+  - name: qqar_butm
+    description: 'CC: Quantity Quarantined in Base Unit Time'
+  - name: qqar_buvl
+    description: 'CC: Quantity Quarantined in Base Unit Volume'
+  - name: qqar_buwg
+    description: 'CC: Quantity Quarantined in Base Unit Weight'
+  - name: mcno_ref_compnr
+    description: 'CC: Reference Company of Machine Type'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN ticst002 Estimated and Actual Hours table, Generated 2026-04-10T19:41:46Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - pdno
+        - opno

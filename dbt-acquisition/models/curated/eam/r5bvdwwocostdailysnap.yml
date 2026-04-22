@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5bvdwwocostdailysnap
+  columns:
+  - name: zdt_key
+    description: ZDT_KEY
+  - name: zwo_key
+    description: ZWO_KEY
+  - name: zor_key
+    description: ZOR_KEY
+  - name: zmr_key
+    description: ZMR_KEY
+  - name: zob_key
+    description: ZOB_KEY
+  - name: zwt_orgcur
+    description: ZWT_ORGCUR
+  - name: zwt_defcur
+    description: ZWT_DEFCUR
+  - name: zwt_totalcostdefcur
+    description: ZWT_TOTALCOSTDEFCUR
+  - name: zwt_ownlabcostdefcur
+    description: ZWT_OWNLABCOSTDEFCUR
+  - name: zwt_ownlabcostorgcur
+    description: ZWT_OWNLABCOSTORGCUR
+  - name: zwt_hiredlabcostdefcur
+    description: ZWT_HIREDLABCOSTDEFCUR
+  - name: zwt_hiredlabcostorgcur
+    description: ZWT_HIREDLABCOSTORGCUR
+  - name: zwt_fixedlabcostdefcur
+    description: ZWT_FIXEDLABCOSTDEFCUR
+  - name: zwt_fixedlabcostorgcur
+    description: ZWT_FIXEDLABCOSTORGCUR
+  - name: zwt_stockmatcostdefcur
+    description: ZWT_STOCKMATCOSTDEFCUR
+  - name: zwt_stockmatcostorgcur
+    description: ZWT_STOCKMATCOSTORGCUR
+  - name: zwt_dirmatcostdefcur
+    description: ZWT_DIRMATCOSTDEFCUR
+  - name: zwt_dirmatcostorgcur
+    description: ZWT_DIRMATCOSTORGCUR
+  - name: zwt_toolcostdefcur
+    description: ZWT_TOOLCOSTDEFCUR
+  - name: zwt_toolcostorgcur
+    description: ZWT_TOOLCOSTORGCUR
+  - name: zwt_wocode
+    description: ZWT_WOCODE
+  - name: zwt_lastsaved
+    description: ZWT_LASTSAVED
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5BVDWWOCOSTDAILYSNAP

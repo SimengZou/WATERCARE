@@ -1,0 +1,202 @@
+version: 2
+models:
+- name: workmanagement_history
+  columns:
+  - name: um
+    description: 'Metadata for column UM. Max length: 10'
+  - name: compdttm
+    description: Metadata for column COMPDTTM
+  - name: stoppage
+    description: 'Metadata for column STOPPAGE. Max length: 1'
+  - name: flowdpth
+    description: Metadata for column FLOWDPTH
+  - name: comptype
+    description: Metadata for column COMPTYPE
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: responsibility
+    description: 'Metadata for column RESPONSIBILITY. Max length: 10'
+  - name: milestone
+    description: Metadata for column MILESTONE
+  - name: src
+    description: 'Metadata for column SRC. Max length: 10'
+  - name: schedfinish
+    description: Metadata for column SCHEDFINISH
+  - name: rwattrkey
+    description: Metadata for column RWATTRKEY
+  - name: xcoordinate
+    description: Metadata for column XCOORDINATE
+  - name: suspdttm
+    description: Metadata for column SUSPDTTM
+  - name: incident
+    description: Metadata for column INCIDENT
+  - name: cmplkey
+    description: Metadata for column CMPLKEY
+  - name: frref
+    description: Metadata for column FRREF
+  - name: resp
+    description: 'Metadata for column RESP. Max length: 10'
+  - name: pres
+    description: Metadata for column PRES
+  - name: plankey
+    description: Metadata for column PLANKEY
+  - name: assetinspectionkey
+    description: Metadata for column ASSETINSPECTIONKEY
+  - name: pri
+    description: 'Metadata for column PRI. Max length: 10'
+  - name: startdttm
+    description: Metadata for column STARTDTTM
+  - name: mobiledttm
+    description: Metadata for column MOBILEDTTM
+  - name: rwattrtype
+    description: 'Metadata for column RWATTRTYPE. Max length: 8'
+  - name: actkey
+    description: Metadata for column ACTKEY
+  - name: assvaltype
+    description: 'Metadata for column ASSVALTYPE. Max length: 15'
+  - name: comments
+    description: 'Metadata for column COMMENTS. Max length: 999999'
+  - name: nextschedflag
+    description: 'Metadata for column NEXTSCHEDFLAG. Max length: 1'
+  - name: usg
+    description: Metadata for column USG
+  - name: schedfinishflag
+    description: 'Metadata for column SCHEDFINISHFLAG. Max length: 1'
+  - name: cancelworkorder
+    description: 'Metadata for column CANCELWORKORDER. Max length: 1'
+  - name: histkey
+    description: (required) Metadata for column HISTKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: ownkey
+    description: Metadata for column OWNKEY
+  - name: estimatedcost
+    description: Metadata for column ESTIMATEDCOST
+  - name: grpmaintschd
+    description: Metadata for column GRPMAINTSCHD
+  - name: linearfromm
+    description: Metadata for column LINEARFROMM
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: cond
+    description: 'Metadata for column COND. Max length: 10'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: res
+    description: 'Metadata for column RES. Max length: 10'
+  - name: compby
+    description: 'Metadata for column COMPBY. Max length: 25'
+  - name: potservreq
+    description: 'Metadata for column POTSERVREQ. Max length: 1'
+  - name: ycoordinate
+    description: Metadata for column YCOORDINATE
+  - name: wotype
+    description: 'Metadata for column WOTYPE. Max length: 4'
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: grpprojkey
+    description: Metadata for column GRPPROJKEY
+  - name: initby
+    description: 'Metadata for column INITBY. Max length: 25'
+  - name: measflow
+    description: Metadata for column MEASFLOW
+  - name: startflag
+    description: 'Metadata for column STARTFLAG. Max length: 1'
+  - name: hrs
+    description: Metadata for column HRS
+  - name: rwxsp
+    description: 'Metadata for column RWXSP. Max length: 10'
+  - name: lineartoft
+    description: Metadata for column LINEARTOFT
+  - name: stdactflag
+    description: 'Metadata for column STDACTFLAG. Max length: 1'
+  - name: location
+    description: 'Metadata for column LOCATION. Max length: 300'
+  - name: schedflag
+    description: 'Metadata for column SCHEDFLAG. Max length: 1'
+  - name: dist
+    description: Metadata for column DIST
+  - name: wolinkkey
+    description: Metadata for column WOLINKKEY
+  - name: toref
+    description: Metadata for column TOREF
+  - name: actualqty
+    description: Metadata for column ACTUALQTY
+  - name: linearfromft
+    description: Metadata for column LINEARFROMFT
+  - name: initdttm
+    description: Metadata for column INITDTTM
+  - name: asgnflag
+    description: 'Metadata for column ASGNFLAG. Max length: 1'
+  - name: failflag
+    description: 'Metadata for column FAILFLAG. Max length: 1'
+  - name: mobileemp
+    description: 'Metadata for column MOBILEEMP. Max length: 25'
+  - name: maintsched
+    description: Metadata for column MAINTSCHED
+  - name: compkey
+    description: Metadata for column COMPKEY
+  - name: datagrp
+    description: 'Metadata for column DATAGRP. Max length: 10'
+  - name: downtime
+    description: Metadata for column DOWNTIME
+  - name: mainttype
+    description: 'Metadata for column MAINTTYPE. Max length: 10'
+  - name: scheddttm
+    description: Metadata for column SCHEDDTTM
+  - name: outofserv
+    description: 'Metadata for column OUTOFSERV. Max length: 1'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: prob
+    description: 'Metadata for column PROB. Max length: 10'
+  - name: zcoordinate
+    description: Metadata for column ZCOORDINATE
+  - name: assigned
+    description: 'Metadata for column ASSIGNED. Max length: 25'
+  - name: proj
+    description: 'Metadata for column PROJ. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: mobile
+    description: 'Metadata for column MOBILE. Max length: 1'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: plannedqty
+    description: Metadata for column PLANNEDQTY
+  - name: auth
+    description: 'Metadata for column AUTH. Max length: 10'
+  - name: lineartom
+    description: Metadata for column LINEARTOM
+  - name: refno
+    description: 'Metadata for column REFNO. Max length: 20'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: compflag
+    description: 'Metadata for column COMPFLAG. Max length: 1'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table WORKMANAGEMENT.HISTORY on 2024-12-02T11:42:44.523

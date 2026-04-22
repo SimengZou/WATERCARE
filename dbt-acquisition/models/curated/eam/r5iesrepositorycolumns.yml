@@ -1,0 +1,52 @@
+version: 2
+models:
+- name: r5iesrepositorycolumns
+  columns:
+  - name: enc_lastsaved
+    description: ENC_LASTSAVED
+  - name: enc_columnname
+    description: ENC_COLUMNNAME
+  - name: enc_fieldname
+    description: ENC_FIELDNAME
+  - name: enc_alias
+    description: ENC_ALIAS
+  - name: enc_datatype
+    description: ENC_DATATYPE
+  - name: enc_pkorder
+    description: ENC_PKORDER
+  - name: enc_isjspkeyfield
+    description: ENC_ISJSPKEYFIELD
+  - name: enc_facet
+    description: ENC_FACET
+  - name: enc_updatecount
+    description: ENC_UPDATECOUNT
+  - name: enc_hiddenfromsearchresults
+    description: ENC_HIDDENFROMSEARCHRESULTS
+  - name: enc_repositoryid
+    description: ENC_REPOSITORYID
+  - name: enc_displayorder
+    description: ENC_DISPLAYORDER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5IESREPOSITORYCOLUMNS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - enc_repositoryid
+        - enc_columnname

@@ -1,0 +1,83 @@
+version: 2
+models:
+- name: tcemm135
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: clus
+    description: '(required) Cluster. Max length: 3'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: extl
+    description: 'External Cluster. Allowed values: 1, 2'
+  - name: extl_kw
+    description: 'External Cluster (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: hsub
+    description: 'Holds Subcontractor Sites. Allowed values: 1, 2'
+  - name: hsub_kw
+    description: 'Holds Subcontractor Sites (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cust
+    description: 'Customer Site. Allowed values: 1, 2'
+  - name: cust_kw
+    description: 'Customer Site (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: expl
+    description: 'Exclude From Enterprise Planning. Allowed values: 1, 2'
+  - name: expl_kw
+    description: 'Exclude From Enterprise Planning (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcemm135 Clusters table, Generated 2026-04-10T19:41:06Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - clus

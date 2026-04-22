@@ -1,0 +1,158 @@
+version: 2
+models:
+- name: assetmanagement_agencydefined_compagencysimple
+  columns:
+  - name: zcoord
+    description: Metadata for column ZCOORD
+  - name: comptype
+    description: Metadata for column COMPTYPE
+  - name: dpthuom
+    description: 'Metadata for column DPTHUOM. Max length: 10'
+  - name: agencycharacter1
+    description: 'Metadata for column AGENCYCHARACTER1. Max length: 50'
+  - name: diam
+    description: Metadata for column DIAM
+  - name: subarea
+    description: 'Metadata for column SUBAREA. Max length: 10'
+  - name: elev
+    description: Metadata for column ELEV
+  - name: usgtot
+    description: Metadata for column USGTOT
+  - name: htuom
+    description: 'Metadata for column HTUOM. Max length: 10'
+  - name: purcdate
+    description: Metadata for column PURCDATE
+  - name: matl
+    description: 'Metadata for column MATL. Max length: 10'
+  - name: usgtotuom
+    description: 'Metadata for column USGTOTUOM. Max length: 10'
+  - name: color
+    description: 'Metadata for column COLOR. Max length: 10'
+  - name: avgmonusg
+    description: Metadata for column AVGMONUSG
+  - name: agencycode2
+    description: 'Metadata for column AGENCYCODE2. Max length: 10'
+  - name: unitdesc
+    description: 'Metadata for column UNITDESC. Max length: 300'
+  - name: instdate
+    description: Metadata for column INSTDATE
+  - name: surf
+    description: 'Metadata for column SURF. Max length: 10'
+  - name: serno
+    description: 'Metadata for column SERNO. Max length: 20'
+  - name: unittype
+    description: 'Metadata for column UNITTYPE. Max length: 10'
+  - name: own
+    description: 'Metadata for column OWN. Max length: 10'
+  - name: elevuom
+    description: 'Metadata for column ELEVUOM. Max length: 10'
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: cond
+    description: 'Metadata for column COND. Max length: 10'
+  - name: agencycode1
+    description: 'Metadata for column AGENCYCODE1. Max length: 10'
+  - name: asblt
+    description: 'Metadata for column ASBLT. Max length: 10'
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 10'
+  - name: widuom
+    description: 'Metadata for column WIDUOM. Max length: 10'
+  - name: expectedlife
+    description: Metadata for column EXPECTEDLIFE
+  - name: servstat
+    description: 'Metadata for column SERVSTAT. Max length: 10'
+  - name: wid
+    description: Metadata for column WID
+  - name: unitid
+    description: 'Metadata for column UNITID. Max length: 50'
+  - name: len
+    description: Metadata for column LEN
+  - name: ycoord
+    description: Metadata for column YCOORD
+  - name: modelno
+    description: 'Metadata for column MODELNO. Max length: 20'
+  - name: wt
+    description: Metadata for column WT
+  - name: diamuom
+    description: 'Metadata for column DIAMUOM. Max length: 10'
+  - name: agencydate1
+    description: Metadata for column AGENCYDATE1
+  - name: mfgdate
+    description: Metadata for column MFGDATE
+  - name: subunitof
+    description: Metadata for column SUBUNITOF
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: wtuom
+    description: 'Metadata for column WTUOM. Max length: 10'
+  - name: agencyinteger2
+    description: Metadata for column AGENCYINTEGER2
+  - name: agencycharacter2
+    description: 'Metadata for column AGENCYCHARACTER2. Max length: 50'
+  - name: compkey
+    description: (required) Metadata for column COMPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: gisstatic
+    description: Metadata for column GISSTATIC
+  - name: position
+    description: Metadata for column POSITION
+  - name: expectedlifeuom
+    description: 'Metadata for column EXPECTEDLIFEUOM. Max length: 10'
+  - name: xcoord
+    description: Metadata for column XCOORD
+  - name: lenuom
+    description: 'Metadata for column LENUOM. Max length: 10'
+  - name: agencydate2
+    description: Metadata for column AGENCYDATE2
+  - name: agencyflag2
+    description: 'Metadata for column AGENCYFLAG2. Max length: 1'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: district
+    description: 'Metadata for column DISTRICT. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: mfgkey
+    description: Metadata for column MFGKEY
+  - name: agencyinteger1
+    description: Metadata for column AGENCYINTEGER1
+  - name: agencyflag1
+    description: 'Metadata for column AGENCYFLAG1. Max length: 1'
+  - name: ht
+    description: Metadata for column HT
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: dpth
+    description: Metadata for column DPTH
+  - name: purccost
+    description: Metadata for column PURCCOST
+  - name: usgdate
+    description: Metadata for column USGDATE
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table ASSETMANAGEMENT_AGENCYDEFINED.COMPAGENCYSIMPLE on 2022-05-04T10:37:58.431

@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5scheduledjobs
+  columns:
+  - name: scj_lastsaved
+    description: SCJ_LASTSAVED
+  - name: scj_jobname
+    description: SCJ_JOBNAME
+  - name: scj_schcode
+    description: SCJ_SCHCODE
+  - name: scj_active
+    description: SCJ_ACTIVE
+  - name: scj_broken
+    description: SCJ_BROKEN
+  - name: scj_nextrun
+    description: SCJ_NEXTRUN
+  - name: scj_updatecount
+    description: SCJ_UPDATECOUNT
+  - name: scj_serverid
+    description: SCJ_SERVERID
+  - name: scj_type
+    description: SCJ_TYPE
+  - name: scj_code
+    description: SCJ_CODE
+    data_tests:
+    - unique
+  - name: scj_lastrun
+    description: SCJ_LASTRUN
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5SCHEDULEDJOBS

@@ -1,0 +1,146 @@
+version: 2
+models:
+- name: tpppc232
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cpth
+    description: '(required) Cost Period Table Hours. Max length: 6'
+    data_tests:
+    - not_null
+  - name: year
+    description: (required) Hours Control Year
+    data_tests:
+    - not_null
+  - name: peri
+    description: (required) Hours Control Period
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: csub
+    description: 'Subcontracting. Max length: 47'
+  - name: task
+    description: 'Labor. Max length: 8'
+  - name: ltdt
+    description: Transaction Time
+  - name: rgdt
+    description: Registration Date
+  - name: quan
+    description: No. of Hours
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cdoc__en_us
+    description: '(required) Document - base language. Max length: 10'
+    data_tests:
+    - not_null
+  - name: cptc
+    description: 'Cost Period Table for Cost Control Period. Max length: 6'
+  - name: cyea
+    description: Cost Control Year
+  - name: cper
+    description: Cost Control Period
+  - name: cfpo
+    description: 'Approved for Posting. Allowed values: 1, 2'
+  - name: cfpo_kw
+    description: 'Approved for Posting (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: orno
+    description: 'Purchase Order. Max length: 9'
+  - name: otbp
+    description: '(required) Subcontractor. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: Position Number
+  - name: loco
+    description: 'User. Max length: 16'
+  - name: txta
+    description: Text
+  - name: cpth_year_peri_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cpth_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: cptc_cyea_cper_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cptc_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpppc232 Subcontracting Hours table, Generated 2026-04-10T19:42:08Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cpth
+        - year
+        - peri
+        - otbp
+        - sern

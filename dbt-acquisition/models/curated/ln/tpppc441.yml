@@ -1,0 +1,161 @@
+version: 2
+models:
+- name: tpppc441
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: mpto
+    description: '(required) Total Type. Allowed values: 1, 2'
+    data_tests:
+    - not_null
+  - name: mpto_kw
+    description: 'Total Type (keyword). Allowed values: tppdm.mpto.main.proj.total,
+      tppdm.mpto.proj.total'
+  - name: cpla
+    description: '(required) Plan. Max length: 3'
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cotp
+    description: '(required) Cost Type. Allowed values: 1, 2, 3, 4, 5, 10'
+    data_tests:
+    - not_null
+  - name: cotp_kw
+    description: 'Cost Type (keyword). Allowed values: tppdm.cotp.tasks, tppdm.cotp.materials,
+      tppdm.cotp.equipment, tppdm.cotp.subcontracting, tppdm.cotp.indirect, tppdm.cotp.overhead'
+  - name: ambg_1
+    description: Total Budget
+  - name: ambg_2
+    description: Total Budget
+  - name: ambg_3
+    description: Total Budget
+  - name: ambg_4
+    description: Total Budget
+  - name: qubg
+    description: Budget Quantity
+  - name: ampm_1
+    description: Earned Value
+  - name: ampm_2
+    description: Earned Value
+  - name: ampm_3
+    description: Earned Value
+  - name: ampm_4
+    description: Earned Value
+  - name: qupm
+    description: Earned Value
+  - name: amex_1
+    description: Commitments
+  - name: amex_2
+    description: Commitments
+  - name: amex_3
+    description: Commitments
+  - name: amex_4
+    description: Commitments
+  - name: quex
+    description: Qty Commitments
+  - name: amac_1
+    description: Actual Cost
+  - name: amac_2
+    description: Actual Cost
+  - name: amac_3
+    description: Actual Cost
+  - name: amac_4
+    description: Actual Cost
+  - name: quac
+    description: Actual Quantity
+  - name: ampe_1
+    description: Cost Forecast
+  - name: ampe_2
+    description: Cost Forecast
+  - name: ampe_3
+    description: Cost Forecast
+  - name: ampe_4
+    description: Cost Forecast
+  - name: qupe
+    description: Forecast Quantity
+  - name: ampp_1
+    description: Performed (This Period)
+  - name: ampp_2
+    description: Performed (This Period)
+  - name: ampp_3
+    description: Performed (This Period)
+  - name: ampp_4
+    description: Performed (This Period)
+  - name: qupp
+    description: Performed this Period
+  - name: amep_1
+    description: Commitments (This Period)
+  - name: amep_2
+    description: Commitments (This Period)
+  - name: amep_3
+    description: Commitments (This Period)
+  - name: amep_4
+    description: Commitments (This Period)
+  - name: quep
+    description: Qty Commitments this Period
+  - name: amap_1
+    description: Actual Costs (This Period)
+  - name: amap_2
+    description: Actual Costs (This Period)
+  - name: amap_3
+    description: Actual Costs (This Period)
+  - name: amap_4
+    description: Actual Costs (This Period)
+  - name: quap
+    description: Actual Qty this Period
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpppc441 Cost Control by Project / Activity / Cost Type table, Generated
+    2026-04-10T19:42:15Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - mpto
+        - cpla
+        - cact
+        - cotp

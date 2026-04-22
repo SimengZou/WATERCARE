@@ -1,0 +1,435 @@
+version: 2
+models:
+- name: tisfc010
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: pdno
+    description: '(required) Production Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: opno
+    description: (required) Operation
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Operated Item. Max length: 47'
+  - name: tano
+    description: 'Task. Max length: 8'
+  - name: oset
+    description: Operation Set
+  - name: sopr
+    description: 'Start Operation. Allowed values: 1, 2'
+  - name: sopr_kw
+    description: 'Start Operation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: nopr
+    description: Next Operation
+  - name: oopr
+    description: 'Original Routing. Max length: 6'
+  - name: oopn
+    description: Original Operation
+  - name: seqn
+    description: Sequence Number from Routing Operation
+  - name: cwoc
+    description: 'Work Center. Max length: 6'
+  - name: mcno
+    description: 'Machine. Max length: 6'
+  - name: ploc
+    description: 'Physical Location. Max length: 15'
+  - name: sctt
+    description: 'Subcontracting. Allowed values: 1, 2'
+  - name: sctt_kw
+    description: 'Subcontracting (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ssmd
+    description: 'Subcontractor Selection Method. Allowed values: 10, 20, 30, 40'
+  - name: ssmd_kw
+    description: 'Subcontractor Selection Method (keyword). Allowed values: tirou.ssmd.planning,
+      tirou.ssmd.requisition, tirou.ssmd.manual, tirou.ssmd.not.appl'
+  - name: bpid
+    description: 'Subcontractor. Max length: 9'
+  - name: subs
+    description: 'Subcontractor Site. Max length: 9'
+  - name: subr
+    description: Subcontracting Rate Factor
+  - name: suba
+    description: 'Subassembly. Max length: 47'
+  - name: whsa
+    description: 'Subassembly Warehouse. Max length: 6'
+  - name: sset
+    description: Subcontracting Set
+  - name: sdoc
+    description: 'Subcontracting Document. Allowed values: 10, 20, 30, 40, 50'
+  - name: sdoc_kw
+    description: 'Subcontracting Document (keyword). Allowed values: tisfc.sdoc.not.appl,
+      tisfc.sdoc.required, tisfc.sdoc.pur.requisition, tisfc.sdoc.pur.order, tisfc.sdoc.on.parent'
+  - name: tuni
+    description: 'Time Unit. Allowed values: 5, 10'
+  - name: tuni_kw
+    description: 'Time Unit (keyword). Allowed values: tctope.hours, tctope.days'
+  - name: qutm
+    description: Queue Time
+  - name: fxsu
+    description: Fixed Setup Time (SCS)
+  - name: sstm
+    description: Scheduled Setup Time
+  - name: sutm
+    description: Average Setup Time
+  - name: rutm
+    description: Cycle Time
+  - name: runi
+    description: Routing Quantity
+  - name: prte
+    description: Production Rate
+  - name: fdur
+    description: 'Fixed Duration. Allowed values: 1, 2'
+  - name: fdur_kw
+    description: 'Fixed Duration (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: trdl
+    description: Wait Time
+  - name: mvtm
+    description: Move Time
+  - name: prtm
+    description: Production Time
+  - name: retm
+    description: Remaining Production Time
+  - name: trdt
+    description: Transport Date To
+  - name: esdt
+    description: Q Start Date
+  - name: sltm
+    description: Slack Time
+  - name: prdt
+    description: Setup Start Date
+  - name: rusd
+    description: Run Start Date
+  - name: rsdt
+    description: Remainder Start Date
+  - name: prrd
+    description: Wait Start Date
+  - name: fidt
+    description: Move Start Date
+  - name: trdf
+    description: Transport Date From
+  - name: trno
+    description: Transport Date To (Next Operation)
+  - name: mvrd
+    description: Queue Start(Next Operation)
+  - name: lfdt
+    description: Setup (Next Oper.)
+  - name: fxpd
+    description: 'Fixed Planning Dates. Allowed values: 1, 2'
+  - name: fxpd_kw
+    description: 'Fixed Planning Dates (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: psdt
+    description: Planned Start Date
+  - name: pfdt
+    description: Planned Finish Date
+  - name: bfls
+    description: 'Report Labor Hours. Allowed values: 1, 2, 30, 40, 50, 80, 90'
+  - name: bfls_kw
+    description: 'Report Labor Hours (keyword). Allowed values: tirep.cons.backflush,
+      tirep.cons.manual, tirep.cons.machine, tirep.cons.by.mes, tirep.cons.mach.group,
+      tirep.cons.undefined, tirep.cons.not.applicable'
+  - name: rmch
+    description: 'Report Machine Hours. Allowed values: 1, 2, 30, 40, 50, 80, 90'
+  - name: rmch_kw
+    description: 'Report Machine Hours (keyword). Allowed values: tirep.cons.backflush,
+      tirep.cons.manual, tirep.cons.machine, tirep.cons.by.mes, tirep.cons.mach.group,
+      tirep.cons.undefined, tirep.cons.not.applicable'
+  - name: most
+    description: Labor Resources for Setup (FTE)
+  - name: mopr
+    description: Labor Resources for Production (FTE)
+  - name: maho
+    description: Labor Hours
+  - name: mcoc
+    description: Machine Occupation
+  - name: mcho
+    description: Machine Hours
+  - name: sptm
+    description: Spent Production Time
+  - name: ardt
+    description: Actual Ready to Start Date
+  - name: asdt
+    description: Actual Start Date
+  - name: cmdt
+    description: Completion Date
+  - name: cctt
+    description: 'Update Method. Allowed values: 1, 2'
+  - name: cctt_kw
+    description: 'Update Method (keyword). Allowed values: tisfc.cctt.planning, tisfc.cctt.report.compl'
+  - name: opst
+    description: 'Operation Status. Allowed values: 1, 3, 4, 5, 6, 7, 8'
+  - name: opst_kw
+    description: 'Operation Status (keyword). Allowed values: tisfc.opst.planned,
+      tisfc.opst.ready.to.start, tisfc.opst.started, tisfc.opst.active, tisfc.opst.blocked,
+      tisfc.opst.completed, tisfc.opst.closed'
+  - name: blcd
+    description: 'Blocking Reason. Max length: 3'
+  - name: copo
+    description: 'Report Product. Allowed values: 1, 2, 10, 20, 30'
+  - name: copo_kw
+    description: 'Report Product (keyword). Allowed values: tirep.prod.manual, tirep.prod.automatic,
+      tirep.prod.machine, tirep.prod.by.mes, tirep.prod.mach.group'
+  - name: tlyn
+    description: 'Use Transfer Batch. Allowed values: 1, 2'
+  - name: tlyn_kw
+    description: 'Use Transfer Batch (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: trls
+    description: Transfer Batch Qty
+  - name: qpli
+    description: Quantity Planned Input
+  - name: qplo
+    description: Quantity Planned Output
+  - name: scpq
+    description: Setup Scrap
+  - name: ydtp
+    description: 'Yield Type. Allowed values: 1, 2, 3'
+  - name: ydtp_kw
+    description: 'Yield Type (keyword). Allowed values: tiydtp.discrete, tiydtp.continuous,
+      tiydtp.not.applicable'
+  - name: yldp
+    description: Yield Percentage
+  - name: qtrt
+    description: Quantity Ratio semifinished
+  - name: qcmp
+    description: Quantity Completed
+  - name: qtor
+    description: Quantity Rejected
+  - name: qrjc
+    description: Quantity Scrapped
+  - name: qxac
+    description: Quantity Planned Scrapped
+  - name: qqar
+    description: Quantity Quarantined
+  - name: qtbi
+    description: Quantity to Inspect
+  - name: qtbf
+    description: Quantity to Backflush
+  - name: qbfd
+    description: Quantity Backflushed
+  - name: qsbc
+    description: Qty Returned from Subcontracting
+  - name: phsp
+    description: Phantom Scrap Quantity
+  - name: cont
+    description: 'Container. Max length: 47'
+  - name: qpnt
+    description: Container Quantity
+  - name: nnts
+    description: Number of Containers
+  - name: crem
+    description: 'Container Method. Max length: 3'
+  - name: dmso
+    description: 'DMS on Completion. Allowed values: 1, 2'
+  - name: dmso_kw
+    description: 'DMS on Completion (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: reco
+    description: 'Reason for Rejects. Max length: 6'
+  - name: mnrs
+    description: 'Machine Operations. Allowed values: 1, 2'
+  - name: mnrs_kw
+    description: 'Machine Operations (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: nomc
+    description: Number of Machines
+  - name: refo
+    description: 'Reference Operation. Max length: 8'
+  - name: mtyp
+    description: 'Machine Type. Max length: 9'
+  - name: srit
+    description: 'Standard Routing Item. Max length: 47'
+  - name: orcd
+    description: 'Original Routing Code. Max length: 9'
+  - name: orrv
+    description: 'Original Routing Revision. Max length: 6'
+  - name: wcst
+    description: 'Work Center Site. Max length: 9'
+  - name: romt
+    description: 'Reference Operation Machine Type. Max length: 9'
+  - name: rosi
+    description: 'Reference Operation Site. Max length: 9'
+  - name: rowc
+    description: 'Reference Operation Work Center. Max length: 6'
+  - name: txta
+    description: Operation Text
+  - name: pdno_ref_compnr
+    description: company number of primary key of table tisfc001 Production Orders
+  - name: item_ref_compnr
+    description: company number of primary key of table tiipd001 Items - Production
+  - name: tano_ref_compnr
+    description: company number of primary key of table tirou003 Task
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tirou001 Work Center
+  - name: mcno_ref_compnr
+    description: company number of primary key of table tirou002 Machine
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: subs_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: suba_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: whsa_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: blcd_ref_compnr
+    description: company number of primary key of table tisfc200 Blocking Reasons
+  - name: reco_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: mtyp_ref_compnr
+    description: company number of primary key of table tirou460 Machine Types
+  - name: wcst_cwoc_mtyp_ref_compnr
+    description: company number of primary key of table tirou461 Machine Capacity
+      Group
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: qbfd_buar
+    description: 'CC: Quantity Backflushed in Base Unit Area'
+  - name: qbfd_buln
+    description: 'CC: Quantity Backflushed in Base Unit Length'
+  - name: qbfd_bupc
+    description: 'CC: Quantity Backflushed in Base Unit Piece'
+  - name: qbfd_butm
+    description: 'CC: Quantity Backflushed in Base Unit Time'
+  - name: qbfd_buvl
+    description: 'CC: Quantity Backflushed in Base Unit Volume'
+  - name: qbfd_buwg
+    description: 'CC: Quantity Backflushed in Base Unit Weight'
+  - name: qsbc_buar
+    description: 'CC: Quantity Returned from Subcontracting in Base Unit Area'
+  - name: qsbc_buln
+    description: 'CC: Quantity Returned from Subcontracting in Base Unit Length'
+  - name: qsbc_bupc
+    description: 'CC: Quantity Returned from Subcontracting in Base Unit Piece'
+  - name: qsbc_butm
+    description: 'CC: Quantity Returned from Subcontracting in Base Unit Time'
+  - name: qsbc_buvl
+    description: 'CC: Quantity Returned from Subcontracting in Base Unit Volume'
+  - name: qsbc_buwg
+    description: 'CC: Quantity Returned from Subcontracting in Base Unit Weight'
+  - name: qtbf_buar
+    description: 'CC: Quantity to Backflush in Base Unit Area'
+  - name: qtbf_buln
+    description: 'CC: Quantity to Backflush in Base Unit Length'
+  - name: qtbf_bupc
+    description: 'CC: Quantity to Backflush in Base Unit Piece'
+  - name: qtbf_butm
+    description: 'CC: Quantity to Backflush in Base Unit Time'
+  - name: qtbf_buvl
+    description: 'CC: Quantity to Backflush in Base Unit Volume'
+  - name: qtbf_buwg
+    description: 'CC: Quantity to Backflush in Base Unit Weight'
+  - name: qtor_buar
+    description: 'CC: Quantity Rejected in Base Unit Area'
+  - name: qtor_buln
+    description: 'CC: Quantity Rejected in Base Unit Length'
+  - name: qtor_bupc
+    description: 'CC: Quantity Rejected in Base Unit Piece'
+  - name: qtor_butm
+    description: 'CC: Quantity Rejected in Base Unit Time'
+  - name: qtor_buvl
+    description: 'CC: Quantity Rejected in Base Unit Volume'
+  - name: qtor_buwg
+    description: 'CC: Quantity Rejected in Base Unit Weight'
+  - name: qtbi_buar
+    description: 'CC: Quantity to Inspect in Base Unit Area'
+  - name: qtbi_buln
+    description: 'CC: Quantity to Inspect in Base Unit Length'
+  - name: qtbi_bupc
+    description: 'CC: Quantity to Inspect in Base Unit Piece'
+  - name: qtbi_butm
+    description: 'CC: Quantity to Inspect in Base Unit Time'
+  - name: qtbi_buvl
+    description: 'CC: Quantity to Inspect in Base Unit Volume'
+  - name: qtbi_buwg
+    description: 'CC: Quantity to Inspect in Base Unit Weight'
+  - name: phsp_buar
+    description: 'CC: Phantom Scrap Quantity in Base Unit Area'
+  - name: phsp_buln
+    description: 'CC: Phantom Scrap Quantity in Base Unit Length'
+  - name: phsp_bupc
+    description: 'CC: Phantom Scrap Quantity in Base Unit Piece'
+  - name: phsp_butm
+    description: 'CC: Phantom Scrap Quantity in Base Unit Time'
+  - name: phsp_buvl
+    description: 'CC: Phantom Scrap Quantity in Base Unit Volume'
+  - name: phsp_buwg
+    description: 'CC: Phantom Scrap Quantity in Base Unit Weight'
+  - name: qrjc_buar
+    description: 'CC: Quantity Scrapped in Base Unit Area'
+  - name: qrjc_buln
+    description: 'CC: Quantity Scrapped in Base Unit Length'
+  - name: qrjc_bupc
+    description: 'CC: Quantity Scrapped in Base Unit Piece'
+  - name: qrjc_butm
+    description: 'CC: Quantity Scrapped in Base Unit Time'
+  - name: qrjc_buvl
+    description: 'CC: Quantity Scrapped in Base Unit Volume'
+  - name: qrjc_buwg
+    description: 'CC: Quantity Scrapped in Base Unit Weight'
+  - name: qqar_buar
+    description: 'CC: Quantity Quarantined in Base Unit Area'
+  - name: qqar_buln
+    description: 'CC: Quantity Quarantined in Base Unit Length'
+  - name: qqar_bupc
+    description: 'CC: Quantity Quarantined in Base Unit Piece'
+  - name: qqar_butm
+    description: 'CC: Quantity Quarantined in Base Unit Time'
+  - name: qqar_buvl
+    description: 'CC: Quantity Quarantined in Base Unit Volume'
+  - name: qqar_buwg
+    description: 'CC: Quantity Quarantined in Base Unit Weight'
+  - name: scpq_buar
+    description: 'CC: Setup Scrap in Base Unit Area'
+  - name: scpq_buln
+    description: 'CC: Setup Scrap in Base Unit Length'
+  - name: scpq_bupc
+    description: 'CC: Setup Scrap in Base Unit Piece'
+  - name: scpq_butm
+    description: 'CC: Setup Scrap in Base Unit Time'
+  - name: scpq_buvl
+    description: 'CC: Setup Scrap in Base Unit Volume'
+  - name: scpq_buwg
+    description: 'CC: Setup Scrap in Base Unit Weight'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tisfc010 Production Order Operations table, Generated 2026-04-10T19:41:50Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - pdno
+        - opno

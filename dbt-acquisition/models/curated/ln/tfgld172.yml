@@ -1,0 +1,124 @@
+version: 2
+models:
+- name: tfgld172
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: taxo
+    description: '(required) Taxonomy. Max length: 9'
+    data_tests:
+    - not_null
+  - name: vers
+    description: (required) Version
+    data_tests:
+    - not_null
+  - name: acid
+    description: '(required) Account. Max length: 12'
+    data_tests:
+    - not_null
+  - name: line
+    description: (required) Line Number
+    data_tests:
+    - not_null
+  - name: fcom
+    description: From Company
+  - name: tcom
+    description: To Company
+  - name: flac
+    description: 'From Ledger Account. Max length: 12'
+  - name: tlac
+    description: 'To Ledger Account. Max length: 12'
+  - name: fdim_1
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_2
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_3
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_4
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_5
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_6
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_7
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_8
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_9
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_10
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_11
+    description: 'From Dimensions. Max length: 9'
+  - name: fdim_12
+    description: 'From Dimensions. Max length: 9'
+  - name: tdim_1
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_2
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_3
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_4
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_5
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_6
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_7
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_8
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_9
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_10
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_11
+    description: 'To Dimensions. Max length: 9'
+  - name: tdim_12
+    description: 'To Dimensions. Max length: 9'
+  - name: taxo_vers_acid_ref_compnr
+    description: company number of primary key of table tfgld171 Taxonomy Accounts
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld172 Mappings by Taxonomy Account table, Generated 2026-04-10T19:41:43Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - taxo
+        - vers
+        - acid
+        - line

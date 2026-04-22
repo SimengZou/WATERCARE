@@ -1,0 +1,40 @@
+version: 2
+models:
+- name: r5departmentsecurity
+  columns:
+  - name: dse_lastsaved
+    description: DSE_LASTSAVED
+  - name: dse_mrc
+    description: DSE_MRC
+  - name: dse_readonly
+    description: DSE_READONLY
+  - name: dse_updated
+    description: DSE_UPDATED
+  - name: dse_user
+    description: DSE_USER
+  - name: dse_updatecount
+    description: DSE_UPDATECOUNT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DEPARTMENTSECURITY
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - dse_user
+        - dse_mrc

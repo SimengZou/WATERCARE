@@ -1,0 +1,190 @@
+version: 2
+models:
+- name: r100reporting_temp
+  columns:
+  - name: version
+    description: 'From table depm_R100_Reporting and column Version. Max length: 100'
+  - name: projectcode
+    description: 'From table depm_R100_Reporting and column ProjectCode. Max length:
+      100'
+  - name: projectname
+    description: 'From table depm_R100_Reporting and column ProjectName. Max length:
+      100'
+  - name: wbscode
+    description: 'From table depm_R100_Reporting and column WBSCode. Max length: 100'
+  - name: wbsname
+    description: 'From table depm_R100_Reporting and column WBSName. Max length: 100'
+  - name: categorycode
+    description: 'From table depm_R100_Reporting and column CategoryCode. Max length:
+      100'
+  - name: categoryname
+    description: 'From table depm_R100_Reporting and column CategoryName. Max length:
+      100'
+  - name: type
+    description: '(required) From table depm_R100_Reporting and column Type. Max length:
+      5'
+    data_tests:
+    - not_null
+  - name: riskid
+    description: 'From table depm_R100_Reporting and column RiskID. Max length: 100'
+  - name: riskactionid
+    description: 'From table depm_R100_Reporting and column RiskActionID. Max length:
+      100'
+  - name: r_risknum
+    description: 'From table depm_R100_Reporting and column R_RiskNum. Max length:
+      100'
+  - name: r_title
+    description: 'From table depm_R100_Reporting and column R_Title. Max length: 100'
+  - name: r_description
+    description: 'From table depm_R100_Reporting and column R_Description. Max length:
+      100'
+  - name: r_cause
+    description: 'From table depm_R100_Reporting and column R_Cause. Max length: 100'
+  - name: r_duedate
+    description: 'From table depm_R100_Reporting and column R_DueDate. Max length:
+      24'
+  - name: r_owner
+    description: 'From table depm_R100_Reporting and column R_Owner. Max length: 100'
+  - name: r_status_msg
+    description: 'From table depm_R100_Reporting and column R_Status_Msg. Max length:
+      100'
+  - name: r_status
+    description: 'From table depm_R100_Reporting and column R_Status. Max length:
+      100'
+  - name: r_impact_rank
+    description: 'From table depm_R100_Reporting and column R_Impact_Rank. Max length:
+      100'
+  - name: r_impact_cost
+    description: 'From table depm_R100_Reporting and column R_Impact_Cost. Max length:
+      100'
+  - name: r_risk_cost
+    description: 'From table depm_R100_Reporting and column R_Risk_Cost. Max length:
+      100'
+  - name: r_probability_rate
+    description: 'From table depm_R100_Reporting and column R_Probability_Rate. Max
+      length: 100'
+  - name: r_probability_rank
+    description: 'From table depm_R100_Reporting and column R_Probability_Rank. Max
+      length: 100'
+  - name: r_risk_rank
+    description: 'From table depm_R100_Reporting and column R_Risk_Rank. Max length:
+      100'
+  - name: r_impact_time
+    description: 'From table depm_R100_Reporting and column R_Impact_Time. Max length:
+      100'
+  - name: r_actionstotal
+    description: 'From table depm_R100_Reporting and column R_ActionsTotal. Max length:
+      100'
+  - name: r_actionscompleted
+    description: 'From table depm_R100_Reporting and column R_ActionsCompleted. Max
+      length: 100'
+  - name: r_treatment
+    description: 'From table depm_R100_Reporting and column R_Treatment. Max length:
+      100'
+  - name: r_isissue
+    description: 'From table depm_R100_Reporting and column R_IsIssue. Max length:
+      100'
+  - name: r_mitig_cost
+    description: 'From table depm_R100_Reporting and column R_Mitig_Cost. Max length:
+      100'
+  - name: r_mitig_impact_rank
+    description: 'From table depm_R100_Reporting and column R_Mitig_Impact_Rank. Max
+      length: 100'
+  - name: r_mitig_impact_cost
+    description: 'From table depm_R100_Reporting and column R_Mitig_Impact_Cost. Max
+      length: 100'
+  - name: r_mitig_risk_cost
+    description: 'From table depm_R100_Reporting and column R_Mitig_Risk_Cost. Max
+      length: 100'
+  - name: r_mitig_probability_rate
+    description: 'From table depm_R100_Reporting and column R_Mitig_Probability_Rate.
+      Max length: 100'
+  - name: r_mitig_probability_rank
+    description: 'From table depm_R100_Reporting and column R_Mitig_Probability_Rank.
+      Max length: 100'
+  - name: r_mitig_risk_rank
+    description: 'From table depm_R100_Reporting and column R_Mitig_Risk_Rank. Max
+      length: 100'
+  - name: r_mitig_impact_time
+    description: 'From table depm_R100_Reporting and column R_Mitig_Impact_Time. Max
+      length: 100'
+  - name: r_mitig_status
+    description: 'From table depm_R100_Reporting and column R_Mitig_Status. Max length:
+      100'
+  - name: r_mitig_owner
+    description: 'From table depm_R100_Reporting and column R_Mitig_Owner. Max length:
+      100'
+  - name: r_mitig_duedate
+    description: 'From table depm_R100_Reporting and column R_Mitig_DueDate. Max length:
+      24'
+  - name: r_mitig_desc
+    description: 'From table depm_R100_Reporting and column R_Mitig_Desc. Max length:
+      100'
+  - name: i_description
+    description: 'From table depm_R100_Reporting and column I_Description. Max length:
+      100'
+  - name: i_impact_cost
+    description: 'From table depm_R100_Reporting and column I_Impact_Cost. Max length:
+      100'
+  - name: i_owner
+    description: 'From table depm_R100_Reporting and column I_Owner. Max length: 100'
+  - name: i_priority
+    description: 'From table depm_R100_Reporting and column I_Priority. Max length:
+      100'
+  - name: i_impact_time
+    description: 'From table depm_R100_Reporting and column I_Impact_Time. Max length:
+      100'
+  - name: i_impact_rank
+    description: 'From table depm_R100_Reporting and column I_Impact_Rank. Max length:
+      100'
+  - name: i_duedate
+    description: 'From table depm_R100_Reporting and column I_DueDate. Max length:
+      24'
+  - name: i_actions
+    description: 'From table depm_R100_Reporting and column I_Actions. Max length:
+      100'
+  - name: i_status
+    description: 'From table depm_R100_Reporting and column I_Status. Max length:
+      100'
+  - name: r_inuse
+    description: 'From table depm_R100_Reporting and column R_InUse. Max length: 100'
+  - name: r_notinuse
+    description: 'From table depm_R100_Reporting and column R_NotInUse. Max length:
+      100'
+  - name: r_mitig_notinuse
+    description: 'From table depm_R100_Reporting and column R_Mitig_NotInUse. Max
+      length: 100'
+  - name: r_mitig_inuse
+    description: 'From table depm_R100_Reporting and column R_Mitig_InUse. Max length:
+      100'
+  - name: i_datachanged
+    description: 'From table depm_R100_Reporting and column I_DataChanged. Max length:
+      100'
+  - name: timestamp
+    description: 'From table depm_R100_Reporting and column TimeStamp. Max length:
+      24'
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated from anySQL Connector dEPM_R100Reporting_Temp
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - version
+        - projectcode
+        - wbscode
+        - categorycode
+        - riskid

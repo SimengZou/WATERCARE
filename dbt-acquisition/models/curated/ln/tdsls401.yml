@@ -1,0 +1,1117 @@
+version: 2
+models:
+- name: tdsls401
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orno
+    description: '(required) Sales Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: dltp
+    description: 'Delivery Type. Allowed values: 1, 5, 10, 15, 20, 25, 30, 40, 45'
+  - name: dltp_kw
+    description: 'Delivery Type (keyword). Allowed values: tdsls.dltp.not.applicable,
+      tdsls.dltp.direct.delivery, tdsls.dltp.cross.docking, tdsls.dltp.warehousing,
+      tdsls.dltp.work.center, tdsls.dltp.sales, tdsls.dltp.invoicing, tdsls.dltp.purchase,
+      tdsls.dltp.production'
+  - name: subc
+    description: 'Contains Customer Furnished Material. Allowed values: 1, 2'
+  - name: subc_kw
+    description: 'Contains Customer Furnished Material (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: effn
+    description: Effectivity Unit
+  - name: cpva
+    description: Product Variant
+  - name: olid
+    description: 'Configuration. Max length: 9'
+  - name: opol
+    description: 'Make Customized. Allowed values: 1, 2'
+  - name: opol_kw
+    description: 'Make Customized (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sdsc
+    description: 'Standard Description. Allowed values: 1, 2'
+  - name: sdsc_kw
+    description: 'Standard Description (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pric
+    description: Price
+  - name: prsg
+    description: 'Price Stage. Max length: 3'
+  - name: porg
+    description: 'Price Origin. Allowed values: 2, 4, 6, 8, 10, 12, 13, 14, 16, 18,
+      20, 25, 30, 35, 40'
+  - name: porg_kw
+    description: 'Price Origin (keyword). Allowed values: tdgen.porg.not.applicable,
+      tdgen.porg.manual, tdgen.porg.contract, tdgen.porg.variant, tdgen.porg.item.pur,
+      tdgen.porg.item.sls, tdgen.porg.item.service, tdgen.porg.supp.pr.book, tdgen.porg.def.pr.book,
+      tdgen.porg.price.structure, tdgen.porg.extern, tdgen.porg.consumption, tdgen.porg.generic.pr.list,
+      tdgen.porg.project.budget, tdgen.porg.projectcost.obj'
+  - name: pmde
+    description: 'Price Matrix. Max length: 9'
+  - name: pmse
+    description: Price Matrix Sequence
+  - name: pror
+    description: 'Default Price Book. Allowed values: 1, 2'
+  - name: pror_kw
+    description: 'Default Price Book (keyword). Allowed values: tdpcg.pror.sales,
+      tdpcg.pror.service'
+  - name: cups
+    description: 'Sales Price Unit. Max length: 3'
+  - name: cvps
+    description: Price Unit Conversion Factor
+  - name: odat
+    description: Order Date
+  - name: pcod
+    description: 'Delivery Pattern. Max length: 6'
+  - name: ddta
+    description: Planned Delivery Date
+  - name: ddtb
+    description: Initial Requested Delivery Date
+  - name: ddtc
+    description: Customer Requested Delivery Date
+  - name: ddtd
+    description: Original Promised Delivery Date
+  - name: ddch
+    description: Planned Delivery Date Changes
+  - name: rdta
+    description: Release Date
+  - name: qpor
+    description: Ordered Quantity in Piece Unit
+  - name: cupq
+    description: 'Order Piece Unit. Max length: 3'
+  - name: cvpq
+    description: Order Piece Unit Conversion Factor
+  - name: qoor
+    description: Ordered Quantity
+  - name: cuqs
+    description: 'Sales Unit. Max length: 3'
+  - name: cvqs
+    description: Order Unit Conversion Factor
+  - name: bind
+    description: 'Quantity Unit Binding. Allowed values: 1, 2'
+  - name: bind_kw
+    description: 'Quantity Unit Binding (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mprm
+    description: 'Multiple Promotion Method. Allowed values: 1, 2'
+  - name: mprm_kw
+    description: 'Multiple Promotion Method (keyword). Allowed values: tdsls.mprm.parallel,
+      tdsls.mprm.cumulative'
+  - name: tprd
+    description: Total Promotion Discount
+  - name: oltp
+    description: 'Order Line Type. Allowed values: 1, 2, 3'
+  - name: oltp_kw
+    description: 'Order Line Type (keyword). Allowed values: tdsls.oltp.total, tdsls.oltp.detail,
+      tdsls.oltp.backorder'
+  - name: qicm
+    description: Committed Quantity
+  - name: leng
+    description: Length
+  - name: widt
+    description: Width
+  - name: thic
+    description: Height
+  - name: disc_1
+    description: Line Discount
+  - name: disc_2
+    description: Line Discount
+  - name: disc_3
+    description: Line Discount
+  - name: disc_4
+    description: Line Discount
+  - name: disc_5
+    description: Line Discount
+  - name: disc_6
+    description: Line Discount
+  - name: disc_7
+    description: Line Discount
+  - name: disc_8
+    description: Line Discount
+  - name: disc_9
+    description: Line Discount
+  - name: disc_10
+    description: Line Discount
+  - name: disc_11
+    description: Line Discount
+  - name: ldam_1
+    description: Discount Amount
+  - name: ldam_2
+    description: Discount Amount
+  - name: ldam_3
+    description: Discount Amount
+  - name: ldam_4
+    description: Discount Amount
+  - name: ldam_5
+    description: Discount Amount
+  - name: ldam_6
+    description: Discount Amount
+  - name: ldam_7
+    description: Discount Amount
+  - name: ldam_8
+    description: Discount Amount
+  - name: ldam_9
+    description: Discount Amount
+  - name: ldam_10
+    description: Discount Amount
+  - name: ldam_11
+    description: Discount Amount
+  - name: dorg_1
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_1
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_2
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_2
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_3
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_3
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_4
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_4
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_5
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_5
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_6
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_6
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_7
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_7
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_8
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_8
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_9
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_9
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_10
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_10
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dorg_11
+    description: 'Discount Origin. Allowed values: 2, 4, 6, 8, 10, 12'
+  - name: dorg_kw_11
+    description: 'Discount Origin (keyword). Allowed values: tdgen.dorg.not.applicable,
+      tdgen.dorg.manual, tdgen.dorg.contract, tdgen.dorg.disc.structure, tdgen.dorg.disc.pr.book,
+      tdgen.dorg.extern'
+  - name: dmty_1
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_1
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_2
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_2
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_3
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_3
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_4
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_4
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_5
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_5
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_6
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_6
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_7
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_7
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_8
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_8
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_9
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_9
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_10
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_10
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmty_11
+    description: 'Discount Matrix Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 11, 20, 21, 22, 100'
+  - name: dmty_kw_11
+    description: 'Discount Matrix Type (keyword). Allowed values: tdpcg.maty.sobook,
+      tdpcg.maty.soldsc, tdpcg.maty.sodsc, tdpcg.maty.pobook, tdpcg.maty.poldsc, tdpcg.maty.podsc,
+      tdpcg.maty.transfer, tdpcg.maty.lineprom, tdpcg.maty.ordprom, tdpcg.maty.clfrate,
+      tdpcg.maty.cafrate, tdpcg.maty.srbook, tdpcg.maty.srldsc, tdpcg.maty.srdsc,
+      tdpcg.maty.none'
+  - name: dmde_1
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_2
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_3
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_4
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_5
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_6
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_7
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_8
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_9
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_10
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmde_11
+    description: 'Discount Matrix. Max length: 9'
+  - name: dmse_1
+    description: Discount Matrix Sequence
+  - name: dmse_2
+    description: Discount Matrix Sequence
+  - name: dmse_3
+    description: Discount Matrix Sequence
+  - name: dmse_4
+    description: Discount Matrix Sequence
+  - name: dmse_5
+    description: Discount Matrix Sequence
+  - name: dmse_6
+    description: Discount Matrix Sequence
+  - name: dmse_7
+    description: Discount Matrix Sequence
+  - name: dmse_8
+    description: Discount Matrix Sequence
+  - name: dmse_9
+    description: Discount Matrix Sequence
+  - name: dmse_10
+    description: Discount Matrix Sequence
+  - name: dmse_11
+    description: Discount Matrix Sequence
+  - name: dmth_1
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_1
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_2
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_2
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_3
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_3
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_4
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_4
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_5
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_5
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_6
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_6
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_7
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_7
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_8
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_8
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_9
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_9
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_10
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_10
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_11
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_11
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: cdis_1
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_2
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_3
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_4
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_5
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_6
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_7
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_8
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_9
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_10
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_11
+    description: 'Discount Code. Max length: 3'
+  - name: dtrm
+    description: 'Determining. Allowed values: 1, 2'
+  - name: dtrm_kw
+    description: 'Determining (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: elgb
+    description: 'Eligible. Allowed values: 1, 2'
+  - name: elgb_kw
+    description: 'Eligible (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: stdc
+    description: Structure Discount
+  - name: oamt
+    description: Amount
+  - name: dldt
+    description: Delivery Date
+  - name: qidl
+    description: Delivered Quantity
+  - name: qpdl
+    description: Delivered Quantity in Piece Unit
+  - name: qohb
+    description: Hold Back Quantity
+  - name: qpbo
+    description: Backorder Quantity in Piece Unit
+  - name: cupb
+    description: 'Backorder Piece Unit. Max length: 3'
+  - name: cvpb
+    description: Backorder Piece Unit Conversion Factor
+  - name: qbbo
+    description: Back Order Quantity
+  - name: cubs
+    description: 'Backorder Quantity Unit. Max length: 3'
+  - name: cvbs
+    description: Backorder Quantity Unit Conversion Factor
+  - name: bqco
+    description: 'Back Order Quantity Confirmed. Allowed values: 1, 2'
+  - name: bqco_kw
+    description: 'Back Order Quantity Confirmed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: lseq
+    description: Linked Sequence
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: bptc
+    description: 'Business Partner Tax Country. Max length: 3'
+  - name: exmt
+    description: 'Exempt. Allowed values: 1, 2'
+  - name: exmt_kw
+    description: 'Exempt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: cwoc
+    description: 'Work Center. Max length: 6'
+  - name: isss
+    description: 'Inventory Handling. Allowed values: 1, 2'
+  - name: isss_kw
+    description: 'Inventory Handling (keyword). Allowed values: tcinup.by.main.item,
+      tcinup.by.component'
+  - name: cphl
+    description: 'Component Handling. Allowed values: 5, 10, 15'
+  - name: cphl_kw
+    description: 'Component Handling (keyword). Allowed values: tdcphl.not.applicable,
+      tdcphl.sales.bom, tdcphl.component.lines'
+  - name: revi
+    description: 'Engineering Item Revision. Max length: 6'
+  - name: lsel
+    description: 'Lot Selection. Allowed values: 1, 2, 3'
+  - name: lsel_kw
+    description: 'Lot Selection (keyword). Allowed values: tclsel.any, tclsel.same,
+      tclsel.specific'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: ssel
+    description: 'Serial Number Selection. Allowed values: 1, 2'
+  - name: ssel_kw
+    description: 'Serial Number Selection (keyword). Allowed values: tdssel.any, tdssel.specific'
+  - name: serl
+    description: 'Serial Number. Max length: 30'
+  - name: scon
+    description: 'Shipping Constraint. Allowed values: 1, 2, 3, 4, 5, 6, 10'
+  - name: scon_kw
+    description: 'Shipping Constraint (keyword). Allowed values: tdscon.none, tdscon.sc,
+      tdscon.rc, tdscon.oc, tdscon.sca, tdscon.kc, tdscon.not.applicable'
+  - name: motv
+    description: 'Motive of Transport. Max length: 6'
+  - name: delc
+    description: 'Delivery Code. Max length: 6'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: stcn
+    description: 'Ship-to Contact. Max length: 9'
+  - name: cfrw
+    description: 'Carrier/LSP. Max length: 3'
+  - name: dlpt
+    description: 'Delivery Point. Max length: 9'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: prdt
+    description: Planned Receipt Date
+  - name: citt
+    description: 'Item Code System. Max length: 3'
+  - name: citm__en_us
+    description: '(required) Customer Item - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: bkyn
+    description: 'Blocked. Allowed values: 1, 2'
+  - name: bkyn_kw
+    description: 'Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: clyn
+    description: 'Canceled. Allowed values: 1, 2'
+  - name: clyn_kw
+    description: 'Canceled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: term
+    description: 'Terminated. Allowed values: 1, 2'
+  - name: term_kw
+    description: 'Terminated (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: amod
+    description: Order Discount Amount
+  - name: rats_1
+    description: Currency Rate Sales
+  - name: rats_2
+    description: Currency Rate Sales
+  - name: rats_3
+    description: Currency Rate Sales
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: ratd
+    description: Rate Date
+  - name: ratt
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: opri
+    description: Order Priority
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: scmp
+    description: Invoice Company
+  - name: ttyp
+    description: 'Transaction Type. Max length: 3'
+  - name: invn
+    description: Invoice Number
+  - name: invd
+    description: Invoice Date
+  - name: sbim
+    description: 'Self-Billing. Allowed values: 1, 2'
+  - name: sbim_kw
+    description: 'Self-Billing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: chan
+    description: 'Channels. Max length: 3'
+  - name: corn__en_us
+    description: '(required) Customer Order - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: corp__en_us
+    description: '(required) Customer Order Position - base language. Max length:
+      16'
+    data_tests:
+    - not_null
+  - name: cors__en_us
+    description: '(required) Customer Order Sequence - base language. Max length:
+      11'
+    data_tests:
+    - not_null
+  - name: cosn
+    description: 'Change Order Sequence No.. Max length: 8'
+  - name: akcd
+    description: 'Sales Acknowledgment. Max length: 2'
+  - name: crcd
+    description: 'Change Reason. Max length: 6'
+  - name: ctcd
+    description: 'Change Type. Max length: 6'
+  - name: amld
+    description: Order Line Discount Amount
+  - name: ceno
+    description: 'Exempt Certificate. Max length: 24'
+  - name: rcod
+    description: 'Exempt Reason. Max length: 6'
+  - name: susi
+    description: Supplying Company
+  - name: sfwh
+    description: 'Supply-from Warehouse. Max length: 6'
+  - name: stsi
+    description: 'Ship-to Site. Max length: 9'
+  - name: stwh
+    description: 'Ship-to Warehouse. Max length: 6'
+  - name: oprs
+    description: 'Order Promising Status. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: oprs_kw
+    description: 'Order Promising Status (keyword). Allowed values: tdsls.oprs.not.accepted,
+      tdsls.oprs.manual, tdsls.oprs.accepted, tdsls.oprs.not.applicable, tdsls.oprs.pending,
+      tdsls.oprs.exception'
+  - name: airp
+    description: 'Allow Inventory Recheck for Promised Lines. Allowed values: 1, 2'
+  - name: airp_kw
+    description: 'Allow Inventory Recheck for Promised Lines (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: oref__en_us
+    description: '(required) Order Line Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: gefo
+    description: 'Generate Freight Order from Sales. Allowed values: 1, 2'
+  - name: gefo_kw
+    description: 'Generate Freight Order from Sales (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: frin
+    description: 'Invoice for Freight. Allowed values: 1, 2'
+  - name: frin_kw
+    description: 'Invoice for Freight (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: infr
+    description: 'Invoice Freight Costs Based On. Allowed values: 5, 10, 15, 20'
+  - name: infr_kw
+    description: 'Invoice Freight Costs Based On (keyword). Allowed values: tccom.infr.estimate,
+      tccom.infr.actual, tccom.infr.costplus, tccom.infr.not.applic'
+  - name: fram
+    description: Freight Amount
+  - name: frbn
+    description: 'Freight Amount Binding. Allowed values: 1, 2'
+  - name: frbn_kw
+    description: 'Freight Amount Binding (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crbn
+    description: 'Carrier Binding. Allowed values: 1, 2'
+  - name: crbn_kw
+    description: 'Carrier Binding (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: serv
+    description: 'Freight Service Level. Max length: 3'
+  - name: clgr
+    description: 'List Group. Max length: 3'
+  - name: casi
+    description: 'Additional Statistical Information Set. Max length: 3'
+  - name: ruso
+    description: 'Rush Order Line. Allowed values: 1, 2'
+  - name: ruso_kw
+    description: 'Rush Order Line (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: styp
+    description: 'Sales Type. Max length: 6'
+  - name: cono
+    description: 'Contract. Max length: 9'
+  - name: cpon
+    description: Contract Position Number
+  - name: ccof
+    description: 'Contract Sales Office. Max length: 6'
+  - name: cnig
+    description: 'Contract Ignored. Allowed values: 1, 2'
+  - name: cnig_kw
+    description: 'Contract Ignored (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: modi
+    description: 'Modified. Allowed values: 1, 2'
+  - name: modi_kw
+    description: 'Modified (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cuva
+    description: Customs Value
+  - name: lmbi
+    description: 'Link to Monthly Billing Invoicing. Allowed values: 1, 2'
+  - name: lmbi_kw
+    description: 'Link to Monthly Billing Invoicing (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pmnt
+    description: 'Payment. Allowed values: 10, 20, 30, 90'
+  - name: pmnt_kw
+    description: 'Payment (keyword). Allowed values: tcpmnt.pay.on.receipt, tcpmnt.pay.on.use,
+      tcpmnt.no.payment, tcpmnt.not.applicable'
+  - name: owns
+    description: 'Return Ownership. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: owns_kw
+    description: 'Return Ownership (keyword). Allowed values: tcowns.comp.owned, tcowns.consigned,
+      tcowns.cust.owned, tcowns.return.as.issue, tcowns.deferred, tcowns.not.appl'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: acsl
+    description: 'Additional Cost Line. Allowed values: 1, 2'
+  - name: acsl_kw
+    description: 'Additional Cost Line (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: acti__en_us
+    description: '(required) Next Activity - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: spcn
+    description: 'Specification. Max length: 22'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: lcrq
+    description: 'Letter of Credit Required. Allowed values: 1, 2'
+  - name: lcrq_kw
+    description: 'Letter of Credit Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bgrq
+    description: 'Bank Guarantee - Applicant Required. Allowed values: 1, 2'
+  - name: bgrq_kw
+    description: 'Bank Guarantee - Applicant Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bgrb
+    description: 'Bank Guarantee - Beneficiary Required. Allowed values: 1, 2'
+  - name: bgrb_kw
+    description: 'Bank Guarantee - Beneficiary Required (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: citg
+    description: 'Obsolete. Max length: 6'
+  - name: cmnf
+    description: 'Obsolete. Max length: 6'
+  - name: cpcl
+    description: 'Obsolete. Max length: 6'
+  - name: cpln
+    description: 'Obsolete. Max length: 6'
+  - name: csgs
+    description: 'Obsolete. Max length: 6'
+  - name: copr_1
+    description: Obsolete
+  - name: copr_2
+    description: Obsolete
+  - name: copr_3
+    description: Obsolete
+  - name: cpcp
+    description: 'Obsolete. Max length: 8'
+  - name: damt
+    description: Obsolete
+  - name: dlld
+    description: Obsolete
+  - name: fcop_1
+    description: Obsolete
+  - name: fcop_2
+    description: Obsolete
+  - name: fcop_3
+    description: Obsolete
+  - name: fxcp_1
+    description: Obsolete
+  - name: fxcp_2
+    description: Obsolete
+  - name: fxcp_3
+    description: Obsolete
+  - name: lssn
+    description: 'Obsolete. Max length: 22'
+  - name: pcad
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: pcad_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pmsk
+    description: 'Obsolete. Max length: 20'
+  - name: shln
+    description: Obsolete
+  - name: shpm
+    description: 'Obsolete. Max length: 9'
+  - name: lnst
+    description: 'Obsolete. Allowed values: 0, 5, 10'
+  - name: lnst_kw
+    description: 'Obsolete (keyword). Allowed values: , tdgen.lnst.open, tdgen.lnst.incomplete'
+  - name: vcop_1
+    description: Obsolete
+  - name: vcop_2
+    description: Obsolete
+  - name: vcop_3
+    description: Obsolete
+  - name: txta
+    description: Order Line Text
+  - name: orno_cosn_ref_compnr
+    description: company number of primary key of table tdsls414 Sales Change Order
+      Sequence Numbers
+  - name: orno_ref_compnr
+    description: company number of primary key of table tdsls400 Sales Orders
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: item_site_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_stsi_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_atse_ref_compnr
+    description: company number of primary key of table tdisa006 Item Attribute Set
+      - Sales
+  - name: item_atse_site_ref_compnr
+    description: company number of primary key of table tcibd160 Item - Attribute
+      Set by Site
+  - name: item_atse_stsi_ref_compnr
+    description: company number of primary key of table tcibd160 Item - Attribute
+      Set by Site
+  - name: item_ref_compnr
+    description: company number of primary key of table tdisa001 Item - Sales
+  - name: atse_ref_compnr
+    description: company number of primary key of table tcibd030 Attribute Sets
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: prsg_ref_compnr
+    description: company number of primary key of table tcmcs212 Price Stages
+  - name: cups_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: pcod_ref_compnr
+    description: company number of primary key of table tdisa021 Delivery Patterns
+  - name: cupq_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuqs_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cubs_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ccty_cvat_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: motv_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: delc_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: stad_dlpt_ref_compnr
+    description: company number of primary key of table tccom134 Delivery Points
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: stcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: cfrw_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: citt_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: chan_ref_compnr
+    description: company number of primary key of table tcmcs066 Channels
+  - name: akcd_ref_compnr
+    description: company number of primary key of table tdsls054 Sales Acknowledgments
+  - name: crcd_ref_compnr
+    description: company number of primary key of table tdsls097 Change Reasons
+  - name: ctcd_ref_compnr
+    description: company number of primary key of table tdsls098 Change Types
+  - name: rcod_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: stsi_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: stwh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: serv_ref_compnr
+    description: company number of primary key of table tcmcs075 Freight Service Levels
+  - name: clgr_ref_compnr
+    description: company number of primary key of table tcibd301 List Groups
+  - name: casi_ref_compnr
+    description: company number of primary key of table tccom705 Extra Intrastat Info
+  - name: styp_ref_compnr
+    description: company number of primary key of table tcmcs202 Sales Types
+  - name: cono_ref_compnr
+    description: company number of primary key of table tdsls300 Sales Contracts
+  - name: ccof_ref_compnr
+    description: company number of primary key of table tdsls012 Sales Offices
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: cpva_rcmp
+    description: 'CC: Reference Company of Product Variant'
+  - name: qoor_invu
+    description: 'CC: Ordered Quantity in Inventory Unit'
+  - name: qoor_buar
+    description: 'CC: Ordered Quantity in Base Unit Area'
+  - name: qoor_buln
+    description: 'CC: Ordered Quantity in Base Unit Length'
+  - name: qoor_bupc
+    description: 'CC: Ordered Quantity in Base Unit Piece'
+  - name: qoor_butm
+    description: 'CC: Ordered Quantity in Base Unit Time'
+  - name: qoor_buvl
+    description: 'CC: Ordered Quantity in Base Unit Volume'
+  - name: qoor_buwg
+    description: 'CC: Ordered Quantity in Base Unit Weight'
+  - name: qobh_invu
+    description: 'CC: Hold Back Quantity in Inventory Unit'
+  - name: qohb_buar
+    description: 'CC: Hold Back Quantity in Base Unit Area'
+  - name: qohb_buln
+    description: 'CC: Hold Back Quantity in Base Unit Length'
+  - name: qohb_bupc
+    description: 'CC: Hold Back Quantity in Base Unit Piece'
+  - name: qohb_butm
+    description: 'CC: Hold Back Quantity in Base Unit Time'
+  - name: qohb_buvl
+    description: 'CC: Hold Back Quantity in Base Unit Volume'
+  - name: qohb_buwg
+    description: 'CC: Hold Back Quantity in Base Unit Weight'
+  - name: qidl_trnu
+    description: 'CC: Delivered Quantity in Transaction Unit'
+  - name: qidl_buar
+    description: 'CC: Delivered Quantity in Base Unit Area'
+  - name: qidl_buln
+    description: 'CC: Delivered Quantity in Base Unit Length'
+  - name: qidl_bupc
+    description: 'CC: Delivered Quantity in Base Unit Piece'
+  - name: qidl_butm
+    description: 'CC: Delivered Quantity in Base Unit Time'
+  - name: qidl_buvl
+    description: 'CC: Delivered Quantity in Base Unit Volume'
+  - name: qidl_buwg
+    description: 'CC: Delivered Quantity in Base Unit Weight'
+  - name: qbbo_trnu
+    description: 'CC: Back Order Quantity in Transaction Unit'
+  - name: qbbo_buar
+    description: 'CC: Back Order Quantity in Base Unit Area'
+  - name: qbbo_buln
+    description: 'CC: Back Order Quantity in Base Unit Length'
+  - name: qbbo_bupc
+    description: 'CC: Back Order Quantity in Base Unit Piece'
+  - name: qbbo_butm
+    description: 'CC: Back Order Quantity in Base Unit Time'
+  - name: qbbo_buvl
+    description: 'CC: Back Order Quantity in Base Unit Volume'
+  - name: qbbo_buwg
+    description: 'CC: Back Order Quantity in Base Unit Weight'
+  - name: amgr_trnc
+    description: 'CC: Gross Amount in Transaction Currency'
+  - name: amgr_lclc
+    description: 'CC: Gross Amount in Local Currency'
+  - name: amgr_rpc1
+    description: 'CC: Gross Amount in Reporting Currency 1'
+  - name: amgr_rpc2
+    description: 'CC: Gross Amount in Reporting Currency 2'
+  - name: amgr_rfrc
+    description: 'CC: Gross Amount in Reference Currency'
+  - name: amgr_dtwc
+    description: 'CC: Gross Amount in Data Warehouse Currency'
+  - name: tprd_lclc
+    description: 'CC: Order Line Promotion Discount Amount in Local Currency'
+  - name: tprd_rpc1
+    description: 'CC: Order Line Promotion Discount Amount in Reporting Currency 1'
+  - name: tprd_rpc2
+    description: 'CC: Order Line Promotion Discount Amount in Reporting Currency 2'
+  - name: tprd_rfrc
+    description: 'CC: Order Line Promotion Discount Amount in Reference Currency'
+  - name: tprd_dtwc
+    description: 'CC: Order Line Promotion Discount Amount in Data Warehouse Currency'
+  - name: amnt_trnc
+    description: 'CC: Net Amount in Transaction Currency'
+  - name: amnt_lclc
+    description: 'CC: Net Amount in Local Currency'
+  - name: amnt_rpc1
+    description: 'CC: Net Amount in Reporting Currency 1'
+  - name: amnt_rpc2
+    description: 'CC: Net Amount in Reporting Currency 2'
+  - name: amnt_rfrc
+    description: 'CC: Net Amount in Reference Currency'
+  - name: amnt_dtwc
+    description: 'CC: Net Amount in Data Warehouse Currency'
+  - name: pric_lclc
+    description: 'CC: Price in Local Currency'
+  - name: pric_rpc1
+    description: 'CC: Price in Reporting Currency 1'
+  - name: pric_rpc2
+    description: 'CC: Price in Reporting Currency 2'
+  - name: pric_rfrc
+    description: 'CC: Price in Reference Currency'
+  - name: pric_dtwc
+    description: 'CC: Price in Data Warehouse Currency'
+  - name: amod_lclc
+    description: 'CC: Order Discount Amount in Local Currency'
+  - name: amod_rpc1
+    description: 'CC: Order Discount Amount in Reporting Currency 1'
+  - name: amod_rpc2
+    description: 'CC: Order Discount Amount in Reporting Currency 2'
+  - name: amod_rfrc
+    description: 'CC: Order Discount Amount in Reference Currency'
+  - name: amod_dtwc
+    description: 'CC: Order Discount Amount in Data Warehouse Currency'
+  - name: amld_lclc
+    description: 'CC: Line Discount Amount in Local Currency'
+  - name: amld_rpc1
+    description: 'CC: Line Discount Amount in Reporting Currency 1'
+  - name: amld_rpc2
+    description: 'CC: Line Discount Amount in Reporting Currency 2'
+  - name: amld_rfrc
+    description: 'CC: Line Discount Amount in Reference Currency'
+  - name: amld_dtwc
+    description: 'CC: Line Discount Amount in Data Warehouse Currency'
+  - name: cocp_trnc
+    description: 'CC: Company Owned Cost Price in Transaction Currency'
+  - name: cocp_lclc
+    description: 'CC: Company Owned Cost Price in Local Currency'
+  - name: cocp_rpc1
+    description: 'CC: Company Owned Cost Price in Reporting Currency 1'
+  - name: cocp_rpc2
+    description: 'CC: Company Owned Cost Price in Reporting Currency 2'
+  - name: cocp_rfrc
+    description: 'CC: Company Owned Cost Price in Reference Currency'
+  - name: cocp_dtwc
+    description: 'CC: Company Owned Cost Price in Data Warehouse Currency'
+  - name: cucp_trnc
+    description: 'CC: Customer Owned Cost Price in Transaction Currency'
+  - name: cucp_lclc
+    description: 'CC: Customer Owned Cost Price in Local Currency'
+  - name: cucp_rpc1
+    description: 'CC: Customer Owned Cost Price in Reporting Currency 1'
+  - name: cucp_rpc2
+    description: 'CC: Customer Owned Cost Price in Reporting Currency 2'
+  - name: cucp_rfrc
+    description: 'CC: Customer Owned Cost Price in Reference Currency'
+  - name: cucp_dtwc
+    description: 'CC: Customer Owned Cost Price in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdsls401 Sales Order Lines table, Generated 2026-04-10T19:41:26Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orno
+        - pono
+        - sqnb

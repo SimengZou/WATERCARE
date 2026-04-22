@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5firstact
+  columns:
+  - name: act_lastsaved
+    description: ACT_LASTSAVED
+  - name: act_complocation
+    description: ACT_COMPLOCATION
+  - name: act_start
+    description: ACT_START
+  - name: act_trade
+    description: ACT_TRADE
+  - name: act_persons
+    description: ACT_PERSONS
+  - name: act_duration
+    description: ACT_DURATION
+  - name: act_est
+    description: ACT_EST
+  - name: act_rem
+    description: ACT_REM
+  - name: act_task
+    description: ACT_TASK
+  - name: act_matlist
+    description: ACT_MATLIST
+  - name: act_multipletrades
+    description: ACT_MULTIPLETRADES
+  - name: act_rpc
+    description: ACT_RPC
+  - name: act_wap
+    description: ACT_WAP
+  - name: act_tpf
+    description: ACT_TPF
+  - name: act_manufact
+    description: ACT_MANUFACT
+  - name: act_syslevel
+    description: ACT_SYSLEVEL
+  - name: act_asmlevel
+    description: ACT_ASMLEVEL
+  - name: act_complevel
+    description: ACT_COMPLEVEL
+  - name: act_event
+    description: ACT_EVENT
+    data_tests:
+    - unique
+  - name: act_act
+    description: ACT_ACT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5FIRSTACT

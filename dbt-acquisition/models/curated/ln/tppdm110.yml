@@ -1,0 +1,150 @@
+version: 2
+models:
+- name: tppdm110
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: tact
+    description: 'Activity Type. Allowed values: 1, 2, 3, 4, 5'
+  - name: tact_kw
+    description: 'Activity Type (keyword). Allowed values: tppdm.tact.wbsel, tppdm.tact.cosac,
+      tppdm.tact.plapa, tppdm.tact.worpa, tppdm.tact.milst'
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: cuti
+    description: 'Time Unit. Max length: 3'
+  - name: prsp
+    description: Production Rate
+  - name: lvps
+    description: 'Phys. Progress Registr.. Allowed values: 1, 2, 20'
+  - name: lvps_kw
+    description: 'Phys. Progress Registr. (keyword). Allowed values: tppss.lvps.activity,
+      tppss.lvps.activit.costctr, tppss.lvps.na'
+  - name: prin
+    description: 'Progress based Invoicing. Allowed values: 1, 2, 3, 4'
+  - name: prin_kw
+    description: 'Progress based Invoicing (keyword). Allowed values: tppdm.prin.yes,
+      tppdm.prin.no, tppdm.prin.project.stage, tppdm.prin.na'
+  - name: cspt
+    description: 'Progress for Invoice. Allowed values: 1, 2, 3'
+  - name: cspt_kw
+    description: 'Progress for Invoice (keyword). Allowed values: tpptc.cspt.direct,
+      tpptc.cspt.indirect, tpptc.cspt.na'
+  - name: setl
+    description: 'To be Settled. Allowed values: 1, 2'
+  - name: setl_kw
+    description: 'To be Settled (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: blbl
+    description: 'Billable. Allowed values: 0, 1, 2'
+  - name: blbl_kw
+    description: 'Billable (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: mevl
+    description: 'Earned Value Method. Allowed values: 1, 2, 3, 4, 5'
+  - name: mevl_kw
+    description: 'Earned Value Method (keyword). Allowed values: tppss.mevl.milst,
+      tppss.mevl.dsepr, tppss.mevl.perco, tppss.mevl.levef, tppss.mevl.appor'
+  - name: capt
+    description: 'Critical Capacity Type. Allowed values: 1, 2, 3, 4, 5, 20'
+  - name: capt_kw
+    description: 'Critical Capacity Type (keyword). Allowed values: tppdm.capt.tasks,
+      tppdm.capt.materials, tppdm.capt.equipment, tppdm.capt.subcontracting, tppdm.capt.indirect,
+      tppdm.capt.na'
+  - name: rfac
+    description: 'Reference Activity. Max length: 16'
+  - name: freq
+    description: Frequency
+  - name: afrt
+    description: 'Apply Frequency to. Allowed values: 1, 2, 3, 10'
+  - name: afrt_kw
+    description: 'Apply Frequency to (keyword). Allowed values: tppdm.afrt.multiply,
+      tppdm.afrt.create.act, tppdm.afrt.create.ord, tppdm.afrt.na'
+  - name: prst
+    description: Start Percentage
+  - name: prnd
+    description: End Percentage
+  - name: prms
+    description: Milestone Percentage
+  - name: eoty
+    description: 'Business Process Type. Allowed values: 10, 20, 30, 40, 50, 60, 255'
+  - name: eoty_kw
+    description: 'Business Process Type (keyword). Allowed values: tpplm.eoty.ecn,
+      tpplm.eoty.eco, tpplm.eoty.ecp, tpplm.eoty.appr.proc, tpplm.eoty.ecr, tpplm.eoty.npi,
+      tpplm.eoty.na'
+  - name: plmc
+    description: PLM Company
+  - name: pbpt__en_us
+    description: '(required) Business Process Type - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: plmp
+    description: 'PLM Project. Max length: 15'
+  - name: rout
+    description: 'Workflow Template. Max length: 30'
+  - name: rent
+    description: 'Rental Template. Allowed values: 1, 2'
+  - name: rent_kw
+    description: 'Rental Template (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Text
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuti_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: plmc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm110 Standard Activities table, Generated 2026-04-10T19:41:58Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cact

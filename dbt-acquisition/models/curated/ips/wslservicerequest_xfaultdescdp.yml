@@ -1,0 +1,128 @@
+version: 2
+models:
+- name: wslservicerequest_xfaultdescdp
+  columns:
+  - name: internaldrainage
+    description: 'Metadata for column INTERNALDRAINAGE. Max length: 1'
+  - name: thirdparty
+    description: 'Metadata for column THIRDPARTY. Max length: 1'
+  - name: roadwatermainbreak
+    description: 'Metadata for column ROADWATERMAINBREAK. Max length: 1'
+  - name: relatedsr
+    description: 'Metadata for column RELATEDSR. Max length: 100'
+  - name: healthsafety
+    description: 'Metadata for column HEALTHSAFETY. Max length: 1'
+  - name: servicearea
+    description: 'Metadata for column SERVICEAREA. Max length: 100'
+  - name: flush
+    description: 'Metadata for column FLUSH. Max length: 1'
+  - name: residentfeeling
+    description: Metadata for column RESIDENTFEELING
+  - name: publichealthrisk
+    description: 'Metadata for column PUBLICHEALTHRISK. Max length: 1'
+  - name: tree
+    description: 'Metadata for column TREE. Max length: 1'
+  - name: contractorrefno
+    description: 'Metadata for column CONTRACTORREFNO. Max length: 80'
+  - name: numbersrlast
+    description: 'Metadata for column NUMBERSRLAST. Max length: 100'
+  - name: supervisor
+    description: 'Metadata for column SUPERVISOR. Max length: 1'
+  - name: plumbercontacted
+    description: 'Metadata for column PLUMBERCONTACTED. Max length: 1'
+  - name: accessissues
+    description: 'Metadata for column ACCESSISSUES. Max length: 1'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: propertydamage
+    description: 'Metadata for column PROPERTYDAMAGE. Max length: 1'
+  - name: contractorcode
+    description: 'Metadata for column CONTRACTORCODE. Max length: 100'
+  - name: keyaccount
+    description: 'Metadata for column KEYACCOUNT. Max length: 1'
+  - name: photosprovided
+    description: 'Metadata for column PHOTOSPROVIDED. Max length: 1'
+  - name: doctorcalled
+    description: 'Metadata for column DOCTORCALLED. Max length: 1'
+  - name: contractorarea
+    description: 'Metadata for column CONTRACTORAREA. Max length: 100'
+  - name: cctv
+    description: 'Metadata for column CCTV. Max length: 1'
+  - name: wtrcolorsmellpart
+    description: 'Metadata for column WTRCOLORSMELLPART. Max length: 1'
+  - name: jobcbd
+    description: 'Metadata for column JOBCBD. Max length: 1'
+  - name: meterassetlocation
+    description: 'Metadata for column METERASSETLOCATION. Max length: 300'
+  - name: symptomsstarted
+    description: Metadata for column SYMPTOMSSTARTED
+  - name: taps
+    description: 'Metadata for column TAPS. Max length: 1'
+  - name: multipleproperties
+    description: 'Metadata for column MULTIPLEPROPERTIES. Max length: 1'
+  - name: sizeofleak
+    description: 'Metadata for column SIZEOFLEAK. Max length: 50'
+  - name: residentill
+    description: 'Metadata for column RESIDENTILL. Max length: 1'
+  - name: servno
+    description: Metadata for column SERVNO
+  - name: xfaultdescdpkey
+    description: (required) Metadata for column XFAULTDESCDPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: rainwatertank
+    description: 'Metadata for column RAINWATERTANK. Max length: 1'
+  - name: assetid
+    description: 'Metadata for column ASSETID. Max length: 100'
+  - name: faulttype
+    description: 'Metadata for column FAULTTYPE. Max length: 100'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: bottledwater
+    description: 'Metadata for column BOTTLEDWATER. Max length: 1'
+  - name: projectrelated
+    description: 'Metadata for column PROJECTRELATED. Max length: 100'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: plannedmeter
+    description: 'Metadata for column PLANNEDMETER. Max length: 1'
+  - name: meterassetid
+    description: 'Metadata for column METERASSETID. Max length: 50'
+  - name: faultlocation
+    description: 'Metadata for column FAULTLOCATION. Max length: 300'
+  - name: plumbingwork
+    description: 'Metadata for column PLUMBINGWORK. Max length: 1'
+  - name: scheduledsitetree
+    description: 'Metadata for column SCHEDULEDSITETREE. Max length: 1'
+  - name: frequency
+    description: 'Metadata for column FREQUENCY. Max length: 100'
+  - name: dialysispatient
+    description: 'Metadata for column DIALYSISPATIENT. Max length: 1'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: gatevalve
+    description: 'Metadata for column GATEVALVE. Max length: 1'
+  - name: neighboursaffected
+    description: 'Metadata for column NEIGHBOURSAFFECTED. Max length: 1'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table WSLSERVICEREQUEST.XFAULTDESCDP on 2024-10-10T10:04:12.134

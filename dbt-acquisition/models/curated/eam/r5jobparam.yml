@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5jobparam
+  columns:
+  - name: jpr_lastsaved
+    description: JPR_LASTSAVED
+  - name: jpr_parameter
+    description: JPR_PARAMETER
+  - name: jpr_rentity
+    description: JPR_RENTITY
+  - name: jpr_rtype
+    description: JPR_RTYPE
+  - name: jpr_datatype
+    description: JPR_DATATYPE
+  - name: jpr_length
+    description: JPR_LENGTH
+  - name: jpr_format
+    description: JPR_FORMAT
+  - name: jpr_default
+    description: JPR_DEFAULT
+  - name: jpr_fixed
+    description: JPR_FIXED
+  - name: jpr_mandatory
+    description: JPR_MANDATORY
+  - name: jpr_upper
+    description: JPR_UPPER
+  - name: jpr_options
+    description: JPR_OPTIONS
+  - name: jpr_remember
+    description: JPR_REMEMBER
+  - name: jpr_test
+    description: JPR_TEST
+  - name: jpr_query
+    description: JPR_QUERY
+  - name: jpr_lovfunction
+    description: JPR_LOVFUNCTION
+  - name: jpr_property
+    description: JPR_PROPERTY
+  - name: jpr_ewslovdef
+    description: JPR_EWSLOVDEF
+  - name: jpr_updatecount
+    description: JPR_UPDATECOUNT
+  - name: jpr_name
+    description: JPR_NAME
+  - name: jpr_line
+    description: JPR_LINE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5JOBPARAM

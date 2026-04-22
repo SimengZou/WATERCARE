@@ -1,0 +1,137 @@
+version: 2
+models:
+- name: wslassetwater_xwatermeterdetail
+  columns:
+  - name: acceldeprec
+    description: 'Flag for Accelerated Deprecation. Max length: 1'
+  - name: acceldeprecdesc
+    description: 'Reason for Accelerating Depreciation. Max length: 300'
+  - name: acqtype
+    description: 'Acquisition Type - linked to Valuation code. Max length: 10'
+  - name: addby
+    description: 'Login name of the person who added the record.. Max length: 30'
+  - name: adddttm
+    description: Added Date/Time
+  - name: businessarea
+    description: 'Business Area. Max length: 10'
+  - name: combometerid
+    description: 'Max length: 20'
+  - name: compkey
+    description: WaterMeter
+  - name: confinedspace
+    description: 'Whether a confined space permit is required when maintaining this
+      asset. Max length: 10'
+  - name: costcentre
+    description: 'Cost Centre. Max length: 10'
+  - name: criticality
+    description: 'An indicator of the criticality or importance (to the business,
+      production, process, safety etc) of a particular Asset. Denotes the level of
+      impact/consequence that will result from loss/breakdown of the Asset.. Max length:
+      10'
+  - name: dailyaverage
+    description: Current Daily Average
+  - name: disposaldesc
+    description: 'Disposal Comments. Max length: 300'
+  - name: drawingno
+    description: 'Asbuilt Number - Drawing No. Max length: 30'
+  - name: drawingnoref
+    description: 'Asset Reference on Drawing. (unique to a Drawing No). Max length:
+      30'
+  - name: fordisposal
+    description: 'Select Reason for Asset Disposal. Max length: 10'
+  - name: issmartlogger
+    description: 'Meter has a Smart Logger Attached. Max length: 1'
+  - name: lastreadercode
+    description: 'Link to Reader Code. Max length: 10'
+  - name: lastreadercodedate
+    description: LastReaderCodeDate
+  - name: lastvalidateddatetime
+    description: Last Validated DateTime
+  - name: lastyeardailyaverage
+    description: Last Year Daily Average of the current meter or historical meter.
+      (Meter Detail Grid has the details)
+  - name: linkedasset
+    description: 'Used if this asset is linked to a duplicate asset e.g. change of
+      asset class. Max length: 300'
+  - name: meterzerocode
+    description: 'Link to Zero Code table. Max length: 10'
+  - name: modby
+    description: 'Modified By. Max length: 30'
+  - name: moddttm
+    description: Modified Date/Time
+  - name: modelno
+    description: 'The model id/number (assigned by the manufacturer) for this Asset..
+      Max length: 30'
+  - name: phonenumber
+    description: 'Phone number. Max length: 20'
+  - name: projectno
+    description: 'The project ID, code or C-number of the project that the Asset was
+      acquired/procured for.. Max length: 20'
+  - name: projectwise
+    description: 'Projectwise No. Max length: 20'
+  - name: readercodecount
+    description: Reader code Count in last 6 months on the meter
+  - name: readingrollover
+    description: 'This column is used for internal purpose. This is not displayed
+      to users. This column will be used to determine if meter reading is rollover.
+      Max length: 1'
+  - name: recalcdailyavg
+    description: 'set to True, when a new reading added on the meter. if this set
+      to True, Daily Average task will pick this meter and recalculates the Daily
+      average and sets back to False.. Max length: 1'
+  - name: reldate
+    description: 'The reliability of the installation date attribute. Max length:
+      10'
+  - name: reldepth
+    description: 'The reliability of the depth attribute. Max length: 10'
+  - name: reldia
+    description: 'The reliability of the diameter attribute. Max length: 10'
+  - name: relgeosp
+    description: 'The reliability of the GIS spatial attribute. Max length: 10'
+  - name: relmatl
+    description: 'The reliability of the material attribute. Max length: 10'
+  - name: relown
+    description: 'The reliability of the ownership attribute. Max length: 10'
+  - name: relstatus
+    description: 'The reliability of the asset status attribute. Max length: 10'
+  - name: safetycritical
+    description: 'Safety Critical Element. Max length: 1'
+  - name: sms
+    description: 'SMS option. Max length: 1'
+  - name: validatedby
+    description: 'Validated By. Max length: 25'
+  - name: warrantyend
+    description: Date of when the warranty ends
+  - name: warrantystart
+    description: Date of when the warranty starts
+  - name: xwatermeterdetailkey
+    description: (required) Primary Key
+    data_tests:
+    - unique
+    - not_null
+  - name: zerocodedetails
+    description: 'Free text field to add more information about the ZR codes for meter
+      to update data in a more structured way. Max length: 200'
+  - name: zonecatchment
+    description: 'The Water zone region of the asset. Max length: 10'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table WSLASSETWATER.XWATERMETERDETAIL on 2026-03-27T11:16:36.653

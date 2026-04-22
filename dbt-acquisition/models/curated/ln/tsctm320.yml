@@ -1,0 +1,139 @@
+version: 2
+models:
+- name: tsctm320
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: csco
+    description: '(required) Service Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cchn
+    description: (required) Contract Change Number
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: actn
+    description: 'Type. Allowed values: 0, 5, 10, 12, 15, 20'
+  - name: actn_kw
+    description: 'Type (keyword). Allowed values: , tsctm.chng.original, tsctm.chng.renewed,
+      tsctm.chng.renew.with.indx, tsctm.chng.incidental, tsctm.chng.indexation'
+  - name: stat
+    description: 'Status. Allowed values: 0, 5, 7'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: , tsctm.stat.open, tsctm.stat.active'
+  - name: term
+    description: Contract Terms
+  - name: nrpe
+    description: Change Period
+  - name: peru
+    description: 'Change Period Unit. Allowed values: 0, 5, 10, 15, 20, 25'
+  - name: peru_kw
+    description: 'Change Period Unit (keyword). Allowed values: , tsmdm.peru.day,
+      tsmdm.peru.week, tsmdm.peru.month, tsmdm.peru.quarter, tsmdm.peru.year'
+  - name: ochn
+    description: Origin Contract Change Number
+  - name: icpn
+    description: Penalty
+  - name: efdt
+    description: Effective Date
+  - name: exdt
+    description: Expiry Date
+  - name: chdt
+    description: Change Effective Date
+  - name: cind
+    description: 'Indexation Template. Max length: 3'
+  - name: crtm
+    description: Creation Time
+  - name: csmt
+    description: Calculated Sales Amount
+  - name: rsmt
+    description: Sales Amount
+  - name: camt_1
+    description: Cost Amount
+  - name: camt_2
+    description: Cost Amount
+  - name: camt_3
+    description: Cost Amount
+  - name: erfa
+    description: Earned Revenue Factor
+  - name: amdy
+    description: Amount per Day
+  - name: cody_1
+    description: Cost per Day
+  - name: cody_2
+    description: Cost per Day
+  - name: cody_3
+    description: Cost per Day
+  - name: inpc
+    description: Obsolete
+  - name: txta
+    description: Contract Change Text
+  - name: csco_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: cind_ref_compnr
+    description: company number of primary key of table tsctm060 Indexation Templates
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: rsmt_homc
+    description: 'CC: Sales Amount in Local Currency'
+  - name: rsmt_rpc1
+    description: 'CC: Sales Amount in Reporting Currency 1'
+  - name: rsmt_rpc2
+    description: 'CC: Sales Amount in Reporting Currency 2'
+  - name: rsmt_refc
+    description: 'CC: Sales Amount in Reference Currency'
+  - name: rsmt_dwhc
+    description: 'CC: Sales Amount in Data Warehouse Currency'
+  - name: camt_cntc
+    description: 'CC: Cost Amount in Contract Currency'
+  - name: camt_refc
+    description: 'CC: Cost Amount in Reference Currency'
+  - name: camt_dwhc
+    description: 'CC: Cost Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm320 Contract Changes table, Generated 2026-04-10T19:42:33Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - csco
+        - cchn

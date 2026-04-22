@@ -1,0 +1,58 @@
+version: 2
+models:
+- name: r5objectsurvey
+  columns:
+  - name: obs_lastsaved
+    description: OBS_LASTSAVED
+  - name: obs_object_org
+    description: OBS_OBJECT_ORG
+  - name: obs_type
+    description: OBS_TYPE
+  - name: obs_levelpk
+    description: OBS_LEVELPK
+  - name: obs_answerpk
+    description: OBS_ANSWERPK
+  - name: obs_updatecount
+    description: OBS_UPDATECOUNT
+  - name: obs_dateeffective
+    description: OBS_DATEEFFECTIVE
+  - name: obs_calculatedanswer
+    description: OBS_CALCULATEDANSWER
+  - name: obs_calculatedvalue
+    description: OBS_CALCULATEDVALUE
+  - name: obs_datelastcalculated
+    description: OBS_DATELASTCALCULATED
+  - name: obs_workorder
+    description: OBS_WORKORDER
+  - name: obs_operatorchecklist
+    description: OBS_OPERATORCHECKLIST
+  - name: obs_object
+    description: OBS_OBJECT
+  - name: obs_value
+    description: OBS_VALUE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5OBJECTSURVEY
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - obs_object
+        - obs_object_org
+        - obs_type
+        - obs_levelpk

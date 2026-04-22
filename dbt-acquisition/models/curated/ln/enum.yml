@@ -1,0 +1,63 @@
+version: 2
+models:
+- name: enum
+  columns:
+  - name: keyword
+    description: '(required) Max length: 30'
+    data_tests:
+    - not_null
+  - name: domain
+    description: '(required) Max length: 14'
+    data_tests:
+    - not_null
+  - name: const
+    description: (required)
+    data_tests:
+    - not_null
+  - name: language
+    description: '(required) Max length: 5'
+    data_tests:
+    - not_null
+  - name: description
+    description: '(required) Max length: 255'
+    data_tests:
+    - not_null
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN enum_descriptions Translations of enum descriptions, Generated 2026-04-10T19:40:58Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - keyword
+        - language

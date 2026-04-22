@@ -1,0 +1,272 @@
+version: 2
+models:
+- name: tdpur303
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: '(required) Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Position
+    data_tests:
+    - not_null
+  - name: cofc
+    description: '(required) Purchase Office. Max length: 6'
+    data_tests:
+    - not_null
+  - name: csqn
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: sdat
+    description: (required) Effective Date
+    data_tests:
+    - not_null
+  - name: revn
+    description: Contract Price Line
+  - name: icap
+    description: 'Contract Prices status. Allowed values: 1, 2, 3'
+  - name: icap_kw
+    description: 'Contract Prices status (keyword). Allowed values: tcicap.free, tcicap.active,
+      tcicap.closed'
+  - name: pric
+    description: Price
+  - name: cupp
+    description: 'Purchase Price Unit. Max length: 3'
+  - name: cvpp
+    description: Conversion Factor Price to Inventory Unit
+  - name: prsg
+    description: 'Price Stage. Max length: 3'
+  - name: prbk
+    description: 'Price Book. Max length: 9'
+  - name: rsel
+    description: 'Selected for Retro-billing. Allowed values: 1, 2'
+  - name: rsel_kw
+    description: 'Selected for Retro-billing (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: disc_1
+    description: Discount %
+  - name: disc_2
+    description: Discount %
+  - name: disc_3
+    description: Discount %
+  - name: disc_4
+    description: Discount %
+  - name: disc_5
+    description: Discount %
+  - name: disc_6
+    description: Discount %
+  - name: disc_7
+    description: Discount %
+  - name: disc_8
+    description: Discount %
+  - name: disc_9
+    description: Discount %
+  - name: disc_10
+    description: Discount %
+  - name: disc_11
+    description: Discount %
+  - name: ldam_1
+    description: Discount Amount
+  - name: ldam_2
+    description: Discount Amount
+  - name: ldam_3
+    description: Discount Amount
+  - name: ldam_4
+    description: Discount Amount
+  - name: ldam_5
+    description: Discount Amount
+  - name: ldam_6
+    description: Discount Amount
+  - name: ldam_7
+    description: Discount Amount
+  - name: ldam_8
+    description: Discount Amount
+  - name: ldam_9
+    description: Discount Amount
+  - name: ldam_10
+    description: Discount Amount
+  - name: ldam_11
+    description: Discount Amount
+  - name: dmth_1
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_1
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_2
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_2
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_3
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_3
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_4
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_4
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_5
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_5
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_6
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_6
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_7
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_7
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_8
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_8
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_9
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_9
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_10
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_10
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: dmth_11
+    description: 'Discount Method. Allowed values: 1, 2'
+  - name: dmth_kw_11
+    description: 'Discount Method (keyword). Allowed values: tddmth.gross, tddmth.net'
+  - name: cdis_1
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_2
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_3
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_4
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_5
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_6
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_7
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_8
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_9
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_10
+    description: 'Discount Code. Max length: 3'
+  - name: cdis_11
+    description: 'Discount Code. Max length: 3'
+  - name: dssc_1
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_2
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_3
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_4
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_5
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_6
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_7
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_8
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_9
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_10
+    description: 'Discount Schedule. Max length: 9'
+  - name: dssc_11
+    description: 'Discount Schedule. Max length: 9'
+  - name: dtrm
+    description: 'Determining. Allowed values: 1, 2'
+  - name: dtrm_kw
+    description: 'Determining (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: elgb
+    description: 'Eligible. Allowed values: 1, 2'
+  - name: elgb_kw
+    description: 'Eligible (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cpwc
+    description: 'Cumulative Price Break. Allowed values: 1, 2'
+  - name: cpwc_kw
+    description: 'Cumulative Price Break (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tpbk
+    description: 'Target Price Book. Max length: 9'
+  - name: tpbl
+    description: Target Price Book Line
+  - name: tapr
+    description: Target Price
+  - name: pbor
+    description: 'Obsolete. Allowed values: 0, 1, 2, 3, 4'
+  - name: pbor_kw
+    description: 'Obsolete (keyword). Allowed values: , tdpcg.pbor.stnd, tdpcg.pbor.socn,
+      tdpcg.pbor.pocn, tdpcg.pbor.rfqo'
+  - name: dsor
+    description: 'Obsolete. Allowed values: 0, 1, 2, 3, 4, 5'
+  - name: dsor_kw
+    description: 'Obsolete (keyword). Allowed values: , tdpcg.dsor.stnd, tdpcg.dsor.socn,
+      tdpcg.dsor.pocn, tdpcg.dsor.rfqo, tdpcg.dsor.prom'
+  - name: txtr
+    description: Revision Text
+  - name: cono_pono_cofc_csqn_ref_compnr
+    description: company number of primary key of table tdpur301 Purchase Contract
+      Lines
+  - name: cupp_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: prsg_ref_compnr
+    description: company number of primary key of table tcmcs212 Price Stages
+  - name: prbk_ref_compnr
+    description: company number of primary key of table tdpcg011 Price Books
+  - name: tpbk_tpbl_ref_compnr
+    description: company number of primary key of table tdpcg033 Target Price Book
+      Lines
+  - name: tpbk_ref_compnr
+    description: company number of primary key of table tdpcg013 Target Price Books
+  - name: txtr_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur303 Purchase Contract Prices table, Generated 2026-04-10T19:41:21Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono
+        - pono
+        - cofc
+        - csqn
+        - sdat

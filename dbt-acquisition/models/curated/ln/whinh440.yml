@@ -1,0 +1,290 @@
+version: 2
+models:
+- name: whinh440
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: load
+    description: '(required) Load. Max length: 9'
+    data_tests:
+    - not_null
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: pddt
+    description: Planned Delivery Date
+  - name: carp
+    description: 'Pick-up Carrier/LSP. Max length: 3'
+  - name: trmp
+    description: 'Pick-up Transport Category. Allowed values: 10, 15, 20, 25, 30,
+      35, 40, 45, 50, 52, 54, 56, 58, 60, 62, 70, 80, 83, 85, 87, 90, 93, 96, 98,
+      100'
+  - name: trmp_kw
+    description: 'Pick-up Transport Category (keyword). Allowed values: tccom.trmd.water,
+      tccom.trmd.water.cont, tccom.trmd.rail, tccom.trmd.rail.cont, tccom.trmd.road,
+      tccom.trmd.road.cont, tccom.trmd.air, tccom.trmd.air.charter, tccom.trmd.post,
+      tccom.trmd.contract.carr, tccom.trmd.customer.pickup, tccom.trmd.truckload,
+      tccom.trmd.mail, tccom.trmd.intermodal, tccom.trmd.consolidation, tccom.trmd.instal,
+      tccom.trmd.inlwater, tccom.trmd.express.air, tccom.trmd.express.truck, tccom.trmd.express.rail,
+      tccom.trmd.own, tccom.trmd.pool.point, tccom.trmd.milk.run, tccom.trmd.piggy.back,
+      tccom.trmd.none'
+  - name: tmgp
+    description: 'Pick-up Transport Means Group. Max length: 3'
+  - name: tmcp
+    description: 'Pick-up Transport Means Combination. Max length: 6'
+  - name: trip__en_us
+    description: '(required) Pick-up Means of Transport - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: card
+    description: 'Delivery Carrier/LSP. Max length: 3'
+  - name: tmgd
+    description: 'Delivery Transport Means Group. Max length: 3'
+  - name: tmcd
+    description: 'Delivery Transport Means Combination. Max length: 6'
+  - name: trid__en_us
+    description: '(required) Delivery Means of Transport - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: wght
+    description: Total Weight
+  - name: cuni
+    description: 'Weight Unit. Max length: 3'
+  - name: fxwt
+    description: 'Fixed Weight. Allowed values: 1, 2'
+  - name: fxwt_kw
+    description: 'Fixed Weight (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mwgt
+    description: Maximum Weight
+  - name: shst
+    description: 'Status. Allowed values: 1, 2, 3, 10, 20, 30, 40'
+  - name: shst_kw
+    description: 'Status (keyword). Allowed values: whinh.shst.open, whinh.shst.frozen,
+      whinh.shst.confirmed, whinh.shst.part.frozen, whinh.shst.confirming, whinh.shst.projected,
+      whinh.shst.canceled'
+  - name: cpro__en_us
+    description: '(required) Carrier Tracking Number - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: ctnt
+    description: 'Carrier Tracking Number Type. Allowed values: 5, 10, 15, 20, 25,
+      30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 77, 78, 80, 85'
+  - name: ctnt_kw
+    description: 'Carrier Tracking Number Type (keyword). Allowed values: tctntp.pro,
+      tctntp.h.airway.bill, tctntp.m.airway.bill, tctntp.booking, tctntp.h.ocean.b.of.l,
+      tctntp.m.ocean.b.of.l, tctntp.equipment, tctntp.seal, tctntp.license.plate,
+      tctntp.bordero, tctntp.general.cargo, tctntp.parcel, tctntp.airbill, tctntp.vessel.name,
+      tctntp.express.goods, tctntp.aetc, tctntp.freight.bill, tctntp.undefined, tctntp.not.appl'
+  - name: trnr__en_us
+    description: '(required) Tracking Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: tntp
+    description: 'Tracking Number Type. Allowed values: 5, 10, 15, 20, 25, 30, 35,
+      40, 45, 50, 55, 60, 65, 70, 75, 77, 78, 80, 85'
+  - name: tntp_kw
+    description: 'Tracking Number Type (keyword). Allowed values: tctntp.pro, tctntp.h.airway.bill,
+      tctntp.m.airway.bill, tctntp.booking, tctntp.h.ocean.b.of.l, tctntp.m.ocean.b.of.l,
+      tctntp.equipment, tctntp.seal, tctntp.license.plate, tctntp.bordero, tctntp.general.cargo,
+      tctntp.parcel, tctntp.airbill, tctntp.vessel.name, tctntp.express.goods, tctntp.aetc,
+      tctntp.freight.bill, tctntp.undefined, tctntp.not.appl'
+  - name: trna__en_us
+    description: '(required) Tracking Number 1 - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: tnta
+    description: 'Tracking Number 1 Type. Allowed values: 5, 10, 15, 20, 25, 30, 35,
+      40, 45, 50, 55, 60, 65, 70, 75, 77, 78, 80, 85'
+  - name: tnta_kw
+    description: 'Tracking Number 1 Type (keyword). Allowed values: tctntp.pro, tctntp.h.airway.bill,
+      tctntp.m.airway.bill, tctntp.booking, tctntp.h.ocean.b.of.l, tctntp.m.ocean.b.of.l,
+      tctntp.equipment, tctntp.seal, tctntp.license.plate, tctntp.bordero, tctntp.general.cargo,
+      tctntp.parcel, tctntp.airbill, tctntp.vessel.name, tctntp.express.goods, tctntp.aetc,
+      tctntp.freight.bill, tctntp.undefined, tctntp.not.appl'
+  - name: trnb__en_us
+    description: '(required) Tracking Number 2 - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: tntb
+    description: 'Tracking Number 2 Type. Allowed values: 5, 10, 15, 20, 25, 30, 35,
+      40, 45, 50, 55, 60, 65, 70, 75, 77, 78, 80, 85'
+  - name: tntb_kw
+    description: 'Tracking Number 2 Type (keyword). Allowed values: tctntp.pro, tctntp.h.airway.bill,
+      tctntp.m.airway.bill, tctntp.booking, tctntp.h.ocean.b.of.l, tctntp.m.ocean.b.of.l,
+      tctntp.equipment, tctntp.seal, tctntp.license.plate, tctntp.bordero, tctntp.general.cargo,
+      tctntp.parcel, tctntp.airbill, tctntp.vessel.name, tctntp.express.goods, tctntp.aetc,
+      tctntp.freight.bill, tctntp.undefined, tctntp.not.appl'
+  - name: stcp
+    description: Ship-to Company
+  - name: stty
+    description: 'Ship-to Type. Allowed values: 1, 2, 3, 4, 10'
+  - name: stty_kw
+    description: 'Ship-to Type (keyword). Allowed values: tctyps.warehouse, tctyps.partner,
+      tctyps.project, tctyps.work.center, tctyps.not.appl'
+  - name: stco
+    description: 'Ship-to Code. Max length: 9'
+  - name: sans
+    description: 'Still Allow New Shipments. Allowed values: 1, 2'
+  - name: sans_kw
+    description: 'Still Allow New Shipments (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: aetc
+    description: 'Authorize Excess Transportation Costs. Allowed values: 1, 2'
+  - name: aetc_kw
+    description: 'Authorize Excess Transportation Costs (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: etrn
+    description: 'Excess Transportation Reason. Max length: 6'
+  - name: aetr
+    description: 'Excess Transportation Responsibility. Allowed values: 10, 20, 30,
+      40, 50, 60, 100'
+  - name: aetr_kw
+    description: 'Excess Transportation Responsibility (keyword). Allowed values:
+      tcmcs.aetr.cust.plant, tcmcs.aetr.mat.issuer, tcmcs.aetr.supplier.auth, tcmcs.aetr.carrier,
+      tcmcs.aetr.to.be.determine, tcmcs.aetr.mutually.def, tcmcs.aetr.not.appl'
+  - name: trpc__en_us
+    description: '(required) Obsolete - base language. Max length: 12'
+    data_tests:
+    - not_null
+  - name: trpa__en_us
+    description: '(required) Obsolete - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: sspl
+    description: 'Single Shipment per Load. Allowed values: 1, 2'
+  - name: sspl_kw
+    description: 'Single Shipment per Load (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: eamt
+    description: Estimated Freight Costs
+  - name: eacu
+    description: 'Currency. Max length: 3'
+  - name: psts
+    description: 'Publishing Status. Allowed values: 10, 20, 30, 32, 34, 36, 40'
+  - name: psts_kw
+    description: 'Publishing Status (keyword). Allowed values: whinh.spst.to.be.published,
+      whinh.spst.published, whinh.spst.modified, whinh.spst.validating, whinh.spst.val.error,
+      whinh.spst.validated, whinh.spst.not.applicable'
+  - name: imcs
+    description: 'Intermediate Consignee. Max length: 35'
+  - name: sqdp
+    description: 'Sequencing during Picking. Allowed values: 10, 20, 30'
+  - name: sqdp_kw
+    description: 'Sequencing during Picking (keyword). Allowed values: whinh.asds.ascending,
+      whinh.asds.descending, whinh.asds.not.applicable'
+  - name: sqdl
+    description: 'Sequencing during Loading. Allowed values: 10, 20, 30'
+  - name: sqdl_kw
+    description: 'Sequencing during Loading (keyword). Allowed values: whinh.asds.ascending,
+      whinh.asds.descending, whinh.asds.not.applicable'
+  - name: tcap
+    description: 'Localized Authorization Procedure Applicable. Allowed values: 1,
+      2'
+  - name: tcap_kw
+    description: 'Localized Authorization Procedure Applicable (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: tccp
+    description: 'Localized Authorization Procedure Complete. Allowed values: 1, 2'
+  - name: tccp_kw
+    description: 'Localized Authorization Procedure Complete (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: ptro
+    description: 'Publish Transport Order. Allowed values: 1, 2'
+  - name: ptro_kw
+    description: 'Publish Transport Order (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: tops
+    description: 'Transport Order Publishing Status. Allowed values: 10, 20, 30, 40,
+      50'
+  - name: tops_kw
+    description: 'Transport Order Publishing Status (keyword). Allowed values: whinh.tops.to.be.published,
+      whinh.tops.published, whinh.tops.modified, whinh.tops.cancelled, whinh.tops.not.applicable'
+  - name: todd
+    description: Transport Order Due Date
+  - name: tolt
+    description: Transport Order Due Lead Time
+  - name: totu
+    description: 'Transport Order Due Lead Time Unit. Allowed values: 0, 5, 10'
+  - name: totu_kw
+    description: 'Transport Order Due Lead Time Unit (keyword). Allowed values: ,
+      tctope.hours, tctope.days'
+  - name: mrno__en_us
+    description: '(required) Movement Reference Number - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: mrdt
+    description: Movement Reference Date
+  - name: mrtp
+    description: 'Movement Type. Allowed values: 10, 20, 30, 255'
+  - name: mrtp_kw
+    description: 'Movement Type (keyword). Allowed values: whinh.movetype.eu.and.uk,
+      whinh.movetype.non.eu.and.uk, whinh.movetype.bonded, whinh.movetype.not.appl'
+  - name: exfr
+    description: 'Expedited. Allowed values: 1, 2'
+  - name: exfr_kw
+    description: 'Expedited (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: text
+    description: Text
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: carp_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: card_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: etrn_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: eacu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh440 Loads table, Generated 2026-04-10T19:42:50Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - load

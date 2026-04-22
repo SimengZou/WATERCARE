@@ -1,0 +1,126 @@
+version: 2
+models:
+- name: wslinterface_connectionsstaging
+  columns:
+  - name: criticallines
+    description: 'Metadata for column CRITICALLINES. Max length: 200'
+  - name: apbldgkey
+    description: Metadata for column APBLDGKEY
+  - name: postalcode
+    description: 'Metadata for column POSTALCODE. Max length: 5'
+  - name: sprinklersupplypipesize
+    description: Metadata for column SPRINKLERSUPPLYPIPESIZE
+  - name: relocationtype
+    description: 'Metadata for column RELOCATIONTYPE. Max length: 10'
+  - name: flat
+    description: 'Metadata for column FLAT. Max length: 10'
+  - name: engineerfullname
+    description: 'Metadata for column ENGINEERFULLNAME. Max length: 194'
+  - name: customertmp
+    description: 'Metadata for column CUSTOMERTMP. Max length: 200'
+  - name: gislateral
+    description: 'Metadata for column GISLATERAL. Max length: 20'
+  - name: meterboxtype
+    description: 'Metadata for column METERBOXTYPE. Max length: 30'
+  - name: dp
+    description: 'Metadata for column DP. Max length: 20'
+  - name: meterlocation
+    description: 'Metadata for column METERLOCATION. Max length: 500'
+  - name: onsitefullname
+    description: 'Metadata for column ONSITEFULLNAME. Max length: 194'
+  - name: legalownerfullname
+    description: 'Metadata for column LEGALOWNERFULLNAME. Max length: 194'
+  - name: onsitemobile
+    description: 'Metadata for column ONSITEMOBILE. Max length: 30'
+  - name: apbldginspkey
+    description: Metadata for column APBLDGINSPKEY
+  - name: meterid
+    description: 'Metadata for column METERID. Max length: 50'
+  - name: connectionsstagingkey
+    description: (required) Metadata for column CONNECTIONSSTAGINGKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: plansattached
+    description: 'Metadata for column PLANSATTACHED. Max length: 10'
+  - name: housenumber
+    description: 'Metadata for column HOUSENUMBER. Max length: 10'
+  - name: actiontype
+    description: 'Metadata for column ACTIONTYPE. Max length: 30'
+  - name: watermetersize
+    description: 'Metadata for column WATERMETERSIZE. Max length: 10'
+  - name: worktype
+    description: 'Metadata for column WORKTYPE. Max length: 30'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: proposedlocation
+    description: 'Metadata for column PROPOSEDLOCATION. Max length: 10'
+  - name: contractor
+    description: 'Metadata for column CONTRACTOR. Max length: 12'
+  - name: watermainsize
+    description: Metadata for column WATERMAINSIZE
+  - name: arborist
+    description: 'Metadata for column ARBORIST. Max length: 30'
+  - name: applicationtype
+    description: 'Metadata for column APPLICATIONTYPE. Max length: 30'
+  - name: onsiteemail
+    description: 'Metadata for column ONSITEEMAIL. Max length: 50'
+  - name: backflowstrainer
+    description: 'Metadata for column BACKFLOWSTRAINER. Max length: 30'
+  - name: legalowneremail
+    description: 'Metadata for column LEGALOWNEREMAIL. Max length: 50'
+  - name: lot
+    description: 'Metadata for column LOT. Max length: 20'
+  - name: apno
+    description: 'Metadata for column APNO. Max length: 25'
+  - name: backflowtype
+    description: 'Metadata for column BACKFLOWTYPE. Max length: 30'
+  - name: watermainmaterial
+    description: 'Metadata for column WATERMAINMATERIAL. Max length: 30'
+  - name: backflowrequired
+    description: 'Metadata for column BACKFLOWREQUIRED. Max length: 10'
+  - name: watermainlocation
+    description: 'Metadata for column WATERMAINLOCATION. Max length: 500'
+  - name: requesttype
+    description: 'Metadata for column REQUESTTYPE. Max length: 30'
+  - name: compkey
+    description: Metadata for column COMPKEY
+  - name: legalownermobile
+    description: 'Metadata for column LEGALOWNERMOBILE. Max length: 30'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: streetname
+    description: 'Metadata for column STREETNAME. Max length: 28'
+  - name: suburb
+    description: 'Metadata for column SUBURB. Max length: 30'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: occupancytype
+    description: 'Metadata for column OCCUPANCYTYPE. Max length: 10'
+  - name: streettype
+    description: 'Metadata for column STREETTYPE. Max length: 4'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: drawingno
+    description: 'Metadata for column DRAWINGNO. Max length: 20'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table WSLINTERFACE.CONNECTIONSSTAGING on 2022-03-03T11:32:52.192

@@ -1,0 +1,254 @@
+version: 2
+models:
+- name: tppdm035
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: csub
+    description: '(required) Subcontracting. Max length: 47'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 60'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: citg
+    description: 'Item Group. Max length: 6'
+  - name: csel
+    description: 'Selection Code. Max length: 3'
+  - name: csig
+    description: 'Item Signal. Max length: 3'
+  - name: uset
+    description: 'Unit Set. Max length: 6'
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: cuti
+    description: 'Time Unit. Max length: 3'
+  - name: pric
+    description: Unit Cost
+  - name: cccp
+    description: 'Unit Cost Currency. Max length: 3'
+  - name: cpgp
+    description: 'Purchase Price Group. Max length: 6'
+  - name: csgp
+    description: 'Purchase Statistics Group. Max length: 6'
+  - name: prip
+    description: Purchase Price
+  - name: ccur
+    description: 'Purchase Price Currency. Max length: 3'
+  - name: cpgs
+    description: 'Sales Price Group. Max length: 6'
+  - name: csgs
+    description: 'Sales Statistics Group. Max length: 6'
+  - name: pris
+    description: Sales Price
+  - name: ccsp
+    description: 'Sales Price Currency. Max length: 3'
+  - name: ltpc
+    description: Unit Cost Transaction Date
+  - name: ltpp
+    description: Purch. Price Trans. Date
+  - name: ltps
+    description: Sales Price Transaction Date
+  - name: ccsb
+    description: 'Control Code Subcontracting. Max length: 47'
+  - name: ccfu
+    description: 'Control Function. Allowed values: 1, 2, 3'
+  - name: ccfu_kw
+    description: 'Control Function (keyword). Allowed values: tppdm.ccfu.c.unit, tppdm.ccfu.c.unit.cc.code,
+      tppdm.ccfu.cc.code'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: pwgc
+    description: Labor Percentage
+  - name: dsbc
+    description: 'Cost Determination. Allowed values: 1, 2, 10, 20'
+  - name: dsbc_kw
+    description: 'Cost Determination (keyword). Allowed values: tppdm.dsbc.quantity,
+      tppdm.dsbc.time, tppdm.dsbc.amount.only, tppdm.dsbc.rate.only'
+  - name: buni
+    description: 'Base Unit. Allowed values: 10, 20, 30'
+  - name: buni_kw
+    description: 'Base Unit (keyword). Allowed values: tppdm.qty.time.not.appl, tppdm.qty.time.quantity,
+      tppdm.qty.time.time'
+  - name: prby
+    description: 'Procurement by. Allowed values: 10, 20, 30'
+  - name: prby_kw
+    description: 'Procurement by (keyword). Allowed values: tppdm.prby.po, tppdm.prby.sub.po,
+      tppdm.prby.eqp.po'
+  - name: srtr
+    description: 'Services Trade. Max length: 9'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: osys
+    description: 'Order System. Allowed values: 3, 5, 7, 9'
+  - name: osys_kw
+    description: 'Order System (keyword). Allowed values: tppdm.osyb.prp, tppdm.osyb.prp.purchase,
+      tppdm.osyb.prp.warehouse, tppdm.osyb.mnl'
+  - name: prre
+    description: 'Register Progress. Allowed values: 1, 2'
+  - name: prre_kw
+    description: 'Register Progress (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cppp
+    description: 'Price Policy. Allowed values: 1, 2'
+  - name: cppp_kw
+    description: 'Price Policy (keyword). Allowed values: tppdm.cppp.cost.price, tppdm.cppp.purchase.price'
+  - name: usyn
+    description: 'Used in Schedule. Allowed values: 1, 2'
+  - name: usyn_kw
+    description: 'Used in Schedule (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: oltm
+    description: Order Lead Time
+  - name: pcmc_1
+    description: Unit Cost Multi Currency
+  - name: pcmc_2
+    description: Unit Cost Multi Currency
+  - name: pcmc_3
+    description: Unit Cost Multi Currency
+  - name: ppmc_1
+    description: Purchase Price Multi Currency
+  - name: ppmc_2
+    description: Purchase Price Multi Currency
+  - name: ppmc_3
+    description: Purchase Price Multi Currency
+  - name: psmc_1
+    description: Sales Price Multi Currency
+  - name: psmc_2
+    description: Sales Price Multi Currency
+  - name: psmc_3
+    description: Sales Price Multi Currency
+  - name: svat
+    description: 'Tax Code. Max length: 9'
+  - name: psiu
+    description: 'Purchase Schedule in Use. Allowed values: 1, 2'
+  - name: psiu_kw
+    description: 'Purchase Schedule in Use (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: blbl
+    description: 'Billable. Allowed values: 1, 2'
+  - name: blbl_kw
+    description: 'Billable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cood
+    description: 'Technical Coordinator. Max length: 9'
+  - name: ccde
+    description: 'Harmonized System Code. Max length: 25'
+  - name: rdpt
+    description: 'Responsible Department. Max length: 6'
+  - name: plid
+    description: 'Planner. Max length: 9'
+  - name: txta
+    description: General Text
+  - name: txtp
+    description: Purchase Text
+  - name: txts
+    description: Sales Text
+  - name: cdf_sctg__en_us
+    description: '(required) Sub Category - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: citg_ref_compnr
+    description: company number of primary key of table tcmcs023 Item Groups
+  - name: csel_ref_compnr
+    description: company number of primary key of table tcmcs022 Selection Codes
+  - name: csig_ref_compnr
+    description: company number of primary key of table tcmcs018 Item Signals
+  - name: uset_cuni_ref_compnr
+    description: company number of primary key of table tcmcs012 Units by Unit Set
+  - name: uset_ref_compnr
+    description: company number of primary key of table tcmcs006 Unit Sets
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuti_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cccp_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cpgp_ref_compnr
+    description: company number of primary key of table tcmcs024 Price Groups
+  - name: csgp_ref_compnr
+    description: company number of primary key of table tcmcs044 Statistical Groups
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cpgs_ref_compnr
+    description: company number of primary key of table tcmcs024 Price Groups
+  - name: csgs_ref_compnr
+    description: company number of primary key of table tcmcs044 Statistical Groups
+  - name: ccsp_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: srtr_ref_compnr
+    description: company number of primary key of table tcmcs213 Services Trades
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: svat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: cood_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ccde_ref_compnr
+    description: company number of primary key of table tcmcs028 Harmonized System
+      Codes
+  - name: rdpt_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: plid_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtp_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txts_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: csub_rcmp
+    description: 'CC: Reference Company of Equipment'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm035 Subcontracting table, Generated 2026-04-10T19:41:55Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - csub

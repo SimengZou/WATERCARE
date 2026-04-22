@@ -1,0 +1,146 @@
+version: 2
+models:
+- name: r5alerts
+  columns:
+  - name: alt_lastsaved
+    description: ALT_LASTSAVED
+  - name: alt_udfchar01
+    description: ALT_UDFCHAR01
+  - name: alt_gridid
+    description: ALT_GRIDID
+  - name: alt_dataspyid
+    description: ALT_DATASPYID
+  - name: alt_freq
+    description: ALT_FREQ
+  - name: alt_frequom
+    description: ALT_FREQUOM
+  - name: alt_nexteval
+    description: ALT_NEXTEVAL
+  - name: alt_lasteval
+    description: ALT_LASTEVAL
+  - name: alt_lastalert
+    description: ALT_LASTALERT
+  - name: alt_useminmax
+    description: ALT_USEMINMAX
+  - name: alt_minvalue
+    description: ALT_MINVALUE
+  - name: alt_maxvalue
+    description: ALT_MAXVALUE
+  - name: alt_withinvalues
+    description: ALT_WITHINVALUES
+  - name: alt_valuefieldid
+    description: ALT_VALUEFIELDID
+  - name: alt_rentity
+    description: ALT_RENTITY
+  - name: alt_entity
+    description: ALT_ENTITY
+  - name: alt_codefieldid
+    description: ALT_CODEFIELDID
+  - name: alt_orgfieldid
+    description: ALT_ORGFIELDID
+  - name: alt_active
+    description: ALT_ACTIVE
+  - name: alt_enablewo
+    description: ALT_ENABLEWO
+  - name: alt_enablemail
+    description: ALT_ENABLEMAIL
+  - name: alt_inprogress
+    description: ALT_INPROGRESS
+  - name: alt_udfchar02
+    description: ALT_UDFCHAR02
+  - name: alt_udfchar03
+    description: ALT_UDFCHAR03
+  - name: alt_udfchar04
+    description: ALT_UDFCHAR04
+  - name: alt_udfchar05
+    description: ALT_UDFCHAR05
+  - name: alt_udfchar06
+    description: ALT_UDFCHAR06
+  - name: alt_udfchar07
+    description: ALT_UDFCHAR07
+  - name: alt_udfchar08
+    description: ALT_UDFCHAR08
+  - name: alt_udfchar09
+    description: ALT_UDFCHAR09
+  - name: alt_udfchar10
+    description: ALT_UDFCHAR10
+  - name: alt_udfnum01
+    description: ALT_UDFNUM01
+  - name: alt_udfnum02
+    description: ALT_UDFNUM02
+  - name: alt_udfnum03
+    description: ALT_UDFNUM03
+  - name: alt_udfnum04
+    description: ALT_UDFNUM04
+  - name: alt_udfnum05
+    description: ALT_UDFNUM05
+  - name: alt_udfnum06
+    description: ALT_UDFNUM06
+  - name: alt_udfnum07
+    description: ALT_UDFNUM07
+  - name: alt_udfnum08
+    description: ALT_UDFNUM08
+  - name: alt_udfnum09
+    description: ALT_UDFNUM09
+  - name: alt_udfnum10
+    description: ALT_UDFNUM10
+  - name: alt_udfdate01
+    description: ALT_UDFDATE01
+  - name: alt_udfdate02
+    description: ALT_UDFDATE02
+  - name: alt_udfdate03
+    description: ALT_UDFDATE03
+  - name: alt_udfdate04
+    description: ALT_UDFDATE04
+  - name: alt_udfdate05
+    description: ALT_UDFDATE05
+  - name: alt_udfchkbox01
+    description: ALT_UDFCHKBOX01
+  - name: alt_udfchkbox02
+    description: ALT_UDFCHKBOX02
+  - name: alt_udfchkbox03
+    description: ALT_UDFCHKBOX03
+  - name: alt_udfchkbox04
+    description: ALT_UDFCHKBOX04
+  - name: alt_udfchkbox05
+    description: ALT_UDFCHKBOX05
+  - name: alt_created
+    description: ALT_CREATED
+  - name: alt_createdby
+    description: ALT_CREATEDBY
+  - name: alt_updatecount
+    description: ALT_UPDATECOUNT
+  - name: alt_source
+    description: ALT_SOURCE
+  - name: alt_enableionpulse
+    description: ALT_ENABLEIONPULSE
+  - name: alt_enablegeneratewo
+    description: ALT_ENABLEGENERATEWO
+  - name: alt_import_ref
+    description: ALT_IMPORT_REF
+  - name: alt_enablewopickticket
+    description: ALT_ENABLEWOPICKTICKET
+  - name: alt_code
+    description: ALT_CODE
+    data_tests:
+    - unique
+  - name: alt_desc
+    description: ALT_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ALERTS

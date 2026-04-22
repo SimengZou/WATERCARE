@@ -1,0 +1,164 @@
+version: 2
+models:
+- name: resources_contact
+  columns:
+  - name: internettype2
+    description: 'Metadata for column INTERNETTYPE2. Max length: 10'
+  - name: fax
+    description: 'Metadata for column FAX. Max length: 30'
+  - name: coname
+    description: 'Metadata for column CONAME. Max length: 30'
+  - name: dpc
+    description: 'Metadata for column DPC. Max length: 4'
+  - name: internetid1
+    description: 'Metadata for column INTERNETID1. Max length: 50'
+  - name: country
+    description: 'Metadata for column COUNTRY. Max length: 20'
+  - name: cassbarcode
+    description: Metadata for column CASSBARCODE
+  - name: seastodt
+    description: Metadata for column SEASTODT
+  - name: seascassvalidationdesc
+    description: 'Metadata for column SEASCASSVALIDATIONDESC. Max length: 50'
+  - name: state
+    description: 'Metadata for column STATE. Max length: 30'
+  - name: corrdelivery
+    description: Metadata for column CORRDELIVERY
+  - name: seascassvalidationdt
+    description: Metadata for column SEASCASSVALIDATIONDT
+  - name: evephn
+    description: 'Metadata for column EVEPHN. Max length: 30'
+  - name: seascassbarcode
+    description: Metadata for column SEASCASSBARCODE
+  - name: internetid2
+    description: 'Metadata for column INTERNETID2. Max length: 50'
+  - name: pgrpin
+    description: 'Metadata for column PGRPIN. Max length: 8'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: internetid3
+    description: 'Metadata for column INTERNETID3. Max length: 50'
+  - name: cassvalidationdesc
+    description: 'Metadata for column CASSVALIDATIONDESC. Max length: 50'
+  - name: dayphn
+    description: 'Metadata for column DAYPHN. Max length: 30'
+  - name: seasaddr1
+    description: 'Metadata for column SEASADDR1. Max length: 40'
+  - name: seasdayphn
+    description: 'Metadata for column SEASDAYPHN. Max length: 30'
+  - name: cassvalidationstatus
+    description: 'Metadata for column CASSVALIDATIONSTATUS. Max length: 10'
+  - name: email
+    description: 'Metadata for column EMAIL. Max length: 254'
+  - name: internettype3
+    description: 'Metadata for column INTERNETTYPE3. Max length: 10'
+  - name: addr2
+    description: 'Metadata for column ADDR2. Max length: 40'
+  - name: city
+    description: 'Metadata for column CITY. Max length: 30'
+  - name: cntctkey
+    description: (required) Metadata for column CNTCTKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: carrt
+    description: 'Metadata for column CARRT. Max length: 4'
+  - name: seasfax
+    description: 'Metadata for column SEASFAX. Max length: 30'
+  - name: seascassvalidationstatus
+    description: 'Metadata for column SEASCASSVALIDATIONSTATUS. Max length: 10'
+  - name: seaszip
+    description: 'Metadata for column SEASZIP. Max length: 20'
+  - name: zip
+    description: 'Metadata for column ZIP. Max length: 20'
+  - name: seascassver
+    description: Metadata for column SEASCASSVER
+  - name: isserviceprovider
+    description: 'Metadata for column ISSERVICEPROVIDER. Max length: 1'
+  - name: forgn
+    description: 'Metadata for column FORGN. Max length: 1'
+  - name: contacttype
+    description: 'Metadata for column CONTACTTYPE. Max length: 10'
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: lot
+    description: 'Metadata for column LOT. Max length: 5'
+  - name: addr1
+    description: 'Metadata for column ADDR1. Max length: 40'
+  - name: seascity
+    description: 'Metadata for column SEASCITY. Max length: 30'
+  - name: contentasattachment
+    description: 'Metadata for column CONTENTASATTACHMENT. Max length: 1'
+  - name: seasaddr2
+    description: 'Metadata for column SEASADDR2. Max length: 40'
+  - name: cassver
+    description: Metadata for column CASSVER
+  - name: seascntry
+    description: 'Metadata for column SEASCNTRY. Max length: 20'
+  - name: pgr
+    description: 'Metadata for column PGR. Max length: 30'
+  - name: internetid4
+    description: 'Metadata for column INTERNETID4. Max length: 50'
+  - name: referencevalue2
+    description: 'Metadata for column REFERENCEVALUE2. Max length: 50'
+  - name: internettype1
+    description: 'Metadata for column INTERNETTYPE1. Max length: 10'
+  - name: referencevalue1
+    description: 'Metadata for column REFERENCEVALUE1. Max length: 50'
+  - name: salary
+    description: Metadata for column SALARY
+  - name: seasdpc
+    description: 'Metadata for column SEASDPC. Max length: 4'
+  - name: seasstate
+    description: 'Metadata for column SEASSTATE. Max length: 30'
+  - name: position
+    description: 'Metadata for column POSITION. Max length: 30'
+  - name: internettype4
+    description: 'Metadata for column INTERNETTYPE4. Max length: 10'
+  - name: webuserkey
+    description: Metadata for column WEBUSERKEY
+  - name: seasfromdt
+    description: Metadata for column SEASFROMDT
+  - name: seaslot
+    description: 'Metadata for column SEASLOT. Max length: 5'
+  - name: seascarrt
+    description: 'Metadata for column SEASCARRT. Max length: 4'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: mobile
+    description: 'Metadata for column MOBILE. Max length: 30'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: cassvalidationdt
+    description: Metadata for column CASSVALIDATIONDT
+  - name: idkey
+    description: Metadata for column IDKEY
+  - name: seasevephn
+    description: 'Metadata for column SEASEVEPHN. Max length: 30'
+  - name: refno
+    description: 'Metadata for column REFNO. Max length: 24'
+  - name: profession
+    description: 'Metadata for column PROFESSION. Max length: 10'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table RESOURCES.CONTACT on 2022-03-03T11:26:05.421

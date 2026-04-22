@@ -1,0 +1,78 @@
+version: 2
+models:
+- name: tppss220
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: basn
+    description: (required) Baseline
+    data_tests:
+    - not_null
+  - name: cact
+    description: '(required) Activity. Max length: 16'
+    data_tests:
+    - not_null
+  - name: pact
+    description: 'Parent Activity. Max length: 16'
+  - name: tact
+    description: 'Activity Type. Allowed values: 0, 1, 2, 3, 4, 5'
+  - name: tact_kw
+    description: 'Activity Type (keyword). Allowed values: , tppdm.tact.wbsel, tppdm.tact.cosac,
+      tppdm.tact.plapa, tppdm.tact.worpa, tppdm.tact.milst'
+  - name: bsdt
+    description: Baseline Start Date
+  - name: bfdt
+    description: Baseline Finish Date
+  - name: cprj_basn_ref_compnr
+    description: company number of primary key of table tppss020 Baselines
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: actv_cpla
+    description: 'CC: Project Active Plan. Max length: 3'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppss220 Activity Baselines table, Generated 2026-04-10T19:42:19Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - basn
+        - cact

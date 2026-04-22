@@ -1,0 +1,60 @@
+version: 2
+models:
+- name: r5userdefinedfieldsetup
+  columns:
+  - name: udf_lastsaved
+    description: UDF_LASTSAVED
+  - name: udf_min
+    description: UDF_MIN
+  - name: udf_max
+    description: UDF_MAX
+  - name: udf_print
+    description: UDF_PRINT
+  - name: udf_uom
+    description: UDF_UOM
+  - name: udf_lookuptype
+    description: UDF_LOOKUPTYPE
+  - name: udf_lookupvalidate
+    description: UDF_LOOKUPVALIDATE
+  - name: udf_lookuprentity
+    description: UDF_LOOKUPRENTITY
+  - name: udf_datetype
+    description: UDF_DATETYPE
+  - name: udf_numbertype
+    description: UDF_NUMBERTYPE
+  - name: udf_curr
+    description: UDF_CURR
+  - name: udf_enableforaddons
+    description: UDF_ENABLEFORADDONS
+  - name: udf_updated
+    description: UDF_UPDATED
+  - name: udf_updatecount
+    description: UDF_UPDATECOUNT
+  - name: udf_rentity
+    description: UDF_RENTITY
+  - name: udf_field
+    description: UDF_FIELD
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5USERDEFINEDFIELDSETUP
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - udf_rentity
+        - udf_field

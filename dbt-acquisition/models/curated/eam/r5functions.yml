@@ -1,0 +1,196 @@
+version: 2
+models:
+- name: r5functions
+  columns:
+  - name: fun_lastsaved
+    description: FUN_LASTSAVED
+  - name: fun_code
+    description: FUN_CODE
+    data_tests:
+    - unique
+  - name: fun_desc
+    description: FUN_DESC
+  - name: fun_class
+    description: FUN_CLASS
+  - name: fun_subtype
+    description: FUN_SUBTYPE
+  - name: fun_file
+    description: FUN_FILE
+  - name: fun_rentity
+    description: FUN_RENTITY
+  - name: fun_public
+    description: FUN_PUBLIC
+  - name: fun_select
+    description: FUN_SELECT
+  - name: fun_update
+    description: FUN_UPDATE
+  - name: fun_insert
+    description: FUN_INSERT
+  - name: fun_delete
+    description: FUN_DELETE
+  - name: fun_auto
+    description: FUN_AUTO
+  - name: fun_mode
+    description: FUN_MODE
+  - name: fun_device
+    description: FUN_DEVICE
+  - name: fun_orientation
+    description: FUN_ORIENTATION
+  - name: fun_lastvalue
+    description: FUN_LASTVALUE
+  - name: fun_background
+    description: FUN_BACKGROUND
+  - name: fun_application
+    description: FUN_APPLICATION
+  - name: fun_backgroundrep
+    description: FUN_BACKGROUNDREP
+  - name: fun_backgroundgraph
+    description: FUN_BACKGROUNDGRAPH
+  - name: fun_dirsel
+    description: FUN_DIRSEL
+  - name: fun_command
+    description: FUN_COMMAND
+  - name: fun_icon
+    description: FUN_ICON
+  - name: fun_directory
+    description: FUN_DIRECTORY
+  - name: fun_system
+    description: FUN_SYSTEM
+  - name: fun_displayap
+    description: FUN_DISPLAYAP
+  - name: fun_displayft
+    description: FUN_DISPLAYFT
+  - name: fun_popupap
+    description: FUN_POPUPAP
+  - name: fun_popupft
+    description: FUN_POPUPFT
+  - name: fun_parentfunction
+    description: FUN_PARENTFUNCTION
+  - name: fun_parenttab
+    description: FUN_PARENTTAB
+  - name: fun_ugfile
+    description: FUN_UGFILE
+  - name: fun_descchanged
+    description: FUN_DESCCHANGED
+  - name: fun_class_org
+    description: FUN_CLASS_ORG
+  - name: fun_pertype
+    description: FUN_PERTYPE
+  - name: fun_workbook
+    description: FUN_WORKBOOK
+  - name: fun_worksheet
+    description: FUN_WORKSHEET
+  - name: fun_now
+    description: FUN_NOW
+  - name: fun_rs
+    description: FUN_RS
+  - name: fun_lst
+    description: FUN_LST
+  - name: fun_hdr
+    description: FUN_HDR
+  - name: fun_updatecount
+    description: FUN_UPDATECOUNT
+  - name: fun_ewsreport
+    description: FUN_EWSREPORT
+  - name: fun_prddatasrc
+    description: FUN_PRDDATASRC
+  - name: fun_rptfileupdatedby
+    description: FUN_RPTFILEUPDATEDBY
+  - name: fun_rptfileupdated
+    description: FUN_RPTFILEUPDATED
+  - name: fun_ewsurlnew
+    description: FUN_EWSURLNEW
+  - name: fun_ticket
+    description: FUN_TICKET
+  - name: fun_repdisabled
+    description: FUN_REPDISABLED
+  - name: fun_advrept
+    description: FUN_ADVREPT
+  - name: fun_mekey
+    description: FUN_MEKEY
+  - name: fun_ewsbtn
+    description: FUN_EWSBTN
+  - name: fun_updated
+    description: FUN_UPDATED
+  - name: fun_txtcode
+    description: FUN_TXTCODE
+  - name: fun_udfrentity
+    description: FUN_UDFRENTITY
+  - name: fun_fieldfiltertype
+    description: FUN_FIELDFILTERTYPE
+  - name: fun_fieldfilterclass
+    description: FUN_FIELDFILTERCLASS
+  - name: fun_fieldfilterwoobjtype
+    description: FUN_FIELDFILTERWOOBJTYPE
+  - name: fun_xtype
+    description: FUN_XTYPE
+  - name: fun_nodesign
+    description: FUN_NODESIGN
+  - name: fun_startupview
+    description: FUN_STARTUPVIEW
+  - name: fun_fieldfilterchecklist
+    description: FUN_FIELDFILTERCHECKLIST
+  - name: fun_fieldfiltercfclass
+    description: FUN_FIELDFILTERCFCLASS
+  - name: fun_fieldfiltercfclass_org
+    description: FUN_FIELDFILTERCFCLASS_ORG
+  - name: fun_fieldfiltercforg
+    description: FUN_FIELDFILTERCFORG
+  - name: fun_splitviewdisplay
+    description: FUN_SPLITVIEWDISPLAY
+  - name: fun_reservationcalendar
+    description: FUN_RESERVATIONCALENDAR
+  - name: fun_schedulerview
+    description: FUN_SCHEDULERVIEW
+  - name: fun_blockduration
+    description: FUN_BLOCKDURATION
+  - name: fun_workingstarttimehours
+    description: FUN_WORKINGSTARTTIMEHOURS
+  - name: fun_workingstarttimeminutes
+    description: FUN_WORKINGSTARTTIMEMINUTES
+  - name: fun_workingendtimehours
+    description: FUN_WORKINGENDTIMEHOURS
+  - name: fun_workingendtimeminutes
+    description: FUN_WORKINGENDTIMEMINUTES
+  - name: fun_defaultreservationtype
+    description: FUN_DEFAULTRESERVATIONTYPE
+  - name: fun_defaultreservationstatus
+    description: FUN_DEFAULTRESERVATIONSTATUS
+  - name: fun_sunday
+    description: FUN_SUNDAY
+  - name: fun_monday
+    description: FUN_MONDAY
+  - name: fun_tuesday
+    description: FUN_TUESDAY
+  - name: fun_wednesday
+    description: FUN_WEDNESDAY
+  - name: fun_thursday
+    description: FUN_THURSDAY
+  - name: fun_friday
+    description: FUN_FRIDAY
+  - name: fun_saturday
+    description: FUN_SATURDAY
+  - name: fun_autorefreshtimer
+    description: FUN_AUTOREFRESHTIMER
+  - name: fun_popupfunction
+    description: FUN_POPUPFUNCTION
+  - name: fun_mobileroute
+    description: FUN_MOBILEROUTE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5FUNCTIONS

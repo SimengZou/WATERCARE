@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: u5reqaddresources
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: rar_event
+    description: RAR_EVENT
+  - name: rar_type
+    description: RAR_TYPE
+  - name: rar_notes
+    description: RAR_NOTES
+  - name: rar_hazards
+    description: RAR_HAZARDS
+  - name: rar_resultwonum
+    description: RAR_RESULTWONUM
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: rar_transid
+    description: RAR_TRANSID
+    data_tests:
+    - unique
+  - name: rar_raisedby
+    description: RAR_RAISEDBY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5REQADDRESOURCES

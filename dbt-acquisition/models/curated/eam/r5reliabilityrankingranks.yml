@@ -1,0 +1,52 @@
+version: 2
+models:
+- name: r5reliabilityrankingranks
+  columns:
+  - name: rrr_lastsaved
+    description: RRR_LASTSAVED
+  - name: rrr_reliabilityranking
+    description: RRR_RELIABILITYRANKING
+  - name: rrr_org
+    description: RRR_ORG
+  - name: rrr_revision
+    description: RRR_REVISION
+  - name: rrr_minvalue
+    description: RRR_MINVALUE
+  - name: rrr_maxvalue
+    description: RRR_MAXVALUE
+  - name: rrr_image
+    description: RRR_IMAGE
+  - name: rrr_updatecount
+    description: RRR_UPDATECOUNT
+  - name: rrr_criticality
+    description: RRR_CRITICALITY
+  - name: rrr_color
+    description: RRR_COLOR
+  - name: rrr_icon
+    description: RRR_ICON
+  - name: rrr_iconpath
+    description: RRR_ICONPATH
+  - name: rrr_pk
+    description: RRR_PK
+    data_tests:
+    - unique
+  - name: rrr_rrindex
+    description: RRR_RRINDEX
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5RELIABILITYRANKINGRANKS

@@ -1,0 +1,86 @@
+version: 2
+models:
+- name: r5dddataspy
+  columns:
+  - name: dds_lastsaved
+    description: DDS_LASTSAVED
+  - name: dds_autorun
+    description: DDS_AUTORUN
+  - name: dds_scope
+    description: DDS_SCOPE
+  - name: dds_organization
+    description: DDS_ORGANIZATION
+  - name: dds_updatestamp
+    description: DDS_UPDATESTAMP
+  - name: dds_updatebyuser
+    description: DDS_UPDATEBYUSER
+  - name: dds_createdstamp
+    description: DDS_CREATEDSTAMP
+  - name: dds_updateable
+    description: DDS_UPDATEABLE
+  - name: dds_filterstrxml
+    description: DDS_FILTERSTRXML
+  - name: dds_sortstrxml
+    description: DDS_SORTSTRXML
+  - name: dds_fieldlist
+    description: DDS_FIELDLIST
+  - name: dds_updatecount
+    description: DDS_UPDATECOUNT
+  - name: dds_displayrow
+    description: DDS_DISPLAYROW
+  - name: dds_owner
+    description: DDS_OWNER
+  - name: dds_gridid
+    description: DDS_GRIDID
+  - name: dds_type
+    description: DDS_TYPE
+  - name: dds_defaultflag
+    description: DDS_DEFAULTFLAG
+  - name: dds_fieldlist_portlet
+    description: DDS_FIELDLIST_PORTLET
+  - name: dds_clientrows
+    description: DDS_CLIENTROWS
+  - name: dds_portletrows
+    description: DDS_PORTLETROWS
+  - name: dds_hints
+    description: DDS_HINTS
+  - name: dds_botname
+    description: DDS_BOTNAME
+  - name: dds_userfilter
+    description: DDS_USERFILTER
+  - name: dds_securitydataspy
+    description: DDS_SECURITYDATASPY
+  - name: dds_mekey
+    description: DDS_MEKEY
+  - name: dds_updated
+    description: DDS_UPDATED
+  - name: dds_ddspyfilter
+    description: DDS_DDSPYFILTER
+  - name: dds_globaldataspy
+    description: DDS_GLOBALDATASPY
+  - name: dds_blacklistviolations
+    description: DDS_BLACKLISTVIOLATIONS
+  - name: dds_ddspyname
+    description: DDS_DDSPYNAME
+  - name: dds_ddspyid
+    description: DDS_DDSPYID
+    data_tests:
+    - unique
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DDDATASPY

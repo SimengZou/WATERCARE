@@ -1,0 +1,76 @@
+version: 2
+models:
+- name: r5repparms
+  columns:
+  - name: pmt_lastsaved
+    description: PMT_LASTSAVED
+  - name: pmt_parameter
+    description: PMT_PARAMETER
+  - name: pmt_rentity
+    description: PMT_RENTITY
+  - name: pmt_rtype
+    description: PMT_RTYPE
+  - name: pmt_datatype
+    description: PMT_DATATYPE
+  - name: pmt_length
+    description: PMT_LENGTH
+  - name: pmt_format
+    description: PMT_FORMAT
+  - name: pmt_default
+    description: PMT_DEFAULT
+  - name: pmt_fixed
+    description: PMT_FIXED
+  - name: pmt_mandatory
+    description: PMT_MANDATORY
+  - name: pmt_upper
+    description: PMT_UPPER
+  - name: pmt_options
+    description: PMT_OPTIONS
+  - name: pmt_remember
+    description: PMT_REMEMBER
+  - name: pmt_test
+    description: PMT_TEST
+  - name: pmt_query
+    description: PMT_QUERY
+  - name: pmt_lovfunction
+    description: PMT_LOVFUNCTION
+  - name: pmt_property
+    description: PMT_PROPERTY
+  - name: pmt_updatecount
+    description: PMT_UPDATECOUNT
+  - name: pmt_ewslovdef
+    description: PMT_EWSLOVDEF
+  - name: pmt_bottext
+    description: PMT_BOTTEXT
+  - name: pmt_updated
+    description: PMT_UPDATED
+  - name: pmt_mekey
+    description: PMT_MEKEY
+  - name: pmt_function
+    description: PMT_FUNCTION
+  - name: pmt_line
+    description: PMT_LINE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5REPPARMS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - pmt_function
+        - pmt_parameter

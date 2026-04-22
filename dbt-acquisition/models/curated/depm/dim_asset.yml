@@ -1,0 +1,56 @@
+version: 2
+models:
+- name: dim_asset
+  columns:
+  - name: elementname
+    description: 'Max length: 200'
+    data_tests:
+    - unique
+  - name: name
+    description: 'Max length: 300'
+  - name: longname
+    description: 'Max length: 300'
+  - name: project
+    description: 'Max length: 200'
+  - name: area
+    description: 'Max length: 300'
+  - name: subarea
+    description: 'Max length: 300'
+  - name: unittype
+    description: 'Max length: 300'
+  - name: typedesc
+    description: 'Max length: 300'
+  - name: typecode
+    description: 'Max length: 300'
+  - name: life
+    description: 'Max length: 50'
+  - name: servicestatus
+    description: 'Max length: 50'
+  - name: model
+    description: 'Max length: 100'
+  - name: serial
+    description: 'Max length: 50'
+  - name: installdate
+    description: 'Max length: 50'
+  - name: asbuilt
+    description: 'Max length: 50'
+  - name: costcentre
+    description: 'Max length: 50'
+  - name: acqtype
+    description: 'Max length: 50'
+  - name: timestamp
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.

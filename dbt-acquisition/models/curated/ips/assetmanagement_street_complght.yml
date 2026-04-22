@@ -1,0 +1,176 @@
+version: 2
+models:
+- name: assetmanagement_street_complght
+  columns:
+  - name: intkey
+    description: Metadata for column INTKEY
+  - name: complexkey
+    description: Metadata for column COMPLEXKEY
+  - name: poleclass
+    description: 'Metadata for column POLECLASS. Max length: 10'
+  - name: illumbulb
+    description: 'Metadata for column ILLUMBULB. Max length: 10'
+  - name: zcoord
+    description: Metadata for column ZCOORD
+  - name: expectlifeuom
+    description: 'Metadata for column EXPECTLIFEUOM. Max length: 10'
+  - name: usgareakey
+    description: Metadata for column USGAREAKEY
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: mtbfuom
+    description: 'Metadata for column MTBFUOM. Max length: 10'
+  - name: timerown
+    description: 'Metadata for column TIMEROWN. Max length: 10'
+  - name: foundation
+    description: 'Metadata for column FOUNDATION. Max length: 10'
+  - name: subarea
+    description: 'Metadata for column SUBAREA. Max length: 10'
+  - name: usgtot
+    description: Metadata for column USGTOT
+  - name: htuom
+    description: 'Metadata for column HTUOM. Max length: 10'
+  - name: purcdate
+    description: Metadata for column PURCDATE
+  - name: usgtotuom
+    description: 'Metadata for column USGTOTUOM. Max length: 10'
+  - name: color
+    description: 'Metadata for column COLOR. Max length: 10'
+  - name: mtbf
+    description: Metadata for column MTBF
+  - name: painttype
+    description: 'Metadata for column PAINTTYPE. Max length: 10'
+  - name: unitdesc
+    description: 'Metadata for column UNITDESC. Max length: 300'
+  - name: instdate
+    description: Metadata for column INSTDATE
+  - name: serno
+    description: 'Metadata for column SERNO. Max length: 20'
+  - name: expectlife
+    description: Metadata for column EXPECTLIFE
+  - name: poleshape
+    description: 'Metadata for column POLESHAPE. Max length: 10'
+  - name: unittype
+    description: 'Metadata for column UNITTYPE. Max length: 10'
+  - name: own
+    description: 'Metadata for column OWN. Max length: 10'
+  - name: contact
+    description: Metadata for column CONTACT
+  - name: ctrlloc
+    description: 'Metadata for column CTRLLOC. Max length: 10'
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: asblt
+    description: 'Metadata for column ASBLT. Max length: 10'
+  - name: cabldiam
+    description: Metadata for column CABLDIAM
+  - name: timersched
+    description: 'Metadata for column TIMERSCHED. Max length: 10'
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 10'
+  - name: servstat
+    description: 'Metadata for column SERVSTAT. Max length: 10'
+  - name: mapno
+    description: 'Metadata for column MAPNO. Max length: 14'
+  - name: powracct
+    description: 'Metadata for column POWRACCT. Max length: 24'
+  - name: powrsupl
+    description: 'Metadata for column POWRSUPL. Max length: 10'
+  - name: unitid
+    description: 'Metadata for column UNITID. Max length: 50'
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: polediam
+    description: Metadata for column POLEDIAM
+  - name: ycoord
+    description: Metadata for column YCOORD
+  - name: modelno
+    description: 'Metadata for column MODELNO. Max length: 20'
+  - name: polematl
+    description: 'Metadata for column POLEMATL. Max length: 10'
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: mfgdate
+    description: Metadata for column MFGDATE
+  - name: timertype
+    description: 'Metadata for column TIMERTYPE. Max length: 10'
+  - name: cabltype
+    description: 'Metadata for column CABLTYPE. Max length: 10'
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: sitekey
+    description: Metadata for column SITEKEY
+  - name: ctrlbykey
+    description: Metadata for column CTRLBYKEY
+  - name: addrqual
+    description: 'Metadata for column ADDRQUAL. Max length: 300'
+  - name: powrbykey
+    description: Metadata for column POWRBYKEY
+  - name: compkey
+    description: (required) Metadata for column COMPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: gisstatic
+    description: Metadata for column GISSTATIC
+  - name: position
+    description: Metadata for column POSITION
+  - name: fusetype
+    description: 'Metadata for column FUSETYPE. Max length: 10'
+  - name: xcoord
+    description: Metadata for column XCOORD
+  - name: expby
+    description: 'Metadata for column EXPBY. Max length: 12'
+  - name: cablown
+    description: 'Metadata for column CABLOWN. Max length: 10'
+  - name: powrmtrkey
+    description: Metadata for column POWRMTRKEY
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: district
+    description: 'Metadata for column DISTRICT. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: mfgkey
+    description: Metadata for column MFGKEY
+  - name: segkey
+    description: Metadata for column SEGKEY
+  - name: polediamuom
+    description: 'Metadata for column POLEDIAMUOM. Max length: 10'
+  - name: ht
+    description: Metadata for column HT
+  - name: acctype
+    description: 'Metadata for column ACCTYPE. Max length: 10'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: polekey
+    description: Metadata for column POLEKEY
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table ASSETMANAGEMENT_STREET.COMPLGHT on 2022-01-07T14:04:25.308

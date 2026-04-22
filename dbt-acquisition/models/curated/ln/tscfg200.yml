@@ -1,0 +1,466 @@
+version: 2
+models:
+- name: tscfg200
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: sern
+    description: '(required) Serial Number. Max length: 30'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 80'
+    data_tests:
+    - not_null
+  - name: sear__en_us
+    description: '(required) Search Argument - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: dsnr
+    description: 'Dummy Serial Number. Allowed values: 1, 2'
+  - name: dsnr_kw
+    description: 'Dummy Serial Number (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: srbp__en_us
+    description: '(required) Alternate Serial Number - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: crtm
+    description: Creation Time
+  - name: dscb__en_us
+    description: '(required) Material - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dscc__en_us
+    description: '(required) Size - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dscd__en_us
+    description: '(required) Standard - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: wght
+    description: Weight
+  - name: mobl
+    description: 'Mobile. Allowed values: 1, 2'
+  - name: mobl_kw
+    description: 'Mobile (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: sigr
+    description: 'Serialized Item Group. Max length: 6'
+  - name: soff
+    description: 'Service Office. Max length: 6'
+  - name: rste
+    description: 'Repair Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: lste
+    description: 'Location Site. Max length: 9'
+  - name: ofbp
+    description: 'Owner. Max length: 9'
+  - name: ofad
+    description: 'Owner Address. Max length: 9'
+  - name: ofcn
+    description: 'Owner Contact. Max length: 9'
+  - name: ubbp
+    description: 'In Use-by Business Partner. Max length: 9'
+  - name: ubcn
+    description: 'In Use-by Business Partner Contact. Max length: 9'
+  - name: ubad
+    description: 'In Use-by Business Partner Address. Max length: 9'
+  - name: ubop
+    description: 'In Use-by Operator Contact. Max length: 9'
+  - name: ubpc
+    description: 'In Use-by Primary Contact. Allowed values: 10, 20'
+  - name: ubpc_kw
+    description: 'In Use-by Primary Contact (keyword). Allowed values: tscfg.pcnt.in.use.by,
+      tscfg.pcnt.operator'
+  - name: dler
+    description: 'Dealer. Max length: 9'
+  - name: dlad
+    description: 'Dealer Address. Max length: 9'
+  - name: dlcn
+    description: 'Dealer Contact. Max length: 9'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: bfad
+    description: 'Buy-from Address. Max length: 9'
+  - name: bfcn
+    description: 'Buy-from Contact. Max length: 9'
+  - name: owtp
+    description: 'Type of Ownership. Allowed values: 1, 2'
+  - name: owtp_kw
+    description: 'Type of Ownership (keyword). Allowed values: tscfg.owtp.external,
+      tscfg.owtp.internal'
+  - name: dbpo
+    description: 'Default Business Partner for Order. Allowed values: 1, 2, 3, 4'
+  - name: dbpo_kw
+    description: 'Default Business Partner for Order (keyword). Allowed values: tscfg.dbpo.owner,
+      tscfg.dbpo.in.use.by, tscfg.dbpo.dealer, tscfg.dbpo.supplier'
+  - name: sswt
+    description: 'Serialized Item Warranty Terms. Allowed values: 1, 2'
+  - name: sswt_kw
+    description: 'Serialized Item Warranty Terms (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cwte
+    description: 'Warranty. Max length: 16'
+  - name: term
+    description: Term ID
+  - name: swte
+    description: 'Supplier Warranty. Max length: 16'
+  - name: strm
+    description: Supplier Warranty Term ID
+  - name: gwte
+    description: 'Generic Warranty. Max length: 16'
+  - name: optm
+    description: Installation Time
+  - name: prio
+    description: Priority
+  - name: cusc
+    description: 'Usage Class. Max length: 3'
+  - name: ccal
+    description: 'Calendar. Max length: 9'
+  - name: ract
+    description: 'Availability Type. Max length: 6'
+  - name: cvco
+    description: 'Covered by Contract. Allowed values: 5, 10, 15'
+  - name: cvco_kw
+    description: 'Covered by Contract (keyword). Allowed values: tscfg.cvco.covered,
+      tscfg.cvco.covdef, tscfg.cvco.notcover'
+  - name: revi
+    description: 'Revision. Max length: 6'
+  - name: prip
+    description: Sales Value
+  - name: dltm
+    description: Delivery Time
+  - name: cpro
+    description: 'Project. Max length: 9'
+  - name: pelt
+    description: 'Project Element/Activity. Max length: 16'
+  - name: ortp
+    description: 'Originating Order Type. Allowed values: 5, 10, 15, 99'
+  - name: ortp_kw
+    description: 'Originating Order Type (keyword). Allowed values: tscfg.ortp.sales,
+      tscfg.ortp.deliverable, tscfg.ortp.project, tscfg.ortp.not.applicable'
+  - name: srno
+    description: 'Originating Order. Max length: 9'
+  - name: cnln
+    description: 'Originating Contract Line. Max length: 8'
+  - name: spno
+    description: Originating Order Line
+  - name: sdno
+    description: Originating Detail Line
+  - name: spfa__en_us
+    description: '(required) Specification A - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: spfb__en_us
+    description: '(required) Specification B - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: mftm
+    description: Manufacturing Date
+  - name: pste
+    description: 'Production Site. Max length: 9'
+  - name: cwoc
+    description: 'Work Center. Max length: 6'
+  - name: mcno
+    description: 'Machine Type. Max length: 9'
+  - name: mcnr
+    description: 'Machine Number. Max length: 15'
+  - name: wcel
+    description: 'Work Cell. Max length: 6'
+  - name: wstt
+    description: 'Work Station Machine. Max length: 6'
+  - name: clst
+    description: 'Installation Group. Max length: 9'
+  - name: stat
+    description: 'Status. Allowed values: 1, 2, 3, 4, 5, 6, 9, 15, 99'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: tscfg.cfst.stup, tscfg.cfst.actv,
+      tscfg.cfst.revi, tscfg.cfst.dftv, tscfg.cfst.wkcn, tscfg.cfst.tbrc, tscfg.cfst.removed,
+      tscfg.cfst.superseded, tscfg.cfst.nota'
+  - name: sttm
+    description: Status Time
+  - name: sttp
+    description: 'Structure Type. Allowed values: 5, 15'
+  - name: sttp_kw
+    description: 'Structure Type (keyword). Allowed values: tscfg.sttp.structure,
+      tscfg.sttp.physical'
+  - name: titm
+    description: 'Top Item. Max length: 47'
+  - name: tser
+    description: 'Top Serial Number. Max length: 30'
+  - name: phyt
+    description: 'Physical Top. Allowed values: 1, 2'
+  - name: phyt_kw
+    description: 'Physical Top (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ladr
+    description: 'Location Address. Max length: 9'
+  - name: linf__en_us
+    description: '(required) Location Information - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ccnt
+    description: 'Technical Contact. Max length: 9'
+  - name: trdt
+    description: Travel Distance
+  - name: trtm
+    description: Travel Time
+  - name: ccha
+    description: Call-out Charge
+  - name: ccur
+    description: 'Call-out Charge Currency. Max length: 3'
+  - name: csar
+    description: 'Service Area. Max length: 3'
+  - name: czon
+    description: 'Distance Zone. Max length: 3'
+  - name: mdpt
+    description: 'Operations Department. Max length: 6'
+  - name: emno
+    description: 'Preferred Engineer Field Service. Max length: 9'
+  - name: prfb
+    description: 'Preferred Engineer Depot Repair. Max length: 9'
+  - name: prop
+    description: 'Preferred Operator. Max length: 9'
+  - name: sbct
+    description: 'Subcontractor. Max length: 9'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: shad
+    description: 'Ship-from Address. Max length: 9'
+  - name: blag__en_us
+    description: '(required) Blanket Agreement - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: rwdu
+    description: Repair Warranty Duration
+  - name: rwun
+    description: 'Repair Warranty Duration Unit. Allowed values: 0, 5, 10, 15, 20,
+      25'
+  - name: rwun_kw
+    description: 'Repair Warranty Duration Unit (keyword). Allowed values: , tsmdm.peru.day,
+      tsmdm.peru.week, tsmdm.peru.month, tsmdm.peru.quarter, tsmdm.peru.year'
+  - name: alty
+    description: 'Actual Location Type. Allowed values: 5, 15, 17, 20, 25, 30, 35,
+      45'
+  - name: alty_kw
+    description: 'Actual Location Type (keyword). Allowed values: tscfg.actl.configuration,
+      tscfg.actl.warehouse, tscfg.actl.location, tscfg.actl.repairshop, tscfg.actl.transit,
+      tscfg.actl.loaned, tscfg.actl.rented.out, tscfg.actl.not.appl'
+  - name: aloc
+    description: 'Actual Location. Max length: 6'
+  - name: lutm
+    description: Last Updated Time
+  - name: pltm
+    description: Planned Until Time
+  - name: tery
+    description: 'Territory. Max length: 8'
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: lpnr__en_us
+    description: '(required) License Plate Number - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: gpac
+    description: 'Generate Planned Activities. Allowed values: 1, 2'
+  - name: gpac_kw
+    description: 'Generate Planned Activities (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pmsc
+    description: 'Preventive Maintenance Scenario. Max length: 9'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: pbsm
+    description: 'Problem Solving Method. Allowed values: 10, 20, 30, 90, 100'
+  - name: pbsm_kw
+    description: 'Problem Solving Method (keyword). Allowed values: tcmcs.pbsm.8d,
+      tcmcs.pbsm.a3, tcmcs.pbsm.chlt, tcmcs.pbsm.other, tcmcs.pbsm.na'
+  - name: rnyn
+    description: 'Rentable. Allowed values: 1, 2'
+  - name: rnyn_kw
+    description: 'Rentable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rown
+    description: 'Rental Owner. Max length: 6'
+  - name: rowc
+    description: Rental Owner Company
+  - name: tgps
+    description: 'Track GPS Location. Allowed values: 1, 2'
+  - name: tgps_kw
+    description: 'Track GPS Location (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cmea
+    description: 'Obsolete. Max length: 6'
+  - name: cndt
+    description: Obsolete
+  - name: coun
+    description: Obsolete
+  - name: txta
+    description: General Text
+  - name: txtb
+    description: Technical Text
+  - name: txtc
+    description: Specification Text
+  - name: item_sern_ref_compnr
+    description: company number of primary key of table tcibd401 Serial Numbers
+  - name: item_lste_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_rste_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: sigr_ref_compnr
+    description: company number of primary key of table tscfg010 Serialized Item Groups
+  - name: soff_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: rste_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: lste_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: ofad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ofcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ubbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ubcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ubad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ubop_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: dler_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: dlad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: dlcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: bfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: bfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: cwte_ref_compnr
+    description: company number of primary key of table tsctm020 Warranty Templates
+  - name: swte_ref_compnr
+    description: company number of primary key of table tsctm020 Warranty Templates
+  - name: gwte_ref_compnr
+    description: company number of primary key of table tsctm500 Generic Warranties
+  - name: prio_ref_compnr
+    description: company number of primary key of table tcmcs070 Priorities
+  - name: cusc_ref_compnr
+    description: company number of primary key of table tsspc030 Usage Classes
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: ract_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: cmnf_ref_compnr
+    description: company number of primary key of table tcmcs060 Manufacturers
+  - name: pste_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: clst_ref_compnr
+    description: company number of primary key of table tsbsc100 Installation Group
+  - name: titm_tser_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: titm_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: ladr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccnt_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: csar_ref_compnr
+    description: company number of primary key of table tsmdm105 Service Areas
+  - name: czon_ref_compnr
+    description: company number of primary key of table tsmdm120 Distance Zones
+  - name: mdpt_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: emno_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: prfb_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: prop_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: sbct_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom121 Ship-from Business
+      Partners
+  - name: shad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: tery_ref_compnr
+    description: company number of primary key of table tsmdm107 Territories
+  - name: pmsc_ref_compnr
+    description: company number of primary key of table tsspc130 Preventive Maintenance
+      Scenarios
+  - name: rown_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: rowc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtc_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tscfg200 Serialized Items table, Generated 2026-04-10T19:42:28Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - item
+        - sern

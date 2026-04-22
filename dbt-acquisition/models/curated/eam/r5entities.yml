@@ -1,0 +1,64 @@
+version: 2
+models:
+- name: r5entities
+  columns:
+  - name: ent_lastsaved
+    description: ENT_LASTSAVED
+  - name: ent_statent
+    description: ENT_STATENT
+  - name: ent_typent
+    description: ENT_TYPENT
+  - name: ent_multilang
+    description: ENT_MULTILANG
+  - name: ent_classif
+    description: ENT_CLASSIF
+  - name: ent_table
+    description: ENT_TABLE
+  - name: ent_addattribs
+    description: ENT_ADDATTRIBS
+  - name: ent_freetext
+    description: ENT_FREETEXT
+  - name: ent_addresses
+    description: ENT_ADDRESSES
+  - name: ent_documents
+    description: ENT_DOCUMENTS
+  - name: ent_assparts
+    description: ENT_ASSPARTS
+  - name: ent_asspermits
+    description: ENT_ASSPERMITS
+  - name: ent_ftaudit
+    description: ENT_FTAUDIT
+  - name: ent_caaudit
+    description: ENT_CAAUDIT
+  - name: ent_erecord
+    description: ENT_ERECORD
+  - name: ent_audits
+    description: ENT_AUDITS
+  - name: ent_updatecount
+    description: ENT_UPDATECOUNT
+  - name: ent_updated
+    description: ENT_UPDATED
+  - name: ent_entity
+    description: ENT_ENTITY
+  - name: ent_rentity
+    description: ENT_RENTITY
+    data_tests:
+    - unique
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ENTITIES

@@ -1,0 +1,83 @@
+version: 2
+models:
+- name: tccom155
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: bpid
+    description: '(required) Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cofc
+    description: '(required) Department. Max length: 6'
+    data_tests:
+    - not_null
+  - name: kcod
+    description: '(required) Kind of Code. Allowed values: 5, 10, 15, 20, 25, 30,
+      255'
+    data_tests:
+    - not_null
+  - name: kcod_kw
+    description: 'Kind of Code (keyword). Allowed values: tcmcs.kcod.small.business,
+      tcmcs.kcod.minority.owned, tcmcs.kcod.parent.sites, tcmcs.kcod.nat.of.sup, tcmcs.kcod.ser.item.grp,
+      tcmcs.kcod.item.group, tcmcs.kcod.not.appl'
+  - name: code
+    description: '(required) Code. Max length: 12'
+    data_tests:
+    - not_null
+  - name: cert__en_us
+    description: '(required) Certificate Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: efdt
+    description: Effective Date
+  - name: exdt
+    description: Expiry Date
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom155 Business Partner - Satellites table, Generated 2026-04-10T19:41:04Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - bpid
+        - cofc
+        - kcod
+        - code

@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5reportfunctions
+  columns:
+  - name: rfn_lastsaved
+    description: RFN_LASTSAVED
+  - name: rfn_fieldorder
+    description: RFN_FIELDORDER
+  - name: rfn_groupby
+    description: RFN_GROUPBY
+  - name: rfn_orderby
+    description: RFN_ORDERBY
+  - name: rfn_ordertype
+    description: RFN_ORDERTYPE
+  - name: rfn_whereclause1
+    description: RFN_WHERECLAUSE1
+  - name: rfn_whereclause2
+    description: RFN_WHERECLAUSE2
+  - name: rfn_updatecount
+    description: RFN_UPDATECOUNT
+  - name: rfn_updated
+    description: RFN_UPDATED
+  - name: rfn_function
+    description: RFN_FUNCTION
+    data_tests:
+    - unique
+  - name: rfn_fromclause
+    description: RFN_FROMCLAUSE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5REPORTFUNCTIONS

@@ -1,0 +1,63 @@
+version: 2
+models:
+- name: u5compcerts
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: cmp_pk
+    description: CMP_PK
+  - name: cmp_type
+    description: CMP_TYPE
+  - name: cmp_issuer
+    description: CMP_ISSUER
+  - name: cmp_certifier
+    description: CMP_CERTIFIER
+  - name: cmp_certnum
+    description: CMP_CERTNUM
+  - name: cmp_issuedate
+    description: CMP_ISSUEDATE
+  - name: cmp_expdate
+    description: CMP_EXPDATE
+  - name: cmp_scope
+    description: 'CMP_SCOPE. Max length: 0'
+  - name: cmp_status
+    description: CMP_STATUS
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: cmp_object
+    description: CMP_OBJECT
+  - name: cmp_object_org
+    description: CMP_OBJECT_ORG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5COMPCERTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - cmp_object
+        - cmp_object_org
+        - cmp_pk

@@ -1,0 +1,67 @@
+version: 2
+models:
+- name: qmncm007
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: mdis
+    description: '(required) Code. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Material Non-Conformance Disposition - base language.
+      Max length: 30'
+    data_tests:
+    - not_null
+  - name: disp
+    description: 'Disposition. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 20'
+  - name: disp_kw
+    description: 'Disposition (keyword). Allowed values: qmncm.disp.rework.curr, qmncm.disp.rework.new,
+      qmncm.disp.reclassify, qmncm.disp.return.vendor, qmncm.disp.scrap, qmncm.disp.use.as.is,
+      qmncm.disp.repair, qmncm.disp.no.fault, qmncm.disp.undefined, qmncm.disp.not.appl'
+  - name: txta
+    description: Text
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmncm007 Material Dispositions table, Generated 2022-06-15T01:21:01Z
+    from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - mdis

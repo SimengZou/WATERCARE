@@ -1,0 +1,34 @@
+version: 2
+models:
+- name: r5dlvextmenulang
+  columns:
+  - name: eml_lastsaved
+    description: EML_LASTSAVED
+  - name: eml_trans
+    description: EML_TRANS
+  - name: eml_text
+    description: EML_TEXT
+  - name: eml_updatecount
+    description: EML_UPDATECOUNT
+  - name: eml_extmenu
+    description: EML_EXTMENU
+  - name: eml_lang
+    description: EML_LANG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DLVEXTMENULANG

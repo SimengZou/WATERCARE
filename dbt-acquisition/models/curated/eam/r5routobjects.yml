@@ -1,0 +1,71 @@
+version: 2
+models:
+- name: r5routobjects
+  columns:
+  - name: rob_lastsaved
+    description: ROB_LASTSAVED
+  - name: rob_obtype
+    description: ROB_OBTYPE
+  - name: rob_obrtype
+    description: ROB_OBRTYPE
+  - name: rob_object
+    description: ROB_OBJECT
+  - name: rob_revision
+    description: ROB_REVISION
+  - name: rob_object_org
+    description: ROB_OBJECT_ORG
+  - name: rob_updatecount
+    description: ROB_UPDATECOUNT
+  - name: rob_frompoint
+    description: ROB_FROMPOINT
+  - name: rob_fromrefdesc
+    description: ROB_FROMREFDESC
+  - name: rob_fromgeoref
+    description: ROB_FROMGEOREF
+  - name: rob_topoint
+    description: ROB_TOPOINT
+  - name: rob_torefdesc
+    description: ROB_TOREFDESC
+  - name: rob_togeoref
+    description: ROB_TOGEOREF
+  - name: rob_from_reference
+    description: ROB_FROM_REFERENCE
+  - name: rob_from_offset
+    description: ROB_FROM_OFFSET
+  - name: rob_from_offset_direction
+    description: ROB_FROM_OFFSET_DIRECTION
+  - name: rob_to_reference
+    description: ROB_TO_REFERENCE
+  - name: rob_to_offset
+    description: ROB_TO_OFFSET
+  - name: rob_to_offset_direction
+    description: ROB_TO_OFFSET_DIRECTION
+  - name: rob_route
+    description: ROB_ROUTE
+  - name: rob_line
+    description: ROB_LINE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ROUTOBJECTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - rob_route
+        - rob_revision
+        - rob_line

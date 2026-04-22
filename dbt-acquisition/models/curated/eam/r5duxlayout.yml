@@ -1,0 +1,65 @@
+version: 2
+models:
+- name: r5duxlayout
+  columns:
+  - name: dxl_lastsaved
+    description: DXL_LASTSAVED
+  - name: dxl_elementid
+    description: DXL_ELEMENTID
+  - name: dxl_attribute
+    description: DXL_ATTRIBUTE
+  - name: dxl_systemattribute
+    description: DXL_SYSTEMATTRIBUTE
+  - name: dxl_presentinjsp
+    description: DXL_PRESENTINJSP
+  - name: dxl_section
+    description: DXL_SECTION
+  - name: dxl_sectionposition
+    description: DXL_SECTIONPOSITION
+  - name: dxl_positioningroup
+    description: DXL_POSITIONINGROUP
+  - name: dxl_sectionlabel
+    description: DXL_SECTIONLABEL
+  - name: dxl_newcard
+    description: DXL_NEWCARD
+  - name: dxl_fieldinfo
+    description: DXL_FIELDINFO
+  - name: dxl_defaultvalue
+    description: DXL_DEFAULTVALUE
+  - name: dxl_radiooptions
+    description: DXL_RADIOOPTIONS
+  - name: dxl_updatecount
+    description: DXL_UPDATECOUNT
+  - name: dxl_usergroup
+    description: DXL_USERGROUP
+  - name: dxl_pagename
+    description: DXL_PAGENAME
+  - name: dxl_elementtype
+    description: DXL_ELEMENTTYPE
+  - name: dxl_fieldsize
+    description: DXL_FIELDSIZE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DUXLAYOUT
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - dxl_usergroup
+        - dxl_pagename
+        - dxl_elementid

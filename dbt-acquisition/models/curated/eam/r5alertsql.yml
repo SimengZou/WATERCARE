@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5alertsql
+  columns:
+  - name: als_lastsaved
+    description: ALS_LASTSAVED
+  - name: als_rtype
+    description: ALS_RTYPE
+  - name: als_stmt
+    description: ALS_STMT
+  - name: als_abortonfailure
+    description: ALS_ABORTONFAILURE
+  - name: als_active
+    description: ALS_ACTIVE
+  - name: als_comment
+    description: ALS_COMMENT
+  - name: als_updatecount
+    description: ALS_UPDATECOUNT
+  - name: als_alert
+    description: ALS_ALERT
+  - name: als_includepreview
+    description: ALS_INCLUDEPREVIEW
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ALERTSQL
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - als_alert
+        - als_rtype

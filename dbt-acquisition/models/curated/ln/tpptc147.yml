@@ -1,0 +1,146 @@
+version: 2
+models:
+- name: tpptc147
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cequ
+    description: '(required) Equipment. Max length: 47'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: cceq
+    description: 'Control Code Equipment. Max length: 47'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: bsqn
+    description: Budget Line Number
+  - name: eqan
+    description: Equipment Quantity
+  - name: qutm
+    description: Amount of Time
+  - name: pric
+    description: Unit Cost
+  - name: amoc
+    description: Cost Amount
+  - name: cocu
+    description: 'Currency. Max length: 3'
+  - name: dfrt
+    description: Final Rate
+  - name: rtcc_1
+    description: Cost Rate
+  - name: rtcc_2
+    description: Cost Rate
+  - name: rtcc_3
+    description: Cost Rate
+  - name: rtfc_1
+    description: Rate Factor
+  - name: rtfc_2
+    description: Rate Factor
+  - name: rtfc_3
+    description: Rate Factor
+  - name: exeq
+    description: 'External Equipment. Allowed values: 1, 2'
+  - name: exeq_kw
+    description: 'External Equipment (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: prdt
+    description: Planned Date of Requirement
+  - name: shft
+    description: Shifting of Start Date
+  - name: fidt
+    description: Planned Finish Date
+  - name: exep
+    description: 'Execute PRP Run. Allowed values: 1, 2'
+  - name: exep_kw
+    description: 'Execute PRP Run (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: btdt
+    description: Budget Date
+  - name: tsrl
+    description: 'Service Related. Allowed values: 1, 2'
+  - name: tsrl_kw
+    description: 'Service Related (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: prby
+    description: 'Procurement by. Allowed values: 10, 20, 30'
+  - name: prby_kw
+    description: 'Procurement by (keyword). Allowed values: tppdm.prby.po, tppdm.prby.sub.po,
+      tppdm.prby.eqp.po'
+  - name: eqty
+    description: 'Equipment Type. Allowed values: 10, 20, 30, 255'
+  - name: eqty_kw
+    description: 'Equipment Type (keyword). Allowed values: tppdm.eqty.equipment,
+      tppdm.eqty.rent.product, tppdm.eqty.rent.template, tppdm.eqty.not.applicable'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: cocu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpptc147 Control Data Equipment Lines table, Generated 2026-04-10T19:42:22Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cequ
+        - sern

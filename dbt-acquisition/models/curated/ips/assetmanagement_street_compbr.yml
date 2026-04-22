@@ -1,0 +1,278 @@
+version: 2
+models:
+- name: assetmanagement_street_compbr
+  columns:
+  - name: vertclr
+    description: Metadata for column VERTCLR
+  - name: vclrdeck
+    description: Metadata for column VCLRDECK
+  - name: deck
+    description: 'Metadata for column DECK. Max length: 10'
+  - name: complexkey
+    description: Metadata for column COMPLEXKEY
+  - name: deckwid
+    description: Metadata for column DECKWID
+  - name: membrane
+    description: 'Metadata for column MEMBRANE. Max length: 10'
+  - name: zcoord
+    description: Metadata for column ZCOORD
+  - name: median
+    description: 'Metadata for column MEDIAN. Max length: 10'
+  - name: steelwtuom
+    description: 'Metadata for column STEELWTUOM. Max length: 10'
+  - name: usgareakey
+    description: Metadata for column USGAREAKEY
+  - name: latright
+    description: Metadata for column LATRIGHT
+  - name: funcclsund
+    description: 'Metadata for column FUNCCLSUND. Max length: 10'
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: railtype
+    description: 'Metadata for column RAILTYPE. Max length: 10'
+  - name: vertclrlif
+    description: Metadata for column VERTCLRLIF
+  - name: nolanesund
+    description: Metadata for column NOLANESUND
+  - name: underclearuom
+    description: 'Metadata for column UNDERCLEARUOM. Max length: 10'
+  - name: brlen
+    description: Metadata for column BRLEN
+  - name: latleftuom
+    description: 'Metadata for column LATLEFTUOM. Max length: 10'
+  - name: subarea
+    description: 'Metadata for column SUBAREA. Max length: 10'
+  - name: resp
+    description: 'Metadata for column RESP. Max length: 10'
+  - name: detourlen
+    description: Metadata for column DETOURLEN
+  - name: funcclsovr
+    description: 'Metadata for column FUNCCLSOVR. Max length: 10'
+  - name: nospansapuom
+    description: 'Metadata for column NOSPANSAPUOM. Max length: 10'
+  - name: nospansap
+    description: Metadata for column NOSPANSAP
+  - name: widening
+    description: 'Metadata for column WIDENING. Max length: 10'
+  - name: horzclruom
+    description: 'Metadata for column HORZCLRUOM. Max length: 10'
+  - name: structflar
+    description: 'Metadata for column STRUCTFLAR. Max length: 1'
+  - name: latleft
+    description: Metadata for column LATLEFT
+  - name: otherappr
+    description: 'Metadata for column OTHERAPPR. Max length: 1'
+  - name: detourlenuom
+    description: 'Metadata for column DETOURLENUOM. Max length: 10'
+  - name: wtlimituom
+    description: 'Metadata for column WTLIMITUOM. Max length: 10'
+  - name: nolanesovr
+    description: Metadata for column NOLANESOVR
+  - name: unitdesc
+    description: 'Metadata for column UNITDESC. Max length: 300'
+  - name: instdate
+    description: Metadata for column INSTDATE
+  - name: surf
+    description: 'Metadata for column SURF. Max length: 10'
+  - name: defvclrun
+    description: Metadata for column DEFVCLRUN
+  - name: steelwt
+    description: Metadata for column STEELWT
+  - name: unittype
+    description: 'Metadata for column UNITTYPE. Max length: 10'
+  - name: own
+    description: 'Metadata for column OWN. Max length: 10'
+  - name: foundtype
+    description: 'Metadata for column FOUNDTYPE. Max length: 10'
+  - name: adtunder
+    description: Metadata for column ADTUNDER
+  - name: underclear
+    description: Metadata for column UNDERCLEAR
+  - name: chmatl
+    description: 'Metadata for column CHMATL. Max length: 10'
+  - name: apprmatl
+    description: 'Metadata for column APPRMATL. Max length: 10'
+  - name: defvclrunuom
+    description: 'Metadata for column DEFVCLRUNUOM. Max length: 10'
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: defvclrov
+    description: Metadata for column DEFVCLROV
+  - name: skew
+    description: Metadata for column SKEW
+  - name: historical
+    description: 'Metadata for column HISTORICAL. Max length: 10'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: brdesc
+    description: 'Metadata for column BRDESC. Max length: 30'
+  - name: asblt
+    description: 'Metadata for column ASBLT. Max length: 10'
+  - name: servunder
+    description: 'Metadata for column SERVUNDER. Max length: 10'
+  - name: tothorclov
+    description: Metadata for column TOTHORCLOV
+  - name: adtover
+    description: Metadata for column ADTOVER
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 10'
+  - name: roadappwid
+    description: Metadata for column ROADAPPWID
+  - name: defvclrovuom
+    description: 'Metadata for column DEFVCLROVUOM. Max length: 10'
+  - name: tothorclunuom
+    description: 'Metadata for column TOTHORCLUNUOM. Max length: 10'
+  - name: servstat
+    description: 'Metadata for column SERVSTAT. Max length: 10'
+  - name: mapno
+    description: 'Metadata for column MAPNO. Max length: 14'
+  - name: sidewalkruom
+    description: 'Metadata for column SIDEWALKRUOM. Max length: 10'
+  - name: unitid
+    description: 'Metadata for column UNITID. Max length: 50'
+  - name: vertclrlifuom
+    description: 'Metadata for column VERTCLRLIFUOM. Max length: 10'
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: hwysysovr
+    description: 'Metadata for column HWYSYSOVR. Max length: 10'
+  - name: submatl
+    description: 'Metadata for column SUBMATL. Max length: 10'
+  - name: vunclrtype
+    description: 'Metadata for column VUNCLRTYPE. Max length: 10'
+  - name: ycoord
+    description: Metadata for column YCOORD
+  - name: roadwiduom
+    description: 'Metadata for column ROADWIDUOM. Max length: 10'
+  - name: deckwiduom
+    description: 'Metadata for column DECKWIDUOM. Max length: 10'
+  - name: approach
+    description: 'Metadata for column APPROACH. Max length: 10'
+  - name: deckmatl
+    description: 'Metadata for column DECKMATL. Max length: 10'
+  - name: control
+    description: 'Metadata for column CONTROL. Max length: 10'
+  - name: nbis
+    description: 'Metadata for column NBIS. Max length: 1'
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: latrightuom
+    description: 'Metadata for column LATRIGHTUOM. Max length: 10'
+  - name: vclrdeckuom
+    description: 'Metadata for column VCLRDECKUOM. Max length: 10'
+  - name: defhwydes
+    description: 'Metadata for column DEFHWYDES. Max length: 10'
+  - name: protection
+    description: 'Metadata for column PROTECTION. Max length: 1'
+  - name: roadwid
+    description: Metadata for column ROADWID
+  - name: paintrat
+    description: Metadata for column PAINTRAT
+  - name: sidewalkr
+    description: Metadata for column SIDEWALKR
+  - name: supermatl
+    description: 'Metadata for column SUPERMATL. Max length: 10'
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: tothorclun
+    description: Metadata for column TOTHORCLUN
+  - name: toll
+    description: Metadata for column TOLL
+  - name: traffdir
+    description: 'Metadata for column TRAFFDIR. Max length: 3'
+  - name: sidewalkluom
+    description: 'Metadata for column SIDEWALKLUOM. Max length: 10'
+  - name: sitekey
+    description: Metadata for column SITEKEY
+  - name: culvmatl
+    description: 'Metadata for column CULVMATL. Max length: 10'
+  - name: servtype
+    description: 'Metadata for column SERVTYPE. Max length: 10'
+  - name: roadappwiduom
+    description: 'Metadata for column ROADAPPWIDUOM. Max length: 10'
+  - name: sidewalkl
+    description: Metadata for column SIDEWALKL
+  - name: vertclruom
+    description: 'Metadata for column VERTCLRUOM. Max length: 10'
+  - name: brlenuom
+    description: 'Metadata for column BRLENUOM. Max length: 10'
+  - name: avgtrktrfc
+    description: Metadata for column AVGTRKTRFC
+  - name: lunclrtype
+    description: 'Metadata for column LUNCLRTYPE. Max length: 10'
+  - name: nospansminuom
+    description: 'Metadata for column NOSPANSMINUOM. Max length: 10'
+  - name: addrqual
+    description: 'Metadata for column ADDRQUAL. Max length: 300'
+  - name: compkey
+    description: (required) Metadata for column COMPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: gisstatic
+    description: Metadata for column GISSTATIC
+  - name: tothorclovuom
+    description: 'Metadata for column TOTHORCLOVUOM. Max length: 10'
+  - name: position
+    description: Metadata for column POSITION
+  - name: xcoord
+    description: Metadata for column XCOORD
+  - name: expby
+    description: 'Metadata for column EXPBY. Max length: 12'
+  - name: wtlimit
+    description: Metadata for column WTLIMIT
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: hwysysund
+    description: 'Metadata for column HWYSYSUND. Max length: 10'
+  - name: district
+    description: 'Metadata for column DISTRICT. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: design
+    description: 'Metadata for column DESIGN. Max length: 10'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: maxspanuom
+    description: 'Metadata for column MAXSPANUOM. Max length: 10'
+  - name: maxspan
+    description: Metadata for column MAXSPAN
+  - name: mfgkey
+    description: Metadata for column MFGKEY
+  - name: horzclr
+    description: Metadata for column HORZCLR
+  - name: nospansmn
+    description: Metadata for column NOSPANSMN
+  - name: critical
+    description: 'Metadata for column CRITICAL. Max length: 1'
+  - name: pierabutpr
+    description: 'Metadata for column PIERABUTPR. Max length: 10'
+  - name: segkey
+    description: Metadata for column SEGKEY
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table ASSETMANAGEMENT_STREET.COMPBR on 2022-01-07T14:04:23.687

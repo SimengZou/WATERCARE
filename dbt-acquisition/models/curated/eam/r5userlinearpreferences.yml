@@ -1,0 +1,66 @@
+version: 2
+models:
+- name: r5userlinearpreferences
+  columns:
+  - name: ulp_lastsaved
+    description: ULP_LASTSAVED
+  - name: ulp_lopointsofint
+    description: ULP_LOPOINTSOFINT
+  - name: ulp_lorelatedeq
+    description: ULP_LORELATEDEQ
+  - name: ulp_lorelatedpart
+    description: ULP_LORELATEDPART
+  - name: ulp_lodefaultcolor
+    description: ULP_LODEFAULTCOLOR
+  - name: ulp_lodefaultfilter
+    description: ULP_LODEFAULTFILTER
+  - name: ulp_loincluderelated
+    description: ULP_LOINCLUDERELATED
+  - name: ulp_created
+    description: ULP_CREATED
+  - name: ulp_createdby
+    description: ULP_CREATEDBY
+  - name: ulp_updated
+    description: ULP_UPDATED
+  - name: ulp_updatedby
+    description: ULP_UPDATEDBY
+  - name: ulp_updatecount
+    description: ULP_UPDATECOUNT
+  - name: ulp_lorouteandsegment
+    description: ULP_LOROUTEANDSEGMENT
+  - name: ulp_code
+    description: ULP_CODE
+    data_tests:
+    - unique
+  - name: ulp_desc
+    description: ULP_DESC
+  - name: ulp_default
+    description: ULP_DEFAULT
+  - name: ulp_hidesegments
+    description: ULP_HIDESEGMENTS
+  - name: ulp_hideroues
+    description: ULP_HIDEROUES
+  - name: ulp_groupsegments
+    description: ULP_GROUPSEGMENTS
+  - name: ulp_usercode
+    description: ULP_USERCODE
+  - name: ulp_lolinearref
+    description: ULP_LOLINEARREF
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5USERLINEARPREFERENCES

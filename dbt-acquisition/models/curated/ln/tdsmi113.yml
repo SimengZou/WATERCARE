@@ -1,0 +1,122 @@
+version: 2
+models:
+- name: tdsmi113
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: opty
+    description: '(required) Opportunity. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Position
+    data_tests:
+    - not_null
+  - name: seli
+    description: 'Select Item. Allowed values: 1, 2'
+  - name: seli_kw
+    description: 'Select Item (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: qoor
+    description: Ordered Quantity
+  - name: cuqs
+    description: 'Order Unit. Max length: 3'
+  - name: cvqs
+    description: Conversion Factor
+  - name: amta
+    description: Amount
+  - name: prid
+    description: 'Price Information. Max length: 22'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: opty_ref_compnr
+    description: company number of primary key of table tdsmi110 Opportunities
+  - name: item_ref_compnr
+    description: company number of primary key of table tdisa001 Item - Sales
+  - name: cuqs_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: amta_lclc
+    description: 'CC: Net Amount in Local Currency'
+  - name: amta_rpc1
+    description: 'CC: Net Amount in Reporting Currency 1'
+  - name: amta_rpc2
+    description: 'CC: Net Amount in Reporting Currency 2'
+  - name: amta_rfrc
+    description: 'CC: Net Amount in Reference Currency'
+  - name: amta_dtwc
+    description: 'CC: Net Amount in Data Warehouse Currency'
+  - name: qoor_invu
+    description: 'CC: Ordered Quantity in Inventory Unit'
+  - name: qoor_buar
+    description: 'CC: Ordered Quantity in Base Unit Area'
+  - name: qoor_buln
+    description: 'CC: Ordered Quantity in Base Unit Length'
+  - name: qoor_bupc
+    description: 'CC: Ordered Quantity in Base Unit Piece'
+  - name: qoor_butm
+    description: 'CC: Ordered Quantity in Base Unit Time'
+  - name: qoor_buvl
+    description: 'CC: Ordered Quantity in Base Unit Volume'
+  - name: qoor_buwg
+    description: 'CC: Ordered Quantity in Base Unit Weight'
+  - name: amtg_trnc
+    description: 'CC: Gross Amount in Transaction Currency'
+  - name: amtg_lclc
+    description: 'CC: Gross Amount in Local Currency'
+  - name: amtg_rpc1
+    description: 'CC: Gross Amount in Reporting Currency 1'
+  - name: amtg_rpc2
+    description: 'CC: Gross Amount in Reporting Currency 2'
+  - name: amtg_rfrc
+    description: 'CC: Gross Amount in Reference Currency'
+  - name: amtg_dtwc
+    description: 'CC: Gross Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdsmi113 Items by Opportunity table, Generated 2026-04-10T19:41:27Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - opty
+        - pono

@@ -1,0 +1,84 @@
+version: 2
+models:
+- name: whina123
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: rorg
+    description: '(required) Revaluation Origin. Allowed values: 10, 20, 30, 35, 40,
+      50, 100'
+    data_tests:
+    - not_null
+  - name: rorg_kw
+    description: 'Revaluation Origin (keyword). Allowed values: whina.rorg.act.cost.price,
+      whina.rorg.antedating, whina.rorg.mauc.correct, whina.rorg.act.cost.corr, whina.rorg.change.val.meth,
+      whina.rorg.change.int.fam, whina.rorg.not.appl'
+  - name: orno
+    description: '(required) Revaluation Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: cpcp
+    description: '(required) Cost Component. Max length: 8'
+    data_tests:
+    - not_null
+  - name: hour
+    description: Hours
+  - name: amnt_1
+    description: Amount
+  - name: amnt_2
+    description: Amount
+  - name: amnt_3
+    description: Amount
+  - name: rorg_orno_seqn_ref_compnr
+    description: company number of primary key of table whina122 Inventory Revaluation
+      Transactions
+  - name: cpcp_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whina123 Inventory Revaluation Transaction Cost Details table, Generated
+    2026-04-10T19:42:46Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - rorg
+        - orno
+        - seqn
+        - cpcp

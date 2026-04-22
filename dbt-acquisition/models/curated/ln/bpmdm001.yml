@@ -1,0 +1,154 @@
+version: 2
+models:
+- name: bpmdm001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: emno
+    description: '(required) Employee. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cadr
+    description: 'Address Code. Max length: 9'
+  - name: hwem
+    description: Employment
+  - name: wtsc
+    description: 'Working Time Schedule. Max length: 3'
+  - name: sdte
+    description: First Date of Employment
+  - name: edte
+    description: Last Date of Employment
+  - name: daob
+    description: Date of Birth
+  - name: sexe
+    description: 'Gender. Allowed values: 1, 2, 3, 100'
+  - name: sexe_kw
+    description: 'Gender (keyword). Allowed values: tcsexe.male, tcsexe.female, tcsexe.not.known,
+      tcsexe.not.appl'
+  - name: cist
+    description: 'Civil Status. Max length: 15'
+  - name: emtp
+    description: 'Employee Type. Allowed values: 1, 2'
+  - name: emtp_kw
+    description: 'Employee Type (keyword). Allowed values: bpmdm.emtp.internal, bpmdm.emtp.external'
+  - name: finr
+    description: 'Fiscal Number. Max length: 16'
+  - name: telw
+    description: 'Telephone. Max length: 32'
+  - name: tlw1
+    description: 'Telephone2. Max length: 32'
+  - name: tefw
+    description: 'Fax. Max length: 32'
+  - name: mail__en_us
+    description: '(required) E-Mail - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: ucrm
+    description: 'Create CRM Appointments for Assignments. Allowed values: 1, 2'
+  - name: ucrm_kw
+    description: 'Create CRM Appointments for Assignments (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: telm
+    description: 'Mobile Phone. Max length: 32'
+  - name: msty
+    description: 'Messenger Type. Allowed values: 10, 20, 30, 40, 50, 60'
+  - name: msty_kw
+    description: 'Messenger Type (keyword). Allowed values: tccom.mestype.na, tccom.mestype.skype,
+      tccom.mestype.msn, tccom.mestype.aol, tccom.mestype.yahoo, tccom.mestype.lync'
+  - name: msad__en_us
+    description: '(required) Messenger Address - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: jobt__en_us
+    description: '(required) Job Title - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: bano
+    description: 'Bank Account. Max length: 34'
+  - name: tctr__en_us
+    description: '(required) Type of Employment Contract - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: cedt
+    description: Contract End Date
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: ccty
+    description: 'Country of Nationality. Max length: 3'
+  - name: rgno__en_us
+    description: '(required) Registration Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: prtn__en_us
+    description: '(required) Partner - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: ptbp
+    description: 'Pay-to Business Partner. Max length: 9'
+  - name: supv
+    description: 'Supervisor. Max length: 9'
+  - name: ctrg
+    description: 'Trade Group. Max length: 6'
+  - name: txta
+    description: Employee Text
+  - name: emno_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: wtsc_ref_compnr
+    description: company number of primary key of table tcppl101 Working Time Schedule
+      Codes
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ptbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: supv_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN bpmdm001 Employee People Data table, Generated 2026-04-10T19:40:58Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - emno

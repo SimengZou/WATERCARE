@@ -1,0 +1,294 @@
+version: 2
+models:
+- name: r5actchecklists
+  columns:
+  - name: ack_lastsaved
+    description: ACK_LASTSAVED
+  - name: ack_code
+    description: ACK_CODE
+    data_tests:
+    - unique
+  - name: ack_event
+    description: ACK_EVENT
+  - name: ack_act
+    description: ACK_ACT
+  - name: ack_desc
+    description: ACK_DESC
+  - name: ack_sequence
+    description: ACK_SEQUENCE
+  - name: ack_completed
+    description: ACK_COMPLETED
+  - name: ack_notes
+    description: ACK_NOTES
+  - name: ack_updated
+    description: ACK_UPDATED
+  - name: ack_updatedby
+    description: ACK_UPDATEDBY
+  - name: ack_updatecount
+    description: ACK_UPDATECOUNT
+  - name: ack_loto
+    description: ACK_LOTO
+  - name: ack_occurrence
+    description: ACK_OCCURRENCE
+  - name: ack_point
+    description: ACK_POINT
+  - name: ack_object
+    description: ACK_OBJECT
+  - name: ack_object_org
+    description: ACK_OBJECT_ORG
+  - name: ack_yes
+    description: ACK_YES
+  - name: ack_no
+    description: ACK_NO
+  - name: ack_finding
+    description: ACK_FINDING
+  - name: ack_value
+    description: ACK_VALUE
+  - name: ack_uom
+    description: ACK_UOM
+  - name: ack_finaloccurrence
+    description: ACK_FINALOCCURRENCE
+  - name: ack_followup
+    description: ACK_FOLLOWUP
+  - name: ack_followupevent
+    description: ACK_FOLLOWUPEVENT
+  - name: ack_followupact
+    description: ACK_FOLLOWUPACT
+  - name: ack_requiredtoclose
+    description: ACK_REQUIREDTOCLOSE
+  - name: ack_syslevel
+    description: ACK_SYSLEVEL
+  - name: ack_asmlevel
+    description: ACK_ASMLEVEL
+  - name: ack_complevel
+    description: ACK_COMPLEVEL
+  - name: ack_complocation
+    description: ACK_COMPLOCATION
+  - name: ack_condition
+    description: ACK_CONDITION
+  - name: ack_reading
+    description: ACK_READING
+  - name: ack_aspect
+    description: ACK_ASPECT
+  - name: ack_pointtype
+    description: ACK_POINTTYPE
+  - name: ack_task
+    description: ACK_TASK
+  - name: ack_matlist
+    description: ACK_MATLIST
+  - name: ack_type
+    description: ACK_TYPE
+  - name: ack_parentkey
+    description: ACK_PARENTKEY
+  - name: ack_possiblefindings
+    description: ACK_POSSIBLEFINDINGS
+  - name: ack_taskchecklistcode
+    description: ACK_TASKCHECKLISTCODE
+  - name: ack_objectlevel
+    description: ACK_OBJECTLEVEL
+  - name: ack_defmaint
+    description: ACK_DEFMAINT
+  - name: ack_part
+    description: ACK_PART
+  - name: ack_part_org
+    description: ACK_PART_ORG
+  - name: ack_partcondition
+    description: ACK_PARTCONDITION
+  - name: ack_frompoint
+    description: ACK_FROMPOINT
+  - name: ack_fromrefdesc
+    description: ACK_FROMREFDESC
+  - name: ack_fromgeoref
+    description: ACK_FROMGEOREF
+  - name: ack_topoint
+    description: ACK_TOPOINT
+  - name: ack_torefdesc
+    description: ACK_TOREFDESC
+  - name: ack_togeoref
+    description: ACK_TOGEOREF
+  - name: ack_fromjobplan
+    description: ACK_FROMJOBPLAN
+  - name: ack_fromjobplanrev
+    description: ACK_FROMJOBPLANREV
+  - name: ack_rentity
+    description: ACK_RENTITY
+  - name: ack_entitykey
+    description: ACK_ENTITYKEY
+  - name: ack_entityorg
+    description: ACK_ENTITYORG
+  - name: ack_routesequence
+    description: ACK_ROUTESEQUENCE
+  - name: ack_job
+    description: ACK_JOB
+  - name: ack_casetask
+    description: ACK_CASETASK
+  - name: ack_nonconformity
+    description: ACK_NONCONFORMITY
+  - name: ack_from_reference
+    description: ACK_FROM_REFERENCE
+  - name: ack_from_offset
+    description: ACK_FROM_OFFSET
+  - name: ack_from_offset_percentage
+    description: ACK_FROM_OFFSET_PERCENTAGE
+  - name: ack_from_offset_direction
+    description: ACK_FROM_OFFSET_DIRECTION
+  - name: ack_from_xcoordinate
+    description: ACK_FROM_XCOORDINATE
+  - name: ack_from_ycoordinate
+    description: ACK_FROM_YCOORDINATE
+  - name: ack_from_latitude
+    description: ACK_FROM_LATITUDE
+  - name: ack_from_longitude
+    description: ACK_FROM_LONGITUDE
+  - name: ack_from_relationship_type
+    description: ACK_FROM_RELATIONSHIP_TYPE
+  - name: ack_from_horizontal_offset
+    description: ACK_FROM_HORIZONTAL_OFFSET
+  - name: ack_from_horizontal_offsetuom
+    description: ACK_FROM_HORIZONTAL_OFFSETUOM
+  - name: ack_from_horizontal_offsettype
+    description: ACK_FROM_HORIZONTAL_OFFSETTYPE
+  - name: ack_from_vertical_offset
+    description: ACK_FROM_VERTICAL_OFFSET
+  - name: ack_from_vertical_offsetuom
+    description: ACK_FROM_VERTICAL_OFFSETUOM
+  - name: ack_from_vertical_offsettype
+    description: ACK_FROM_VERTICAL_OFFSETTYPE
+  - name: ack_to_reference
+    description: ACK_TO_REFERENCE
+  - name: ack_to_offset
+    description: ACK_TO_OFFSET
+  - name: ack_to_offset_direction
+    description: ACK_TO_OFFSET_DIRECTION
+  - name: ack_to_offset_percentage
+    description: ACK_TO_OFFSET_PERCENTAGE
+  - name: ack_to_xcoordinate
+    description: ACK_TO_XCOORDINATE
+  - name: ack_to_ycoordinate
+    description: ACK_TO_YCOORDINATE
+  - name: ack_to_latitude
+    description: ACK_TO_LATITUDE
+  - name: ack_to_longitude
+    description: ACK_TO_LONGITUDE
+  - name: ack_to_relationship_type
+    description: ACK_TO_RELATIONSHIP_TYPE
+  - name: ack_to_horizontal_offset
+    description: ACK_TO_HORIZONTAL_OFFSET
+  - name: ack_to_horizontal_offsetuom
+    description: ACK_TO_HORIZONTAL_OFFSETUOM
+  - name: ack_to_horizontal_offsettype
+    description: ACK_TO_HORIZONTAL_OFFSETTYPE
+  - name: ack_to_vertical_offset
+    description: ACK_TO_VERTICAL_OFFSET
+  - name: ack_to_vertical_offsetuom
+    description: ACK_TO_VERTICAL_OFFSETUOM
+  - name: ack_to_vertical_offsettype
+    description: ACK_TO_VERTICAL_OFFSETTYPE
+  - name: ack_relationship_type
+    description: ACK_RELATIONSHIP_TYPE
+  - name: ack_color
+    description: ACK_COLOR
+  - name: ack_reference
+    description: ACK_REFERENCE
+  - name: ack_ok
+    description: ACK_OK
+  - name: ack_repairsneeded
+    description: ACK_REPAIRSNEEDED
+  - name: ack_resolution
+    description: ACK_RESOLUTION
+  - name: ack_good
+    description: ACK_GOOD
+  - name: ack_poor
+    description: ACK_POOR
+  - name: ack_adjusted
+    description: ACK_ADJUSTED
+  - name: ack_nonconformityfound
+    description: ACK_NONCONFORMITYFOUND
+  - name: ack_minslidervalue
+    description: ACK_MINSLIDERVALUE
+  - name: ack_maxslidervalue
+    description: ACK_MAXSLIDERVALUE
+  - name: ack_srccalculatedvalue
+    description: ACK_SRCCALCULATEDVALUE
+  - name: ack_formula
+    description: ACK_FORMULA
+  - name: ack_possible_directions
+    description: ACK_POSSIBLE_DIRECTIONS
+  - name: ack_possible_na_options
+    description: ACK_POSSIBLE_NA_OPTIONS
+  - name: ack_possible_conds_as_found
+    description: ACK_POSSIBLE_CONDS_AS_FOUND
+  - name: ack_possible_severities
+    description: ACK_POSSIBLE_SEVERITIES
+  - name: ack_group_label
+    description: ACK_GROUP_LABEL
+  - name: ack_direction
+    description: ACK_DIRECTION
+  - name: ack_not_applicable
+    description: ACK_NOT_APPLICABLE
+  - name: ack_condition_as_found
+    description: ACK_CONDITION_AS_FOUND
+  - name: ack_severity
+    description: ACK_SEVERITY
+  - name: ack_nonconformitytype
+    description: ACK_NONCONFORMITYTYPE
+  - name: ack_nonconformitytype_org
+    description: ACK_NONCONFORMITYTYPE_ORG
+  - name: ack_toleranceseverity
+    description: ACK_TOLERANCESEVERITY
+  - name: ack_tolerance_ncf_type
+    description: ACK_TOLERANCE_NCF_TYPE
+  - name: ack_tolerance_ncf_type_org
+    description: ACK_TOLERANCE_NCF_TYPE_ORG
+  - name: ack_tolerancecrnonconformity
+    description: ACK_TOLERANCECRNONCONFORMITY
+  - name: ack_metricfractionslider
+    description: ACK_METRICFRACTIONSLIDER
+  - name: ack_responsibility
+    description: ACK_RESPONSIBILITY
+  - name: ack_measurementresp
+    description: ACK_MEASUREMENTRESP
+  - name: ack_hidefollowup
+    description: ACK_HIDEFOLLOWUP
+  - name: ack_hidelinearfields
+    description: ACK_HIDELINEARFIELDS
+  - name: ack_enablenonconformities
+    description: ACK_ENABLENONCONFORMITIES
+  - name: ack_mobiledateupdated
+    description: ACK_MOBILEDATEUPDATED
+  - name: ack_linearlocation
+    description: ACK_LINEARLOCATION
+  - name: ack_fractionsliderdimensions
+    description: ACK_FRACTIONSLIDERDIMENSIONS
+  - name: ack_checklistdatetime
+    description: ACK_CHECKLISTDATETIME
+  - name: ack_checklistdate
+    description: ACK_CHECKLISTDATE
+  - name: ack_freetext
+    description: ACK_FREETEXT
+  - name: ack_resultrentity
+    description: ACK_RESULTRENTITY
+  - name: ack_resultentityclassoptions
+    description: ACK_RESULTENTITYCLASSOPTIONS
+  - name: ack_resultentitycode
+    description: ACK_RESULTENTITYCODE
+  - name: ack_resultentityorg
+    description: ACK_RESULTENTITYORG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ACTCHECKLISTS

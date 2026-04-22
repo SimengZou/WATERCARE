@@ -1,0 +1,91 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key='dbt_surrogate_key',
+    description='eam_R5HAZARDS',
+    tags=['auto-generated', 'eam', 'stage1']
+) }}
+
+with cte_flattened as (
+    select
+        {{ trx_json_extract('src', ['HAZ_LASTSAVED'], type='timestamp_ntz', alias='haz_lastsaved') }},
+        {{ trx_json_extract('src', ['HAZ_CODE'], type='varchar', alias='haz_code') }},
+        {{ trx_json_extract('src', ['HAZ_ORG'], type='varchar', alias='haz_org') }},
+        {{ trx_json_extract('src', ['HAZ_REVISION'], type='float', alias='haz_revision') }},
+        {{ trx_json_extract('src', ['HAZ_DESC'], type='varchar', alias='haz_desc') }},
+        {{ trx_json_extract('src', ['HAZ_STATUS'], type='varchar', alias='haz_status') }},
+        {{ trx_json_extract('src', ['HAZ_RSTATUS'], type='varchar', alias='haz_rstatus') }},
+        {{ trx_json_extract('src', ['HAZ_NOTUSED'], type='varchar', alias='haz_notused') }},
+        {{ trx_json_extract('src', ['HAZ_TYPE'], type='varchar', alias='haz_type') }},
+        {{ trx_json_extract('src', ['HAZ_CLASS'], type='varchar', alias='haz_class') }},
+        {{ trx_json_extract('src', ['HAZ_CLASS_ORG'], type='varchar', alias='haz_class_org') }},
+        {{ trx_json_extract('src', ['HAZ_REVIEWREQUIRED'], type='timestamp_ntz', alias='haz_reviewrequired') }},
+        {{ trx_json_extract('src', ['HAZ_CREATED'], type='timestamp_ntz', alias='haz_created') }},
+        {{ trx_json_extract('src', ['HAZ_CREATEDBY'], type='varchar', alias='haz_createdby') }},
+        {{ trx_json_extract('src', ['HAZ_UPDATED'], type='timestamp_ntz', alias='haz_updated') }},
+        {{ trx_json_extract('src', ['HAZ_UPDATEDBY'], type='varchar', alias='haz_updatedby') }},
+        {{ trx_json_extract('src', ['HAZ_REQUESTED'], type='timestamp_ntz', alias='haz_requested') }},
+        {{ trx_json_extract('src', ['HAZ_REQUESTEDBY'], type='varchar', alias='haz_requestedby') }},
+        {{ trx_json_extract('src', ['HAZ_APPROVED'], type='timestamp_ntz', alias='haz_approved') }},
+        {{ trx_json_extract('src', ['HAZ_APPROVEDBY'], type='varchar', alias='haz_approvedby') }},
+        {{ trx_json_extract('src', ['HAZ_REVISIONREASON'], type='varchar', alias='haz_revisionreason') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR01'], type='varchar', alias='haz_udfchar01') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR02'], type='varchar', alias='haz_udfchar02') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR03'], type='varchar', alias='haz_udfchar03') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR04'], type='varchar', alias='haz_udfchar04') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR05'], type='varchar', alias='haz_udfchar05') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR06'], type='varchar', alias='haz_udfchar06') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR07'], type='varchar', alias='haz_udfchar07') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR08'], type='varchar', alias='haz_udfchar08') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR09'], type='varchar', alias='haz_udfchar09') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR10'], type='varchar', alias='haz_udfchar10') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR11'], type='varchar', alias='haz_udfchar11') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR12'], type='varchar', alias='haz_udfchar12') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR13'], type='varchar', alias='haz_udfchar13') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR14'], type='varchar', alias='haz_udfchar14') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR15'], type='varchar', alias='haz_udfchar15') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR16'], type='varchar', alias='haz_udfchar16') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR17'], type='varchar', alias='haz_udfchar17') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR18'], type='varchar', alias='haz_udfchar18') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR19'], type='varchar', alias='haz_udfchar19') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR20'], type='varchar', alias='haz_udfchar20') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR21'], type='varchar', alias='haz_udfchar21') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR22'], type='varchar', alias='haz_udfchar22') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR23'], type='varchar', alias='haz_udfchar23') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR24'], type='varchar', alias='haz_udfchar24') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR25'], type='varchar', alias='haz_udfchar25') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR26'], type='varchar', alias='haz_udfchar26') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR27'], type='varchar', alias='haz_udfchar27') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR28'], type='varchar', alias='haz_udfchar28') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR29'], type='varchar', alias='haz_udfchar29') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHAR30'], type='varchar', alias='haz_udfchar30') }},
+        {{ trx_json_extract('src', ['HAZ_UDFNUM01'], type='float', alias='haz_udfnum01') }},
+        {{ trx_json_extract('src', ['HAZ_UDFNUM02'], type='float', alias='haz_udfnum02') }},
+        {{ trx_json_extract('src', ['HAZ_UDFNUM03'], type='float', alias='haz_udfnum03') }},
+        {{ trx_json_extract('src', ['HAZ_UDFNUM04'], type='float', alias='haz_udfnum04') }},
+        {{ trx_json_extract('src', ['HAZ_UDFNUM05'], type='float', alias='haz_udfnum05') }},
+        {{ trx_json_extract('src', ['HAZ_UDFDATE01'], type='timestamp_ntz', alias='haz_udfdate01') }},
+        {{ trx_json_extract('src', ['HAZ_UDFDATE02'], type='timestamp_ntz', alias='haz_udfdate02') }},
+        {{ trx_json_extract('src', ['HAZ_UDFDATE03'], type='timestamp_ntz', alias='haz_udfdate03') }},
+        {{ trx_json_extract('src', ['HAZ_UDFDATE04'], type='timestamp_ntz', alias='haz_udfdate04') }},
+        {{ trx_json_extract('src', ['HAZ_UDFDATE05'], type='timestamp_ntz', alias='haz_udfdate05') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHKBOX01'], type='varchar', alias='haz_udfchkbox01') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHKBOX02'], type='varchar', alias='haz_udfchkbox02') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHKBOX03'], type='varchar', alias='haz_udfchkbox03') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHKBOX04'], type='varchar', alias='haz_udfchkbox04') }},
+        {{ trx_json_extract('src', ['HAZ_UDFCHKBOX05'], type='varchar', alias='haz_udfchkbox05') }},
+        {{ trx_json_extract('src', ['HAZ_UPDATECOUNT'], type='float', alias='haz_updatecount') }},
+        {{ trx_json_extract('src', ['_DELETED'], type='boolean', alias='_deleted') }},
+        {{ trx_etl_columns() }}
+    from {{ source('source_landing_eam', 'eam_r5hazards') }}
+)
+
+select
+    *,
+    {{ trx_audit_columns() }},
+    {{ trx_audit_surrogate(columns=['haz_code', 'haz_org', 'haz_revision']) }}
+from cte_flattened
+{% if is_incremental() %}
+where etl_load_datetime > (select max(etl_load_datetime) from {{ this }})
+{% endif %}
+{{ trx_current_state(order_by=['haz_lastsaved']) }}

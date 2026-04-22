@@ -1,0 +1,52 @@
+version: 2
+models:
+- name: r5customerrequesthistory
+  columns:
+  - name: crh_lastsaved
+    description: CRH_LASTSAVED
+  - name: crh_callcentercode
+    description: CRH_CALLCENTERCODE
+  - name: crh_callcenter_org
+    description: CRH_CALLCENTER_ORG
+  - name: crh_reqdate
+    description: CRH_REQDATE
+  - name: crh_eventtype
+    description: CRH_EVENTTYPE
+  - name: crh_usercode
+    description: CRH_USERCODE
+  - name: crh_oldvalue
+    description: CRH_OLDVALUE
+  - name: crh_newvalue
+    description: CRH_NEWVALUE
+  - name: crh_updatecount
+    description: CRH_UPDATECOUNT
+  - name: crh_comment
+    description: CRH_COMMENT
+  - name: crh_event
+    description: CRH_EVENT
+  - name: crh_rentity
+    description: CRH_RENTITY
+  - name: crh_pk
+    description: CRH_PK
+    data_tests:
+    - unique
+  - name: crh_field
+    description: CRH_FIELD
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CUSTOMERREQUESTHISTORY

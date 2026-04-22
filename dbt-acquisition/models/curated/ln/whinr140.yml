@@ -1,0 +1,132 @@
+version: 2
+models:
+- name: whinr140
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cwar
+    description: '(required) Warehouse. Max length: 6'
+    data_tests:
+    - not_null
+  - name: loca
+    description: '(required) Location. Max length: 10'
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: clot
+    description: '(required) Lot. Max length: 20'
+    data_tests:
+    - not_null
+  - name: idat
+    description: (required) Inventory Date
+    data_tests:
+    - not_null
+  - name: effn
+    description: Effectivity Unit
+  - name: qhnd
+    description: Inventory on Hand
+  - name: qblk
+    description: Inventory Blocked
+  - name: qlal
+    description: Inventory Allocated
+  - name: qord
+    description: Inventory on Order
+  - name: qcom
+    description: Inventory Committed
+  - name: qcsl
+    description: Inventory Committed Specific Lot
+  - name: ball
+    description: 'Blocked for All Transactions. Allowed values: 1, 2'
+  - name: ball_kw
+    description: 'Blocked for All Transactions (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bout
+    description: 'Blocked for Outbound. Allowed values: 1, 2'
+  - name: bout_kw
+    description: 'Blocked for Outbound (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: btri
+    description: 'Blocked for Transfer (Issue). Allowed values: 1, 2'
+  - name: btri_kw
+    description: 'Blocked for Transfer (Issue) (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bcyc
+    description: 'Blocked for Cycle Counting. Allowed values: 1, 2'
+  - name: bcyc_kw
+    description: 'Blocked for Cycle Counting (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bass
+    description: 'Blocked for Assembly. Allowed values: 1, 2'
+  - name: bass_kw
+    description: 'Blocked for Assembly (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crem
+    description: 'Remark. Max length: 3'
+  - name: crdt
+    description: Creation Date
+  - name: trdt
+    description: Last Transaction Date
+  - name: lsid
+    description: Last Inventory Inspection Date
+  - name: mpkd
+    description: 'Multiple Package Definition. Allowed values: 1, 2'
+  - name: mpkd_kw
+    description: 'Multiple Package Definition (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cwar_loca_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: item_ref_compnr
+    description: company number of primary key of table whwmd400 Item Warehousing
+      Data
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: crem_ref_compnr
+    description: company number of primary key of table whwmd130 Remarks
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinr140 Inventory table, Generated 2025-06-12T01:48:44Z from package
+    combination ce01090
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cwar
+        - loca
+        - item
+        - clot
+        - idat

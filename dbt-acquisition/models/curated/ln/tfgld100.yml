@@ -1,0 +1,104 @@
+version: 2
+models:
+- name: tfgld100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: year
+    description: (required) Fiscal Year
+    data_tests:
+    - not_null
+  - name: btno
+    description: (required) Batch
+    data_tests:
+    - not_null
+  - name: stat
+    description: 'Batch Status. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7, 8'
+  - name: stat_kw
+    description: 'Batch Status (keyword). Allowed values: , tfgld.bstt.open.free,
+      tfgld.bstt.in.use, tfgld.bstt.in.back, tfgld.bstt.ready, tfgld.bstt.in.term,
+      tfgld.bstt.term, tfgld.bstt.deleted, tfgld.bstt.errors'
+  - name: user
+    description: 'User. Max length: 16'
+  - name: tedt
+    description: Transaction Entry Date
+  - name: trdt
+    description: Finalization Date
+  - name: itbc
+    description: 'Batch Modifiable. Allowed values: 0, 1, 2'
+  - name: itbc_kw
+    description: 'Batch Modifiable (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: fprd
+    description: Fiscal Period
+  - name: rprd
+    description: Reporting Period
+  - name: vprd
+    description: Tax Period
+  - name: vyer
+    description: Tax Year
+  - name: bref__en_us
+    description: '(required) Batch Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: btyp
+    description: 'Access Mode for Batch. Allowed values: 0, 1, 2'
+  - name: btyp_kw
+    description: 'Access Mode for Batch (keyword). Allowed values: , tfgld.btyp.multi.user,
+      tfgld.btyp.single.user'
+  - name: trun
+    description: Finalization Run Number
+  - name: tstt
+    description: 'Finalization Status. Allowed values: 0, 1, 2, 3, 4'
+  - name: tstt_kw
+    description: 'Finalization Status (keyword). Allowed values: , tfgld.tstt.free,
+      tfgld.tstt.selected, tfgld.tstt.errors, tfgld.tstt.terminated'
+  - name: selt
+    description: 'Select. Allowed values: 0, 1, 2'
+  - name: selt_kw
+    description: 'Select (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: year_ref_compnr
+    description: company number of primary key of table tfgld006 End Dates by Year
+  - name: vyer_ref_compnr
+    description: company number of primary key of table tfgld006 End Dates by Year
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld100 Financial Batch table, Generated 2026-04-10T19:41:42Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - year
+        - btno

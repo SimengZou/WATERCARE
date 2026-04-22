@@ -1,0 +1,115 @@
+version: 2
+models:
+- name: tpptc300
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: ccal
+    description: '(required) Budget Cost Analysis Version. Max length: 3'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ibud
+    description: 'Initial Budget. Allowed values: 0, 1, 2'
+  - name: ibud_kw
+    description: 'Initial Budget (keyword). Allowed values: , tppdm.yeno.yes, tppdm.yeno.no'
+  - name: upmd
+    description: 'Update Mode. Allowed values: 0, 1, 2'
+  - name: upmd_kw
+    description: 'Update Mode (keyword). Allowed values: , tppss.plmd.update, tppss.plmd.read.only'
+  - name: crdt
+    description: Creation Date
+  - name: lcdt
+    description: Date of Last Update
+  - name: lclg
+    description: 'Last Modified by. Max length: 16'
+  - name: bdtp
+    description: 'Budget Type. Allowed values: 1, 2'
+  - name: bdtp_kw
+    description: 'Budget Type (keyword). Allowed values: tppdm.bdtp.struct.budget,
+      tppdm.bdtp.activity.budget'
+  - name: free
+    description: 'Budget Status ''Free''. Allowed values: 0, 1, 2'
+  - name: free_kw
+    description: 'Budget Status ''Free'' (keyword). Allowed values: , tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: actl
+    description: 'Budget Status ''Actual''. Allowed values: 0, 1, 2'
+  - name: actl_kw
+    description: 'Budget Status ''Actual'' (keyword). Allowed values: , tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: defn
+    description: 'Budget Status ''Final''. Allowed values: 0, 1, 2'
+  - name: defn_kw
+    description: 'Budget Status ''Final'' (keyword). Allowed values: , tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: cexc
+    description: 'Exchange Rate Type Budget. Max length: 3'
+  - name: exdt
+    description: Rate Date
+  - name: iexc
+    description: 'Including Extension Costs. Allowed values: 1, 2'
+  - name: iexc_kw
+    description: 'Including Extension Costs (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: icon
+    description: 'Including Contingency. Allowed values: 1, 2'
+  - name: icon_kw
+    description: 'Including Contingency (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cprj_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: cexc_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpptc300 Budget Cost Analysis Versions by Project table, Generated
+    2026-04-10T19:42:25Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - ccal

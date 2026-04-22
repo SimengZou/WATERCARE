@@ -1,0 +1,107 @@
+version: 2
+models:
+- name: tcmcs065
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cwoc
+    description: '(required) Department. Max length: 6'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: typd
+    description: 'Department Type. Allowed values: 1, 2, 3, 4, 5, 6, 8, 10, 15'
+  - name: typd_kw
+    description: 'Department Type (keyword). Allowed values: tctypd.sls.office, tctypd.pur.office,
+      tctypd.service.dept, tctypd.workcentre, tctypd.production.dept, tctypd.accounting,
+      tctypd.shipping.office, tctypd.proj.mgt.office, tctypd.inv.man.dept'
+  - name: comp
+    description: Financial Company
+  - name: ccal
+    description: 'Calendar Code. Max length: 9'
+  - name: cadr
+    description: 'Address. Max length: 9'
+  - name: city__en_us
+    description: '(required) City (Letterhead) - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: casi
+    description: 'Extra Intrastat Info. Max length: 3'
+  - name: emno
+    description: 'Manager. Max length: 9'
+  - name: ract
+    description: 'Availability Type. Max length: 6'
+  - name: clrt
+    description: 'Labor Rate Code. Max length: 6'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: dstp
+    description: 'Department Subtype. Allowed values: 5, 10, 15, 20, 25, 30, 35, 40,
+      45, 50, 75, 99'
+  - name: dstp_kw
+    description: 'Department Subtype (keyword). Allowed values: tcdpt.styp.asm.cell,
+      tcdpt.styp.asl.buffer, tcdpt.styp.asl.station, tcdpt.styp.work.cell, tcdpt.styp.repair.cell,
+      tcdpt.styp.js.wc, tcdpt.styp.js.subwc, tcdpt.styp.js.subc, tcdpt.styp.cost,
+      tcdpt.styp.calc.office, tcdpt.styp.transformation, tcdpt.styp.not.applicable'
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: casi_ref_compnr
+    description: company number of primary key of table tccom705 Extra Intrastat Info
+  - name: emno_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ract_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: clrt_ref_compnr
+    description: company number of primary key of table tcppl090 Labor Rate Codes
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwoc_eunt
+    description: 'CC: Enterprise Unit of Department. Max length: 6'
+  - name: eunt_rcmp
+    description: 'CC: Reference Company of Enterprise Unit'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs065 Departments table, Generated 2026-04-10T19:41:13Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cwoc

@@ -1,0 +1,97 @@
+version: 2
+models:
+- name: u5woclaims
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: wco_trans_flag
+    description: WCO_TRANS_FLAG
+  - name: wco_org
+    description: WCO_ORG
+  - name: wco_schedule_item
+    description: WCO_SCHEDULE_ITEM
+  - name: wco_transid
+    description: WCO_TRANSID
+  - name: wco_contractor_qty
+    description: WCO_CONTRACTOR_QTY
+  - name: wco_contractor_rate
+    description: WCO_CONTRACTOR_RATE
+  - name: wco_chargedate
+    description: WCO_CHARGEDATE
+  - name: wco_comments
+    description: WCO_COMMENTS
+  - name: wco_scheditem_desc
+    description: WCO_SCHEDITEM_DESC
+  - name: wco_scheditem_rate
+    description: WCO_SCHEDITEM_RATE
+  - name: wco_linetotal
+    description: WCO_LINETOTAL
+  - name: wco_woscheditem
+    description: WCO_WOSCHEDITEM
+  - name: wco_wotype
+    description: WCO_WOTYPE
+  - name: wco_woparent
+    description: WCO_WOPARENT
+  - name: wco_contract_code
+    description: WCO_CONTRACT_CODE
+  - name: wco_contractor
+    description: WCO_CONTRACTOR
+  - name: wco_activity
+    description: WCO_ACTIVITY
+  - name: wco_activity_desc
+    description: WCO_ACTIVITY_DESC
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: wco_line_status
+    description: WCO_LINE_STATUS
+  - name: wco_comments_int
+    description: WCO_COMMENTS_INT
+  - name: wco_derprojact
+    description: WCO_DERPROJACT
+  - name: wco_derprojnum
+    description: WCO_DERPROJNUM
+  - name: wco_expprojact
+    description: WCO_EXPPROJACT
+  - name: wco_expprojnum
+    description: WCO_EXPPROJNUM
+  - name: wco_processed_error
+    description: 'WCO_PROCESSED_ERROR. Max length: 0'
+  - name: wco_processed_status
+    description: WCO_PROCESSED_STATUS
+  - name: wco_event
+    description: WCO_EVENT
+  - name: wco_pk
+    description: WCO_PK
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5WOCLAIMS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - wco_event
+        - wco_pk
+        - wco_org

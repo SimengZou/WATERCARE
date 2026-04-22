@@ -1,0 +1,176 @@
+version: 2
+models:
+- name: wslcdrbuild_xbuildnondomdp
+  columns:
+  - name: installin10days
+    description: 'Metadata for column INSTALLIN10DAYS. Max length: 10'
+  - name: sharedtoseparatemeter
+    description: 'Metadata for column SHAREDTOSEPARATEMETER. Max length: 30'
+  - name: magflowreq
+    description: 'Metadata for column MAGFLOWREQ. Max length: 1'
+  - name: sprinklersupplypipesize
+    description: Metadata for column SPRINKLERSUPPLYPIPESIZE
+  - name: relocationtype
+    description: 'Metadata for column RELOCATIONTYPE. Max length: 10'
+  - name: dp
+    description: 'Metadata for column DP. Max length: 20'
+  - name: wslstddrawing
+    description: 'Metadata for column WSLSTDDRAWING. Max length: 50'
+  - name: newmeterdiameter
+    description: Metadata for column NEWMETERDIAMETER
+  - name: wastewateruseexistingconn
+    description: 'Metadata for column WASTEWATERUSEEXISTINGCONN. Max length: 1'
+  - name: wastewaterrelocation
+    description: 'Metadata for column WASTEWATERRELOCATION. Max length: 1'
+  - name: billaddress
+    description: 'Metadata for column BILLADDRESS. Max length: 100'
+  - name: wastewaternewconn
+    description: 'Metadata for column WASTEWATERNEWCONN. Max length: 1'
+  - name: estimateddailywaterdemand
+    description: Metadata for column ESTIMATEDDAILYWATERDEMAND
+  - name: resourceconsentno
+    description: 'Metadata for column RESOURCECONSENTNO. Max length: 50'
+  - name: waternewmeter
+    description: 'Metadata for column WATERNEWMETER. Max length: 1'
+  - name: accountno
+    description: 'Metadata for column ACCOUNTNO. Max length: 50'
+  - name: meterno
+    description: 'Metadata for column METERNO. Max length: 50'
+  - name: industrytype
+    description: 'Metadata for column INDUSTRYTYPE. Max length: 10'
+  - name: waterseparateasharedmeter
+    description: 'Metadata for column WATERSEPARATEASHAREDMETER. Max length: 1'
+  - name: billclass
+    description: 'Metadata for column BILLCLASS. Max length: 10'
+  - name: numberofmeters
+    description: Metadata for column NUMBEROFMETERS
+  - name: xbuilddoemsticdetailskey
+    description: (required) Metadata for column XBUILDDOEMSTICDETAILSKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: disconnectmeter
+    description: 'Metadata for column DISCONNECTMETER. Max length: 30'
+  - name: waternoconnectionrequired
+    description: 'Metadata for column WATERNOCONNECTIONREQUIRED. Max length: 1'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: waternewfiresprinklerconne
+    description: 'Metadata for column WATERNEWFIRESPRINKLERCONNE. Max length: 1'
+  - name: remotereader
+    description: 'Metadata for column REMOTEREADER. Max length: 1'
+  - name: waternewirriagtionmeter
+    description: 'Metadata for column WATERNEWIRRIAGTIONMETER. Max length: 1'
+  - name: ct
+    description: 'Metadata for column CT. Max length: 20'
+  - name: firesprinklermeter
+    description: 'Metadata for column FIRESPRINKLERMETER. Max length: 30'
+  - name: additionaldetails
+    description: 'Metadata for column ADDITIONALDETAILS. Max length: 500'
+  - name: wastewaternewconnsize
+    description: 'Metadata for column WASTEWATERNEWCONNSIZE. Max length: 10'
+  - name: relocatemeter
+    description: 'Metadata for column RELOCATEMETER. Max length: 30'
+  - name: wastewaterinstallrequired
+    description: 'Metadata for column WASTEWATERINSTALLREQUIRED. Max length: 10'
+  - name: watermainloc
+    description: 'Metadata for column WATERMAINLOC. Max length: 10'
+  - name: watermainsize
+    description: Metadata for column WATERMAINSIZE
+  - name: floorarealt65
+    description: 'Metadata for column FLOORAREALT65. Max length: 1'
+  - name: relationtoproperty
+    description: 'Metadata for column RELATIONTOPROPERTY. Max length: 10'
+  - name: buildconsentno
+    description: 'Metadata for column BUILDCONSENTNO. Max length: 30'
+  - name: irrigationmeter
+    description: 'Metadata for column IRRIGATIONMETER. Max length: 30'
+  - name: pipematerial
+    description: 'Metadata for column PIPEMATERIAL. Max length: 10'
+  - name: waterincreasemetersize
+    description: 'Metadata for column WATERINCREASEMETERSIZE. Max length: 1'
+  - name: wastewaterincreasingdemand
+    description: 'Metadata for column WASTEWATERINCREASINGDEMAND. Max length: 1'
+  - name: wastewaterinstalltype
+    description: 'Metadata for column WASTEWATERINSTALLTYPE. Max length: 100'
+  - name: disconnectionreason
+    description: 'Metadata for column DISCONNECTIONREASON. Max length: 10'
+  - name: apbldgappldtlkey
+    description: Metadata for column APBLDGAPPLDTLKEY
+  - name: magflowpowertype
+    description: 'Metadata for column MAGFLOWPOWERTYPE. Max length: 10'
+  - name: siteconnectedtowastewater
+    description: 'Metadata for column SITECONNECTEDTOWASTEWATER. Max length: 10'
+  - name: lot
+    description: 'Metadata for column LOT. Max length: 20'
+  - name: wastewaterconnsize
+    description: 'Metadata for column WASTEWATERCONNSIZE. Max length: 10'
+  - name: waternewmetersize
+    description: 'Metadata for column WATERNEWMETERSIZE. Max length: 10'
+  - name: vacpitno
+    description: 'Metadata for column VACPITNO. Max length: 150'
+  - name: siteconnectedtowater
+    description: 'Metadata for column SITECONNECTEDTOWATER. Max length: 10'
+  - name: backflowtype
+    description: 'Metadata for column BACKFLOWTYPE. Max length: 10'
+  - name: wastewatercontype
+    description: 'Metadata for column WASTEWATERCONTYPE. Max length: 10'
+  - name: strainer
+    description: 'Metadata for column STRAINER. Max length: 10'
+  - name: waterdisconnectmeter
+    description: 'Metadata for column WATERDISCONNECTMETER. Max length: 1'
+  - name: wastewaternoconnectionrequ
+    description: 'Metadata for column WASTEWATERNOCONNECTIONREQU. Max length: 1'
+  - name: wastewaterincreaseconnsize
+    description: 'Metadata for column WASTEWATERINCREASECONNSIZE. Max length: 1'
+  - name: buildconsentdate
+    description: Metadata for column BUILDCONSENTDATE
+  - name: meterboxsize
+    description: 'Metadata for column METERBOXSIZE. Max length: 100'
+  - name: wastewaterconnectiontype
+    description: 'Metadata for column WASTEWATERCONNECTIONTYPE. Max length: 300'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: billmethod
+    description: 'Metadata for column BILLMETHOD. Max length: 10'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: individualpropertytitle
+    description: 'Metadata for column INDIVIDUALPROPERTYTITLE. Max length: 1'
+  - name: waterrelocatemeter
+    description: 'Metadata for column WATERRELOCATEMETER. Max length: 1'
+  - name: devcontpaid
+    description: 'Metadata for column DEVCONTPAID. Max length: 10'
+  - name: resourceconsentdate
+    description: Metadata for column RESOURCECONSENTDATE
+  - name: newwatermeterloc
+    description: 'Metadata for column NEWWATERMETERLOC. Max length: 50'
+  - name: billownerorapplicant
+    description: 'Metadata for column BILLOWNERORAPPLICANT. Max length: 10'
+  - name: estimatedpeakflow
+    description: Metadata for column ESTIMATEDPEAKFLOW
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: wastewaterdisconnect
+    description: 'Metadata for column WASTEWATERDISCONNECT. Max length: 1'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table WSLCDRBUILD.XBUILDNONDOMDP on 2022-03-03T11:34:22.275

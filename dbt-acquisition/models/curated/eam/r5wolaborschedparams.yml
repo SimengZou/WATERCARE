@@ -1,0 +1,190 @@
+version: 2
+models:
+- name: r5wolaborschedparams
+  columns:
+  - name: wls_lastsaved
+    description: WLS_LASTSAVED
+  - name: wls_code
+    description: WLS_CODE
+    data_tests:
+    - unique
+  - name: wls_user
+    description: WLS_USER
+  - name: wls_parameter
+    description: WLS_PARAMETER
+  - name: wls_defparam
+    description: WLS_DEFPARAM
+  - name: wls_sessionid
+    description: WLS_SESSIONID
+  - name: wls_woschedstartdate
+    description: WLS_WOSCHEDSTARTDATE
+  - name: wls_woschedenddate
+    description: WLS_WOSCHEDENDDATE
+  - name: wls_created
+    description: WLS_CREATED
+  - name: wls_event_org
+    description: WLS_EVENT_ORG
+  - name: wls_workorder
+    description: WLS_WORKORDER
+  - name: wls_womrc
+    description: WLS_WOMRC
+  - name: wls_wopmschedule
+    description: WLS_WOPMSCHEDULE
+  - name: wls_woproject
+    description: WLS_WOPROJECT
+  - name: wls_woprojbud
+    description: WLS_WOPROJBUD
+  - name: wls_woobject
+    description: WLS_WOOBJECT
+  - name: wls_woobjectorg
+    description: WLS_WOOBJECTORG
+  - name: wls_woloc
+    description: WLS_WOLOC
+  - name: wls_wolocorg
+    description: WLS_WOLOCORG
+  - name: wls_wojobtype
+    description: WLS_WOJOBTYPE
+  - name: wls_wopriority
+    description: WLS_WOPRIORITY
+  - name: wls_wostatus
+    description: WLS_WOSTATUS
+  - name: wls_woreportedby
+    description: WLS_WOREPORTEDBY
+  - name: wls_woassignedby
+    description: WLS_WOASSIGNEDBY
+  - name: wls_woassignedto
+    description: WLS_WOASSIGNEDTO
+  - name: wls_woclass
+    description: WLS_WOCLASS
+  - name: wls_woclassorg
+    description: WLS_WOCLASSORG
+  - name: wls_wocriticality
+    description: WLS_WOCRITICALITY
+  - name: wls_woshift
+    description: WLS_WOSHIFT
+  - name: wls_object
+    description: WLS_OBJECT
+  - name: wls_objorg
+    description: WLS_OBJORG
+  - name: wls_objtype
+    description: WLS_OBJTYPE
+  - name: wls_objstatus
+    description: WLS_OBJSTATUS
+  - name: wls_objclass
+    description: WLS_OBJCLASS
+  - name: wls_objclassorg
+    description: WLS_OBJCLASSORG
+  - name: wls_objcategory
+    description: WLS_OBJCATEGORY
+  - name: wls_objcostcode
+    description: WLS_OBJCOSTCODE
+  - name: wls_objmrc
+    description: WLS_OBJMRC
+  - name: wls_objparent
+    description: WLS_OBJPARENT
+  - name: wls_objparentorg
+    description: WLS_OBJPARENTORG
+  - name: wls_objloc
+    description: WLS_OBJLOC
+  - name: wls_objlocorg
+    description: WLS_OBJLOCORG
+  - name: wls_acttrade
+    description: WLS_ACTTRADE
+  - name: wls_acttask
+    description: WLS_ACTTASK
+  - name: wls_actstartdate
+    description: WLS_ACTSTARTDATE
+  - name: wls_actenddate
+    description: WLS_ACTENDDATE
+  - name: wls_empmrc
+    description: WLS_EMPMRC
+  - name: wls_empclass
+    description: WLS_EMPCLASS
+  - name: wls_empclassorg
+    description: WLS_EMPCLASSORG
+  - name: wls_emptrade
+    description: WLS_EMPTRADE
+  - name: wls_empshift
+    description: WLS_EMPSHIFT
+  - name: wls_empcrew
+    description: WLS_EMPCREW
+  - name: wls_empcreworg
+    description: WLS_EMPCREWORG
+  - name: wls_unschedcolor
+    description: WLS_UNSCHEDCOLOR
+  - name: wls_lightlyschedcolor
+    description: WLS_LIGHTLYSCHEDCOLOR
+  - name: wls_moderatelyschedcolor
+    description: WLS_MODERATELYSCHEDCOLOR
+  - name: wls_fullyschedcolor
+    description: WLS_FULLYSCHEDCOLOR
+  - name: wls_overschedcolor
+    description: WLS_OVERSCHEDCOLOR
+  - name: wls_thresholdpercent
+    description: WLS_THRESHOLDPERCENT
+  - name: wls_genavailthrough
+    description: WLS_GENAVAILTHROUGH
+  - name: wls_scheduling
+    description: WLS_SCHEDULING
+  - name: wls_schedulingstartdate
+    description: WLS_SCHEDULINGSTARTDATE
+  - name: wls_updated
+    description: WLS_UPDATED
+  - name: wls_listlastrefreshed
+    description: WLS_LISTLASTREFRESHED
+  - name: wls_datalastgen
+    description: WLS_DATALASTGEN
+  - name: wls_mp
+    description: WLS_MP
+  - name: wls_mp_org
+    description: WLS_MP_ORG
+  - name: wls_mp_seq
+    description: WLS_MP_SEQ
+  - name: wls_campaign
+    description: WLS_CAMPAIGN
+  - name: wls_campaign_line
+    description: WLS_CAMPAIGN_LINE
+  - name: wls_updatecount
+    description: WLS_UPDATECOUNT
+  - name: wls_objincludechildren
+    description: WLS_OBJINCLUDECHILDREN
+  - name: wls_allowactsondiffsession
+    description: WLS_ALLOWACTSONDIFFSESSION
+  - name: wls_skipequipselectionprocess
+    description: WLS_SKIPEQUIPSELECTIONPROCESS
+  - name: wls_maxcalcpriority
+    description: WLS_MAXCALCPRIORITY
+  - name: wls_operationalstatus
+    description: WLS_OPERATIONALSTATUS
+  - name: wls_shiftscheduling
+    description: WLS_SHIFTSCHEDULING
+  - name: wls_shiftstart
+    description: WLS_SHIFTSTART
+  - name: wls_shiftduration
+    description: WLS_SHIFTDURATION
+  - name: wls_autoselectactivity
+    description: WLS_AUTOSELECTACTIVITY
+  - name: wls_excludeduration
+    description: WLS_EXCLUDEDURATION
+  - name: wls_excludepeoplerequired
+    description: WLS_EXCLUDEPEOPLEREQUIRED
+  - name: wls_consist
+    description: WLS_CONSIST
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WOLABORSCHEDPARAMS

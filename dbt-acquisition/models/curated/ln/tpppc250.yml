@@ -1,0 +1,191 @@
+version: 2
+models:
+- name: tpppc250
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cequ
+    description: '(required) Equipment. Max length: 47'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: ltdt
+    description: Transaction Time
+  - name: rgdt
+    description: Registration Date
+  - name: time
+    description: Amount of Time
+  - name: cuti
+    description: 'Time Unit. Max length: 3'
+  - name: quan
+    description: Quantity
+  - name: ratc
+    description: Cost Rate
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: rtcc_1
+    description: Rate
+  - name: rtcc_2
+    description: Rate
+  - name: rtcc_3
+    description: Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: amoc
+    description: Cost Amount
+  - name: cdoc__en_us
+    description: '(required) Document - base language. Max length: 10'
+    data_tests:
+    - not_null
+  - name: cptc
+    description: 'Cost Period Table for Cost Control Period. Max length: 6'
+  - name: year
+    description: Cost Control Year
+  - name: peri
+    description: Cost Control Period
+  - name: cptf
+    description: 'Cost Period Table for Cost Control Period. Max length: 6'
+  - name: fyea
+    description: Fiscal Year
+  - name: fper
+    description: Fiscal Period
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: ifbp
+    description: 'Invoice-from Business Partner. Max length: 9'
+  - name: orno
+    description: 'Purchase Order. Max length: 9'
+  - name: pono
+    description: Position Number
+  - name: srnb
+    description: Receipt Number
+  - name: cfpo
+    description: 'Approved for Posting. Allowed values: 1, 2'
+  - name: cfpo_kw
+    description: 'Approved for Posting (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: potf
+    description: 'Post to LN Financials. Allowed values: 1, 2'
+  - name: potf_kw
+    description: 'Post to LN Financials (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: teta
+    description: 'Posting Type. Allowed values: 1, 3, 4, 5, 7, 8'
+  - name: teta_kw
+    description: 'Posting Type (keyword). Allowed values: tpppc.teta.manu, tpppc.teta.order,
+      tpppc.teta.deliver.tp, tpppc.teta.manu.rev, tpppc.teta.deliver.wh, tpppc.teta.deliver.tp.rev'
+  - name: entu
+    description: 'Enterprise Unit. Max length: 6'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: loco
+    description: 'User. Max length: 16'
+  - name: rdat
+    description: Rate Date
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: fcrt
+    description: 'Fixed Currency Rate. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7, 8,
+      10, 20'
+  - name: fcrt_kw
+    description: 'Fixed Currency Rate (keyword). Allowed values: , tcfcrt.fixedl,
+      tcfcrt.fixedh, tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd,
+      tcfcrt.manual, tcfcrt.fixed, tcfcrt.not.appl'
+  - name: txta
+    description: Text
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: cuti_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cdoc_ref_compnr
+    description: company number of primary key of table tppin105 Invoice Text by Document
+  - name: cptc_year_peri_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cptc_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: cptf_fyea_fper_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cptf_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: ifbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpppc250 Commitments (Equipment) table, Generated 2026-04-10T19:42:09Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cequ
+        - sern

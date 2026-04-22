@@ -1,0 +1,232 @@
+version: 2
+models:
+- name: billing_account
+  columns:
+  - name: moveinadminholdby
+    description: 'Metadata for column MOVEINADMINHOLDBY. Max length: 12'
+  - name: collectionsflag
+    description: 'Metadata for column COLLECTIONSFLAG. Max length: 1'
+  - name: statby
+    description: 'Metadata for column STATBY. Max length: 12'
+  - name: moveoutadminholdby
+    description: 'Metadata for column MOVEOUTADMINHOLDBY. Max length: 12'
+  - name: accountkey
+    description: (required) Metadata for column ACCOUNTKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: responsibility
+    description: 'Metadata for column RESPONSIBILITY. Max length: 10'
+  - name: delinquencyflag
+    description: 'Metadata for column DELINQUENCYFLAG. Max length: 1'
+  - name: budgetbillingflag
+    description: 'Metadata for column BUDGETBILLINGFLAG. Max length: 1'
+  - name: noarng
+    description: 'Metadata for column NOARNG. Max length: 1'
+  - name: penexempt
+    description: 'Metadata for column PENEXEMPT. Max length: 10'
+  - name: statdttm
+    description: Metadata for column STATDTTM
+  - name: propertykey
+    description: Metadata for column PROPERTYKEY
+  - name: nonotice
+    description: 'Metadata for column NONOTICE. Max length: 1'
+  - name: commentskey
+    description: Metadata for column COMMENTSKEY
+  - name: donotdirectdebit
+    description: 'Metadata for column DONOTDIRECTDEBIT. Max length: 1'
+  - name: numericconsval7
+    description: Metadata for column NUMERICCONSVAL7
+  - name: charconsval2
+    description: 'Metadata for column CHARCONSVAL2. Max length: 10'
+  - name: finalbillflag
+    description: 'Metadata for column FINALBILLFLAG. Max length: 1'
+  - name: charconsval1
+    description: 'Metadata for column CHARCONSVAL1. Max length: 10'
+  - name: writeoffeligibleflag
+    description: 'Metadata for column WRITEOFFELIGIBLEFLAG. Max length: 1'
+  - name: accounttype
+    description: Metadata for column ACCOUNTTYPE
+  - name: charconsval8
+    description: 'Metadata for column CHARCONSVAL8. Max length: 10'
+  - name: initiatedby
+    description: 'Metadata for column INITIATEDBY. Max length: 12'
+  - name: collectionseligibleflag
+    description: 'Metadata for column COLLECTIONSELIGIBLEFLAG. Max length: 1'
+  - name: numericconsval2
+    description: Metadata for column NUMERICCONSVAL2
+  - name: eligibleforrefundflag
+    description: 'Metadata for column ELIGIBLEFORREFUNDFLAG. Max length: 1'
+  - name: closedate
+    description: Metadata for column CLOSEDATE
+  - name: deppddate
+    description: Metadata for column DEPPDDATE
+  - name: preselectedforinterimbill
+    description: 'Metadata for column PRESELECTEDFORINTERIMBILL. Max length: 1'
+  - name: charconsval6
+    description: 'Metadata for column CHARCONSVAL6. Max length: 10'
+  - name: bankruptflag
+    description: 'Metadata for column BANKRUPTFLAG. Max length: 1'
+  - name: blngstdttm
+    description: Metadata for column BLNGSTDTTM
+  - name: numericconsval1
+    description: Metadata for column NUMERICCONSVAL1
+  - name: charconsval4
+    description: 'Metadata for column CHARCONSVAL4. Max length: 10'
+  - name: businesstype
+    description: 'Metadata for column BUSINESSTYPE. Max length: 10'
+  - name: nobill
+    description: 'Metadata for column NOBILL. Max length: 1'
+  - name: occupant
+    description: 'Metadata for column OCCUPANT. Max length: 10'
+  - name: legacyaccountnumber
+    description: 'Metadata for column LEGACYACCOUNTNUMBER. Max length: 27'
+  - name: moveoutstatus
+    description: Metadata for column MOVEOUTSTATUS
+  - name: acctclass
+    description: 'Metadata for column ACCTCLASS. Max length: 10'
+  - name: moveoutexception
+    description: Metadata for column MOVEOUTEXCEPTION
+  - name: nodisconn
+    description: 'Metadata for column NODISCONN. Max length: 1'
+  - name: moveinadminholddttm
+    description: Metadata for column MOVEINADMINHOLDDTTM
+  - name: opendate
+    description: Metadata for column OPENDATE
+  - name: preselectedforbillrun
+    description: 'Metadata for column PRESELECTEDFORBILLRUN. Max length: 1'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: blngstat
+    description: 'Metadata for column BLNGSTAT. Max length: 10'
+  - name: acceptchecksflag
+    description: 'Metadata for column ACCEPTCHECKSFLAG. Max length: 1'
+  - name: accountnumber
+    description: 'Metadata for column ACCOUNTNUMBER. Max length: 27'
+  - name: moveindate
+    description: Metadata for column MOVEINDATE
+  - name: numericconsval3
+    description: Metadata for column NUMERICCONSVAL3
+  - name: collexempt
+    description: 'Metadata for column COLLEXEMPT. Max length: 1'
+  - name: moveoutadminholdreason
+    description: 'Metadata for column MOVEOUTADMINHOLDREASON. Max length: 10'
+  - name: allowarchiveflag
+    description: 'Metadata for column ALLOWARCHIVEFLAG. Max length: 1'
+  - name: aggregatekey
+    description: Metadata for column AGGREGATEKEY
+  - name: transferredto
+    description: Metadata for column TRANSFERREDTO
+  - name: moveoutadminholddttm
+    description: Metadata for column MOVEOUTADMINHOLDDTTM
+  - name: initiateddttm
+    description: Metadata for column INITIATEDDTTM
+  - name: delinquencyexempt
+    description: 'Metadata for column DELINQUENCYEXEMPT. Max length: 10'
+  - name: acctsubgrp
+    description: 'Metadata for column ACCTSUBGRP. Max length: 10'
+  - name: charconsval3
+    description: 'Metadata for column CHARCONSVAL3. Max length: 10'
+  - name: credflag
+    description: 'Metadata for column CREDFLAG. Max length: 1'
+  - name: moveoutdate
+    description: Metadata for column MOVEOUTDATE
+  - name: acctgrp
+    description: 'Metadata for column ACCTGRP. Max length: 10'
+  - name: custdesc
+    description: 'Metadata for column CUSTDESC. Max length: 85'
+  - name: suspendby
+    description: 'Metadata for column SUSPENDBY. Max length: 12'
+  - name: archivethroughdate
+    description: Metadata for column ARCHIVETHROUGHDATE
+  - name: lieneligibleflag
+    description: 'Metadata for column LIENELIGIBLEFLAG. Max length: 1'
+  - name: suspendflag
+    description: 'Metadata for column SUSPENDFLAG. Max length: 1'
+  - name: moveinstatus
+    description: Metadata for column MOVEINSTATUS
+  - name: aggregateflag
+    description: 'Metadata for column AGGREGATEFLAG. Max length: 1'
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: budgetbillingdisallowed
+    description: 'Metadata for column BUDGETBILLINGDISALLOWED. Max length: 1'
+  - name: numericconsval6
+    description: Metadata for column NUMERICCONSVAL6
+  - name: noticedttm
+    description: Metadata for column NOTICEDTTM
+  - name: suspenddttm
+    description: Metadata for column SUSPENDDTTM
+  - name: lienexempt
+    description: 'Metadata for column LIENEXEMPT. Max length: 1'
+  - name: numericconsval5
+    description: Metadata for column NUMERICCONSVAL5
+  - name: parcelkey
+    description: Metadata for column PARCELKEY
+  - name: billingcycle
+    description: 'Metadata for column BILLINGCYCLE. Max length: 10'
+  - name: numericconsval8
+    description: Metadata for column NUMERICCONSVAL8
+  - name: moveinadminholdreason
+    description: 'Metadata for column MOVEINADMINHOLDREASON. Max length: 10'
+  - name: moveinexception
+    description: Metadata for column MOVEINEXCEPTION
+  - name: arrangedflag
+    description: 'Metadata for column ARRANGEDFLAG. Max length: 1'
+  - name: charconsval5
+    description: 'Metadata for column CHARCONSVAL5. Max length: 10'
+  - name: billprintexception
+    description: 'Metadata for column BILLPRINTEXCEPTION. Max length: 10'
+  - name: lienflag
+    description: 'Metadata for column LIENFLAG. Max length: 1'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: oneoffchargeflag
+    description: 'Metadata for column ONEOFFCHARGEFLAG. Max length: 1'
+  - name: taxexemptfalg
+    description: 'Metadata for column TAXEXEMPTFALG. Max length: 1'
+  - name: assigned
+    description: 'Metadata for column ASSIGNED. Max length: 12'
+  - name: delinquencyexemptflag
+    description: 'Metadata for column DELINQUENCYEXEMPTFLAG. Max length: 1'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: allowcheckoverridesflag
+    description: 'Metadata for column ALLOWCHECKOVERRIDESFLAG. Max length: 1'
+  - name: idkey
+    description: Metadata for column IDKEY
+  - name: accountstatus
+    description: 'Metadata for column ACCOUNTSTATUS. Max length: 6'
+  - name: frequency
+    description: 'Metadata for column FREQUENCY. Max length: 1'
+  - name: movedoutaccountkey
+    description: Metadata for column MOVEDOUTACCOUNTKEY
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: charconsval7
+    description: 'Metadata for column CHARCONSVAL7. Max length: 10'
+  - name: numericconsval4
+    description: Metadata for column NUMERICCONSVAL4
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.ACCOUNT on 2021-07-09T15:14:50.998

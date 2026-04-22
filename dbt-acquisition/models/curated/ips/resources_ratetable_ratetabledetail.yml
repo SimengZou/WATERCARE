@@ -1,0 +1,138 @@
+version: 2
+models:
+- name: resources_ratetable_ratetabledetail
+  columns:
+  - name: proratecyclebills
+    description: 'Metadata for column PRORATECYCLEBILLS. Max length: 1'
+  - name: rateforstep6
+    description: Metadata for column RATEFORSTEP6
+  - name: finalcycledays
+    description: Metadata for column FINALCYCLEDAYS
+  - name: isratechangeprorationdisabled
+    description: 'Metadata for column ISRATECHANGEPRORATIONDISABLED. Max length: 1'
+  - name: sortorder
+    description: Metadata for column SORTORDER
+  - name: rateforstep7
+    description: Metadata for column RATEFORSTEP7
+  - name: ratestep6
+    description: Metadata for column RATESTEP6
+  - name: roundup
+    description: 'Metadata for column ROUNDUP. Max length: 1'
+  - name: effectivetodate
+    description: Metadata for column EFFECTIVETODATE
+  - name: ratestep7
+    description: Metadata for column RATESTEP7
+  - name: ratetabledetailkey
+    description: (required) Metadata for column RATETABLEDETAILKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: nodename
+    description: 'Metadata for column NODENAME. Max length: 35'
+  - name: rateforstep3
+    description: Metadata for column RATEFORSTEP3
+  - name: ratestep10
+    description: Metadata for column RATESTEP10
+  - name: ratestep2
+    description: Metadata for column RATESTEP2
+  - name: ratestep8
+    description: Metadata for column RATESTEP8
+  - name: parentvalue
+    description: Metadata for column PARENTVALUE
+  - name: conversionfactor
+    description: Metadata for column CONVERSIONFACTOR
+  - name: ratestep4
+    description: Metadata for column RATESTEP4
+  - name: rateforstep5
+    description: Metadata for column RATEFORSTEP5
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: maximumcharge
+    description: Metadata for column MAXIMUMCHARGE
+  - name: rateforstep9
+    description: Metadata for column RATEFORSTEP9
+  - name: value
+    description: Metadata for column VALUE
+  - name: cycledays
+    description: Metadata for column CYCLEDAYS
+  - name: ratetype
+    description: Metadata for column RATETYPE
+  - name: minimumcharge
+    description: Metadata for column MINIMUMCHARGE
+  - name: rateforstep8
+    description: Metadata for column RATEFORSTEP8
+  - name: effectivedate
+    description: Metadata for column EFFECTIVEDATE
+  - name: recurringflag
+    description: 'Metadata for column RECURRINGFLAG. Max length: 1'
+  - name: ratestep5
+    description: Metadata for column RATESTEP5
+  - name: proratebaseflag
+    description: 'Metadata for column PRORATEBASEFLAG. Max length: 1'
+  - name: nodesource
+    description: 'Metadata for column NODESOURCE. Max length: 255'
+  - name: rateforstep10
+    description: Metadata for column RATEFORSTEP10
+  - name: rateperunit
+    description: Metadata for column RATEPERUNIT
+  - name: rangevalue
+    description: 'Metadata for column RANGEVALUE. Max length: 1'
+  - name: useforprorating
+    description: Metadata for column USEFORPRORATING
+  - name: rateforstep2
+    description: Metadata for column RATEFORSTEP2
+  - name: ratetablesetupkey
+    description: Metadata for column RATETABLESETUPKEY
+  - name: formulakey
+    description: Metadata for column FORMULAKEY
+  - name: roundproratesteps
+    description: 'Metadata for column ROUNDPRORATESTEPS. Max length: 1'
+  - name: ratestep1
+    description: Metadata for column RATESTEP1
+  - name: proratestepsflag
+    description: 'Metadata for column PRORATESTEPSFLAG. Max length: 1'
+  - name: moniker
+    description: 'Metadata for column MONIKER. Max length: 100'
+  - name: numberofsteps
+    description: Metadata for column NUMBEROFSTEPS
+  - name: uom
+    description: 'Metadata for column UOM. Max length: 20'
+  - name: rateforstep4
+    description: Metadata for column RATEFORSTEP4
+  - name: useoverage
+    description: 'Metadata for column USEOVERAGE. Max length: 1'
+  - name: branchkey
+    description: Metadata for column BRANCHKEY
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: ratestep3
+    description: Metadata for column RATESTEP3
+  - name: rateforstep1
+    description: Metadata for column RATEFORSTEP1
+  - name: ratestep9
+    description: Metadata for column RATESTEP9
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table RESOURCES_RATETABLE.RATETABLEDETAIL on 2021-07-09T15:17:00.193

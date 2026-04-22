@@ -1,0 +1,177 @@
+version: 2
+models:
+- name: tiipd001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: cpha
+    description: 'Phantom. Allowed values: 1, 2'
+  - name: cpha_kw
+    description: 'Phantom (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oqdr
+    description: 'Quantity-dependent Routing. Allowed values: 1, 2'
+  - name: oqdr_kw
+    description: 'Quantity-dependent Routing (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: phst
+    description: 'Use Phantom Inventory. Allowed values: 1, 2'
+  - name: phst_kw
+    description: 'Use Phantom Inventory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: iuma
+    description: 'Turn Operation 0 into First of. Allowed values: 10, 20'
+  - name: iuma_kw
+    description: 'Turn Operation 0 into First of (keyword). Allowed values: tiipd.iuma.oper1.oper.item,
+      tiipd.iuma.oper1.prod.ordr'
+  - name: repi
+    description: 'Repetitive Item. Allowed values: 1, 2'
+  - name: repi_kw
+    description: 'Repetitive Item (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: scdl
+    description: 'Schedule Code. Max length: 3'
+  - name: pcrp
+    description: Rate Factor for Planning
+  - name: bfcp
+    description: 'Backflush if Material. Allowed values: 1, 2'
+  - name: bfcp_kw
+    description: 'Backflush if Material (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bfep
+    description: 'Backflush Materials. Allowed values: 1, 2'
+  - name: bfep_kw
+    description: 'Backflush Materials (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bfhr
+    description: 'Backflush Hours. Allowed values: 1, 2'
+  - name: bfhr_kw
+    description: 'Backflush Hours (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: unom
+    description: BOM Quantity
+  - name: runi
+    description: Routing Quantity
+  - name: scpf
+    description: Scrap Percentage
+  - name: scpq
+    description: Scrap Quantity
+  - name: drin
+    description: 'Direct Initiate Inventory Issue. Allowed values: 1, 2'
+  - name: drin_kw
+    description: 'Direct Initiate Inventory Issue (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: dris
+    description: 'Direct Process Warehouse Order Line. Allowed values: 1, 2'
+  - name: dris_kw
+    description: 'Direct Process Warehouse Order Line (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: stoi
+    description: 'Obsolete. Allowed values: 0, 1, 2'
+  - name: stoi_kw
+    description: 'Obsolete (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: coac
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: coac_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bomu
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: bomu_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: nsfc
+    description: 'Net Change JSC. Allowed values: 1, 2'
+  - name: nsfc_kw
+    description: 'Net Change JSC (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oltm
+    description: Order Lead Time
+  - name: oltu
+    description: 'Order Lead Time Unit. Allowed values: 5, 10'
+  - name: oltu_kw
+    description: 'Order Lead Time Unit (keyword). Allowed values: tctope.hours, tctope.days'
+  - name: swoc
+    description: 'Warehouse is Mandatory on BOM Line. Allowed values: 1, 2'
+  - name: swoc_kw
+    description: 'Warehouse is Mandatory on BOM Line (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cick
+    description: 'Critical for Inventory. Allowed values: 1, 2'
+  - name: cick_kw
+    description: 'Critical for Inventory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: smfs
+    description: 'Subcontracting with Material Flow. Allowed values: 1, 2'
+  - name: smfs_kw
+    description: 'Subcontracting with Material Flow (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: iimf
+    description: 'Receipt Inspection. Allowed values: 1, 2'
+  - name: iimf_kw
+    description: 'Receipt Inspection (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: iima
+    description: 'Outbound Inspection. Allowed values: 1, 2'
+  - name: iima_kw
+    description: 'Outbound Inspection (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: sfpl
+    description: 'Shop Floor Planner. Max length: 9'
+  - name: rgrp
+    description: 'Routing Group. Max length: 6'
+  - name: jsst
+    description: 'Job Shop Site. Max length: 9'
+  - name: txta
+    description: Item Production Text
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: scdl_ref_compnr
+    description: company number of primary key of table tirpt001 Production Schedule
+      Codes
+  - name: sfpl_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: rgrp_ref_compnr
+    description: company number of primary key of table tcmcs145 Routing Groups
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tiipd001 Items - Production table, Generated 2026-04-10T19:41:47Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - item

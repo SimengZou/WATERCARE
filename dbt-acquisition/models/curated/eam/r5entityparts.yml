@@ -1,0 +1,58 @@
+version: 2
+models:
+- name: r5entityparts
+  columns:
+  - name: epa_lastsaved
+    description: EPA_LASTSAVED
+  - name: epa_rentity
+    description: EPA_RENTITY
+  - name: epa_type
+    description: EPA_TYPE
+  - name: epa_rtype
+    description: EPA_RTYPE
+  - name: epa_code
+    description: EPA_CODE
+  - name: epa_qty
+    description: EPA_QTY
+  - name: epa_uom
+    description: EPA_UOM
+  - name: epa_comment
+    description: EPA_COMMENT
+  - name: epa_part_org
+    description: EPA_PART_ORG
+  - name: epa_updatecount
+    description: EPA_UPDATECOUNT
+  - name: epa_pk
+    description: EPA_PK
+    data_tests:
+    - unique
+  - name: epa_partlocation
+    description: EPA_PARTLOCATION
+  - name: epa_syslevel
+    description: EPA_SYSLEVEL
+  - name: epa_asmlevel
+    description: EPA_ASMLEVEL
+  - name: epa_complevel
+    description: EPA_COMPLEVEL
+  - name: epa_part
+    description: EPA_PART
+  - name: epa_entity
+    description: EPA_ENTITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ENTITYPARTS

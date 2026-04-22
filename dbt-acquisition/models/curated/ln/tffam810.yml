@@ -1,0 +1,137 @@
+version: 2
+models:
+- name: tffam810
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: tkey
+    description: (required) Transaction Key
+    data_tests:
+    - not_null
+  - name: acmc_1
+    description: Accum. Maint. Cost
+  - name: acmc_2
+    description: Accum. Maint. Cost
+  - name: acmc_3
+    description: Accum. Maint. Cost
+  - name: acmt
+    description: Accum. Maint. Cost
+  - name: agrp
+    description: 'Group. Max length: 10'
+  - name: amnt_1
+    description: Transaction Amount
+  - name: amnt_2
+    description: Transaction Amount
+  - name: amnt_3
+    description: Transaction Amount
+  - name: amtt
+    description: Transaction Amount
+  - name: ctgy
+    description: 'Category. Max length: 10'
+  - name: curr
+    description: 'Transaction Currency. Max length: 3'
+  - name: jobn
+    description: Job Number
+  - name: ltdd_1
+    description: Accumulated Depreciation
+  - name: ltdd_2
+    description: Accumulated Depreciation
+  - name: ltdd_3
+    description: Accumulated Depreciation
+  - name: ratd
+    description: Rate Date
+  - name: rate_1
+    description: Rate
+  - name: rate_2
+    description: Rate
+  - name: rate_3
+    description: Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: reas
+    description: 'Reason. Max length: 10'
+  - name: sctg
+    description: 'Default Subcategory. Max length: 10'
+  - name: tagn__en_us
+    description: '(required) Tag Number - base language. Max length: 15'
+    data_tests:
+    - not_null
+  - name: trid
+    description: Transfer Id
+  - name: user
+    description: 'User. Max length: 16'
+  - name: xaex
+    description: 'Asset Extension. Max length: 15'
+  - name: xanb
+    description: 'Asset Number. Max length: 15'
+  - name: xcom
+    description: Company
+  - name: rcst_1
+    description: Revaluation Cost
+  - name: rcst_2
+    description: Revaluation Cost
+  - name: rcst_3
+    description: Revaluation Cost
+  - name: ltdr_1
+    description: Accumulated Revaluated Depreciation
+  - name: ltdr_2
+    description: Accumulated Revaluated Depreciation
+  - name: ltdr_3
+    description: Accumulated Revaluated Depreciation
+  - name: tkey_ref_compnr
+    description: company number of primary key of table tffam800 Transaction
+  - name: agrp_ref_compnr
+    description: company number of primary key of table tffam400 Asset Groups
+  - name: ctgy_sctg_ref_compnr
+    description: company number of primary key of table tffam220 Subcategory
+  - name: ctgy_ref_compnr
+    description: company number of primary key of table tffam200 Categories
+  - name: reas_ref_compnr
+    description: company number of primary key of table tffam650 Reasons
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam810 Acquisition Transaction table, Generated 2026-04-10T19:41:35Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - tkey

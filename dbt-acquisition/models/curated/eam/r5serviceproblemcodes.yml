@@ -1,0 +1,212 @@
+version: 2
+models:
+- name: r5serviceproblemcodes
+  columns:
+  - name: spb_lastsaved
+    description: SPB_LASTSAVED
+  - name: spb_code
+    description: SPB_CODE
+  - name: spb_org
+    description: SPB_ORG
+  - name: spb_desc
+    description: SPB_DESC
+  - name: spb_class
+    description: SPB_CLASS
+  - name: spb_class_org
+    description: SPB_CLASS_ORG
+  - name: spb_standwork
+    description: SPB_STANDWORK
+  - name: spb_priority
+    description: SPB_PRIORITY
+  - name: spb_woclass
+    description: SPB_WOCLASS
+  - name: spb_woclass_org
+    description: SPB_WOCLASS_ORG
+  - name: spb_object
+    description: SPB_OBJECT
+  - name: spb_object_org
+    description: SPB_OBJECT_ORG
+  - name: spb_notused
+    description: SPB_NOTUSED
+  - name: spb_jobtype
+    description: SPB_JOBTYPE
+  - name: spb_updatecount
+    description: SPB_UPDATECOUNT
+  - name: spb_tempfixturnaround
+    description: SPB_TEMPFIXTURNAROUND
+  - name: spb_tempturnaroundunit
+    description: SPB_TEMPTURNAROUNDUNIT
+  - name: spb_permfixturnaround
+    description: SPB_PERMFIXTURNAROUND
+  - name: spb_permturnaroundunit
+    description: SPB_PERMTURNAROUNDUNIT
+  - name: spb_penaltyfactor
+    description: SPB_PENALTYFACTOR
+  - name: spb_udfchar01
+    description: SPB_UDFCHAR01
+  - name: spb_udfchar02
+    description: SPB_UDFCHAR02
+  - name: spb_udfchar03
+    description: SPB_UDFCHAR03
+  - name: spb_udfchar04
+    description: SPB_UDFCHAR04
+  - name: spb_udfchar05
+    description: SPB_UDFCHAR05
+  - name: spb_udfchar06
+    description: SPB_UDFCHAR06
+  - name: spb_udfchar07
+    description: SPB_UDFCHAR07
+  - name: spb_udfchar08
+    description: SPB_UDFCHAR08
+  - name: spb_udfchar09
+    description: SPB_UDFCHAR09
+  - name: spb_udfchar10
+    description: SPB_UDFCHAR10
+  - name: spb_udfnum01
+    description: SPB_UDFNUM01
+  - name: spb_udfnum02
+    description: SPB_UDFNUM02
+  - name: spb_udfnum03
+    description: SPB_UDFNUM03
+  - name: spb_udfnum04
+    description: SPB_UDFNUM04
+  - name: spb_udfnum05
+    description: SPB_UDFNUM05
+  - name: spb_udfdate01
+    description: SPB_UDFDATE01
+  - name: spb_udfdate02
+    description: SPB_UDFDATE02
+  - name: spb_udfdate03
+    description: SPB_UDFDATE03
+  - name: spb_udfdate04
+    description: SPB_UDFDATE04
+  - name: spb_udfdate05
+    description: SPB_UDFDATE05
+  - name: spb_udfchkbox01
+    description: SPB_UDFCHKBOX01
+  - name: spb_udfchkbox02
+    description: SPB_UDFCHKBOX02
+  - name: spb_udfchkbox03
+    description: SPB_UDFCHKBOX03
+  - name: spb_udfchkbox04
+    description: SPB_UDFCHKBOX04
+  - name: spb_udfchkbox05
+    description: SPB_UDFCHKBOX05
+  - name: spb_eqpusability
+    description: SPB_EQPUSABILITY
+  - name: spb_eqpusability_org
+    description: SPB_EQPUSABILITY_ORG
+  - name: spb_forfollowup
+    description: SPB_FORFOLLOWUP
+  - name: spb_general
+    description: SPB_GENERAL
+  - name: spb_followupservicecode
+    description: SPB_FOLLOWUPSERVICECODE
+  - name: spb_followupservicecode_org
+    description: SPB_FOLLOWUPSERVICECODE_ORG
+  - name: spb_followuptiming
+    description: SPB_FOLLOWUPTIMING
+  - name: spb_wostatus
+    description: SPB_WOSTATUS
+  - name: spb_task
+    description: SPB_TASK
+  - name: spb_jobplan
+    description: SPB_JOBPLAN
+  - name: spb_trade
+    description: SPB_TRADE
+  - name: spb_esthours
+    description: SPB_ESTHOURS
+  - name: spb_peoplereq
+    description: SPB_PEOPLEREQ
+  - name: spb_stdresptime
+    description: SPB_STDRESPTIME
+  - name: spb_stdresptimeunit
+    description: SPB_STDRESPTIMEUNIT
+  - name: spb_casetype
+    description: SPB_CASETYPE
+  - name: spb_caseclass
+    description: SPB_CASECLASS
+  - name: spb_caseclass_org
+    description: SPB_CASECLASS_ORG
+  - name: spb_casepriority
+    description: SPB_CASEPRIORITY
+  - name: spb_costcode
+    description: SPB_COSTCODE
+  - name: spb_regulatory
+    description: SPB_REGULATORY
+  - name: spb_casefollowuprequired
+    description: SPB_CASEFOLLOWUPREQUIRED
+  - name: spb_hazardmaterial
+    description: SPB_HAZARDMATERIAL
+  - name: spb_totalestcost
+    description: SPB_TOTALESTCOST
+  - name: spb_udfchar11
+    description: SPB_UDFCHAR11
+  - name: spb_udfchar12
+    description: SPB_UDFCHAR12
+  - name: spb_autorequestcase
+    description: SPB_AUTOREQUESTCASE
+  - name: spb_udfchar14
+    description: SPB_UDFCHAR14
+  - name: spb_udfchar15
+    description: SPB_UDFCHAR15
+  - name: spb_udfchar16
+    description: SPB_UDFCHAR16
+  - name: spb_udfchar17
+    description: SPB_UDFCHAR17
+  - name: spb_udfchar18
+    description: SPB_UDFCHAR18
+  - name: spb_udfchar22
+    description: SPB_UDFCHAR22
+  - name: spb_udfchar19
+    description: SPB_UDFCHAR19
+  - name: spb_udfchar20
+    description: SPB_UDFCHAR20
+  - name: spb_udfchar21
+    description: SPB_UDFCHAR21
+  - name: spb_udfchar23
+    description: SPB_UDFCHAR23
+  - name: spb_udfchar24
+    description: SPB_UDFCHAR24
+  - name: spb_udfchar25
+    description: SPB_UDFCHAR25
+  - name: spb_udfchar26
+    description: SPB_UDFCHAR26
+  - name: spb_udfchar27
+    description: SPB_UDFCHAR27
+  - name: spb_udfchar28
+    description: SPB_UDFCHAR28
+  - name: spb_udfchar29
+    description: SPB_UDFCHAR29
+  - name: spb_udfchar30
+    description: SPB_UDFCHAR30
+  - name: spb_autocreatewo
+    description: SPB_AUTOCREATEWO
+  - name: spb_servicerequestportal
+    description: SPB_SERVICEREQUESTPORTAL
+  - name: spb_udfchar13
+    description: SPB_UDFCHAR13
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5SERVICEPROBLEMCODES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - spb_code
+        - spb_org

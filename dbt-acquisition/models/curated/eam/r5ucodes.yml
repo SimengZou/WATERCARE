@@ -1,0 +1,68 @@
+version: 2
+models:
+- name: r5ucodes
+  columns:
+  - name: uco_lastsaved
+    description: UCO_LASTSAVED
+  - name: uco_image
+    description: UCO_IMAGE
+  - name: uco_code
+    description: UCO_CODE
+  - name: uco_rcode
+    description: UCO_RCODE
+  - name: uco_system
+    description: UCO_SYSTEM
+  - name: uco_desc
+    description: UCO_DESC
+  - name: uco_updatecount
+    description: UCO_UPDATECOUNT
+  - name: uco_created
+    description: UCO_CREATED
+  - name: uco_updated
+    description: UCO_UPDATED
+  - name: uco_textcode
+    description: UCO_TEXTCODE
+  - name: uco_notused
+    description: UCO_NOTUSED
+  - name: uco_icon
+    description: UCO_ICON
+  - name: uco_iconpath
+    description: UCO_ICONPATH
+  - name: uco_weight
+    description: UCO_WEIGHT
+  - name: uco_color
+    description: UCO_COLOR
+  - name: uco_category
+    description: UCO_CATEGORY
+  - name: uco_gisdispatchranking
+    description: UCO_GISDISPATCHRANKING
+  - name: uco_cuadjustment
+    description: UCO_CUADJUSTMENT
+  - name: uco_entity
+    description: UCO_ENTITY
+  - name: uco_rentity
+    description: UCO_RENTITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5UCODES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - uco_entity
+        - uco_code

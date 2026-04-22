@@ -1,0 +1,168 @@
+version: 2
+models:
+- name: r5entitysafety
+  columns:
+  - name: esf_lastsaved
+    description: ESF_LASTSAVED
+  - name: esf_pk
+    description: ESF_PK
+    data_tests:
+    - unique
+  - name: esf_rentity
+    description: ESF_RENTITY
+  - name: esf_code
+    description: ESF_CODE
+  - name: esf_hazard
+    description: ESF_HAZARD
+  - name: esf_hazard_org
+    description: ESF_HAZARD_ORG
+  - name: esf_precaution
+    description: ESF_PRECAUTION
+  - name: esf_precaution_org
+    description: ESF_PRECAUTION_ORG
+  - name: esf_applytochildren
+    description: ESF_APPLYTOCHILDREN
+  - name: esf_deletepending
+    description: ESF_DELETEPENDING
+  - name: esf_timing
+    description: ESF_TIMING
+  - name: esf_sequence
+    description: ESF_SEQUENCE
+  - name: esf_healthhazard
+    description: ESF_HEALTHHAZARD
+  - name: esf_flammability
+    description: ESF_FLAMMABILITY
+  - name: esf_instability
+    description: ESF_INSTABILITY
+  - name: esf_specialhazards
+    description: ESF_SPECIALHAZARDS
+  - name: esf_created
+    description: ESF_CREATED
+  - name: esf_createdby
+    description: ESF_CREATEDBY
+  - name: esf_updated
+    description: ESF_UPDATED
+  - name: esf_updatedby
+    description: ESF_UPDATEDBY
+  - name: esf_reviewed
+    description: ESF_REVIEWED
+  - name: esf_reviewedby
+    description: ESF_REVIEWEDBY
+  - name: esf_reviewedname
+    description: ESF_REVIEWEDNAME
+  - name: esf_reviewedtype
+    description: ESF_REVIEWEDTYPE
+  - name: esf_reviewtrigger
+    description: ESF_REVIEWTRIGGER
+  - name: esf_rentcode
+    description: ESF_RENTCODE
+  - name: esf_udfchar01
+    description: ESF_UDFCHAR01
+  - name: esf_udfchar02
+    description: ESF_UDFCHAR02
+  - name: esf_udfchar03
+    description: ESF_UDFCHAR03
+  - name: esf_udfchar04
+    description: ESF_UDFCHAR04
+  - name: esf_udfchar05
+    description: ESF_UDFCHAR05
+  - name: esf_udfchar06
+    description: ESF_UDFCHAR06
+  - name: esf_udfchar07
+    description: ESF_UDFCHAR07
+  - name: esf_udfchar08
+    description: ESF_UDFCHAR08
+  - name: esf_udfchar09
+    description: ESF_UDFCHAR09
+  - name: esf_udfchar10
+    description: ESF_UDFCHAR10
+  - name: esf_udfchar11
+    description: ESF_UDFCHAR11
+  - name: esf_udfchar12
+    description: ESF_UDFCHAR12
+  - name: esf_udfchar13
+    description: ESF_UDFCHAR13
+  - name: esf_udfchar14
+    description: ESF_UDFCHAR14
+  - name: esf_udfchar15
+    description: ESF_UDFCHAR15
+  - name: esf_udfchar16
+    description: ESF_UDFCHAR16
+  - name: esf_udfchar17
+    description: ESF_UDFCHAR17
+  - name: esf_udfchar18
+    description: ESF_UDFCHAR18
+  - name: esf_udfchar19
+    description: ESF_UDFCHAR19
+  - name: esf_udfchar20
+    description: ESF_UDFCHAR20
+  - name: esf_udfchar21
+    description: ESF_UDFCHAR21
+  - name: esf_udfchar22
+    description: ESF_UDFCHAR22
+  - name: esf_udfchar23
+    description: ESF_UDFCHAR23
+  - name: esf_udfchar24
+    description: ESF_UDFCHAR24
+  - name: esf_udfchar25
+    description: ESF_UDFCHAR25
+  - name: esf_udfchar26
+    description: ESF_UDFCHAR26
+  - name: esf_udfchar27
+    description: ESF_UDFCHAR27
+  - name: esf_udfchar28
+    description: ESF_UDFCHAR28
+  - name: esf_udfchar29
+    description: ESF_UDFCHAR29
+  - name: esf_udfchar30
+    description: ESF_UDFCHAR30
+  - name: esf_udfnum01
+    description: ESF_UDFNUM01
+  - name: esf_udfnum02
+    description: ESF_UDFNUM02
+  - name: esf_udfnum03
+    description: ESF_UDFNUM03
+  - name: esf_udfnum04
+    description: ESF_UDFNUM04
+  - name: esf_udfnum05
+    description: ESF_UDFNUM05
+  - name: esf_udfdate01
+    description: ESF_UDFDATE01
+  - name: esf_udfdate02
+    description: ESF_UDFDATE02
+  - name: esf_udfdate03
+    description: ESF_UDFDATE03
+  - name: esf_udfdate04
+    description: ESF_UDFDATE04
+  - name: esf_udfdate05
+    description: ESF_UDFDATE05
+  - name: esf_udfchkbox01
+    description: ESF_UDFCHKBOX01
+  - name: esf_udfchkbox02
+    description: ESF_UDFCHKBOX02
+  - name: esf_udfchkbox03
+    description: ESF_UDFCHKBOX03
+  - name: esf_udfchkbox04
+    description: ESF_UDFCHKBOX04
+  - name: esf_udfchkbox05
+    description: ESF_UDFCHKBOX05
+  - name: esf_updatecount
+    description: ESF_UPDATECOUNT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ENTITYSAFETY

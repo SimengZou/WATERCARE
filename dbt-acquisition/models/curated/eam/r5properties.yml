@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5properties
+  columns:
+  - name: pro_lastsaved
+    description: PRO_LASTSAVED
+  - name: pro_type
+    description: PRO_TYPE
+  - name: pro_text
+    description: PRO_TEXT
+  - name: pro_min
+    description: PRO_MIN
+  - name: pro_max
+    description: PRO_MAX
+  - name: pro_updatecount
+    description: PRO_UPDATECOUNT
+  - name: pro_created
+    description: PRO_CREATED
+  - name: pro_updated
+    description: PRO_UPDATED
+  - name: pro_includeingrids
+    description: PRO_INCLUDEINGRIDS
+  - name: pro_code
+    description: PRO_CODE
+    data_tests:
+    - unique
+  - name: pro_rentity
+    description: PRO_RENTITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PROPERTIES

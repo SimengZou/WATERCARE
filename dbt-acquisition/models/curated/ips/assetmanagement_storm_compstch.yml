@@ -1,0 +1,198 @@
+version: 2
+models:
+- name: assetmanagement_storm_compstch
+  columns:
+  - name: chnlwiduom
+    description: 'Metadata for column CHNLWIDUOM. Max length: 10'
+  - name: complexkey
+    description: Metadata for column COMPLEXKEY
+  - name: zcoord
+    description: Metadata for column ZCOORD
+  - name: easewid
+    description: Metadata for column EASEWID
+  - name: upsdepthuom
+    description: 'Metadata for column UPSDEPTHUOM. Max length: 10'
+  - name: usgareakey
+    description: Metadata for column USGAREAKEY
+  - name: upselevuom
+    description: 'Metadata for column UPSELEVUOM. Max length: 10'
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: rtlanduse
+    description: 'Metadata for column RTLANDUSE. Max length: 10'
+  - name: rtfencing
+    description: 'Metadata for column RTFENCING. Max length: 10'
+  - name: mainkey2
+    description: Metadata for column MAINKEY2
+  - name: unitid2
+    description: 'Metadata for column UNITID2. Max length: 50'
+  - name: easewiduom
+    description: 'Metadata for column EASEWIDUOM. Max length: 10'
+  - name: subarea
+    description: 'Metadata for column SUBAREA. Max length: 10'
+  - name: lengthuom
+    description: 'Metadata for column LENGTHUOM. Max length: 10'
+  - name: lffencing
+    description: 'Metadata for column LFFENCING. Max length: 10'
+  - name: rtbnkmatl
+    description: 'Metadata for column RTBNKMATL. Max length: 10'
+  - name: dwndepth
+    description: Metadata for column DWNDEPTH
+  - name: unitdesc
+    description: 'Metadata for column UNITDESC. Max length: 300'
+  - name: dwnelevuom
+    description: 'Metadata for column DWNELEVUOM. Max length: 10'
+  - name: instdate
+    description: Metadata for column INSTDATE
+  - name: upselev
+    description: Metadata for column UPSELEV
+  - name: unittype
+    description: 'Metadata for column UNITTYPE. Max length: 10'
+  - name: basewiduom
+    description: 'Metadata for column BASEWIDUOM. Max length: 10'
+  - name: own
+    description: 'Metadata for column OWN. Max length: 10'
+  - name: segment
+    description: 'Metadata for column SEGMENT. Max length: 10'
+  - name: gateloc
+    description: 'Metadata for column GATELOC. Max length: 300'
+  - name: chnlwid
+    description: Metadata for column CHNLWID
+  - name: ramploc
+    description: 'Metadata for column RAMPLOC. Max length: 300'
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: lfbnksl
+    description: Metadata for column LFBNKSL
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: vege
+    description: 'Metadata for column VEGE. Max length: 10'
+  - name: dsgcapuom
+    description: 'Metadata for column DSGCAPUOM. Max length: 10'
+  - name: lfbnkhtuom
+    description: 'Metadata for column LFBNKHTUOM. Max length: 10'
+  - name: shape
+    description: 'Metadata for column SHAPE. Max length: 10'
+  - name: asblt
+    description: 'Metadata for column ASBLT. Max length: 10'
+  - name: lflanduse
+    description: 'Metadata for column LFLANDUSE. Max length: 10'
+  - name: parlineno
+    description: 'Metadata for column PARLINENO. Max length: 1'
+  - name: mainkey1
+    description: Metadata for column MAINKEY1
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 10'
+  - name: accroad
+    description: Metadata for column ACCROAD
+  - name: length
+    description: Metadata for column LENGTH
+  - name: rtbnksl
+    description: Metadata for column RTBNKSL
+  - name: servstat
+    description: 'Metadata for column SERVSTAT. Max length: 10'
+  - name: mapno
+    description: 'Metadata for column MAPNO. Max length: 15'
+  - name: maincomp2
+    description: Metadata for column MAINCOMP2
+  - name: unitid
+    description: 'Metadata for column UNITID. Max length: 50'
+  - name: basewid
+    description: Metadata for column BASEWID
+  - name: lfbnkmatl
+    description: 'Metadata for column LFBNKMATL. Max length: 10'
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: maincomp1
+    description: Metadata for column MAINCOMP1
+  - name: dwnelev
+    description: Metadata for column DWNELEV
+  - name: rtbnkhtuom
+    description: 'Metadata for column RTBNKHTUOM. Max length: 10'
+  - name: ycoord
+    description: Metadata for column YCOORD
+  - name: dwndepthuom
+    description: 'Metadata for column DWNDEPTHUOM. Max length: 10'
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: rtbnksluom
+    description: 'Metadata for column RTBNKSLUOM. Max length: 10'
+  - name: dsgflow
+    description: Metadata for column DSGFLOW
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: sitekey
+    description: Metadata for column SITEKEY
+  - name: rtbnkht
+    description: Metadata for column RTBNKHT
+  - name: lfbnkht
+    description: Metadata for column LFBNKHT
+  - name: accum
+    description: 'Metadata for column ACCUM. Max length: 10'
+  - name: dsgcap
+    description: Metadata for column DSGCAP
+  - name: addrqual
+    description: 'Metadata for column ADDRQUAL. Max length: 300'
+  - name: compkey
+    description: (required) Metadata for column COMPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: lockdtl
+    description: 'Metadata for column LOCKDTL. Max length: 300'
+  - name: gisstatic
+    description: Metadata for column GISSTATIC
+  - name: position
+    description: Metadata for column POSITION
+  - name: conmatl
+    description: 'Metadata for column CONMATL. Max length: 10'
+  - name: slpuom
+    description: 'Metadata for column SLPUOM. Max length: 10'
+  - name: xcoord
+    description: Metadata for column XCOORD
+  - name: expby
+    description: 'Metadata for column EXPBY. Max length: 12'
+  - name: slp
+    description: Metadata for column SLP
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: district
+    description: 'Metadata for column DISTRICT. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: lfbnksluom
+    description: 'Metadata for column LFBNKSLUOM. Max length: 10'
+  - name: segkey
+    description: Metadata for column SEGKEY
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: upsdepth
+    description: Metadata for column UPSDEPTH
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table ASSETMANAGEMENT_STORM.COMPSTCH on 2022-01-07T14:04:17.528

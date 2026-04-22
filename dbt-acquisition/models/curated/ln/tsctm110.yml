@@ -1,0 +1,267 @@
+version: 2
+models:
+- name: tsctm110
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: term
+    description: (required) Contract Terms
+    data_tests:
+    - not_null
+  - name: cfln
+    description: (required) Configuration Line
+    data_tests:
+    - not_null
+  - name: cgru
+    description: 'Run Identification. Max length: 3'
+  - name: clst
+    description: 'Installation Group. Max length: 9'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: sern
+    description: 'Serial Number. Max length: 30'
+  - name: nitm
+    description: Number of Items
+  - name: cltp
+    description: 'Type of Configuration Line. Allowed values: 1, 2, 3'
+  - name: cltp_kw
+    description: 'Type of Configuration Line (keyword). Allowed values: tsctm.cltp.normal,
+      tsctm.cltp.total, tsctm.cltp.calculation'
+  - name: crac
+    description: 'Reference Activity. Max length: 16'
+  - name: nrac
+    description: Number of Activities
+  - name: cctp
+    description: 'Coverage Type. Max length: 3'
+  - name: tmdu
+    description: Duration
+  - name: ccte
+    description: 'Contract Template. Max length: 16'
+  - name: prmt
+    description: 'Pricing Method. Allowed values: 5, 10, 15, 20'
+  - name: prmt_kw
+    description: 'Pricing Method (keyword). Allowed values: tsctm.prmt.sales, tsctm.prmt.budget,
+      tsctm.prmt.price, tsctm.prmt.template.price'
+  - name: perc
+    description: Percentage of Sales Value
+  - name: ctin
+    description: 'Installment Template. Max length: 3'
+  - name: efdt
+    description: Effective Date
+  - name: cddt
+    description: Contract Discount Date
+  - name: exdt
+    description: Expiry Date
+  - name: csco
+    description: 'Service Contract. Max length: 9'
+  - name: cchn
+    description: Contract Change Number
+  - name: cspr
+    description: Calculated Sales Price
+  - name: cnrp
+    description: Number of Periods Calculated Price
+  - name: cpru
+    description: 'Period Unit Calculated Price. Allowed values: 5, 10, 15, 20, 25'
+  - name: cpru_kw
+    description: 'Period Unit Calculated Price (keyword). Allowed values: tsmdm.peru.day,
+      tsmdm.peru.week, tsmdm.peru.month, tsmdm.peru.quarter, tsmdm.peru.year'
+  - name: rspr
+    description: Sales Price
+  - name: nrpe
+    description: Number of Periods
+  - name: peru
+    description: 'Period Unit. Allowed values: 5, 10, 15, 20, 25'
+  - name: peru_kw
+    description: 'Period Unit (keyword). Allowed values: tsmdm.peru.day, tsmdm.peru.week,
+      tsmdm.peru.month, tsmdm.peru.quarter, tsmdm.peru.year'
+  - name: csmt
+    description: Calculated Sales Amount
+  - name: rsmt
+    description: Sales Amount
+  - name: dipc
+    description: Surcharge Percentage
+  - name: dimt
+    description: Surcharge Amount
+  - name: gsmt
+    description: Gross Sales Amount
+  - name: upmt
+    description: Excluded by Effectivity Amount
+  - name: ccds
+    description: 'Contract Discount Scheme. Max length: 3'
+  - name: cdmt
+    description: Contract Discount Scheme Amount
+  - name: nsmt
+    description: Net Sales Amount
+  - name: ccmt_1
+    description: Calculated Cost Amount
+  - name: ccmt_2
+    description: Calculated Cost Amount
+  - name: ccmt_3
+    description: Calculated Cost Amount
+  - name: camt_1
+    description: Cost Amount
+  - name: camt_2
+    description: Cost Amount
+  - name: camt_3
+    description: Cost Amount
+  - name: erfa
+    description: Earned Revenue Factor
+  - name: mexp
+    description: 'Marked for Expiry. Allowed values: 1, 2'
+  - name: mexp_kw
+    description: 'Marked for Expiry (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: amdy
+    description: Amount per Day
+  - name: cody_1
+    description: Cost per Day
+  - name: cody_2
+    description: Cost per Day
+  - name: cody_3
+    description: Cost per Day
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: pcac
+    description: 'Activity. Max length: 16'
+  - name: csar
+    description: 'Service Area. Max length: 3'
+  - name: ptrm
+    description: 'Pricing Terms. Allowed values: 1, 2'
+  - name: ptrm_kw
+    description: 'Pricing Terms (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ctrm
+    description: 'Coverage Terms. Allowed values: 1, 2'
+  - name: ctrm_kw
+    description: 'Coverage Terms (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tmpr
+    description: 'Time and Material Sales Prices. Allowed values: 1, 2'
+  - name: tmpr_kw
+    description: 'Time and Material Sales Prices (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: fxpr
+    description: 'Fixed Sales Prices. Allowed values: 1, 2'
+  - name: fxpr_kw
+    description: 'Fixed Sales Prices (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ortp
+    description: 'Originating Order Type. Allowed values: 5, 10, 15, 99'
+  - name: ortp_kw
+    description: 'Originating Order Type (keyword). Allowed values: tscfg.ortp.sales,
+      tscfg.ortp.deliverable, tscfg.ortp.project, tscfg.ortp.not.applicable'
+  - name: srno
+    description: 'Originating Order. Max length: 9'
+  - name: cnln
+    description: 'Originating Contract Line. Max length: 8'
+  - name: spno
+    description: Originating Order Line
+  - name: sdno
+    description: Originating Detail Line
+  - name: docn
+    description: 'Turnaround Time Document. Max length: 9'
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: pbsm
+    description: 'Problem Solving Method. Allowed values: 10, 20, 30, 90, 100'
+  - name: pbsm_kw
+    description: 'Problem Solving Method (keyword). Allowed values: tcmcs.pbsm.8d,
+      tcmcs.pbsm.a3, tcmcs.pbsm.chlt, tcmcs.pbsm.other, tcmcs.pbsm.na'
+  - name: cusc
+    description: 'Obsolete. Max length: 3'
+  - name: cptp
+    description: 'Obsolete. Allowed values: 1, 2, 99'
+  - name: cptp_kw
+    description: 'Obsolete (keyword). Allowed values: tsctm.cptp.time.material, tsctm.cptp.fixed.price,
+      tsctm.cptp.not.applicable'
+  - name: frpr
+    description: Obsolete
+  - name: txta
+    description: Text
+  - name: clst_ref_compnr
+    description: company number of primary key of table tsbsc100 Installation Group
+  - name: item_sern_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: item_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: crac_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: cctp_ref_compnr
+    description: company number of primary key of table tsmdm035 Coverage Types
+  - name: ccte_ref_compnr
+    description: company number of primary key of table tsctm050 Contract Templates
+  - name: ctin_ref_compnr
+    description: company number of primary key of table tsctm410 Installment Templates
+  - name: csco_cchn_ref_compnr
+    description: company number of primary key of table tsctm320 Contract Changes
+  - name: csco_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: ccds_ref_compnr
+    description: company number of primary key of table tsctm010 Contract Discount
+      Schemes
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: csar_ref_compnr
+    description: company number of primary key of table tsmdm105 Service Areas
+  - name: docn_ref_compnr
+    description: company number of primary key of table tcttm100 Turnaround Time Documents
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: rsmt_homc
+    description: 'CC: Sales Amount in Local Currency'
+  - name: rsmt_rpc1
+    description: 'CC: Sales Amount in Reporting Currency 1'
+  - name: rsmt_rpc2
+    description: 'CC: Sales Amount in Reporting Currency 2'
+  - name: rsmt_refc
+    description: 'CC: Sales Amount in Reference Currency'
+  - name: rsmt_dwhc
+    description: 'CC: Sales Amount in Data Warehouse Currency'
+  - name: camt_cntc
+    description: 'CC: Cost Amount in Contract Currency'
+  - name: camt_refc
+    description: 'CC: Cost Amount in Reference Currency'
+  - name: camt_dwhc
+    description: 'CC: Cost Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm110 Configuration Lines table, Generated 2026-04-10T19:42:30Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - term
+        - cfln

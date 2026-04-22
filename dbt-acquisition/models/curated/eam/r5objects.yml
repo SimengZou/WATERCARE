@@ -1,0 +1,918 @@
+version: 2
+models:
+- name: r5objects
+  columns:
+  - name: obj_lastsaved
+    description: OBJ_LASTSAVED
+  - name: obj_obtype
+    description: OBJ_OBTYPE
+  - name: obj_obrtype
+    description: OBJ_OBRTYPE
+  - name: obj_code
+    description: OBJ_CODE
+  - name: obj_desc
+    description: OBJ_DESC
+  - name: obj_class
+    description: OBJ_CLASS
+  - name: obj_category
+    description: OBJ_CATEGORY
+  - name: obj_costcode
+    description: OBJ_COSTCODE
+  - name: obj_ltype
+    description: OBJ_LTYPE
+  - name: obj_location
+    description: OBJ_LOCATION
+  - name: obj_tag
+    description: OBJ_TAG
+  - name: obj_ptype
+    description: OBJ_PTYPE
+  - name: obj_position
+    description: OBJ_POSITION
+  - name: obj_parent
+    description: OBJ_PARENT
+  - name: obj_depend
+    description: OBJ_DEPEND
+  - name: obj_manufact
+    description: OBJ_MANUFACT
+  - name: obj_mrc
+    description: OBJ_MRC
+  - name: obj_part
+    description: OBJ_PART
+  - name: obj_serialno
+    description: OBJ_SERIALNO
+  - name: obj_store
+    description: OBJ_STORE
+  - name: obj_status
+    description: OBJ_STATUS
+  - name: obj_rstatus
+    description: OBJ_RSTATUS
+  - name: obj_commiss
+    description: OBJ_COMMISS
+  - name: obj_withdraw
+    description: OBJ_WITHDRAW
+  - name: obj_record
+    description: OBJ_RECORD
+  - name: obj_group
+    description: OBJ_GROUP
+  - name: obj_user
+    description: OBJ_USER
+  - name: obj_order
+    description: OBJ_ORDER
+  - name: obj_orderline
+    description: OBJ_ORDERLINE
+  - name: obj_production
+    description: OBJ_PRODUCTION
+  - name: obj_primaryuom
+    description: OBJ_PRIMARYUOM
+  - name: obj_acd
+    description: OBJ_ACD
+  - name: obj_notused
+    description: OBJ_NOTUSED
+  - name: obj_safety
+    description: OBJ_SAFETY
+  - name: obj_criticality
+    description: OBJ_CRITICALITY
+  - name: obj_profile
+    description: OBJ_PROFILE
+  - name: obj_manufactmodel
+    description: OBJ_MANUFACTMODEL
+  - name: obj_manufactrevnum
+    description: OBJ_MANUFACTREVNUM
+  - name: obj_value
+    description: OBJ_VALUE
+  - name: obj_sourcesystem
+    description: OBJ_SOURCESYSTEM
+  - name: obj_sourcecode
+    description: OBJ_SOURCECODE
+  - name: obj_variable1
+    description: OBJ_VARIABLE1
+  - name: obj_variable2
+    description: OBJ_VARIABLE2
+  - name: obj_variable3
+    description: OBJ_VARIABLE3
+  - name: obj_variable4
+    description: OBJ_VARIABLE4
+  - name: obj_variable5
+    description: OBJ_VARIABLE5
+  - name: obj_variable6
+    description: OBJ_VARIABLE6
+  - name: obj_state
+    description: OBJ_STATE
+  - name: obj_rstate
+    description: OBJ_RSTATE
+  - name: obj_cn
+    description: OBJ_CN
+  - name: obj_org
+    description: OBJ_ORG
+  - name: obj_class_org
+    description: OBJ_CLASS_ORG
+  - name: obj_location_org
+    description: OBJ_LOCATION_ORG
+  - name: obj_position_org
+    description: OBJ_POSITION_ORG
+  - name: obj_parent_org
+    description: OBJ_PARENT_ORG
+  - name: obj_order_org
+    description: OBJ_ORDER_ORG
+  - name: obj_part_org
+    description: OBJ_PART_ORG
+  - name: obj_bin
+    description: OBJ_BIN
+  - name: obj_lot
+    description: OBJ_LOT
+  - name: obj_syslevel
+    description: OBJ_SYSLEVEL
+  - name: obj_asmlevel
+    description: OBJ_ASMLEVEL
+  - name: obj_complevel
+    description: OBJ_COMPLEVEL
+  - name: obj_updated
+    description: OBJ_UPDATED
+  - name: obj_updatedby
+    description: OBJ_UPDATEDBY
+  - name: obj_preventevtcomp
+    description: OBJ_PREVENTEVTCOMP
+  - name: obj_person
+    description: OBJ_PERSON
+  - name: obj_esignature
+    description: OBJ_ESIGNATURE
+  - name: obj_updatecount
+    description: OBJ_UPDATECOUNT
+  - name: obj_dormstart
+    description: OBJ_DORMSTART
+  - name: obj_dormend
+    description: OBJ_DORMEND
+  - name: obj_dormreuse
+    description: OBJ_DORMREUSE
+  - name: obj_gisobjid
+    description: OBJ_GISOBJID
+  - name: obj_gisprofile
+    description: OBJ_GISPROFILE
+  - name: obj_profile_org
+    description: OBJ_PROFILE_ORG
+  - name: obj_solddate
+    description: OBJ_SOLDDATE
+  - name: obj_transferdate
+    description: OBJ_TRANSFERDATE
+  - name: obj_cgmp
+    description: OBJ_CGMP
+  - name: obj_testpointuom
+    description: OBJ_TESTPOINTUOM
+  - name: obj_outputuom
+    description: OBJ_OUTPUTUOM
+  - name: obj_increment
+    description: OBJ_INCREMENT
+  - name: obj_precision
+    description: OBJ_PRECISION
+  - name: obj_pidno
+    description: OBJ_PIDNO
+  - name: obj_piddrawing
+    description: OBJ_PIDDRAWING
+  - name: obj_serviceperc
+    description: OBJ_SERVICEPERC
+  - name: obj_devicetolfrom
+    description: OBJ_DEVICETOLFROM
+  - name: obj_devicetolto
+    description: OBJ_DEVICETOLTO
+  - name: obj_devicetoltype
+    description: OBJ_DEVICETOLTYPE
+  - name: obj_devicerangefrom
+    description: OBJ_DEVICERANGEFROM
+  - name: obj_devicerangeto
+    description: OBJ_DEVICERANGETO
+  - name: obj_outputrangefrom
+    description: OBJ_OUTPUTRANGEFROM
+  - name: obj_outputrangeto
+    description: OBJ_OUTPUTRANGETO
+  - name: obj_processtolfrom
+    description: OBJ_PROCESSTOLFROM
+  - name: obj_processtolto
+    description: OBJ_PROCESSTOLTO
+  - name: obj_processrangefrom
+    description: OBJ_PROCESSRANGEFROM
+  - name: obj_processrangeto
+    description: OBJ_PROCESSRANGETO
+  - name: obj_set
+    description: OBJ_SET
+  - name: obj_sop
+    description: OBJ_SOP
+  - name: obj_loop
+    description: OBJ_LOOP
+  - name: obj_instrument
+    description: OBJ_INSTRUMENT
+  - name: obj_instrumenttype
+    description: OBJ_INSTRUMENTTYPE
+  - name: obj_interface
+    description: OBJ_INTERFACE
+  - name: obj_linkgiswo
+    description: OBJ_LINKGISWO
+  - name: obj_gislayer
+    description: OBJ_GISLAYER
+  - name: obj_xlocation
+    description: OBJ_XLOCATION
+  - name: obj_ylocation
+    description: OBJ_YLOCATION
+  - name: obj_length
+    description: OBJ_LENGTH
+  - name: obj_lengthuom
+    description: OBJ_LENGTHUOM
+  - name: obj_linearrefuom
+    description: OBJ_LINEARREFUOM
+  - name: obj_linearrefprecision
+    description: OBJ_LINEARREFPRECISION
+  - name: obj_georef
+    description: OBJ_GEOREF
+  - name: obj_vehicle
+    description: OBJ_VEHICLE
+  - name: obj_fleetcustomer
+    description: OBJ_FLEETCUSTOMER
+  - name: obj_fleetcustomer_org
+    description: OBJ_FLEETCUSTOMER_ORG
+  - name: obj_billingcode
+    description: OBJ_BILLINGCODE
+  - name: obj_billingcode_org
+    description: OBJ_BILLINGCODE_ORG
+  - name: obj_markupcode
+    description: OBJ_MARKUPCODE
+  - name: obj_markupcode_org
+    description: OBJ_MARKUPCODE_ORG
+  - name: obj_vehiclerstatus
+    description: OBJ_VEHICLERSTATUS
+  - name: obj_vehiclestatus
+    description: OBJ_VEHICLESTATUS
+  - name: obj_issuedto
+    description: OBJ_ISSUEDTO
+  - name: obj_jecategory
+    description: OBJ_JECATEGORY
+  - name: obj_jesource
+    description: OBJ_JESOURCE
+  - name: obj_gltransferflag
+    description: OBJ_GLTRANSFERFLAG
+  - name: obj_gltransfer
+    description: OBJ_GLTRANSFER
+  - name: obj_minpenalty
+    description: OBJ_MINPENALTY
+  - name: obj_penaltyfactor
+    description: OBJ_PENALTYFACTOR
+  - name: obj_calgroup
+    description: OBJ_CALGROUP
+  - name: obj_calgrouporg
+    description: OBJ_CALGROUPORG
+  - name: obj_udfchar01
+    description: OBJ_UDFCHAR01
+  - name: obj_udfchar02
+    description: OBJ_UDFCHAR02
+  - name: obj_udfchar03
+    description: OBJ_UDFCHAR03
+  - name: obj_udfchar04
+    description: OBJ_UDFCHAR04
+  - name: obj_udfchar05
+    description: OBJ_UDFCHAR05
+  - name: obj_udfchar06
+    description: OBJ_UDFCHAR06
+  - name: obj_udfchar07
+    description: OBJ_UDFCHAR07
+  - name: obj_udfchar08
+    description: OBJ_UDFCHAR08
+  - name: obj_udfchar09
+    description: OBJ_UDFCHAR09
+  - name: obj_udfchar10
+    description: OBJ_UDFCHAR10
+  - name: obj_udfchar11
+    description: OBJ_UDFCHAR11
+  - name: obj_udfchar12
+    description: OBJ_UDFCHAR12
+  - name: obj_udfchar13
+    description: OBJ_UDFCHAR13
+  - name: obj_udfchar14
+    description: OBJ_UDFCHAR14
+  - name: obj_udfchar15
+    description: OBJ_UDFCHAR15
+  - name: obj_udfchar16
+    description: OBJ_UDFCHAR16
+  - name: obj_udfchar17
+    description: OBJ_UDFCHAR17
+  - name: obj_udfchar18
+    description: OBJ_UDFCHAR18
+  - name: obj_udfchar19
+    description: OBJ_UDFCHAR19
+  - name: obj_udfchar20
+    description: OBJ_UDFCHAR20
+  - name: obj_udfchar21
+    description: OBJ_UDFCHAR21
+  - name: obj_udfchar22
+    description: OBJ_UDFCHAR22
+  - name: obj_udfchar23
+    description: OBJ_UDFCHAR23
+  - name: obj_udfchar24
+    description: OBJ_UDFCHAR24
+  - name: obj_udfchar25
+    description: OBJ_UDFCHAR25
+  - name: obj_udfchar26
+    description: OBJ_UDFCHAR26
+  - name: obj_udfchar27
+    description: OBJ_UDFCHAR27
+  - name: obj_udfchar28
+    description: OBJ_UDFCHAR28
+  - name: obj_udfchar29
+    description: OBJ_UDFCHAR29
+  - name: obj_udfchar30
+    description: OBJ_UDFCHAR30
+  - name: obj_udfnum01
+    description: OBJ_UDFNUM01
+  - name: obj_udfnum02
+    description: OBJ_UDFNUM02
+  - name: obj_udfnum03
+    description: OBJ_UDFNUM03
+  - name: obj_udfnum04
+    description: OBJ_UDFNUM04
+  - name: obj_udfnum05
+    description: OBJ_UDFNUM05
+  - name: obj_udfdate01
+    description: OBJ_UDFDATE01
+  - name: obj_udfdate02
+    description: OBJ_UDFDATE02
+  - name: obj_udfdate03
+    description: OBJ_UDFDATE03
+  - name: obj_udfdate04
+    description: OBJ_UDFDATE04
+  - name: obj_udfdate05
+    description: OBJ_UDFDATE05
+  - name: obj_udfchkbox01
+    description: OBJ_UDFCHKBOX01
+  - name: obj_udfchkbox02
+    description: OBJ_UDFCHKBOX02
+  - name: obj_udfchkbox03
+    description: OBJ_UDFCHKBOX03
+  - name: obj_udfchkbox04
+    description: OBJ_UDFCHKBOX04
+  - name: obj_udfchkbox05
+    description: OBJ_UDFCHKBOX05
+  - name: obj_sdmpresent
+    description: OBJ_SDMPRESENT
+  - name: obj_sdmpath
+    description: OBJ_SDMPATH
+  - name: obj_costofneededrepairs
+    description: OBJ_COSTOFNEEDEDREPAIRS
+  - name: obj_replacementvalue
+    description: OBJ_REPLACEMENTVALUE
+  - name: obj_facilityconditionindex
+    description: OBJ_FACILITYCONDITIONINDEX
+  - name: obj_billable
+    description: OBJ_BILLABLE
+  - name: obj_gasindex
+    description: OBJ_GASINDEX
+  - name: obj_floorarea
+    description: OBJ_FLOORAREA
+  - name: obj_floorareauom
+    description: OBJ_FLOORAREAUOM
+  - name: obj_estrevenue
+    description: OBJ_ESTREVENUE
+  - name: obj_region
+    description: OBJ_REGION
+  - name: obj_primaryuse
+    description: OBJ_PRIMARYUSE
+  - name: obj_yearbuilt
+    description: OBJ_YEARBUILT
+  - name: obj_servicelife
+    description: OBJ_SERVICELIFE
+  - name: obj_resource
+    description: OBJ_RESOURCE
+  - name: obj_resourcepresent
+    description: OBJ_RESOURCEPRESENT
+  - name: obj_laststatusupdate
+    description: OBJ_LASTSTATUSUPDATE
+  - name: obj_region_org
+    description: OBJ_REGION_ORG
+  - name: obj_gismap
+    description: OBJ_GISMAP
+  - name: obj_gismap_org
+    description: OBJ_GISMAP_ORG
+  - name: obj_energystareligible
+    description: OBJ_ENERGYSTARELIGIBLE
+  - name: obj_reliabilityranking
+    description: OBJ_RELIABILITYRANKING
+  - name: obj_reliabilityrankingscore
+    description: OBJ_RELIABILITYRANKINGSCORE
+  - name: obj_reliabilityranking_org
+    description: OBJ_RELIABILITYRANKING_ORG
+  - name: obj_reliabilityrankingrev
+    description: OBJ_RELIABILITYRANKINGREV
+  - name: obj_reliabilityrankingindex
+    description: OBJ_RELIABILITYRANKINGINDEX
+  - name: obj_reliabilityrankinglocked
+    description: OBJ_RELIABILITYRANKINGLOCKED
+  - name: obj_rrvalueslastcalculated
+    description: OBJ_RRVALUESLASTCALCULATED
+  - name: obj_rrsurveylastupdated
+    description: OBJ_RRSURVEYLASTUPDATED
+  - name: obj_outputcalctype
+    description: OBJ_OUTPUTCALCTYPE
+  - name: obj_gis_updatecount
+    description: OBJ_GIS_UPDATECOUNT
+  - name: obj_gis_synccount
+    description: OBJ_GIS_SYNCCOUNT
+  - name: obj_alias
+    description: OBJ_ALIAS
+  - name: obj_rental
+    description: OBJ_RENTAL
+  - name: obj_rentaltemplate
+    description: OBJ_RENTALTEMPLATE
+  - name: obj_rentaltemplate_org
+    description: OBJ_RENTALTEMPLATE_ORG
+  - name: obj_contract
+    description: OBJ_CONTRACT
+  - name: obj_contracttemplate
+    description: OBJ_CONTRACTTEMPLATE
+  - name: obj_contracttemplate_org
+    description: OBJ_CONTRACTTEMPLATE_ORG
+  - name: obj_customer
+    description: OBJ_CUSTOMER
+  - name: obj_customer_org
+    description: OBJ_CUSTOMER_ORG
+  - name: obj_availabilitystatus
+    description: OBJ_AVAILABILITYSTATUS
+  - name: obj_availabilityrstatus
+    description: OBJ_AVAILABILITYRSTATUS
+  - name: obj_tempmonitored
+    description: OBJ_TEMPMONITORED
+  - name: obj_hardwarever
+    description: OBJ_HARDWAREVER
+  - name: obj_softwarever
+    description: OBJ_SOFTWAREVER
+  - name: obj_purchasingasset
+    description: OBJ_PURCHASINGASSET
+  - name: obj_biomedicalasset
+    description: OBJ_BIOMEDICALASSET
+  - name: obj_oemsite
+    description: OBJ_OEMSITE
+  - name: obj_vendor
+    description: OBJ_VENDOR
+  - name: obj_coveragetype
+    description: OBJ_COVERAGETYPE
+  - name: obj_lockout
+    description: OBJ_LOCKOUT
+  - name: obj_personalprotectiveequip
+    description: OBJ_PERSONALPROTECTIVEEQUIP
+  - name: obj_confinedspace
+    description: OBJ_CONFINEDSPACE
+  - name: obj_statementofcond
+    description: OBJ_STATEMENTOFCOND
+  - name: obj_buildmaintprogram
+    description: OBJ_BUILDMAINTPROGRAM
+  - name: obj_hipaaconfidentiality
+    description: OBJ_HIPAACONFIDENTIALITY
+  - name: obj_ownershiptype
+    description: OBJ_OWNERSHIPTYPE
+  - name: obj_inventoryverificationdate
+    description: OBJ_INVENTORYVERIFICATIONDATE
+  - name: obj_purchaseorder
+    description: OBJ_PURCHASEORDER
+  - name: obj_purchasedate
+    description: OBJ_PURCHASEDATE
+  - name: obj_purchasecost
+    description: OBJ_PURCHASECOST
+  - name: obj_installdate
+    description: OBJ_INSTALLDATE
+  - name: obj_disposaltype
+    description: OBJ_DISPOSALTYPE
+  - name: obj_roomtype
+    description: OBJ_ROOMTYPE
+  - name: obj_unittype
+    description: OBJ_UNITTYPE
+  - name: obj_guestfirstname
+    description: OBJ_GUESTFIRSTNAME
+  - name: obj_guestmiddlename
+    description: OBJ_GUESTMIDDLENAME
+  - name: obj_guestlastname
+    description: OBJ_GUESTLASTNAME
+  - name: obj_vipstatus
+    description: OBJ_VIPSTATUS
+  - name: obj_maxguestcount
+    description: OBJ_MAXGUESTCOUNT
+  - name: obj_phonenumber
+    description: OBJ_PHONENUMBER
+  - name: obj_keynumber
+    description: OBJ_KEYNUMBER
+  - name: obj_accessible
+    description: OBJ_ACCESSIBLE
+  - name: obj_nonsmoking
+    description: OBJ_NONSMOKING
+  - name: obj_sqfootage
+    description: OBJ_SQFOOTAGE
+  - name: obj_bedcount
+    description: OBJ_BEDCOUNT
+  - name: obj_bathcount
+    description: OBJ_BATHCOUNT
+  - name: obj_kitchen
+    description: OBJ_KITCHEN
+  - name: obj_livingroom
+    description: OBJ_LIVINGROOM
+  - name: obj_openbay
+    description: OBJ_OPENBAY
+  - name: obj_building
+    description: OBJ_BUILDING
+  - name: obj_wing
+    description: OBJ_WING
+  - name: obj_floor
+    description: OBJ_FLOOR
+  - name: obj_exposure
+    description: OBJ_EXPOSURE
+  - name: obj_xcoordinate
+    description: OBJ_XCOORDINATE
+  - name: obj_ycoordinate
+    description: OBJ_YCOORDINATE
+  - name: obj_zcoordinate
+    description: OBJ_ZCOORDINATE
+  - name: obj_umdnscode
+    description: OBJ_UMDNSCODE
+  - name: obj_fcicalculation
+    description: OBJ_FCICALCULATION
+  - name: obj_guestsalutation
+    description: OBJ_GUESTSALUTATION
+  - name: obj_guestphonenumber
+    description: OBJ_GUESTPHONENUMBER
+  - name: obj_email
+    description: OBJ_EMAIL
+  - name: obj_driver
+    description: OBJ_DRIVER
+  - name: obj_udfchar31
+    description: OBJ_UDFCHAR31
+  - name: obj_udfchar32
+    description: OBJ_UDFCHAR32
+  - name: obj_udfchar33
+    description: OBJ_UDFCHAR33
+  - name: obj_udfchar34
+    description: OBJ_UDFCHAR34
+  - name: obj_udfchar35
+    description: OBJ_UDFCHAR35
+  - name: obj_udfchar36
+    description: OBJ_UDFCHAR36
+  - name: obj_udfchar37
+    description: OBJ_UDFCHAR37
+  - name: obj_udfchar38
+    description: OBJ_UDFCHAR38
+  - name: obj_udfchar39
+    description: OBJ_UDFCHAR39
+  - name: obj_udfchar40
+    description: OBJ_UDFCHAR40
+  - name: obj_udfchar41
+    description: OBJ_UDFCHAR41
+  - name: obj_udfchar42
+    description: OBJ_UDFCHAR42
+  - name: obj_udfchar43
+    description: OBJ_UDFCHAR43
+  - name: obj_udfchar44
+    description: OBJ_UDFCHAR44
+  - name: obj_udfchar45
+    description: OBJ_UDFCHAR45
+  - name: obj_udfnum07
+    description: OBJ_UDFNUM07
+  - name: obj_udfnum08
+    description: OBJ_UDFNUM08
+  - name: obj_udfnum09
+    description: OBJ_UDFNUM09
+  - name: obj_udfnum10
+    description: OBJ_UDFNUM10
+  - name: obj_udfdate06
+    description: OBJ_UDFDATE06
+  - name: obj_udfdate07
+    description: OBJ_UDFDATE07
+  - name: obj_udfdate08
+    description: OBJ_UDFDATE08
+  - name: obj_udfdate09
+    description: OBJ_UDFDATE09
+  - name: obj_udfchkbox08
+    description: OBJ_UDFCHKBOX08
+  - name: obj_udfdate10
+    description: OBJ_UDFDATE10
+  - name: obj_udfchkbox06
+    description: OBJ_UDFCHKBOX06
+  - name: obj_udfchkbox07
+    description: OBJ_UDFCHKBOX07
+  - name: obj_udfchkbox09
+    description: OBJ_UDFCHKBOX09
+  - name: obj_udfchkbox10
+    description: OBJ_UDFCHKBOX10
+  - name: obj_facility
+    description: OBJ_FACILITY
+  - name: obj_country
+    description: OBJ_COUNTRY
+  - name: obj_targetpowerfactor
+    description: OBJ_TARGETPOWERFACTOR
+  - name: obj_targetpeakdemand
+    description: OBJ_TARGETPEAKDEMAND
+  - name: obj_startbillingperiod
+    description: OBJ_STARTBILLINGPERIOD
+  - name: obj_billeveryperiod
+    description: OBJ_BILLEVERYPERIOD
+  - name: obj_billeveryperioduom
+    description: OBJ_BILLEVERYPERIODUOM
+  - name: obj_efflossphaseimbalance1
+    description: OBJ_EFFLOSSPHASEIMBALANCE1
+  - name: obj_efflossphaseimbalance2
+    description: OBJ_EFFLOSSPHASEIMBALANCE2
+  - name: obj_efflossphaseimbalance3
+    description: OBJ_EFFLOSSPHASEIMBALANCE3
+  - name: obj_efflossphaseimbalance4
+    description: OBJ_EFFLOSSPHASEIMBALANCE4
+  - name: obj_efflossphaseimbalance5
+    description: OBJ_EFFLOSSPHASEIMBALANCE5
+  - name: obj_performancemanager
+    description: OBJ_PERFORMANCEMANAGER
+  - name: obj_elecsubmeterinterval
+    description: OBJ_ELECSUBMETERINTERVAL
+  - name: obj_elecusagethreshold
+    description: OBJ_ELECUSAGETHRESHOLD
+  - name: obj_safetyreviewrequired
+    description: OBJ_SAFETYREVIEWREQUIRED
+  - name: obj_safetyreviewed
+    description: OBJ_SAFETYREVIEWED
+  - name: obj_safetyreviewedby
+    description: OBJ_SAFETYREVIEWEDBY
+  - name: obj_safetyreviewedname
+    description: OBJ_SAFETYREVIEWEDNAME
+  - name: obj_safetyreviewedtype
+    description: OBJ_SAFETYREVIEWEDTYPE
+  - name: obj_permitreviewrequired
+    description: OBJ_PERMITREVIEWREQUIRED
+  - name: obj_permitreviewed
+    description: OBJ_PERMITREVIEWED
+  - name: obj_permitreviewedby
+    description: OBJ_PERMITREVIEWEDBY
+  - name: obj_permitreviewedname
+    description: OBJ_PERMITREVIEWEDNAME
+  - name: obj_permitreviewedtype
+    description: OBJ_PERMITREVIEWEDTYPE
+  - name: obj_lotoreviewrequired
+    description: OBJ_LOTOREVIEWREQUIRED
+  - name: obj_lotoreviewed
+    description: OBJ_LOTOREVIEWED
+  - name: obj_lotoreviewedby
+    description: OBJ_LOTOREVIEWEDBY
+  - name: obj_lotoreviewedname
+    description: OBJ_LOTOREVIEWEDNAME
+  - name: obj_lotoreviewedtype
+    description: OBJ_LOTOREVIEWEDTYPE
+  - name: obj_complocation
+    description: OBJ_COMPLOCATION
+  - name: obj_origconfigcode
+    description: OBJ_ORIGCONFIGCODE
+  - name: obj_origconfigorg
+    description: OBJ_ORIGCONFIGORG
+  - name: obj_origconfigrev
+    description: OBJ_ORIGCONFIGREV
+  - name: obj_origobject
+    description: OBJ_ORIGOBJECT
+  - name: obj_configcode
+    description: OBJ_CONFIGCODE
+  - name: obj_configrevision
+    description: OBJ_CONFIGREVISION
+  - name: obj_configstatus
+    description: OBJ_CONFIGSTATUS
+  - name: obj_configrstatus
+    description: OBJ_CONFIGRSTATUS
+  - name: obj_configtype
+    description: OBJ_CONFIGTYPE
+  - name: obj_configspecific
+    description: OBJ_CONFIGSPECIFIC
+  - name: obj_configprefix
+    description: OBJ_CONFIGPREFIX
+  - name: obj_configsuffix
+    description: OBJ_CONFIGSUFFIX
+  - name: obj_configseqlength
+    description: OBJ_CONFIGSEQLENGTH
+  - name: obj_configautonum
+    description: OBJ_CONFIGAUTONUM
+  - name: obj_configstwo
+    description: OBJ_CONFIGSTWO
+  - name: obj_configrequested
+    description: OBJ_CONFIGREQUESTED
+  - name: obj_configrequestedby
+    description: OBJ_CONFIGREQUESTEDBY
+  - name: obj_configapproved
+    description: OBJ_CONFIGAPPROVED
+  - name: obj_configapprovedby
+    description: OBJ_CONFIGAPPROVEDBY
+  - name: obj_created
+    description: OBJ_CREATED
+  - name: obj_createdby
+    description: OBJ_CREATEDBY
+  - name: obj_configrevisionreason
+    description: OBJ_CONFIGREVISIONREASON
+  - name: obj_configdefaultstatus
+    description: OBJ_CONFIGDEFAULTSTATUS
+  - name: obj_rcmlevel
+    description: OBJ_RCMLEVEL
+  - name: obj_risklevel
+    description: OBJ_RISKLEVEL
+  - name: obj_rpn
+    description: OBJ_RPN
+  - name: obj_vehicletype
+    description: OBJ_VEHICLETYPE
+  - name: obj_linearcostweight
+    description: OBJ_LINEARCOSTWEIGHT
+  - name: obj_inspectiondirection
+    description: OBJ_INSPECTIONDIRECTION
+  - name: obj_flow
+    description: OBJ_FLOW
+  - name: obj_originalreceiptdate
+    description: OBJ_ORIGINALRECEIPTDATE
+  - name: obj_latestreceiptdate
+    description: OBJ_LATESTRECEIPTDATE
+  - name: obj_originalinstalldate
+    description: OBJ_ORIGINALINSTALLDATE
+  - name: obj_latestinstalldate
+    description: OBJ_LATESTINSTALLDATE
+  - name: obj_operationalstatus
+    description: OBJ_OPERATIONALSTATUS
+  - name: obj_operationalrstatus
+    description: OBJ_OPERATIONALRSTATUS
+  - name: obj_loaneddept
+    description: OBJ_LOANEDDEPT
+  - name: obj_wodept
+    description: OBJ_WODEPT
+  - name: obj_pmwodept
+    description: OBJ_PMWODEPT
+  - name: obj_documoto_bookid
+    description: OBJ_DOCUMOTO_BOOKID
+  - name: obj_guestprofileid
+    description: OBJ_GUESTPROFILEID
+  - name: obj_managerprofileid
+    description: OBJ_MANAGERPROFILEID
+  - name: obj_udfnum06
+    description: OBJ_UDFNUM06
+  - name: obj_configparentseparator
+    description: OBJ_CONFIGPARENTSEPARATOR
+  - name: obj_rescalowner
+    description: OBJ_RESCALOWNER
+  - name: obj_workspace
+    description: OBJ_WORKSPACE
+  - name: obj_configuseparentcode
+    description: OBJ_CONFIGUSEPARENTCODE
+  - name: obj_imageurl
+    description: OBJ_IMAGEURL
+  - name: obj_primarysystem
+    description: OBJ_PRIMARYSYSTEM
+  - name: obj_primarysystem_org
+    description: OBJ_PRIMARYSYSTEM_ORG
+  - name: obj_conditionindex
+    description: OBJ_CONDITIONINDEX
+  - name: obj_conditionscore
+    description: OBJ_CONDITIONSCORE
+  - name: obj_linearobjtype
+    description: OBJ_LINEAROBJTYPE
+  - name: obj_direction
+    description: OBJ_DIRECTION
+  - name: obj_frompoint
+    description: OBJ_FROMPOINT
+  - name: obj_topoint
+    description: OBJ_TOPOINT
+  - name: obj_rescalownerlist
+    description: OBJ_RESCALOWNERLIST
+  - name: obj_checklistfilter
+    description: OBJ_CHECKLISTFILTER
+  - name: obj_tolerance_size
+    description: OBJ_TOLERANCE_SIZE
+  - name: obj_mnbdefinition
+    description: OBJ_MNBDEFINITION
+  - name: obj_udfnote01
+    description: OBJ_UDFNOTE01
+  - name: obj_udfnote02
+    description: OBJ_UDFNOTE02
+  - name: obj_fuel
+    description: OBJ_FUEL
+  - name: obj_riskpriorityindex
+    description: OBJ_RISKPRIORITYINDEX
+  - name: obj_criticalityscore
+    description: OBJ_CRITICALITYSCORE
+  - name: obj_corrconditionscore
+    description: OBJ_CORRCONDITIONSCORE
+  - name: obj_corrconditionreason
+    description: OBJ_CORRCONDITIONREASON
+  - name: obj_corrconditiondate
+    description: OBJ_CORRCONDITIONDATE
+  - name: obj_corrconditionusage
+    description: OBJ_CORRCONDITIONUSAGE
+  - name: obj_endusefullife
+    description: OBJ_ENDUSEFULLIFE
+  - name: obj_servicelifeusage
+    description: OBJ_SERVICELIFEUSAGE
+  - name: obj_profilepicture
+    description: OBJ_PROFILEPICTURE
+  - name: obj_riskconsequencecost
+    description: OBJ_RISKCONSEQUENCECOST
+  - name: obj_failureprobpercentage
+    description: OBJ_FAILUREPROBPERCENTAGE
+  - name: obj_blackswan
+    description: OBJ_BLACKSWAN
+  - name: obj_blackswancost
+    description: OBJ_BLACKSWANCOST
+  - name: obj_performanceformula
+    description: OBJ_PERFORMANCEFORMULA
+  - name: obj_performanceformula_org
+    description: OBJ_PERFORMANCEFORMULA_ORG
+  - name: obj_performance
+    description: OBJ_PERFORMANCE
+  - name: obj_performancelastupdated
+    description: OBJ_PERFORMANCELASTUPDATED
+  - name: obj_conditionrating
+    description: OBJ_CONDITIONRATING
+  - name: obj_capacitycode
+    description: OBJ_CAPACITYCODE
+  - name: obj_availablecapacity
+    description: OBJ_AVAILABLECAPACITY
+  - name: obj_desiredcapacity
+    description: OBJ_DESIREDCAPACITY
+  - name: obj_capacityrating
+    description: OBJ_CAPACITYRATING
+  - name: obj_numberoffailures
+    description: OBJ_NUMBEROFFAILURES
+  - name: obj_mtbfdays
+    description: OBJ_MTBFDAYS
+  - name: obj_mtbfrating
+    description: OBJ_MTBFRATING
+  - name: obj_mubf
+    description: OBJ_MUBF
+  - name: obj_mubfrating
+    description: OBJ_MUBFRATING
+  - name: obj_mttrhrs
+    description: OBJ_MTTRHRS
+  - name: obj_mttrrating
+    description: OBJ_MTTRRATING
+  - name: obj_variableresult1
+    description: OBJ_VARIABLERESULT1
+  - name: obj_variablerating1
+    description: OBJ_VARIABLERATING1
+  - name: obj_variableresult2
+    description: OBJ_VARIABLERESULT2
+  - name: obj_variablerating2
+    description: OBJ_VARIABLERATING2
+  - name: obj_variableresult3
+    description: OBJ_VARIABLERESULT3
+  - name: obj_variablerating3
+    description: OBJ_VARIABLERATING3
+  - name: obj_variableresult4
+    description: OBJ_VARIABLERESULT4
+  - name: obj_variablerating4
+    description: OBJ_VARIABLERATING4
+  - name: obj_variableresult5
+    description: OBJ_VARIABLERESULT5
+  - name: obj_variablerating5
+    description: OBJ_VARIABLERATING5
+  - name: obj_variableresult6
+    description: OBJ_VARIABLERESULT6
+  - name: obj_variablerating6
+    description: OBJ_VARIABLERATING6
+  - name: obj_schematic
+    description: OBJ_SCHEMATIC
+  - name: obj_unmitigated_risklevel
+    description: OBJ_UNMITIGATED_RISKLEVEL
+  - name: obj_unmitigated_rpn
+    description: OBJ_UNMITIGATED_RPN
+  - name: obj_udfchar46
+    description: OBJ_UDFCHAR46
+  - name: obj_udfchar47
+    description: OBJ_UDFCHAR47
+  - name: obj_udfchar48
+    description: OBJ_UDFCHAR48
+  - name: obj_udfchar49
+    description: OBJ_UDFCHAR49
+  - name: obj_udfchar50
+    description: OBJ_UDFCHAR50
+  - name: obj_udfchar51
+    description: OBJ_UDFCHAR51
+  - name: obj_udfchar52
+    description: OBJ_UDFCHAR52
+  - name: obj_udfchar53
+    description: OBJ_UDFCHAR53
+  - name: obj_udfchar54
+    description: OBJ_UDFCHAR54
+  - name: obj_udfchar55
+    description: OBJ_UDFCHAR55
+  - name: obj_segmentvalue
+    description: OBJ_SEGMENTVALUE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5OBJECTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - obj_code
+        - obj_org

@@ -1,0 +1,137 @@
+version: 2
+models:
+- name: tffam200
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ctgy
+    description: '(required) Category. Max length: 10'
+    data_tests:
+    - not_null
+  - name: agrp
+    description: 'Group. Max length: 10'
+  - name: amth
+    description: 'AMT Depreciation Method-U.S. Max length: 20'
+  - name: aslf
+    description: Asset Life (Units)
+  - name: bslv
+    description: 'Depreciate Below Salvage. Allowed values: 1, 2'
+  - name: bslv_kw
+    description: 'Depreciate Below Salvage (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cmth
+    description: 'ACE Depreciation Method-U.S. Max length: 20'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: fmth
+    description: 'Financial/Other Depreciation Method. Max length: 20'
+  - name: itcd
+    description: 'ITC Method. Allowed values: 1, 2, 3'
+  - name: itcd_kw
+    description: 'ITC Method (keyword). Allowed values: tffam.itcc.none, tffam.itcc.redu.basi,
+      tffam.itcc.redu.cred'
+  - name: lmth
+    description: 'Calculatory Deprec. Method. Max length: 20'
+  - name: life
+    description: Asset Life
+  - name: mmth
+    description: 'Commercial Depreciation Method. Max length: 20'
+  - name: omth
+    description: 'Other Depreciation Method-U.S. Max length: 20'
+  - name: prop
+    description: 'Property Type. Max length: 10'
+  - name: sctg
+    description: 'Default Subcategory. Max length: 10'
+  - name: smth
+    description: 'Special Depreciation Method. Max length: 20'
+  - name: tmth
+    description: 'Federal Depreciation Method-U.S. Max length: 20'
+  - name: umth
+    description: 'Statutory Depreciation Method. Max length: 20'
+  - name: dscr
+    description: 'MAPAS Discriminator. Allowed values: 1, 2'
+  - name: dscr_kw
+    description: 'MAPAS Discriminator (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: fadr
+    description: Fiscally Accepted Depreciation Rate
+  - name: cthr
+    description: Capitalization Threshold
+  - name: cthc
+    description: 'Currency. Max length: 3'
+  - name: mskc
+    description: Mask Company
+  - name: anbm
+    description: 'Asset Number Mask. Max length: 9'
+  - name: aexm
+    description: 'Asset Extension Mask. Max length: 9'
+  - name: agrp_ref_compnr
+    description: company number of primary key of table tffam400 Asset Groups
+  - name: amth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: cmth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: fmth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: lmth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: mmth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: omth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: prop_ref_compnr
+    description: company number of primary key of table tffam780 Property Type
+  - name: smth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: tmth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: umth_ref_compnr
+    description: company number of primary key of table tffam710 Depreciation Method
+  - name: mskc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: anbm_ref_compnr
+    description: company number of primary key of table tcibd402 Masks
+  - name: aexm_ref_compnr
+    description: company number of primary key of table tcibd402 Masks
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam200 Categories table, Generated 2026-04-10T19:41:32Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ctgy

@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: r5requircodes
+  columns:
+  - name: rqm_lastsaved
+    description: RQM_LASTSAVED
+  - name: rqm_desc
+    description: RQM_DESC
+  - name: rqm_class
+    description: RQM_CLASS
+  - name: rqm_gen
+    description: RQM_GEN
+  - name: rqm_class_org
+    description: RQM_CLASS_ORG
+  - name: rqm_updatecount
+    description: RQM_UPDATECOUNT
+  - name: rqm_updated
+    description: RQM_UPDATED
+  - name: rqm_partfailure
+    description: RQM_PARTFAILURE
+  - name: rqm_notused
+    description: RQM_NOTUSED
+  - name: rqm_enableworkorders
+    description: RQM_ENABLEWORKORDERS
+  - name: rqm_group
+    description: RQM_GROUP
+  - name: rqm_code
+    description: RQM_CODE
+    data_tests:
+    - unique
+  - name: rqm_created
+    description: RQM_CREATED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5REQUIRCODES

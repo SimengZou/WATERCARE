@@ -1,0 +1,304 @@
+version: 2
+models:
+- name: r5ppmobjects
+  columns:
+  - name: ppo_lastsaved
+    description: PPO_LASTSAVED
+  - name: ppo_pk
+    description: PPO_PK
+  - name: ppo_ppm
+    description: PPO_PPM
+  - name: ppo_revision
+    description: PPO_REVISION
+  - name: ppo_obtype
+    description: PPO_OBTYPE
+  - name: ppo_obrtype
+    description: PPO_OBRTYPE
+  - name: ppo_location
+    description: PPO_LOCATION
+  - name: ppo_mrc
+    description: PPO_MRC
+  - name: ppo_costcode
+    description: PPO_COSTCODE
+  - name: ppo_route
+    description: PPO_ROUTE
+  - name: ppo_due
+    description: PPO_DUE
+  - name: ppo_metuom
+    description: PPO_METUOM
+  - name: ppo_meterdue
+    description: PPO_METERDUE
+  - name: ppo_freq
+    description: PPO_FREQ
+  - name: ppo_meter
+    description: PPO_METER
+  - name: ppo_isstype
+    description: PPO_ISSTYPE
+  - name: ppo_fixed
+    description: PPO_FIXED
+  - name: ppo_deactive
+    description: PPO_DEACTIVE
+  - name: ppo_changed
+    description: PPO_CHANGED
+  - name: ppo_class
+    description: PPO_CLASS
+  - name: ppo_class_org
+    description: PPO_CLASS_ORG
+  - name: ppo_object_org
+    description: PPO_OBJECT_ORG
+  - name: ppo_location_org
+    description: PPO_LOCATION_ORG
+  - name: ppo_org
+    description: PPO_ORG
+  - name: ppo_package
+    description: PPO_PACKAGE
+  - name: ppo_person
+    description: PPO_PERSON
+  - name: ppo_perioduom
+    description: PPO_PERIODUOM
+  - name: ppo_meterdue2
+    description: PPO_METERDUE2
+  - name: ppo_metuom2
+    description: PPO_METUOM2
+  - name: ppo_meter2
+    description: PPO_METER2
+  - name: ppo_updatecount
+    description: PPO_UPDATECOUNT
+  - name: ppo_dormstart
+    description: PPO_DORMSTART
+  - name: ppo_dormend
+    description: PPO_DORMEND
+  - name: ppo_dormreuse
+    description: PPO_DORMREUSE
+  - name: ppo_schedgrp
+    description: PPO_SCHEDGRP
+  - name: ppo_set
+    description: PPO_SET
+  - name: ppo_frompoint
+    description: PPO_FROMPOINT
+  - name: ppo_fromrefdesc
+    description: PPO_FROMREFDESC
+  - name: ppo_fromgeoref
+    description: PPO_FROMGEOREF
+  - name: ppo_topoint
+    description: PPO_TOPOINT
+  - name: ppo_torefdesc
+    description: PPO_TOREFDESC
+  - name: ppo_togeoref
+    description: PPO_TOGEOREF
+  - name: ppo_lockedbysession
+    description: PPO_LOCKEDBYSESSION
+  - name: ppo_performonweek
+    description: PPO_PERFORMONWEEK
+  - name: ppo_performonday
+    description: PPO_PERFORMONDAY
+  - name: ppo_setid
+    description: PPO_SETID
+  - name: ppo_includenonconformities
+    description: PPO_INCLUDENONCONFORMITIES
+  - name: ppo_duenonconformitiesonly
+    description: PPO_DUENONCONFORMITIESONLY
+  - name: ppo_udfchar01
+    description: PPO_UDFCHAR01
+  - name: ppo_udfchar02
+    description: PPO_UDFCHAR02
+  - name: ppo_udfchar03
+    description: PPO_UDFCHAR03
+  - name: ppo_udfchar04
+    description: PPO_UDFCHAR04
+  - name: ppo_udfchar05
+    description: PPO_UDFCHAR05
+  - name: ppo_udfchar06
+    description: PPO_UDFCHAR06
+  - name: ppo_udfchar07
+    description: PPO_UDFCHAR07
+  - name: ppo_udfchar08
+    description: PPO_UDFCHAR08
+  - name: ppo_udfchar09
+    description: PPO_UDFCHAR09
+  - name: ppo_udfchar10
+    description: PPO_UDFCHAR10
+  - name: ppo_udfchar11
+    description: PPO_UDFCHAR11
+  - name: ppo_object
+    description: PPO_OBJECT
+  - name: ppo_udfchar12
+    description: PPO_UDFCHAR12
+  - name: ppo_udfchar13
+    description: PPO_UDFCHAR13
+  - name: ppo_udfchar14
+    description: PPO_UDFCHAR14
+  - name: ppo_udfchar15
+    description: PPO_UDFCHAR15
+  - name: ppo_udfchar16
+    description: PPO_UDFCHAR16
+  - name: ppo_udfchar17
+    description: PPO_UDFCHAR17
+  - name: ppo_udfchar18
+    description: PPO_UDFCHAR18
+  - name: ppo_udfchar19
+    description: PPO_UDFCHAR19
+  - name: ppo_udfchar20
+    description: PPO_UDFCHAR20
+  - name: ppo_udfchar21
+    description: PPO_UDFCHAR21
+  - name: ppo_udfchar22
+    description: PPO_UDFCHAR22
+  - name: ppo_udfchar23
+    description: PPO_UDFCHAR23
+  - name: ppo_udfchar24
+    description: PPO_UDFCHAR24
+  - name: ppo_udfchar25
+    description: PPO_UDFCHAR25
+  - name: ppo_udfchar26
+    description: PPO_UDFCHAR26
+  - name: ppo_udfchar27
+    description: PPO_UDFCHAR27
+  - name: ppo_udfchar28
+    description: PPO_UDFCHAR28
+  - name: ppo_udfchar29
+    description: PPO_UDFCHAR29
+  - name: ppo_udfchar30
+    description: PPO_UDFCHAR30
+  - name: ppo_udfchar31
+    description: PPO_UDFCHAR31
+  - name: ppo_udfchar32
+    description: PPO_UDFCHAR32
+  - name: ppo_udfchar33
+    description: PPO_UDFCHAR33
+  - name: ppo_udfchar34
+    description: PPO_UDFCHAR34
+  - name: ppo_udfchar35
+    description: PPO_UDFCHAR35
+  - name: ppo_udfchar36
+    description: PPO_UDFCHAR36
+  - name: ppo_udfchar37
+    description: PPO_UDFCHAR37
+  - name: ppo_udfchar38
+    description: PPO_UDFCHAR38
+  - name: ppo_udfchar39
+    description: PPO_UDFCHAR39
+  - name: ppo_udfchar40
+    description: PPO_UDFCHAR40
+  - name: ppo_udfchar41
+    description: PPO_UDFCHAR41
+  - name: ppo_udfchar42
+    description: PPO_UDFCHAR42
+  - name: ppo_udfchar43
+    description: PPO_UDFCHAR43
+  - name: ppo_udfchar44
+    description: PPO_UDFCHAR44
+  - name: ppo_udfchar45
+    description: PPO_UDFCHAR45
+  - name: ppo_udfnum01
+    description: PPO_UDFNUM01
+  - name: ppo_udfnum02
+    description: PPO_UDFNUM02
+  - name: ppo_udfnum03
+    description: PPO_UDFNUM03
+  - name: ppo_udfnum04
+    description: PPO_UDFNUM04
+  - name: ppo_udfnum05
+    description: PPO_UDFNUM05
+  - name: ppo_udfnum07
+    description: PPO_UDFNUM07
+  - name: ppo_udfnum08
+    description: PPO_UDFNUM08
+  - name: ppo_udfnum09
+    description: PPO_UDFNUM09
+  - name: ppo_udfnum10
+    description: PPO_UDFNUM10
+  - name: ppo_udfdate01
+    description: PPO_UDFDATE01
+  - name: ppo_udfdate02
+    description: PPO_UDFDATE02
+  - name: ppo_udfdate03
+    description: PPO_UDFDATE03
+  - name: ppo_udfdate04
+    description: PPO_UDFDATE04
+  - name: ppo_udfdate05
+    description: PPO_UDFDATE05
+  - name: ppo_udfdate06
+    description: PPO_UDFDATE06
+  - name: ppo_udfdate07
+    description: PPO_UDFDATE07
+  - name: ppo_udfdate08
+    description: PPO_UDFDATE08
+  - name: ppo_udfdate09
+    description: PPO_UDFDATE09
+  - name: ppo_udfdate10
+    description: PPO_UDFDATE10
+  - name: ppo_udfchkbox01
+    description: PPO_UDFCHKBOX01
+  - name: ppo_udfchkbox02
+    description: PPO_UDFCHKBOX02
+  - name: ppo_udfchkbox03
+    description: PPO_UDFCHKBOX03
+  - name: ppo_udfchkbox04
+    description: PPO_UDFCHKBOX04
+  - name: ppo_udfchkbox05
+    description: PPO_UDFCHKBOX05
+  - name: ppo_udfchkbox06
+    description: PPO_UDFCHKBOX06
+  - name: ppo_udfchkbox07
+    description: PPO_UDFCHKBOX07
+  - name: ppo_udfchkbox08
+    description: PPO_UDFCHKBOX08
+  - name: ppo_udfchkbox09
+    description: PPO_UDFCHKBOX09
+  - name: ppo_udfchkbox10
+    description: PPO_UDFCHKBOX10
+  - name: ppo_udfnote01
+    description: PPO_UDFNOTE01
+  - name: ppo_udfnote02
+    description: PPO_UDFNOTE02
+  - name: ppo_shift
+    description: PPO_SHIFT
+  - name: ppo_copyudfstowo
+    description: PPO_COPYUDFSTOWO
+  - name: ppo_udfchar46
+    description: PPO_UDFCHAR46
+  - name: ppo_udfchar47
+    description: PPO_UDFCHAR47
+  - name: ppo_udfchar48
+    description: PPO_UDFCHAR48
+  - name: ppo_udfchar49
+    description: PPO_UDFCHAR49
+  - name: ppo_udfchar50
+    description: PPO_UDFCHAR50
+  - name: ppo_udfchar51
+    description: PPO_UDFCHAR51
+  - name: ppo_udfchar52
+    description: PPO_UDFCHAR52
+  - name: ppo_udfchar53
+    description: PPO_UDFCHAR53
+  - name: ppo_udfchar54
+    description: PPO_UDFCHAR54
+  - name: ppo_udfchar55
+    description: PPO_UDFCHAR55
+  - name: ppo_udfnum06
+    description: PPO_UDFNUM06
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PPMOBJECTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - ppo_pk
+        - ppo_revision

@@ -1,0 +1,130 @@
+version: 2
+models:
+- name: property_address
+  columns:
+  - name: inoutservicearea
+    description: 'Metadata for column INOUTSERVICEAREA. Max length: 10'
+  - name: nzhnosortashi
+    description: Metadata for column NZHNOSORTASHI
+  - name: fullstno
+    description: 'Metadata for column FULLSTNO. Max length: 25'
+  - name: addrkey
+    description: (required) Metadata for column ADDRKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: cassisvalid
+    description: 'Metadata for column CASSISVALID. Max length: 1'
+  - name: nzsuburb
+    description: 'Metadata for column NZSUBURB. Max length: 30'
+  - name: gpsz
+    description: Metadata for column GPSZ
+  - name: nzst3name
+    description: 'Metadata for column NZST3NAME. Max length: 28'
+  - name: nzcompdir
+    description: 'Metadata for column NZCOMPDIR. Max length: 3'
+  - name: gpsy
+    description: Metadata for column GPSY
+  - name: opta
+    description: 'Metadata for column OPTA. Max length: 10'
+  - name: nzflat
+    description: 'Metadata for column NZFLAT. Max length: 10'
+  - name: nzstname
+    description: 'Metadata for column NZSTNAME. Max length: 28'
+  - name: optb
+    description: 'Metadata for column OPTB. Max length: 10'
+  - name: nzhnohi
+    description: 'Metadata for column NZHNOHI. Max length: 10'
+  - name: allowduplicateservices
+    description: 'Metadata for column ALLOWDUPLICATESERVICES. Max length: 1'
+  - name: nzpostcode
+    description: 'Metadata for column NZPOSTCODE. Max length: 5'
+  - name: propertyuse
+    description: 'Metadata for column PROPERTYUSE. Max length: 30'
+  - name: managementgroup
+    description: Metadata for column MANAGEMENTGROUP
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: cassvalidationdesc
+    description: 'Metadata for column CASSVALIDATIONDESC. Max length: 50'
+  - name: nzhouseno
+    description: 'Metadata for column NZHOUSENO. Max length: 10'
+  - name: nzst2type
+    description: 'Metadata for column NZST2TYPE. Max length: 4'
+  - name: cassvalidationstatus
+    description: 'Metadata for column CASSVALIDATIONSTATUS. Max length: 10'
+  - name: nzaddrtype
+    description: 'Metadata for column NZADDRTYPE. Max length: 1'
+  - name: legalowner
+    description: 'Metadata for column LEGALOWNER. Max length: 300'
+  - name: version
+    description: Metadata for column VERSION
+  - name: mapno
+    description: 'Metadata for column MAPNO. Max length: 14'
+  - name: citylimits
+    description: 'Metadata for column CITYLIMITS. Max length: 1'
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: nzsttype
+    description: 'Metadata for column NZSTTYPE. Max length: 4'
+  - name: lot
+    description: 'Metadata for column LOT. Max length: 15'
+  - name: nzstate
+    description: 'Metadata for column NZSTATE. Max length: 4'
+  - name: gpsx
+    description: Metadata for column GPSX
+  - name: nzhnosortas
+    description: Metadata for column NZHNOSORTAS
+  - name: nzst3type
+    description: 'Metadata for column NZST3TYPE. Max length: 4'
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: addressstatus
+    description: 'Metadata for column ADDRESSSTATUS. Max length: 10'
+  - name: effdate
+    description: Metadata for column EFFDATE
+  - name: township
+    description: 'Metadata for column TOWNSHIP. Max length: 30'
+  - name: block
+    description: 'Metadata for column BLOCK. Max length: 15'
+  - name: curraddr
+    description: 'Metadata for column CURRADDR. Max length: 1'
+  - name: optc
+    description: 'Metadata for column OPTC. Max length: 10'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: nzst2name
+    description: 'Metadata for column NZST2NAME. Max length: 28'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: cassvalidationdt
+    description: Metadata for column CASSVALIDATIONDT
+  - name: optd
+    description: Metadata for column OPTD
+  - name: subdivcode
+    description: 'Metadata for column SUBDIVCODE. Max length: 10'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: subdivdesc
+    description: 'Metadata for column SUBDIVDESC. Max length: 300'
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table PROPERTY.ADDRESS on 2021-07-09T15:14:54.779

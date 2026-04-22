@@ -1,0 +1,80 @@
+version: 2
+models:
+- name: ips_asset_valuation
+  columns:
+  - name: assetrecordtype
+    description: '(required) Max length: 10'
+    data_tests:
+    - not_null
+  - name: assetkey
+    description: '(required) Max length: 100'
+    data_tests:
+    - not_null
+  - name: assetbookid
+    description: '(required) Max length: 255'
+    data_tests:
+    - not_null
+  - name: assetdescription
+    description: '(required) Max length: 255'
+    data_tests:
+    - not_null
+  - name: assetclass
+    description: '(required) Max length: 255'
+    data_tests:
+    - not_null
+  - name: assetcostcentre
+    description: '(required) Max length: 255'
+    data_tests:
+    - not_null
+  - name: assetaquisitiontype
+    description: '(required) Max length: 255'
+    data_tests:
+    - not_null
+  - name: assetaquisitiondate
+    description: '(required) Max length: 24'
+    data_tests:
+    - not_null
+  - name: assetdepreciationmethod
+    description: (required)
+    data_tests:
+    - not_null
+  - name: assetexpectedlife
+    description: (required)
+    data_tests:
+    - not_null
+  - name: assetinitialcost
+    description: (required)
+    data_tests:
+    - not_null
+  - name: comments
+    description: 'Max length: 255'
+  - name: ionstatus
+    description: (required)
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: 'Max length: 24'
+  - name: project
+    description: 'Max length: 255'
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated from anySQL Connector dEPM_IPS_ASSET_VALUATION
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - assetkey
+        - assetbookid

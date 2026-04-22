@@ -1,0 +1,48 @@
+version: 2
+models:
+- name: r5reportfields
+  columns:
+  - name: rfl_lastsaved
+    description: RFL_LASTSAVED
+  - name: rfl_line
+    description: RFL_LINE
+  - name: rfl_botnumber
+    description: RFL_BOTNUMBER
+  - name: rfl_field
+    description: RFL_FIELD
+  - name: rfl_showfield
+    description: RFL_SHOWFIELD
+  - name: rfl_width
+    description: RFL_WIDTH
+  - name: rfl_updatecount
+    description: RFL_UPDATECOUNT
+  - name: rfl_updated
+    description: RFL_UPDATED
+  - name: rfl_function
+    description: RFL_FUNCTION
+  - name: rfl_datatype
+    description: RFL_DATATYPE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5REPORTFIELDS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - rfl_function
+        - rfl_line

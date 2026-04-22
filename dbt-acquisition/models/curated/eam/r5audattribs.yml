@@ -1,0 +1,48 @@
+version: 2
+models:
+- name: r5audattribs
+  columns:
+  - name: aat_lastsaved
+    description: AAT_LASTSAVED
+  - name: aat_table
+    description: AAT_TABLE
+  - name: aat_column
+    description: AAT_COLUMN
+  - name: aat_text
+    description: AAT_TEXT
+  - name: aat_enteredby
+    description: AAT_ENTEREDBY
+  - name: aat_insert
+    description: AAT_INSERT
+  - name: aat_update
+    description: AAT_UPDATE
+  - name: aat_delete
+    description: AAT_DELETE
+  - name: aat_updatecount
+    description: AAT_UPDATECOUNT
+  - name: aat_updated
+    description: AAT_UPDATED
+  - name: aat_code
+    description: AAT_CODE
+    data_tests:
+    - unique
+  - name: aat_comment
+    description: AAT_COMMENT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5AUDATTRIBS

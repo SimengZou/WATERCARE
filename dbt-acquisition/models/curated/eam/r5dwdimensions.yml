@@ -1,0 +1,38 @@
+version: 2
+models:
+- name: r5dwdimensions
+  columns:
+  - name: dim_lastsaved
+    description: DIM_LASTSAVED
+  - name: dim_desc
+    description: DIM_DESC
+  - name: dim_tabletype
+    description: DIM_TABLETYPE
+  - name: dim_createkeysequence
+    description: DIM_CREATEKEYSEQUENCE
+  - name: dim_surrogatekeylookuptbl
+    description: DIM_SURROGATEKEYLOOKUPTBL
+  - name: dim_botnumber
+    description: DIM_BOTNUMBER
+  - name: dim_table
+    description: DIM_TABLE
+  - name: dim_keyfield
+    description: DIM_KEYFIELD
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DWDIMENSIONS

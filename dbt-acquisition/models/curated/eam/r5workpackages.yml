@@ -1,0 +1,76 @@
+version: 2
+models:
+- name: r5workpackages
+  columns:
+  - name: wpk_lastsaved
+    description: WPK_LASTSAVED
+  - name: wpk_org
+    description: WPK_ORG
+  - name: wpk_jobtype
+    description: WPK_JOBTYPE
+  - name: wpk_status
+    description: WPK_STATUS
+  - name: wpk_mrc
+    description: WPK_MRC
+  - name: wpk_class
+    description: WPK_CLASS
+  - name: wpk_class_org
+    description: WPK_CLASS_ORG
+  - name: wpk_jobclass
+    description: WPK_JOBCLASS
+  - name: wpk_jobclass_org
+    description: WPK_JOBCLASS_ORG
+  - name: wpk_ppmtype
+    description: WPK_PPMTYPE
+  - name: wpk_trade
+    description: WPK_TRADE
+  - name: wpk_object
+    description: WPK_OBJECT
+  - name: wpk_object_org
+    description: WPK_OBJECT_ORG
+  - name: wpk_lastevent
+    description: WPK_LASTEVENT
+  - name: wpk_duedate
+    description: WPK_DUEDATE
+  - name: wpk_freq
+    description: WPK_FREQ
+  - name: wpk_duration
+    description: WPK_DURATION
+  - name: wpk_estworkload
+    description: WPK_ESTWORKLOAD
+  - name: wpk_persons
+    description: WPK_PERSONS
+  - name: wpk_changed
+    description: WPK_CHANGED
+  - name: wpk_perioduom
+    description: WPK_PERIODUOM
+  - name: wpk_updatecount
+    description: WPK_UPDATECOUNT
+  - name: wpk_performonweek
+    description: WPK_PERFORMONWEEK
+  - name: wpk_performonday
+    description: WPK_PERFORMONDAY
+  - name: wpk_code
+    description: WPK_CODE
+    data_tests:
+    - unique
+  - name: wpk_desc
+    description: WPK_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WORKPACKAGES

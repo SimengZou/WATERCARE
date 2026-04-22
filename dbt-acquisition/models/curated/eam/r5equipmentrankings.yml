@@ -1,0 +1,181 @@
+version: 2
+models:
+- name: r5equipmentrankings
+  columns:
+  - name: eqr_lastsaved
+    description: EQR_LASTSAVED
+  - name: eqr_rankingcode
+    description: EQR_RANKINGCODE
+  - name: eqr_rankingorg
+    description: EQR_RANKINGORG
+  - name: eqr_rankingrevision
+    description: EQR_RANKINGREVISION
+  - name: eqr_objcode
+    description: EQR_OBJCODE
+  - name: eqr_objorg
+    description: EQR_OBJORG
+  - name: eqr_note
+    description: EQR_NOTE
+  - name: eqr_default
+    description: EQR_DEFAULT
+  - name: eqr_lockrankingvalues
+    description: EQR_LOCKRANKINGVALUES
+  - name: eqr_rankingindex
+    description: EQR_RANKINGINDEX
+  - name: eqr_rankingscore
+    description: EQR_RANKINGSCORE
+  - name: eqr_valueslastcalculated
+    description: EQR_VALUESLASTCALCULATED
+  - name: eqr_surveylastupdated
+    description: EQR_SURVEYLASTUPDATED
+  - name: eqr_refreshevery
+    description: EQR_REFRESHEVERY
+  - name: eqr_refresheveryunit
+    description: EQR_REFRESHEVERYUNIT
+  - name: eqr_nextrefresh
+    description: EQR_NEXTREFRESH
+  - name: eqr_refreshsequence
+    description: EQR_REFRESHSEQUENCE
+  - name: eqr_calculationerror
+    description: EQR_CALCULATIONERROR
+  - name: eqr_created
+    description: EQR_CREATED
+  - name: eqr_createdby
+    description: EQR_CREATEDBY
+  - name: eqr_updated
+    description: EQR_UPDATED
+  - name: eqr_updatedby
+    description: EQR_UPDATEDBY
+  - name: eqr_updatecount
+    description: EQR_UPDATECOUNT
+  - name: eqr_udfchar01
+    description: EQR_UDFCHAR01
+  - name: eqr_udfchar02
+    description: EQR_UDFCHAR02
+  - name: eqr_udfchar03
+    description: EQR_UDFCHAR03
+  - name: eqr_udfchar04
+    description: EQR_UDFCHAR04
+  - name: eqr_udfchar05
+    description: EQR_UDFCHAR05
+  - name: eqr_udfchar06
+    description: EQR_UDFCHAR06
+  - name: eqr_udfchar07
+    description: EQR_UDFCHAR07
+  - name: eqr_udfchar08
+    description: EQR_UDFCHAR08
+  - name: eqr_udfchar09
+    description: EQR_UDFCHAR09
+  - name: eqr_udfchar10
+    description: EQR_UDFCHAR10
+  - name: eqr_udfchar11
+    description: EQR_UDFCHAR11
+  - name: eqr_udfchar12
+    description: EQR_UDFCHAR12
+  - name: eqr_udfchar13
+    description: EQR_UDFCHAR13
+  - name: eqr_udfchar14
+    description: EQR_UDFCHAR14
+  - name: eqr_udfchar15
+    description: EQR_UDFCHAR15
+  - name: eqr_udfchar16
+    description: EQR_UDFCHAR16
+  - name: eqr_udfchar17
+    description: EQR_UDFCHAR17
+  - name: eqr_udfchar18
+    description: EQR_UDFCHAR18
+  - name: eqr_udfchar19
+    description: EQR_UDFCHAR19
+  - name: eqr_udfchar20
+    description: EQR_UDFCHAR20
+  - name: eqr_udfchar21
+    description: EQR_UDFCHAR21
+  - name: eqr_udfchar22
+    description: EQR_UDFCHAR22
+  - name: eqr_udfchar23
+    description: EQR_UDFCHAR23
+  - name: eqr_udfchar24
+    description: EQR_UDFCHAR24
+  - name: eqr_udfchar25
+    description: EQR_UDFCHAR25
+  - name: eqr_udfchar27
+    description: EQR_UDFCHAR27
+  - name: eqr_udfchar28
+    description: EQR_UDFCHAR28
+  - name: eqr_udfchar29
+    description: EQR_UDFCHAR29
+  - name: eqr_udfchar30
+    description: EQR_UDFCHAR30
+  - name: eqr_udfnum01
+    description: EQR_UDFNUM01
+  - name: eqr_udfnum02
+    description: EQR_UDFNUM02
+  - name: eqr_udfnum03
+    description: EQR_UDFNUM03
+  - name: eqr_udfnum04
+    description: EQR_UDFNUM04
+  - name: eqr_udfnum05
+    description: EQR_UDFNUM05
+  - name: eqr_udfdate01
+    description: EQR_UDFDATE01
+  - name: eqr_udfdate02
+    description: EQR_UDFDATE02
+  - name: eqr_udfdate03
+    description: EQR_UDFDATE03
+  - name: eqr_udfdate04
+    description: EQR_UDFDATE04
+  - name: eqr_udfdate05
+    description: EQR_UDFDATE05
+  - name: eqr_udfchkbox01
+    description: EQR_UDFCHKBOX01
+  - name: eqr_udfchkbox02
+    description: EQR_UDFCHKBOX02
+  - name: eqr_udfchkbox03
+    description: EQR_UDFCHKBOX03
+  - name: eqr_udfchkbox04
+    description: EQR_UDFCHKBOX04
+  - name: eqr_udfchkbox05
+    description: EQR_UDFCHKBOX05
+  - name: eqr_corrscoreranking
+    description: EQR_CORRSCORERANKING
+  - name: eqr_corrscoreranking_org
+    description: EQR_CORRSCORERANKING_ORG
+  - name: eqr_corrscorerankingrev
+    description: EQR_CORRSCORERANKINGREV
+  - name: eqr_corrscoreindex
+    description: EQR_CORRSCOREINDEX
+  - name: eqr_corrscorescore
+    description: EQR_CORRSCORESCORE
+  - name: eqr_corrscoredate
+    description: EQR_CORRSCOREDATE
+  - name: eqr_corrscorestatus
+    description: EQR_CORRSCORESTATUS
+  - name: eqr_udfchar26
+    description: EQR_UDFCHAR26
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EQUIPMENTRANKINGS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - eqr_rankingcode
+        - eqr_rankingorg
+        - eqr_rankingrevision
+        - eqr_objcode
+        - eqr_objorg

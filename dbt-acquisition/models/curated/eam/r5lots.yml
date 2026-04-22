@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5lots
+  columns:
+  - name: lot_lastsaved
+    description: LOT_LASTSAVED
+  - name: lot_desc
+    description: LOT_DESC
+  - name: lot_class
+    description: LOT_CLASS
+  - name: lot_expired
+    description: LOT_EXPIRED
+  - name: lot_manlot
+    description: LOT_MANLOT
+  - name: lot_class_org
+    description: LOT_CLASS_ORG
+  - name: lot_updatecount
+    description: LOT_UPDATECOUNT
+  - name: lot_buildkittrans
+    description: LOT_BUILDKITTRANS
+  - name: lot_breakupkittrans
+    description: LOT_BREAKUPKITTRANS
+  - name: lot_code
+    description: LOT_CODE
+    data_tests:
+    - unique
+  - name: lot_org
+    description: LOT_ORG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5LOTS

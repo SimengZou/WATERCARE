@@ -1,0 +1,359 @@
+version: 2
+models:
+- name: tppin020
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: '(required) Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cnln
+    description: '(required) Contract Line. Max length: 8'
+    data_tests:
+    - not_null
+  - name: nins
+    description: (required) Installment
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: ofbp
+    description: '(required) Sold-to Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cnpr
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: cact
+    description: 'Activity, posting. Max length: 16'
+  - name: tact
+    description: 'Triggering Activity. Max length: 16'
+  - name: cpro
+    description: 'Revenue Code. Max length: 8'
+  - name: cpra
+    description: 'Add. Work Revenue Code. Max length: 8'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Additional Work Description Installment - base language.
+      Max length: 30'
+    data_tests:
+    - not_null
+  - name: npoi
+    description: Number of Points
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: nper
+    description: Percentage
+  - name: insa
+    description: Installment Amount
+  - name: inaa
+    description: Installm. Amnt Add.Wrk
+  - name: sidt
+    description: Planned Invoice Date
+  - name: invo
+    description: 'Approved for Invoicing. Allowed values: 1, 2'
+  - name: invo_kw
+    description: 'Approved for Invoicing (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: inpo
+    description: Points to be Invoiced
+  - name: inpr
+    description: Percentage to be Invoiced
+  - name: inia
+    description: Installment Amount to be Invoiced
+  - name: iiaa
+    description: Installment Amount Add. Work to be Invoiced
+  - name: disc
+    description: Invoice Discount
+  - name: tipo
+    description: Points Invoiced
+  - name: tipr
+    description: Invoiced Percentage
+  - name: tiia
+    description: Invoiced Amount
+  - name: tiaa
+    description: Invoiced Amount Additional Work
+  - name: cvyn
+    description: 'Tax [y/n]. Allowed values: 1, 2'
+  - name: cvyn_kw
+    description: 'Tax [y/n] (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: exmt
+    description: 'Exempt. Allowed values: 1, 2'
+  - name: exmt_kw
+    description: 'Exempt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: bptc
+    description: 'BP Tax Country. Max length: 3'
+  - name: ceno
+    description: 'Exemption Certificate. Max length: 24'
+  - name: exrs
+    description: 'Exemption Reason. Max length: 6'
+  - name: pfdt
+    description: Date of Performance
+  - name: peru
+    description: Progress Invoice Period End
+  - name: fins
+    description: 'Final Installment. Allowed values: 1, 2'
+  - name: fins_kw
+    description: 'Final Installment (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: trsl
+    description: 'Transferred to Invoicing. Allowed values: 1, 2'
+  - name: trsl_kw
+    description: 'Transferred to Invoicing (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: fcmp
+    description: Financial Company
+  - name: ityp
+    description: 'Transaction Type. Max length: 3'
+  - name: idoc
+    description: Invoice Document
+  - name: fcma
+    description: Fin.Comp Addit.Work
+  - name: itpa
+    description: 'Transaction Type Additional Work. Max length: 3'
+  - name: idca
+    description: Invoice Document Additional Work
+  - name: hbyn
+    description: 'Use Holdback. Allowed values: 1, 2'
+  - name: hbyn_kw
+    description: 'Use Holdback (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: hbpc
+    description: Holdback Percentage
+  - name: hbai
+    description: Holdback Amount
+  - name: hbnr
+    description: Holdback Sequence Number
+  - name: clos
+    description: 'Closed. Allowed values: 1, 2'
+  - name: clos_kw
+    description: 'Closed (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: toin
+    description: 'Use Text on Invoice. Allowed values: 1, 2'
+  - name: toin_kw
+    description: 'Use Text on Invoice (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: rate_1
+    description: Currency Rate
+  - name: rate_2
+    description: Currency Rate
+  - name: rate_3
+    description: Currency Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rdat
+    description: Rate Date
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: ccrs
+    description: 'Late Payment Surcharge. Max length: 3'
+  - name: paym
+    description: 'Payment Method. Max length: 3'
+  - name: tcst
+    description: 'Document Compliance Status. Allowed values: 10, 20, 30, 40, 50'
+  - name: tcst_kw
+    description: 'Document Compliance Status (keyword). Allowed values: tcgtc.tcst.to.be.validated,
+      tcgtc.tcst.validating, tcgtc.tcst.valid.error, tcgtc.tcst.validated, tcgtc.tcst.not.appl'
+  - name: cstv
+    description: Customs Value for Normal Work
+  - name: catv
+    description: Customs Value for Additional Work
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: srdc
+    description: 'Source Document. Max length: 9'
+  - name: txta
+    description: Text
+  - name: cono_cnln_hbnr_cprj_ofbp_ref_compnr
+    description: company number of primary key of table tppin040 Holdback
+  - name: cono_cnln_ref_compnr
+    description: company number of primary key of table tpctm110 Contract Lines
+  - name: cono_ref_compnr
+    description: company number of primary key of table tpctm100 Contracts
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: cnpr_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cnpr_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cnpr_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cnpr_cpla_tact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cnpr_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccty_cvat_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: exrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: ccrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: insa_refc
+    description: 'CC: Installment Amount in Reference Currency'
+  - name: insa_cntc
+    description: 'CC: Installment Amount in Contract Currency'
+  - name: insa_prjc
+    description: 'CC: Installment Amount in Project Currency'
+  - name: insa_homc
+    description: 'CC: Installment Amount in Local Currency'
+  - name: insa_rpc1
+    description: 'CC: Installment Amount in Reporting Currency 1'
+  - name: insa_rpc2
+    description: 'CC: Installment Amount in Reporting Currency 2'
+  - name: insa_dwhc
+    description: 'CC: Installment Amount in Data Warehouse Currency'
+  - name: inia_refc
+    description: 'CC: Installment Approved Amount in Reference Currency'
+  - name: inia_cntc
+    description: 'CC: Installment Approved Amount in Contract Currency'
+  - name: inia_prjc
+    description: 'CC: Installment Approved Amount in Project Currency'
+  - name: inia_homc
+    description: 'CC: Installment Approved Amount in Local Currency'
+  - name: inia_rpc1
+    description: 'CC: Installment Approved Amount in Reporting Currency 1'
+  - name: inia_rpc2
+    description: 'CC: Installment Approved Amount in Reporting Currency 2'
+  - name: inia_dwhc
+    description: 'CC: Installment Approved Amount in Data Warehouse Currency'
+  - name: tiia_refc
+    description: 'CC: Installment Invoiced Amount in Reference Currency'
+  - name: tiia_cntc
+    description: 'CC: Installment Invoiced Amount in Contract Currency'
+  - name: tiia_prjc
+    description: 'CC: Installment Invoiced Amount in Project Currency'
+  - name: tiia_homc
+    description: 'CC: Installment Invoiced Amount in Local Currency'
+  - name: tiia_rpc1
+    description: 'CC: Installment Invoiced Amount in Reporting Currency 1'
+  - name: tiia_rpc2
+    description: 'CC: Installment Invoiced Amount in Reporting Currency 2'
+  - name: tiia_dwhc
+    description: 'CC: Installment Invoiced Amount in Data Warehouse Currency'
+  - name: inaa_refc
+    description: 'CC: Additional Work Installment Amount in Reference Currency'
+  - name: inaa_cntc
+    description: 'CC: Additional Work Installment Amount in Contract Currency'
+  - name: inaa_prjc
+    description: 'CC: Additional Work Installment Amount in Project Currency'
+  - name: inaa_homc
+    description: 'CC: Additional Work Installment Amount in Local Currency'
+  - name: inaa_rpc1
+    description: 'CC: Additional Work Installment Amount in Reporting Currency 1'
+  - name: inaa_rpc2
+    description: 'CC: Additional Work Installment Amount in Reporting Currency 2'
+  - name: inaa_dwhc
+    description: 'CC: Additional Work Installment Amount in Data Warehouse Currency'
+  - name: iiaa_refc
+    description: 'CC: Additional Work Approved Amount in Reference Currency'
+  - name: iiaa_cntc
+    description: 'CC: Additional Work Approved Amount in Contract Currency'
+  - name: iiaa_prjc
+    description: 'CC: Additional Work Approved Amount in Project Currency'
+  - name: iiaa_homc
+    description: 'CC: Additional Work Approved Amount in Local Currency'
+  - name: iiaa_rpc1
+    description: 'CC: Additional Work Approved Amount in Reporting Currency 1'
+  - name: iiaa_rpc2
+    description: 'CC: Additional Work Approved Amount in Reporting Currency 2'
+  - name: iiaa_dwhc
+    description: 'CC: Additional Work Approved Amount in Data Warehouse Currency'
+  - name: tiaa_refc
+    description: 'CC: Additional Work Invoiced Amount in Reference Currency'
+  - name: tiaa_cntc
+    description: 'CC: Additional Work Invoiced Amount in Contract Currency'
+  - name: tiaa_prjc
+    description: 'CC: Additional Work Invoiced Amount in Project Currency'
+  - name: tiaa_homc
+    description: 'CC: Additional Work Invoiced Amount in Local Currency'
+  - name: tiaa_rpc1
+    description: 'CC: Additional Work Invoiced Amount in Reporting Currency 1'
+  - name: tiaa_rpc2
+    description: 'CC: Additional Work Invoiced Amount in Reporting Currency 2'
+  - name: tiaa_dwhc
+    description: 'CC: Additional Work Invoiced Amount in Data Warehouse Currency'
+  - name: cprj_cpro
+    description: 'CC: Project Revenue Code. Max length: 25'
+  - name: cprj_cpra
+    description: 'CC: Additional Work Revenue Code. Max length: 25'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppin020 Installments table, Generated 2026-04-10T19:42:04Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono
+        - cnln
+        - nins
+        - cprj
+        - ofbp

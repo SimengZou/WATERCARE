@@ -1,0 +1,211 @@
+version: 2
+models:
+- name: tirou001
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cwoc
+    description: '(required) Work Center. Max length: 6'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: kowc
+    description: 'Work Center Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 10, 12,
+      30'
+  - name: kowc_kw
+    description: 'Work Center Type (keyword). Allowed values: tckowc.main.wc, tckowc.sub.wc,
+      tckowc.subcontracting, tckowc.cost, tckowc.buffer, tckowc.line.station, tckowc.work.cell,
+      tckowc.repair.cell, tckowc.asm.cell, tckowc.calc.office, tckowc.transformation'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: stty
+    description: 'Obsolete. Allowed values: 1, 2, 3'
+  - name: stty_kw
+    description: 'Obsolete (keyword). Allowed values: tirou.stty.line.station, tirou.stty.buffer,
+      tirou.stty.not.appl'
+  - name: bfty
+    description: 'Obsolete. Allowed values: 1, 2, 3'
+  - name: bfty_kw
+    description: 'Obsolete (keyword). Allowed values: tirou.bfty.rac, tirou.bfty.fifo,
+      tirou.bfty.not.appl'
+  - name: mnwc
+    description: 'Parent Work Center. Max length: 6'
+  - name: scid
+    description: 'Subcontractor Independent. Allowed values: 1, 2'
+  - name: scid_kw
+    description: 'Subcontractor Independent (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bpid
+    description: 'Subcontractor. Max length: 9'
+  - name: oprc
+    description: 'Operation Rate Code. Max length: 6'
+  - name: wttm
+    description: Wait Time
+  - name: mvtm
+    description: Move Time
+  - name: wcru
+    description: Basic Week Capacity by Resource Unit
+  - name: dcru
+    description: Basic Day Capacity by Resource Unit
+  - name: wipw
+    description: 'Shop Floor Warehouse. Max length: 6'
+  - name: bfem
+    description: 'Default Labor Resource. Max length: 9'
+  - name: crmp
+    description: 'Critical in Master Planning. Allowed values: 1, 2'
+  - name: crmp_kw
+    description: 'Critical in Master Planning (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: obfu
+    description: Obsolete
+  - name: norp
+    description: Obsolete
+  - name: swct
+    description: 'Shared Work Center Type. Allowed values: 5, 10, 15'
+  - name: swct_kw
+    description: 'Shared Work Center Type (keyword). Allowed values: tirou.swct.non.shared,
+      tirou.swct.primary, tirou.swct.secondary'
+  - name: swcc
+    description: Shared Work Center Primary Company
+  - name: dque
+    description: Desired Queue
+  - name: qutm
+    description: Queue Time
+  - name: nomc
+    description: Number of Machines
+  - name: noop
+    description: Available Labor Resources (FTE)
+  - name: tuni
+    description: 'Time Unit. Allowed values: 5, 10'
+  - name: tuni_kw
+    description: 'Time Unit (keyword). Allowed values: tctope.hours, tctope.days'
+  - name: prin
+    description: 'Print Instructions. Allowed values: 1, 2, 3'
+  - name: prin_kw
+    description: 'Print Instructions (keyword). Allowed values: tiprin.yes, tiprin.no,
+      tiprin.noappl'
+  - name: ctwc
+    description: 'Costing Work Center. Max length: 6'
+  - name: crty
+    description: 'Constraint Type. Allowed values: 1, 2, 3'
+  - name: crty_kw
+    description: 'Constraint Type (keyword). Allowed values: ticrty.not.appl, ticrty.time.fence,
+      ticrty.plan.horizon'
+  - name: crtf
+    description: Constraint Time Fence
+  - name: ccap
+    description: 'Show in Resource Master Plan. Allowed values: 1, 2'
+  - name: ccap_kw
+    description: 'Show in Resource Master Plan (keyword). Allowed values: tcccap.man.capacity,
+      tcccap.mach.capacity'
+  - name: upcs
+    description: 'Use rough PCS capacity requirement. Allowed values: 1, 2'
+  - name: upcs_kw
+    description: 'Use rough PCS capacity requirement (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lbdv
+    description: 'Device for Printing Labels. Max length: 14'
+  - name: pddp
+    description: 'Production Department. Max length: 6'
+  - name: usco
+    description: 'Use as Calculation Office. Allowed values: 1, 2'
+  - name: usco_kw
+    description: 'Use as Calculation Office (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: mcgr
+    description: 'Machine Capacity Groups. Allowed values: 1, 2'
+  - name: mcgr_kw
+    description: 'Machine Capacity Groups (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: _rows
+    description: 'Obsolete. Allowed values: 0, 1, 2'
+  - name: rows_kw
+    description: 'Obsolete (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: rpwc
+    description: 'Obsolete. Max length: 6'
+  - name: wcpg
+    description: 'Obsolete. Max length: 6'
+  - name: rprd
+    description: 'Report Product. Allowed values: 1, 2, 10, 20, 30'
+  - name: rprd_kw
+    description: 'Report Product (keyword). Allowed values: tirep.prod.manual, tirep.prod.automatic,
+      tirep.prod.machine, tirep.prod.by.mes, tirep.prod.mach.group'
+  - name: rlbr
+    description: 'Report Labor Hours. Allowed values: 1, 2, 30, 40, 50, 80, 90'
+  - name: rlbr_kw
+    description: 'Report Labor Hours (keyword). Allowed values: tirep.cons.backflush,
+      tirep.cons.manual, tirep.cons.machine, tirep.cons.by.mes, tirep.cons.mach.group,
+      tirep.cons.undefined, tirep.cons.not.applicable'
+  - name: cpgr
+    description: 'Capacity Group. Max length: 6'
+  - name: plgr
+    description: 'Plan Group. Max length: 6'
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: mnwc_ref_compnr
+    description: company number of primary key of table tirou001 Work Center
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: oprc_ref_compnr
+    description: company number of primary key of table ticpr050 Operation Rate Codes
+  - name: wipw_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: bfem_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ctwc_ref_compnr
+    description: company number of primary key of table tirou001 Work Center
+  - name: pddp_ref_compnr
+    description: company number of primary key of table tirou200 Production Departments
+  - name: rpwc_ref_compnr
+    description: company number of primary key of table tirou001 Work Center
+  - name: wcpg_ref_compnr
+    description: company number of primary key of table tirpt042 Work Cell Plan Groups
+  - name: pddp_rcmp
+    description: 'CC: Reference Company of Production Department'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tirou001 Work Center table, Generated 2026-04-10T19:41:48Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cwoc

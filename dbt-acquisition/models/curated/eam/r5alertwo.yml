@@ -1,0 +1,66 @@
+version: 2
+models:
+- name: r5alertwo
+  columns:
+  - name: alw_lastsaved
+    description: ALW_LASTSAVED
+  - name: alw_delayuom
+    description: ALW_DELAYUOM
+  - name: alw_standwork
+    description: ALW_STANDWORK
+  - name: alw_workorderorg
+    description: ALW_WORKORDERORG
+  - name: alw_objectfieldid
+    description: ALW_OBJECTFIELDID
+  - name: alw_objectorgfieldid
+    description: ALW_OBJECTORGFIELDID
+  - name: alw_workorderorgfieldid
+    description: ALW_WORKORDERORGFIELDID
+  - name: alw_problemcodefieldid
+    description: ALW_PROBLEMCODEFIELDID
+  - name: alw_jobtypefieldid
+    description: ALW_JOBTYPEFIELDID
+  - name: alw_priorityfieldid
+    description: ALW_PRIORITYFIELDID
+  - name: alw_durationfieldid
+    description: ALW_DURATIONFIELDID
+  - name: alw_schedstartfieldid
+    description: ALW_SCHEDSTARTFIELDID
+  - name: alw_requeststartfieldid
+    description: ALW_REQUESTSTARTFIELDID
+  - name: alw_requestendfieldid
+    description: ALW_REQUESTENDFIELDID
+  - name: alw_wodesc
+    description: ALW_WODESC
+  - name: alw_wocomment
+    description: 'ALW_WOCOMMENT. Max length: 0'
+  - name: alw_updatecount
+    description: ALW_UPDATECOUNT
+  - name: alw_includenonconformities
+    description: ALW_INCLUDENONCONFORMITIES
+  - name: alw_duenonconformitiesonly
+    description: ALW_DUENONCONFORMITIESONLY
+  - name: alw_alert
+    description: ALW_ALERT
+    data_tests:
+    - unique
+  - name: alw_delay
+    description: ALW_DELAY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ALERTWO

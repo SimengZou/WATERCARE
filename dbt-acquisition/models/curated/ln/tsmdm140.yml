@@ -1,0 +1,85 @@
+version: 2
+models:
+- name: tsmdm140
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: emno
+    description: '(required) Service Employee. Max length: 9'
+    data_tests:
+    - not_null
+  - name: csar
+    description: 'Service Area. Max length: 3'
+  - name: ccar
+    description: 'Service Car. Max length: 10'
+  - name: mopd
+    description: Maximum Overtime per Day
+  - name: pgen
+    description: 'Pager / Phone Enabled. Allowed values: 1, 2'
+  - name: pgen_kw
+    description: 'Pager / Phone Enabled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: asmc
+    description: 'Assignment. Max length: 3'
+  - name: nots__en_us
+    description: '(required) Notes - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: lsdt
+    description: Last Transaction Date
+  - name: ucts
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: ucts_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: frmn
+    description: 'Obsolete. Max length: 9'
+  - name: emno_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: csar_ref_compnr
+    description: company number of primary key of table tsmdm105 Service Areas
+  - name: ccar_ref_compnr
+    description: company number of primary key of table tsmdm145 Service Cars
+  - name: asmc_ref_compnr
+    description: company number of primary key of table tsmdm185 Paging Assignments
+  - name: frmn_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsmdm140 Service Employees table, Generated 2026-04-10T19:42:37Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - emno

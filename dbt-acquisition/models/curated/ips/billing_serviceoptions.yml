@@ -1,0 +1,128 @@
+version: 2
+models:
+- name: billing_serviceoptions
+  columns:
+  - name: fixedchginadvanceflag
+    description: 'Metadata for column FIXEDCHGINADVANCEFLAG. Max length: 1'
+  - name: servicedefinitionkey
+    description: Metadata for column SERVICEDEFINITIONKEY
+  - name: serviceclass1
+    description: 'Metadata for column SERVICECLASS1. Max length: 10'
+  - name: servicefield2key
+    description: Metadata for column SERVICEFIELD2KEY
+  - name: servicetype
+    description: 'Metadata for column SERVICETYPE. Max length: 1'
+  - name: assettype
+    description: Metadata for column ASSETTYPE
+  - name: moveincolor
+    description: Metadata for column MOVEINCOLOR
+  - name: imperviousareaonlyflag
+    description: 'Metadata for column IMPERVIOUSAREAONLYFLAG. Max length: 1'
+  - name: donotproratemoveinflag
+    description: 'Metadata for column DONOTPRORATEMOVEINFLAG. Max length: 1'
+  - name: moveoutswokey
+    description: Metadata for column MOVEOUTSWOKEY
+  - name: tradewasteflag
+    description: 'Metadata for column TRADEWASTEFLAG. Max length: 1'
+  - name: moveoutsrwoconditionformula
+    description: Metadata for column MOVEOUTSRWOCONDITIONFORMULA
+  - name: builderflag
+    description: 'Metadata for column BUILDERFLAG. Max length: 1'
+  - name: moveinactkey
+    description: Metadata for column MOVEINACTKEY
+  - name: serviceoptionskey
+    description: (required) Metadata for column SERVICEOPTIONSKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: winteravgsetupkey
+    description: Metadata for column WINTERAVGSETUPKEY
+  - name: availability
+    description: 'Metadata for column AVAILABILITY. Max length: 1'
+  - name: tradewastemax
+    description: Metadata for column TRADEWASTEMAX
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: class
+    description: 'Metadata for column CLASS. Max length: 10'
+  - name: servicefield3key
+    description: Metadata for column SERVICEFIELD3KEY
+  - name: prorateservicestopflag
+    description: 'Metadata for column PRORATESERVICESTOPFLAG. Max length: 1'
+  - name: prorateservicestartflag
+    description: 'Metadata for column PRORATESERVICESTARTFLAG. Max length: 1'
+  - name: moveoutlearnmorekbkey
+    description: Metadata for column MOVEOUTLEARNMOREKBKEY
+  - name: tenantflag
+    description: 'Metadata for column TENANTFLAG. Max length: 1'
+  - name: metertypeformula
+    description: Metadata for column METERTYPEFORMULA
+  - name: winteravgflag
+    description: 'Metadata for column WINTERAVGFLAG. Max length: 1'
+  - name: moveinsrwoconditionformula
+    description: Metadata for column MOVEINSRWOCONDITIONFORMULA
+  - name: servicefield1key
+    description: Metadata for column SERVICEFIELD1KEY
+  - name: learnmorekbkey
+    description: Metadata for column LEARNMOREKBKEY
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: consgraphflag
+    description: 'Metadata for column CONSGRAPHFLAG. Max length: 1'
+  - name: serviceclass2
+    description: 'Metadata for column SERVICECLASS2. Max length: 10'
+  - name: code
+    description: 'Metadata for column CODE. Max length: 40'
+  - name: tradewasterate
+    description: Metadata for column TRADEWASTERATE
+  - name: ownerflag
+    description: 'Metadata for column OWNERFLAG. Max length: 1'
+  - name: moveinreqskey
+    description: Metadata for column MOVEINREQSKEY
+  - name: consumptionpercentage
+    description: Metadata for column CONSUMPTIONPERCENTAGE
+  - name: effdate
+    description: Metadata for column EFFDATE
+  - name: moveoutnotes
+    description: 'Metadata for column MOVEOUTNOTES. Max length: 300'
+  - name: servicedistrict
+    description: 'Metadata for column SERVICEDISTRICT. Max length: 10'
+  - name: outputhistoricalusageflag
+    description: 'Metadata for column OUTPUTHISTORICALUSAGEFLAG. Max length: 1'
+  - name: moveinswokey
+    description: Metadata for column MOVEINSWOKEY
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: moveoutactkey
+    description: Metadata for column MOVEOUTACTKEY
+  - name: frequency
+    description: 'Metadata for column FREQUENCY. Max length: 1'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: moveinnotes
+    description: 'Metadata for column MOVEINNOTES. Max length: 300'
+  - name: moveoutreqskey
+    description: Metadata for column MOVEOUTREQSKEY
+  - name: variation_id
+    description: Virtual variation id property
+  - name: deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table BILLING.SERVICEOPTIONS on 2021-07-09T15:15:00.846

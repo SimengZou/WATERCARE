@@ -1,0 +1,129 @@
+version: 2
+models:
+- name: tffam808
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: anbr
+    description: '(required) Asset Number. Max length: 15'
+    data_tests:
+    - not_null
+  - name: aext
+    description: '(required) Asset Extension. Max length: 15'
+    data_tests:
+    - not_null
+  - name: book
+    description: '(required) Asset Book. Max length: 10'
+    data_tests:
+    - not_null
+  - name: year
+    description: (required) Year
+    data_tests:
+    - not_null
+  - name: prod
+    description: (required) Period
+    data_tests:
+    - not_null
+  - name: cost_1
+    description: Current Cost
+  - name: cost_2
+    description: Current Cost
+  - name: cost_3
+    description: Current Cost
+  - name: ocst_1
+    description: Original Cost
+  - name: ocst_2
+    description: Original Cost
+  - name: ocst_3
+    description: Original Cost
+  - name: ltdd_1
+    description: Accumulated Depreciation
+  - name: ltdd_2
+    description: Accumulated Depreciation
+  - name: ltdd_3
+    description: Accumulated Depreciation
+  - name: s179_1
+    description: Section 179 Value
+  - name: s179_2
+    description: Section 179 Value
+  - name: s179_3
+    description: Section 179 Value
+  - name: salv_1
+    description: Salvage Value
+  - name: salv_2
+    description: Salvage Value
+  - name: salv_3
+    description: Salvage Value
+  - name: ytdd_1
+    description: YTD Depreciation
+  - name: ytdd_2
+    description: YTD Depreciation
+  - name: ytdd_3
+    description: YTD Depreciation
+  - name: susp
+    description: 'Suspended. Allowed values: 1, 2'
+  - name: susp_kw
+    description: 'Suspended (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rcst_1
+    description: Revaluation Cost
+  - name: rcst_2
+    description: Revaluation Cost
+  - name: rcst_3
+    description: Revaluation Cost
+  - name: ltdr_1
+    description: Accumulated Revaluated Depreciation
+  - name: ltdr_2
+    description: Accumulated Revaluated Depreciation
+  - name: ltdr_3
+    description: Accumulated Revaluated Depreciation
+  - name: ytdr_1
+    description: YTD Revaluation Depreciation
+  - name: ytdr_2
+    description: YTD Revaluation Depreciation
+  - name: ytdr_3
+    description: YTD Revaluation Depreciation
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffam808 Periodic Book Value Summary table, Generated 2026-04-10T19:41:35Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - anbr
+        - aext
+        - book
+        - year
+        - prod

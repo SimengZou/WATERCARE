@@ -1,0 +1,377 @@
+version: 2
+models:
+- name: whinh312
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: rcno
+    description: '(required) Receipt. Max length: 9'
+    data_tests:
+    - not_null
+  - name: rcln
+    description: (required) Receipt Line
+    data_tests:
+    - not_null
+  - name: oorg
+    description: 'Order Origin. Allowed values: 1, 2, 3, 11, 12, 31, 32, 33, 34, 40,
+      41, 50, 51, 53, 55, 56, 58, 60, 61, 71, 72, 75, 76, 78, 80, 81, 82, 90, 100'
+  - name: oorg_kw
+    description: 'Order Origin (keyword). Allowed values: whinh.oorg.sales, whinh.oorg.sales.sched,
+      whinh.oorg.sales.man, whinh.oorg.service, whinh.oorg.service.man, whinh.oorg.maint.sales,
+      whinh.oorg.maint.sales.man, whinh.oorg.maint.work, whinh.oorg.maint.work.man,
+      whinh.oorg.customer.claim, whinh.oorg.supplier.claim, whinh.oorg.production,
+      whinh.oorg.production.man, whinh.oorg.product.sched, whinh.oorg.product.asc,
+      whinh.oorg.product.asc.man, whinh.oorg.product.kanban, whinh.oorg.transformation,
+      whinh.oorg.assembly, whinh.oorg.transfer, whinh.oorg.transfer.man, whinh.oorg.project,
+      whinh.oorg.project.man, whinh.oorg.proj.contract, whinh.oorg.purchase, whinh.oorg.purchase.sched,
+      whinh.oorg.purchase.man, whinh.oorg.enterprise.plan, whinh.oorg.not.appl'
+  - name: orno
+    description: 'Order. Max length: 9'
+  - name: oset
+    description: Set
+  - name: pono
+    description: Line
+  - name: seqn
+    description: Sequence
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: itag
+    description: 'Inventory Tag. Max length: 9'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: mpnr
+    description: 'Manufacturer Part Number. Max length: 35'
+  - name: serl
+    description: 'Serial Number. Max length: 30'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: effn
+    description: Effectivity Unit
+  - name: rowc
+    description: Rental Owner Company
+  - name: rown
+    description: 'Rental Owner. Max length: 6'
+  - name: revi
+    description: 'E-item Revision. Max length: 6'
+  - name: idat
+    description: Inventory Date
+  - name: rcun
+    description: 'Receipt Unit. Max length: 3'
+  - name: qrcr
+    description: Received Quantity in Receipt Unit
+  - name: qrec
+    description: Received Quantity in Inventory Unit
+  - name: qrcp
+    description: Received Quantity in Piece Unit
+  - name: qapr
+    description: Approved Quantity
+  - name: qapp
+    description: Approved Quantity in Piece Unit
+  - name: qdes
+    description: Destroyed Quantity
+  - name: qdep
+    description: Destroyed Quantity in Piece Unit
+  - name: qrej
+    description: Rejected Quantity
+  - name: qrpu
+    description: Rejected Quantity in Piece Unit
+  - name: qrsc
+    description: Scrapped Quantity
+  - name: qrsp
+    description: Scrapped Quantity in Piece Unit
+  - name: qadv
+    description: Advised Quantity
+  - name: qadp
+    description: Advised Quantity in Piece Unit
+  - name: qput
+    description: Put Away Quantity
+  - name: qpup
+    description: Put Away Quantity in Piece Unit
+  - name: qadi
+    description: Advised from Inspection Quantity
+  - name: qapu
+    description: Advised from Inspection Quantity in Piece Unit
+  - name: qpui
+    description: Put Away from Inspection Quantity
+  - name: qppu
+    description: Put Away from Inspection Quantity in Piece Unit
+  - name: psno__en_us
+    description: '(required) Packing Slip - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: psqr
+    description: Packing Slip Quantity in Receipt Unit
+  - name: psqp
+    description: Packing Slip Quantity in Piece Unit
+  - name: psqu
+    description: Packing Slip Quantity
+  - name: psun
+    description: 'Packing Slip Unit. Max length: 3'
+  - name: cwar
+    description: 'Receiving Warehouse. Max length: 6'
+  - name: rclo
+    description: 'Receiving Location. Max length: 10'
+  - name: dslo
+    description: 'Destination Location. Max length: 10'
+  - name: pkdf
+    description: 'Package Definition. Max length: 6'
+  - name: pmsk
+    description: 'Procedure Mask. Max length: 20'
+  - name: acti__en_us
+    description: '(required) Activity - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: lsta
+    description: 'Line Status. Allowed values: 10, 20, 25, 30'
+  - name: lsta_kw
+    description: 'Line Status (keyword). Allowed values: whinh.lstc.unexpected, whinh.lstc.received,
+      whinh.lstc.confirming, whinh.lstc.confirmed'
+  - name: cmpl
+    description: 'Complete. Allowed values: 1, 2'
+  - name: cmpl_kw
+    description: 'Complete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: fire
+    description: 'Final Receipt. Allowed values: 1, 2'
+  - name: fire_kw
+    description: 'Final Receipt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: conf
+    description: 'Confirmed. Allowed values: 1, 2'
+  - name: conf_kw
+    description: 'Confirmed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: insp
+    description: 'Inspection. Allowed values: 1, 2'
+  - name: insp_kw
+    description: 'Inspection (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdck
+    description: 'Cross-docking. Allowed values: 1, 2'
+  - name: cdck_kw
+    description: 'Cross-docking (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdcr
+    description: 'Generate Cross-dock Order Lines when Confirming Receipt. Allowed
+      values: 1, 2'
+  - name: cdcr_kw
+    description: 'Generate Cross-dock Order Lines when Confirming Receipt (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dmse
+    description: 'Direct Material Supply Execution. Allowed values: 1, 2, 10'
+  - name: dmse_kw
+    description: 'Direct Material Supply Execution (keyword). Allowed values: whinh.dmse.to.be.processed,
+      whinh.dmse.processed, whinh.dmse.not.appl'
+  - name: qdms
+    description: Direct Material Supply Quantity Executed
+  - name: arej
+    description: 'From Quarantine. Allowed values: 1, 2'
+  - name: arej_kw
+    description: 'From Quarantine (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ardt
+    description: Actual Receipt Date
+  - name: shdt
+    description: Shipping Date
+  - name: trdt
+    description: Transaction Date
+  - name: refe__en_us
+    description: '(required) Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: ksig
+    description: 'Kanban Signal ID. Max length: 20'
+  - name: ltbp
+    description: 'Business Partner''s Lot Code. Max length: 30'
+  - name: exhu
+    description: 'External Handling Unit. Max length: 25'
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: hupr
+    description: 'Handling Unit(s) Present. Allowed values: 1, 2'
+  - name: hupr_kw
+    description: 'Handling Unit(s) Present (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: shid
+    description: 'Shipment. Max length: 9'
+  - name: shsq
+    description: Sequence
+  - name: load
+    description: 'Load. Max length: 9'
+  - name: shpm
+    description: 'Shipment. Max length: 9'
+  - name: wght
+    description: Weight
+  - name: wtun
+    description: 'Weight Unit. Max length: 3'
+  - name: cpro__en_us
+    description: '(required) Carrier Tracking Number - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: blck
+    description: 'Blocked. Allowed values: 1, 2'
+  - name: blck_kw
+    description: 'Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: resn
+    description: 'Reason. Max length: 6'
+  - name: logn
+    description: 'User. Max length: 16'
+  - name: casi
+    description: 'Extra Intrastat Info. Max length: 3'
+  - name: tsrl
+    description: 'Obsolete. Max length: 30'
+  - name: tlot
+    description: 'Obsolete. Max length: 20'
+  - name: exrr
+    description: 'External Receipt Reference. Max length: 20'
+  - name: spcn
+    description: 'Specification. Max length: 22'
+  - name: disp
+    description: 'Quarantine Inventory Payable to Supplier. Allowed values: 1, 2'
+  - name: disp_kw
+    description: 'Quarantine Inventory Payable to Supplier (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: bgxc
+    description: 'Budget Exception. Allowed values: 1, 2'
+  - name: bgxc_kw
+    description: 'Budget Exception (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tcst
+    description: 'Document Compliance Status. Allowed values: 10, 20, 30, 40, 50'
+  - name: tcst_kw
+    description: 'Document Compliance Status (keyword). Allowed values: tcgtc.tcst.to.be.validated,
+      tcgtc.tcst.validating, tcgtc.tcst.valid.error, tcgtc.tcst.validated, tcgtc.tcst.not.appl'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: csvl
+    description: Customs Value
+  - name: csvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: rtcf
+    description: 'Return Certificate. Max length: 19'
+  - name: circ__en_us
+    description: '(required) Customer Item Revision - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: imre__en_us
+    description: '(required) Import Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: irdt
+    description: Import Reference Date
+  - name: imrk__en_us
+    description: '(required) Import Reference Key - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: txtn
+    description: Receipt Line Text
+  - name: itxt
+    description: Inspection Text
+  - name: oorg_orno_pono_seqn_ref_compnr
+    description: company number of primary key of table whinh210 Inbound Order Lines
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: item_pkdf_ref_compnr
+    description: company number of primary key of table whwmd430 Package Definitions
+      by Item
+  - name: item_ref_compnr
+    description: company number of primary key of table whwmd400 Item Warehousing
+      Data
+  - name: atse_ref_compnr
+    description: company number of primary key of table whwmd464 Attribute Sets
+  - name: cmnf_ref_compnr
+    description: company number of primary key of table tcmcs060 Manufacturers
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: rowc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: rown_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: rcun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: psun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cwar_rclo_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_dslo_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: pkdf_ref_compnr
+    description: company number of primary key of table whwmd410 Package Definitions
+  - name: huid_ref_compnr
+    description: company number of primary key of table whwmd530 Handling Units
+  - name: wtun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: resn_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: casi_ref_compnr
+    description: company number of primary key of table tccom705 Extra Intrastat Info
+  - name: csvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: txtn_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: itxt_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: conv_buar
+    description: 'CC: Conversion Factor from Inventory Unit to Base Unit Area'
+  - name: conv_buln
+    description: 'CC: Conversion Factor from Inventory Unit to Base Unit Length'
+  - name: conv_buvl
+    description: 'CC: Conversion Factor from Inventory Unit to Base Unit Volume'
+  - name: conv_buwg
+    description: 'CC: Conversion Factor from Inventory Unit to Base Unit Weight'
+  - name: rcam_lclc
+    description: 'CC: Received Amount in Local Currency'
+  - name: rcam_rpc1
+    description: 'CC: Received Amount in Reporting Currency 1'
+  - name: rcam_rpc2
+    description: 'CC: Received Amount in Reporting Currency 2'
+  - name: rcam_rfrc
+    description: 'CC: Received Amount in Reference Currency'
+  - name: rcam_dtwc
+    description: 'CC: Received Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh312 Receipt Lines table, Generated 2026-04-10T19:42:49Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - rcno
+        - rcln

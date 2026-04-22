@@ -1,0 +1,100 @@
+version: 2
+models:
+- name: tipcs020
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: refe__en_us
+    description: '(required) Reference - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: kopr
+    description: 'Project Type. Allowed values: 1, 2, 3, 4'
+  - name: kopr_kw
+    description: 'Project Type (keyword). Allowed values: tckopr.main.project, tckopr.sub.project,
+      tckopr.single.project, tckopr.budget'
+  - name: ccgr
+    description: 'Calculation Group. Max length: 6'
+  - name: bpid
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: pemp
+    description: 'Project Employee. Max length: 9'
+  - name: ffci
+    description: First Free Item Code
+  - name: cpcc
+    description: 'Cost Calculation Code. Max length: 3'
+  - name: clco
+    description: 'Calculation Office. Max length: 6'
+  - name: peng
+    description: 'Engineering Allowed. Allowed values: 0, 1, 2'
+  - name: peng_kw
+    description: 'Engineering Allowed (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: cfdt
+    description: Reference Date
+  - name: dtfs
+    description: 'Date Filled by Sales. Allowed values: 1, 2'
+  - name: dtfs_kw
+    description: 'Date Filled by Sales (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: ccgr_ref_compnr
+    description: company number of primary key of table tipcs010 Calculation Groups
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: pemp_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cpcc_ref_compnr
+    description: company number of primary key of table ticpr100 Cost Calculation
+      Codes
+  - name: clco_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tipcs020 General Project Data table, Generated 2026-04-10T19:41:47Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj

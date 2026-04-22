@@ -1,0 +1,40 @@
+version: 2
+models:
+- name: r5userviews
+  columns:
+  - name: uvw_lastsaved
+    description: UVW_LASTSAVED
+  - name: uvw_desc
+    description: UVW_DESC
+  - name: uvw_name
+    description: UVW_NAME
+  - name: uvw_stmt
+    description: UVW_STMT
+  - name: uvw_active
+    description: UVW_ACTIVE
+  - name: uvw_updatecount
+    description: UVW_UPDATECOUNT
+  - name: uvw_code
+    description: UVW_CODE
+    data_tests:
+    - unique
+  - name: uvw_note
+    description: UVW_NOTE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5USERVIEWS

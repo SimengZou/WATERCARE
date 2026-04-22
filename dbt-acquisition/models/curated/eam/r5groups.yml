@@ -1,0 +1,150 @@
+version: 2
+models:
+- name: r5groups
+  columns:
+  - name: ugr_lastsaved
+    description: UGR_LASTSAVED
+  - name: ugr_mobileapp
+    description: UGR_MOBILEAPP
+  - name: ugr_class
+    description: UGR_CLASS
+  - name: ugr_mrc
+    description: UGR_MRC
+  - name: ugr_printer
+    description: UGR_PRINTER
+  - name: ugr_corrbook
+    description: UGR_CORRBOOK
+  - name: ugr_class_org
+    description: UGR_CLASS_ORG
+  - name: ugr_login
+    description: UGR_LOGIN
+  - name: ugr_requestor
+    description: UGR_REQUESTOR
+  - name: ugr_updatecount
+    description: UGR_UPDATECOUNT
+  - name: ugr_created
+    description: UGR_CREATED
+  - name: ugr_updated
+    description: UGR_UPDATED
+  - name: ugr_sessiontimeout
+    description: UGR_SESSIONTIMEOUT
+  - name: ugr_jobtype
+    description: UGR_JOBTYPE
+  - name: ugr_addperm
+    description: UGR_ADDPERM
+  - name: ugr_downloadworkorders
+    description: UGR_DOWNLOADWORKORDERS
+  - name: ugr_fordataspy
+    description: UGR_FORDATASPY
+  - name: ugr_downloademployee
+    description: UGR_DOWNLOADEMPLOYEE
+  - name: ugr_fortrade
+    description: UGR_FORTRADE
+  - name: ugr_fordepartment_emp
+    description: UGR_FORDEPARTMENT_EMP
+  - name: ugr_foremployee
+    description: UGR_FOREMPLOYEE
+  - name: ugr_downloadstandardwos
+    description: UGR_DOWNLOADSTANDARDWOS
+  - name: ugr_downloadinspresults
+    description: UGR_DOWNLOADINSPRESULTS
+  - name: ugr_downloadtask
+    description: UGR_DOWNLOADTASK
+  - name: ugr_downloadequipment
+    description: UGR_DOWNLOADEQUIPMENT
+  - name: ugr_fordepartment_equip
+    description: UGR_FORDEPARTMENT_EQUIP
+  - name: ugr_forlocation
+    description: UGR_FORLOCATION
+  - name: ugr_forclass_equip
+    description: UGR_FORCLASS_EQUIP
+  - name: ugr_forcategory
+    description: UGR_FORCATEGORY
+  - name: ugr_forequipment
+    description: UGR_FOREQUIPMENT
+  - name: ugr_fortype
+    description: UGR_FORTYPE
+  - name: ugr_downloadequipcomments
+    description: UGR_DOWNLOADEQUIPCOMMENTS
+  - name: ugr_fordownloadedwo_eqcmt
+    description: UGR_FORDOWNLOADEDWO_EQCMT
+  - name: ugr_downloadequiphistory
+    description: UGR_DOWNLOADEQUIPHISTORY
+  - name: ugr_fordownloadedwo_eqhst
+    description: UGR_FORDOWNLOADEDWO_EQHST
+  - name: ugr_forlatestdays
+    description: UGR_FORLATESTDAYS
+  - name: ugr_downloadeqcustomfields
+    description: UGR_DOWNLOADEQCUSTOMFIELDS
+  - name: ugr_fordownloadedwo_eqcf
+    description: UGR_FORDOWNLOADEDWO_EQCF
+  - name: ugr_downloadcostcodes
+    description: UGR_DOWNLOADCOSTCODES
+  - name: ugr_forclass_cc
+    description: UGR_FORCLASS_CC
+  - name: ugr_forcostcode
+    description: UGR_FORCOSTCODE
+  - name: ugr_downloadeqhistcomments
+    description: UGR_DOWNLOADEQHISTCOMMENTS
+  - name: ugr_downloadstores
+    description: UGR_DOWNLOADSTORES
+  - name: ugr_downloadparts
+    description: UGR_DOWNLOADPARTS
+  - name: ugr_forstore_part
+    description: UGR_FORSTORE_PART
+  - name: ugr_forpart_part
+    description: UGR_FORPART_PART
+  - name: ugr_maxinstockandquantity
+    description: UGR_MAXINSTOCKANDQUANTITY
+  - name: ugr_downloadbins
+    description: UGR_DOWNLOADBINS
+  - name: ugr_forstore_bin
+    description: UGR_FORSTORE_BIN
+  - name: ugr_forbin
+    description: UGR_FORBIN
+  - name: ugr_downloadphyinventory
+    description: UGR_DOWNLOADPHYINVENTORY
+  - name: ugr_forstore_inv
+    description: UGR_FORSTORE_INV
+  - name: ugr_forline
+    description: UGR_FORLINE
+  - name: ugr_downloadsupplier
+    description: UGR_DOWNLOADSUPPLIER
+  - name: ugr_downloadassetinventory
+    description: UGR_DOWNLOADASSETINVENTORY
+  - name: ugr_downloadstock
+    description: UGR_DOWNLOADSTOCK
+  - name: ugr_downloadesignsettings
+    description: UGR_DOWNLOADESIGNSETTINGS
+  - name: ugr_downloadmtrreading
+    description: UGR_DOWNLOADMTRREADING
+  - name: ugr_downloaddocprintwo
+    description: UGR_DOWNLOADDOCPRINTWO
+  - name: ugr_equipfordataspy
+    description: UGR_EQUIPFORDATASPY
+  - name: ugr_mtrreadinglatestdays
+    description: UGR_MTRREADINGLATESTDAYS
+  - name: ugr_code
+    description: UGR_CODE
+    data_tests:
+    - unique
+  - name: ugr_desc
+    description: UGR_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5GROUPS

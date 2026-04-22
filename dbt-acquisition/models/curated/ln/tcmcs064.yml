@@ -1,0 +1,124 @@
+version: 2
+models:
+- name: tcmcs064
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: crat
+    description: '(required) Credit Rating. Max length: 3'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: phs1
+    description: 'Credit Check Sales Order Entry. Allowed values: 1, 2'
+  - name: phs1_kw
+    description: 'Credit Check Sales Order Entry (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: phs2
+    description: 'Credit Check Release to Warehousing. Allowed values: 1, 2'
+  - name: phs2_kw
+    description: 'Credit Check Release to Warehousing (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: phs3
+    description: 'Credit Check Confirm Shipment. Allowed values: 1, 2'
+  - name: phs3_kw
+    description: 'Credit Check Confirm Shipment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: phs4
+    description: 'Contract Line Entry. Allowed values: 1, 2'
+  - name: phs4_kw
+    description: 'Contract Line Entry (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: phs5
+    description: 'Contract Deliverable Entry. Allowed values: 1, 2'
+  - name: phs5_kw
+    description: 'Contract Deliverable Entry (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: phs6
+    description: 'Release to Warehousing. Allowed values: 1, 2'
+  - name: phs6_kw
+    description: 'Release to Warehousing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: phs7
+    description: 'Confirm Shipment. Allowed values: 1, 2'
+  - name: phs7_kw
+    description: 'Confirm Shipment (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pss1
+    description: 'Sales Schedule Approval. Allowed values: 1, 2'
+  - name: pss1_kw
+    description: 'Sales Schedule Approval (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pss2
+    description: 'Sales Schedule Release to Warehousing. Allowed values: 1, 2'
+  - name: pss2_kw
+    description: 'Sales Schedule Release to Warehousing (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: pss3
+    description: 'Sales Schedule Confirm Shipment. Allowed values: 1, 2'
+  - name: pss3_kw
+    description: 'Sales Schedule Confirm Shipment (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bldf
+    description: 'Sales Schedule Blocking Definition. Max length: 3'
+  - name: actn
+    description: 'Action. Allowed values: 1, 2, 3, 4'
+  - name: actn_kw
+    description: 'Action (keyword). Allowed values: tcmcs.actn.always.credit, tcmcs.actn.never.credit,
+      tcmcs.actn.check.credit, tcmcs.actn.always.over.inv'
+  - name: revp
+    description: Review Credit Rating after
+  - name: ioso
+    description: 'Include Open Order Balance in Financial Risk Calculation. Allowed
+      values: 1, 2'
+  - name: ioso_kw
+    description: 'Include Open Order Balance in Financial Risk Calculation (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ddcc
+    description: 'Central Direct Delivery Credit Checking. Allowed values: 1, 2'
+  - name: ddcc_kw
+    description: 'Central Direct Delivery Credit Checking (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: bldf_ref_compnr
+    description: company number of primary key of table tcmcs211 Blocking Definitions
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs064 Credit Ratings table, Generated 2026-04-10T19:41:13Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - crat

@@ -1,0 +1,114 @@
+version: 2
+models:
+- name: r5wspromptfields
+  columns:
+  - name: wsf_lastsaved
+    description: WSF_LASTSAVED
+  - name: wsf_responsexpath
+    description: WSF_RESPONSEXPATH
+  - name: wsf_line
+    description: WSF_LINE
+  - name: wsf_field
+    description: WSF_FIELD
+  - name: wsf_fieldlabel
+    description: WSF_FIELDLABEL
+  - name: wsf_nextline
+    description: WSF_NEXTLINE
+  - name: wsf_rtype
+    description: WSF_RTYPE
+  - name: wsf_type
+    description: WSF_TYPE
+  - name: wsf_maxlength
+    description: WSF_MAXLENGTH
+  - name: wsf_minlength
+    description: WSF_MINLENGTH
+  - name: wsf_dupprevvalue
+    description: WSF_DUPPREVVALUE
+  - name: wsf_branchcond
+    description: WSF_BRANCHCOND
+  - name: wsf_branchpattern
+    description: WSF_BRANCHPATTERN
+  - name: wsf_branchgoto
+    description: WSF_BRANCHGOTO
+  - name: wsf_retrievefromgroup
+    description: WSF_RETRIEVEFROMGROUP
+  - name: wsf_retrievefield
+    description: WSF_RETRIEVEFIELD
+  - name: wsf_destwebservice
+    description: WSF_DESTWEBSERVICE
+  - name: wsf_retrievexpath
+    description: WSF_RETRIEVEXPATH
+  - name: wsf_destxpath
+    description: WSF_DESTXPATH
+  - name: wsf_fieldxpath
+    description: WSF_FIELDXPATH
+  - name: wsf_fixeddata
+    description: WSF_FIXEDDATA
+  - name: wsf_computeddata
+    description: WSF_COMPUTEDDATA
+  - name: wsf_pattern
+    description: WSF_PATTERN
+  - name: wsf_sqlquerycode
+    description: WSF_SQLQUERYCODE
+  - name: wsf_displaytype
+    description: WSF_DISPLAYTYPE
+  - name: wsf_unmapped
+    description: WSF_UNMAPPED
+  - name: wsf_updatecount
+    description: WSF_UPDATECOUNT
+  - name: wsf_updated
+    description: WSF_UPDATED
+  - name: wsf_mobilequerycode
+    description: WSF_MOBILEQUERYCODE
+  - name: wsf_iscontrolorg
+    description: WSF_ISCONTROLORG
+  - name: wsf_isclass
+    description: WSF_ISCLASS
+  - name: wsf_isclassorg
+    description: WSF_ISCLASSORG
+  - name: wsf_iscategory
+    description: WSF_ISCATEGORY
+  - name: wsf_systemfieldtype
+    description: WSF_SYSTEMFIELDTYPE
+  - name: wsf_customfieldid
+    description: WSF_CUSTOMFIELDID
+  - name: wsf_clearprevvalues
+    description: WSF_CLEARPREVVALUES
+  - name: wsf_tagname
+    description: WSF_TAGNAME
+  - name: wsf_primarykey
+    description: WSF_PRIMARYKEY
+  - name: wsf_precision
+    description: WSF_PRECISION
+  - name: wsf_scale
+    description: WSF_SCALE
+  - name: wsf_uppercase
+    description: WSF_UPPERCASE
+  - name: wsf_wspmtcode
+    description: WSF_WSPMTCODE
+  - name: wsf_processgroup
+    description: WSF_PROCESSGROUP
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WSPROMPTFIELDS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - wsf_wspmtcode
+        - wsf_line

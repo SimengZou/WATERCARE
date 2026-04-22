@@ -1,0 +1,54 @@
+version: 2
+models:
+- name: r5mobileconfigs
+  columns:
+  - name: mcf_lastsaved
+    description: MCF_LASTSAVED
+  - name: mcf_rcode
+    description: MCF_RCODE
+  - name: mcf_config
+    description: MCF_CONFIG
+  - name: mcf_desk
+    description: MCF_DESK
+  - name: mcf_comptype
+    description: MCF_COMPTYPE
+  - name: mcf_group
+    description: MCF_GROUP
+  - name: mcf_xmlconfig
+    description: 'MCF_XMLCONFIG. Max length: 0'
+  - name: mcf_created
+    description: MCF_CREATED
+  - name: mcf_updated
+    description: MCF_UPDATED
+  - name: mcf_updatecount
+    description: MCF_UPDATECOUNT
+  - name: mcf_code
+    description: MCF_CODE
+  - name: mcf_user
+    description: MCF_USER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MOBILECONFIGS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - mcf_code
+        - mcf_rcode
+        - mcf_config
+        - mcf_desk

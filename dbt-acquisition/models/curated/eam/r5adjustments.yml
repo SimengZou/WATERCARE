@@ -1,0 +1,134 @@
+version: 2
+models:
+- name: r5adjustments
+  columns:
+  - name: adj_lastsaved
+    description: ADJ_LASTSAVED
+  - name: adj_code
+    description: ADJ_CODE
+  - name: adj_rate
+    description: ADJ_RATE
+  - name: adj_stwo
+    description: ADJ_STWO
+  - name: adj_notused
+    description: ADJ_NOTUSED
+  - name: adj_udfchar01
+    description: ADJ_UDFCHAR01
+  - name: adj_udfchar02
+    description: ADJ_UDFCHAR02
+  - name: adj_udfchar03
+    description: ADJ_UDFCHAR03
+  - name: adj_udfchar04
+    description: ADJ_UDFCHAR04
+  - name: adj_udfchar05
+    description: ADJ_UDFCHAR05
+  - name: adj_udfchar06
+    description: ADJ_UDFCHAR06
+  - name: adj_udfchar07
+    description: ADJ_UDFCHAR07
+  - name: adj_udfchar08
+    description: ADJ_UDFCHAR08
+  - name: adj_udfchar09
+    description: ADJ_UDFCHAR09
+  - name: adj_udfchar10
+    description: ADJ_UDFCHAR10
+  - name: adj_udfchar11
+    description: ADJ_UDFCHAR11
+  - name: adj_udfchar12
+    description: ADJ_UDFCHAR12
+  - name: adj_udfchar13
+    description: ADJ_UDFCHAR13
+  - name: adj_udfchar14
+    description: ADJ_UDFCHAR14
+  - name: adj_udfchar15
+    description: ADJ_UDFCHAR15
+  - name: adj_udfchar16
+    description: ADJ_UDFCHAR16
+  - name: adj_udfchar17
+    description: ADJ_UDFCHAR17
+  - name: adj_udfchar18
+    description: ADJ_UDFCHAR18
+  - name: adj_udfchar19
+    description: ADJ_UDFCHAR19
+  - name: adj_udfchar20
+    description: ADJ_UDFCHAR20
+  - name: adj_udfchar21
+    description: ADJ_UDFCHAR21
+  - name: adj_udfchar22
+    description: ADJ_UDFCHAR22
+  - name: adj_udfchar23
+    description: ADJ_UDFCHAR23
+  - name: adj_udfchar24
+    description: ADJ_UDFCHAR24
+  - name: adj_udfchar25
+    description: ADJ_UDFCHAR25
+  - name: adj_udfchar26
+    description: ADJ_UDFCHAR26
+  - name: adj_udfchar27
+    description: ADJ_UDFCHAR27
+  - name: adj_udfchar28
+    description: ADJ_UDFCHAR28
+  - name: adj_udfchar29
+    description: ADJ_UDFCHAR29
+  - name: adj_udfchar30
+    description: ADJ_UDFCHAR30
+  - name: adj_udfnum01
+    description: ADJ_UDFNUM01
+  - name: adj_udfnum02
+    description: ADJ_UDFNUM02
+  - name: adj_udfnum03
+    description: ADJ_UDFNUM03
+  - name: adj_udfnum04
+    description: ADJ_UDFNUM04
+  - name: adj_udfnum05
+    description: ADJ_UDFNUM05
+  - name: adj_udfdate01
+    description: ADJ_UDFDATE01
+  - name: adj_udfdate02
+    description: ADJ_UDFDATE02
+  - name: adj_udfdate03
+    description: ADJ_UDFDATE03
+  - name: adj_udfdate04
+    description: ADJ_UDFDATE04
+  - name: adj_udfdate05
+    description: ADJ_UDFDATE05
+  - name: adj_udfchkbox01
+    description: ADJ_UDFCHKBOX01
+  - name: adj_udfchkbox02
+    description: ADJ_UDFCHKBOX02
+  - name: adj_udfchkbox03
+    description: ADJ_UDFCHKBOX03
+  - name: adj_udfchkbox04
+    description: ADJ_UDFCHKBOX04
+  - name: adj_udfchkbox05
+    description: ADJ_UDFCHKBOX05
+  - name: adj_updatecount
+    description: ADJ_UPDATECOUNT
+  - name: adj_org
+    description: ADJ_ORG
+  - name: adj_desc
+    description: ADJ_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ADJUSTMENTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - adj_code
+        - adj_org

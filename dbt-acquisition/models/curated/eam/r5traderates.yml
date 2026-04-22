@@ -1,0 +1,156 @@
+version: 2
+models:
+- name: r5traderates
+  columns:
+  - name: trr_lastsaved
+    description: TRR_LASTSAVED
+  - name: trr_udfchar16
+    description: TRR_UDFCHAR16
+  - name: trr_udfchar19
+    description: TRR_UDFCHAR19
+  - name: trr_udfchar20
+    description: TRR_UDFCHAR20
+  - name: trr_udfchar21
+    description: TRR_UDFCHAR21
+  - name: trr_udfchar22
+    description: TRR_UDFCHAR22
+  - name: trr_udfchar23
+    description: TRR_UDFCHAR23
+  - name: trr_udfchar24
+    description: TRR_UDFCHAR24
+  - name: trr_udfchar25
+    description: TRR_UDFCHAR25
+  - name: trr_udfchar26
+    description: TRR_UDFCHAR26
+  - name: trr_udfchar27
+    description: TRR_UDFCHAR27
+  - name: trr_udfchar28
+    description: TRR_UDFCHAR28
+  - name: trr_udfchar29
+    description: TRR_UDFCHAR29
+  - name: trr_udfchar30
+    description: TRR_UDFCHAR30
+  - name: trr_udfnum01
+    description: TRR_UDFNUM01
+  - name: trr_udfnum02
+    description: TRR_UDFNUM02
+  - name: trr_udfnum03
+    description: TRR_UDFNUM03
+  - name: trr_udfnum04
+    description: TRR_UDFNUM04
+  - name: trr_udfnum05
+    description: TRR_UDFNUM05
+  - name: trr_udfdate01
+    description: TRR_UDFDATE01
+  - name: trr_udfdate02
+    description: TRR_UDFDATE02
+  - name: trr_udfdate03
+    description: TRR_UDFDATE03
+  - name: trr_udfdate04
+    description: TRR_UDFDATE04
+  - name: trr_udfdate05
+    description: TRR_UDFDATE05
+  - name: trr_udfchkbox01
+    description: TRR_UDFCHKBOX01
+  - name: trr_udfchkbox02
+    description: TRR_UDFCHKBOX02
+  - name: trr_udfchkbox03
+    description: TRR_UDFCHKBOX03
+  - name: trr_udfchkbox04
+    description: TRR_UDFCHKBOX04
+  - name: trr_udfchkbox05
+    description: TRR_UDFCHKBOX05
+  - name: trr_custandardrate
+    description: TRR_CUSTANDARDRATE
+  - name: trr_mrc
+    description: TRR_MRC
+  - name: trr_trade
+    description: TRR_TRADE
+  - name: trr_supplier
+    description: TRR_SUPPLIER
+  - name: trr_start
+    description: TRR_START
+  - name: trr_end
+    description: TRR_END
+  - name: trr_ntrate
+    description: TRR_NTRATE
+  - name: trr_otrate
+    description: TRR_OTRATE
+  - name: trr_active
+    description: TRR_ACTIVE
+  - name: trr_octype
+    description: TRR_OCTYPE
+  - name: trr_supplier_org
+    description: TRR_SUPPLIER_ORG
+  - name: trr_org
+    description: TRR_ORG
+  - name: trr_updatecount
+    description: TRR_UPDATECOUNT
+  - name: trr_person
+    description: TRR_PERSON
+  - name: trr_tax
+    description: TRR_TAX
+  - name: trr_udfchar01
+    description: TRR_UDFCHAR01
+  - name: trr_udfchar02
+    description: TRR_UDFCHAR02
+  - name: trr_udfchar03
+    description: TRR_UDFCHAR03
+  - name: trr_udfchar04
+    description: TRR_UDFCHAR04
+  - name: trr_udfchar05
+    description: TRR_UDFCHAR05
+  - name: trr_udfchar06
+    description: TRR_UDFCHAR06
+  - name: trr_udfchar07
+    description: TRR_UDFCHAR07
+  - name: trr_udfchar08
+    description: TRR_UDFCHAR08
+  - name: trr_udfchar09
+    description: TRR_UDFCHAR09
+  - name: trr_udfchar10
+    description: TRR_UDFCHAR10
+  - name: trr_udfchar11
+    description: TRR_UDFCHAR11
+  - name: trr_udfchar12
+    description: TRR_UDFCHAR12
+  - name: trr_udfchar13
+    description: TRR_UDFCHAR13
+  - name: trr_udfchar14
+    description: TRR_UDFCHAR14
+  - name: trr_udfchar15
+    description: TRR_UDFCHAR15
+  - name: trr_udfchar17
+    description: TRR_UDFCHAR17
+  - name: trr_udfchar18
+    description: TRR_UDFCHAR18
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TRADERATES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - trr_mrc
+        - trr_trade
+        - trr_supplier
+        - trr_supplier_org
+        - trr_person
+        - trr_org
+        - trr_start
+        - trr_octype

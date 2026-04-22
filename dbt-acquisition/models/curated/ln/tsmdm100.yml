@@ -1,0 +1,281 @@
+version: 2
+models:
+- name: tsmdm100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cwoc
+    description: '(required) Service Office. Max length: 6'
+    data_tests:
+    - not_null
+  - name: wctp
+    description: 'Department Type. Allowed values: 5, 10'
+  - name: wctp_kw
+    description: 'Department Type (keyword). Allowed values: tsmdm.wctp.main, tsmdm.wctp.sub'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cmwc
+    description: 'Main Department. Max length: 6'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: srtp
+    description: 'Field of Support. Allowed values: 5, 10'
+  - name: srtp_kw
+    description: 'Field of Support (keyword). Allowed values: tsmdm.srtp.internal,
+      tsmdm.srtp.external'
+  - name: grcq
+    description: 'Number Group Contract Quotes. Max length: 3'
+  - name: srep
+    description: 'Internal Sales Representative. Max length: 9'
+  - name: sncq
+    description: 'Contract Quote Series Number. Max length: 8'
+  - name: grsc
+    description: 'Number Group Contracts. Max length: 3'
+  - name: snsc
+    description: 'Contract Series Number. Max length: 8'
+  - name: grsq
+    description: 'Number Group Service Order Quotes. Max length: 3'
+  - name: snsq
+    description: 'Service Order Quote Series Number. Max length: 8'
+  - name: grso
+    description: 'Number Group Service Orders. Max length: 3'
+  - name: snso
+    description: 'Service Order Series Number. Max length: 8'
+  - name: grca
+    description: 'Number Group Calls. Max length: 3'
+  - name: snca
+    description: 'Call Series Number. Max length: 8'
+  - name: grfc
+    description: 'Number Group Field Change Order. Max length: 3'
+  - name: snfc
+    description: 'Field Change Order Series Number. Max length: 8'
+  - name: grcl
+    description: 'Number Group Customer Claim. Max length: 3'
+  - name: sncl
+    description: 'Series Customer Claim. Max length: 8'
+  - name: ngsc
+    description: 'Number Group Supplier Claim. Max length: 3'
+  - name: srsc
+    description: 'Series Supplier Claim. Max length: 8'
+  - name: grwo
+    description: 'Number Group Work Order. Max length: 3'
+  - name: snwo
+    description: 'Work Order Series Number. Max length: 8'
+  - name: grms
+    description: 'Number Group Maintenance Sales Order. Max length: 3'
+  - name: snms
+    description: 'Maintenance Sales Order Series Number. Max length: 8'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: lcip
+    description: 'Location Incoming Parts. Max length: 6'
+  - name: rste
+    description: 'Site Incoming Parts. Max length: 9'
+  - name: whip
+    description: 'Warehouse Incoming Parts. Max length: 6'
+  - name: lcop
+    description: 'Location Outgoing Parts. Max length: 6'
+  - name: dste
+    description: 'Site Outgoing Parts. Max length: 9'
+  - name: whop
+    description: 'Warehouse Outgoing Parts. Max length: 6'
+  - name: sfsi
+    description: 'Repair Site. Max length: 9'
+  - name: fwrh
+    description: 'Repair Warehouse. Max length: 6'
+  - name: cste
+    description: 'Site Return Material. Max length: 9'
+  - name: cwrh
+    description: 'Warehouse Return Material. Max length: 6'
+  - name: cdst
+    description: 'Site Delivery Material. Max length: 9'
+  - name: cdwh
+    description: 'Warehouse Delivery Material. Max length: 6'
+  - name: mwrh
+    description: 'Material Warehouse. Max length: 6'
+  - name: pddp
+    description: 'Production Department. Max length: 6'
+  - name: rdst
+    description: 'Rental Delivery Site. Max length: 9'
+  - name: rdwh
+    description: 'Rental Delivery Warehouse. Max length: 6'
+  - name: rrst
+    description: 'Rental Return Site. Max length: 9'
+  - name: rrwh
+    description: 'Rental Return Warehouse. Max length: 6'
+  - name: qtim
+    description: Queue Time Work Center
+  - name: grsb
+    description: 'Number Group Subcontract Agreement. Max length: 3'
+  - name: snsb
+    description: 'Subcontract Agreement Series Number. Max length: 8'
+  - name: cbwc
+    description: 'Take Cost Rate of Operations Department. Allowed values: 0, 1, 2'
+  - name: cbwc_kw
+    description: 'Take Cost Rate of Operations Department (keyword). Allowed values:
+      , tcyesno.yes, tcyesno.no'
+  - name: grmq
+    description: 'Number Group Quotes. Max length: 3'
+  - name: snmq
+    description: 'Series For Quotes. Max length: 8'
+  - name: grfq
+    description: 'Number Group for Service Order Quotes. Max length: 3'
+  - name: snfq
+    description: 'Series for Service Quotes. Max length: 8'
+  - name: grrq
+    description: 'Number Group for Quote Requests. Max length: 3'
+  - name: snrq
+    description: 'Quote Requests Series Number. Max length: 8'
+  - name: grfr
+    description: 'Number Group for Service Order Quote Requests. Max length: 3'
+  - name: snfr
+    description: 'Series for Service Quote Request. Max length: 8'
+  - name: grrn
+    description: 'Number Group for Rental Equipment Service Orders. Max length: 3'
+  - name: srrn
+    description: 'Series for Rental Equipment Service Orders. Max length: 8'
+  - name: grrr
+    description: 'Number Group for Equipment Rental Requests. Max length: 3'
+  - name: srrr
+    description: 'Series for Equipment Rental Requests. Max length: 8'
+  - name: grnq
+    description: 'Number Group for Rental Order Quotes. Max length: 3'
+  - name: snnq
+    description: 'Series for Rental Order Quotes. Max length: 8'
+  - name: clrt
+    description: 'Obsolete. Max length: 6'
+  - name: slrt
+    description: 'Obsolete. Max length: 6'
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: grcq_sncq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: srep_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: grsc_snsc_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grsq_snsq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grso_snso_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grca_snca_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grfc_snfc_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grcl_sncl_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngsc_srsc_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grwo_snwo_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grms_snms_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: lcip_ref_compnr
+    description: company number of primary key of table tswcs025 Locations
+  - name: rste_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: whip_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: lcop_ref_compnr
+    description: company number of primary key of table tswcs025 Locations
+  - name: dste_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: whop_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: sfsi_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: fwrh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cste_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwrh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cdst_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cdwh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: mwrh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: pddp_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: rdst_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: rdwh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: rrst_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: rrwh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: grsb_snsb_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grmq_snmq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grfq_snfq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grrq_snrq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grfr_snfr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grrn_srrn_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grrn_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: grrr_srrr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grrr_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: grnq_snnq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: grnq_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: clrt_ref_compnr
+    description: company number of primary key of table tcppl090 Labor Rate Codes
+  - name: slrt_ref_compnr
+    description: company number of primary key of table tcppl090 Labor Rate Codes
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsmdm100 Service Offices table, Generated 2026-04-10T19:42:36Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cwoc

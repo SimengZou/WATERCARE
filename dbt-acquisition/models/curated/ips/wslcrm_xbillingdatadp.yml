@@ -1,0 +1,136 @@
+version: 2
+models:
+- name: wslcrm_xbillingdatadp
+  columns:
+  - name: gisxcoord
+    description: Metadata for column GISXCOORD
+  - name: flowatthemeter
+    description: Metadata for column FLOWATTHEMETER
+  - name: serialno
+    description: 'Metadata for column SERIALNO. Max length: 50'
+  - name: charge
+    description: Metadata for column CHARGE
+  - name: oldmeterid
+    description: 'Metadata for column OLDMETERID. Max length: 50'
+  - name: rejectbybills
+    description: 'Metadata for column REJECTBYBILLS. Max length: 10'
+  - name: workordermeterid
+    description: 'Metadata for column WORKORDERMETERID. Max length: 50'
+  - name: submittedasbuilt
+    description: 'Metadata for column SUBMITTEDASBUILT. Max length: 100'
+  - name: servicelinematerial
+    description: 'Metadata for column SERVICELINEMATERIAL. Max length: 50'
+  - name: sms
+    description: 'Metadata for column SMS. Max length: 1'
+  - name: locationdescription
+    description: 'Metadata for column LOCATIONDESCRIPTION. Max length: 100'
+  - name: dp
+    description: 'Metadata for column DP. Max length: 50'
+  - name: accountclass
+    description: 'Metadata for column ACCOUNTCLASS. Max length: 10'
+  - name: newmeterinstalldate
+    description: Metadata for column NEWMETERINSTALLDATE
+  - name: initialmeterreading
+    description: Metadata for column INITIALMETERREADING
+  - name: newmetersize
+    description: 'Metadata for column NEWMETERSIZE. Max length: 50'
+  - name: contactid
+    description: 'Metadata for column CONTACTID. Max length: 50'
+  - name: disconnectiondate
+    description: Metadata for column DISCONNECTIONDATE
+  - name: pipelength
+    description: Metadata for column PIPELENGTH
+  - name: contractorrefno
+    description: 'Metadata for column CONTRACTORREFNO. Max length: 50'
+  - name: actiontypedesc
+    description: 'Metadata for column ACTIONTYPEDESC. Max length: 100'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: employeeid
+    description: 'Metadata for column EMPLOYEEID. Max length: 12'
+  - name: multimeteraccount
+    description: 'Metadata for column MULTIMETERACCOUNT. Max length: 50'
+  - name: createaccount
+    description: 'Metadata for column CREATEACCOUNT. Max length: 1'
+  - name: wslside
+    description: 'Metadata for column WSLSIDE. Max length: 1'
+  - name: worktypedesc
+    description: 'Metadata for column WORKTYPEDESC. Max length: 100'
+  - name: estdailywaterdemand
+    description: Metadata for column ESTDAILYWATERDEMAND
+  - name: ct
+    description: 'Metadata for column CT. Max length: 50'
+  - name: pipedaimeter
+    description: Metadata for column PIPEDAIMETER
+  - name: disconnectiontype
+    description: 'Metadata for column DISCONNECTIONTYPE. Max length: 100'
+  - name: giszcoord
+    description: Metadata for column GISZCOORD
+  - name: uselastbilledread
+    description: 'Metadata for column USELASTBILLEDREAD. Max length: 1'
+  - name: address
+    description: 'Metadata for column ADDRESS. Max length: 200'
+  - name: oldmeterreading
+    description: Metadata for column OLDMETERREADING
+  - name: priceplan
+    description: 'Metadata for column PRICEPLAN. Max length: 10'
+  - name: meterinstallationphoto
+    description: 'Metadata for column METERINSTALLATIONPHOTO. Max length: 200'
+  - name: lot
+    description: 'Metadata for column LOT. Max length: 50'
+  - name: xbillingdatadpkey
+    description: (required) Metadata for column XBILLINGDATADPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: contactkey
+    description: Metadata for column CONTACTKEY
+  - name: servno
+    description: Metadata for column SERVNO
+  - name: customerside
+    description: 'Metadata for column CUSTOMERSIDE. Max length: 1'
+  - name: crewid
+    description: 'Metadata for column CREWID. Max length: 50'
+  - name: gisycoord
+    description: Metadata for column GISYCOORD
+  - name: ownercustomer
+    description: 'Metadata for column OWNERCUSTOMER. Max length: 500'
+  - name: newmeterid
+    description: 'Metadata for column NEWMETERID. Max length: 50'
+  - name: appno
+    description: 'Metadata for column APPNO. Max length: 50'
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: workorderno
+    description: 'Metadata for column WORKORDERNO. Max length: 50'
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: accountcreatedate
+    description: Metadata for column ACCOUNTCREATEDATE
+  - name: phonenumber
+    description: 'Metadata for column PHONENUMBER. Max length: 20'
+  - name: rejectreason
+    description: 'Metadata for column REJECTREASON. Max length: 500'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table WSLCRM.XBILLINGDATADP on 2022-03-03T11:37:18.233

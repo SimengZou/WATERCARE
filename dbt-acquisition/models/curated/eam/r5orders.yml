@@ -1,0 +1,230 @@
+version: 2
+models:
+- name: r5orders
+  columns:
+  - name: ord_lastsaved
+    description: ORD_LASTSAVED
+  - name: ord_udfchar11
+    description: ORD_UDFCHAR11
+  - name: ord_udfchar12
+    description: ORD_UDFCHAR12
+  - name: ord_udfchar13
+    description: ORD_UDFCHAR13
+  - name: ord_udfchar14
+    description: ORD_UDFCHAR14
+  - name: ord_udfchar15
+    description: ORD_UDFCHAR15
+  - name: ord_udfchar16
+    description: ORD_UDFCHAR16
+  - name: ord_udfchar17
+    description: ORD_UDFCHAR17
+  - name: ord_udfchar18
+    description: ORD_UDFCHAR18
+  - name: ord_udfchar19
+    description: ORD_UDFCHAR19
+  - name: ord_udfchar20
+    description: ORD_UDFCHAR20
+  - name: ord_udfchar21
+    description: ORD_UDFCHAR21
+  - name: ord_udfchar22
+    description: ORD_UDFCHAR22
+  - name: ord_udfchar23
+    description: ORD_UDFCHAR23
+  - name: ord_udfchar24
+    description: ORD_UDFCHAR24
+  - name: ord_udfchar25
+    description: ORD_UDFCHAR25
+  - name: ord_udfchar26
+    description: ORD_UDFCHAR26
+  - name: ord_udfchar27
+    description: ORD_UDFCHAR27
+  - name: ord_udfchar28
+    description: ORD_UDFCHAR28
+  - name: ord_udfchar29
+    description: ORD_UDFCHAR29
+  - name: ord_udfchar30
+    description: ORD_UDFCHAR30
+  - name: ord_udfnum01
+    description: ORD_UDFNUM01
+  - name: ord_udfnum02
+    description: ORD_UDFNUM02
+  - name: ord_udfnum03
+    description: ORD_UDFNUM03
+  - name: ord_udfnum04
+    description: ORD_UDFNUM04
+  - name: ord_udfnum05
+    description: ORD_UDFNUM05
+  - name: ord_udfdate01
+    description: ORD_UDFDATE01
+  - name: ord_udfdate02
+    description: ORD_UDFDATE02
+  - name: ord_udfdate03
+    description: ORD_UDFDATE03
+  - name: ord_udfdate04
+    description: ORD_UDFDATE04
+  - name: ord_udfdate05
+    description: ORD_UDFDATE05
+  - name: ord_udfchkbox01
+    description: ORD_UDFCHKBOX01
+  - name: ord_udfchkbox02
+    description: ORD_UDFCHKBOX02
+  - name: ord_udfchkbox03
+    description: ORD_UDFCHKBOX03
+  - name: ord_udfchkbox04
+    description: ORD_UDFCHKBOX04
+  - name: ord_udfchkbox05
+    description: ORD_UDFCHKBOX05
+  - name: ord_laststatusupdate
+    description: ORD_LASTSTATUSUPDATE
+  - name: ord_revisionreason
+    description: ORD_REVISIONREASON
+  - name: ord_packagetrackingnumber
+    description: ORD_PACKAGETRACKINGNUMBER
+  - name: ord_converttoasn
+    description: ORD_CONVERTTOASN
+  - name: ord_udfchar10
+    description: ORD_UDFCHAR10
+  - name: ord_freightterms
+    description: ORD_FREIGHTTERMS
+  - name: ord_shipvia
+    description: ORD_SHIPVIA
+  - name: ord_fobpoint
+    description: ORD_FOBPOINT
+  - name: ord_dfltauth
+    description: ORD_DFLTAUTH
+  - name: ord_revision
+    description: ORD_REVISION
+  - name: ord_revised
+    description: ORD_REVISED
+  - name: ord_blanketorder
+    description: ORD_BLANKETORDER
+  - name: ord_sourcesystem
+    description: ORD_SOURCESYSTEM
+  - name: ord_sourcecode
+    description: ORD_SOURCECODE
+  - name: ord_interface
+    description: ORD_INTERFACE
+  - name: ord_blanketrelease
+    description: ORD_BLANKETRELEASE
+  - name: ord_exchtodual
+    description: ORD_EXCHTODUAL
+  - name: ord_exchfromdual
+    description: ORD_EXCHFROMDUAL
+  - name: ord_deladdress
+    description: ORD_DELADDRESS
+  - name: ord_org
+    description: ORD_ORG
+  - name: ord_class_org
+    description: ORD_CLASS_ORG
+  - name: ord_supplier_org
+    description: ORD_SUPPLIER_ORG
+  - name: ord_creditcard
+    description: ORD_CREDITCARD
+  - name: ord_controlno
+    description: ORD_CONTROLNO
+  - name: ord_paybymethod
+    description: ORD_PAYBYMETHOD
+  - name: ord_iptransmitted
+    description: ORD_IPTRANSMITTED
+  - name: ord_updatecount
+    description: ORD_UPDATECOUNT
+  - name: ord_created
+    description: ORD_CREATED
+  - name: ord_updated
+    description: ORD_UPDATED
+  - name: ord_acd
+    description: ORD_ACD
+  - name: ord_jecategory
+    description: ORD_JECATEGORY
+  - name: ord_jesource
+    description: ORD_JESOURCE
+  - name: ord_attentionto
+    description: ORD_ATTENTIONTO
+  - name: ord_udfchar01
+    description: ORD_UDFCHAR01
+  - name: ord_udfchar02
+    description: ORD_UDFCHAR02
+  - name: ord_udfchar03
+    description: ORD_UDFCHAR03
+  - name: ord_udfchar04
+    description: ORD_UDFCHAR04
+  - name: ord_udfchar05
+    description: ORD_UDFCHAR05
+  - name: ord_udfchar06
+    description: ORD_UDFCHAR06
+  - name: ord_udfchar07
+    description: ORD_UDFCHAR07
+  - name: ord_udfchar08
+    description: ORD_UDFCHAR08
+  - name: ord_udfchar09
+    description: ORD_UDFCHAR09
+  - name: ord_code
+    description: ORD_CODE
+  - name: ord_desc
+    description: ORD_DESC
+  - name: ord_class
+    description: ORD_CLASS
+  - name: ord_type
+    description: ORD_TYPE
+  - name: ord_rtype
+    description: ORD_RTYPE
+  - name: ord_supplier
+    description: ORD_SUPPLIER
+  - name: ord_date
+    description: ORD_DATE
+  - name: ord_due
+    description: ORD_DUE
+  - name: ord_approv
+    description: ORD_APPROV
+  - name: ord_status
+    description: ORD_STATUS
+  - name: ord_rstatus
+    description: ORD_RSTATUS
+  - name: ord_auth
+    description: ORD_AUTH
+  - name: ord_contract
+    description: ORD_CONTRACT
+  - name: ord_discperc
+    description: ORD_DISCPERC
+  - name: ord_discount
+    description: ORD_DISCOUNT
+  - name: ord_price
+    description: ORD_PRICE
+  - name: ord_curr
+    description: ORD_CURR
+  - name: ord_exch
+    description: ORD_EXCH
+  - name: ord_origin
+    description: ORD_ORIGIN
+  - name: ord_store
+    description: ORD_STORE
+  - name: ord_printed
+    description: ORD_PRINTED
+  - name: ord_buyer
+    description: ORD_BUYER
+  - name: ord_paymentterms
+    description: ORD_PAYMENTTERMS
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ORDERS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - ord_code
+        - ord_org

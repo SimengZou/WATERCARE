@@ -1,0 +1,84 @@
+version: 2
+models:
+- name: tirou003
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: tano
+    description: '(required) Task. Max length: 8'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cwoc
+    description: 'Default Work Center. Max length: 6'
+  - name: mcno
+    description: 'Default Machine. Max length: 6'
+  - name: mlwc
+    description: 'Work Center Selection Method. Allowed values: 1, 2, 3'
+  - name: mlwc_kw
+    description: 'Work Center Selection Method (keyword). Allowed values: timlwc.default,
+      timlwc.specific, timlwc.all'
+  - name: mlmc
+    description: 'Machine Selection Method. Allowed values: 1, 2, 3'
+  - name: mlmc_kw
+    description: 'Machine Selection Method (keyword). Allowed values: timlwc.default,
+      timlwc.specific, timlwc.all'
+  - name: exin
+    description: 'Extra Information. Max length: 8'
+  - name: txta
+    description: Task Text
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tirou001 Work Center
+  - name: mcno_ref_compnr
+    description: company number of primary key of table tirou002 Machine
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tirou003 Task table, Generated 2026-04-10T19:41:49Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - tano

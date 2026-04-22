@@ -1,0 +1,54 @@
+version: 2
+models:
+- name: r5configsettings
+  columns:
+  - name: cfs_lastsaved
+    description: CFS_LASTSAVED
+  - name: cfs_group
+    description: CFS_GROUP
+  - name: cfs_user
+    description: CFS_USER
+  - name: cfs_comptype
+    description: CFS_COMPTYPE
+  - name: cfs_config
+    description: CFS_CONFIG
+  - name: cfs_created
+    description: CFS_CREATED
+  - name: cfs_updated
+    description: CFS_UPDATED
+  - name: cfs_updatecount
+    description: CFS_UPDATECOUNT
+  - name: cfs_desk
+    description: CFS_DESK
+  - name: cfs_code
+    description: CFS_CODE
+  - name: cfs_xmlconfig
+    description: 'CFS_XMLCONFIG. Max length: 0'
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CONFIGSETTINGS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - cfs_code
+        - cfs_group
+        - cfs_user
+        - cfs_comptype
+        - cfs_config
+        - cfs_desk

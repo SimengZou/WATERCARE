@@ -1,0 +1,45 @@
+version: 2
+models:
+- name: r5pmpsessiondates
+  columns:
+  - name: ppd_lastsaved
+    description: PPD_LASTSAVED
+  - name: ppd_ppspk
+    description: PPD_PPSPK
+  - name: ppd_duedate
+    description: PPD_DUEDATE
+  - name: ppd_iscaldate
+    description: PPD_ISCALDATE
+  - name: ppd_isprojected
+    description: PPD_ISPROJECTED
+  - name: ppd_updatecount
+    description: PPD_UPDATECOUNT
+  - name: ppd_line
+    description: PPD_LINE
+  - name: ppd_workorder
+    description: PPD_WORKORDER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PMPSESSIONDATES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - ppd_line
+        - ppd_ppspk
+        - ppd_duedate

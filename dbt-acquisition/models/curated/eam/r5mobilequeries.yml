@@ -1,0 +1,53 @@
+version: 2
+models:
+- name: r5mobilequeries
+  columns:
+  - name: mqr_lastsaved
+    description: MQR_LASTSAVED
+  - name: mqr_version
+    description: MQR_VERSION
+  - name: mqr_tablename
+    description: MQR_TABLENAME
+  - name: mqr_createtable
+    description: 'MQR_CREATETABLE. Max length: 0'
+  - name: mqr_sqltext
+    description: 'MQR_SQLTEXT. Max length: 0'
+  - name: mqr_preparegrid
+    description: MQR_PREPAREGRID
+  - name: mqr_columnmap
+    description: MQR_COLUMNMAP
+  - name: mqr_singlethreadperconn
+    description: MQR_SINGLETHREADPERCONN
+  - name: mqr_preparetableused
+    description: MQR_PREPARETABLEUSED
+  - name: mqr_updatecount
+    description: MQR_UPDATECOUNT
+  - name: mqr_gridname
+    description: MQR_GRIDNAME
+  - name: mqr_updated
+    description: MQR_UPDATED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MOBILEQUERIES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - mqr_gridname
+        - mqr_tablename
+        - mqr_version

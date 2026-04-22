@@ -1,0 +1,603 @@
+version: 2
+models:
+- name: tssoc200
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orno
+    description: '(required) Service Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: clst
+    description: 'Installation Group. Max length: 9'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: sern
+    description: 'Serial Number. Max length: 30'
+  - name: lcad
+    description: 'Location Address. Max length: 9'
+  - name: ppeg
+    description: 'Project Pegged. Allowed values: 1, 2'
+  - name: ppeg_kw
+    description: 'Project Pegged (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: pcac
+    description: 'Activity. Max length: 16'
+  - name: inby
+    description: 'Invoicing By. Allowed values: 5, 10, 99'
+  - name: inby_kw
+    description: 'Invoicing By (keyword). Allowed values: tcinby.project, tcinby.service,
+      tcinby.not.appl'
+  - name: cpor
+    description: 'Project Peg Origin. Allowed values: 5, 10, 15, 100'
+  - name: cpor_kw
+    description: 'Project Peg Origin (keyword). Allowed values: tcpeg.cpor.top.demand,
+      tcpeg.cpor.costing.break, tcpeg.cpor.manual, tcpeg.cpor.not.applicable'
+  - name: ordt
+    description: Order Date
+  - name: osta
+    description: 'Order Status. Allowed values: 5, 10, 15, 20, 23, 25, 35, 40'
+  - name: osta_kw
+    description: 'Order Status (keyword). Allowed values: tssoc.osta.free, tssoc.osta.planned,
+      tssoc.osta.released, tssoc.osta.completed, tssoc.osta.costed, tssoc.osta.closed,
+      tssoc.osta.canceled, tssoc.osta.rejected'
+  - name: fdpt
+    description: 'Financial Department. Max length: 6'
+  - name: cwoc
+    description: 'Service Office. Max length: 6'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: csar
+    description: 'Service Area. Max length: 3'
+  - name: emno
+    description: 'Preferred Engineer. Max length: 9'
+  - name: ccar
+    description: 'Service Car. Max length: 10'
+  - name: blyn
+    description: 'Blocked. Allowed values: 1, 2'
+  - name: blyn_kw
+    description: 'Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ityn
+    description: 'Interrupted. Allowed values: 1, 2'
+  - name: ityn_kw
+    description: 'Interrupted (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: crit
+    description: 'Interruption Reason. Max length: 6'
+  - name: ordu
+    description: Order Duration
+  - name: tvdu
+    description: Travel Duration
+  - name: trdi
+    description: Travel Distance
+  - name: pstm
+    description: Planned Start Time
+  - name: pftm
+    description: Planned Finish Time
+  - name: ptft
+    description: Planned Travel Finish Time
+  - name: ptst
+    description: Planned Travel Start Time
+  - name: estm
+    description: Earliest Start Time
+  - name: lftm
+    description: Latest Finish Time
+  - name: otim
+    description: 'Overtime. Allowed values: 1, 2'
+  - name: otim_kw
+    description: 'Overtime (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: appo
+    description: 'Appointment. Allowed values: 1, 2'
+  - name: appo_kw
+    description: 'Appointment (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: tstm
+    description: Actual Travel Start Time
+  - name: astm
+    description: Actual Start Time
+  - name: aftm
+    description: Actual Finish Time
+  - name: cosh
+    description: 'Service Order Costing Sheet. Max length: 9'
+  - name: crep
+    description: 'Sales Representative (Inside). Max length: 9'
+  - name: cbrn
+    description: 'Line of Business. Max length: 6'
+  - name: creg
+    description: 'Area. Max length: 3'
+  - name: cplt
+    description: 'Sales Price List. Max length: 3'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: paym
+    description: 'Payment Method. Max length: 3'
+  - name: ccrs
+    description: 'Late Payment Surcharge. Max length: 3'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: rats_1
+    description: Currency Rate Sales
+  - name: rats_2
+    description: Currency Rate Sales
+  - name: rats_3
+    description: Currency Rate Sales
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rtdt
+    description: Rate Date
+  - name: rtyp
+    description: 'Rate Type. Max length: 3'
+  - name: fcrt
+    description: 'Rate Determiner. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 10, 20'
+  - name: fcrt_kw
+    description: 'Rate Determiner (keyword). Allowed values: tcfcrt.fixedl, tcfcrt.fixedh,
+      tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd, tcfcrt.manual,
+      tcfcrt.fixed, tcfcrt.not.appl'
+  - name: csco
+    description: 'Service Contract. Max length: 9'
+  - name: pmtd
+    description: 'Pricing Method. Allowed values: 5, 10, 12, 15, 25, 30'
+  - name: pmtd_kw
+    description: 'Pricing Method (keyword). Allowed values: tsmdm.pmtd.not.applicable,
+      tsmdm.pmtd.fixed.act.pr, tsmdm.pmtd.fixed.order.pr, tsmdm.pmtd.time.material,
+      tsmdm.pmtd.quo.fixed, tsmdm.pmtd.quo.fixedplus'
+  - name: pcon
+    description: 'Pricing Contract. Max length: 9'
+  - name: pcch
+    description: Pricing Contract Change
+  - name: pcln
+    description: Pricing Contract Line
+  - name: csqu
+    description: 'Service Order Quote. Max length: 9'
+  - name: espr
+    description: Estimated Sales Price
+  - name: pris
+    description: Sales Price
+  - name: porg
+    description: 'Price Origin. Allowed values: 5, 10, 15, 20, 25, 30, 35, 45, 50,
+      55, 60, 99'
+  - name: porg_kw
+    description: 'Price Origin (keyword). Allowed values: tstdm.porg.manual, tstdm.porg.other,
+      tstdm.porg.serv.contract, tstdm.porg.master.routing, tstdm.porg.routing.option,
+      tstdm.porg.ref.activity, tstdm.porg.trav.rate.book, tstdm.porg.item.serv, tstdm.porg.def.pr.book,
+      tstdm.porg.price.structure, tstdm.porg.serial, tstdm.porg.not.applicable'
+  - name: bppr
+    description: 'Business Partner Prices and Discounts. Max length: 9'
+  - name: pldd
+    description: 'Price List for Direct Delivery. Max length: 3'
+  - name: odis
+    description: Order Discount
+  - name: oamt
+    description: Estimated Order Amount
+  - name: amnt
+    description: Actual Order Amount
+  - name: tinv
+    description: 'Total Invoice. Allowed values: 1, 2'
+  - name: tinv_kw
+    description: 'Total Invoice (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: camr
+    description: 'Master Routing. Max length: 16'
+  - name: caro
+    description: 'Routing Option. Max length: 16'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: ofad
+    description: 'Sold-to Address. Max length: 9'
+  - name: ofcn
+    description: 'Sold-to Contact. Max length: 9'
+  - name: corn__en_us
+    description: '(required) Customer Order - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: corp__en_us
+    description: '(required) Customer Order Position - base language. Max length:
+      16'
+    data_tests:
+    - not_null
+  - name: cors__en_us
+    description: '(required) Customer Order Sequence - base language. Max length:
+      11'
+    data_tests:
+    - not_null
+  - name: refa__en_us
+    description: '(required) First Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refb__en_us
+    description: '(required) Second Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: itad
+    description: 'Invoice-to Address. Max length: 9'
+  - name: itcn
+    description: 'Invoice-to Contact. Max length: 9'
+  - name: pfbp
+    description: 'Pay-by Business Partner. Max length: 9'
+  - name: pfad
+    description: 'Pay-by Address. Max length: 9'
+  - name: pfcn
+    description: 'Pay-by Contact. Max length: 9'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: stcn
+    description: 'Ship-to Contact. Max length: 9'
+  - name: smto
+    description: 'Ship Materials To. Allowed values: 10, 20, 30, 40, 50, 60, 99'
+  - name: smto_kw
+    description: 'Ship Materials To (keyword). Allowed values: tsmdm.smto.ship.to,
+      tsmdm.smto.location, tsmdm.smto.owner, tsmdm.smto.in.use.by, tsmdm.smto.dealer,
+      tsmdm.smto.subcontractor, tsmdm.smto.not.applicable'
+  - name: micn
+    description: 'Material Issue Constraint. Allowed values: 10, 20, 100'
+  - name: micn_kw
+    description: 'Material Issue Constraint (keyword). Allowed values: tstdm.micn.order.complete,
+      tstdm.micn.act.complete, tstdm.micn.none'
+  - name: wcyn
+    description: 'Warranty Claim. Allowed values: 1, 2'
+  - name: wcyn_kw
+    description: 'Warranty Claim (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: clmt
+    description: 'Claim Method. Allowed values: 10, 20, 30'
+  - name: clmt_kw
+    description: 'Claim Method (keyword). Allowed values: tsmdm.clmt.na, tsmdm.clmt.material,
+      tsmdm.clmt.costs'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: cdis
+    description: 'Cancel Reason. Max length: 6'
+  - name: cadt
+    description: Cancel Date
+  - name: lutd
+    description: Last Transaction Date
+  - name: ract
+    description: Reaction (time)
+  - name: orrt
+    description: Order Release Time
+  - name: cstp
+    description: 'Service Type. Max length: 3'
+  - name: cctp
+    description: 'Coverage Type. Max length: 3'
+  - name: odpr
+    description: 'Order Procedure. Allowed values: 0, 5, 10, 15'
+  - name: odpr_kw
+    description: 'Order Procedure (keyword). Allowed values: , tsmdm.odpr.normal,
+      tsmdm.odpr.emergency, tsmdm.odpr.rental'
+  - name: orac
+    description: 'Order Accepted. Allowed values: 0, 1, 2'
+  - name: orac_kw
+    description: 'Order Accepted (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: cvtm
+    description: Coverage Time
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: vtbo
+    description: 'VAT Based On. Allowed values: 0, 5, 10'
+  - name: vtbo_kw
+    description: 'VAT Based On (keyword). Allowed values: , tsmdm.vtbo.services, tsmdm.vtbo.goods'
+  - name: styp
+    description: 'Sales Type. Max length: 6'
+  - name: logn
+    description: 'Login Code. Max length: 16'
+  - name: trpm
+    description: 'Travel Planning Method. Allowed values: 1, 2, 3'
+  - name: trpm_kw
+    description: 'Travel Planning Method (keyword). Allowed values: tsmdm.trpm.header,
+      tsmdm.trpm.activity.line, tsmdm.trpm.not.applicable'
+  - name: ctcs
+    description: 'Travel Total Line for Distance and Time. Allowed values: 1, 2'
+  - name: ctcs_kw
+    description: 'Travel Total Line for Distance and Time (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: ucce
+    description: 'Use Coverage Calculation for Estimates. Allowed values: 1, 2'
+  - name: ucce_kw
+    description: 'Use Coverage Calculation for Estimates (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: utce
+    description: 'Use Tax for Estimates. Allowed values: 1, 2'
+  - name: utce_kw
+    description: 'Use Tax for Estimates (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: inpl
+    description: 'Installment Plan. Max length: 9'
+  - name: insm
+    description: 'Installment Method. Allowed values: 10, 20, 100'
+  - name: insm_kw
+    description: 'Installment Method (keyword). Allowed values: tcmdm.insm.header,
+      tcmdm.insm.activity.line, tcmdm.insm.not.applicable'
+  - name: acdt
+    description: Acceptance Date
+  - name: dipy
+    description: 'Discount Policy. Allowed values: 1, 2'
+  - name: dipy_kw
+    description: 'Discount Policy (keyword). Allowed values: tsmdm.dipy.bfcv, tsmdm.dipy.afcv'
+  - name: dfpb
+    description: 'Discounts from Price Books. Allowed values: 1, 2'
+  - name: dfpb_kw
+    description: 'Discounts from Price Books (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cfrw
+    description: 'Carrier/LSP. Max length: 3'
+  - name: rcde
+    description: 'Receipt Delivery Terms. Max length: 3'
+  - name: rptp
+    description: 'Receipt Point of Title Passage. Max length: 9'
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: wrtp
+    description: 'Warranty Type. Allowed values: 5, 10, 15'
+  - name: wrtp_kw
+    description: 'Warranty Type (keyword). Allowed values: tstdm.wrtp.serial, tstdm.wrtp.general,
+      tstdm.wrtp.no.warranty'
+  - name: wrty
+    description: 'Warranty. Max length: 16'
+  - name: qtno
+    description: 'Quote. Max length: 9'
+  - name: revn
+    description: Quote Revision
+  - name: cncd
+    description: 'Conformance Reporting. Max length: 6'
+  - name: pbsm
+    description: 'Problem Solving Method. Allowed values: 10, 20, 30, 90, 100'
+  - name: pbsm_kw
+    description: 'Problem Solving Method (keyword). Allowed values: tcmcs.pbsm.8d,
+      tcmcs.pbsm.a3, tcmcs.pbsm.chlt, tcmcs.pbsm.other, tcmcs.pbsm.na'
+  - name: prac
+    description: 'Acknowledgement Print Status. Allowed values: 10, 20, 30'
+  - name: prac_kw
+    description: 'Acknowledgement Print Status (keyword). Allowed values: tssoc.prst.not.required,
+      tssoc.prst.to.be.printed, tssoc.prst.printed'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: npeg
+    description: 'Handle Customer Owned Project Pegged Items as Not Pegged. Allowed
+      values: 1, 2'
+  - name: npeg_kw
+    description: 'Handle Customer Owned Project Pegged Items as Not Pegged (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aril
+    description: 'Actual and Invoice Lines. Allowed values: 10, 20, 30, 40'
+  - name: aril_kw
+    description: 'Actual and Invoice Lines (keyword). Allowed values: tstdm.aril.no,
+      tstdm.aril.new.created, tstdm.aril.converted, tstdm.aril.conv.after.inv'
+  - name: rrqt
+    description: Rental Period
+  - name: tmun
+    description: 'Rental Period Unit. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: tmun_kw
+    description: 'Rental Period Unit (keyword). Allowed values: tctmun.hours, tctmun.days,
+      tctmun.weeks, tctmun.months, tctmun.years, tctmun.not.applicable'
+  - name: orqt
+    description: Original Rental Period
+  - name: otmn
+    description: 'Original Rental Period Unit. Allowed values: 10, 20, 30, 40, 50,
+      90'
+  - name: otmn_kw
+    description: 'Original Rental Period Unit (keyword). Allowed values: tctmun.hours,
+      tctmun.days, tctmun.weeks, tctmun.months, tctmun.years, tctmun.not.applicable'
+  - name: ahpt
+    description: 'Obsolete. Allowed values: 0, 5, 7, 10, 15, 20, 90'
+  - name: ahpt_kw
+    description: 'Obsolete (keyword). Allowed values: , tcpgtp.bp.based, tcpgtp.bploc.based,
+      tcpgtp.order.based, tcpgtp.cust.ref.based, tcpgtp.int.ref.based, tcpgtp.not.appl'
+  - name: ccty
+    description: 'Obsolete. Max length: 3'
+  - name: txyn
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: txyn_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: adpt
+    description: 'Obsolete. Max length: 6'
+  - name: rsrp
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: rsrp_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: atpc
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: atpc_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: atpd
+    description: Obsolete
+  - name: txta
+    description: Order Text
+  - name: txtb
+    description: Invoice Text
+  - name: txtc
+    description: Cancel Text
+  - name: clst_ref_compnr
+    description: company number of primary key of table tsbsc100 Installation Group
+  - name: item_sern_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: item_site_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: lcad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: fdpt_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: csar_ref_compnr
+    description: company number of primary key of table tsmdm105 Service Areas
+  - name: emno_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: ccar_ref_compnr
+    description: company number of primary key of table tsmdm145 Service Cars
+  - name: crit_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: crep_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cbrn_ref_compnr
+    description: company number of primary key of table tcmcs031 Lines of Business
+  - name: creg_ref_compnr
+    description: company number of primary key of table tcmcs045 Areas
+  - name: cplt_ref_compnr
+    description: company number of primary key of table tcmcs034 Price Lists
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: ccrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: csco_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: pcon_pcch_ref_compnr
+    description: company number of primary key of table tsctm320 Contract Changes
+  - name: pcon_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: csqu_ref_compnr
+    description: company number of primary key of table tssoc100 Service Order Quotes
+  - name: bppr_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: pldd_ref_compnr
+    description: company number of primary key of table tcmcs034 Price Lists
+  - name: camr_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: caro_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: ofad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ofcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: itad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: itcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: pfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: pfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: pfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: stcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: cdis_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cstp_ref_compnr
+    description: company number of primary key of table tsmdm030 Service Types
+  - name: cctp_ref_compnr
+    description: company number of primary key of table tsmdm035 Coverage Types
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: styp_ref_compnr
+    description: company number of primary key of table tcmcs202 Sales Types
+  - name: inpl_ref_compnr
+    description: company number of primary key of table tcmcs245 Installment Plans
+  - name: cfrw_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: rcde_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: rptp_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: qtno_revn_ref_compnr
+    description: company number of primary key of table tsepp100 Quotes
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtc_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: trdi_buln
+    description: 'CC: Travel Distance in Base Unit Length'
+  - name: oamt_homc
+    description: 'CC: Estimated Order Amount in Local Currency'
+  - name: oamt_rpc1
+    description: 'CC: Estimated Order Amount in Reporting Currency 1'
+  - name: oamt_rpc2
+    description: 'CC: Estimated Order Amount in Reporting Currency 2'
+  - name: oamt_refc
+    description: 'CC: Estimated Order Amount in Reference Currency'
+  - name: oamt_dwhc
+    description: 'CC: Estimated Order Amount in Data Warehouse Currency'
+  - name: amnt_homc
+    description: 'CC: Actual Order Amount in Local Currency'
+  - name: amnt_rpc1
+    description: 'CC: Actual Order Amount in Reporting Currency 1'
+  - name: amnt_rpc2
+    description: 'CC: Actual Order Amount in Reporting Currency 2'
+  - name: amnt_refc
+    description: 'CC: Actual Order Amount in Reference Currency'
+  - name: amnt_dwhc
+    description: 'CC: Actual Order Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tssoc200 Service Orders table, Generated 2026-04-10T19:42:37Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orno

@@ -1,0 +1,392 @@
+version: 2
+models:
+- name: whinh431
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: shpm
+    description: '(required) Shipment. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Shipment Line
+    data_tests:
+    - not_null
+  - name: shst
+    description: 'Status. Allowed values: 1, 2, 3, 10, 20, 30, 40'
+  - name: shst_kw
+    description: 'Status (keyword). Allowed values: whinh.shst.open, whinh.shst.frozen,
+      whinh.shst.confirmed, whinh.shst.part.frozen, whinh.shst.confirming, whinh.shst.projected,
+      whinh.shst.canceled'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: sttg
+    description: 'Staged Tag. Max length: 9'
+  - name: effn
+    description: Effectivity Unit
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: rowc
+    description: Rental Owner Company
+  - name: rown
+    description: 'Rental Owner. Max length: 6'
+  - name: serl
+    description: 'Serial Number. Max length: 30'
+  - name: idat
+    description: Inventory Date
+  - name: cuni
+    description: 'Inventory Unit. Max length: 3'
+  - name: qadv
+    description: Advised Quantity
+  - name: qadp
+    description: Advised Quantity in Piece Unit
+  - name: qpic
+    description: Staged Quantity
+  - name: qppu
+    description: Staged Quantity in Piece Unit
+  - name: qshp
+    description: Shipped Quantity in Inventory Unit
+  - name: qspu
+    description: Shipped Quantity in Piece Unit
+  - name: qnsh
+    description: Not Shipped Quantity
+  - name: qnpu
+    description: Not Shipped Quantity in Piece Unit
+  - name: qprv
+    description: Projected Quantity in Inventory Unit
+  - name: qprp
+    description: Projected Quantity in Piece Unit
+  - name: adjs
+    description: 'Automatic Adjustment of Quantity Not Shipped. Allowed values: 1,
+      2'
+  - name: adjs_kw
+    description: 'Automatic Adjustment of Quantity Not Shipped (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: recd
+    description: 'Reason for Adjustment. Max length: 6'
+  - name: qrcp
+    description: EDI Confirmed Received Quantity
+  - name: grwt
+    description: Gross Weight
+  - name: ntwt
+    description: Net Weight
+  - name: cwun
+    description: 'Weight Unit. Max length: 3'
+  - name: pbol
+    description: 'Print Bills of Lading. Allowed values: 1, 2'
+  - name: pbol_kw
+    description: 'Print Bills of Lading (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bolp
+    description: Cluster Line
+  - name: worg
+    description: 'Order Origin. Allowed values: 1, 2, 3, 11, 12, 31, 32, 33, 34, 40,
+      41, 50, 51, 53, 55, 56, 58, 60, 61, 71, 72, 75, 76, 78, 80, 81, 82, 90, 100'
+  - name: worg_kw
+    description: 'Order Origin (keyword). Allowed values: whinh.oorg.sales, whinh.oorg.sales.sched,
+      whinh.oorg.sales.man, whinh.oorg.service, whinh.oorg.service.man, whinh.oorg.maint.sales,
+      whinh.oorg.maint.sales.man, whinh.oorg.maint.work, whinh.oorg.maint.work.man,
+      whinh.oorg.customer.claim, whinh.oorg.supplier.claim, whinh.oorg.production,
+      whinh.oorg.production.man, whinh.oorg.product.sched, whinh.oorg.product.asc,
+      whinh.oorg.product.asc.man, whinh.oorg.product.kanban, whinh.oorg.transformation,
+      whinh.oorg.assembly, whinh.oorg.transfer, whinh.oorg.transfer.man, whinh.oorg.project,
+      whinh.oorg.project.man, whinh.oorg.proj.contract, whinh.oorg.purchase, whinh.oorg.purchase.sched,
+      whinh.oorg.purchase.man, whinh.oorg.enterprise.plan, whinh.oorg.not.appl'
+  - name: worn
+    description: 'Order. Max length: 9'
+  - name: wset
+    description: Set
+  - name: wpon
+    description: Order Line
+  - name: wseq
+    description: Sequence
+  - name: boml
+    description: BOM Line
+  - name: rseq
+    description: Sales Sequence
+  - name: pwsq
+    description: Planned Delivery Line Sequence
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: loca
+    description: 'Staging Location. Max length: 10'
+  - name: refe__en_us
+    description: '(required) Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refs__en_us
+    description: '(required) Shipment Reference - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: corn__en_us
+    description: '(required) Customer Order - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: iadj
+    description: 'Inventory Updated. Allowed values: 1, 2'
+  - name: iadj_kw
+    description: 'Inventory Updated (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: iadt
+    description: Inventory Adjustment Date
+  - name: cons
+    description: 'Obsolete. Allowed values: 0, 1, 2'
+  - name: cons_kw
+    description: 'Obsolete (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: pkdf
+    description: 'Package Definition. Max length: 6'
+  - name: sppk
+    description: 'Specific Packaging. Allowed values: 1, 2'
+  - name: sppk_kw
+    description: 'Specific Packaging (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: serp
+    description: 'Stock Point Details Present. Allowed values: 1, 2'
+  - name: serp_kw
+    description: 'Stock Point Details Present (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ttyp
+    description: 'Obsolete. Max length: 3'
+  - name: cinv
+    description: Obsolete
+  - name: invd
+    description: Obsolete
+  - name: itrd
+    description: Obsolete
+  - name: ilgd
+    description: Obsolete
+  - name: ssqd
+    description: Sequence Detail
+  - name: hupr
+    description: 'Handling Unit(s) Present. Allowed values: 0, 1, 2'
+  - name: hupr_kw
+    description: 'Handling Unit(s) Present (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: casi
+    description: 'Extra Intrastat Info. Max length: 3'
+  - name: pmsk
+    description: 'Procedure Mask. Max length: 20'
+  - name: acti__en_us
+    description: '(required) Activity - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: manl
+    description: 'Manual. Allowed values: 1, 2'
+  - name: manl_kw
+    description: 'Manual (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: csvl
+    description: Customs Value
+  - name: csvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: nspb
+    description: 'Not Shipped Inventory Paid by. Allowed values: 10, 20, 30, 90'
+  - name: nspb_kw
+    description: 'Not Shipped Inventory Paid by (keyword). Allowed values: whdpby.terms.and.cond,
+      whdpby.own.comp, whdpby.owner, whdpby.not.appl'
+  - name: ctyo
+    description: 'Country of Origin. Max length: 3'
+  - name: addc
+    description: 'Additional Cost. Allowed values: 0, 1, 2'
+  - name: addc_kw
+    description: 'Additional Cost (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: amnt
+    description: Amount
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: dlpt
+    description: 'Delivery Point. Max length: 9'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: bgxc
+    description: 'Budget Exception. Allowed values: 1, 2'
+  - name: bgxc_kw
+    description: 'Budget Exception (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aclr
+    description: 'Additional Costs. Allowed values: 10, 20, 30, 40'
+  - name: aclr_kw
+    description: 'Additional Costs (keyword). Allowed values: whadd.costs.calculated,
+      whadd.costs.modified, whadd.costs.no, whadd.costs.not.applicable'
+  - name: acfl
+    description: Cost for Line
+  - name: circ__en_us
+    description: '(required) Customer Item Revision - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: dphu
+    description: 'Dismantle Picked Handling Unit. Allowed values: 1, 2'
+  - name: dphu_kw
+    description: 'Dismantle Picked Handling Unit (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sarq
+    description: 'Source Acceptance Required. Allowed values: 1, 2'
+  - name: sarq_kw
+    description: 'Source Acceptance Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: aqty
+    description: Source Accepted Quantity
+  - name: darq
+    description: 'Destination Acceptance Required. Allowed values: 1, 2'
+  - name: darq_kw
+    description: 'Destination Acceptance Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rqty
+    description: Destination Rejected Quantity
+  - name: frsm
+    description: 'Freeze Mandatory. Allowed values: 1, 2'
+  - name: frsm_kw
+    description: 'Freeze Mandatory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: shvl
+    description: 'Shipment Validation. Allowed values: 1, 2'
+  - name: shvl_kw
+    description: 'Shipment Validation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: psde
+    description: 'Print Shipping Documents by External Application. Allowed values:
+      1, 2'
+  - name: psde_kw
+    description: 'Print Shipping Documents by External Application (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: hubc
+    description: 'Handling Unit Based Confirmation. Allowed values: 1, 2'
+  - name: hubc_kw
+    description: 'Handling Unit Based Confirmation (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: fisc
+    description: 'Finalize Order Line after Shipment Cancelation. Allowed values:
+      1, 2'
+  - name: fisc_kw
+    description: 'Finalize Order Line after Shipment Cancelation (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: tcst
+    description: 'Document Compliance Status. Allowed values: 10, 20, 30, 40, 50'
+  - name: tcst_kw
+    description: 'Document Compliance Status (keyword). Allowed values: tcgtc.tcst.to.be.validated,
+      tcgtc.tcst.validating, tcgtc.tcst.valid.error, tcgtc.tcst.validated, tcgtc.tcst.not.appl'
+  - name: exfr
+    description: 'Expedited. Allowed values: 1, 2'
+  - name: exfr_kw
+    description: 'Expedited (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: atxt
+    description: Source Acceptance Text
+  - name: dtxt
+    description: Destination Acceptance Text
+  - name: text
+    description: Shipment Line Text
+  - name: shpm_ref_compnr
+    description: company number of primary key of table whinh430 Shipments
+  - name: item_clot_ref_compnr
+    description: company number of primary key of table whltc100 Lots
+  - name: item_ref_compnr
+    description: company number of primary key of table whwmd400 Item Warehousing
+      Data
+  - name: atse_ref_compnr
+    description: company number of primary key of table whwmd464 Attribute Sets
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: rowc_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: rown_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: recd_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cwun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: worn_wpon_pwsq_ssqd_ref_compnr
+    description: company number of primary key of table whinh420 Shipping Sequence
+  - name: cwar_loca_ref_compnr
+    description: company number of primary key of table whwmd300 Locations
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: huid_ref_compnr
+    description: company number of primary key of table whwmd530 Handling Units
+  - name: casi_ref_compnr
+    description: company number of primary key of table tccom705 Extra Intrastat Info
+  - name: csvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ctyo_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: stad_dlpt_ref_compnr
+    description: company number of primary key of table tccom134 Delivery Points
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: atxt_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: dtxt_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: conv_buar
+    description: 'CC: Conversion Factor from Inventory Unit to Base Unit Area'
+  - name: conv_buln
+    description: 'CC: Conversion Factor from Inventory Unit to Base Unit Length'
+  - name: conv_buvl
+    description: 'CC: Conversion Factor from Inventory Unit to Base Unit Volume'
+  - name: conv_buwg
+    description: 'CC: Conversion Factor from Inventory Unit to Base Unit Weight'
+  - name: amnt_rpc1
+    description: 'CC: Amount in Reporting Currency 1'
+  - name: amnt_rpc2
+    description: 'CC: Amount in Reporting Currency 2'
+  - name: amnt_rfrc
+    description: 'CC: Amount in Reference Currency'
+  - name: amnt_dtwc
+    description: 'CC: Amount in Data Warehouse Currency'
+  - name: sham_lclc
+    description: 'CC: Shipped Amount in Local Currency'
+  - name: sham_rpc1
+    description: 'CC: Shipped Amount in Reporting Currency 1'
+  - name: sham_rpc2
+    description: 'CC: Shipped Amount in Reporting Currency 2'
+  - name: sham_rfrc
+    description: 'CC: Shipped Amount in Reference Currency'
+  - name: sham_dtwc
+    description: 'CC: Shipped Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinh431 Shipment Lines table, Generated 2026-04-10T19:42:50Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - shpm
+        - pono

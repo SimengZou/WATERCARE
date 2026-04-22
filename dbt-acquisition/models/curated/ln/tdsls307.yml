@@ -1,0 +1,470 @@
+version: 2
+models:
+- name: tdsls307
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: schn
+    description: '(required) Schedule. Max length: 9'
+    data_tests:
+    - not_null
+  - name: sctp
+    description: '(required) Schedule Type. Allowed values: 1, 2, 3, 4'
+    data_tests:
+    - not_null
+  - name: sctp_kw
+    description: 'Schedule Type (keyword). Allowed values: tdsls.reltype.matrelease,
+      tdsls.reltype.shipschedule, tdsls.reltype.seqschedule, tdsls.reltype.pickupsheet'
+  - name: revn
+    description: (required) Schedule Revision
+    data_tests:
+    - not_null
+  - name: spon
+    description: (required) Schedule Position
+    data_tests:
+    - not_null
+  - name: qoor
+    description: Quantity
+  - name: qoad
+    description: Adjustment Quantity
+  - name: cuqs
+    description: 'Sales Unit. Max length: 3'
+  - name: cvqs
+    description: Sales Unit Conversion Factor
+  - name: qrrq
+    description: Required Quantity
+  - name: curq
+    description: 'Required Quantity Unit. Max length: 3'
+  - name: cvrq
+    description: Required Quantity Unit Conversion Factor
+  - name: qccf
+    description: Confirmed Quantity
+  - name: cucf
+    description: 'Confirmed Quantity Unit. Max length: 3'
+  - name: cvcf
+    description: Confirmed Quantity Unit Conversion Factor
+  - name: odat
+    description: Order Date
+  - name: cfdt
+    description: Confirmation Date
+  - name: sdat
+    description: Start Date
+  - name: edat
+    description: End Date
+  - name: tiun
+    description: 'Time Unit. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: tiun_kw
+    description: 'Time Unit (keyword). Allowed values: tdsls.tiun.hour, tdsls.tiun.day,
+      tdsls.tiun.week, tdsls.tiun.month, tdsls.tiun.four.week, tdsls.tiun.not.applicable'
+  - name: ctyp
+    description: 'Customer Requirement Type. Allowed values: 1, 2, 3, 4'
+  - name: ctyp_kw
+    description: 'Customer Requirement Type (keyword). Allowed values: tdpur.rtyp.immediate,
+      tdpur.rtyp.firm, tdpur.rtyp.planned, tdpur.rtyp.backorder'
+  - name: citr__en_us
+    description: '(required) Customer Item Revision - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: rtyp
+    description: 'Requirement Type. Allowed values: 1, 2, 3, 4'
+  - name: rtyp_kw
+    description: 'Requirement Type (keyword). Allowed values: tdpur.rtyp.immediate,
+      tdpur.rtyp.firm, tdpur.rtyp.planned, tdpur.rtyp.backorder'
+  - name: qicq
+    description: Customer Required Quantity
+  - name: dmor
+    description: 'Demand Origin. Allowed values: 10, 20, 30, 40'
+  - name: dmor_kw
+    description: 'Demand Origin (keyword). Allowed values: tdsls.dmor.not.applicable,
+      tdsls.dmor.customer, tdsls.dmor.manual, tdsls.dmor.shipment'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: stsi
+    description: 'Ship-to Site. Max length: 9'
+  - name: stwh
+    description: 'Ship-to Warehouse. Max length: 6'
+  - name: imcs
+    description: 'Intermediate Consignee. Max length: 35'
+  - name: cfrw
+    description: 'Carrier/LSP. Max length: 3'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: effn
+    description: Effectivity Unit
+  - name: revi
+    description: 'Engineering Item Rev.. Max length: 6'
+  - name: leng
+    description: Length
+  - name: thic
+    description: Height
+  - name: widt
+    description: Width
+  - name: stat
+    description: 'Status. Allowed values: 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13,
+      14'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: tdsls.stat.created, tdsls.stat.adjusted,
+      tdsls.stat.approved, tdsls.stat.order.generated, tdsls.stat.partial.deliver,
+      tdsls.stat.goods.delivered, tdsls.stat.released.to.inv, tdsls.stat.invoiced,
+      tdsls.stat.processed, tdsls.stat.cancelled, tdsls.stat.cancel.in.proc, tdsls.stat.replaced,
+      tdsls.stat.replace.in.proc'
+  - name: bkyn
+    description: 'Blocked. Allowed values: 1, 2'
+  - name: bkyn_kw
+    description: 'Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ddta
+    description: Last Delivery Date
+  - name: dlno
+    description: 'Last Shipment. Max length: 9'
+  - name: qidl
+    description: Delivered Quantity
+  - name: cuva
+    description: Customs Value
+  - name: pmnt
+    description: 'Payment. Allowed values: 10, 20, 30, 90'
+  - name: pmnt_kw
+    description: 'Payment (keyword). Allowed values: tcpmnt.pay.on.receipt, tcpmnt.pay.on.use,
+      tcpmnt.no.payment, tcpmnt.not.applicable'
+  - name: sbim
+    description: 'Self-Billing. Allowed values: 1, 2'
+  - name: sbim_kw
+    description: 'Self-Billing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: invd
+    description: Last Invoice Date
+  - name: scmp
+    description: Last Invoice Company
+  - name: ttyp
+    description: 'Last Transaction Type. Max length: 3'
+  - name: invn
+    description: Last Invoice
+  - name: chan
+    description: 'Channels. Max length: 3'
+  - name: dest
+    description: 'Goods Flow. Allowed values: 1, 2, 3, 4'
+  - name: dest_kw
+    description: 'Goods Flow (keyword). Allowed values: tdsls.dest.warehousing, tdsls.dest.sales,
+      tdsls.dest.transfer, tdsls.dest.direct.delivery'
+  - name: orno
+    description: 'Order. Max length: 9'
+  - name: opon
+    description: Line
+  - name: seqn
+    description: Sequence
+  - name: rrdt
+    description: Required Planned Receipt Date
+  - name: crdt
+    description: Confirmed Planned Receipt Date
+  - name: prdt
+    description: Planned Receipt Date
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: refs__en_us
+    description: '(required) Shipment Reference - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: rcod
+    description: 'Exempt Reason. Max length: 6'
+  - name: ceno
+    description: 'Exempt Certificate. Max length: 24'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: bptc
+    description: 'Business Partner Tax Country. Max length: 3'
+  - name: exmt
+    description: 'Exempt. Allowed values: 1, 2'
+  - name: exmt_kw
+    description: 'Exempt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: cchn
+    description: 'Customer Schedule Number. Max length: 30'
+  - name: cchp
+    description: 'Customer Schedule Position. Max length: 14'
+  - name: prid
+    description: 'Price ID. Max length: 22'
+  - name: samt
+    description: Schedule Amount
+  - name: cono
+    description: 'Contract. Max length: 9'
+  - name: pono
+    description: Contract Position
+  - name: ccof
+    description: 'Contract Office. Max length: 6'
+  - name: hold
+    description: 'Put on Hold. Allowed values: 1, 2'
+  - name: hold_kw
+    description: 'Put on Hold (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: smsl
+    description: 'Subcontracting Supply Line. Allowed values: 0, 1, 2'
+  - name: smsl_kw
+    description: 'Subcontracting Supply Line (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: refe__en_us
+    description: '(required) Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: prfa__en_us
+    description: '(required) Packaging Reference A - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: prfb__en_us
+    description: '(required) Packaging Reference B - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: dock
+    description: 'Dock Location. Max length: 30'
+  - name: dlpt
+    description: 'Delivery Point. Max length: 9'
+  - name: styp
+    description: 'Sales Type. Max length: 6'
+  - name: lnor
+    description: 'Schedule Line Origin. Allowed values: 5, 10, 15, 20, 25, 90'
+  - name: lnor_kw
+    description: 'Schedule Line Origin (keyword). Allowed values: tdsls.lnor.sales.release,
+      tdsls.lnor.sales.schedule, tdsls.lnor.planning, tdsls.lnor.purchase, tdsls.lnor.manual,
+      tdsls.lnor.not.applicable'
+  - name: casi
+    description: 'Additional Statistical Information Set. Max length: 3'
+  - name: spcn
+    description: 'Specification. Max length: 22'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: pric
+    description: Obsolete
+  - name: cups
+    description: 'Obsolete. Max length: 3'
+  - name: cvps
+    description: Obsolete
+  - name: txta
+    description: Schedule Line Text
+  - name: schn_sctp_revn_ref_compnr
+    description: company number of primary key of table tdsls311 Sales Schedules
+  - name: cuqs_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: curq_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cucf_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: stad_dlpt_ref_compnr
+    description: company number of primary key of table tccom134 Delivery Points
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: stsi_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: stwh_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cfrw_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: item_site_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_stsi_ref_compnr
+    description: company number of primary key of table tcibd150 Items by Site
+  - name: item_ref_compnr
+    description: company number of primary key of table tdisa001 Item - Sales
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: chan_ref_compnr
+    description: company number of primary key of table tcmcs066 Channels
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: rcod_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: ccty_cvat_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: cono_pono_ccof_ref_compnr
+    description: company number of primary key of table tdsls301 Sales Contract Lines
+  - name: cono_ref_compnr
+    description: company number of primary key of table tdsls300 Sales Contracts
+  - name: ccof_ref_compnr
+    description: company number of primary key of table tdsls012 Sales Offices
+  - name: styp_ref_compnr
+    description: company number of primary key of table tcmcs202 Sales Types
+  - name: casi_ref_compnr
+    description: company number of primary key of table tccom705 Extra Intrastat Info
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: gamt_lclc
+    description: 'CC: Sales Schedule Line Gross Amount in Local Currency'
+  - name: gamt_rpc1
+    description: 'CC: Sales Schedule Line Gross Amount in Reporting Currency 1'
+  - name: gamt_rpc2
+    description: 'CC: Sales Schedule Line Gross Amount in Reporting Currency 2'
+  - name: gamt_rfrc
+    description: 'CC: Sales Schedule Line Gross Amount in Reference Currency'
+  - name: gamt_dtwc
+    description: 'CC: Sales Schedule Line Gross Amount in Data Warehouse Currency'
+  - name: gamt_trnc
+    description: 'CC: Sales Schedule Line Gross Amount in Transaction Currency'
+  - name: namt_lclc
+    description: 'CC: Sales Schedule Line Net Amount in Local Currency'
+  - name: namt_rpc1
+    description: 'CC: Sales Schedule Line Net Amount in Reporting Currency 1'
+  - name: namt_rpc2
+    description: 'CC: Sales Schedule Line Net Amount in Reporting Currency 2'
+  - name: namt_rfrc
+    description: 'CC: Sales Schedule Line Net Amount in Reference Currency'
+  - name: namt_dtwc
+    description: 'CC: Sales Schedule Line Net Amount in Data Warehouse Currency'
+  - name: namt_trnc
+    description: 'CC: Sales Schedule Line Net Amount in Transaction Currency'
+  - name: tcpr_trnc
+    description: 'CC: Sales Schedule Line Total Cost Price in Transaction Currency'
+  - name: tcpr_lclc
+    description: 'CC: Sales Schedule Line Total Cost Price in Local Currency'
+  - name: tcpr_rpc1
+    description: 'CC: Sales Schedule Line Total Cost Price in Reporting Currency 1'
+  - name: tcpr_rpc2
+    description: 'CC: Sales Schedule Line Total Cost Price in Reporting Currency 2'
+  - name: tcpr_rfrc
+    description: 'CC: Sales Schedule Line Total Cost Price in Reference Currency'
+  - name: tcpr_dtwc
+    description: 'CC: Sales Schedule Line Total Cost Price in Data Warehouse Currency'
+  - name: qoor_invu
+    description: 'CC: Sales Schedule Line Quantity in Inventory Unit'
+  - name: qoor_buar
+    description: 'CC: Sales Schedule Line Quantity in Base Unit Area'
+  - name: qoor_buln
+    description: 'CC: Sales Schedule Line Quantity in Base Unit Length'
+  - name: qoor_bupc
+    description: 'CC: Sales Schedule Line Quantity in Base Unit Piece'
+  - name: qoor_butm
+    description: 'CC: Sales Schedule Line Quantity in Base Unit Time'
+  - name: qoor_buvl
+    description: 'CC: Sales Schedule Line Quantity in Base Unit Volume'
+  - name: qoor_buwg
+    description: 'CC: Sales Schedule Line Quantity in Base Unit Weight'
+  - name: qoad_invu
+    description: 'CC: Sales Schedule Line Adjustment Quantity in Inventory Unit'
+  - name: qoad_buar
+    description: 'CC: Sales Schedule Line Adjustment Quantity in Base Unit Area'
+  - name: qoad_buln
+    description: 'CC: Sales Schedule Line Adjustment Quantity in Base Unit Length'
+  - name: qoad_bupc
+    description: 'CC: Sales Schedule Line Adjustment Quantity in Base Unit Piece'
+  - name: qoad_butm
+    description: 'CC: Sales Schedule Line Adjustment Quantity in Base Unit Time'
+  - name: qoad_buvl
+    description: 'CC: Sales Schedule Line Adjustment Quantity in Base Unit Volume'
+  - name: qoad_buwg
+    description: 'CC: Sales Schedule Line Adjustment Quantity in Base Unit Weight'
+  - name: qrrq_trnu
+    description: 'CC: Sales Schedule Line Required Quantity in Transaction Unit'
+  - name: qrrq_invu
+    description: 'CC: Sales Schedule Line Required Quantity in Inventory Unit'
+  - name: qrrq_buar
+    description: 'CC: Sales Schedule Line Required Quantity in Base Unit Area'
+  - name: qrrq_buln
+    description: 'CC: Sales Schedule Line Required Quantity in Base Unit Length'
+  - name: qrrq_bupc
+    description: 'CC: Sales Schedule Line Required Quantity in Base Unit Piece'
+  - name: qrrq_butm
+    description: 'CC: Sales Schedule Line Required Quantity in Base Unit Time'
+  - name: qrrq_buvl
+    description: 'CC: Sales Schedule Line Required Quantity in Base Unit Volume'
+  - name: qrrq_buwg
+    description: 'CC: Sales Schedule Line Required Quantity in Base Unit Weight'
+  - name: qccf_trnu
+    description: 'CC: Sales Schedule Line Confirmed Quantity in Transaction Unit'
+  - name: qccf_invu
+    description: 'CC: Sales Schedule Line Confirmed Quantity in Inventory Unit'
+  - name: qccf_buar
+    description: 'CC: Sales Schedule Line Confirmed Quantity in Base Unit Area'
+  - name: qccf_buln
+    description: 'CC: Sales Schedule Line Confirmed Quantity in Base Unit Length'
+  - name: qccf_bupc
+    description: 'CC: Sales Schedule Line Confirmed Quantity in Base Unit Piece'
+  - name: qccf_butm
+    description: 'CC: Sales Schedule Line Confirmed Quantity in Base Unit Time'
+  - name: qccf_buvl
+    description: 'CC: Sales Schedule Line Confirmed Quantity in Base Unit Volume'
+  - name: qccf_buwg
+    description: 'CC: Sales Schedule Line Confirmed Quantity in Base Unit Weight'
+  - name: qidl_trnu
+    description: 'CC: Sales Schedule Line Delivered Quantity in Transaction Unit'
+  - name: qidl_buar
+    description: 'CC: Sales Schedule Line Delivered Quantity in Base Unit Area'
+  - name: qidl_buln
+    description: 'CC: Sales Schedule Line Delivered Quantity in Base Unit Length'
+  - name: qidl_bupc
+    description: 'CC: Sales Schedule Line Delivered Quantity in Base Unit Piece'
+  - name: qidl_butm
+    description: 'CC: Sales Schedule Line Delivered Quantity in Base Unit Time'
+  - name: qidl_buvl
+    description: 'CC: Sales Schedule Line Delivered Quantity in Base Unit Volume'
+  - name: qidl_buwg
+    description: 'CC: Sales Schedule Line Delivered Quantity in Base Unit Weight'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdsls307 Sales Schedule Lines table, Generated 2026-04-10T19:41:25Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - schn
+        - sctp
+        - revn
+        - spon

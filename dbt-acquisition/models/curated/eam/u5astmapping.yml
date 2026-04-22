@@ -1,0 +1,48 @@
+version: 2
+models:
+- name: u5astmapping
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: ast_id
+    description: AST_ID
+    data_tests:
+    - unique
+  - name: ast_class
+    description: AST_CLASS
+  - name: ast_classdesc
+    description: AST_CLASSDESC
+  - name: ast_attribute
+    description: AST_ATTRIBUTE
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: autoid
+    description: AUTOID
+  - name: ast_attrbdesc
+    description: AST_ATTRBDESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5ASTMAPPING

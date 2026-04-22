@@ -1,0 +1,208 @@
+version: 2
+models:
+- name: metermanagement_water_watermeteranalysis
+  columns:
+  - name: auditflag
+    description: 'Metadata for column AUDITFLAG. Max length: 1'
+  - name: keycolumn
+    description: 'Metadata for column KEYCOLUMN. Max length: 50'
+  - name: isreadingapproved
+    description: 'Metadata for column ISREADINGAPPROVED. Max length: 1'
+  - name: noreadflag
+    description: 'Metadata for column NOREADFLAG. Max length: 1'
+  - name: readingunittype
+    description: 'Metadata for column READINGUNITTYPE. Max length: 10'
+  - name: isrereadresolved
+    description: 'Metadata for column ISREREADRESOLVED. Max length: 1'
+  - name: ispbcodeworesolved
+    description: 'Metadata for column ISPBCODEWORESOLVED. Max length: 1'
+  - name: readercodeservicerequestno
+    description: Metadata for column READERCODESERVICEREQUESTNO
+  - name: currentreadingdate
+    description: Metadata for column CURRENTREADINGDATE
+  - name: reread
+    description: 'Metadata for column REREAD. Max length: 20'
+  - name: routekey
+    description: Metadata for column ROUTEKEY
+  - name: workorder
+    description: 'Metadata for column WORKORDER. Max length: 20'
+  - name: currentfieldnotes
+    description: 'Metadata for column CURRENTFIELDNOTES. Max length: 300'
+  - name: problemcodeworkordertype
+    description: 'Metadata for column PROBLEMCODEWORKORDERTYPE. Max length: 4'
+  - name: readercodebackcolor
+    description: 'Metadata for column READERCODEBACKCOLOR. Max length: 12'
+  - name: readercodeservicerequesttype
+    description: 'Metadata for column READERCODESERVICEREQUESTTYPE. Max length: 16'
+  - name: isrdcodeworesolved
+    description: 'Metadata for column ISRDCODEWORESOLVED. Max length: 1'
+  - name: isrdcodesrvreqresolved
+    description: 'Metadata for column ISRDCODESRVREQRESOLVED. Max length: 1'
+  - name: approve
+    description: 'Metadata for column APPROVE. Max length: 20'
+  - name: readingcompkey
+    description: Metadata for column READINGCOMPKEY
+  - name: comparereadingkey
+    description: Metadata for column COMPAREREADINGKEY
+  - name: currentunittype
+    description: 'Metadata for column CURRENTUNITTYPE. Max length: 10'
+  - name: problemcodeworkorderno
+    description: Metadata for column PROBLEMCODEWORKORDERNO
+  - name: comparebillable
+    description: Metadata for column COMPAREBILLABLE
+  - name: currentusage
+    description: Metadata for column CURRENTUSAGE
+  - name: parentkey
+    description: Metadata for column PARENTKEY
+  - name: compareestimatedflag
+    description: 'Metadata for column COMPAREESTIMATEDFLAG. Max length: 1'
+  - name: currenttotalusage
+    description: Metadata for column CURRENTTOTALUSAGE
+  - name: comparehighreading
+    description: Metadata for column COMPAREHIGHREADING
+  - name: currentreadingkey
+    description: Metadata for column CURRENTREADINGKEY
+  - name: exception
+    description: 'Metadata for column EXCEPTION. Max length: 50'
+  - name: compareoption
+    description: Metadata for column COMPAREOPTION
+  - name: problemcodeservicerequesttype
+    description: 'Metadata for column PROBLEMCODESERVICEREQUESTTYPE. Max length: 16'
+  - name: currenthighreading
+    description: Metadata for column CURRENTHIGHREADING
+  - name: readercodetextcolor
+    description: 'Metadata for column READERCODETEXTCOLOR. Max length: 12'
+  - name: currentcompkey
+    description: Metadata for column CURRENTCOMPKEY
+  - name: comparereading
+    description: Metadata for column COMPAREREADING
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: exceptiontype
+    description: Metadata for column EXCEPTIONTYPE
+  - name: problemcodeservicerequestno
+    description: Metadata for column PROBLEMCODESERVICEREQUESTNO
+  - name: routeid
+    description: 'Metadata for column ROUTEID. Max length: 16'
+  - name: readingcycle
+    description: 'Metadata for column READINGCYCLE. Max length: 10'
+  - name: oldestaccountno
+    description: 'Metadata for column OLDESTACCOUNTNO. Max length: 27'
+  - name: readingtype
+    description: Metadata for column READINGTYPE
+  - name: compareusagereadingkeys
+    description: 'Metadata for column COMPAREUSAGEREADINGKEYS. Max length: 750'
+  - name: currentbillable
+    description: Metadata for column CURRENTBILLABLE
+  - name: watermeteranalysiskey
+    description: (required) Metadata for column WATERMETERANALYSISKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: colorassignmentneeded
+    description: 'Metadata for column COLORASSIGNMENTNEEDED. Max length: 1'
+  - name: comparetotalbillableusage
+    description: Metadata for column COMPARETOTALBILLABLEUSAGE
+  - name: address
+    description: 'Metadata for column ADDRESS. Max length: 150'
+  - name: compareusage
+    description: Metadata for column COMPAREUSAGE
+  - name: currentreading
+    description: Metadata for column CURRENTREADING
+  - name: manualreviewflag
+    description: 'Metadata for column MANUALREVIEWFLAG. Max length: 1'
+  - name: indexno
+    description: Metadata for column INDEXNO
+  - name: comparehighusage
+    description: Metadata for column COMPAREHIGHUSAGE
+  - name: readingmeterid
+    description: 'Metadata for column READINGMETERID. Max length: 20'
+  - name: isreadercodeexception
+    description: 'Metadata for column ISREADERCODEEXCEPTION. Max length: 1'
+  - name: readercodeworkordertype
+    description: 'Metadata for column READERCODEWORKORDERTYPE. Max length: 4'
+  - name: highmultiplier
+    description: Metadata for column HIGHMULTIPLIER
+  - name: oldestaccountkey
+    description: Metadata for column OLDESTACCOUNTKEY
+  - name: problemcode
+    description: 'Metadata for column PROBLEMCODE. Max length: 12'
+  - name: ispbcodesrvreqresolved
+    description: 'Metadata for column ISPBCODESRVREQRESOLVED. Max length: 1'
+  - name: currentusagereadingkeys
+    description: 'Metadata for column CURRENTUSAGEREADINGKEYS. Max length: 750'
+  - name: currenthighusage
+    description: Metadata for column CURRENTHIGHUSAGE
+  - name: rereadservicerequestno
+    description: Metadata for column REREADSERVICEREQUESTNO
+  - name: lowmultiplier
+    description: Metadata for column LOWMULTIPLIER
+  - name: comparetotalusage
+    description: Metadata for column COMPARETOTALUSAGE
+  - name: isproblemcodeexception
+    description: 'Metadata for column ISPROBLEMCODEEXCEPTION. Max length: 1'
+  - name: problemcodetextcolor
+    description: 'Metadata for column PROBLEMCODETEXTCOLOR. Max length: 12'
+  - name: position
+    description: Metadata for column POSITION
+  - name: addresskey
+    description: Metadata for column ADDRESSKEY
+  - name: comparereadingdate
+    description: Metadata for column COMPAREREADINGDATE
+  - name: comparehighbillable
+    description: Metadata for column COMPAREHIGHBILLABLE
+  - name: otheraction
+    description: 'Metadata for column OTHERACTION. Max length: 30'
+  - name: currenthighbillable
+    description: Metadata for column CURRENTHIGHBILLABLE
+  - name: currenttotalbillableusage
+    description: Metadata for column CURRENTTOTALBILLABLEUSAGE
+  - name: problemcodebackcolor
+    description: 'Metadata for column PROBLEMCODEBACKCOLOR. Max length: 12'
+  - name: sequenceno
+    description: Metadata for column SEQUENCENO
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: defaultaction
+    description: 'Metadata for column DEFAULTACTION. Max length: 30'
+  - name: readercodeworkorderno
+    description: Metadata for column READERCODEWORKORDERNO
+  - name: currentmeterid
+    description: 'Metadata for column CURRENTMETERID. Max length: 20'
+  - name: usagepercentage
+    description: Metadata for column USAGEPERCENTAGE
+  - name: currentestimatedflag
+    description: 'Metadata for column CURRENTESTIMATEDFLAG. Max length: 1'
+  - name: serreq
+    description: 'Metadata for column SERREQ. Max length: 20'
+  - name: addresskey1
+    description: Metadata for column ADDRESSKEY1
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: readercode
+    description: 'Metadata for column READERCODE. Max length: 12'
+  - name: batchkey
+    description: Metadata for column BATCHKEY
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table METERMANAGEMENT_WATER.WATERMETERANALYSIS on 2022-03-03T11:30:57.582

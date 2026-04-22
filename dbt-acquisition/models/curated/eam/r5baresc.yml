@@ -1,0 +1,43 @@
+version: 2
+models:
+- name: r5baresc
+  columns:
+  - name: bce_lastsaved
+    description: BCE_LASTSAVED
+  - name: bce_text2
+    description: BCE_TEXT2
+  - name: bce_line
+    description: BCE_LINE
+  - name: bce_escape
+    description: BCE_ESCAPE
+  - name: bce_updatecount
+    description: BCE_UPDATECOUNT
+  - name: bce_text1
+    description: BCE_TEXT1
+  - name: bce_column
+    description: BCE_COLUMN
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5BARESC
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - bce_line
+        - bce_escape
+        - bce_column

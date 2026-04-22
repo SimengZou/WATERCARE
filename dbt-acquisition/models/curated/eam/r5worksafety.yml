@@ -1,0 +1,182 @@
+version: 2
+models:
+- name: r5worksafety
+  columns:
+  - name: ksf_lastsaved
+    description: KSF_LASTSAVED
+  - name: ksf_pk
+    description: KSF_PK
+    data_tests:
+    - unique
+  - name: ksf_rentity
+    description: KSF_RENTITY
+  - name: ksf_code
+    description: KSF_CODE
+  - name: ksf_hazard
+    description: KSF_HAZARD
+  - name: ksf_hazard_org
+    description: KSF_HAZARD_ORG
+  - name: ksf_hazardrev
+    description: KSF_HAZARDREV
+  - name: ksf_precaution
+    description: KSF_PRECAUTION
+  - name: ksf_precaution_org
+    description: KSF_PRECAUTION_ORG
+  - name: ksf_precautionrev
+    description: KSF_PRECAUTIONREV
+  - name: ksf_timing
+    description: KSF_TIMING
+  - name: ksf_validuntil
+    description: KSF_VALIDUNTIL
+  - name: ksf_deletepending
+    description: KSF_DELETEPENDING
+  - name: ksf_sequence
+    description: KSF_SEQUENCE
+  - name: ksf_healthhazard
+    description: KSF_HEALTHHAZARD
+  - name: ksf_flammability
+    description: KSF_FLAMMABILITY
+  - name: ksf_instability
+    description: KSF_INSTABILITY
+  - name: ksf_specialhazards
+    description: KSF_SPECIALHAZARDS
+  - name: ksf_created
+    description: KSF_CREATED
+  - name: ksf_createdby
+    description: KSF_CREATEDBY
+  - name: ksf_updated
+    description: KSF_UPDATED
+  - name: ksf_updatedby
+    description: KSF_UPDATEDBY
+  - name: ksf_reviewed
+    description: KSF_REVIEWED
+  - name: ksf_reviewedby
+    description: KSF_REVIEWEDBY
+  - name: ksf_reviewedname
+    description: KSF_REVIEWEDNAME
+  - name: ksf_reviewedtype
+    description: KSF_REVIEWEDTYPE
+  - name: ksf_sourcerentity
+    description: KSF_SOURCERENTITY
+  - name: ksf_sourcecode
+    description: KSF_SOURCECODE
+  - name: ksf_sourceorg
+    description: KSF_SOURCEORG
+  - name: ksf_sourceupdated
+    description: KSF_SOURCEUPDATED
+  - name: ksf_sourceupdatedby
+    description: KSF_SOURCEUPDATEDBY
+  - name: ksf_udfchar01
+    description: KSF_UDFCHAR01
+  - name: ksf_udfchar02
+    description: KSF_UDFCHAR02
+  - name: ksf_udfchar03
+    description: KSF_UDFCHAR03
+  - name: ksf_udfchar04
+    description: KSF_UDFCHAR04
+  - name: ksf_udfchar05
+    description: KSF_UDFCHAR05
+  - name: ksf_udfchar06
+    description: KSF_UDFCHAR06
+  - name: ksf_udfchar07
+    description: KSF_UDFCHAR07
+  - name: ksf_udfchar08
+    description: KSF_UDFCHAR08
+  - name: ksf_udfchar09
+    description: KSF_UDFCHAR09
+  - name: ksf_udfchar10
+    description: KSF_UDFCHAR10
+  - name: ksf_udfchar11
+    description: KSF_UDFCHAR11
+  - name: ksf_udfchar12
+    description: KSF_UDFCHAR12
+  - name: ksf_udfchar13
+    description: KSF_UDFCHAR13
+  - name: ksf_udfchar14
+    description: KSF_UDFCHAR14
+  - name: ksf_udfchar15
+    description: KSF_UDFCHAR15
+  - name: ksf_udfchar16
+    description: KSF_UDFCHAR16
+  - name: ksf_udfchar17
+    description: KSF_UDFCHAR17
+  - name: ksf_udfchar18
+    description: KSF_UDFCHAR18
+  - name: ksf_udfchar19
+    description: KSF_UDFCHAR19
+  - name: ksf_udfchar20
+    description: KSF_UDFCHAR20
+  - name: ksf_udfchar21
+    description: KSF_UDFCHAR21
+  - name: ksf_udfchar22
+    description: KSF_UDFCHAR22
+  - name: ksf_udfchar23
+    description: KSF_UDFCHAR23
+  - name: ksf_udfchar24
+    description: KSF_UDFCHAR24
+  - name: ksf_udfchar25
+    description: KSF_UDFCHAR25
+  - name: ksf_udfchar26
+    description: KSF_UDFCHAR26
+  - name: ksf_udfchar27
+    description: KSF_UDFCHAR27
+  - name: ksf_udfchar28
+    description: KSF_UDFCHAR28
+  - name: ksf_udfchar29
+    description: KSF_UDFCHAR29
+  - name: ksf_udfchar30
+    description: KSF_UDFCHAR30
+  - name: ksf_udfnum01
+    description: KSF_UDFNUM01
+  - name: ksf_udfnum02
+    description: KSF_UDFNUM02
+  - name: ksf_udfnum03
+    description: KSF_UDFNUM03
+  - name: ksf_udfnum04
+    description: KSF_UDFNUM04
+  - name: ksf_udfnum05
+    description: KSF_UDFNUM05
+  - name: ksf_udfdate01
+    description: KSF_UDFDATE01
+  - name: ksf_udfdate02
+    description: KSF_UDFDATE02
+  - name: ksf_udfdate03
+    description: KSF_UDFDATE03
+  - name: ksf_udfdate04
+    description: KSF_UDFDATE04
+  - name: ksf_udfdate05
+    description: KSF_UDFDATE05
+  - name: ksf_udfchkbox01
+    description: KSF_UDFCHKBOX01
+  - name: ksf_udfchkbox02
+    description: KSF_UDFCHKBOX02
+  - name: ksf_udfchkbox03
+    description: KSF_UDFCHKBOX03
+  - name: ksf_udfchkbox04
+    description: KSF_UDFCHKBOX04
+  - name: ksf_udfchkbox05
+    description: KSF_UDFCHKBOX05
+  - name: ksf_updatecount
+    description: KSF_UPDATECOUNT
+  - name: ksf_precautionapplied
+    description: KSF_PRECAUTIONAPPLIED
+  - name: ksf_responsibility
+    description: KSF_RESPONSIBILITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5WORKSAFETY

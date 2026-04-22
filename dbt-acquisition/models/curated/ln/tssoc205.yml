@@ -1,0 +1,148 @@
+version: 2
+models:
+- name: tssoc205
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orgn
+    description: '(required) Origin. Allowed values: 5, 10'
+    data_tests:
+    - not_null
+  - name: orgn_kw
+    description: 'Origin (keyword). Allowed values: tstdm.corg.service.order, tstdm.corg.work.order'
+  - name: orno
+    description: '(required) Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: line
+    description: (required) Line Number
+    data_tests:
+    - not_null
+  - name: emno
+    description: 'Service Engineer. Max length: 9'
+  - name: acln
+    description: Activity Line Number
+  - name: stat
+    description: 'Status. Allowed values: 5, 10, 15, 20, 25'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: tssoc.esta.assigned, tssoc.esta.accepted,
+      tssoc.esta.started, tssoc.esta.completed, tssoc.esta.rejected'
+  - name: dltm
+    description: Downloaded Time
+  - name: actm
+    description: Accept Time
+  - name: rjtm
+    description: Reject Time
+  - name: rejr
+    description: 'Rejection Reason. Max length: 6'
+  - name: pstm
+    description: Planned Start Time
+  - name: pftm
+    description: Planned Finish Time
+  - name: ptst
+    description: Planned Travel Start Time
+  - name: ptft
+    description: Planned Travel Finish Time
+  - name: astm
+    description: Actual Start Time
+  - name: aftm
+    description: Actual Finish Time
+  - name: atst
+    description: Actual Travel Start Time
+  - name: atft
+    description: Actual Travel Finish Time
+  - name: jctm
+    description: Job Sheet Completion Time
+  - name: ltct
+    description: Last Changed Time
+  - name: esdt
+    description: Escalation Date/Time
+  - name: acdu
+    description: Activity Duration
+  - name: trdu
+    description: Travel Duration
+  - name: trdi
+    description: Travel Distance
+  - name: uecp
+    description: 'Use Engineer Calendar for Planning. Allowed values: 1, 2'
+  - name: uecp_kw
+    description: 'Use Engineer Calendar for Planning (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pged
+    description: 'Pager / Phone Enabled. Allowed values: 1, 2'
+  - name: pged_kw
+    description: 'Pager / Phone Enabled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pgrd
+    description: 'Page Required. Allowed values: 1, 2'
+  - name: pgrd_kw
+    description: 'Page Required (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: actp
+    description: 'Activate Paging. Allowed values: 1, 2'
+  - name: actp_kw
+    description: 'Activate Paging (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pgit
+    description: Paging Interval
+  - name: pgdt
+    description: Last Page Sent
+  - name: pgcn
+    description: Paging Counter
+  - name: txta
+    description: Assignment Text
+  - name: cmbb_orno_acln_ref_compnr
+    description: company number of primary key of table tssoc210 Service Order Activities
+  - name: cmbc_orno_acln_ref_compnr
+    description: company number of primary key of table tswcs210 Work Order Activities
+  - name: emno_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: rejr_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: trdi_buln
+    description: 'CC: Travel Distance in Base Unit Length'
+  - name: trdu_butm
+    description: 'CC: Travel duration in Base Unit Time'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tssoc205 Service Engineer Assignments table, Generated 2026-04-10T19:42:38Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orgn
+        - orno
+        - line

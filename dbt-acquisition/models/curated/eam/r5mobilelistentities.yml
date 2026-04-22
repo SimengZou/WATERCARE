@@ -1,0 +1,62 @@
+version: 2
+models:
+- name: r5mobilelistentities
+  columns:
+  - name: let_lastsaved
+    description: LET_LASTSAVED
+  - name: let_mask
+    description: LET_MASK
+  - name: let_groupid
+    description: LET_GROUPID
+  - name: let_blocksize
+    description: LET_BLOCKSIZE
+  - name: let_delinsupd
+    description: LET_DELINSUPD
+  - name: let_filter
+    description: LET_FILTER
+  - name: let_tablename
+    description: LET_TABLENAME
+  - name: let_downcat
+    description: LET_DOWNCAT
+  - name: let_orgkey
+    description: LET_ORGKEY
+  - name: let_downgroup
+    description: LET_DOWNGROUP
+  - name: let_updatecount
+    description: LET_UPDATECOUNT
+  - name: let_updated
+    description: LET_UPDATED
+  - name: let_tableupdated
+    description: LET_TABLEUPDATED
+  - name: let_filterparams
+    description: LET_FILTERPARAMS
+  - name: let_mastertable
+    description: LET_MASTERTABLE
+  - name: let_cachedata
+    description: LET_CACHEDATA
+  - name: let_rentities
+    description: LET_RENTITIES
+  - name: let_ddspyid
+    description: LET_DDSPYID
+  - name: let_datagrid
+    description: LET_DATAGRID
+  - name: let_seqno
+    description: LET_SEQNO
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5MOBILELISTENTITIES

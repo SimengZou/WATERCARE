@@ -1,0 +1,78 @@
+# tpppc441
+
+LN tpppc441 Cost Control by Project / Activity / Cost Type table, Generated 2026-04-10T19:42:15Z from package combination ce01101
+
+## Overview
+
+| Property | Value |
+|---|---|
+| **Source system** | `ln` |
+| **Source table** | `ln_tpppc441` |
+| **Materialization** | `incremental` |
+| **Primary keys** | `compnr`, `cprj`, `mpto`, `cpla`, `cact`, `cotp` |
+| **Column count** | 59 |
+
+## Columns
+
+| Column | dbt Type | Snowflake Type | Flags | Tests | Description |
+|---|---|---|---|---|---|
+| `compnr` | `integer` | `int` | `PK` | `not_null` | (required) Company number |
+| `cprj` | `string` | `varchar` | `PK` | `not_null` | (required) Project. Max length: 9 |
+| `mpto` | `integer` | `int` | `PK` | `not_null` | (required) Total Type. Allowed values: 1, 2 |
+| `mpto_kw` | `string` | `varchar` |  |  | Total Type (keyword). Allowed values: tppdm.mpto.main.proj.total, tppdm.mpto.proj.total |
+| `cpla` | `string` | `varchar` | `PK` | `not_null` | (required) Plan. Max length: 3 |
+| `cact` | `string` | `varchar` | `PK` | `not_null` | (required) Activity. Max length: 16 |
+| `cotp` | `integer` | `int` | `PK` | `not_null` | (required) Cost Type. Allowed values: 1, 2, 3, 4, 5, 10 |
+| `cotp_kw` | `string` | `varchar` |  |  | Cost Type (keyword). Allowed values: tppdm.cotp.tasks, tppdm.cotp.materials, tppdm.cotp.equipment, tppdm.cotp.subcontracting, tppdm.cotp.indirect, tppdm.cotp.overhead |
+| `ambg_1` | `float` | `float` |  |  | Total Budget |
+| `ambg_2` | `float` | `float` |  |  | Total Budget |
+| `ambg_3` | `float` | `float` |  |  | Total Budget |
+| `ambg_4` | `float` | `float` |  |  | Total Budget |
+| `qubg` | `float` | `float` |  |  | Budget Quantity |
+| `ampm_1` | `float` | `float` |  |  | Earned Value |
+| `ampm_2` | `float` | `float` |  |  | Earned Value |
+| `ampm_3` | `float` | `float` |  |  | Earned Value |
+| `ampm_4` | `float` | `float` |  |  | Earned Value |
+| `qupm` | `float` | `float` |  |  | Earned Value |
+| `amex_1` | `float` | `float` |  |  | Commitments |
+| `amex_2` | `float` | `float` |  |  | Commitments |
+| `amex_3` | `float` | `float` |  |  | Commitments |
+| `amex_4` | `float` | `float` |  |  | Commitments |
+| `quex` | `float` | `float` |  |  | Qty Commitments |
+| `amac_1` | `float` | `float` |  |  | Actual Cost |
+| `amac_2` | `float` | `float` |  |  | Actual Cost |
+| `amac_3` | `float` | `float` |  |  | Actual Cost |
+| `amac_4` | `float` | `float` |  |  | Actual Cost |
+| `quac` | `float` | `float` |  |  | Actual Quantity |
+| `ampe_1` | `float` | `float` |  |  | Cost Forecast |
+| `ampe_2` | `float` | `float` |  |  | Cost Forecast |
+| `ampe_3` | `float` | `float` |  |  | Cost Forecast |
+| `ampe_4` | `float` | `float` |  |  | Cost Forecast |
+| `qupe` | `float` | `float` |  |  | Forecast Quantity |
+| `ampp_1` | `float` | `float` |  |  | Performed (This Period) |
+| `ampp_2` | `float` | `float` |  |  | Performed (This Period) |
+| `ampp_3` | `float` | `float` |  |  | Performed (This Period) |
+| `ampp_4` | `float` | `float` |  |  | Performed (This Period) |
+| `qupp` | `float` | `float` |  |  | Performed this Period |
+| `amep_1` | `float` | `float` |  |  | Commitments (This Period) |
+| `amep_2` | `float` | `float` |  |  | Commitments (This Period) |
+| `amep_3` | `float` | `float` |  |  | Commitments (This Period) |
+| `amep_4` | `float` | `float` |  |  | Commitments (This Period) |
+| `quep` | `float` | `float` |  |  | Qty Commitments this Period |
+| `amap_1` | `float` | `float` |  |  | Actual Costs (This Period) |
+| `amap_2` | `float` | `float` |  |  | Actual Costs (This Period) |
+| `amap_3` | `float` | `float` |  |  | Actual Costs (This Period) |
+| `amap_4` | `float` | `float` |  |  | Actual Costs (This Period) |
+| `quap` | `float` | `float` |  |  | Actual Qty this Period |
+| `cprj_cpla_cact_ref_compnr` | `integer` | `int` |  |  | company number of primary key of table tppss200 Activities |
+| `cprj_ref_compnr` | `integer` | `int` |  |  | company number of primary key of table tppdm600 Projects |
+| `deleted` | `boolean` | `boolean` |  | `not_null` | (required) Whether record is deleted |
+| `username` | `string` | `varchar` |  | `not_null` | (required) User responsible for record action. Max length: 8 |
+| `timestamp` | `timestamp` | `timestamp_ntz` |  | `not_null` | (required) Time the action occurred |
+| `sequencenumber` | `integer` | `int` |  | `not_null` | (required) Sequence number of the action |
+| `etl_load_datetime` | `datetime` | `timestamp_ntz` | `ADF` | | The datetime in which the ETL process loaded the data into the curated layer |
+| `etl_load_metadatafilename` | `string` | `varchar` | `ADF` | | The filename of the metadata file that was used to load the data into the curated layer. |
+| `dbt_record_updated_at` | `datetime` | `timestamp_ntz` | `dbt` | | The datetime in which the record was last updated by dbt. |
+| `dbt_record_created_at` | `datetime` | `timestamp_ntz` | `dbt` | | The datetime in which the record was created by dbt. |
+| `dbt_invocation_id` | `string` | `varchar` | `dbt` | | The invocation ID of the dbt run that created the record. |
+| `dbt_surrogate_key` | `string` | `varchar` | `dbt` | | Hashed key based on primary key/s of table, or all keys excluding dbt and etl metadata. |

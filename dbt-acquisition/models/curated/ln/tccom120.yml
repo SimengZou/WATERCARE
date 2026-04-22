@@ -1,0 +1,301 @@
+version: 2
+models:
+- name: tccom120
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: otbp
+    description: '(required) Buy-from Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: bpst
+    description: 'Business Partner Status. Allowed values: 1, 2, 3, 254'
+  - name: bpst_kw
+    description: 'Business Partner Status (keyword). Allowed values: tccom.prst.potential,
+      tccom.prst.active, tccom.prst.inactive, tccom.prst.not.specified'
+  - name: stdt
+    description: Start Date
+  - name: endt
+    description: End Date
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: creg
+    description: 'Area. Max length: 3'
+  - name: cbrn
+    description: 'Line of Business. Max length: 6'
+  - name: cbps
+    description: 'Business Partner Signal. Max length: 3'
+  - name: cbtp
+    description: 'Business Partner Type. Max length: 3'
+  - name: vryn
+    description: 'Vendor Rating. Allowed values: 1, 2'
+  - name: vryn_kw
+    description: 'Vendor Rating (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bpus
+    description: 'Business Partner for Statistics Update. Max length: 9'
+  - name: cadr
+    description: 'Address Code. Max length: 9'
+  - name: telp
+    description: 'Phone Number. Max length: 32'
+  - name: tlcy
+    description: 'Country for Phone Number. Max length: 6'
+  - name: tlci
+    description: 'City/Area Code for Phone Number. Max length: 15'
+  - name: tlln
+    description: 'Local Number for Phone Number. Max length: 32'
+  - name: tlex
+    description: 'Extension for Phone Number. Max length: 15'
+  - name: tefx
+    description: 'Fax Number. Max length: 32'
+  - name: tfcy
+    description: 'Country for Fax Number. Max length: 6'
+  - name: tfci
+    description: 'City/Area Code for Fax Number. Max length: 15'
+  - name: tfln
+    description: 'Local Number for Fax Number. Max length: 32'
+  - name: tfex
+    description: 'Extension for Fax Number. Max length: 15'
+  - name: ccal
+    description: 'Calendar Code. Max length: 9'
+  - name: ccnt
+    description: 'Contact. Max length: 9'
+  - name: mcfr
+    description: 'Rate Determiner. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 10, 20'
+  - name: mcfr_kw
+    description: 'Rate Determiner (keyword). Allowed values: tcfcrt.fixedl, tcfcrt.fixedh,
+      tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd, tcfcrt.manual,
+      tcfcrt.fixed, tcfcrt.not.appl'
+  - name: raur
+    description: 'Use Purchase Rates for Receipts. Allowed values: 1, 2'
+  - name: raur_kw
+    description: 'Use Purchase Rates for Receipts (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cplp
+    description: 'Purchase Price List. Max length: 3'
+  - name: odis
+    description: Order Discount
+  - name: bppr
+    description: 'Business Partner for Prices/Discounts. Max length: 9'
+  - name: lcmp
+    description: Logistic Company
+  - name: cofc
+    description: 'Purchase Office. Max length: 6'
+  - name: ccon
+    description: 'Buyer. Max length: 9'
+  - name: potp
+    description: 'Purchase Order Type. Max length: 3'
+  - name: ocus
+    description: 'Our Customer Number. Max length: 15'
+  - name: clgr
+    description: 'List Group. Max length: 3'
+  - name: ackx
+    description: 'Print Purchase Order by Exception. Allowed values: 1, 2'
+  - name: ackx_kw
+    description: 'Print Purchase Order by Exception (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sbil
+    description: 'Self-Billing. Allowed values: 1, 2'
+  - name: sbil_kw
+    description: 'Self-Billing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: paft
+    description: 'Invoice After. Allowed values: 1, 2'
+  - name: paft_kw
+    description: 'Invoice After (keyword). Allowed values: tcpaft.approval, tcpaft.receipts'
+  - name: sbdt
+    description: 'Self-Billing Date Type. Allowed values: 10, 20'
+  - name: sbdt_kw
+    description: 'Self-Billing Date Type (keyword). Allowed values: tcsbdt.receipt.date,
+      tcsbdt.shipping.date'
+  - name: mesv
+    description: 'Generate Release per Vehicle. Allowed values: 1, 2'
+  - name: mesv_kw
+    description: 'Generate Release per Vehicle (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: encd
+    description: 'Environmental Compliance Declared. Allowed values: 1, 2'
+  - name: encd_kw
+    description: 'Environmental Compliance Declared (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: crrf
+    description: 'Item Cross Reference. Allowed values: 1, 2, 3'
+  - name: crrf_kw
+    description: 'Item Cross Reference (keyword). Allowed values: tccrrf.ics, tccrrf.mpn,
+      tccrrf.na'
+  - name: ucnd
+    description: 'Use Confirmation. Allowed values: 1, 2'
+  - name: ucnd_kw
+    description: 'Use Confirmation (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: rdec
+    description: 'Return Delivery Terms. Max length: 3'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: scqq
+    description: 'Schedule Quantity Qualifier. Allowed values: 1, 2, 254'
+  - name: scqq_kw
+    description: 'Schedule Quantity Qualifier (keyword). Allowed values: tccom.scqq.cum,
+      tccom.scqq.ran, tccom.scqq.not.specified'
+  - name: ifbp
+    description: 'Invoice-from Business Partner. Max length: 9'
+  - name: frin
+    description: 'Invoice Business Partner for Freight. Allowed values: 1, 2'
+  - name: frin_kw
+    description: 'Invoice Business Partner for Freight (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: afrb
+    description: 'Retro-Billing Applicable. Allowed values: 1, 2'
+  - name: afrb_kw
+    description: 'Retro-Billing Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: sbvf
+    description: Self-Billing Validity Date-from
+  - name: sbvt
+    description: Self-Billing Validity Date-to
+  - name: sbrf
+    description: 'Self-Billing Reference. Max length: 9'
+  - name: tira
+    description: 'Tax Invoice Required for AFP. Allowed values: 1, 2'
+  - name: tira_kw
+    description: 'Tax Invoice Required for AFP (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: nasu
+    description: 'Nature of Supply. Max length: 9'
+  - name: srtr
+    description: 'Services Trade. Max length: 9'
+  - name: dset
+    description: 'Document Set. Max length: 9'
+  - name: dlid
+    description: 'Document Line Id. Max length: 22'
+  - name: retp
+    description: Retention %
+  - name: asbs
+    description: 'Assessment Basis. Allowed values: 5, 10, 90'
+  - name: asbs_kw
+    description: 'Assessment Basis (keyword). Allowed values: tcspd.asbs.period, tcspd.asbs.cumul,
+      tcspd.asbs.not.appl'
+  - name: dlpe
+    description: Defects Liability Period
+  - name: dlpu
+    description: 'Defects Liability Period Unit. Allowed values: 10, 20, 30, 40, 50,
+      90'
+  - name: dlpu_kw
+    description: 'Defects Liability Period Unit (keyword). Allowed values: tctmun.hours,
+      tctmun.days, tctmun.weeks, tctmun.months, tctmun.years, tctmun.not.applicable'
+  - name: sigr
+    description: 'Serialized Item Group. Max length: 6'
+  - name: itgr
+    description: 'Item Group. Max length: 6'
+  - name: spot
+    description: 'Services Procurement Order Type. Max length: 3'
+  - name: user
+    description: 'Created by. Max length: 16'
+  - name: crdt
+    description: Creation Date
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: lmdt
+    description: Last Modification Date
+  - name: txta
+    description: Text
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: creg_ref_compnr
+    description: company number of primary key of table tcmcs045 Areas
+  - name: cbrn_ref_compnr
+    description: company number of primary key of table tcmcs031 Lines of Business
+  - name: cbps_ref_compnr
+    description: company number of primary key of table tcmcs039 Signals
+  - name: cbtp_ref_compnr
+    description: company number of primary key of table tcmcs029 Business Partner
+      Types
+  - name: bpus_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: ccnt_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: cplp_ref_compnr
+    description: company number of primary key of table tcmcs034 Price Lists
+  - name: bppr_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: lcmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: ccon_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: clgr_ref_compnr
+    description: company number of primary key of table tcibd301 List Groups
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: rdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom121 Ship-from Business
+      Partners
+  - name: ifbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: nasu_ref_compnr
+    description: company number of primary key of table tcmcs030 Natures of Supply
+  - name: srtr_ref_compnr
+    description: company number of primary key of table tcmcs213 Services Trades
+  - name: dset_ref_compnr
+    description: company number of primary key of table tcbcm021 Document Sets
+  - name: itgr_ref_compnr
+    description: company number of primary key of table tcmcs023 Item Groups
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom120 Buy-from Business Partners table, Generated 2026-04-10T19:41:02Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - otbp

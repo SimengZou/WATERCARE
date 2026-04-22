@@ -1,0 +1,48 @@
+version: 2
+models:
+- name: r5trackingctrl
+  columns:
+  - name: tkc_lastsaved
+    description: TKC_LASTSAVED
+  - name: tkc_interfacertype
+    description: TKC_INTERFACERTYPE
+  - name: tkc_column
+    description: TKC_COLUMN
+  - name: tkc_rcolumn
+    description: TKC_RCOLUMN
+  - name: tkc_displayseq
+    description: TKC_DISPLAYSEQ
+  - name: tkc_length
+    description: TKC_LENGTH
+  - name: tkc_datatype
+    description: TKC_DATATYPE
+  - name: tkc_datartype
+    description: TKC_DATARTYPE
+  - name: tkc_interfacetype
+    description: TKC_INTERFACETYPE
+  - name: tkc_uploadcolumn
+    description: TKC_UPLOADCOLUMN
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TRACKINGCTRL
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - tkc_interfacertype
+        - tkc_uploadcolumn

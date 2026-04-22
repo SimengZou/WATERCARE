@@ -1,0 +1,127 @@
+version: 2
+models:
+- name: tsctm480
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: csco
+    description: '(required) Service Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cchn
+    description: (required) Origin Contract Change
+    data_tests:
+    - not_null
+  - name: cfln
+    description: (required) Configuration Line
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Cost Line
+    data_tests:
+    - not_null
+  - name: ivsq
+    description: Invoice Line Sequence
+  - name: acco_1
+    description: Actual Cost
+  - name: acco_2
+    description: Actual Cost
+  - name: acco_3
+    description: Actual Cost
+  - name: codt
+    description: Date Spent Costs
+  - name: plyr
+    description: Planned Year
+  - name: plpr
+    description: Planned Period
+  - name: ortp
+    description: 'Order Type. Allowed values: 5, 10, 15, 20, 25'
+  - name: ortp_kw
+    description: 'Order Type (keyword). Allowed values: tsctm.ortp.serv, tsctm.ortp.maint,
+      tsctm.ortp.call, tsctm.ortp.claim, tsctm.ortp.quote'
+  - name: orno
+    description: 'Order Number. Max length: 9'
+  - name: pono
+    description: Order Line Number
+  - name: cvln
+    description: Coverage Line Number
+  - name: cotp
+    description: 'Cost Type. Allowed values: 5, 10, 15, 20, 25, 30, 35, 45, 47, 50,
+      51, 60'
+  - name: cotp_kw
+    description: 'Cost Type (keyword). Allowed values: tsmdm.cotp.material, tsmdm.cotp.labor,
+      tsmdm.cotp.tool, tsmdm.cotp.travel, tsmdm.cotp.subcon, tsmdm.cotp.helpdesk,
+      tsmdm.cotp.other, tsmdm.cotp.order, tsmdm.cotp.activity, tsmdm.cotp.freight,
+      tsmdm.cotp.quotinv, tsmdm.cotp.rental'
+  - name: poyr
+    description: Posted Fiscal Year
+  - name: popr
+    description: Posted Fiscal Period
+  - name: stat
+    description: 'Status. Allowed values: 5, 10, 15, 20'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: tsctm.csst.free, tsctm.csst.costed,
+      tsctm.csst.posted, tsctm.csst.approved'
+  - name: ircl
+    description: 'Include in Revenue Calculation. Allowed values: 1, 2'
+  - name: ircl_kw
+    description: 'Include in Revenue Calculation (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rchn
+    description: Change Number of Contract Period
+  - name: csco_cchn_ref_compnr
+    description: company number of primary key of table tsctm320 Contract Changes
+  - name: csco_rchn_ref_compnr
+    description: company number of primary key of table tsctm320 Contract Changes
+  - name: csco_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: acco_cntc
+    description: 'CC: Actual Cost Amount in Contract Currency'
+  - name: acco_refc
+    description: 'CC: Actual Cost Amount in Reference Currency'
+  - name: acco_dwhc
+    description: 'CC: Actual Cost Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm480 Contract Cost Coverage - Overview table, Generated 2026-04-10T19:42:35Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - csco
+        - cchn
+        - cfln
+        - seqn

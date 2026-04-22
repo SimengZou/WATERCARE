@@ -1,0 +1,172 @@
+version: 2
+models:
+- name: r5objectaspects
+  columns:
+  - name: oba_lastsaved
+    description: OBA_LASTSAVED
+  - name: oba_object
+    description: OBA_OBJECT
+  - name: oba_obrtype
+    description: OBA_OBRTYPE
+  - name: oba_obtype
+    description: OBA_OBTYPE
+  - name: oba_aspect
+    description: OBA_ASPECT
+  - name: oba_object_org
+    description: OBA_OBJECT_ORG
+  - name: oba_risk
+    description: OBA_RISK
+  - name: oba_method
+    description: OBA_METHOD
+  - name: oba_confrating
+    description: OBA_CONFRATING
+  - name: oba_nominal
+    description: OBA_NOMINAL
+  - name: oba_uom
+    description: OBA_UOM
+  - name: oba_minextr
+    description: OBA_MINEXTR
+  - name: oba_min
+    description: OBA_MIN
+  - name: oba_mintol
+    description: OBA_MINTOL
+  - name: oba_minstwo
+    description: OBA_MINSTWO
+  - name: oba_minppm
+    description: OBA_MINPPM
+  - name: oba_minformula
+    description: OBA_MINFORMULA
+  - name: oba_maxextr
+    description: OBA_MAXEXTR
+  - name: oba_max
+    description: OBA_MAX
+  - name: oba_maxtol
+    description: OBA_MAXTOL
+  - name: oba_maxstwo
+    description: OBA_MAXSTWO
+  - name: oba_maxppm
+    description: OBA_MAXPPM
+  - name: oba_maxformula
+    description: OBA_MAXFORMULA
+  - name: oba_replacefreq
+    description: OBA_REPLACEFREQ
+  - name: oba_factor
+    description: OBA_FACTOR
+  - name: oba_updatecount
+    description: OBA_UPDATECOUNT
+  - name: oba_udfchar01
+    description: OBA_UDFCHAR01
+  - name: oba_udfchar02
+    description: OBA_UDFCHAR02
+  - name: oba_udfchar03
+    description: OBA_UDFCHAR03
+  - name: oba_udfchar04
+    description: OBA_UDFCHAR04
+  - name: oba_udfchar05
+    description: OBA_UDFCHAR05
+  - name: oba_udfchar06
+    description: OBA_UDFCHAR06
+  - name: oba_udfchar07
+    description: OBA_UDFCHAR07
+  - name: oba_udfchar08
+    description: OBA_UDFCHAR08
+  - name: oba_udfchar09
+    description: OBA_UDFCHAR09
+  - name: oba_udfchar10
+    description: OBA_UDFCHAR10
+  - name: oba_udfchar11
+    description: OBA_UDFCHAR11
+  - name: oba_udfchar12
+    description: OBA_UDFCHAR12
+  - name: oba_udfchar13
+    description: OBA_UDFCHAR13
+  - name: oba_udfchar14
+    description: OBA_UDFCHAR14
+  - name: oba_udfchar15
+    description: OBA_UDFCHAR15
+  - name: oba_udfchar16
+    description: OBA_UDFCHAR16
+  - name: oba_udfchar17
+    description: OBA_UDFCHAR17
+  - name: oba_udfchar18
+    description: OBA_UDFCHAR18
+  - name: oba_udfchar19
+    description: OBA_UDFCHAR19
+  - name: oba_udfchar20
+    description: OBA_UDFCHAR20
+  - name: oba_udfchar21
+    description: OBA_UDFCHAR21
+  - name: oba_udfchar22
+    description: OBA_UDFCHAR22
+  - name: oba_udfchar23
+    description: OBA_UDFCHAR23
+  - name: oba_udfchar24
+    description: OBA_UDFCHAR24
+  - name: oba_udfchar25
+    description: OBA_UDFCHAR25
+  - name: oba_udfchar26
+    description: OBA_UDFCHAR26
+  - name: oba_udfchar27
+    description: OBA_UDFCHAR27
+  - name: oba_udfchar28
+    description: OBA_UDFCHAR28
+  - name: oba_udfchar29
+    description: OBA_UDFCHAR29
+  - name: oba_udfchar30
+    description: OBA_UDFCHAR30
+  - name: oba_udfnum01
+    description: OBA_UDFNUM01
+  - name: oba_udfnum02
+    description: OBA_UDFNUM02
+  - name: oba_udfnum03
+    description: OBA_UDFNUM03
+  - name: oba_udfnum04
+    description: OBA_UDFNUM04
+  - name: oba_udfnum05
+    description: OBA_UDFNUM05
+  - name: oba_udfdate01
+    description: OBA_UDFDATE01
+  - name: oba_udfdate02
+    description: OBA_UDFDATE02
+  - name: oba_udfdate03
+    description: OBA_UDFDATE03
+  - name: oba_udfdate04
+    description: OBA_UDFDATE04
+  - name: oba_udfdate05
+    description: OBA_UDFDATE05
+  - name: oba_udfchkbox01
+    description: OBA_UDFCHKBOX01
+  - name: oba_udfchkbox02
+    description: OBA_UDFCHKBOX02
+  - name: oba_udfchkbox03
+    description: OBA_UDFCHKBOX03
+  - name: oba_udfchkbox04
+    description: OBA_UDFCHKBOX04
+  - name: oba_udfchkbox05
+    description: OBA_UDFCHKBOX05
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5OBJECTASPECTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - oba_object
+        - oba_object_org
+        - oba_obtype
+        - oba_aspect

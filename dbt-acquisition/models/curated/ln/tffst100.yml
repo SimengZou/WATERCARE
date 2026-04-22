@@ -1,0 +1,154 @@
+version: 2
+models:
+- name: tffst100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: fstm
+    description: '(required) Financial Statement. Max length: 8'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Statement Description - base language. Max length: 40'
+    data_tests:
+    - not_null
+  - name: ouer
+    description: 'Only Used for External Report Definition. Allowed values: 1, 2'
+  - name: ouer_kw
+    description: 'Only Used for External Report Definition (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: styp
+    description: 'Statement Type. Allowed values: 1, 2'
+  - name: styp_kw
+    description: 'Statement Type (keyword). Allowed values: tffst.styp.fin.statement,
+      tffst.styp.cons.statement'
+  - name: usrc
+    description: 'Created by User. Max length: 16'
+  - name: datc
+    description: Creation Date
+  - name: usrm
+    description: 'Last Modified by User. Max length: 16'
+  - name: datm
+    description: Modification Date
+  - name: mdfs
+    description: Modification Date for Selecting Values
+  - name: rcur
+    description: 'Report Currency. Max length: 3'
+  - name: rtyp
+    description: 'Default Rate Type. Max length: 3'
+  - name: cugl
+    description: 'Use Currency Gain/Loss Statement Account. Allowed values: 1, 2'
+  - name: cugl_kw
+    description: 'Use Currency Gain/Loss Statement Account (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: rhis
+    description: 'Historical Rates Allowed. Allowed values: 1, 2'
+  - name: rhis_kw
+    description: 'Historical Rates Allowed (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: accs
+    description: 'Accounting Scheme. Allowed values: 1, 2, 3'
+  - name: accs_kw
+    description: 'Accounting Scheme (keyword). Allowed values: tfgld.duac.pr.statutory,
+      tfgld.duac.pr.complem, tfgld.duac.pr.both'
+  - name: nstm
+    description: 'Next Statement. Max length: 8'
+  - name: stlt
+    description: 'Layout. Max length: 8'
+  - name: sltp
+    description: 'Layout Type. Allowed values: 10, 20, 30, 99'
+  - name: sltp_kw
+    description: 'Layout Type (keyword). Allowed values: tffst.ltyp.statement, tffst.ltyp.annexure,
+      tffst.ltyp.consolidated, tffst.ltyp.not.applicable'
+  - name: pann
+    description: 'Use Annexure. Allowed values: 1, 2'
+  - name: pann_kw
+    description: 'Use Annexure (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: salt
+    description: 'Annexure Layout. Max length: 8'
+  - name: altp
+    description: 'Annexure Layout Type. Allowed values: 10, 20, 30, 99'
+  - name: altp_kw
+    description: 'Annexure Layout Type (keyword). Allowed values: tffst.ltyp.statement,
+      tffst.ltyp.annexure, tffst.ltyp.consolidated, tffst.ltyp.not.applicable'
+  - name: stat
+    description: 'Statement Status. Allowed values: 1, 2, 99'
+  - name: stat_kw
+    description: 'Statement Status (keyword). Allowed values: tffst.stat.registered,
+      tffst.stat.approved, tffst.stat.not.applicable'
+  - name: cagr
+    description: 'Calculation Group. Max length: 3'
+  - name: ptra
+    description: 'Process Transactions. Allowed values: 1, 2, 3, 4'
+  - name: ptra_kw
+    description: 'Process Transactions (keyword). Allowed values: tffst.ptra.none,
+      tffst.ptra.ondemand, tffst.ptra.statement, tffst.ptra.account'
+  - name: sthe
+    description: Statement Header
+  - name: anhe
+    description: Annexure Header
+  - name: taxo
+    description: 'Last Imported Taxonomy. Max length: 9'
+  - name: vers
+    description: Last Imported Taxonomy Version
+  - name: txdt
+    description: Date of Last Taxonomy Import
+  - name: rcur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: nstm_ref_compnr
+    description: company number of primary key of table tffst100 Financial Statements
+  - name: sltp_stlt_ref_compnr
+    description: company number of primary key of table tffst010 Statement Layouts
+  - name: altp_salt_ref_compnr
+    description: company number of primary key of table tffst010 Statement Layouts
+  - name: cagr_ref_compnr
+    description: company number of primary key of table tffst020 Calculation Groups
+  - name: sthe_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: anhe_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffst100 Financial Statements table, Generated 2026-04-10T19:41:38Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - fstm

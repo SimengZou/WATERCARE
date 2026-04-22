@@ -1,0 +1,363 @@
+version: 2
+models:
+- name: tpppc305
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cspa
+    description: '(required) Element. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cpro
+    description: '(required) Revenue Code. Max length: 8'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: cpla
+    description: 'Plan. Max length: 3'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: ltdt
+    description: Transaction Time
+  - name: rgdt
+    description: Registration Date
+  - name: amor
+    description: Revenues
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: cdoc__en_us
+    description: '(required) Document - base language. Max length: 10'
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: fcmp
+    description: Financial Company
+  - name: idoc
+    description: Financial Document Number
+  - name: ityp
+    description: 'Financial Transaction Type. Max length: 3'
+  - name: iseq
+    description: Invoice Line Sequence
+  - name: cptf
+    description: 'Cost Period Table for Cost Control Period. Max length: 6'
+  - name: fyea
+    description: Fiscal Year
+  - name: fper
+    description: Fiscal Period
+  - name: frgd
+    description: Financial Registration Date
+  - name: cptc
+    description: 'Cost Period Table for Cost Control Period. Max length: 6'
+  - name: year
+    description: Cost Control Year
+  - name: peri
+    description: Cost Control Period
+  - name: ncmp
+    description: Delivering Company
+  - name: ocmp
+    description: Company
+  - name: entu
+    description: 'Enterprise Unit. Max length: 6'
+  - name: potf
+    description: 'Post to Finance. Allowed values: 1, 2'
+  - name: potf_kw
+    description: 'Post to Finance (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: comf
+    description: 'Reported Complete (Finance). Allowed values: 0, 1, 2, 3'
+  - name: comf_kw
+    description: 'Reported Complete (Finance) (keyword). Allowed values: , tcynna.yes,
+      tcynna.no, tcynna.not.app'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: rest
+    description: 'Revenue Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11'
+  - name: rest_kw
+    description: 'Revenue Type (keyword). Allowed values: tppdm.invt.advance, tppdm.invt.installment,
+      tppdm.invt.inst.add.work, tppdm.invt.cost.plus, tppdm.invt.extension, tppdm.invt.unit.rate,
+      tppdm.invt.holdback, tppdm.invt.delivery, tppdm.invt.prog.paymnt.req, tppdm.invt.fees.penalties,
+      tppdm.invt.credit.note'
+  - name: tetl
+    description: 'Posting Type. Allowed values: 1, 2, 3, 4, 10, 20'
+  - name: tetl_kw
+    description: 'Posting Type (keyword). Allowed values: tpppc.tetl.manu, tpppc.tetl.invoicing,
+      tpppc.tetl.sal.invoice.fin, tpppc.tetl.invoicing.hb, tpppc.tetl.invoice.non.rev,
+      tpppc.tetl.rev.recognition'
+  - name: cntp
+    description: 'Revenue Recognition Counterposting. Allowed values: 1, 2'
+  - name: cntp_kw
+    description: 'Revenue Recognition Counterposting (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: crdf
+    description: 'Currency Rate Difference. Allowed values: 1, 2'
+  - name: crdf_kw
+    description: 'Currency Rate Difference (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: rsst
+    description: 'Price Fluctuation Settled. Allowed values: 1, 2, 3'
+  - name: rsst_kw
+    description: 'Price Fluctuation Settled (keyword). Allowed values: tpppc.rsst.none,
+      tpppc.rsst.no, tpppc.rsst.yes'
+  - name: koor
+    description: 'Document Type. Allowed values: 1, 2, 3, 6, 7, 9, 10, 16, 17, 18,
+      19, 22, 26, 28, 31, 33, 36, 37, 38, 43, 51, 52, 55, 56, 57, 58, 59, 60, 70,
+      78, 80, 82, 84, 86, 88, 90, 92, 93, 95, 96, 97, 100, 200, 201, 202'
+  - name: koor_kw
+    description: 'Document Type (keyword). Allowed values: tpppc.koor.act.sfc, tpppc.koor.act.pur,
+      tpppc.koor.act.sls, tpppc.koor.act.pur.sched, tpppc.koor.act.sls.sched, tpppc.koor.act.asc,
+      tpppc.koor.services.proc, tpppc.koor.wrh.order, tpppc.koor.act.srv, tpppc.koor.pss.pur,
+      tpppc.koor.pss.wrh, tpppc.koor.act.trf, tpppc.koor.act.pmg, tpppc.koor.srv.call,
+      tpppc.koor.cf.ap, tpppc.koor.act.pur.man, tpppc.koor.act.trf.man, tpppc.koor.act.srv.sls,
+      tpppc.koor.act.dpt.wrk, tpppc.koor.freight, tpppc.koor.cycle.count, tpppc.koor.adjustment,
+      tpppc.koor.revaluation, tpppc.koor.product.sched, tpppc.koor.product.kanban,
+      tpppc.koor.project, tpppc.koor.project.man, tpppc.koor.enterprise.plan, tpppc.koor.inv.own.change,
+      tpppc.koor.bfbp.trf.pur, tpppc.koor.bfbp.trf.sched, tpppc.koor.stbp.trf.sls,
+      tpppc.koor.stbp.trf.sched, tpppc.koor.stbp.trf.wh.man, tpppc.koor.stbp.trf.man,
+      tpppc.koor.stbp.trf.wh.dis, tpppc.koor.cp.cpt, tpppc.koor.act.cpt, tpppc.koor.proj.contract,
+      tpppc.koor.customer.claim, tpppc.koor.supplier.claim, tpppc.koor.not.appl, tpppc.koor.srv.call.obs,
+      tpppc.koor.srv.contract, tpppc.koor.financial.doc'
+  - name: orno
+    description: 'Document. Max length: 9'
+  - name: pono
+    description: Document Line
+  - name: schd
+    description: Schedule
+  - name: drun
+    description: Run Date
+  - name: serb
+    description: Processing Run Number
+  - name: cdru
+    description: Run Date (Report Completed)
+  - name: cser
+    description: Run Sequence No. (Report Completed)
+  - name: rate_1
+    description: Rate (Debit)
+  - name: rate_2
+    description: Rate (Debit)
+  - name: rate_3
+    description: Rate (Debit)
+  - name: ratf_1
+    description: Rate Factor (Debit)
+  - name: ratf_2
+    description: Rate Factor (Debit)
+  - name: ratf_3
+    description: Rate Factor (Debit)
+  - name: amhc_1
+    description: Revenue in Home Currency (Debit)
+  - name: amhc_2
+    description: Revenue in Home Currency (Debit)
+  - name: amhc_3
+    description: Revenue in Home Currency (Debit)
+  - name: rtcr_1
+    description: Rate (Credit)
+  - name: rtcr_2
+    description: Rate (Credit)
+  - name: rtcr_3
+    description: Rate (Credit)
+  - name: rfcr_1
+    description: Rate Factor (Credit)
+  - name: rfcr_2
+    description: Rate Factor (Credit)
+  - name: rfcr_3
+    description: Rate Factor (Credit)
+  - name: hccr_1
+    description: Revenue in Home Currency (Credit)
+  - name: hccr_2
+    description: Revenue in Home Currency (Credit)
+  - name: hccr_3
+    description: Revenue in Home Currency (Credit)
+  - name: nadv
+    description: Advance Payment
+  - name: nins
+    description: Installment
+  - name: prdt
+    description: Progress Date
+  - name: rdat
+    description: Rate Date
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: fcrt
+    description: 'Fixed Currency Rate. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7, 8,
+      10, 20'
+  - name: fcrt_kw
+    description: 'Fixed Currency Rate (keyword). Allowed values: , tcfcrt.fixedl,
+      tcfcrt.fixedh, tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd,
+      tcfcrt.manual, tcfcrt.fixed, tcfcrt.not.appl'
+  - name: ftty
+    description: 'Transaction Type Financial Transaction. Max length: 3'
+  - name: fdoc
+    description: Document Financial Transaction
+  - name: flin
+    description: Line Number Financial Transaction
+  - name: fsrl
+    description: Sequence Number Finance
+  - name: ftln
+    description: Target Line Number
+  - name: cono
+    description: 'Contract. Max length: 9'
+  - name: cnln
+    description: 'Contract Line. Max length: 8'
+  - name: guid
+    description: 'Unique ID. Max length: 22'
+  - name: itgd
+    description: 'Integration Transaction GUID. Max length: 22'
+  - name: exmt
+    description: 'Exempt. Allowed values: 1, 2'
+  - name: exmt_kw
+    description: 'Exempt (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: bptc
+    description: 'BP Tax Country. Max length: 3'
+  - name: ceno
+    description: 'Exemption Certificate. Max length: 24'
+  - name: exrs
+    description: 'Exemption Reason. Max length: 6'
+  - name: cstv
+    description: Customs Value
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: emno
+    description: 'Employee. Max length: 9'
+  - name: hbdc
+    description: 'Holdback Discount Code. Max length: 3'
+  - name: user
+    description: 'User. Max length: 16'
+  - name: txta
+    description: Text
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_cspa_ref_compnr
+    description: company number of primary key of table tpptc100 Elements
+  - name: cprj_cpla_cact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: cptf_fyea_fper_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cptf_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: cptc_year_peri_ref_compnr
+    description: company number of primary key of table tcccp070 Periods
+  - name: cptc_ref_compnr
+    description: company number of primary key of table tcccp060 Period Tables
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: drun_serb_ref_compnr
+    description: company number of primary key of table tpppc005 Processing Runs
+  - name: cdru_cser_ref_compnr
+    description: company number of primary key of table tpppc005 Processing Runs
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: cono_cnln_ref_compnr
+    description: company number of primary key of table tpctm110 Contract Lines
+  - name: cono_ref_compnr
+    description: company number of primary key of table tpctm100 Contracts
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccty_cvat_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: bptc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: exrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: emno_ref_compnr
+    description: company number of primary key of table tppdm801 Employee Project
+      Data
+  - name: hbdc_ref_compnr
+    description: company number of primary key of table tcmcs021 Discount Codes
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: amor_refc
+    description: 'CC: Revenues in Reference Currency'
+  - name: amor_prjc
+    description: 'CC: Revenues in Project Currency'
+  - name: amor_cntc
+    description: 'CC: Revenues in Contract Currency'
+  - name: amor_dwhc
+    description: 'CC: Revenues in Data Warehouse Currency'
+  - name: amor_homc
+    description: 'CC: Revenues in Locl Currency'
+  - name: amor_rpc1
+    description: 'CC: Revenues in Reference Currency 1'
+  - name: amor_rpc2
+    description: 'CC: Revenues in Reference Currency 2'
+  - name: cprj_cpro
+    description: 'CC: Project Revenue Code. Max length: 25'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpppc305 Revenue Transactions table, Generated 2026-04-10T19:42:12Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cspa
+        - cpro
+        - sern

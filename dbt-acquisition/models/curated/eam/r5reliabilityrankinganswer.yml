@@ -1,0 +1,60 @@
+version: 2
+models:
+- name: r5reliabilityrankinganswer
+  columns:
+  - name: rrw_lastsaved
+    description: RRW_LASTSAVED
+  - name: rrw_severity
+    description: RRW_SEVERITY
+  - name: rrw_code
+    description: RRW_CODE
+  - name: rrw_desc
+    description: RRW_DESC
+  - name: rrw_value
+    description: RRW_VALUE
+  - name: rrw_updatecount
+    description: RRW_UPDATECOUNT
+  - name: rrw_yes
+    description: RRW_YES
+  - name: rrw_no
+    description: RRW_NO
+  - name: rrw_finding
+    description: RRW_FINDING
+  - name: rrw_ok
+    description: RRW_OK
+  - name: rrw_repairsneeded
+    description: RRW_REPAIRSNEEDED
+  - name: rrw_resolution
+    description: RRW_RESOLUTION
+  - name: rrw_good
+    description: RRW_GOOD
+  - name: rrw_poor
+    description: RRW_POOR
+  - name: rrw_adjusted
+    description: RRW_ADJUSTED
+  - name: rrw_nonconformity
+    description: RRW_NONCONFORMITY
+  - name: rrw_pk
+    description: RRW_PK
+    data_tests:
+    - unique
+  - name: rrw_levelpk
+    description: RRW_LEVELPK
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5RELIABILITYRANKINGANSWER

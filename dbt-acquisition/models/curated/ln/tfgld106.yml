@@ -1,0 +1,318 @@
+version: 2
+models:
+- name: tfgld106
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: otyp
+    description: '(required) Transaction Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: odoc
+    description: (required) Document
+    data_tests:
+    - not_null
+  - name: olin
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: osrl
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: osrn
+    description: (required) Background Sequence No.
+    data_tests:
+    - not_null
+  - name: ocmp
+    description: Original Company
+  - name: ftyp
+    description: 'Original Transaction Type. Max length: 3'
+  - name: fdoc
+    description: Original Document Number
+  - name: oyer
+    description: Batch Year
+  - name: obat
+    description: Batch
+  - name: leac
+    description: 'Ledger Account. Max length: 12'
+  - name: dcdt
+    description: Document Date
+  - name: typ1
+    description: Dimension Type 1
+  - name: dim1
+    description: 'Dimension 1. Max length: 9'
+  - name: typ2
+    description: Dimension Type 2
+  - name: dim2
+    description: 'Dimension 2. Max length: 9'
+  - name: typ3
+    description: Dimension Type 3
+  - name: dim3
+    description: 'Dimension 3. Max length: 9'
+  - name: typ4
+    description: Dimension Type 4
+  - name: dim4
+    description: 'Dimension 4. Max length: 9'
+  - name: typ5
+    description: Dimension Type 5
+  - name: dim5
+    description: 'Dimension 5. Max length: 9'
+  - name: dim6
+    description: 'Dimension 6. Max length: 9'
+  - name: dim7
+    description: 'Dimension 7. Max length: 9'
+  - name: dim8
+    description: 'Dimension 8. Max length: 9'
+  - name: dim9
+    description: 'Dimension 9. Max length: 9'
+  - name: dm10
+    description: 'Dimension 10. Max length: 9'
+  - name: dm11
+    description: 'Dimension 11. Max length: 9'
+  - name: dm12
+    description: 'Dimension 12. Max length: 9'
+  - name: refr__en_us
+    description: '(required) Transaction Reference - base language. Max length: 32'
+    data_tests:
+    - not_null
+  - name: ref2__en_us
+    description: '(required) Reference - base language. Max length: 32'
+    data_tests:
+    - not_null
+  - name: amnt
+    description: Amount
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: ratd
+    description: Rate Date
+  - name: rate_1
+    description: Rate
+  - name: rate_2
+    description: Rate
+  - name: rate_3
+    description: Rate
+  - name: fact_1
+    description: Rate Factor
+  - name: fact_2
+    description: Rate Factor
+  - name: fact_3
+    description: Rate Factor
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: amth_1
+    description: Amount in Home Currency
+  - name: amth_2
+    description: Amount in Home Currency
+  - name: amth_3
+    description: Amount in Home Currency
+  - name: dbcr
+    description: 'Debit / Credit. Allowed values: 0, 1, 2'
+  - name: dbcr_kw
+    description: 'Debit / Credit (keyword). Allowed values: , tfgld.dbcr.debit, tfgld.dbcr.credit'
+  - name: ccty
+    description: 'Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: vtyp
+    description: 'Tax Origin. Allowed values: 0, 1, 2, 3'
+  - name: vtyp_kw
+    description: 'Tax Origin (keyword). Allowed values: , tfgld.vtyp.in, tfgld.vtyp.out,
+      tfgld.vtyp.not.applicable'
+  - name: vlac
+    description: 'Tax Ledger Account. Max length: 12'
+  - name: vamt
+    description: Tax Amount in Payment Currency
+  - name: vamh_1
+    description: Tax Amount in Home Currency
+  - name: vamh_2
+    description: Tax Amount in Home Currency
+  - name: vamh_3
+    description: Tax Amount in Home Currency
+  - name: qty1
+    description: Quantity 1
+  - name: qty2
+    description: Quantity 2
+  - name: fprd
+    description: Fiscal Period
+  - name: fyer
+    description: Fiscal Year
+  - name: rprd
+    description: Reporting Period
+  - name: ryer
+    description: Reporting Year
+  - name: vprd
+    description: Tax Period
+  - name: vyer
+    description: Tax Year
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: catg
+    description: 'Transaction Category. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7, 8,
+      9, 10, 11'
+  - name: catg_kw
+    description: 'Transaction Category (keyword). Allowed values: , tfgld.catg.journals,
+      tfgld.catg.recurr.journ, tfgld.catg.sales.inv, tfgld.catg.sales.cred, tfgld.catg.sales.corr,
+      tfgld.catg.purchase.inv, tfgld.catg.purchase.cred, tfgld.catg.purchase.corr,
+      tfgld.catg.opening.bal, tfgld.catg.cash, tfgld.catg.not.applicable'
+  - name: user
+    description: 'Last Modification By. Max length: 16'
+  - name: date
+    description: Finalization Date
+  - name: time
+    description: Finalization Time
+  - name: trun
+    description: Finalization Run Number
+  - name: cont
+    description: 'Control Account. Allowed values: 0, 1, 2'
+  - name: cont_kw
+    description: 'Control Account (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: ctyp
+    description: 'Trans Type Correction. Max length: 3'
+  - name: cinv
+    description: Invoice Correction
+  - name: clin
+    description: Correction Line Number
+  - name: cdln
+    description: Correction Invoice Detail Line
+  - name: corn
+    description: Standing Order
+  - name: csrn
+    description: Standing Order Sequence No.
+  - name: tcsh
+    description: 'Type of Cash Transaction. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+      28'
+  - name: tcsh_kw
+    description: 'Type of Cash Transaction (keyword). Allowed values: , tfcmg.tcsh.cash,
+      tfcmg.tcsh.disc, tfcmg.tcsh.lapa, tfcmg.tcsh.pdif, tfcmg.tcsh.jrnl, tfcmg.tcsh.csts,
+      tfcmg.tcsh.cdif, tfcmg.tcsh.ssgn, tfcmg.tcsh.cntr, tfcmg.tcsh.intr, tfcmg.tcsh.cash.ant,
+      tfcmg.tcsh.disc.ant, tfcmg.tcsh.lapa.ant, tfcmg.tcsh.pdif.ant, tfcmg.tcsh.dedc.ant,
+      tfcmg.tcsh.jrnl.ant, tfcmg.tcsh.cdif.ant, tfcmg.tcsh.cntr.ant, tfcmg.tcsh.intr.ant,
+      tfcmg.tcsh.ssgn.ant, tfcmg.tcsh.facc, tfcmg.tcsh.comm.ant, tfcmg.tcsh.empty,
+      tfcmg.tcsh.misc.exp, tfcmg.tcsh.income.tax, tfcmg.tcsh.social.contrib, tfcmg.tcsh.social.cont.exp,
+      tfcmg.tcsh.write.off.bd'
+  - name: tran
+    description: 'Type of Transaction. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7, 8,
+      9'
+  - name: tran_kw
+    description: 'Type of Transaction (keyword). Allowed values: , tfcmg.tran.customer,
+      tfcmg.tran.supplier, tfcmg.tran.unalloc.paym, tfcmg.tran.unalloc.rec, tfcmg.tran.advance.paym,
+      tfcmg.tran.advance.rec, tfcmg.tran.journal, tfcmg.tran.reconc.cust, tfcmg.tran.reconc.suppl'
+  - name: dele
+    description: 'Deleted. Allowed values: 0, 1, 2'
+  - name: dele_kw
+    description: 'Deleted (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: intt
+    description: 'Integration Transaction. Allowed values: 0, 1, 2'
+  - name: intt_kw
+    description: 'Integration Transaction (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: adty
+    description: 'Category. Allowed values: 0, 1, 2, 3, 4, 10'
+  - name: adty_kw
+    description: 'Category (keyword). Allowed values: , tfcmg.adty.tang.assets, tfcmg.adty.intang.assets,
+      tfcmg.adty.inven, tfcmg.adty.other.assets, tfcmg.adty.not.appl'
+  - name: crdt
+    description: Creation Date
+  - name: recl
+    description: 'Reconciliation Data Logged. Allowed values: 0, 1, 2'
+  - name: recl_kw
+    description: 'Reconciliation Data Logged (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: reco
+    description: 'Reconciliation Area. Allowed values: 0, 1, 2, 5, 6, 7, 10, 11, 12,
+      15, 16, 20, 21, 22, 23, 28, 29, 30, 31, 33, 35, 36, 40, 42, 46, 48, 50, 52,
+      53, 57, 60, 99'
+  - name: reco_kw
+    description: 'Reconciliation Area (keyword). Allowed values: , tcreco.inventory,
+      tcreco.cons.inventory, tcreco.inv.accr, tcreco.cons.accr, tcreco.borr.loan.accr,
+      tcreco.prod.order.wip, tcreco.prod.sched.wip, tcreco.pcs.wip, tcreco.ass.order.wip,
+      tcreco.ass.line.wip, tcreco.serv.order.wip, tcreco.serv.call.wip, tcreco.maint.sales.wip,
+      tcreco.maint.work.wip, tcreco.pur.order.wip, tcreco.pur.sched.wip, tcreco.proj.tp.wip,
+      tcreco.proj.prov.rev, tcreco.wrk.cl.doc.wip, tcreco.trf.order.wip, tcreco.inventory.wip,
+      tcreco.interim.cogs, tcreco.interim.rev, tcreco.interim.contr, tcreco.interim.var,
+      tcreco.interim.trans, tcreco.interim.cust.cl, tcreco.interim.supp.cl, tcreco.commitment,
+      tcreco.end.account, tcreco.not.applicable'
+  - name: recs
+    description: Reconciliation Subarea
+  - name: cfrs
+    description: 'Cash Flow Reason. Max length: 6'
+  - name: secd
+    description: 'Journal Book Section. Max length: 3'
+  - name: tedt
+    description: Transaction Entry Date
+  - name: wtsc
+    description: 'Withholding Income Tax or Social Contribution Applied. Allowed values:
+      1, 2'
+  - name: wtsc_kw
+    description: 'Withholding Income Tax or Social Contribution Applied (keyword).
+      Allowed values: tcyesno.yes, tcyesno.no'
+  - name: buex
+    description: 'Budget Exception. Allowed values: 1, 2'
+  - name: buex_kw
+    description: 'Budget Exception (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cacc
+    description: 'Contra Account. Max length: 12'
+  - name: expd
+    description: 'Exclude from Payment Discount. Allowed values: 1, 2'
+  - name: expd_kw
+    description: 'Exclude from Payment Discount (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bpri
+    description: 'BP Identification Number. Max length: 35'
+  - name: regc
+    description: 'Registration Code. Max length: 9'
+  - name: txta
+    description: Transaction Text
+  - name: regc_ref_compnr
+    description: company number of primary key of table tctax221 Jurisdictions by
+      Registration
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfgld106 Finalized Transactions table, Generated 2026-04-10T19:41:42Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - otyp
+        - odoc
+        - olin
+        - osrl
+        - osrn

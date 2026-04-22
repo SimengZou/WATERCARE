@@ -1,0 +1,136 @@
+version: 2
+models:
+- name: qmptc112
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: iorn
+    description: '(required) Inspection Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: saml
+    description: (required) Sample
+    data_tests:
+    - not_null
+  - name: ipon
+    description: (required) Inspection Order Line
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: aspt
+    description: 'Aspect. Max length: 8'
+  - name: char
+    description: 'Characteristic. Max length: 8'
+  - name: chun
+    description: 'Characteristic Unit. Max length: 3'
+  - name: trun
+    description: 'Transaction Unit. Max length: 3'
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: osta
+    description: 'Inspection Order Line Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: osta_kw
+    description: 'Inspection Order Line Status (keyword). Allowed values: qmptc.osta.free,
+      qmptc.osta.printed, qmptc.osta.active, qmptc.osta.completed, qmptc.osta.cancelled'
+  - name: acre
+    description: 'Inspection Order Line Result. Allowed values: 10, 15, 20, 30'
+  - name: acre_kw
+    description: 'Inspection Order Line Result (keyword). Allowed values: qmptc.acre.accept,
+      qmptc.acre.part.accept, qmptc.acre.reject, qmptc.acre.undefined'
+  - name: cdat
+    description: Order Inspection Completion Date
+  - name: orgn
+    description: 'Order Origin. Allowed values: 1, 2, 4, 5, 6, 7, 8, 10, 11, 13, 20,
+      75, 80, 90, 100, 110, 120, 130, 140, 150, 200'
+  - name: orgn_kw
+    description: 'Order Origin (keyword). Allowed values: qmptc.orgn.sales, qmptc.orgn.purchase,
+      qmptc.orgn.production, qmptc.orgn.matl.bom, qmptc.orgn.rou.ti, qmptc.orgn.sales.sched,
+      qmptc.orgn.purchase.sched, qmptc.orgn.cwar.insp, qmptc.orgn.inv.insp, qmptc.orgn.cwar.trans,
+      qmptc.orgn.cwar.trans.man, qmptc.orgn.project, qmptc.orgn.prj.contract, qmptc.orgn.enterprise.plan,
+      qmptc.orgn.prod.repetitive, qmptc.orgn.rou.repetitive, qmptc.orgn.service, qmptc.orgn.maint.sales,
+      qmptc.orgn.batch.repair, qmptc.orgn.maint.work, qmptc.orgn.not.appl'
+  - name: orno
+    description: 'Origin Order. Max length: 9'
+  - name: pono
+    description: Origin Order Line
+  - name: opno
+    description: Operation
+  - name: wstt
+    description: 'Work Station. Max length: 6'
+  - name: seqn
+    description: Origin Order Sequence
+  - name: apno
+    description: 'Warehouse Inspection. Max length: 9'
+  - name: apsq
+    description: Warehouse Inspection Sequence
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: mean
+    description: Mean of Measurement Values
+  - name: mrav
+    description: Moving Range Average
+  - name: rang
+    description: Range
+  - name: stdv
+    description: Standard Deviation
+  - name: nosp
+    description: No. of Sample Parts
+  - name: mivl
+    description: Minimum Measurement Value
+  - name: mavl
+    description: Maximum Measurement Value
+  - name: clwi
+    description: Class Width
+  - name: text
+    description: Text
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmptc112 Sample Statistical Measures table, Generated 2022-06-15T01:21:06Z
+    from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - iorn
+        - saml
+        - ipon

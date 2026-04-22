@@ -1,0 +1,149 @@
+version: 2
+models:
+- name: tcmcs003
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cwar
+    description: '(required) Warehouse. Max length: 6'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: cadr
+    description: 'Address Code. Max length: 9'
+  - name: typw
+    description: 'Warehouse Type. Allowed values: 1, 2, 5, 11, 13, 14, 21, 25, 50'
+  - name: typw_kw
+    description: 'Warehouse Type (keyword). Allowed values: tctypw.normal, tctypw.wip,
+      tctypw.project, tctypw.service, tctypw.srv.cust.owned, tctypw.srv.reject, tctypw.consignment,
+      tctypw.consignment.own, tctypw.financial'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: bpid
+    description: 'Obsolete. Max length: 9'
+  - name: comp
+    description: Financial Company
+  - name: wmsc
+    description: 'WMS Controlled. Allowed values: 1, 2'
+  - name: wmsc_kw
+    description: 'WMS Controlled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: mesc
+    description: 'MES Controlled. Allowed values: 1, 2'
+  - name: mesc_kw
+    description: 'MES Controlled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: casi
+    description: 'Extra Intrastat Info. Max length: 3'
+  - name: inep
+    description: 'Include in Enterprise Planning. Allowed values: 1, 2'
+  - name: inep_kw
+    description: 'Include in Enterprise Planning (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: imgt
+    description: 'Inventory Management. Allowed values: 1, 2'
+  - name: imgt_kw
+    description: 'Inventory Management (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: imbp
+    description: 'Inventory Management Business Partner. Max length: 9'
+  - name: xsit
+    description: 'External Site. Allowed values: 1, 2, 3'
+  - name: xsit_kw
+    description: 'External Site (keyword). Allowed values: tcynna.yes, tcynna.no,
+      tcynna.not.app'
+  - name: xsbp
+    description: 'External Site Business Partner. Max length: 9'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: pwip
+    description: 'Project WIP Warehouse. Allowed values: 1, 2'
+  - name: pwip_kw
+    description: 'Project WIP Warehouse (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: swhu
+    description: 'Shop Floor Warehouse Applicable for. Allowed values: 10, 20, 30,
+      100'
+  - name: swhu_kw
+    description: 'Shop Floor Warehouse Applicable for (keyword). Allowed values: tcswhu.work.center,
+      tcswhu.work.cell, tcswhu.line.station, tcswhu.not.appl'
+  - name: duns
+    description: DUNS Number
+  - name: cdf_updt
+    description: Last updated date
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: casi_ref_compnr
+    description: company number of primary key of table tccom705 Extra Intrastat Info
+  - name: imbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: xsbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom121 Ship-from Business
+      Partners
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: cwar_eunt
+    description: 'CC: Enterprise Unit of Warehouse. Max length: 6'
+  - name: eunt_rcmp
+    description: 'CC: Reference Company of Enterprise Unit'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcmcs003 Warehouses table, Generated 2026-04-10T19:41:09Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cwar

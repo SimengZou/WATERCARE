@@ -1,0 +1,110 @@
+version: 2
+models:
+- name: qmptc008
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: inst
+    description: '(required) Instrument. Max length: 6'
+    data_tests:
+    - not_null
+  - name: inno
+    description: '(required) Instrument Number. Max length: 9'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: intg
+    description: 'Instrument Group. Max length: 6'
+  - name: tare
+    description: 'Test Area. Max length: 3'
+  - name: skll
+    description: 'Skill. Max length: 9'
+  - name: lcnt
+    description: Least Measurable Quantity
+  - name: culc
+    description: 'Least Measurable Unit. Max length: 3'
+  - name: cbit
+    description: 'Calibration Interval Type. Allowed values: 1, 2, 3'
+  - name: cbit_kw
+    description: 'Calibration Interval Type (keyword). Allowed values: qmptc.cbit.not.appl,
+      qmptc.cbit.time, qmptc.cbit.usage'
+  - name: cbin
+    description: Calibration Interval [Days/Times Used]
+  - name: lcdt
+    description: Last Calibration Date
+  - name: ncdt
+    description: Next Calibration Date
+  - name: ncus
+    description: Next Calibration [Times Used]
+  - name: bcal
+    description: 'Blocked for Calibration. Allowed values: 1, 2'
+  - name: bcal_kw
+    description: 'Blocked for Calibration (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ausg
+    description: Actual Times Used
+  - name: cbdt
+    description: Calibration Date
+  - name: txta
+    description: Instrument Text
+  - name: txtb
+    description: Calibration Text
+  - name: intg_ref_compnr
+    description: company number of primary key of table qmptc024 Instrument Group
+  - name: tare_ref_compnr
+    description: company number of primary key of table qmptc007 Test Areas
+  - name: skll_ref_compnr
+    description: company number of primary key of table tcppl010 Skills
+  - name: culc_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmptc008 Instruments table, Generated 2022-06-15T01:21:04Z from
+    package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - inst
+        - inno

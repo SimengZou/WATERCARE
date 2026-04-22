@@ -1,0 +1,58 @@
+version: 2
+models:
+- name: r5devices
+  columns:
+  - name: dev_lastsaved
+    description: DEV_LASTSAVED
+  - name: dev_lastlogindate
+    description: DEV_LASTLOGINDATE
+  - name: dev_catflag
+    description: DEV_CATFLAG
+  - name: dev_rtype
+    description: DEV_RTYPE
+  - name: dev_type
+    description: DEV_TYPE
+  - name: dev_category
+    description: DEV_CATEGORY
+  - name: dev_driver
+    description: DEV_DRIVER
+  - name: dev_mode
+    description: DEV_MODE
+  - name: dev_special
+    description: DEV_SPECIAL
+  - name: dev_orientation
+    description: DEV_ORIENTATION
+  - name: dev_destination
+    description: DEV_DESTINATION
+  - name: dev_org
+    description: DEV_ORG
+  - name: dev_updatecount
+    description: DEV_UPDATECOUNT
+  - name: dev_updated
+    description: DEV_UPDATED
+  - name: dev_notused
+    description: DEV_NOTUSED
+  - name: dev_code
+    description: DEV_CODE
+    data_tests:
+    - unique
+  - name: dev_desc
+    description: DEV_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5DEVICES

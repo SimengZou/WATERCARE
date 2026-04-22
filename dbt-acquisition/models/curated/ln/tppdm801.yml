@@ -1,0 +1,63 @@
+version: 2
+models:
+- name: tppdm801
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: emno
+    description: '(required) Employee. Max length: 9'
+    data_tests:
+    - not_null
+  - name: ctrg
+    description: 'Obsolete. Max length: 6'
+  - name: dcpu
+    description: Normal Cap. Utilization by Day
+  - name: usyn
+    description: 'Used in Schedule. Allowed values: 1, 2'
+  - name: usyn_kw
+    description: 'Used in Schedule (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: emno_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ctrg_ref_compnr
+    description: company number of primary key of table tppdm016 Trade Groups
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppdm801 Employee Project Data table, Generated 2026-04-10T19:42:03Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - emno

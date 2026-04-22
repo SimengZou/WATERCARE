@@ -1,0 +1,58 @@
+version: 2
+models:
+- name: r5agreements
+  columns:
+  - name: agr_lastsaved
+    description: AGR_LASTSAVED
+  - name: agr_status
+    description: AGR_STATUS
+  - name: agr_rstatus
+    description: AGR_RSTATUS
+  - name: agr_class
+    description: AGR_CLASS
+  - name: agr_debtor
+    description: AGR_DEBTOR
+  - name: agr_arrangement
+    description: AGR_ARRANGEMENT
+  - name: agr_start
+    description: AGR_START
+  - name: agr_end
+    description: AGR_END
+  - name: agr_object
+    description: AGR_OBJECT
+  - name: agr_project
+    description: AGR_PROJECT
+  - name: agr_event
+    description: AGR_EVENT
+  - name: agr_org
+    description: AGR_ORG
+  - name: agr_class_org
+    description: AGR_CLASS_ORG
+  - name: agr_object_org
+    description: AGR_OBJECT_ORG
+  - name: agr_updatecount
+    description: AGR_UPDATECOUNT
+  - name: agr_code
+    description: AGR_CODE
+    data_tests:
+    - unique
+  - name: agr_desc
+    description: AGR_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5AGREEMENTS

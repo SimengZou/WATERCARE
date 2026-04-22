@@ -1,0 +1,80 @@
+version: 2
+models:
+- name: r5funcusers
+  columns:
+  - name: fus_lastsaved
+    description: FUS_LASTSAVED
+  - name: fus_shortn
+    description: FUS_SHORTN
+  - name: fus_printer
+    description: FUS_PRINTER
+  - name: fus_butfun1
+    description: FUS_BUTFUN1
+  - name: fus_butfun2
+    description: FUS_BUTFUN2
+  - name: fus_butfun3
+    description: FUS_BUTFUN3
+  - name: fus_butfun4
+    description: FUS_BUTFUN4
+  - name: fus_butfun5
+    description: FUS_BUTFUN5
+  - name: fus_butfun6
+    description: FUS_BUTFUN6
+  - name: fus_butname1
+    description: FUS_BUTNAME1
+  - name: fus_butname2
+    description: FUS_BUTNAME2
+  - name: fus_butname3
+    description: FUS_BUTNAME3
+  - name: fus_butname4
+    description: FUS_BUTNAME4
+  - name: fus_butname5
+    description: FUS_BUTNAME5
+  - name: fus_butname6
+    description: FUS_BUTNAME6
+  - name: fus_buticon1
+    description: FUS_BUTICON1
+  - name: fus_buticon2
+    description: FUS_BUTICON2
+  - name: fus_buticon3
+    description: FUS_BUTICON3
+  - name: fus_buticon4
+    description: FUS_BUTICON4
+  - name: fus_buticon5
+    description: FUS_BUTICON5
+  - name: fus_buticon6
+    description: FUS_BUTICON6
+  - name: fus_notes
+    description: FUS_NOTES
+  - name: fus_filter
+    description: FUS_FILTER
+  - name: fus_updatecount
+    description: FUS_UPDATECOUNT
+  - name: fus_function
+    description: FUS_FUNCTION
+  - name: fus_user
+    description: FUS_USER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5FUNCUSERS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - fus_user
+        - fus_function

@@ -1,0 +1,137 @@
+version: 2
+models:
+- name: tdpur012
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cofc
+    description: '(required) Purchase Office. Max length: 6'
+    data_tests:
+    - not_null
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: ngpo
+    description: 'Purchase Order Group. Max length: 3'
+  - name: sepo
+    description: 'Purchase Order Series. Max length: 8'
+  - name: seps
+    description: 'Schedule Series. Max length: 8'
+  - name: ngsp
+    description: 'Number Group for Services Procurement. Max length: 3'
+  - name: sspo
+    description: 'Series for Subcontracting Procurement Orders. Max length: 8'
+  - name: seqo
+    description: 'Series for Equipment Procurement Orders. Max length: 8'
+  - name: safp
+    description: 'Series for Applications for Payment. Max length: 8'
+  - name: sequ
+    description: 'Series for Equipment Utilizations. Max length: 8'
+  - name: ngpq
+    description: 'RFQ Group. Max length: 3'
+  - name: sepq
+    description: 'RFQ Series. Max length: 8'
+  - name: ngpc
+    description: 'Contract Group. Max length: 3'
+  - name: sepc
+    description: 'Contract Series. Max length: 8'
+  - name: ngrl
+    description: 'Release Number Group. Max length: 3'
+  - name: serl
+    description: 'Release Series. Max length: 8'
+  - name: ngpr
+    description: 'Number Group Requisitions. Max length: 3'
+  - name: sepr
+    description: 'Series Purchase Requisition. Max length: 8'
+  - name: ngco
+    description: 'Number Group for Call-offs. Max length: 3'
+  - name: scid
+    description: 'Call-off Series. Max length: 8'
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: ngpo_sepo_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngpo_seps_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngpo_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngsp_sspo_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngsp_seqo_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngsp_safp_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngsp_sequ_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngsp_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngpq_sepq_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngpq_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngpc_sepc_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngpc_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngrl_serl_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngrl_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngpr_sepr_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngpr_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: ngco_scid_ref_compnr
+    description: company number of primary key of table tcmcs050 First Free Numbers
+  - name: ngco_ref_compnr
+    description: company number of primary key of table tcmcs051 Number Groups
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur012 Purchase Offices table, Generated 2026-04-10T19:41:17Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cofc

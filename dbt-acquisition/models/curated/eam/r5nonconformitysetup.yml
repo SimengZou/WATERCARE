@@ -1,0 +1,74 @@
+version: 2
+models:
+- name: r5nonconformitysetup
+  columns:
+  - name: ncp_lastsaved
+    description: NCP_LASTSAVED
+  - name: ncp_copyfrom
+    description: NCP_COPYFROM
+  - name: ncp_protectobsdataonhdr
+    description: NCP_PROTECTOBSDATAONHDR
+  - name: ncp_synchronize
+    description: NCP_SYNCHRONIZE
+  - name: ncp_mergerestrictions
+    description: NCP_MERGERESTRICTIONS
+  - name: ncp_updatedby
+    description: NCP_UPDATEDBY
+  - name: ncp_updated
+    description: NCP_UPDATED
+  - name: ncp_useobsstatus
+    description: NCP_USEOBSSTATUS
+  - name: ncp_supersededstatus
+    description: NCP_SUPERSEDEDSTATUS
+  - name: ncp_reinspectstatus
+    description: NCP_REINSPECTSTATUS
+  - name: ncp_autoapprovestatus
+    description: NCP_AUTOAPPROVESTATUS
+  - name: ncp_autoskipstatus
+    description: NCP_AUTOSKIPSTATUS
+  - name: ncp_includecondition
+    description: NCP_INCLUDECONDITION
+  - name: ncp_prevobscount
+    description: NCP_PREVOBSCOUNT
+  - name: ncp_updatecount
+    description: NCP_UPDATECOUNT
+  - name: ncp_createfromchecklist
+    description: NCP_CREATEFROMCHECKLIST
+  - name: ncp_massacknowledgeallowed
+    description: NCP_MASSACKNOWLEDGEALLOWED
+  - name: ncp_copyseverity
+    description: NCP_COPYSEVERITY
+  - name: ncp_copyintensity
+    description: NCP_COPYINTENSITY
+  - name: ncp_copysize
+    description: NCP_COPYSIZE
+  - name: ncp_copyimportance
+    description: NCP_COPYIMPORTANCE
+  - name: ncp_copynextinspdateoverride
+    description: NCP_COPYNEXTINSPDATEOVERRIDE
+  - name: ncp_copyobservationudfs
+    description: NCP_COPYOBSERVATIONUDFS
+  - name: ncp_org
+    description: NCP_ORG
+    data_tests:
+    - unique
+  - name: ncp_protectheader
+    description: NCP_PROTECTHEADER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5NONCONFORMITYSETUP

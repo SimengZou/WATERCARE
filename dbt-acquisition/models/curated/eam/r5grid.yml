@@ -1,0 +1,94 @@
+version: 2
+models:
+- name: r5grid
+  columns:
+  - name: grd_lastsaved
+    description: GRD_LASTSAVED
+  - name: grd_maxgridcost
+    description: GRD_MAXGRIDCOST
+  - name: grd_basequery
+    description: GRD_BASEQUERY
+  - name: grd_gridname
+    description: GRD_GRIDNAME
+  - name: grd_keyfields
+    description: GRD_KEYFIELDS
+  - name: grd_filterablelist
+    description: GRD_FILTERABLELIST
+  - name: grd_sortablelist
+    description: GRD_SORTABLELIST
+  - name: grd_displayablelist
+    description: GRD_DISPLAYABLELIST
+  - name: grd_orgcolname
+    description: GRD_ORGCOLNAME
+  - name: grd_basequery_multiorg
+    description: GRD_BASEQUERY_MULTIORG
+  - name: grd_keyfields_multiorg
+    description: GRD_KEYFIELDS_MULTIORG
+  - name: grd_filterable_multiorg
+    description: GRD_FILTERABLE_MULTIORG
+  - name: grd_sortable_multiorg
+    description: GRD_SORTABLE_MULTIORG
+  - name: grd_displayable_multiorg
+    description: GRD_DISPLAYABLE_MULTIORG
+  - name: grd_botfunction
+    description: GRD_BOTFUNCTION
+  - name: grd_updatecount
+    description: GRD_UPDATECOUNT
+  - name: grd_portletflag
+    description: GRD_PORTLETFLAG
+  - name: grd_secentity
+    description: GRD_SECENTITY
+  - name: grd_hints
+    description: GRD_HINTS
+  - name: grd_tab
+    description: GRD_TAB
+  - name: grd_gridtype
+    description: GRD_GRIDTYPE
+  - name: grd_units
+    description: GRD_UNITS
+  - name: grd_optimizeron
+    description: GRD_OPTIMIZERON
+  - name: grd_distinct
+    description: GRD_DISTINCT
+  - name: grd_commitflag
+    description: GRD_COMMITFLAG
+  - name: grd_customfieldcode
+    description: GRD_CUSTOMFIELDCODE
+  - name: grd_complex
+    description: GRD_COMPLEX
+  - name: grd_active
+    description: GRD_ACTIVE
+  - name: grd_noscreendesigner
+    description: GRD_NOSCREENDESIGNER
+  - name: grd_mobile
+    description: GRD_MOBILE
+  - name: grd_updated
+    description: GRD_UPDATED
+  - name: grd_gisdatafilter
+    description: GRD_GISDATAFILTER
+  - name: grd_giswofieldmap
+    description: GRD_GISWOFIELDMAP
+  - name: grd_desc
+    description: GRD_DESC
+  - name: grd_gridid
+    description: GRD_GRIDID
+    data_tests:
+    - unique
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5GRID

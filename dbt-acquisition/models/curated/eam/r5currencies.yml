@@ -1,0 +1,50 @@
+version: 2
+models:
+- name: r5currencies
+  columns:
+  - name: cur_lastsaved
+    description: CUR_LASTSAVED
+  - name: cur_desc
+    description: CUR_DESC
+  - name: cur_class
+    description: CUR_CLASS
+  - name: cur_sourcesystem
+    description: CUR_SOURCESYSTEM
+  - name: cur_sourcecode
+    description: CUR_SOURCECODE
+  - name: cur_interface
+    description: CUR_INTERFACE
+  - name: cur_dual
+    description: CUR_DUAL
+  - name: cur_class_org
+    description: CUR_CLASS_ORG
+  - name: cur_updatecount
+    description: CUR_UPDATECOUNT
+  - name: cur_created
+    description: CUR_CREATED
+  - name: cur_updated
+    description: CUR_UPDATED
+  - name: cur_code
+    description: CUR_CODE
+    data_tests:
+    - unique
+  - name: cur_notused
+    description: CUR_NOTUSED
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5CURRENCIES

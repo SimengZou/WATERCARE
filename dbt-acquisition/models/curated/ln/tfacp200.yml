@@ -1,0 +1,639 @@
+version: 2
+models:
+- name: tfacp200
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ttyp
+    description: '(required) Transaction Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: ninv
+    description: (required) Document
+    data_tests:
+    - not_null
+  - name: line
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: tdoc
+    description: '(required) Transaction Type. Max length: 3'
+    data_tests:
+    - not_null
+  - name: docn
+    description: (required) Document
+    data_tests:
+    - not_null
+  - name: lino
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: ifbp
+    description: 'Business Partner. Max length: 9'
+  - name: isup__en_us
+    description: '(required) Supplier''s Invoice Number - base language. Max length:
+      50'
+    data_tests:
+    - not_null
+  - name: ptbp
+    description: 'Pay-to Business Partner. Max length: 9'
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: docd
+    description: Document Date
+  - name: tpay
+    description: 'Document Type. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+      12, 13, 14, 15, 16'
+  - name: tpay_kw
+    description: 'Document Type (keyword). Allowed values: tfacp.tpay.invoice, tfacp.tpay.normal,
+      tfacp.tpay.sales, tfacp.tpay.credit, tfacp.tpay.correction, tfacp.tpay.currency,
+      tfacp.tpay.payment, tfacp.tpay.anticipated, tfacp.tpay.advance, tfacp.tpay.unallocated,
+      tfacp.tpay.advance.ant, tfacp.tpay.unallocated.ant, tfacp.tpay.standing, tfacp.tpay.assignment,
+      tfacp.tpay.trade.notes, tfacp.tpay.cash.journal'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: pfre
+    description: 'Self-Billing/Internal/Automatic Invoice. Allowed values: 0, 1, 2'
+  - name: pfre_kw
+    description: 'Self-Billing/Internal/Automatic Invoice (keyword). Allowed values:
+      , tcyesno.yes, tcyesno.no'
+  - name: rate_1
+    description: Currency Rate
+  - name: rate_2
+    description: Currency Rate
+  - name: rate_3
+    description: Currency Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rade
+    description: 'Rate Determination. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 10,
+      20'
+  - name: rade_kw
+    description: 'Rate Determination (keyword). Allowed values: tcfcrt.fixedl, tcfcrt.fixedh,
+      tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd, tcfcrt.manual,
+      tcfcrt.fixed, tcfcrt.not.appl'
+  - name: amnt
+    description: Amount
+  - name: ratd
+    description: Rate Date
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: amti
+    description: Amount in Invoice Currency
+  - name: amth_1
+    description: Amount in Home Currency
+  - name: amth_2
+    description: Amount in Home Currency
+  - name: amth_3
+    description: Amount in Home Currency
+  - name: vatc
+    description: 'Tax Country. Max length: 3'
+  - name: cvat
+    description: 'Tax Code. Max length: 9'
+  - name: vata
+    description: Tax Amount in Payment Currency
+  - name: vati
+    description: Tax Amount in Invoice Currency
+  - name: vath_1
+    description: Tax Amount in Home Currency
+  - name: vath_2
+    description: Tax Amount in Home Currency
+  - name: vath_3
+    description: Tax Amount in Home Currency
+  - name: svam
+    description: Shifted Tax
+  - name: svah_1
+    description: Shifted Tax HC
+  - name: svah_2
+    description: Shifted Tax HC
+  - name: svah_3
+    description: Shifted Tax HC
+  - name: lpdt
+    description: Late Payment Surcharge Date
+  - name: lapa
+    description: Late Payment Surcharge Amount
+  - name: lapi
+    description: Late Payment Surcharge Amount in IC
+  - name: laph_1
+    description: Late Payment Surcharge Amount in HC
+  - name: laph_2
+    description: Late Payment Surcharge Amount in HC
+  - name: laph_3
+    description: Late Payment Surcharge Amount in HC
+  - name: did1
+    description: First Discount Date
+  - name: dc1a
+    description: First Discount Amount
+  - name: dc1i
+    description: First Discount Amount in Invoice Currency
+  - name: dc1h_1
+    description: First Discount Amount in Home Currency
+  - name: dc1h_2
+    description: First Discount Amount in Home Currency
+  - name: dc1h_3
+    description: First Discount Amount in Home Currency
+  - name: did2
+    description: Second Discount Date
+  - name: dc2a
+    description: Second Discount Amount
+  - name: dc2i
+    description: Second Discount Amount in Invoice Currency
+  - name: dc2h_1
+    description: Second Discount Amount in Home Currency
+  - name: dc2h_2
+    description: Second Discount Amount in Home Currency
+  - name: dc2h_3
+    description: Second Discount Amount in Home Currency
+  - name: did3
+    description: Third Discount Date
+  - name: dc3a
+    description: Third Discount Amount
+  - name: dc3i
+    description: Third Discount Amount in Invoice Currency
+  - name: dc3h_1
+    description: Third Discount Amount in Home Currency
+  - name: dc3h_2
+    description: Third Discount Amount in Home Currency
+  - name: dc3h_3
+    description: Third Discount Amount in Home Currency
+  - name: pada
+    description: Payment Difference
+  - name: padi
+    description: Payment Difference Amount in Invoice Currency
+  - name: padh_1
+    description: Payment Difference Amount in Home Currency
+  - name: padh_2
+    description: Payment Difference Amount in Home Currency
+  - name: padh_3
+    description: Payment Difference Amount in Home Currency
+  - name: basi
+    description: Currency Diff. Basis
+  - name: cdam_1
+    description: Currency Difference
+  - name: cdam_2
+    description: Currency Difference
+  - name: cdam_3
+    description: Currency Difference
+  - name: tore_1
+    description: To Realized Currency Differences
+  - name: tore_2
+    description: To Realized Currency Differences
+  - name: tore_3
+    description: To Realized Currency Differences
+  - name: baco
+    description: Bank Charges
+  - name: baca_1
+    description: Bank Costs in HC
+  - name: baca_2
+    description: Bank Costs in HC
+  - name: baca_3
+    description: Bank Costs in HC
+  - name: appr
+    description: 'Match with Orders. Allowed values: 1, 2, 3, 4, 10, 20'
+  - name: appr_kw
+    description: 'Match with Orders (keyword). Allowed values: tfacp.inv.expence,
+      tfacp.inv.purchase, tfacp.inv.freight, tfacp.inv.na, tfacp.inv.landed, tfacp.inv.services.procm'
+  - name: dued
+    description: Due Date
+  - name: refr__en_us
+    description: '(required) Transaction Reference - base language. Max length: 32'
+    data_tests:
+    - not_null
+  - name: ccrs
+    description: 'Late Payment Surcharge. Max length: 3'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: otyp
+    description: 'Original Invoice Transaction Type. Max length: 3'
+  - name: oinv
+    description: Original Invoice
+  - name: osch
+    description: Original Schedule Line Number
+  - name: subc
+    description: 'Subcontracting. Allowed values: 1, 2'
+  - name: subc_kw
+    description: 'Subcontracting (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: blac
+    description: 'Type of Blocked Account. Allowed values: 0, 1, 2, 3, 4'
+  - name: blac_kw
+    description: 'Type of Blocked Account (keyword). Allowed values: , tfcmg.blac.g.account,
+      tfcmg.blac.iab, tfcmg.blac.tax, tfcmg.blac.na'
+  - name: ragr
+    description: 'Remittance Agreement. Max length: 16'
+  - name: paym
+    description: 'Payment/Receipt Method. Max length: 3'
+  - name: loco
+    description: Logistic Company
+  - name: orno
+    description: 'Order. Max length: 9'
+  - name: bloc
+    description: 'Hold Reason. Max length: 3'
+  - name: bdat
+    description: Approve Before
+  - name: bref
+    description: 'Assigned Approver. Max length: 3'
+  - name: bank
+    description: 'Supplier''s Bank. Max length: 3'
+  - name: reas
+    description: 'Reason for Payment. Max length: 3'
+  - name: post
+    description: Finalization Run Number
+  - name: pdat
+    description: Date of Finalization
+  - name: balc
+    description: Balance
+  - name: balh_1
+    description: Balance in Home Currency
+  - name: balh_2
+    description: Balance in Home Currency
+  - name: balh_3
+    description: Balance in Home Currency
+  - name: bala
+    description: Balance Anticipated
+  - name: bahc_1
+    description: Balance Anticipated in HC
+  - name: bahc_2
+    description: Balance Anticipated in HC
+  - name: bahc_3
+    description: Balance Anticipated in HC
+  - name: year
+    description: Fiscal Year
+  - name: prod
+    description: Fiscal Period
+  - name: btno
+    description: Batch
+  - name: link
+    description: Matched Amount
+  - name: pdoc
+    description: 'Check Number. Max length: 15'
+  - name: stap
+    description: 'Invoice Status. Allowed values: 1, 2, 3, 4'
+  - name: stap_kw
+    description: 'Invoice Status (keyword). Allowed values: tfacp.stap.registered,
+      tfacp.stap.transactions, tfacp.stap.linked, tfacp.stap.approved'
+  - name: user
+    description: 'User. Max length: 16'
+  - name: vaty
+    description: Tax Year
+  - name: vatp
+    description: Tax Period
+  - name: tapr
+    description: 'Transaction Type Approval. Max length: 3'
+  - name: pdif
+    description: Price Difference
+  - name: papr
+    description: 'Invoice Approved. Allowed values: 1, 2'
+  - name: papr_kw
+    description: 'Invoice Approved (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: dapr
+    description: Document Approval
+  - name: liqd
+    description: Expected Liquidity Date
+  - name: step
+    description: 'Payment Procedure Step. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7,
+      8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20'
+  - name: step_kw
+    description: 'Payment Procedure Step (keyword). Allowed values: , tfcmg.step.doc.selected,
+      tfcmg.step.doc.open, tfcmg.step.doc.received, tfcmg.step.doc.issued, tfcmg.step.doc.to.cust,
+      tfcmg.step.doc.acc.by.cust, tfcmg.step.doc.acc.sent, tfcmg.step.doc.collateral,
+      tfcmg.step.doc.sent.disc, tfcmg.step.doc.to.bank, tfcmg.step.doc.endorsed, tfcmg.step.doc.discounted,
+      tfcmg.step.doc.cancelled, tfcmg.step.doc.matured, tfcmg.step.doc.void, tfcmg.step.doc.paid,
+      tfcmg.step.doc.rejected, tfcmg.step.doc.dishonored, tfcmg.step.doc.settled,
+      tfcmg.step.empty'
+  - name: rcpt
+    description: 'Status for Linking Unallocated Payment. Allowed values: 0, 1, 2,
+      3, 4, 5, 10'
+  - name: rcpt_kw
+    description: 'Status for Linking Unallocated Payment (keyword). Allowed values:
+      , tfcmg.rcpt.automatic, tfcmg.rcpt.no, tfcmg.rcpt.manual, tfcmg.rcpt.cash.recp,
+      tfcmg.rcpt.expense, tfcmg.rcpt.distribution'
+  - name: lvat
+    description: 'Level of Tax Calculation. Allowed values: 0, 1, 2, 3'
+  - name: lvat_kw
+    description: 'Level of Tax Calculation (keyword). Allowed values: , tfacp.vatc.header,
+      tfacp.vatc.transaction, tfacp.vatc.not.applicable'
+  - name: typa
+    description: 'Anticipated Transaction Type. Max length: 3'
+  - name: doca
+    description: Anticipated Document Number
+  - name: shpm__en_us
+    description: '(required) Packing Slip - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: leac
+    description: 'Control Account. Max length: 12'
+  - name: dim1
+    description: 'Dimension 1. Max length: 9'
+  - name: dim2
+    description: 'Dimension 2. Max length: 9'
+  - name: dim3
+    description: 'Dimension 3. Max length: 9'
+  - name: dim4
+    description: 'Dimension 4. Max length: 9'
+  - name: dim5
+    description: 'Dimension 5. Max length: 9'
+  - name: dim6
+    description: 'Dimension 6. Max length: 9'
+  - name: dim7
+    description: 'Dimension 7. Max length: 9'
+  - name: dim8
+    description: 'Dimension 8. Max length: 9'
+  - name: dim9
+    description: 'Dimension 9. Max length: 9'
+  - name: dm10
+    description: 'Dimension 10. Max length: 9'
+  - name: dm11
+    description: 'Dimension 11. Max length: 9'
+  - name: dm12
+    description: 'Dimension 12. Max length: 9'
+  - name: load
+    description: 'Load. Max length: 9'
+  - name: shpi
+    description: 'Shipment. Max length: 9'
+  - name: adty
+    description: 'Category. Allowed values: 0, 1, 2, 3, 4, 10'
+  - name: adty_kw
+    description: 'Category (keyword). Allowed values: , tfcmg.adty.tang.assets, tfcmg.adty.intang.assets,
+      tfcmg.adty.inven, tfcmg.adty.other.assets, tfcmg.adty.not.appl'
+  - name: clus
+    description: 'Freight Order Cluster. Max length: 9'
+  - name: bkrn
+    description: 'Bank Reference. Max length: 27'
+  - name: ptyp
+    description: 'Purchase Type. Max length: 6'
+  - name: optb
+    description: 'Original Pay-to Business Partner. Max length: 9'
+  - name: whti
+    description: 'Withholding Tax Invoice. Allowed values: 1, 2'
+  - name: whti_kw
+    description: 'Withholding Tax Invoice (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: wtpi
+    description: Withholding Tax Paid in Invoice Currency
+  - name: wtph_1
+    description: Withholding Tax Paid in HC
+  - name: wtph_2
+    description: Withholding Tax Paid in HC
+  - name: wtph_3
+    description: Withholding Tax Paid in HC
+  - name: adcd
+    description: 'Additional description code. Max length: 3'
+  - name: tnpn
+    description: 'Trade Note Number. Max length: 9'
+  - name: cfrs
+    description: 'Cash Flow Reason. Max length: 6'
+  - name: paya
+    description: 'Payment Agreement. Max length: 3'
+  - name: stat
+    description: 'Statistics Updated. Allowed values: 1, 2'
+  - name: stat_kw
+    description: 'Statistics Updated (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pysh
+    description: 'Payments by Schedule. Allowed values: 1, 2'
+  - name: pysh_kw
+    description: 'Payments by Schedule (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: schn
+    description: Schedule Line Number
+  - name: afpy
+    description: 'Approved for Payment. Allowed values: 1, 2, 3'
+  - name: afpy_kw
+    description: 'Approved for Payment (keyword). Allowed values: tcynna.yes, tcynna.no,
+      tcynna.not.app'
+  - name: ildp
+    description: 'Invoice Origin. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8'
+  - name: ildp_kw
+    description: 'Invoice Origin (keyword). Allowed values: tfacp.ildp.self.billed,
+      tfacp.ildp.automatic, tfacp.ildp.not.applicable, tfacp.ildp.internal, tfacp.ildp.external,
+      tfacp.ildp.received.inv, tfacp.ildp.cert.of.paym, tfacp.ildp.commission.inv'
+  - name: prin
+    description: 'Invoice printed. Allowed values: 1, 2'
+  - name: prin_kw
+    description: 'Invoice printed (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: autm
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: autm_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pcom
+    description: Payment Company
+  - name: payt
+    description: 'Transaction Type. Max length: 3'
+  - name: payd
+    description: Document
+  - name: payl
+    description: Line
+  - name: bust
+    description: 'Budget Status. Allowed values: 1, 2, 3, 10'
+  - name: bust_kw
+    description: 'Budget Status (keyword). Allowed values: tfacp.bust.exception, tfacp.bust.not.checked,
+      tfacp.bust.ok, tfacp.bust.not.applicable'
+  - name: sgtp
+    description: 'Segment Type. Allowed values: 10, 20, 99'
+  - name: sgtp_kw
+    description: 'Segment Type (keyword). Allowed values: tfsgtp.header, tfsgtp.line,
+      tfsgtp.na'
+  - name: iadr
+    description: 'Invoice Address. Max length: 9'
+  - name: tbrl
+    description: Amount to be Relieved in Local Curr.
+  - name: bdsp
+    description: 'Suppress. Allowed values: 0, 1, 2'
+  - name: bdsp_kw
+    description: 'Suppress (keyword). Allowed values: , tcyesno.yes, tcyesno.no'
+  - name: irdt
+    description: Invoice Receipt Date
+  - name: vrsm
+    description: 'Variable Symbol. Max length: 10'
+  - name: txdt
+    description: Tax Date
+  - name: osup__en_us
+    description: '(required) Original Document Number - base language. Max length:
+      50'
+    data_tests:
+    - not_null
+  - name: enia
+    description: 'Exclude from Net Invoice Amount. Allowed values: 1, 2'
+  - name: enia_kw
+    description: 'Exclude from Net Invoice Amount (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: edtp
+    description: 'External Document Type. Allowed values: 10, 20, 30, 40, 255'
+  - name: edtp_kw
+    description: 'External Document Type (keyword). Allowed values: tfacp.edtp.fiscal.receipt,
+      tfacp.edtp.bde, tfacp.edtp.edi, tfacp.edtp.inv.automation, tfacp.edtp.not.applicable'
+  - name: regc
+    description: 'Registration Code. Max length: 9'
+  - name: bpri
+    description: 'BP Identification Number. Max length: 35'
+  - name: ptad
+    description: 'Pay-to Address. Max length: 9'
+  - name: text
+    description: Text
+  - name: txtb
+    description: Text
+  - name: cdf_plan
+    description: Planned Payment Date
+  - name: ttyp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: tdoc_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: ifbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ptbp_bank_ref_compnr
+    description: company number of primary key of table tccom125 Bank Accounts by
+      Pay-to Business Partner
+  - name: ptbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: vatc_cvat_ref_compnr
+    description: company number of primary key of table tcmcs036 Tax Codes by Country
+  - name: vatc_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: cvat_ref_compnr
+    description: company number of primary key of table tcmcs037 Tax Codes
+  - name: ccrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: otyp_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: paym_ref_compnr
+    description: company number of primary key of table tfcmg003 Payment/Receipt Methods
+  - name: bloc_ref_compnr
+    description: company number of primary key of table tfacp002 Hold Reasons
+  - name: bref_ref_compnr
+    description: company number of primary key of table tfacp003 Assigned Approvers
+  - name: reas_ref_compnr
+    description: company number of primary key of table tfcmg002 Reasons for Payment
+  - name: typa_ref_compnr
+    description: company number of primary key of table tfgld011 Transaction Types
+  - name: leac_ref_compnr
+    description: company number of primary key of table tfgld008 Chart of Accounts
+  - name: ptyp_ref_compnr
+    description: company number of primary key of table tcmcs201 Purchase Types
+  - name: optb_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cfrs_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: paya_ref_compnr
+    description: company number of primary key of table tcmcs206 Payment Agreements
+  - name: iadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: regc_ref_compnr
+    description: company number of primary key of table tctax221 Jurisdictions by
+      Registration
+  - name: ptad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: amth_rfrc
+    description: 'CC: Amount in Reference Currency'
+  - name: amth_dtwc
+    description: 'CC: Amount in Data Warehouse Currency'
+  - name: vath_rfrc
+    description: 'CC: Tax Amount in Reference Currency'
+  - name: vath_dtwc
+    description: 'CC: Tax Amount in Data Warehouse Currency'
+  - name: laph_rfrc
+    description: 'CC: Late Payment Surcharge Amount in Reference Currency'
+  - name: laph_dtwc
+    description: 'CC: Late Payment Surcharge Amount in Data Warehouse Currency'
+  - name: dc1h_rfrc
+    description: 'CC: First Discount Amount in Reference Currency'
+  - name: dc1h_dtwc
+    description: 'CC: First Discount Amount in Data Warehouse Currency'
+  - name: dc2h_rfrc
+    description: 'CC: Second Discount Amount in Reference Currency'
+  - name: dc2h_dtwc
+    description: 'CC: Second Discount Amount in Data Warehouse Currency'
+  - name: dc3h_rfrc
+    description: 'CC: Third Discount Amount in Reference Currency'
+  - name: dc3h_dtwc
+    description: 'CC: Third Discount Amount in Data Warehouse Currency'
+  - name: padh_rfrc
+    description: 'CC: Payment Difference Amount in Reference Currency'
+  - name: padh_dtwc
+    description: 'CC: Payment Difference Amount in Data Warehouse Currency'
+  - name: cdam_rfrc
+    description: 'CC: Currency Difference in Reference Currency'
+  - name: cdam_dtwc
+    description: 'CC: Currency Difference in Data Warehouse Currency'
+  - name: cdam_invc
+    description: 'CC: Currency Difference in Invoice Currency'
+  - name: tore_rfrc
+    description: 'CC: To Realized Currency Differences in Reference Currency'
+  - name: tore_dtwc
+    description: 'CC: To Realized Currency Differences in Data Warehouse Currency'
+  - name: tore_invc
+    description: 'CC: To Realized Currency Differences in Invoice Currency'
+  - name: baca_rfrc
+    description: 'CC: Bank Costs in Reference Currency'
+  - name: baca_dtwc
+    description: 'CC: Bank Costs in Data Warehouse Currency'
+  - name: baca_invc
+    description: 'CC: Bank Costs in Invoice Currency'
+  - name: balh_rfrc
+    description: 'CC: Balance in Reference Currency'
+  - name: balh_dtwc
+    description: 'CC: Balance in Data Warehouse Currency'
+  - name: bahc_rfrc
+    description: 'CC: Balance Anticipated in Reference Currency'
+  - name: bahc_dtwc
+    description: 'CC: Balance Anticipated in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfacp200 Open Items (Purchase Invoices and Payments) table, Generated
+    2026-04-10T19:41:28Z from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ttyp
+        - ninv
+        - line
+        - tdoc
+        - docn
+        - lino

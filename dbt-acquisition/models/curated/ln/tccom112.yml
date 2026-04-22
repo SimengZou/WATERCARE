@@ -1,0 +1,287 @@
+version: 2
+models:
+- name: tccom112
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: itbp
+    description: '(required) Invoice-to Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cofc
+    description: '(required) Department. Max length: 6'
+    data_tests:
+    - not_null
+  - name: itst
+    description: 'Business Partner Status. Allowed values: 1, 2, 3, 254'
+  - name: itst_kw
+    description: 'Business Partner Status (keyword). Allowed values: tccom.itst.active,
+      tccom.itst.inactive, tccom.itst.doubtful, tccom.itst.not.specified'
+  - name: stdt
+    description: Start Date
+  - name: endt
+    description: End Date
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: cbps
+    description: 'Business Partner Signal. Max length: 3'
+  - name: cbtp
+    description: 'Business Partner Type. Max length: 3'
+  - name: cadr
+    description: 'Address Code. Max length: 9'
+  - name: telp
+    description: 'Phone Number. Max length: 32'
+  - name: tlcy
+    description: 'Country for Phone Number. Max length: 6'
+  - name: tlci
+    description: 'City/Area Code for Phone Number. Max length: 15'
+  - name: tlln
+    description: 'Local Number for Phone Number. Max length: 32'
+  - name: tlex
+    description: 'Extension for Phone Number. Max length: 15'
+  - name: tefx
+    description: 'Fax Number. Max length: 32'
+  - name: tfcy
+    description: 'Country for Fax Number. Max length: 6'
+  - name: tfci
+    description: 'City/Area Code for Fax Number. Max length: 15'
+  - name: tfln
+    description: 'Local Number for Fax Number. Max length: 32'
+  - name: tfex
+    description: 'Extension for Fax Number. Max length: 15'
+  - name: ccnt
+    description: 'Contact. Max length: 9'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: cfcg
+    description: 'Financial Customer Group. Max length: 3'
+  - name: mstm
+    description: 'Statement Method. Max length: 3'
+  - name: chin
+    description: 'Charge Interest. Allowed values: 1, 2'
+  - name: chin_kw
+    description: 'Charge Interest (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ncin
+    description: Number of Extra Invoice Copies
+  - name: cinm
+    description: 'Invoicing Method. Max length: 3'
+  - name: cidm
+    description: 'Invoice Delivery Method. Max length: 3'
+  - name: mcod
+    description: 'Match Code. Max length: 3'
+  - name: infq
+    description: Invoice Interval
+  - name: lidt
+    description: Date Invoiced
+  - name: infr
+    description: 'Invoice for Freight Based On. Allowed values: 5, 10, 15, 20'
+  - name: infr_kw
+    description: 'Invoice for Freight Based On (keyword). Allowed values: tccom.infr.estimate,
+      tccom.infr.actual, tccom.infr.costplus, tccom.infr.not.applic'
+  - name: adpc
+    description: Additional Percentage
+  - name: adam
+    description: Additional Amount
+  - name: crat
+    description: 'Credit Rating. Max length: 3'
+  - name: ccra
+    description: 'Credit Analyst. Max length: 9'
+  - name: crbu
+    description: 'Credit Bureau Reference Number. Max length: 30'
+  - name: crlr
+    description: Credit Limit
+  - name: hcru
+    description: Highest Credit Used Since Last Credit Review
+  - name: dlcr
+    description: Date of Last Credit Review
+  - name: clin
+    description: Credit Limit Insured
+  - name: ccic
+    description: 'Credit Insurance Company. Max length: 3'
+  - name: rfci
+    description: 'Reference Credit Insurance Company. Max length: 15'
+  - name: edci
+    description: Expiry Date of Insured Credit Limit
+  - name: tamd
+    description: Tolerance Amount for Due Invoices
+  - name: tpcd
+    description: Tolerance Percentage for Due Invoices
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: rpay
+    description: 'Payment Terms for Credit Notes. Max length: 3'
+  - name: ccrs
+    description: 'Late Payment Surcharge. Max length: 3'
+  - name: rcrs
+    description: 'Late Payment Surcharge for Credit Notes. Max length: 3'
+  - name: pfbp
+    description: 'Pay-by Business Partner. Max length: 9'
+  - name: paym
+    description: 'Payment Method. Max length: 3'
+  - name: rpym
+    description: 'Payment Method for Credit Notes. Max length: 3'
+  - name: dim1
+    description: 'Dimension 1. Max length: 9'
+  - name: dim2
+    description: 'Dimension 2. Max length: 9'
+  - name: dim3
+    description: 'Dimension 3. Max length: 9'
+  - name: dim4
+    description: 'Dimension 4. Max length: 9'
+  - name: dim5
+    description: 'Dimension 5. Max length: 9'
+  - name: dim6
+    description: 'Dimension 6. Max length: 9'
+  - name: dim7
+    description: 'Dimension 7. Max length: 9'
+  - name: dim8
+    description: 'Dimension 8. Max length: 9'
+  - name: dim9
+    description: 'Dimension 9. Max length: 9'
+  - name: dm10
+    description: 'Dimension 10. Max length: 9'
+  - name: dm11
+    description: 'Dimension 11. Max length: 9'
+  - name: dm12
+    description: 'Dimension 12. Max length: 9'
+  - name: sirn
+    description: 'SIREN Code. Max length: 9'
+  - name: ecod
+    description: 'Establishment Code. Max length: 5'
+  - name: lkst
+    description: 'Send MBI. Allowed values: 1, 2'
+  - name: lkst_kw
+    description: 'Send MBI (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: clmt
+    description: 'Closing Method. Max length: 3'
+  - name: bpcl
+    description: 'Business Partner Tax Classification. Max length: 12'
+  - name: inpl
+    description: 'Installment Plan. Max length: 9'
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cvyn
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: cvyn_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: user
+    description: 'Created by. Max length: 16'
+  - name: crdt
+    description: Creation Date
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: lmdt
+    description: Last Modification Date
+  - name: ircd
+    description: 'Interest Rate Code. Max length: 3'
+  - name: bicy
+    description: 'Billing Cycle. Max length: 9'
+  - name: qrbl
+    description: 'QR-billing. Allowed values: 10, 20, 254, 255'
+  - name: qrbl_kw
+    description: 'QR-billing (keyword). Allowed values: tccom.qrbl.iban, tccom.qrbl.qr.iban,
+      tccom.qrbl.not.specified, tccom.qrbl.not.appl'
+  - name: txta
+    description: Text
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: cbps_ref_compnr
+    description: company number of primary key of table tcmcs039 Signals
+  - name: cbtp_ref_compnr
+    description: company number of primary key of table tcmcs029 Business Partner
+      Types
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccnt_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: cinm_ref_compnr
+    description: company number of primary key of table tcmcs055 Invoicing Methods
+  - name: cidm_ref_compnr
+    description: company number of primary key of table tcmcs056 Invoice Delivery
+      Methods
+  - name: mcod_ref_compnr
+    description: company number of primary key of table tcmcs058 Match Codes
+  - name: crat_ref_compnr
+    description: company number of primary key of table tcmcs064 Credit Ratings
+  - name: ccra_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ccic_ref_compnr
+    description: company number of primary key of table tcmcs009 Credit Insurance
+      Companies
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: rpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: ccrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: rcrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: pfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: clmt_ref_compnr
+    description: company number of primary key of table tcmcs205 Closing Methods
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: inpl_ref_compnr
+    description: company number of primary key of table tcmcs245 Installment Plans
+  - name: bicy_ref_compnr
+    description: company number of primary key of table tcmcs054 Billing Cycles
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: cfcg_rcmp
+    description: 'CC: Reference Company of Financial Customer Group'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom112 Invoice-to Business Partners table, Generated 2026-04-10T19:41:02Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - itbp
+        - cofc

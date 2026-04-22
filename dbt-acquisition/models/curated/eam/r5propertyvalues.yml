@@ -1,0 +1,60 @@
+version: 2
+models:
+- name: r5propertyvalues
+  columns:
+  - name: prv_lastsaved
+    description: PRV_LASTSAVED
+  - name: prv_rentity
+    description: PRV_RENTITY
+  - name: prv_class
+    description: PRV_CLASS
+  - name: prv_code
+    description: PRV_CODE
+  - name: prv_seqno
+    description: PRV_SEQNO
+  - name: prv_value
+    description: PRV_VALUE
+  - name: prv_dvalue
+    description: PRV_DVALUE
+  - name: prv_class_org
+    description: PRV_CLASS_ORG
+  - name: prv_updatecount
+    description: PRV_UPDATECOUNT
+  - name: prv_created
+    description: PRV_CREATED
+  - name: prv_updated
+    description: PRV_UPDATED
+  - name: prv_notused
+    description: PRV_NOTUSED
+  - name: prv_property
+    description: PRV_PROPERTY
+  - name: prv_nvalue
+    description: PRV_NVALUE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PROPERTYVALUES
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - prv_property
+        - prv_rentity
+        - prv_class
+        - prv_class_org
+        - prv_code
+        - prv_seqno

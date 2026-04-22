@@ -1,0 +1,234 @@
+version: 2
+models:
+- name: crm_probdefn
+  columns:
+  - name: holiday
+    description: 'Metadata for column HOLIDAY. Max length: 1'
+  - name: whentocreateooc
+    description: 'Metadata for column WHENTOCREATEOOC. Max length: 1'
+  - name: inclcommentsininsp
+    description: 'Metadata for column INCLCOMMENTSININSP. Max length: 1'
+  - name: probdesc
+    description: 'Metadata for column PROBDESC. Max length: 300'
+  - name: ooctype
+    description: Metadata for column OOCTYPE
+  - name: project
+    description: 'Metadata for column PROJECT. Max length: 10'
+  - name: insphrs
+    description: Metadata for column INSPHRS
+  - name: allowooc
+    description: 'Metadata for column ALLOWOOC. Max length: 1'
+  - name: inclcommentsinooc
+    description: 'Metadata for column INCLCOMMENTSINOOC. Max length: 1'
+  - name: stdres
+    description: 'Metadata for column STDRES. Max length: 10'
+  - name: startdays
+    description: Metadata for column STARTDAYS
+  - name: resolvenotice
+    description: 'Metadata for column RESOLVENOTICE. Max length: 1'
+  - name: custflag
+    description: 'Metadata for column CUSTFLAG. Max length: 1'
+  - name: resp
+    description: 'Metadata for column RESP. Max length: 10'
+  - name: assettype
+    description: Metadata for column ASSETTYPE
+  - name: createdinlastxmin
+    description: Metadata for column CREATEDINLASTXMIN
+  - name: dpdesc
+    description: 'Metadata for column DPDESC. Max length: 300'
+  - name: submitinportal
+    description: 'Metadata for column SUBMITINPORTAL. Max length: 1'
+  - name: howtocreatewo
+    description: 'Metadata for column HOWTOCREATEWO. Max length: 1'
+  - name: allowcase
+    description: 'Metadata for column ALLOWCASE. Max length: 1'
+  - name: probgrp
+    description: 'Metadata for column PROBGRP. Max length: 10'
+  - name: incladdrincase
+    description: 'Metadata for column INCLADDRINCASE. Max length: 1'
+  - name: loggedpersonnotice
+    description: 'Metadata for column LOGGEDPERSONNOTICE. Max length: 1'
+  - name: portaldescription
+    description: 'Metadata for column PORTALDESCRIPTION. Max length: 300'
+  - name: pri
+    description: 'Metadata for column PRI. Max length: 10'
+  - name: scheddays
+    description: Metadata for column SCHEDDAYS
+  - name: casetype
+    description: Metadata for column CASETYPE
+  - name: inspdays
+    description: Metadata for column INSPDAYS
+  - name: reshrs
+    description: Metadata for column RESHRS
+  - name: whentocreatecase
+    description: 'Metadata for column WHENTOCREATECASE. Max length: 1'
+  - name: inclcontactincase
+    description: 'Metadata for column INCLCONTACTINCASE. Max length: 1'
+  - name: searchradius
+    description: Metadata for column SEARCHRADIUS
+  - name: weekend
+    description: 'Metadata for column WEEKEND. Max length: 1'
+  - name: inclassetininsp
+    description: 'Metadata for column INCLASSETININSP. Max length: 1'
+  - name: weekday
+    description: 'Metadata for column WEEKDAY. Max length: 1'
+  - name: whentocreatewo
+    description: 'Metadata for column WHENTOCREATEWO. Max length: 1'
+  - name: addrreqd
+    description: 'Metadata for column ADDRREQD. Max length: 1'
+  - name: fllwbybus
+    description: 'Metadata for column FLLWBYBUS. Max length: 1'
+  - name: submitinportalpublic
+    description: 'Metadata for column SUBMITINPORTALPUBLIC. Max length: 1'
+  - name: category
+    description: Metadata for column CATEGORY
+  - name: inclacctnuminooc
+    description: 'Metadata for column INCLACCTNUMINOOC. Max length: 1'
+  - name: inclcommentsincase
+    description: 'Metadata for column INCLCOMMENTSINCASE. Max length: 1'
+  - name: probcode
+    description: 'Metadata for column PROBCODE. Max length: 16'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: portalsearchkeywords
+    description: 'Metadata for column PORTALSEARCHKEYWORDS. Max length: 500'
+  - name: detailpage
+    description: 'Metadata for column DETAILPAGE. Max length: 256'
+  - name: incllocinwo
+    description: 'Metadata for column INCLLOCINWO. Max length: 1'
+  - name: starthrs
+    description: Metadata for column STARTHRS
+  - name: howtocreateooc
+    description: 'Metadata for column HOWTOCREATEOOC. Max length: 1'
+  - name: acctflag
+    description: 'Metadata for column ACCTFLAG. Max length: 1'
+  - name: inspctrty
+    description: 'Metadata for column INSPCTRTY. Max length: 10'
+  - name: wores
+    description: 'Metadata for column WORES. Max length: 10'
+  - name: assignnotice
+    description: 'Metadata for column ASSIGNNOTICE. Max length: 1'
+  - name: woactivity
+    description: Metadata for column WOACTIVITY
+  - name: whentocreateinsp
+    description: 'Metadata for column WHENTOCREATEINSP. Max length: 1'
+  - name: callerflg
+    description: 'Metadata for column CALLERFLG. Max length: 1'
+  - name: poolkey
+    description: Metadata for column POOLKEY
+  - name: inclassetinwo
+    description: 'Metadata for column INCLASSETINWO. Max length: 1'
+  - name: inspmins
+    description: Metadata for column INSPMINS
+  - name: samerequesttypeflg
+    description: 'Metadata for column SAMEREQUESTTYPEFLG. Max length: 1'
+  - name: servreqassettype
+    description: Metadata for column SERVREQASSETTYPE
+  - name: suspdays
+    description: Metadata for column SUSPDAYS
+  - name: assetinsptype
+    description: Metadata for column ASSETINSPTYPE
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: showinbillportal
+    description: 'Metadata for column SHOWINBILLPORTAL. Max length: 1'
+  - name: gisicon
+    description: 'Metadata for column GISICON. Max length: 255'
+  - name: showinportal
+    description: 'Metadata for column SHOWINPORTAL. Max length: 1'
+  - name: inclcommentsinwo
+    description: 'Metadata for column INCLCOMMENTSINWO. Max length: 1'
+  - name: standardworkorderkey
+    description: Metadata for column STANDARDWORKORDERKEY
+  - name: submitinbillportal
+    description: 'Metadata for column SUBMITINBILLPORTAL. Max length: 1'
+  - name: incllocincase
+    description: 'Metadata for column INCLLOCINCASE. Max length: 1'
+  - name: allowworkorder
+    description: 'Metadata for column ALLOWWORKORDER. Max length: 1'
+  - name: inclcontactinwo
+    description: 'Metadata for column INCLCONTACTINWO. Max length: 1'
+  - name: allowassetinsp
+    description: 'Metadata for column ALLOWASSETINSP. Max length: 1'
+  - name: effdate
+    description: Metadata for column EFFDATE
+  - name: caseres
+    description: 'Metadata for column CASERES. Max length: 10'
+  - name: howtocreatecase
+    description: 'Metadata for column HOWTOCREATECASE. Max length: 1'
+  - name: meterservstat
+    description: 'Metadata for column METERSERVSTAT. Max length: 10'
+  - name: autores
+    description: Metadata for column AUTORES
+  - name: howtocreateinsp
+    description: 'Metadata for column HOWTOCREATEINSP. Max length: 1'
+  - name: inspectnotice
+    description: 'Metadata for column INSPECTNOTICE. Max length: 1'
+  - name: inspectornotice
+    description: 'Metadata for column INSPECTORNOTICE. Max length: 1'
+  - name: inspres
+    description: 'Metadata for column INSPRES. Max length: 10'
+  - name: corrprocesssetup
+    description: Metadata for column CORRPROCESSSETUP
+  - name: schednotice
+    description: 'Metadata for column SCHEDNOTICE. Max length: 1'
+  - name: probkey
+    description: (required) Metadata for column PROBKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: oocres
+    description: 'Metadata for column OOCRES. Max length: 10'
+  - name: prnusghist
+    description: 'Metadata for column PRNUSGHIST. Max length: 1'
+  - name: resdays
+    description: Metadata for column RESDAYS
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: incladdrinwo
+    description: 'Metadata for column INCLADDRINWO. Max length: 1'
+  - name: ispublic
+    description: 'Metadata for column ISPUBLIC. Max length: 1'
+  - name: overrideglobalsettingflg
+    description: 'Metadata for column OVERRIDEGLOBALSETTINGFLG. Max length: 1'
+  - name: showusagedetails
+    description: 'Metadata for column SHOWUSAGEDETAILS. Max length: 1'
+  - name: assetreqd
+    description: 'Metadata for column ASSETREQD. Max length: 1'
+  - name: chkdupflg
+    description: 'Metadata for column CHKDUPFLG. Max length: 1'
+  - name: checkduplicatelocalonly
+    description: 'Metadata for column CHECKDUPLICATELOCALONLY. Max length: 1'
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: notifycustomer
+    description: 'Metadata for column NOTIFYCUSTOMER. Max length: 1'
+  - name: meterrescode
+    description: 'Metadata for column METERRESCODE. Max length: 10'
+  - name: schedhrs
+    description: Metadata for column SCHEDHRS
+  - name: susphrs
+    description: Metadata for column SUSPHRS
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table CRM.PROBDEFN on 2024-10-10T10:04:18.481

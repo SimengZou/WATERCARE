@@ -1,0 +1,38 @@
+version: 2
+models:
+- name: r5jobs
+  columns:
+  - name: job_lastsaved
+    description: JOB_LASTSAVED
+  - name: job_description
+    description: JOB_DESCRIPTION
+  - name: job_class
+    description: JOB_CLASS
+  - name: job_updatecount
+    description: JOB_UPDATECOUNT
+  - name: job_partnerid
+    description: JOB_PARTNERID
+  - name: job_name
+    description: JOB_NAME
+    data_tests:
+    - unique
+  - name: job_type
+    description: JOB_TYPE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5JOBS

@@ -1,0 +1,205 @@
+version: 2
+models:
+- name: tdpur201
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: rqno
+    description: '(required) Requisition. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: nids__en_us
+    description: '(required) Item Description - base language. Max length: 80'
+    data_tests:
+    - not_null
+  - name: effn
+    description: Effectivity Unit
+  - name: crrf
+    description: 'Item Cross Reference. Allowed values: 1, 2, 3'
+  - name: crrf_kw
+    description: 'Item Cross Reference (keyword). Allowed values: tccrrf.ics, tccrrf.mpn,
+      tccrrf.na'
+  - name: citt
+    description: 'Item Code System. Max length: 3'
+  - name: crit__en_us
+    description: '(required) Cross Reference Item - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: mpnr
+    description: 'Preferred Manufacturer Part Number. Max length: 35'
+  - name: cmnf
+    description: 'Manufacturer. Max length: 6'
+  - name: mitm__en_us
+    description: '(required) Manufacturer Item - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: acqm
+    description: 'Acquisition Method. Allowed values: 5, 10, 99'
+  - name: acqm_kw
+    description: 'Acquisition Method (keyword). Allowed values: tcacqm.buying, tcacqm.rental,
+      tcacqm.not.appl'
+  - name: qoor
+    description: Order Quantity
+  - name: cuqp
+    description: 'Purchase Unit. Max length: 3'
+  - name: cvqp
+    description: Purchase Unit Conversion Factor
+  - name: leng
+    description: Length
+  - name: widt
+    description: Width
+  - name: thic
+    description: Height
+  - name: otbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: nsds__en_us
+    description: '(required) Business Partner Description - base language. Max length:
+      50'
+    data_tests:
+    - not_null
+  - name: ccon
+    description: 'Buyer. Max length: 9'
+  - name: dldt
+    description: Requested Date
+  - name: pric
+    description: Price
+  - name: cupp
+    description: 'Price Unit. Max length: 3'
+  - name: cvpp
+    description: Price Unit Conversion Factor
+  - name: oamt
+    description: Order Amount
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: cadr
+    description: 'Receipt Address. Max length: 9'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: cact
+    description: 'Activity. Max length: 16'
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: ccco
+    description: 'Cost Component. Max length: 8'
+  - name: glco
+    description: 'General Ledger. Max length: 135'
+  - name: rejc
+    description: 'Rejected. Allowed values: 1, 2'
+  - name: rejc_kw
+    description: 'Rejected (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: rcod
+    description: 'Reason for Rejection. Max length: 6'
+  - name: urgt
+    description: 'Urgent. Allowed values: 1, 2'
+  - name: urgt_kw
+    description: 'Urgent (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cnty
+    description: 'Conversion Type. Allowed values: 1, 2, 3'
+  - name: cnty_kw
+    description: 'Conversion Type (keyword). Allowed values: tdpur.cnty.none, tdpur.cnty.rfq,
+      tdpur.cnty.pur'
+  - name: bgxc
+    description: 'Budget Exception. Allowed values: 1, 2'
+  - name: bgxc_kw
+    description: 'Budget Exception (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: pegd
+    description: 'Peg Distribution. Allowed values: 1, 2'
+  - name: pegd_kw
+    description: 'Peg Distribution (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: cpla
+    description: 'Obsolete. Max length: 3'
+  - name: txta
+    description: Line Text
+  - name: cdf_idet
+    description: 'Item Detail. Max length: 100'
+  - name: rqno_ref_compnr
+    description: company number of primary key of table tdpur200 Purchase Requisitions
+  - name: item_ref_compnr
+    description: company number of primary key of table tdipu001 Item - Purchase
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Units
+  - name: citt_ref_compnr
+    description: company number of primary key of table tcibd006 Item Code Systems
+  - name: mpnr_cmnf_ref_compnr
+    description: company number of primary key of table tdipu045 Manufacturer Part
+      Numbers
+  - name: cmnf_ref_compnr
+    description: company number of primary key of table tcmcs060 Manufacturers
+  - name: cuqp_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: otbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: ccon_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: cupp_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: ccco_ref_compnr
+    description: company number of primary key of table tcmcs048 Cost Components
+  - name: rcod_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur201 Purchase Requisition Lines table, Generated 2026-04-10T19:41:19Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - rqno
+        - pono

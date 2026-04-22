@@ -1,0 +1,61 @@
+version: 2
+models:
+- name: r5addetails
+  columns:
+  - name: add_lastsaved
+    description: ADD_LASTSAVED
+  - name: add_type
+    description: ADD_TYPE
+  - name: add_rtype
+    description: ADD_RTYPE
+  - name: add_code
+    description: ADD_CODE
+  - name: add_lang
+    description: ADD_LANG
+  - name: add_line
+    description: ADD_LINE
+  - name: add_print
+    description: ADD_PRINT
+  - name: add_text
+    description: 'ADD_TEXT. Max length: 0'
+  - name: add_created
+    description: ADD_CREATED
+  - name: add_user
+    description: ADD_USER
+  - name: add_updated
+    description: ADD_UPDATED
+  - name: add_upduser
+    description: ADD_UPDUSER
+  - name: add_updatecount
+    description: ADD_UPDATECOUNT
+  - name: add_entity
+    description: ADD_ENTITY
+  - name: add_rentity
+    description: ADD_RENTITY
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ADDETAILS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - add_code
+        - add_rentity
+        - add_type
+        - add_lang
+        - add_line

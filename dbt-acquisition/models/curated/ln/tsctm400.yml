@@ -1,0 +1,179 @@
+version: 2
+models:
+- name: tsctm400
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: csco
+    description: '(required) Service Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: inst
+    description: (required) Installment Number
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: stin
+    description: 'Installment Status. Allowed values: 5, 10, 15, 20, 25'
+  - name: stin_kw
+    description: 'Installment Status (keyword). Allowed values: tsctm.stin.free, tsctm.stin.accepted,
+      tsctm.stin.transferred, tsctm.stin.posted, tsctm.stin.canceled'
+  - name: pidt
+    description: Planned Invoice Date
+  - name: efdt
+    description: Effective Date
+  - name: exdt
+    description: Expiry Date
+  - name: isst
+    description: 'Installment Type. Allowed values: 5, 10, 15, 20, 25'
+  - name: isst_kw
+    description: 'Installment Type (keyword). Allowed values: tsctm.isst.period, tsctm.isst.penalty,
+      tsctm.isst.closure, tsctm.isst.down.time, tsctm.isst.manual'
+  - name: amnt
+    description: Installment Amount
+  - name: disc
+    description: Discount Percentage
+  - name: dimt
+    description: Discount Amount
+  - name: ntmt
+    description: Net Installment Amount
+  - name: icmt
+    description: Incidental Change Amount
+  - name: inmt
+    description: Indexation Amount
+  - name: txmt
+    description: Tax Amount
+  - name: fcpc
+    description: Forecast Cost Percentage
+  - name: fcmt_1
+    description: Forecast Cost Amount
+  - name: fcmt_2
+    description: Forecast Cost Amount
+  - name: fcmt_3
+    description: Forecast Cost Amount
+  - name: rahc_1
+    description: Revenue Amount in Home Currency
+  - name: rahc_2
+    description: Revenue Amount in Home Currency
+  - name: rahc_3
+    description: Revenue Amount in Home Currency
+  - name: ratc_1
+    description: Currency Rates for Home Currencies
+  - name: ratc_2
+    description: Currency Rates for Home Currencies
+  - name: ratc_3
+    description: Currency Rates for Home Currencies
+  - name: ratf_1
+    description: Rate Factors for Home Currencies
+  - name: ratf_2
+    description: Rate Factors for Home Currencies
+  - name: ratf_3
+    description: Rate Factors for Home Currencies
+  - name: ratd
+    description: Rate Date
+  - name: nrpf
+    description: Number of Periods for Financial Spreading
+  - name: indt
+    description: Invoice Date
+  - name: icmp
+    description: Financial Company
+  - name: ityp
+    description: 'Transaction Type. Max length: 3'
+  - name: idoc
+    description: Invoice Number
+  - name: fyer
+    description: Fiscal Year
+  - name: fper
+    description: Fiscal Period
+  - name: prdt
+    description: Posting Date
+  - name: istd
+    description: Start Date
+  - name: cchn
+    description: Contract Change Number
+  - name: term
+    description: Term ID
+  - name: cfln
+    description: Configuration Line
+  - name: txta
+    description: Installment Text
+  - name: csco_cchn_ref_compnr
+    description: company number of primary key of table tsctm320 Contract Changes
+  - name: csco_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: term_cfln_ref_compnr
+    description: company number of primary key of table tsctm110 Configuration Lines
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: amnt_homc
+    description: 'CC: Installment Amount in Local Currency'
+  - name: amnt_rpc1
+    description: 'CC: Installment Amount in Reporting Currency 1'
+  - name: amnt_rpc2
+    description: 'CC: Installment Amount in Reporting Currency 2'
+  - name: amnt_refc
+    description: 'CC: Installment Amount in Reference Currency'
+  - name: amnt_dwhc
+    description: 'CC: Installment Amount in Data Warehouse Currency'
+  - name: dimt_homc
+    description: 'CC: Discount Amount in Local Currency'
+  - name: dimt_rpc1
+    description: 'CC: Discount Amount in Reporting Currency 1'
+  - name: dimt_rpc2
+    description: 'CC: Discount Amount in Reporting Currency 2'
+  - name: dimt_refc
+    description: 'CC: Discount Amount in Reference Currency'
+  - name: dimt_dwhc
+    description: 'CC: Discount Amount in Data Warehouse Currency'
+  - name: rahc_cntc
+    description: 'CC: Revenue Amount in Contract Currency'
+  - name: rahc_refc
+    description: 'CC: Revenue Amount in Reference Currency'
+  - name: rahc_dwhc
+    description: 'CC: Revenue Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsctm400 Contract Installments table, Generated 2026-04-10T19:42:34Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - csco
+        - inst

@@ -1,0 +1,73 @@
+version: 2
+models:
+- name: r5boilertexts
+  columns:
+  - name: bot_lastsaved
+    description: BOT_LASTSAVED
+  - name: bot_length
+    description: BOT_LENGTH
+  - name: bot_xpos
+    description: BOT_XPOS
+  - name: bot_ypos
+    description: BOT_YPOS
+  - name: bot_lang
+    description: BOT_LANG
+  - name: bot_text
+    description: BOT_TEXT
+  - name: bot_dest
+    description: BOT_DEST
+  - name: bot_page
+    description: BOT_PAGE
+  - name: bot_fld1
+    description: BOT_FLD1
+  - name: bot_fld2
+    description: BOT_FLD2
+  - name: bot_prtp
+    description: BOT_PRTP
+  - name: bot_lvcr
+    description: BOT_LVCR
+  - name: bot_adlen
+    description: BOT_ADLEN
+  - name: bot_pool
+    description: BOT_POOL
+  - name: bot_changed
+    description: BOT_CHANGED
+  - name: bot_display
+    description: BOT_DISPLAY
+  - name: bot_updatecount
+    description: BOT_UPDATECOUNT
+  - name: bot_created
+    description: BOT_CREATED
+  - name: bot_updated
+    description: BOT_UPDATED
+  - name: bot_cloned
+    description: BOT_CLONED
+  - name: bot_function
+    description: BOT_FUNCTION
+  - name: bot_number
+    description: BOT_NUMBER
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5BOILERTEXTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - bot_function
+        - bot_number
+        - bot_lang

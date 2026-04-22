@@ -1,0 +1,124 @@
+version: 2
+models:
+- name: tdpur411
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orno
+    description: '(required) Purchase Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Line
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Sequence
+    data_tests:
+    - not_null
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: atse
+    description: 'Attribute Set. Max length: 35'
+  - name: atsg
+    description: 'Attribute set group code. Max length: 20'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: citg
+    description: 'Item Group. Max length: 6'
+  - name: cpcl
+    description: 'Product Class. Max length: 6'
+  - name: cpln
+    description: 'Product Line. Max length: 6'
+  - name: prtp
+    description: 'Product Type. Max length: 3'
+  - name: cpgp
+    description: 'Purchase Price Group. Max length: 6'
+  - name: csgp
+    description: 'Purchase Statistics Group. Max length: 6'
+  - name: iwgt
+    description: Item Weight
+  - name: iwun
+    description: 'Item Weight Unit. Max length: 3'
+  - name: pgmd
+    description: 'Peg Mandatory. Allowed values: 1, 2'
+  - name: pgmd_kw
+    description: 'Peg Mandatory (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: kitm
+    description: 'Obsolete. Allowed values: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30,
+      35, 40, 50, 60, 70, 80, 90, 100, 110'
+  - name: kitm_kw
+    description: 'Obsolete (keyword). Allowed values: tckitm.purchase, tckitm.manufacture,
+      tckitm.generic.obs, tckitm.cost.obs, tckitm.service.obs, tckitm.subcontract.obs,
+      tckitm.list.obs, tckitm.tool.obs, tckitm.equipment.obs, tckitm.engineering.obs,
+      tckitm.product, tckitm.rental.prod, tckitm.tool, tckitm.equipment, tckitm.subcontracting,
+      tckitm.cost, tckitm.service, tckitm.generic, tckitm.engineering, tckitm.list'
+  - name: orno_pono_sqnb_ref_compnr
+    description: company number of primary key of table tdpur401 Purchase Order Lines
+  - name: orno_ref_compnr
+    description: company number of primary key of table tdpur400 Purchase Orders
+  - name: item_ref_compnr
+    description: company number of primary key of table tdipu001 Item - Purchase
+  - name: atse_ref_compnr
+    description: company number of primary key of table tcibd030 Attribute Sets
+  - name: atsg_ref_compnr
+    description: company number of primary key of table tcmcs026 Attribute Set Groups
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: citg_ref_compnr
+    description: company number of primary key of table tcmcs023 Item Groups
+  - name: cpcl_ref_compnr
+    description: company number of primary key of table tcmcs062 Product Classes
+  - name: cpln_ref_compnr
+    description: company number of primary key of table tcmcs061 Product Lines
+  - name: prtp_ref_compnr
+    description: company number of primary key of table tcmcs015 Product Types
+  - name: cpgp_ref_compnr
+    description: company number of primary key of table tcmcs024 Price Groups
+  - name: csgp_ref_compnr
+    description: company number of primary key of table tcmcs044 Statistical Groups
+  - name: iwun_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdpur411 Purchase Order Line Item Data table, Generated 2026-04-10T19:41:22Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orno
+        - pono
+        - sqnb

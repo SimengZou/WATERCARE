@@ -1,0 +1,52 @@
+version: 2
+models:
+- name: r5extmenus
+  columns:
+  - name: emn_lastsaved
+    description: EMN_LASTSAVED
+  - name: emn_sequence
+    description: EMN_SEQUENCE
+  - name: emn_group
+    description: EMN_GROUP
+  - name: emn_function
+    description: EMN_FUNCTION
+  - name: emn_parent
+    description: EMN_PARENT
+  - name: emn_type
+    description: EMN_TYPE
+  - name: emn_duxmobile
+    description: EMN_DUXMOBILE
+  - name: emn_meflag
+    description: EMN_MEFLAG
+  - name: emn_hide
+    description: EMN_HIDE
+  - name: emn_mobile
+    description: EMN_MOBILE
+  - name: emn_icon
+    description: EMN_ICON
+  - name: emn_transit
+    description: EMN_TRANSIT
+  - name: emn_code
+    description: EMN_CODE
+    data_tests:
+    - unique
+  - name: emn_updatecount
+    description: EMN_UPDATECOUNT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EXTMENUS

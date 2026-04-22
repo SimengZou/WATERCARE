@@ -1,0 +1,149 @@
+version: 2
+models:
+- name: tppin011
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cono
+    description: '(required) Contract. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cnln
+    description: '(required) Contract Line. Max length: 8'
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Advance Payment
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: ofbp
+    description: '(required) Sold-to Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: serl
+    description: (required) Settlement
+    data_tests:
+    - not_null
+  - name: cnpr
+    description: 'Project. Max length: 9'
+  - name: amnt
+    description: Amount
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: rate_1
+    description: Rate
+  - name: rate_2
+    description: Rate
+  - name: rate_3
+    description: Rate
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: rdat
+    description: Rate Date
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: pamt
+    description: Amount Paid
+  - name: fcmp
+    description: Financial Company
+  - name: ityp
+    description: 'Transaction Type. Max length: 3'
+  - name: idoc
+    description: Invoice Document
+  - name: idln
+    description: Invoice Document Line
+  - name: iseq
+    description: Composed Invoice
+  - name: adva
+    description: Credit Advance
+  - name: nins
+    description: Installment
+  - name: dlvr
+    description: Deliverable
+  - name: schd
+    description: Schedule
+  - name: prdt
+    description: Progress Date
+  - name: cono_cnln_sern_cprj_ofbp_ref_compnr
+    description: company number of primary key of table tppin010 Advance Payments
+  - name: cono_cnln_ref_compnr
+    description: company number of primary key of table tpctm110 Contract Lines
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: cnpr_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: amnt_refc
+    description: 'CC: Settled Advance Amount in Reference Currency'
+  - name: amnt_cntc
+    description: 'CC: Settled Advance Amount in Contract Currency'
+  - name: amnt_prjc
+    description: 'CC: Settled Advance Amount in Project Currency'
+  - name: amnt_homc
+    description: 'CC: Settled Advance Amount in Local Currency'
+  - name: amnt_rpc1
+    description: 'CC: Settled Advance Amount in Reporting Currency 1'
+  - name: amnt_rpc2
+    description: 'CC: Settled Advance Amount in Reporting Currency 2'
+  - name: amnt_dwhc
+    description: 'CC: Settled Advance Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppin011 Settled Advance Payments table, Generated 2026-04-10T19:42:04Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cono
+        - cnln
+        - sern
+        - cprj
+        - ofbp
+        - serl

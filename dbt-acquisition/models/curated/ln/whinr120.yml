@@ -1,0 +1,82 @@
+version: 2
+models:
+- name: whinr120
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: year
+    description: (required) Year
+    data_tests:
+    - not_null
+  - name: peri
+    description: (required) Period
+    data_tests:
+    - not_null
+  - name: acip
+    description: Actual Issue by Period
+  - name: decl
+    description: Demand Calls
+  - name: deqt
+    description: Demand Quantity
+  - name: qdeq
+    description: Demand Quantity (Qualified)
+  - name: ddcl
+    description: Demand Direct Delivery Calls
+  - name: ddqt
+    description: Demand Direct Delivery Quantity
+  - name: lsts
+    description: Lost Sales
+  - name: dmfp
+    description: Demand Forecast by Period
+  - name: rets
+    description: Returned Quantity
+  - name: item_ref_compnr
+    description: company number of primary key of table whwmd400 Item Warehousing
+      Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whinr120 Item Issue by Period table, Generated 2025-06-12T01:48:43Z
+    from package combination ce01090
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - item
+        - year
+        - peri

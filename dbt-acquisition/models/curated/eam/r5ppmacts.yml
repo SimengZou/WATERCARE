@@ -1,0 +1,189 @@
+version: 2
+models:
+- name: r5ppmacts
+  columns:
+  - name: ppa_lastsaved
+    description: PPA_LASTSAVED
+  - name: ppa_ppm
+    description: PPA_PPM
+  - name: ppa_act
+    description: PPA_ACT
+  - name: ppa_trade
+    description: PPA_TRADE
+  - name: ppa_duration
+    description: PPA_DURATION
+  - name: ppa_est
+    description: PPA_EST
+  - name: ppa_task
+    description: PPA_TASK
+  - name: ppa_matlist
+    description: PPA_MATLIST
+  - name: ppa_persons
+    description: PPA_PERSONS
+  - name: ppa_start
+    description: PPA_START
+  - name: ppa_special
+    description: PPA_SPECIAL
+  - name: ppa_hire
+    description: PPA_HIRE
+  - name: ppa_revision
+    description: PPA_REVISION
+  - name: ppa_qty
+    description: PPA_QTY
+  - name: ppa_uom
+    description: PPA_UOM
+  - name: ppa_how
+    description: PPA_HOW
+  - name: ppa_action
+    description: PPA_ACTION
+  - name: ppa_what
+    description: PPA_WHAT
+  - name: ppa_where
+    description: PPA_WHERE
+  - name: ppa_condition
+    description: PPA_CONDITION
+  - name: ppa_rpc
+    description: PPA_RPC
+  - name: ppa_wap
+    description: PPA_WAP
+  - name: ppa_tpf
+    description: PPA_TPF
+  - name: ppa_manufact
+    description: PPA_MANUFACT
+  - name: ppa_syslevel
+    description: PPA_SYSLEVEL
+  - name: ppa_asmlevel
+    description: PPA_ASMLEVEL
+  - name: ppa_complevel
+    description: PPA_COMPLEVEL
+  - name: ppa_updatecount
+    description: PPA_UPDATECOUNT
+  - name: ppa_note
+    description: PPA_NOTE
+  - name: ppa_udfchar01
+    description: PPA_UDFCHAR01
+  - name: ppa_udfchar02
+    description: PPA_UDFCHAR02
+  - name: ppa_udfchar03
+    description: PPA_UDFCHAR03
+  - name: ppa_udfchar04
+    description: PPA_UDFCHAR04
+  - name: ppa_udfchar05
+    description: PPA_UDFCHAR05
+  - name: ppa_udfchar06
+    description: PPA_UDFCHAR06
+  - name: ppa_udfchar07
+    description: PPA_UDFCHAR07
+  - name: ppa_udfchar08
+    description: PPA_UDFCHAR08
+  - name: ppa_udfchar09
+    description: PPA_UDFCHAR09
+  - name: ppa_udfchar10
+    description: PPA_UDFCHAR10
+  - name: ppa_udfchar11
+    description: PPA_UDFCHAR11
+  - name: ppa_udfchar12
+    description: PPA_UDFCHAR12
+  - name: ppa_udfchar13
+    description: PPA_UDFCHAR13
+  - name: ppa_udfchar14
+    description: PPA_UDFCHAR14
+  - name: ppa_udfchar15
+    description: PPA_UDFCHAR15
+  - name: ppa_udfchar16
+    description: PPA_UDFCHAR16
+  - name: ppa_udfchar17
+    description: PPA_UDFCHAR17
+  - name: ppa_udfchar18
+    description: PPA_UDFCHAR18
+  - name: ppa_udfchar19
+    description: PPA_UDFCHAR19
+  - name: ppa_udfchar20
+    description: PPA_UDFCHAR20
+  - name: ppa_udfchar21
+    description: PPA_UDFCHAR21
+  - name: ppa_udfchar22
+    description: PPA_UDFCHAR22
+  - name: ppa_udfchar23
+    description: PPA_UDFCHAR23
+  - name: ppa_udfchar24
+    description: PPA_UDFCHAR24
+  - name: ppa_udfchar25
+    description: PPA_UDFCHAR25
+  - name: ppa_udfchar26
+    description: PPA_UDFCHAR26
+  - name: ppa_udfchar27
+    description: PPA_UDFCHAR27
+  - name: ppa_udfchar28
+    description: PPA_UDFCHAR28
+  - name: ppa_udfchar29
+    description: PPA_UDFCHAR29
+  - name: ppa_udfchar30
+    description: PPA_UDFCHAR30
+  - name: ppa_udfnum01
+    description: PPA_UDFNUM01
+  - name: ppa_udfnum02
+    description: PPA_UDFNUM02
+  - name: ppa_udfnum03
+    description: PPA_UDFNUM03
+  - name: ppa_udfnum04
+    description: PPA_UDFNUM04
+  - name: ppa_udfnum05
+    description: PPA_UDFNUM05
+  - name: ppa_udfdate01
+    description: PPA_UDFDATE01
+  - name: ppa_udfdate02
+    description: PPA_UDFDATE02
+  - name: ppa_udfdate03
+    description: PPA_UDFDATE03
+  - name: ppa_udfdate04
+    description: PPA_UDFDATE04
+  - name: ppa_udfdate05
+    description: PPA_UDFDATE05
+  - name: ppa_udfchkbox01
+    description: PPA_UDFCHKBOX01
+  - name: ppa_udfchkbox02
+    description: PPA_UDFCHKBOX02
+  - name: ppa_udfchkbox03
+    description: PPA_UDFCHKBOX03
+  - name: ppa_udfchkbox04
+    description: PPA_UDFCHKBOX04
+  - name: ppa_udfchkbox05
+    description: PPA_UDFCHKBOX05
+  - name: ppa_udfnote01
+    description: PPA_UDFNOTE01
+  - name: ppa_udfnote02
+    description: PPA_UDFNOTE02
+  - name: ppa_supplier
+    description: PPA_SUPPLIER
+  - name: ppa_labortype
+    description: PPA_LABORTYPE
+  - name: ppa_laborrtype
+    description: PPA_LABORRTYPE
+  - name: ppa_supplier_org
+    description: PPA_SUPPLIER_ORG
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5PPMACTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - ppa_ppm
+        - ppa_revision
+        - ppa_act

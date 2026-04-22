@@ -1,0 +1,146 @@
+version: 2
+models:
+- name: u5escdetails
+  columns:
+  - name: lastsaved
+    description: LASTSAVED
+  - name: updatecount
+    description: UPDATECOUNT
+  - name: esc_assetlocation
+    description: ESC_ASSETLOCATION
+  - name: esc_telephone
+    description: ESC_TELEPHONE
+  - name: esc_persons
+    description: ESC_PERSONS
+  - name: esc_additions
+    description: ESC_ADDITIONS
+  - name: esc_aleration
+    description: ESC_ALERATION
+  - name: esc_newwork
+    description: ESC_NEWWORK
+  - name: esc_maintenance
+    description: ESC_MAINTENANCE
+  - name: esc_repairs
+    description: ESC_REPAIRS
+  - name: esc_anyone
+    description: ESC_ANYONE
+  - name: esc_who
+    description: ESC_WHO
+  - name: esc_mains
+    description: ESC_MAINS
+  - name: esc_switch
+    description: ESC_SWITCH
+  - name: esc_earth
+    description: ESC_EARTH
+  - name: esc_lines
+    description: ESC_LINES
+  - name: esc_desc
+    description: 'ESC_DESC. Max length: 0'
+  - name: esc_iamitem
+    description: ESC_IAMITEM
+  - name: esc_pump
+    description: ESC_PUMP
+  - name: esc_valve
+    description: ESC_VALVE
+  - name: esc_instruments
+    description: ESC_INSTRUMENTS
+  - name: esc_generator
+    description: ESC_GENERATOR
+  - name: esc_sboard
+    description: ESC_SBOARD
+  - name: esc_pfactor
+    description: ESC_PFACTOR
+  - name: esc_mstarter
+    description: ESC_MSTARTER
+  - name: esc_loutlet
+    description: ESC_LOUTLET
+  - name: esc_range
+    description: ESC_RANGE
+  - name: esc_motor
+    description: ESC_MOTOR
+  - name: esc_fans
+    description: ESC_FANS
+  - name: esc_plc
+    description: ESC_PLC
+  - name: esc_isolators
+    description: ESC_ISOLATORS
+  - name: esc_panels
+    description: ESC_PANELS
+  - name: esc_ups
+    description: ESC_UPS
+  - name: esc_vsd
+    description: ESC_VSD
+  - name: esc_soutlets
+    description: ESC_SOUTLETS
+  - name: esc_wheaters
+    description: ESC_WHEATERS
+  - name: esc_others
+    description: ESC_OTHERS
+  - name: esc_comp1
+    description: ESC_COMP1
+  - name: esc_comp2
+    description: ESC_COMP2
+  - name: esc_reg58
+    description: ESC_REG58
+  - name: esc_earthrate
+    description: ESC_EARTHRATE
+  - name: esc_fittings
+    description: ESC_FITTINGS
+  - name: esc_suppliers
+    description: ESC_SUPPLIERS
+  - name: esc_manufacturer
+    description: ESC_MANUFACTURER
+  - name: esc_reglatns
+    description: ESC_REGLATNS
+  - name: esc_safe
+    description: ESC_SAFE
+  - name: esc_othercomp
+    description: ESC_OTHERCOMP
+  - name: esc_polarity
+    description: ESC_POLARITY
+  - name: esc_insulation
+    description: ESC_INSULATION
+  - name: esc_continuity
+    description: ESC_CONTINUITY
+  - name: esc_bonding
+    description: ESC_BONDING
+  - name: esc_impedence
+    description: ESC_IMPEDENCE
+  - name: esc_visual
+    description: ESC_VISUAL
+  - name: esc_othertest
+    description: ESC_OTHERTEST
+  - name: esc_eleref
+    description: ESC_ELEREF
+  - name: createdby
+    description: CREATEDBY
+  - name: created
+    description: CREATED
+  - name: updatedby
+    description: UPDATEDBY
+  - name: updated
+    description: UPDATED
+  - name: esc_code
+    description: ESC_CODE
+    data_tests:
+    - unique
+  - name: esc_pew
+    description: ESC_PEW
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_U5ESCDETAILS

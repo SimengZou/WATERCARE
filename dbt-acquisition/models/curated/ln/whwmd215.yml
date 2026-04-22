@@ -1,0 +1,123 @@
+version: 2
+models:
+- name: whwmd215
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cwar
+    description: '(required) Warehouse. Max length: 6'
+    data_tests:
+    - not_null
+  - name: item
+    description: '(required) Item. Max length: 47'
+    data_tests:
+    - not_null
+  - name: qhnd
+    description: Inventory on Hand
+  - name: qchd
+    description: Consignment Inventory on Hand
+  - name: qnhd
+    description: Customer Owned Inventory on Hand
+  - name: qblk
+    description: Inventory Blocked
+  - name: qbpl
+    description: Inventory Blocked for Planning
+  - name: qord
+    description: Inventory on Order
+  - name: qoor
+    description: Company Owned Inventory on Order
+  - name: qcor
+    description: Consignment Inventory on Order
+  - name: qnor
+    description: Customer Owned Inventory on Order
+  - name: qgit
+    description: Goods in Transit
+  - name: qint
+    description: Inventory in Transit
+  - name: qcit
+    description: Consignment Inventory in Transit
+  - name: qnit
+    description: Customer Owned Inventory in Transit
+  - name: qall
+    description: Inventory Allocated
+  - name: qoal
+    description: Company Owned Inventory Location Allocated
+  - name: qcal
+    description: Consignment Inventory Location Allocated
+  - name: qnal
+    description: Customer Owned Inventory Location Allocated
+  - name: qnbl
+    description: Customer Owned Inventory Blocked
+  - name: qnbp
+    description: Customer Owned Inventory Blocked for Planning
+  - name: qcom
+    description: Inventory Committed
+  - name: qlal
+    description: Inventory Location Allocated
+  - name: qcpr
+    description: Inventory Committed in Process
+  - name: qhrj
+    description: Company Owned Quarantine Inventory
+  - name: qcrj
+    description: Consigned Quarantine Inventory
+  - name: qnrj
+    description: Customer Owned Quarantine Inventory
+  - name: ltdt
+    description: Last Inventory Transaction Date
+  - name: hstd
+    description: Historical Inventory Balance Date
+  - name: lsid
+    description: Obsolete
+  - name: qcis
+    description: Cumulative Issue
+  - name: qhib
+    description: Historical Inventory Balance
+  - name: cwar_item_ref_compnr
+    description: company number of primary key of table whwmd210 Item Data by Warehouse
+  - name: cwar_ref_compnr
+    description: company number of primary key of table whwmd200 Warehouses
+  - name: item_ref_compnr
+    description: company number of primary key of table whwmd400 Item Warehousing
+      Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN whwmd215 Item Inventory by Warehouse table, Generated 2026-04-10T19:42:53Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cwar
+        - item

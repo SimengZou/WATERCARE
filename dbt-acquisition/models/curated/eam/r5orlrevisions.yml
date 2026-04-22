@@ -1,0 +1,274 @@
+version: 2
+models:
+- name: r5orlrevisions
+  columns:
+  - name: olr_lastsaved
+    description: OLR_LASTSAVED
+  - name: olr_order
+    description: OLR_ORDER
+  - name: olr_ordline
+    description: OLR_ORDLINE
+  - name: olr_revision
+    description: OLR_REVISION
+  - name: olr_revised
+    description: OLR_REVISED
+  - name: olr_revisedline
+    description: OLR_REVISEDLINE
+  - name: olr_revisedby
+    description: OLR_REVISEDBY
+  - name: olr_req
+    description: OLR_REQ
+  - name: olr_reqline
+    description: OLR_REQLINE
+  - name: olr_supplier
+    description: OLR_SUPPLIER
+  - name: olr_part
+    description: OLR_PART
+  - name: olr_due
+    description: OLR_DUE
+  - name: olr_price
+    description: OLR_PRICE
+  - name: olr_curr
+    description: OLR_CURR
+  - name: olr_exch
+    description: OLR_EXCH
+  - name: olr_ordqty
+    description: OLR_ORDQTY
+  - name: olr_recvqty
+    description: OLR_RECVQTY
+  - name: olr_recvvalue
+    description: OLR_RECVVALUE
+  - name: olr_invqty
+    description: OLR_INVQTY
+  - name: olr_costcode
+    description: OLR_COSTCODE
+  - name: olr_project
+    description: OLR_PROJECT
+  - name: olr_projbud
+    description: OLR_PROJBUD
+  - name: olr_contract
+    description: OLR_CONTRACT
+  - name: olr_discperc
+    description: OLR_DISCPERC
+  - name: olr_event
+    description: OLR_EVENT
+  - name: olr_act
+    description: OLR_ACT
+  - name: olr_store
+    description: OLR_STORE
+  - name: olr_puruom
+    description: OLR_PURUOM
+  - name: olr_invvalue
+    description: OLR_INVVALUE
+  - name: olr_rtype
+    description: OLR_RTYPE
+  - name: olr_type
+    description: OLR_TYPE
+  - name: olr_active
+    description: OLR_ACTIVE
+  - name: olr_multiply
+    description: OLR_MULTIPLY
+  - name: olr_tax
+    description: OLR_TAX
+  - name: olr_rstatus
+    description: OLR_RSTATUS
+  - name: olr_status
+    description: OLR_STATUS
+  - name: olr_blanketorder
+    description: OLR_BLANKETORDER
+  - name: olr_blanketline
+    description: OLR_BLANKETLINE
+  - name: olr_exchtodual
+    description: OLR_EXCHTODUAL
+  - name: olr_exchfromdual
+    description: OLR_EXCHFROMDUAL
+  - name: olr_ref
+    description: OLR_REF
+  - name: olr_task
+    description: OLR_TASK
+  - name: olr_taskrev
+    description: OLR_TASKREV
+  - name: olr_taskqty
+    description: OLR_TASKQTY
+  - name: olr_trade
+    description: OLR_TRADE
+  - name: olr_recvtaskqty
+    description: OLR_RECVTASKQTY
+  - name: olr_deladdress
+    description: OLR_DELADDRESS
+  - name: olr_supplier_org
+    description: OLR_SUPPLIER_ORG
+  - name: olr_order_org
+    description: OLR_ORDER_ORG
+  - name: olr_part_org
+    description: OLR_PART_ORG
+  - name: olr_inspect
+    description: OLR_INSPECT
+  - name: olr_exchfix
+    description: OLR_EXCHFIX
+  - name: olr_tax2
+    description: OLR_TAX2
+  - name: olr_tottaxamount
+    description: OLR_TOTTAXAMOUNT
+  - name: olr_totextra
+    description: OLR_TOTEXTRA
+  - name: olr_scrapqty
+    description: OLR_SCRAPQTY
+  - name: olr_updatecount
+    description: OLR_UPDATECOUNT
+  - name: olr_dckrecvqty
+    description: OLR_DCKRECVQTY
+  - name: olr_relatedwo
+    description: OLR_RELATEDWO
+  - name: olr_quotid
+    description: OLR_QUOTID
+  - name: olr_quotline
+    description: OLR_QUOTLINE
+  - name: olr_manufacturer
+    description: OLR_MANUFACTURER
+  - name: olr_manufactpart
+    description: OLR_MANUFACTPART
+  - name: olr_udfchar01
+    description: OLR_UDFCHAR01
+  - name: olr_udfchar02
+    description: OLR_UDFCHAR02
+  - name: olr_udfchar03
+    description: OLR_UDFCHAR03
+  - name: olr_udfchar04
+    description: OLR_UDFCHAR04
+  - name: olr_udfchar05
+    description: OLR_UDFCHAR05
+  - name: olr_udfchar06
+    description: OLR_UDFCHAR06
+  - name: olr_udfchar07
+    description: OLR_UDFCHAR07
+  - name: olr_udfchar08
+    description: OLR_UDFCHAR08
+  - name: olr_udfchar09
+    description: OLR_UDFCHAR09
+  - name: olr_udfchar10
+    description: OLR_UDFCHAR10
+  - name: olr_udfchar11
+    description: OLR_UDFCHAR11
+  - name: olr_udfchar12
+    description: OLR_UDFCHAR12
+  - name: olr_udfchar13
+    description: OLR_UDFCHAR13
+  - name: olr_udfchar14
+    description: OLR_UDFCHAR14
+  - name: olr_udfchar15
+    description: OLR_UDFCHAR15
+  - name: olr_udfchar16
+    description: OLR_UDFCHAR16
+  - name: olr_udfchar17
+    description: OLR_UDFCHAR17
+  - name: olr_udfchar18
+    description: OLR_UDFCHAR18
+  - name: olr_udfchar19
+    description: OLR_UDFCHAR19
+  - name: olr_udfchar20
+    description: OLR_UDFCHAR20
+  - name: olr_udfchar21
+    description: OLR_UDFCHAR21
+  - name: olr_udfchar22
+    description: OLR_UDFCHAR22
+  - name: olr_udfchar23
+    description: OLR_UDFCHAR23
+  - name: olr_udfchar24
+    description: OLR_UDFCHAR24
+  - name: olr_udfchar25
+    description: OLR_UDFCHAR25
+  - name: olr_udfchar26
+    description: OLR_UDFCHAR26
+  - name: olr_udfchar27
+    description: OLR_UDFCHAR27
+  - name: olr_udfchar28
+    description: OLR_UDFCHAR28
+  - name: olr_udfchar29
+    description: OLR_UDFCHAR29
+  - name: olr_udfchar30
+    description: OLR_UDFCHAR30
+  - name: olr_udfnum01
+    description: OLR_UDFNUM01
+  - name: olr_udfnum02
+    description: OLR_UDFNUM02
+  - name: olr_udfnum03
+    description: OLR_UDFNUM03
+  - name: olr_udfnum04
+    description: OLR_UDFNUM04
+  - name: olr_udfnum05
+    description: OLR_UDFNUM05
+  - name: olr_udfdate01
+    description: OLR_UDFDATE01
+  - name: olr_udfdate02
+    description: OLR_UDFDATE02
+  - name: olr_udfdate03
+    description: OLR_UDFDATE03
+  - name: olr_udfdate04
+    description: OLR_UDFDATE04
+  - name: olr_udfdate05
+    description: OLR_UDFDATE05
+  - name: olr_udfchkbox01
+    description: OLR_UDFCHKBOX01
+  - name: olr_udfchkbox02
+    description: OLR_UDFCHKBOX02
+  - name: olr_udfchkbox03
+    description: OLR_UDFCHKBOX03
+  - name: olr_udfchkbox04
+    description: OLR_UDFCHKBOX04
+  - name: olr_udfchkbox05
+    description: OLR_UDFCHKBOX05
+  - name: olr_packagetrackingnumber
+    description: OLR_PACKAGETRACKINGNUMBER
+  - name: olr_allowprepayment
+    description: OLR_ALLOWPREPAYMENT
+  - name: olr_paymentnumber
+    description: OLR_PAYMENTNUMBER
+  - name: olr_sourcesystem
+    description: OLR_SOURCESYSTEM
+  - name: olr_sourcecode
+    description: OLR_SOURCECODE
+  - name: olr_acd
+    description: OLR_ACD
+  - name: olr_interface
+    description: OLR_INTERFACE
+  - name: olr_iptransmitted
+    description: OLR_IPTRANSMITTED
+  - name: olr_ipcurrprice
+    description: OLR_IPCURRPRICE
+  - name: olr_attentionto
+    description: OLR_ATTENTIONTO
+  - name: olr_iperror
+    description: OLR_IPERROR
+  - name: olr_iperrormessage
+    description: OLR_IPERRORMESSAGE
+  - name: olr_note
+    description: OLR_NOTE
+  - name: olr_longdescription
+    description: OLR_LONGDESCRIPTION
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ORLREVISIONS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - olr_order
+        - olr_order_org
+        - olr_revision
+        - olr_ordline

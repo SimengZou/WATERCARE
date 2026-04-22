@@ -1,0 +1,106 @@
+version: 2
+models:
+- name: tppss210
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cpla
+    description: '(required) Plan. Max length: 3'
+    data_tests:
+    - not_null
+  - name: ffno
+    description: '(required) First Free Number. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pact
+    description: 'Predecessor Activity. Max length: 16'
+  - name: pcot
+    description: 'Predecessor Cost Type. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: pcot_kw
+    description: 'Predecessor Cost Type (keyword). Allowed values: tppdm.cote.tasks,
+      tppdm.cote.materials, tppdm.cote.equipment, tppdm.cote.subcontracting, tppdm.cote.indirect,
+      tppdm.cote.empty'
+  - name: psen
+    description: Predecessor Budget Line Number
+  - name: sact
+    description: 'Successor Activity. Max length: 16'
+  - name: scot
+    description: 'Successor Cost Type. Allowed values: 1, 2, 3, 4, 5, 6'
+  - name: scot_kw
+    description: 'Successor Cost Type (keyword). Allowed values: tppdm.cote.tasks,
+      tppdm.cote.materials, tppdm.cote.equipment, tppdm.cote.subcontracting, tppdm.cote.indirect,
+      tppdm.cote.empty'
+  - name: ssen
+    description: Successor Budget Line Number
+  - name: rltp
+    description: 'Relationship Type. Allowed values: 1, 2, 3, 4'
+  - name: rltp_kw
+    description: 'Relationship Type (keyword). Allowed values: tppss.rsty.stst, tppss.rsty.stfi,
+      tppss.rsty.fist, tppss.rsty.fifi'
+  - name: lead
+    description: Lead/Lag
+  - name: cuni
+    description: 'Lead/Lag Unit. Max length: 3'
+  - name: llpc
+    description: Lead/Lag Percentage
+  - name: rest
+    description: 'Linked to ESP. Allowed values: 1, 2'
+  - name: rest_kw
+    description: 'Linked to ESP (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cprj_cpla_ref_compnr
+    description: company number of primary key of table tppss010 Project Plans
+  - name: cprj_cpla_pact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_cpla_sact_ref_compnr
+    description: company number of primary key of table tppss200 Activities
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tppss210 Activity Relationships table, Generated 2026-04-10T19:42:19Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cpla
+        - ffno

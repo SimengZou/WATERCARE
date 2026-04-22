@@ -1,0 +1,155 @@
+version: 2
+models:
+- name: tcemm050
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: site
+    description: '(required) Site. Max length: 9'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: stat
+    description: 'Obsolete. Allowed values: 10, 20, 30, 40, 50, 100'
+  - name: stat_kw
+    description: 'Obsolete (keyword). Allowed values: tcemm.stat.in.prep, tcemm.stat.active,
+      tcemm.stat.closing.in.prog, tcemm.stat.closed, tcemm.stat.hidden, tcemm.stat.not.appl'
+  - name: lcmp
+    description: Logistic Company
+  - name: cadr
+    description: 'Address. Max length: 9'
+  - name: admo
+    description: 'Administrative Only. Allowed values: 1, 2'
+  - name: admo_kw
+    description: 'Administrative Only (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: clus
+    description: 'Planning Cluster. Max length: 3'
+  - name: ccal
+    description: 'Calendar Code. Max length: 9'
+  - name: ract
+    description: 'Availability Type. Max length: 6'
+  - name: eunt
+    description: 'Enterprise Unit. Max length: 6'
+  - name: cwar
+    description: 'Default Warehouse. Max length: 6'
+  - name: xsit
+    description: 'External Site. Allowed values: 1, 2'
+  - name: xsit_kw
+    description: 'External Site (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: subs
+    description: 'Subcontractor Site. Allowed values: 1, 2'
+  - name: subs_kw
+    description: 'Subcontractor Site (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: sfbp
+    description: 'Ship-from Business Partner. Max length: 9'
+  - name: cust
+    description: 'Customer Site. Allowed values: 1, 2'
+  - name: cust_kw
+    description: 'Customer Site (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: expl
+    description: 'Exclude From Enterprise Planning. Allowed values: 1, 2'
+  - name: expl_kw
+    description: 'Exclude From Enterprise Planning (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: scat
+    description: 'Site Category. Max length: 9'
+  - name: psit
+    description: 'Parent Site. Max length: 9'
+  - name: crdt
+    description: Creation Date
+  - name: crby
+    description: 'Created by. Max length: 16'
+  - name: inf1__en_us
+    description: '(required) Site Information 1 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: inf2__en_us
+    description: '(required) Site Information 2 - base language. Max length: 100'
+    data_tests:
+    - not_null
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: txta
+    description: Text
+  - name: lcmp_ref_compnr
+    description: company number of primary key of table tcemm170 Companies
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: clus_ref_compnr
+    description: company number of primary key of table tcemm135 Clusters
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: ract_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: eunt_ref_compnr
+    description: company number of primary key of table tcemm030 Enterprise Units
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom121 Ship-from Business
+      Partners
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: scat_ref_compnr
+    description: company number of primary key of table tcemm052 Site Categories
+  - name: psit_ref_compnr
+    description: company number of primary key of table tcemm055 Parent Sites
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcemm050 Sites table, Generated 2026-04-10T19:41:06Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - site

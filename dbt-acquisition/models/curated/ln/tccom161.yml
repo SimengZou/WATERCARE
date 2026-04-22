@@ -1,0 +1,89 @@
+version: 2
+models:
+- name: tccom161
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: imcs
+    description: '(required) Intermediate Consignee. Max length: 35'
+    data_tests:
+    - not_null
+  - name: ofbp
+    description: '(required) Sold-to Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: stbp
+    description: '(required) Ship-to Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: site
+    description: '(required) Site. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cwar
+    description: '(required) Ship-from Warehouse. Max length: 6'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: cadr
+    description: 'Address. Max length: 9'
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom161 Intermediate Consignees table, Generated 2026-04-10T19:41:05Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - imcs
+        - ofbp
+        - stbp
+        - site
+        - cwar

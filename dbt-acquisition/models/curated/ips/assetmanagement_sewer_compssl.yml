@@ -1,0 +1,150 @@
+version: 2
+models:
+- name: assetmanagement_sewer_compssl
+  columns:
+  - name: pipetype
+    description: 'Metadata for column PIPETYPE. Max length: 10'
+  - name: complexkey
+    description: Metadata for column COMPLEXKEY
+  - name: zcoord
+    description: Metadata for column ZCOORD
+  - name: usgareakey
+    description: Metadata for column USGAREAKEY
+  - name: addrkey
+    description: Metadata for column ADDRKEY
+  - name: diam
+    description: Metadata for column DIAM
+  - name: tapdistuom
+    description: 'Metadata for column TAPDISTUOM. Max length: 10'
+  - name: subarea
+    description: 'Metadata for column SUBAREA. Max length: 10'
+  - name: proplndpthuom
+    description: 'Metadata for column PROPLNDPTHUOM. Max length: 10'
+  - name: proplndpth
+    description: Metadata for column PROPLNDPTH
+  - name: owncond
+    description: 'Metadata for column OWNCOND. Max length: 10'
+  - name: unitdesc
+    description: 'Metadata for column UNITDESC. Max length: 300'
+  - name: instdate
+    description: Metadata for column INSTDATE
+  - name: surf
+    description: 'Metadata for column SURF. Max length: 10'
+  - name: npdesid
+    description: 'Metadata for column NPDESID. Max length: 12'
+  - name: unittype
+    description: 'Metadata for column UNITTYPE. Max length: 10'
+  - name: own
+    description: 'Metadata for column OWN. Max length: 10'
+  - name: tapdist
+    description: Metadata for column TAPDIST
+  - name: budgetkey
+    description: Metadata for column BUDGETKEY
+  - name: srvtype
+    description: 'Metadata for column SRVTYPE. Max length: 10'
+  - name: addby
+    description: 'Metadata for column ADDBY. Max length: 30'
+  - name: taploc
+    description: 'Metadata for column TAPLOC. Max length: 300'
+  - name: prclkey
+    description: Metadata for column PRCLKEY
+  - name: tapaddrkey
+    description: Metadata for column TAPADDRKEY
+  - name: tapfrom
+    description: 'Metadata for column TAPFROM. Max length: 1'
+  - name: asblt
+    description: 'Metadata for column ASBLT. Max length: 10'
+  - name: pipelenuom
+    description: 'Metadata for column PIPELENUOM. Max length: 10'
+  - name: loc
+    description: 'Metadata for column LOC. Max length: 10'
+  - name: epaid
+    description: 'Metadata for column EPAID. Max length: 12'
+  - name: servstat
+    description: 'Metadata for column SERVSTAT. Max length: 10'
+  - name: mapno
+    description: 'Metadata for column MAPNO. Max length: 14'
+  - name: unitid
+    description: 'Metadata for column UNITID. Max length: 50'
+  - name: bldgkey
+    description: Metadata for column BLDGKEY
+  - name: bldgroom
+    description: Metadata for column BLDGROOM
+  - name: dbno
+    description: 'Metadata for column DBNO. Max length: 11'
+  - name: ycoord
+    description: Metadata for column YCOORD
+  - name: expdate
+    description: Metadata for column EXPDATE
+  - name: diamuom
+    description: 'Metadata for column DIAMUOM. Max length: 10'
+  - name: pipelen
+    description: Metadata for column PIPELEN
+  - name: municond
+    description: 'Metadata for column MUNICOND. Max length: 10'
+  - name: sic
+    description: 'Metadata for column SIC. Max length: 10'
+  - name: area
+    description: 'Metadata for column AREA. Max length: 10'
+  - name: sitekey
+    description: Metadata for column SITEKEY
+  - name: clnout
+    description: 'Metadata for column CLNOUT. Max length: 20'
+  - name: addrqual
+    description: 'Metadata for column ADDRQUAL. Max length: 300'
+  - name: compkey
+    description: (required) Metadata for column COMPKEY
+    data_tests:
+    - unique
+    - not_null
+  - name: gisstatic
+    description: Metadata for column GISSTATIC
+  - name: position
+    description: Metadata for column POSITION
+  - name: notaps
+    description: Metadata for column NOTAPS
+  - name: xcoord
+    description: Metadata for column XCOORD
+  - name: expby
+    description: 'Metadata for column EXPBY. Max length: 12'
+  - name: mainkey
+    description: Metadata for column MAINKEY
+  - name: adddttm
+    description: Metadata for column ADDDTTM
+  - name: district
+    description: 'Metadata for column DISTRICT. Max length: 10'
+  - name: bgtno
+    description: 'Metadata for column BGTNO. Max length: 24'
+  - name: bldgfloor
+    description: Metadata for column BLDGFLOOR
+  - name: modby
+    description: 'Metadata for column MODBY. Max length: 30'
+  - name: mfgkey
+    description: Metadata for column MFGKEY
+  - name: uicid
+    description: 'Metadata for column UICID. Max length: 14'
+  - name: segkey
+    description: Metadata for column SEGKEY
+  - name: moddttm
+    description: Metadata for column MODDTTM
+  - name: variation_id
+    description: Virtual variation id property
+  - name: datalake_deleted
+    description: Property that indicates whether the record is marked as deleted
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated by Infor IPS DataLake adoption from tenant WATERCARE_DEV
+    table ASSETMANAGEMENT_SEWER.COMPSSL on 2022-05-04T10:40:03.601

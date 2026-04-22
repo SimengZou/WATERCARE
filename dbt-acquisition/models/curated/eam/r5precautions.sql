@@ -1,0 +1,92 @@
+{{ config(
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key='dbt_surrogate_key',
+    description='eam_R5PRECAUTIONS',
+    tags=['auto-generated', 'eam', 'stage1']
+) }}
+
+with cte_flattened as (
+    select
+        {{ trx_json_extract('src', ['PCA_LASTSAVED'], type='timestamp_ntz', alias='pca_lastsaved') }},
+        {{ trx_json_extract('src', ['PCA_CODE'], type='varchar', alias='pca_code') }},
+        {{ trx_json_extract('src', ['PCA_ORG'], type='varchar', alias='pca_org') }},
+        {{ trx_json_extract('src', ['PCA_REVISION'], type='float', alias='pca_revision') }},
+        {{ trx_json_extract('src', ['PCA_DESC'], type='varchar', alias='pca_desc') }},
+        {{ trx_json_extract('src', ['PCA_STATUS'], type='varchar', alias='pca_status') }},
+        {{ trx_json_extract('src', ['PCA_RSTATUS'], type='varchar', alias='pca_rstatus') }},
+        {{ trx_json_extract('src', ['PCA_NOTUSED'], type='varchar', alias='pca_notused') }},
+        {{ trx_json_extract('src', ['PCA_TIMING'], type='varchar', alias='pca_timing') }},
+        {{ trx_json_extract('src', ['PCA_CLASS'], type='varchar', alias='pca_class') }},
+        {{ trx_json_extract('src', ['PCA_CLASS_ORG'], type='varchar', alias='pca_class_org') }},
+        {{ trx_json_extract('src', ['PCA_REVIEWREQUIRED'], type='timestamp_ntz', alias='pca_reviewrequired') }},
+        {{ trx_json_extract('src', ['PCA_CREATED'], type='timestamp_ntz', alias='pca_created') }},
+        {{ trx_json_extract('src', ['PCA_CREATEDBY'], type='varchar', alias='pca_createdby') }},
+        {{ trx_json_extract('src', ['PCA_UPDATED'], type='timestamp_ntz', alias='pca_updated') }},
+        {{ trx_json_extract('src', ['PCA_UPDATEDBY'], type='varchar', alias='pca_updatedby') }},
+        {{ trx_json_extract('src', ['PCA_REQUESTED'], type='timestamp_ntz', alias='pca_requested') }},
+        {{ trx_json_extract('src', ['PCA_REQUESTEDBY'], type='varchar', alias='pca_requestedby') }},
+        {{ trx_json_extract('src', ['PCA_APPROVED'], type='timestamp_ntz', alias='pca_approved') }},
+        {{ trx_json_extract('src', ['PCA_APPROVEDBY'], type='varchar', alias='pca_approvedby') }},
+        {{ trx_json_extract('src', ['PCA_REVISIONREASON'], type='varchar', alias='pca_revisionreason') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR01'], type='varchar', alias='pca_udfchar01') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR02'], type='varchar', alias='pca_udfchar02') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR03'], type='varchar', alias='pca_udfchar03') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR04'], type='varchar', alias='pca_udfchar04') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR05'], type='varchar', alias='pca_udfchar05') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR06'], type='varchar', alias='pca_udfchar06') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR07'], type='varchar', alias='pca_udfchar07') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR08'], type='varchar', alias='pca_udfchar08') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR09'], type='varchar', alias='pca_udfchar09') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR10'], type='varchar', alias='pca_udfchar10') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR11'], type='varchar', alias='pca_udfchar11') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR12'], type='varchar', alias='pca_udfchar12') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR13'], type='varchar', alias='pca_udfchar13') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR14'], type='varchar', alias='pca_udfchar14') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR15'], type='varchar', alias='pca_udfchar15') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR16'], type='varchar', alias='pca_udfchar16') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR17'], type='varchar', alias='pca_udfchar17') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR18'], type='varchar', alias='pca_udfchar18') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR19'], type='varchar', alias='pca_udfchar19') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR20'], type='varchar', alias='pca_udfchar20') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR21'], type='varchar', alias='pca_udfchar21') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR22'], type='varchar', alias='pca_udfchar22') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR23'], type='varchar', alias='pca_udfchar23') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR24'], type='varchar', alias='pca_udfchar24') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR25'], type='varchar', alias='pca_udfchar25') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR26'], type='varchar', alias='pca_udfchar26') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR27'], type='varchar', alias='pca_udfchar27') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR28'], type='varchar', alias='pca_udfchar28') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR29'], type='varchar', alias='pca_udfchar29') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHAR30'], type='varchar', alias='pca_udfchar30') }},
+        {{ trx_json_extract('src', ['PCA_UDFNUM01'], type='float', alias='pca_udfnum01') }},
+        {{ trx_json_extract('src', ['PCA_UDFNUM02'], type='float', alias='pca_udfnum02') }},
+        {{ trx_json_extract('src', ['PCA_UDFNUM03'], type='float', alias='pca_udfnum03') }},
+        {{ trx_json_extract('src', ['PCA_UDFNUM04'], type='float', alias='pca_udfnum04') }},
+        {{ trx_json_extract('src', ['PCA_UDFNUM05'], type='float', alias='pca_udfnum05') }},
+        {{ trx_json_extract('src', ['PCA_UDFDATE01'], type='timestamp_ntz', alias='pca_udfdate01') }},
+        {{ trx_json_extract('src', ['PCA_UDFDATE02'], type='timestamp_ntz', alias='pca_udfdate02') }},
+        {{ trx_json_extract('src', ['PCA_UDFDATE03'], type='timestamp_ntz', alias='pca_udfdate03') }},
+        {{ trx_json_extract('src', ['PCA_UDFDATE04'], type='timestamp_ntz', alias='pca_udfdate04') }},
+        {{ trx_json_extract('src', ['PCA_UDFDATE05'], type='timestamp_ntz', alias='pca_udfdate05') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHKBOX01'], type='varchar', alias='pca_udfchkbox01') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHKBOX02'], type='varchar', alias='pca_udfchkbox02') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHKBOX03'], type='varchar', alias='pca_udfchkbox03') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHKBOX04'], type='varchar', alias='pca_udfchkbox04') }},
+        {{ trx_json_extract('src', ['PCA_UDFCHKBOX05'], type='varchar', alias='pca_udfchkbox05') }},
+        {{ trx_json_extract('src', ['PCA_UPDATECOUNT'], type='float', alias='pca_updatecount') }},
+        {{ trx_json_extract('src', ['PCA_RESPONSIBILITY'], type='varchar', alias='pca_responsibility') }},
+        {{ trx_json_extract('src', ['_DELETED'], type='boolean', alias='_deleted') }},
+        {{ trx_etl_columns() }}
+    from {{ source('source_landing_eam', 'eam_r5precautions') }}
+)
+
+select
+    *,
+    {{ trx_audit_columns() }},
+    {{ trx_audit_surrogate(columns=['pca_code', 'pca_org', 'pca_revision']) }}
+from cte_flattened
+{% if is_incremental() %}
+where etl_load_datetime > (select max(etl_load_datetime) from {{ this }})
+{% endif %}
+{{ trx_current_state(order_by=['pca_lastsaved']) }}

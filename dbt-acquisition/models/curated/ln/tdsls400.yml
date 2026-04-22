@@ -1,0 +1,480 @@
+version: 2
+models:
+- name: tdsls400
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: orno
+    description: '(required) Sales Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: ofad
+    description: 'Sold-to Address. Max length: 9'
+  - name: ofcn
+    description: 'Sold-to Contact. Max length: 9'
+  - name: stbp
+    description: 'Ship-to Business Partner. Max length: 9'
+  - name: stad
+    description: 'Ship-to Address. Max length: 9'
+  - name: stcn
+    description: 'Ship-to Contact. Max length: 9'
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: itad
+    description: 'Invoice-to Address. Max length: 9'
+  - name: itcn
+    description: 'Invoice-to Contact. Max length: 9'
+  - name: pfbp
+    description: 'Pay-by Business Partner. Max length: 9'
+  - name: pfad
+    description: 'Pay-by Address. Max length: 9'
+  - name: pfcn
+    description: 'Pay-by Contact. Max length: 9'
+  - name: corg
+    description: 'Origin. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 21, 22,
+      25, 30, 35, 40, 45, 99'
+  - name: corg_kw
+    description: 'Origin (keyword). Allowed values: tdsls.corg.contracts, tdsls.corg.quotations,
+      tdsls.corg.eop, tdsls.corg.manual, tdsls.corg.phone, tdsls.corg.fax, tdsls.corg.mail,
+      tdsls.corg.opportunity, tdsls.corg.crm, tdsls.corg.consumption, tdsls.corg.quicklist,
+      tdsls.corg.service, tdsls.corg.edi.dir.del, tdsls.corg.retrobill, tdsls.corg.planning,
+      tdsls.corg.purchase, tdsls.corg.shipment, tdsls.corg.price.calc, tdsls.corg.not.appl'
+  - name: sotp
+    description: 'Sales Order Type. Max length: 3'
+  - name: odat
+    description: Order Date
+  - name: mprm
+    description: 'Multiple Promotion Method. Allowed values: 1, 2'
+  - name: mprm_kw
+    description: 'Multiple Promotion Method (keyword). Allowed values: tdsls.mprm.parallel,
+      tdsls.mprm.cumulative'
+  - name: tprd
+    description: Total Promotion Discount
+  - name: odis
+    description: Order Discount
+  - name: ccur
+    description: 'Order Currency. Max length: 3'
+  - name: fcrt
+    description: 'Rate Determiner. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 10, 20'
+  - name: fcrt_kw
+    description: 'Rate Determiner (keyword). Allowed values: tcfcrt.fixedl, tcfcrt.fixedh,
+      tcfcrt.fixedlh, tcfcrt.ddat, tcfcrt.rdat, tcfcrt.docd, tcfcrt.excd, tcfcrt.manual,
+      tcfcrt.fixed, tcfcrt.not.appl'
+  - name: rats_1
+    description: Currency Rate Sales
+  - name: rats_2
+    description: Currency Rate Sales
+  - name: rats_3
+    description: Currency Rate Sales
+  - name: ratf_1
+    description: Rate Factor
+  - name: ratf_2
+    description: Rate Factor
+  - name: ratf_3
+    description: Rate Factor
+  - name: ratd
+    description: Rate Date
+  - name: ratt
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: bpcl
+    description: 'Tax Classification. Max length: 12'
+  - name: crep
+    description: 'Internal Sales Representative. Max length: 9'
+  - name: osrp
+    description: 'External Sales Representative. Max length: 9'
+  - name: cvyn
+    description: 'Obsolete. Allowed values: 1, 2'
+  - name: cvyn_kw
+    description: 'Obsolete (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ccrs
+    description: 'Late Payment Surcharge. Max length: 3'
+  - name: cfrw
+    description: 'Carrier/LSP. Max length: 3'
+  - name: cpls
+    description: 'Sales Price List. Max length: 3'
+  - name: pldd
+    description: 'Price List for Direct Delivery. Max length: 3'
+  - name: bppr
+    description: 'BP Prices/Discounts. Max length: 9'
+  - name: bptx
+    description: 'Business Partner Texts. Max length: 9'
+  - name: ccty
+    description: 'Obsolete. Max length: 3'
+  - name: cdec
+    description: 'Delivery Terms. Max length: 3'
+  - name: ptpa
+    description: 'Point of Title Passage. Max length: 9'
+  - name: pcod
+    description: 'Delivery Pattern. Max length: 6'
+  - name: ddat
+    description: Planned Delivery Date
+  - name: ddtc
+    description: Customer Requested Delivery Date
+  - name: futo
+    description: 'Invoicing by Installments. Allowed values: 1, 2, 3, 4, 10'
+  - name: futo_kw
+    description: 'Invoicing by Installments (keyword). Allowed values: tcfuto.no,
+      tcfuto.direct, tcfuto.indirect, tcfuto.delivered, tcfuto.plan'
+  - name: inpl
+    description: 'Installment Plan. Max length: 9'
+  - name: cbrn
+    description: 'Line of Business. Max length: 6'
+  - name: creg
+    description: 'Area. Max length: 3'
+  - name: corn__en_us
+    description: '(required) Customer Order - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refa__en_us
+    description: '(required) Reference A - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: refb__en_us
+    description: '(required) Reference B - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: prno
+    description: 'Contract. Max length: 9'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: scon
+    description: 'Shipping Constraint. Allowed values: 1, 2, 3, 4, 5, 6, 10'
+  - name: scon_kw
+    description: 'Shipping Constraint (keyword). Allowed values: tdscon.none, tdscon.sc,
+      tdscon.rc, tdscon.oc, tdscon.sca, tdscon.kc, tdscon.not.applicable'
+  - name: prdt
+    description: Planned Receipt Date
+  - name: cfdt
+    description: Order Confirmation Date
+  - name: acdt
+    description: Goods Acceptance Date
+  - name: odty
+    description: 'Original Document Type. Allowed values: 1, 2, 4, 5, 6, 7, 8, 9,
+      15'
+  - name: odty_kw
+    description: 'Original Document Type (keyword). Allowed values: tdsls.odty.order,
+      tdsls.odty.shipment, tdsls.odty.invoice, tdsls.odty.schedule, tdsls.odty.sch.shipment,
+      tdsls.odty.rb.order, tdsls.odty.rb.schedule, tdsls.odty.shipment.ident, tdsls.odty.notappl'
+  - name: odno
+    description: 'Original Document Number. Max length: 9'
+  - name: rcmp
+    description: Return Invoice Company
+  - name: rtyp
+    description: 'Return Transaction Type. Max length: 3'
+  - name: retr
+    description: 'Return Reason. Max length: 6'
+  - name: cofc
+    description: 'Sales Office. Max length: 6'
+  - name: fdpt
+    description: 'Financial Department. Max length: 6'
+  - name: site
+    description: 'Site. Max length: 9'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: clyn
+    description: 'Canceled. Allowed values: 1, 2'
+  - name: clyn_kw
+    description: 'Canceled (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: paym
+    description: 'Payment Method. Max length: 3'
+  - name: crte
+    description: 'Route. Max length: 5'
+  - name: bkyn
+    description: 'Blocked. Allowed values: 1, 2'
+  - name: bkyn_kw
+    description: 'Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: agen
+    description: 'EDI Acknowledgement Generated. Allowed values: 1, 2'
+  - name: agen_kw
+    description: 'EDI Acknowledgement Generated (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: cosn
+    description: 'Change Order Sequence No.. Max length: 8'
+  - name: akcd
+    description: 'Sales Acknowledgment. Max length: 2'
+  - name: crcd
+    description: 'Change Reason. Max length: 6'
+  - name: ctcd
+    description: 'Change Type. Max length: 6'
+  - name: sbim
+    description: 'Self-Billing. Allowed values: 1, 2'
+  - name: sbim_kw
+    description: 'Self-Billing (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oref__en_us
+    description: '(required) Order Reference - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: frin
+    description: 'Invoice for Freight. Allowed values: 1, 2'
+  - name: frin_kw
+    description: 'Invoice for Freight (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: infr
+    description: 'Invoice Freight Costs Based On. Allowed values: 5, 10, 15, 20'
+  - name: infr_kw
+    description: 'Invoice Freight Costs Based On (keyword). Allowed values: tccom.infr.estimate,
+      tccom.infr.actual, tccom.infr.costplus, tccom.infr.not.applic'
+  - name: oamt
+    description: Order Amount
+  - name: ruso
+    description: 'Rush Order. Allowed values: 1, 2'
+  - name: ruso_kw
+    description: 'Rush Order (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: hdst
+    description: 'Sales Order Status. Allowed values: 2, 5, 10, 20, 25, 30, 35, 40,
+      45, 50'
+  - name: hdst_kw
+    description: 'Sales Order Status (keyword). Allowed values: tdsls.hdst.suspended,
+      tdsls.hdst.free, tdsls.hdst.approved, tdsls.hdst.in.process, tdsls.hdst.modified,
+      tdsls.hdst.closed, tdsls.hdst.cancelled, tdsls.hdst.blocked, tdsls.hdst.released,
+      tdsls.hdst.not.applicable'
+  - name: motv
+    description: 'Motive of Transport. Max length: 6'
+  - name: delc
+    description: 'Delivery Code. Max length: 6'
+  - name: shpm
+    description: 'Shipment. Max length: 9'
+  - name: hiss
+    description: 'Log Order History. Allowed values: 1, 2'
+  - name: hiss_kw
+    description: 'Log Order History (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: ehis
+    description: 'Log EDI Order History. Allowed values: 1, 2'
+  - name: ehis_kw
+    description: 'Log EDI Order History (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: hism
+    description: 'Start Logging Order History at. Allowed values: 10, 20'
+  - name: hism_kw
+    description: 'Start Logging Order History at (keyword). Allowed values: tdgen.hism.entry,
+      tdgen.hism.approval'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: esin
+    description: 'Extended Service Integration. Allowed values: 1, 2'
+  - name: esin_kw
+    description: 'Extended Service Integration (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: lcrq
+    description: 'Letter of Credit Required. Allowed values: 1, 2'
+  - name: lcrq_kw
+    description: 'Letter of Credit Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bgrq
+    description: 'Bank Guarantee - Applicant Required. Allowed values: 1, 2'
+  - name: bgrq_kw
+    description: 'Bank Guarantee - Applicant Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: bgrb
+    description: 'Bank Guarantee - Beneficiary Required. Allowed values: 1, 2'
+  - name: bgrb_kw
+    description: 'Bank Guarantee - Beneficiary Required (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: airp
+    description: 'Allow Inventory Recheck for Promised Lines. Allowed values: 1, 2'
+  - name: airp_kw
+    description: 'Allow Inventory Recheck for Promised Lines (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: chrq
+    description: 'Change Request. Allowed values: 1, 2, 3'
+  - name: chrq_kw
+    description: 'Change Request (keyword). Allowed values: tcynna.yes, tcynna.no,
+      tcynna.not.app'
+  - name: revn
+    description: Change Request Revision
+  - name: osor
+    description: 'Original Sales Order. Max length: 9'
+  - name: crby
+    description: 'Change Request Created by. Max length: 16'
+  - name: crdt
+    description: Change Request Creation Date
+  - name: cror
+    description: 'Change Request Origin. Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      10, 14, 21, 22, 25, 30, 35, 40, 45, 99'
+  - name: cror_kw
+    description: 'Change Request Origin (keyword). Allowed values: tdsls.corg.contracts,
+      tdsls.corg.quotations, tdsls.corg.eop, tdsls.corg.manual, tdsls.corg.phone,
+      tdsls.corg.fax, tdsls.corg.mail, tdsls.corg.opportunity, tdsls.corg.crm, tdsls.corg.consumption,
+      tdsls.corg.quicklist, tdsls.corg.service, tdsls.corg.edi.dir.del, tdsls.corg.retrobill,
+      tdsls.corg.planning, tdsls.corg.purchase, tdsls.corg.shipment, tdsls.corg.price.calc,
+      tdsls.corg.not.appl'
+  - name: crin
+    description: 'Internal Change Request. Allowed values: 1, 2'
+  - name: crin_kw
+    description: 'Internal Change Request (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: crst
+    description: 'Change Request Status. Allowed values: 10, 20, 30, 40, 50, 90'
+  - name: crst_kw
+    description: 'Change Request Status (keyword). Allowed values: tdgen.crst.initial,
+      tdgen.crst.approved, tdgen.crst.modified, tdgen.crst.processed, tdgen.crst.canceled,
+      tdgen.crst.not.applicable'
+  - name: crrq
+    description: 'Change Request Required. Allowed values: 1, 2'
+  - name: crrq_kw
+    description: 'Change Request Required (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: txta
+    description: Header Text
+  - name: txtb
+    description: Footer Text
+  - name: crht
+    description: Change Request Text
+  - name: orno_cosn_ref_compnr
+    description: company number of primary key of table tdsls414 Sales Change Order
+      Sequence Numbers
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: ofad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ofcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: stbp_ref_compnr
+    description: company number of primary key of table tccom111 Ship-to Business
+      Partners
+  - name: stad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: stcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: itad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: itcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: pfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: pfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: pfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: sotp_ref_compnr
+    description: company number of primary key of table tdsls094 Sales Order Types
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ratt_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: bpcl_ref_compnr
+    description: company number of primary key of table tctax016 Tax Classifications
+  - name: crep_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: osrp_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: ccrs_ref_compnr
+    description: company number of primary key of table tcmcs011 Late Payment Surcharges
+  - name: cfrw_ref_compnr
+    description: company number of primary key of table tcmcs080 Carriers/LSP
+  - name: cpls_ref_compnr
+    description: company number of primary key of table tcmcs034 Price Lists
+  - name: pldd_ref_compnr
+    description: company number of primary key of table tcmcs034 Price Lists
+  - name: bppr_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: bptx_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cdec_ref_compnr
+    description: company number of primary key of table tcmcs041 Delivery Terms
+  - name: ptpa_ref_compnr
+    description: company number of primary key of table tcmcs042 Points of Title Passage
+  - name: pcod_ref_compnr
+    description: company number of primary key of table tdisa021 Delivery Patterns
+  - name: inpl_ref_compnr
+    description: company number of primary key of table tcmcs245 Installment Plans
+  - name: cbrn_ref_compnr
+    description: company number of primary key of table tcmcs031 Lines of Business
+  - name: creg_ref_compnr
+    description: company number of primary key of table tcmcs045 Areas
+  - name: prno_ref_compnr
+    description: company number of primary key of table tdsls300 Sales Contracts
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: retr_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tdsls012 Sales Offices
+  - name: fdpt_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: site_ref_compnr
+    description: company number of primary key of table tcemm050 Sites
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: crte_ref_compnr
+    description: company number of primary key of table tcmcs004 Routes
+  - name: akcd_ref_compnr
+    description: company number of primary key of table tdsls054 Sales Acknowledgments
+  - name: crcd_ref_compnr
+    description: company number of primary key of table tdsls097 Change Reasons
+  - name: ctcd_ref_compnr
+    description: company number of primary key of table tdsls098 Change Types
+  - name: motv_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: delc_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtb_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: crht_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: tprd_lclc
+    description: 'CC: Order Promotion Discount in Local Currency'
+  - name: tprd_rpc1
+    description: 'CC: Order Promotion Discount in Reporting Currency 1'
+  - name: tprd_rpc2
+    description: 'CC: Order Promotion Discount in Reporting Currency 2'
+  - name: tprd_rfrc
+    description: 'CC: Order Promotion Discount in Reference Currency'
+  - name: tprd_dtwc
+    description: 'CC: Order Promotion Discount in Data Warehouse Currency'
+  - name: cofc_rcmp
+    description: 'CC: Reference Company of Sales Office'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tdsls400 Sales Orders table, Generated 2026-04-10T19:41:25Z from
+    package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - orno

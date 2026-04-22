@@ -1,0 +1,472 @@
+version: 2
+models:
+- name: tsclm100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ccll
+    description: '(required) Call. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cllo
+    description: 'Origin. Allowed values: 5, 10, 15, 20, 25, 30, 35, 40'
+  - name: cllo_kw
+    description: 'Origin (keyword). Allowed values: tsclm.cllo.telep, tsclm.cllo.fax,
+      tsclm.cllo.modem, tsclm.cllo.letter, tsclm.cllo.internal, tsclm.cllo.email,
+      tsclm.cllo.other, tsclm.cllo.internet'
+  - name: fcll
+    description: 'Follow-up Call. Max length: 9'
+  - name: pcll
+    description: 'Parent Call. Max length: 9'
+  - name: rsvo
+    description: 'Related Service Order. Max length: 9'
+  - name: rfco
+    description: 'Related Field Change Order. Max length: 9'
+  - name: rfcl
+    description: Related Field Change Order Line
+  - name: ccty
+    description: 'Country. Max length: 3'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: ofbp
+    description: 'Sold-to BP. Max length: 9'
+  - name: soad
+    description: 'Sold-to Address. Max length: 9'
+  - name: socn
+    description: 'Sold-to Contact. Max length: 9'
+  - name: ofad
+    description: 'Location Address. Max length: 9'
+  - name: ofcn
+    description: 'Location Contact. Max length: 9'
+  - name: clst
+    description: 'Installation Group. Max length: 9'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: sern
+    description: 'Serial Number. Max length: 30'
+  - name: ubbp
+    description: 'In Use-by Business Partner. Max length: 9'
+  - name: ubad
+    description: 'In Use-by Business Partner Address. Max length: 9'
+  - name: ubcn
+    description: 'In Use-by Business Partner Contact. Max length: 9'
+  - name: ubop
+    description: 'In Use-by Operator Contact. Max length: 9'
+  - name: telp
+    description: 'Phone. Max length: 32'
+  - name: ccln__en_us
+    description: '(required) BP Call Number - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: shdp__en_us
+    description: '(required) Solution Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: shpd__en_us
+    description: '(required) Call Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: csgr
+    description: 'Service Item Group. Max length: 6'
+  - name: cgrp
+    description: 'Call Group1. Max length: 3'
+  - name: scgr
+    description: 'Call Group2. Max length: 3'
+  - name: crtc
+    description: 'Response Type. Max length: 3'
+  - name: prpr
+    description: Problem Priority
+  - name: cupr
+    description: Business Partner Priority
+  - name: obpr
+    description: Serialized Item Priority
+  - name: rprl
+    description: 'Reported Problem. Max length: 10'
+  - name: expr
+    description: 'Expected Problem. Max length: 10'
+  - name: espr
+    description: 'Actual Problem. Max length: 10'
+  - name: exsl
+    description: 'Expected Solution. Max length: 10'
+  - name: sltn
+    description: 'Actual Solution. Max length: 10'
+  - name: rqct
+    description: 'Required Activity. Max length: 16'
+  - name: camr
+    description: 'Master Routing. Max length: 16'
+  - name: actt
+    description: 'Activity Taken. Max length: 16'
+  - name: bdfx
+    description: 'Bad Fix. Allowed values: 1, 2'
+  - name: bdfx_kw
+    description: 'Bad Fix (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: encl
+    description: Number of Enclosures
+  - name: atml
+    description: Actual Time Left
+  - name: inrt
+    description: Initial Time Left
+  - name: adur
+    description: Duration
+  - name: appo
+    description: 'Appointment. Allowed values: 1, 2'
+  - name: appo_kw
+    description: 'Appointment (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: clna__en_us
+    description: '(required) Caller''s Name - base language. Max length: 35'
+    data_tests:
+    - not_null
+  - name: cinv
+    description: 'Invoice Interval. Max length: 3'
+  - name: inyn
+    description: 'Invoice Created. Allowed values: 1, 2'
+  - name: inyn_kw
+    description: 'Invoice Created (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: wait
+    description: 'Waiting. Allowed values: 1, 2'
+  - name: wait_kw
+    description: 'Waiting (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: wtds__en_us
+    description: '(required) Waiting Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: stat
+    description: 'Status. Allowed values: 5, 10, 15, 20, 25, 30'
+  - name: stat_kw
+    description: 'Status (keyword). Allowed values: tsclm.stat.regist, tsclm.stat.assign,
+      tsclm.stat.process, tsclm.stat.transf, tsclm.stat.solved, tsclm.stat.accept'
+  - name: cspc
+    description: 'Call Center. Max length: 6'
+  - name: cwoc
+    description: 'Support Department. Max length: 6'
+  - name: emno
+    description: 'Support Engineer. Max length: 9'
+  - name: cxsc
+    description: 'Service Office. Max length: 6'
+  - name: crdt
+    description: Creation Date
+  - name: rpct
+    description: Reported Time
+  - name: asct
+    description: Assessment Time
+  - name: slct
+    description: Solution Time
+  - name: ustm
+    description: Spent Time
+  - name: adtm
+    description: Actual Down Time
+  - name: rtct
+    description: Reaction Time
+  - name: arct
+    description: Actual Reaction Time
+  - name: egct
+    description: Latest Solution Start Time
+  - name: svct
+    description: Latest Solution Finish Time
+  - name: pect
+    description: Execution Start Time
+  - name: pfct
+    description: Actual Finish Time
+  - name: acct
+    description: Accepted Time
+  - name: user
+    description: 'Call Taker. Max length: 12'
+  - name: blyn
+    description: 'Blocked. Allowed values: 1, 2'
+  - name: blyn_kw
+    description: 'Blocked (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bldt
+    description: Last Unblocked Date
+  - name: emer
+    description: 'Emergency Call. Allowed values: 1, 2'
+  - name: emer_kw
+    description: 'Emergency Call (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: oemn
+    description: 'Service Engineer. Max length: 9'
+  - name: itbp
+    description: 'Invoice-to Business Partner. Max length: 9'
+  - name: itad
+    description: 'Invoice-to Address. Max length: 9'
+  - name: itcn
+    description: 'Invoice-to Contact. Max length: 9'
+  - name: pfbp
+    description: 'Pay-by Business Partner. Max length: 9'
+  - name: pfad
+    description: 'Pay-by Address. Max length: 9'
+  - name: pfcn
+    description: 'Pay-by Contact. Max length: 9'
+  - name: csco
+    description: 'Coverage Contract. Max length: 9'
+  - name: pcon
+    description: 'Pricing Contract. Max length: 9'
+  - name: pcch
+    description: Pricing Contract Change
+  - name: pcln
+    description: Pricing Contract Line
+  - name: cvtm
+    description: Coverage Time
+  - name: bfbp
+    description: 'Buy-from Business Partner. Max length: 9'
+  - name: sfbp
+    description: 'Ship-from BP. Max length: 9'
+  - name: sbct
+    description: 'Subcontractor Agreement. Max length: 9'
+  - name: sfad
+    description: 'Ship-from Address. Max length: 9'
+  - name: rmso
+    description: 'Related Maintenance Sales Order. Max length: 9'
+  - name: csqu
+    description: 'Related Service Order Quote. Max length: 9'
+  - name: citm
+    description: 'Search Item. Max length: 47'
+  - name: cser
+    description: 'Search Item Serial Number. Max length: 30'
+  - name: cctp
+    description: 'Coverage Type. Max length: 3'
+  - name: imag
+    description: 'Picture. Max length: 22'
+  - name: cprj
+    description: 'Project. Max length: 9'
+  - name: cspa
+    description: 'Element. Max length: 16'
+  - name: pcac
+    description: 'Activity. Max length: 16'
+  - name: inby
+    description: 'Invoicing By. Allowed values: 5, 10, 99'
+  - name: inby_kw
+    description: 'Invoicing By (keyword). Allowed values: tcinby.project, tcinby.service,
+      tcinby.not.appl'
+  - name: docn
+    description: 'Turnaround Time Document. Max length: 9'
+  - name: pbsm
+    description: 'Problem Solving Method. Allowed values: 10, 20, 30, 90, 100'
+  - name: pbsm_kw
+    description: 'Problem Solving Method (keyword). Allowed values: tcmcs.pbsm.8d,
+      tcmcs.pbsm.a3, tcmcs.pbsm.chlt, tcmcs.pbsm.other, tcmcs.pbsm.na'
+  - name: adin
+    description: 'Additional Information. Max length: 22'
+  - name: guid
+    description: 'GUID. Max length: 22'
+  - name: cact
+    description: 'Obsolete. Max length: 16'
+  - name: minu
+    description: Obsolete
+  - name: rlct
+    description: Obsolete
+  - name: susn
+    description: 'Obsolete. Max length: 30'
+  - name: ctik
+    description: 'Obsolete. Max length: 9'
+  - name: susr
+    description: 'Obsolete. Max length: 47'
+  - name: txta
+    description: Comment
+  - name: txtd
+    description: Invoice Text
+  - name: txte
+    description: Solution Text
+  - name: txtf
+    description: Knowledge Base Solution
+  - name: txtg
+    description: Knowledge Base State
+  - name: txth
+    description: Knowledge Base Cause
+  - name: txtk
+    description: Comment History
+  - name: fcll_ref_compnr
+    description: company number of primary key of table tsclm100 Calls
+  - name: pcll_ref_compnr
+    description: company number of primary key of table tsclm100 Calls
+  - name: rfco_rfcl_ref_compnr
+    description: company number of primary key of table tssoc510 Field Change Order
+      Lines
+  - name: rfco_ref_compnr
+    description: company number of primary key of table tssoc500 Field Change Order
+      Headers
+  - name: ccty_ref_compnr
+    description: company number of primary key of table tcmcs010 Countries
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: soad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: socn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ofad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ofcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: clst_ref_compnr
+    description: company number of primary key of table tsbsc100 Installation Group
+  - name: item_sern_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: item_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: ubbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: ubad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ubcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ubop_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: csgr_ref_compnr
+    description: company number of primary key of table tsmdm210 Service Item Groups
+  - name: cgrp_ref_compnr
+    description: company number of primary key of table tsclm050 Call Groups
+  - name: scgr_ref_compnr
+    description: company number of primary key of table tsclm050 Call Groups
+  - name: crtc_ref_compnr
+    description: company number of primary key of table tsclm020 Response Types
+  - name: prpr_ref_compnr
+    description: company number of primary key of table tcmcs070 Priorities
+  - name: cupr_ref_compnr
+    description: company number of primary key of table tcmcs070 Priorities
+  - name: obpr_ref_compnr
+    description: company number of primary key of table tcmcs070 Priorities
+  - name: rprl_ref_compnr
+    description: company number of primary key of table tsclm330 Problems
+  - name: expr_ref_compnr
+    description: company number of primary key of table tsclm330 Problems
+  - name: espr_ref_compnr
+    description: company number of primary key of table tsclm330 Problems
+  - name: exsl_ref_compnr
+    description: company number of primary key of table tsclm335 Solutions
+  - name: sltn_ref_compnr
+    description: company number of primary key of table tsclm335 Solutions
+  - name: rqct_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: camr_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: actt_ref_compnr
+    description: company number of primary key of table tsacm101 Reference Activities
+      / Master Routing (Option)s
+  - name: cinv_ref_compnr
+    description: company number of primary key of table tsclm070 Time Intervals for
+      Invoicing
+  - name: cspc_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: emno_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: cxsc_ref_compnr
+    description: company number of primary key of table tsmdm100 Service Offices
+  - name: oemn_ref_compnr
+    description: company number of primary key of table tsmdm140 Service Employees
+  - name: itbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: itad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: itcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: pfbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: pfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: pfcn_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: csco_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: pcon_ref_compnr
+    description: company number of primary key of table tsctm300 Service Contracts
+  - name: bfbp_ref_compnr
+    description: company number of primary key of table tccom120 Buy-from Business
+      Partners
+  - name: sfbp_ref_compnr
+    description: company number of primary key of table tccom121 Ship-from Business
+      Partners
+  - name: sbct_ref_compnr
+    description: company number of primary key of table tssbm100 Subcontract Agreement
+      Header
+  - name: sfad_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: citm_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: citm_cser_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: cctp_ref_compnr
+    description: company number of primary key of table tsmdm035 Coverage Types
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tcmcs052 Projects
+  - name: docn_ref_compnr
+    description: company number of primary key of table tcttm100 Turnaround Time Documents
+  - name: susr_susn_ref_compnr
+    description: company number of primary key of table tscfg200 Serialized Items
+  - name: susr_ref_compnr
+    description: company number of primary key of table tsmdm200 Items - Service
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtd_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txte_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtf_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtg_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txth_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: txtk_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: repr_wrty
+    description: 'CC: Repair Warranty of Calls. Allowed values: 0, 1, 2'
+  - name: repr_wrty_kw
+    description: 'CC: Repair Warranty of Calls (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tsclm100 Calls table, Generated 2026-04-10T19:42:29Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ccll

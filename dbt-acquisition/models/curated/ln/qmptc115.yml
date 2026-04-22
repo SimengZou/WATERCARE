@@ -1,0 +1,153 @@
+version: 2
+models:
+- name: qmptc115
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: iorn
+    description: '(required) Inspection Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: saml
+    description: (required) Sample
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Inspection Order Line
+    data_tests:
+    - not_null
+  - name: srno
+    description: (required) Sample Part
+    data_tests:
+    - not_null
+  - name: tseq
+    description: Test Sequence
+  - name: tsdt
+    description: Test Time
+  - name: mval
+    description: Measurement Value
+  - name: oset
+    description: 'Option Set. Max length: 6'
+  - name: mopt
+    description: 'Option. Max length: 8'
+  - name: tare
+    description: 'Test Area. Max length: 3'
+  - name: emno
+    description: 'Employee. Max length: 9'
+  - name: inst
+    description: 'Instrument. Max length: 6'
+  - name: inno
+    description: 'Instrument Number. Max length: 9'
+  - name: tqua
+    description: Test Quantity
+  - name: tuni
+    description: 'Test Unit. Max length: 3'
+  - name: resl
+    description: 'Result. Allowed values: 0, 1, 2, 3'
+  - name: resl_kw
+    description: 'Result (keyword). Allowed values: , qmptc.resl.good, qmptc.resl.bad,
+      qmptc.resl.not.inspected'
+  - name: ncmr
+    description: 'Non-Conforming Material Report. Max length: 9'
+  - name: aemn
+    description: 'Actual Employee. Max length: 9'
+  - name: etim
+    description: Estimated Time
+  - name: aemp
+    description: 'Actual Employee. Max length: 16'
+  - name: text
+    description: Text
+  - name: iorn_saml_ref_compnr
+    description: company number of primary key of table qmptc110 Inspection Order
+      Samples
+  - name: iorn_pono_ref_compnr
+    description: company number of primary key of table qmptc101 Inspection Order
+      Lines
+  - name: iorn_ref_compnr
+    description: company number of primary key of table qmptc100 Inspection Orders
+  - name: oset_mopt_ref_compnr
+    description: company number of primary key of table qmptc014 Options
+  - name: tare_ref_compnr
+    description: company number of primary key of table qmptc007 Test Areas
+  - name: emno_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: inst_inno_ref_compnr
+    description: company number of primary key of table qmptc008 Instruments
+  - name: tuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: ncmr_ref_compnr
+    description: company number of primary key of table qmncm100 Non-Conformance Report
+      (NCR)
+  - name: aemn_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: mval_buar
+    description: 'CC: Sample Quantity in Base Unit Area'
+  - name: mval_buln
+    description: 'CC: Sample Quantity in Base Unit Length'
+  - name: mval_bupc
+    description: 'CC: Sample Quantity in Base Unit Piece'
+  - name: mval_butm
+    description: 'CC: Sample Quantity in Base Unit Time'
+  - name: mval_buvl
+    description: 'CC: Sample Quantity in Base Unit Volume'
+  - name: mval_buwg
+    description: 'CC: Sample Quantity in Base Unit Weight'
+  - name: tqua_buar
+    description: 'CC: Test Quantity in Base Unit Area'
+  - name: tqua_buln
+    description: 'CC: Test Quantity in Base Unit Length'
+  - name: tqua_bupc
+    description: 'CC: Test Quantity in Base Unit Piece'
+  - name: tqua_butm
+    description: 'CC: Test Quantity in Base Unit Time'
+  - name: tqua_buvl
+    description: 'CC: Test Quantity in Base Unit Volume'
+  - name: tqua_buwg
+    description: 'CC: Test Quantity in Base Unit Weight'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmptc115 Inspection Order Test Data table, Generated 2022-06-15T01:21:06Z
+    from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - iorn
+        - saml
+        - pono
+        - srno

@@ -1,0 +1,144 @@
+version: 2
+models:
+- name: tffbs003
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: budg
+    description: '(required) Budget. Max length: 3'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: sdbu
+    description: 'Flexible Budget. Allowed values: 1, 2'
+  - name: sdbu_kw
+    description: 'Flexible Budget (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: budm
+    description: 'Budgeting Method. Allowed values: 1, 2'
+  - name: budm_kw
+    description: 'Budgeting Method (keyword). Allowed values: tffbs.budm.bottom.up,
+      tffbs.budm.top.down'
+  - name: llac
+    description: 'Link with Ledger Account. Allowed values: 0, 1, 2'
+  - name: llac_kw
+    description: 'Link with Ledger Account (keyword). Allowed values: , tcyesno.yes,
+      tcyesno.no'
+  - name: adt1
+    description: 'Dimension Type 1 Applicable. Allowed values: 1, 2'
+  - name: adt1_kw
+    description: 'Dimension Type 1 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adt2
+    description: 'Dimension Type 2 Applicable. Allowed values: 1, 2'
+  - name: adt2_kw
+    description: 'Dimension Type 2 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adt3
+    description: 'Dimension Type 3 Applicable. Allowed values: 1, 2'
+  - name: adt3_kw
+    description: 'Dimension Type 3 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adt4
+    description: 'Dimension Type 4 Applicable. Allowed values: 1, 2'
+  - name: adt4_kw
+    description: 'Dimension Type 4 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adt5
+    description: 'Dimension Type 5 Applicable. Allowed values: 1, 2'
+  - name: adt5_kw
+    description: 'Dimension Type 5 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adt6
+    description: 'Dimension Type 6 Applicable. Allowed values: 1, 2'
+  - name: adt6_kw
+    description: 'Dimension Type 6 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adt7
+    description: 'Dimension Type 7 Applicable. Allowed values: 1, 2'
+  - name: adt7_kw
+    description: 'Dimension Type 7 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adt8
+    description: 'Dimension Type 8 Applicable. Allowed values: 1, 2'
+  - name: adt8_kw
+    description: 'Dimension Type 8 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: adt9
+    description: 'Dimension Type 9 Applicable. Allowed values: 1, 2'
+  - name: adt9_kw
+    description: 'Dimension Type 9 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ad10
+    description: 'Dimension Type 10 Applicable. Allowed values: 1, 2'
+  - name: ad10_kw
+    description: 'Dimension Type 10 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ad11
+    description: 'Dimension Type 11 Applicable. Allowed values: 1, 2'
+  - name: ad11_kw
+    description: 'Dimension Type 11 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: ad12
+    description: 'Dimension Type 12 Applicable. Allowed values: 1, 2'
+  - name: ad12_kw
+    description: 'Dimension Type 12 Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: aqu1
+    description: 'Quantity 1 Applicable. Allowed values: 1, 2'
+  - name: aqu1_kw
+    description: 'Quantity 1 Applicable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: aqu2
+    description: 'Quantity 2 Applicable. Allowed values: 1, 2'
+  - name: aqu2_kw
+    description: 'Quantity 2 Applicable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: nbpr
+    description: Number of Budget Periods
+  - name: text
+    description: Text
+  - name: text_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffbs003 Budget table, Generated 2026-04-10T19:41:37Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - budg

@@ -1,0 +1,56 @@
+version: 2
+models:
+- name: r5usage
+  columns:
+  - name: sus_lastsaved
+    description: SUS_LASTSAVED
+  - name: sus_target_tab
+    description: SUS_TARGET_TAB
+  - name: sus_serverid
+    description: SUS_SERVERID
+  - name: sus_sessionid
+    description: SUS_SESSIONID
+  - name: sus_useragent
+    description: SUS_USERAGENT
+  - name: sus_processing_time
+    description: SUS_PROCESSING_TIME
+  - name: sus_action_date
+    description: SUS_ACTION_DATE
+  - name: sus_updatecount
+    description: SUS_UPDATECOUNT
+  - name: sus_id
+    description: SUS_ID
+    data_tests:
+    - unique
+  - name: sus_action
+    description: SUS_ACTION
+  - name: sus_type
+    description: SUS_TYPE
+  - name: sus_subtype
+    description: SUS_SUBTYPE
+  - name: sus_target
+    description: SUS_TARGET
+  - name: sus_target_parent
+    description: SUS_TARGET_PARENT
+  - name: sus_userid
+    description: SUS_USERID
+  - name: sus_tenant
+    description: SUS_TENANT
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5USAGE

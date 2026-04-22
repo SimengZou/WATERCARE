@@ -1,0 +1,38 @@
+version: 2
+models:
+- name: r5editionucodes
+  columns:
+  - name: edu_lastsaved
+    description: EDU_LASTSAVED
+  - name: edu_code
+    description: EDU_CODE
+  - name: edu_lang
+    description: EDU_LANG
+  - name: edu_rentity
+    description: EDU_RENTITY
+  - name: edu_market
+    description: EDU_MARKET
+  - name: edu_textcode
+    description: EDU_TEXTCODE
+  - name: edu_rcode
+    description: EDU_RCODE
+  - name: edu_desc
+    description: EDU_DESC
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5EDITIONUCODES

@@ -1,0 +1,118 @@
+version: 2
+models:
+- name: tccom101
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: sern
+    description: (required) Number
+    data_tests:
+    - not_null
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: ctyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: cfir
+    description: 'Financial Roles. Allowed values: 1, 2'
+  - name: cfir_kw
+    description: 'Financial Roles (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cinm
+    description: 'Invoicing Method. Max length: 3'
+  - name: crat
+    description: 'Credit Rating. Max length: 3'
+  - name: cpay
+    description: 'Payment Terms. Max length: 3'
+  - name: pcur
+    description: 'Currency. Max length: 3'
+  - name: cfcg
+    description: 'Financial Customer Group. Max length: 3'
+  - name: scur
+    description: 'Currency. Max length: 3'
+  - name: styp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: sfir
+    description: 'Financial Roles. Allowed values: 1, 2'
+  - name: sfir_kw
+    description: 'Financial Roles (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: spay
+    description: 'Payment Terms. Max length: 3'
+  - name: cfsg
+    description: 'Financial Supplier Group. Max length: 3'
+  - name: lmdt
+    description: Last Modification Date
+  - name: btbv
+    description: 'To be Verified. Allowed values: 1, 2'
+  - name: btbv_kw
+    description: 'To be Verified (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: bprl
+    description: 'Business Partner Role. Allowed values: 1, 2, 3, 4'
+  - name: bprl_kw
+    description: 'Business Partner Role (keyword). Allowed values: tcbprl.none, tcbprl.customer,
+      tcbprl.supplier, tcbprl.both'
+  - name: dsca__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ctyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: cinm_ref_compnr
+    description: company number of primary key of table tcmcs055 Invoicing Methods
+  - name: crat_ref_compnr
+    description: company number of primary key of table tcmcs064 Credit Ratings
+  - name: cpay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: pcur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: scur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: styp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: spay_ref_compnr
+    description: company number of primary key of table tcmcs013 Payment Terms
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom101 Business Partner Defaults table, Generated 2026-04-10T19:41:01Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - sern

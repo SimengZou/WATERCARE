@@ -1,0 +1,350 @@
+version: 2
+models:
+- name: tpptc050
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cstl
+    description: '(required) Extension. Max length: 4'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 30'
+    data_tests:
+    - not_null
+  - name: stlt
+    description: 'Extension Type. Allowed values: 1, 2, 3, 4'
+  - name: stlt_kw
+    description: 'Extension Type (keyword). Allowed values: tpptc.stlt.additional.work,
+      tpptc.stlt.provision.entry, tpptc.stlt.risc.settl, tpptc.stlt.quan.settl'
+  - name: stlm
+    description: 'Invoice Calculation Method. Allowed values: 1, 2, 3'
+  - name: stlm_kw
+    description: 'Invoice Calculation Method (keyword). Allowed values: tpptc.stlm.contract.price,
+      tpptc.stlm.techn.budget, tpptc.stlm.real.costs'
+  - name: stls
+    description: 'Extension Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: stls_kw
+    description: 'Extension Status (keyword). Allowed values: tpptc.stls.free, tpptc.stls.actual,
+      tpptc.stls.definite, tpptc.stls.invoicing.allow, tpptc.stls.invoiced'
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: excc
+    description: 'Cost Control. Allowed values: 1, 2'
+  - name: excc_kw
+    description: 'Cost Control (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: lpsl
+    description: 'Phys. Progr. Registration. Allowed values: 0, 1, 2, 10'
+  - name: lpsl_kw
+    description: 'Phys. Progr. Registration (keyword). Allowed values: , tppdm.lpsl.settlement,
+      tppdm.lpsl.settl.costctr, tppdm.lpsl.not.applicable'
+  - name: fcmp
+    description: Financial Company
+  - name: idoc
+    description: Invoice Document
+  - name: ityp
+    description: 'Transaction Type. Max length: 3'
+  - name: trsl
+    description: 'Transferred to Invoicing. Allowed values: 1, 2'
+  - name: trsl_kw
+    description: 'Transferred to Invoicing (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: prva
+    description: Provisional Amount
+  - name: pacu
+    description: 'Provisional Currency. Max length: 3'
+  - name: copr
+    description: Contract Amount
+  - name: cpcu
+    description: 'Contract Currency. Max length: 3'
+  - name: codt
+    description: Contract Date
+  - name: escu
+    description: 'Expected Sales Currency. Max length: 3'
+  - name: esam
+    description: Expected Sales Amount
+  - name: ceil
+    description: 'Ceiling. Allowed values: 1, 2'
+  - name: ceil_kw
+    description: 'Ceiling (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: ivam
+    description: Invoiced Amount
+  - name: ofbp
+    description: 'Sold-to Business Partner. Max length: 9'
+  - name: stdt
+    description: Start Time
+  - name: fidt
+    description: Finish Time
+  - name: chic
+    description: 'Project Surcharges. Allowed values: 1, 2'
+  - name: chic_kw
+    description: 'Project Surcharges (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: csst
+    description: 'Provisional Amount Settled. Allowed values: 1, 2'
+  - name: csst_kw
+    description: 'Provisional Amount Settled (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: cadc
+    description: 'Address Code. Max length: 9'
+  - name: sadr
+    description: 'Ship-from Address. Max length: 9'
+  - name: cres
+    description: 'Responsibility. Max length: 3'
+  - name: emno
+    description: 'Employee. Max length: 9'
+  - name: cbrn
+    description: 'Line of Business. Max length: 6'
+  - name: ccam
+    description: 'Acquiring Method. Max length: 3'
+  - name: cfac
+    description: 'Financing Method. Max length: 6'
+  - name: creg
+    description: 'Geographical Area. Max length: 3'
+  - name: ccat
+    description: 'Category. Max length: 6'
+  - name: csec
+    description: 'Business Sector. Max length: 3'
+  - name: cstg
+    description: 'Phase. Max length: 3'
+  - name: njsp
+    description: Number of Job Sheets Printed
+  - name: hbnr
+    description: Holdback Sequence Number
+  - name: hbyn
+    description: 'Use Holdback. Allowed values: 1, 2'
+  - name: hbyn_kw
+    description: 'Use Holdback (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: rtcp_1
+    description: Currency Rate
+  - name: rtcp_2
+    description: Currency Rate
+  - name: rtcp_3
+    description: Currency Rate
+  - name: rtfp_1
+    description: Rate Factor
+  - name: rtfp_2
+    description: Rate Factor
+  - name: rtfp_3
+    description: Rate Factor
+  - name: rdap
+    description: Rate Date Provisional amount
+  - name: rtcc_1
+    description: Currency Rate
+  - name: rtcc_2
+    description: Currency Rate
+  - name: rtcc_3
+    description: Currency Rate
+  - name: rtfc_1
+    description: Rate Factor
+  - name: rtfc_2
+    description: Rate Factor
+  - name: rtfc_3
+    description: Rate Factor
+  - name: rdat
+    description: Rate Date
+  - name: pscd__en_us
+    description: '(required) Primary Scenario Description - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: revr
+    description: 'Revenue Recognition Method. Allowed values: 1, 2, 3, 4, 5, 6, 20'
+  - name: revr_kw
+    description: 'Revenue Recognition Method (keyword). Allowed values: tppdm.revr.cmpl,
+      tppdm.revr.perc, tppdm.revr.mils, tppdm.revr.rebu, tppdm.revr.erfc, tppdm.revr.actr,
+      tppdm.revr.na'
+  - name: pcmp
+    description: Percentage of Completion
+  - name: earf
+    description: Earned Revenue Factor
+  - name: revt
+    description: Revenue Recognition Threshold
+  - name: revl
+    description: Revenue Recognition Limit
+  - name: cogs
+    description: 'Costs of Sales Method. Allowed values: 1, 2, 3, 10, 20'
+  - name: cogs_kw
+    description: 'Costs of Sales Method (keyword). Allowed values: tppdm.cogs.cmpl,
+      tppdm.cogs.prop, tppdm.cogs.rebu, tppdm.cogs.perc, tppdm.cogs.na'
+  - name: prpc
+    description: Profit Percentage
+  - name: ascd__en_us
+    description: '(required) Alternate Scenario Description - base language. Max length:
+      30'
+    data_tests:
+    - not_null
+  - name: arrm
+    description: 'Alternate Revenue Recognition Method. Allowed values: 1, 2, 3, 4,
+      5, 6, 20'
+  - name: arrm_kw
+    description: 'Alternate Revenue Recognition Method (keyword). Allowed values:
+      tppdm.revr.cmpl, tppdm.revr.perc, tppdm.revr.mils, tppdm.revr.rebu, tppdm.revr.erfc,
+      tppdm.revr.actr, tppdm.revr.na'
+  - name: arpc
+    description: Alternate Revenue Percentage of Completion
+  - name: aerf
+    description: Alternate Earned Revenue Factor
+  - name: arrt
+    description: Alternate Revenue Recognition Threshold
+  - name: arrl
+    description: Alternate Revenue Recognition Limit
+  - name: acgm
+    description: 'Alternate Cost of Sales Method. Allowed values: 1, 2, 3, 10, 20'
+  - name: acgm_kw
+    description: 'Alternate Cost of Sales Method (keyword). Allowed values: tppdm.cogs.cmpl,
+      tppdm.cogs.prop, tppdm.cogs.rebu, tppdm.cogs.perc, tppdm.cogs.na'
+  - name: aprp
+    description: Alternate Profit Percentage
+  - name: styp
+    description: 'Sales Type. Max length: 6'
+  - name: cstv
+    description: Customs Value
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: txta
+    description: Text
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: pacu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: cpcu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: escu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ofbp_ref_compnr
+    description: company number of primary key of table tccom110 Sold-to Business
+      Partners
+  - name: cadc_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: sadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: cres_ref_compnr
+    description: company number of primary key of table tppdm048 Responsibilities
+  - name: emno_ref_compnr
+    description: company number of primary key of table tppdm801 Employee Project
+      Data
+  - name: cbrn_ref_compnr
+    description: company number of primary key of table tcmcs031 Lines of Business
+  - name: ccam_ref_compnr
+    description: company number of primary key of table tppdm063 Acquiring Methods
+  - name: cfac_ref_compnr
+    description: company number of primary key of table tppdm059 Financing Methods
+  - name: creg_ref_compnr
+    description: company number of primary key of table tcmcs045 Areas
+  - name: ccat_ref_compnr
+    description: company number of primary key of table tppdm075 Categories
+  - name: csec_ref_compnr
+    description: company number of primary key of table tppdm055 Business Sectors
+  - name: cstg_ref_compnr
+    description: company number of primary key of table tppdm085 Phases
+  - name: styp_ref_compnr
+    description: company number of primary key of table tcmcs202 Sales Types
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: prva_cntc
+    description: 'CC: Provisional Amount in Contract Currency'
+  - name: prva_refc
+    description: 'CC: Provisional Amount in Reference Currency'
+  - name: copr_refc
+    description: 'CC: Extension Contract Amount in Reference Currency'
+  - name: esam_refc
+    description: 'CC: Expected Sales Amount in Reference Currency'
+  - name: ivam_refc
+    description: 'CC: Invoiced Amount in Reference Currency'
+  - name: prva_prjc
+    description: 'CC: Provisional Amount in Project Currency'
+  - name: copr_prjc
+    description: 'CC: Extension Contract Amount in Project Currency'
+  - name: copr_cntc
+    description: 'CC: Extension Contract Amount in Contract Currency'
+  - name: esam_prjc
+    description: 'CC: Expected Sales Amount in Project Currency'
+  - name: esam_cntc
+    description: 'CC: Expected Sales Amount in Contract Currency'
+  - name: ivam_prjc
+    description: 'CC: Invoiced Amount in Project Currency'
+  - name: ivam_cntc
+    description: 'CC: Invoiced Amount in Contract Currency'
+  - name: prva_homc
+    description: 'CC: Provisional Amount in Local Currency'
+  - name: prva_rpc1
+    description: 'CC: Provisional Amount in Reporting Currency 1'
+  - name: prva_rpc2
+    description: 'CC: Provisional Amount in Reporting Currency 2'
+  - name: copr_homc
+    description: 'CC: Extension Contract Amount in Local Currency'
+  - name: copr_rpc1
+    description: 'CC: Extension Contract Amount in Reporting Currency 1'
+  - name: copr_rpc2
+    description: 'CC: Extension Contract Amount in Reporting Currency 2'
+  - name: esam_homc
+    description: 'CC: Expected Sales Amount in Local Currency'
+  - name: esam_rpc1
+    description: 'CC: Expected Sales Amount in Reporting Currency 1'
+  - name: esam_rpc2
+    description: 'CC: Expected Sales Amount in Reporting Currency 2'
+  - name: ivam_homc
+    description: 'CC: Invoiced Amount in Local Currency'
+  - name: ivam_rpc1
+    description: 'CC: Invoiced Amount in Reporting Currency 1'
+  - name: ivam_rpc2
+    description: 'CC: Invoiced Amount in Reporting Currency 2'
+  - name: prva_dwhc
+    description: 'CC: Provisional Amount in Data Warehouse Currency'
+  - name: copr_dwhc
+    description: 'CC: Contract Amount in Data Warehouse Currency'
+  - name: esam_dwhc
+    description: 'CC: Estimate Sales Amount Amount in Data Warehouse Currency'
+  - name: ivam_dwhc
+    description: 'CC: Invoice Amount in Data Warehouse Currency'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpptc050 Extensions table, Generated 2026-04-10T19:42:20Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cstl

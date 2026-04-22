@@ -1,0 +1,45 @@
+version: 2
+models:
+- name: p100_temp
+  columns:
+  - name: version
+    description: 'From table dEPM_P100_Temp and column Version. Max length: 100'
+  - name: period
+    description: 'From table dEPM_P100_Temp and column Period. Max length: 100'
+  - name: project
+    description: 'From table dEPM_P100_Temp and column Project. Max length: 100'
+  - name: wbs
+    description: 'From table dEPM_P100_Temp and column WBS. Max length: 100'
+  - name: pm100
+    description: 'From table dEPM_P100_Temp and column PM100. Max length: 100'
+  - name: value
+    description: From table dEPM_P100_Temp and column Value
+  - name: timestamp
+    description: '(required) From table dEPM_P100_Temp and column Timestamp. Max length:
+      24'
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: Generated from anySQL Connector dEPM_P100_Temp
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - version
+        - period
+        - project
+        - wbs

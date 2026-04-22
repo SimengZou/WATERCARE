@@ -1,0 +1,46 @@
+version: 2
+models:
+- name: r5alerthistory
+  columns:
+  - name: alh_lastsaved
+    description: ALH_LASTSAVED
+  - name: alh_rstatus
+    description: ALH_RSTATUS
+  - name: alh_rtype
+    description: ALH_RTYPE
+  - name: alh_entitycode
+    description: ALH_ENTITYCODE
+  - name: alh_entityorg
+    description: ALH_ENTITYORG
+  - name: alh_resultcode
+    description: ALH_RESULTCODE
+  - name: alh_resultorg
+    description: ALH_RESULTORG
+  - name: alh_errormessage
+    description: ALH_ERRORMESSAGE
+  - name: alh_created
+    description: ALH_CREATED
+  - name: alh_updatecount
+    description: ALH_UPDATECOUNT
+  - name: alh_alert
+    description: ALH_ALERT
+  - name: alh_template
+    description: ALH_TEMPLATE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5ALERTHISTORY

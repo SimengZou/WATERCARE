@@ -1,0 +1,208 @@
+version: 2
+models:
+- name: tccom124
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ptbp
+    description: '(required) Pay-to Business Partner. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cofc
+    description: '(required) Department. Max length: 6'
+    data_tests:
+    - not_null
+  - name: bpst
+    description: 'Business Partner Status. Allowed values: 1, 2, 254'
+  - name: bpst_kw
+    description: 'Business Partner Status (keyword). Allowed values: tccom.bpst.active,
+      tccom.bpst.inactive, tccom.bpst.not.specified'
+  - name: stdt
+    description: Start Date
+  - name: endt
+    description: End Date
+  - name: clan
+    description: 'Language. Max length: 3'
+  - name: cbps
+    description: 'Business Partner Signal. Max length: 3'
+  - name: cbtp
+    description: 'Business Partner Type. Max length: 3'
+  - name: vryn
+    description: 'Vendor Rating. Allowed values: 1, 2'
+  - name: vryn_kw
+    description: 'Vendor Rating (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cadr
+    description: 'Address Code. Max length: 9'
+  - name: telp
+    description: 'Phone Number. Max length: 32'
+  - name: tlcy
+    description: 'Country for Phone Number. Max length: 6'
+  - name: tlci
+    description: 'City/Area Code for Phone Number. Max length: 15'
+  - name: tlln
+    description: 'Local Number for Phone Number. Max length: 32'
+  - name: tlex
+    description: 'Extension for Phone Number. Max length: 15'
+  - name: tefx
+    description: 'Fax Number. Max length: 32'
+  - name: tfcy
+    description: 'Country for Fax Number. Max length: 6'
+  - name: tfci
+    description: 'City/Area Code for Fax Number. Max length: 15'
+  - name: tfln
+    description: 'Local Number for Fax Number. Max length: 32'
+  - name: tfex
+    description: 'Extension for Fax Number. Max length: 15'
+  - name: ccal
+    description: 'Calendar Code. Max length: 9'
+  - name: ccnt
+    description: 'Contact. Max length: 9'
+  - name: ccur
+    description: 'Currency. Max length: 3'
+  - name: uptc
+    description: 'Use Pay-to Business Partner Currency. Allowed values: 1, 2'
+  - name: uptc_kw
+    description: 'Use Pay-to Business Partner Currency (keyword). Allowed values:
+      tcyesno.yes, tcyesno.no'
+  - name: rtyp
+    description: 'Exchange Rate Type. Max length: 3'
+  - name: cban
+    description: 'Bank. Max length: 3'
+  - name: bank
+    description: 'Bank Relation. Max length: 3'
+  - name: eded
+    description: Extra Days after Due Date
+  - name: bcbs
+    description: 'Bank Charge Borne by Supplier. Allowed values: 1, 2'
+  - name: bcbs_kw
+    description: 'Bank Charge Borne by Supplier (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: stxa
+    description: 'Revenue Stamp Tax Applicable. Allowed values: 1, 2'
+  - name: stxa_kw
+    description: 'Revenue Stamp Tax Applicable (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: tndm
+    description: 'Trade Note Division Method. Allowed values: 1, 2, 3, 254'
+  - name: tndm_kw
+    description: 'Trade Note Division Method (keyword). Allowed values: tctndm.stamptax,
+      tctndm.predetermined, tctndm.na, tctndm.not.specified'
+  - name: mxtn
+    description: Maximum Number of TNs Allowed
+  - name: aofc
+    description: 'Accounting Office. Max length: 6'
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: cnsm
+    description: Constant Symbol
+  - name: user
+    description: 'Created by. Max length: 16'
+  - name: crdt
+    description: Creation Date
+  - name: lmus
+    description: 'Last Modified by. Max length: 16'
+  - name: lmdt
+    description: Last Modification Date
+  - name: uwht
+    description: '* obsolete *. Allowed values: 1, 2'
+  - name: uwht_kw
+    description: '* obsolete * (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: exor
+    description: '* obsolete *. Allowed values: 1, 2'
+  - name: exor_kw
+    description: '* obsolete * (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: valf
+    description: '* obsolete *'
+  - name: valt
+    description: '* obsolete *'
+  - name: expo
+    description: '* obsolete *. Allowed values: 1, 2'
+  - name: expo_kw
+    description: '* obsolete * (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: txno__en_us
+    description: '(required) * obsolete * - base language. Max length: 20'
+    data_tests:
+    - not_null
+  - name: vacc
+    description: 'VAT Bank Account. Max length: 3'
+  - name: setl
+    description: 'Block Settlement of Payments with Sales Invoices. Allowed values:
+      1, 2'
+  - name: setl_kw
+    description: 'Block Settlement of Payments with Sales Invoices (keyword). Allowed
+      values: tcyesno.yes, tcyesno.no'
+  - name: txta
+    description: Text
+  - name: ptbp_cban_ref_compnr
+    description: company number of primary key of table tccom125 Bank Accounts by
+      Pay-to Business Partner
+  - name: ptbp_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: cofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: clan_ref_compnr
+    description: company number of primary key of table tcmcs046 Languages
+  - name: cbps_ref_compnr
+    description: company number of primary key of table tcmcs039 Signals
+  - name: cbtp_ref_compnr
+    description: company number of primary key of table tcmcs029 Business Partner
+      Types
+  - name: cadr_ref_compnr
+    description: company number of primary key of table tccom130 Addresses
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: ccnt_ref_compnr
+    description: company number of primary key of table tccom140 Contacts
+  - name: ccur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: rtyp_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: aofc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tccom124 Pay-to Business Partners table, Generated 2026-04-10T19:41:03Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ptbp
+        - cofc

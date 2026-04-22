@@ -1,0 +1,107 @@
+version: 2
+models:
+- name: tfacp260
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: ityp
+    description: '(required) Obsolete. Max length: 3'
+    data_tests:
+    - not_null
+  - name: idoc
+    description: (required) Obsolete
+    data_tests:
+    - not_null
+  - name: loco
+    description: (required) Obsolete
+    data_tests:
+    - not_null
+  - name: otyp
+    description: '(required) Obsolete. Allowed values: 0, 1, 2, 3, 4, 5, 6, 7, 8,
+      9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21'
+    data_tests:
+    - not_null
+  - name: otyp_kw
+    description: 'Obsolete (keyword). Allowed values: , tfacp.otyp.purchase, tfacp.otyp.sales,
+      tfacp.otyp.trans, tfacp.otyp.trans.man, tfacp.otyp.trans.wip, tfacp.otyp.freight,
+      tfacp.otyp.commissions, tfacp.otyp.project, tfacp.otyp.project.man, tfacp.otyp.ent.planning,
+      tfacp.otyp.assembly, tfacp.otyp.production, tfacp.otyp.service, tfacp.otyp.maint.sales,
+      tfacp.otyp.pcs.project, tfacp.otyp.maint.work, tfacp.otyp.not.applicable, tfacp.otyp.proj.contract,
+      tfacp.otyp.customer.claim, tfacp.otyp.intercomp.trade, tfacp.otyp.services.procm'
+  - name: orno
+    description: '(required) Obsolete. Max length: 9'
+    data_tests:
+    - not_null
+  - name: pono
+    description: (required) Obsolete
+    data_tests:
+    - not_null
+  - name: sqnb
+    description: (required) Obsolete
+    data_tests:
+    - not_null
+  - name: load
+    description: 'Obsolete. Max length: 9'
+  - name: shpi
+    description: 'Obsolete. Max length: 9'
+  - name: clus
+    description: 'Obsolete. Max length: 9'
+  - name: logd
+    description: Obsolete
+  - name: logt
+    description: Obsolete
+  - name: user
+    description: 'Obsolete. Max length: 16'
+  - name: byer
+    description: 'Obsolete. Max length: 9'
+  - name: mess__en_us
+    description: '(required) Obsolete - base language. Max length: 132'
+    data_tests:
+    - not_null
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tfacp260 Approval Error Log table, Generated 2026-04-10T19:41:30Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - ityp
+        - idoc
+        - loco
+        - otyp
+        - orno
+        - pono
+        - sqnb

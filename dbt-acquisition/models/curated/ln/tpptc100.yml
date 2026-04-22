@@ -1,0 +1,259 @@
+version: 2
+models:
+- name: tpptc100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: cprj
+    description: '(required) Project. Max length: 9'
+    data_tests:
+    - not_null
+  - name: cspa
+    description: '(required) Element. Max length: 16'
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: seak__en_us
+    description: '(required) Search Key - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: txsp
+    description: 'Element for Headers. Allowed values: 1, 2'
+  - name: txsp_kw
+    description: 'Element for Headers (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cuni
+    description: 'Unit. Max length: 3'
+  - name: stat
+    description: 'Budget Status. Allowed values: 1, 2, 3'
+  - name: stat_kw
+    description: 'Budget Status (keyword). Allowed values: tpptc.stat.free, tpptc.stat.actual,
+      tpptc.stat.definite'
+  - name: ccst
+    description: 'Cost Control Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: ccst_kw
+    description: 'Cost Control Status (keyword). Allowed values: tpccst.free, tpccst.released,
+      tpccst.onhold, tpccst.finished, tpccst.closed'
+  - name: prps
+    description: 'Physical Progress. Allowed values: 1, 2'
+  - name: prps_kw
+    description: 'Physical Progress (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: prpf
+    description: 'Physical Progress Registration. Allowed values: 1, 2'
+  - name: prpf_kw
+    description: 'Physical Progress Registration (keyword). Allowed values: tppdm.yeno.yes,
+      tppdm.yeno.no'
+  - name: lvps
+    description: 'Physical Progress Level. Allowed values: 1, 2'
+  - name: lvps_kw
+    description: 'Physical Progress Level (keyword). Allowed values: tppdm.lvps.structpart,
+      tppdm.lvps.structp.costctr'
+  - name: cctr
+    description: 'Cost Control. Allowed values: 1, 2'
+  - name: cctr_kw
+    description: 'Cost Control (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: cctf
+    description: 'Cost Control Fixed. Allowed values: 1, 2'
+  - name: cctf_kw
+    description: 'Cost Control Fixed (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: stdt
+    description: Start Time
+  - name: dldt
+    description: Finish Time
+  - name: cstl
+    description: 'Extension. Max length: 4'
+  - name: ltpr
+    description: Trans.Date Price Result
+  - name: qust
+    description: Quantity in Budget Structure
+  - name: llnr
+    description: Low Level Number
+  - name: prin
+    description: 'Progress based Invoicing. Allowed values: 1, 2, 3, 4'
+  - name: prin_kw
+    description: 'Progress based Invoicing (keyword). Allowed values: tppdm.prin.yes,
+      tppdm.prin.no, tppdm.prin.project.stage, tppdm.prin.na'
+  - name: cspt
+    description: 'Progress for Invoice. Allowed values: 1, 2, 3'
+  - name: cspt_kw
+    description: 'Progress for Invoice (keyword). Allowed values: tpptc.cspt.direct,
+      tpptc.cspt.indirect, tpptc.cspt.na'
+  - name: gris
+    description: Group Indirect Work
+  - name: qanc
+    description: Budget Quantity
+  - name: qans
+    description: Physical Progress Quantity
+  - name: qutm
+    description: Number of Time Units
+  - name: cuti
+    description: 'Time Unit. Max length: 3'
+  - name: prsp
+    description: Production Rate
+  - name: pris
+    description: Sales Price
+  - name: sacu
+    description: 'Sales Currency. Max length: 3'
+  - name: setl
+    description: 'To be Settled. Allowed values: 1, 2'
+  - name: setl_kw
+    description: 'To be Settled (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: prss
+    description: Settlement Price
+  - name: secu
+    description: 'Settlement Currency. Max length: 3'
+  - name: sort__en_us
+    description: '(required) Sort Argument - base language. Max length: 16'
+    data_tests:
+    - not_null
+  - name: dwar
+    description: 'Default Project Warehouse. Max length: 6'
+  - name: blbl
+    description: 'Billable. Allowed values: 1, 2'
+  - name: blbl_kw
+    description: 'Billable (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: hbyn
+    description: 'Use Holdback. Allowed values: 1, 2'
+  - name: hbyn_kw
+    description: 'Use Holdback (keyword). Allowed values: tppdm.yeno.yes, tppdm.yeno.no'
+  - name: rtsa_1
+    description: Currency Rate Sales Price
+  - name: rtsa_2
+    description: Currency Rate Sales Price
+  - name: rtsa_3
+    description: Currency Rate Sales Price
+  - name: rfsa_1
+    description: Rate Factor Sales Price
+  - name: rfsa_2
+    description: Rate Factor Sales Price
+  - name: rfsa_3
+    description: Rate Factor Sales Price
+  - name: rdas
+    description: Rate Date (Sales)
+  - name: rtse_1
+    description: Currency Rate Settlement Price
+  - name: rtse_2
+    description: Currency Rate Settlement Price
+  - name: rtse_3
+    description: Currency Rate Settlement Price
+  - name: rfse_1
+    description: Rate Factor Settlement Price
+  - name: rfse_2
+    description: Rate Factor Settlement Price
+  - name: rfse_3
+    description: Rate Factor Settlement Price
+  - name: rdse
+    description: Rate Date Settlement
+  - name: wast
+    description: 'Work Authorization Status. Allowed values: 1, 2, 3, 4, 5'
+  - name: wast_kw
+    description: 'Work Authorization Status (keyword). Allowed values: tppdm.wast.free,
+      tppdm.wast.onhold, tppdm.wast.released, tppdm.wast.finished, tppdm.wast.closed'
+  - name: rcod
+    description: 'Reason. Max length: 6'
+  - name: ohdt
+    description: On Hold Date
+  - name: pwar
+    description: 'Priority Supply Warehouse. Max length: 6'
+  - name: cape
+    description: 'Capital Element. Allowed values: 1, 2'
+  - name: cape_kw
+    description: 'Capital Element (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: anbr
+    description: 'Asset Number. Max length: 15'
+  - name: aext
+    description: 'Asset Extension. Max length: 15'
+  - name: rfac
+    description: 'Reference Activity. Max length: 16'
+  - name: freq
+    description: Frequency
+  - name: afrt
+    description: 'Apply Frequency to. Allowed values: 1, 2, 3, 10'
+  - name: afrt_kw
+    description: 'Apply Frequency to (keyword). Allowed values: tppdm.afrt.multiply,
+      tppdm.afrt.create.act, tppdm.afrt.create.ord, tppdm.afrt.na'
+  - name: ccat
+    description: 'Category. Max length: 6'
+  - name: csec
+    description: 'Business Sector. Max length: 3'
+  - name: cstg
+    description: 'Phase. Max length: 3'
+  - name: cstv
+    description: Customs Value
+  - name: cuvc
+    description: 'Customs Value Currency. Max length: 3'
+  - name: txta
+    description: Text
+  - name: cprj_cstl_ref_compnr
+    description: company number of primary key of table tpptc050 Extensions
+  - name: cprj_ref_compnr
+    description: company number of primary key of table tppdm600 Projects
+  - name: cuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuti_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: sacu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: secu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: dwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: rcod_ref_compnr
+    description: company number of primary key of table tcmcs005 Reasons
+  - name: pwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: ccat_ref_compnr
+    description: company number of primary key of table tppdm075 Categories
+  - name: csec_ref_compnr
+    description: company number of primary key of table tppdm055 Business Sectors
+  - name: cstg_ref_compnr
+    description: company number of primary key of table tppdm085 Phases
+  - name: cuvc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tpptc100 Elements table, Generated 2026-04-10T19:42:20Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - cprj
+        - cspa

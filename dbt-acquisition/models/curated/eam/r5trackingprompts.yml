@@ -1,0 +1,104 @@
+version: 2
+models:
+- name: r5trackingprompts
+  columns:
+  - name: tkp_lastsaved
+    description: TKP_LASTSAVED
+  - name: tkp_prompt
+    description: TKP_PROMPT
+  - name: tkp_datartype
+    description: TKP_DATARTYPE
+  - name: tkp_fixeddata
+    description: TKP_FIXEDDATA
+  - name: tkp_computedata
+    description: TKP_COMPUTEDATA
+  - name: tkp_uploadcolumn
+    description: TKP_UPLOADCOLUMN
+  - name: tkp_interfacertype
+    description: TKP_INTERFACERTYPE
+  - name: tkp_obtranstype
+    description: TKP_OBTRANSTYPE
+  - name: tkp_transgroup
+    description: TKP_TRANSGROUP
+  - name: tkp_promptseq
+    description: TKP_PROMPTSEQ
+  - name: tkp_minsize
+    description: TKP_MINSIZE
+  - name: tkp_maxsize
+    description: TKP_MAXSIZE
+  - name: tkp_matchpattern
+    description: TKP_MATCHPATTERN
+  - name: tkp_branchcondition
+    description: TKP_BRANCHCONDITION
+  - name: tkp_branchpattern
+    description: TKP_BRANCHPATTERN
+  - name: tkp_branchgoto
+    description: TKP_BRANCHGOTO
+  - name: tkp_defaultprevdata
+    description: TKP_DEFAULTPREVDATA
+  - name: tkp_returntoprompt
+    description: TKP_RETURNTOPROMPT
+  - name: tkp_validatefile
+    description: TKP_VALIDATEFILE
+  - name: tkp_obtransrtype
+    description: TKP_OBTRANSRTYPE
+  - name: tkp_interfacetype
+    description: TKP_INTERFACETYPE
+  - name: tkp_datatype
+    description: TKP_DATATYPE
+  - name: tkp_column
+    description: TKP_COLUMN
+  - name: tkp_rcolumn
+    description: TKP_RCOLUMN
+  - name: tkp_validatelov
+    description: TKP_VALIDATELOV
+  - name: tkp_archivecolumn
+    description: TKP_ARCHIVECOLUMN
+  - name: tkp_arccolumn
+    description: TKP_ARCCOLUMN
+  - name: tkp_arcrcolumn
+    description: TKP_ARCRCOLUMN
+  - name: tkp_notonfileflag
+    description: TKP_NOTONFILEFLAG
+  - name: tkp_lovoverrideflag
+    description: TKP_LOVOVERRIDEFLAG
+  - name: tkp_sqlcode
+    description: TKP_SQLCODE
+  - name: tkp_dateformat
+    description: TKP_DATEFORMAT
+  - name: tkp_updatecount
+    description: TKP_UPDATECOUNT
+  - name: tkp_updated
+    description: TKP_UPDATED
+  - name: tkp_lovid
+    description: TKP_LOVID
+  - name: tkp_ewsquerycode
+    description: TKP_EWSQUERYCODE
+  - name: tkp_trans
+    description: TKP_TRANS
+  - name: tkp_transseq
+    description: TKP_TRANSSEQ
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5TRACKINGPROMPTS
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - tkp_trans
+        - tkp_transseq

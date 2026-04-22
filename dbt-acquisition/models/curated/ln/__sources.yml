@@ -1,0 +1,1209 @@
+version: 2
+sources:
+- name: source_landing_ln
+  database: '{{ ''landing_prod'' if target.name == ''prod'' else (''landing_sit''
+    if target.name == ''sit'' else ''landing_dev'') }}'
+  schema: ln
+  tables:
+  - name: ln_bpmdm001
+    description: LN bpmdm001 Employee People Data table, Generated 2026-04-10T19:40:58Z
+      from package combination ce01101
+  - name: ln_enum
+    description: LN enum_descriptions Translations of enum descriptions, Generated
+      2026-04-10T19:40:58Z from package combination ce01101
+  - name: ln_enum_localized
+    description: LN Enum_localized Translations of enum descriptions, Generated 2026-04-10T19:40:58Z
+      from package combination ce01101
+  - name: ln_parts
+  - name: ln_partsync
+  - name: ln_qmcpl002
+    description: LN qmcpl002 Categories table, Generated 2022-06-15T01:20:59Z from
+      package combination ce01055
+  - name: ln_qmcpl100
+    description: LN qmcpl100 Corrective Action Plan table, Generated 2022-06-15T01:21:00Z
+      from package combination ce01055
+  - name: ln_qmncm001
+    description: LN qmncm001 Non-Conforming Material Types table, Generated 2022-06-15T01:21:00Z
+      from package combination ce01055
+  - name: ln_qmncm002
+    description: LN qmncm002 Severity table, Generated 2022-06-15T01:21:00Z from package
+      combination ce01055
+  - name: ln_qmncm004
+    description: LN qmncm004 Non-Conforming Cause table, Generated 2022-06-15T01:21:01Z
+      from package combination ce01055
+  - name: ln_qmncm006
+    description: LN qmncm006 Non Conformance Dispositions table, Generated 2022-06-15T01:21:01Z
+      from package combination ce01055
+  - name: ln_qmncm007
+    description: LN qmncm007 Material Dispositions table, Generated 2022-06-15T01:21:01Z
+      from package combination ce01055
+  - name: ln_qmncm100
+    description: LN qmncm100 Non-Conformance Report (NCR) table, Generated 2022-06-15T01:21:02Z
+      from package combination ce01055
+  - name: ln_qmpqm020
+    description: LN qmpqm020 Failure Stages table, Generated 2022-06-15T01:21:02Z
+      from package combination ce01055
+  - name: ln_qmpqm021
+    description: LN qmpqm021 Failure Categories table, Generated 2022-06-15T01:21:02Z
+      from package combination ce01055
+  - name: ln_qmpqm022
+    description: LN qmpqm022 Failure Codes table, Generated 2022-06-15T01:21:03Z from
+      package combination ce01055
+  - name: ln_qmpqm024
+    description: LN qmpqm024 Action Codes table, Generated 2022-06-15T01:21:03Z from
+      package combination ce01055
+  - name: ln_qmpqm200
+    description: LN qmpqm200 Failure Report Analysis and Corrective Action System
+      table, Generated 2022-06-15T01:21:03Z from package combination ce01055
+  - name: ln_qmpqm201
+    description: LN qmpqm201 Failure and Action Details table, Generated 2022-06-15T01:21:03Z
+      from package combination ce01055
+  - name: ln_qmpqm204
+    description: LN qmpqm204 Additional Components Failure and Action Details table,
+      Generated 2022-06-15T01:21:04Z from package combination ce01055
+  - name: ln_qmptc001
+    description: LN qmptc001 Characteristics table, Generated 2022-06-15T01:21:04Z
+      from package combination ce01055
+  - name: ln_qmptc002
+    description: LN qmptc002 Aspects table, Generated 2022-06-15T01:21:04Z from package
+      combination ce01055
+  - name: ln_qmptc008
+    description: LN qmptc008 Instruments table, Generated 2022-06-15T01:21:04Z from
+      package combination ce01055
+  - name: ln_qmptc024
+    description: LN qmptc024 Instrument Group table, Generated 2022-06-15T01:21:05Z
+      from package combination ce01055
+  - name: ln_qmptc100
+    description: LN qmptc100 Inspection Orders table, Generated 2022-06-15T01:21:05Z
+      from package combination ce01055
+  - name: ln_qmptc101
+    description: LN qmptc101 Inspection Order Lines table, Generated 2022-06-15T01:21:05Z
+      from package combination ce01055
+  - name: ln_qmptc112
+    description: LN qmptc112 Sample Statistical Measures table, Generated 2022-06-15T01:21:06Z
+      from package combination ce01055
+  - name: ln_qmptc115
+    description: LN qmptc115 Inspection Order Test Data table, Generated 2022-06-15T01:21:06Z
+      from package combination ce01055
+  - name: ln_qmptc120
+    description: LN qmptc120 Order Inspections table, Generated 2022-06-15T01:21:06Z
+      from package combination ce01055
+  - name: ln_qmptc220
+    description: LN qmptc220 Storage Inspections table, Generated 2022-06-15T01:21:06Z
+      from package combination ce01055
+  - name: ln_tablesharing
+    description: LN Table Sharing table, Generated 2026-04-10T19:40:59Z from package
+      combination ce01101
+  - name: ln_tcccp060
+    description: LN tcccp060 Period Tables table, Generated 2026-04-10T19:40:59Z from
+      package combination ce01101
+  - name: ln_tcccp070
+    description: LN tcccp070 Periods table, Generated 2026-04-10T19:40:59Z from package
+      combination ce01101
+  - name: ln_tccom000
+    description: LN tccom000 Implemented Software Components (Companies) table, Generated
+      2026-04-10T19:41:00Z from package combination ce01101
+  - name: ln_tccom001
+    description: LN tccom001 Employees - General table, Generated 2026-04-10T19:41:00Z
+      from package combination ce01101
+  - name: ln_tccom100
+    description: LN tccom100 Business Partners table, Generated 2026-04-10T19:41:00Z
+      from package combination ce01101
+  - name: ln_tccom101
+    description: LN tccom101 Business Partner Defaults table, Generated 2026-04-10T19:41:01Z
+      from package combination ce01101
+  - name: ln_tccom110
+    description: LN tccom110 Sold-to Business Partners table, Generated 2026-04-10T19:41:01Z
+      from package combination ce01101
+  - name: ln_tccom111
+    description: LN tccom111 Ship-to Business Partners table, Generated 2026-04-10T19:41:01Z
+      from package combination ce01101
+  - name: ln_tccom112
+    description: LN tccom112 Invoice-to Business Partners table, Generated 2026-04-10T19:41:02Z
+      from package combination ce01101
+  - name: ln_tccom114
+    description: LN tccom114 Pay-by Business Partners table, Generated 2026-04-10T19:41:02Z
+      from package combination ce01101
+  - name: ln_tccom120
+    description: LN tccom120 Buy-from Business Partners table, Generated 2026-04-10T19:41:02Z
+      from package combination ce01101
+  - name: ln_tccom121
+    description: LN tccom121 Ship-from Business Partners table, Generated 2026-04-10T19:41:03Z
+      from package combination ce01101
+  - name: ln_tccom122
+    description: LN tccom122 Invoice-from Business Partners table, Generated 2026-04-10T19:41:03Z
+      from package combination ce01101
+  - name: ln_tccom124
+    description: LN tccom124 Pay-to Business Partners table, Generated 2026-04-10T19:41:03Z
+      from package combination ce01101
+  - name: ln_tccom130
+    description: LN tccom130 Addresses table, Generated 2026-04-10T19:41:04Z from
+      package combination ce01101
+  - name: ln_tccom139
+    description: LN tccom139 Cities by Country table, Generated 2026-04-10T19:41:04Z
+      from package combination ce01101
+  - name: ln_tccom155
+    description: LN tccom155 Business Partner - Satellites table, Generated 2026-04-10T19:41:04Z
+      from package combination ce01101
+  - name: ln_tccom161
+    description: LN tccom161 Intermediate Consignees table, Generated 2026-04-10T19:41:05Z
+      from package combination ce01101
+  - name: ln_tcemm030
+    description: LN tcemm030 Enterprise Units table, Generated 2026-04-10T19:41:05Z
+      from package combination ce01101
+  - name: ln_tcemm050
+    description: LN tcemm050 Sites table, Generated 2026-04-10T19:41:06Z from package
+      combination ce01101
+  - name: ln_tcemm100
+    description: LN tcemm100 Time Zones table, Generated 2026-04-10T19:41:06Z from
+      package combination ce01101
+  - name: ln_tcemm135
+    description: LN tcemm135 Clusters table, Generated 2026-04-10T19:41:06Z from package
+      combination ce01101
+  - name: ln_tcemm170
+    description: LN tcemm170 Companies table, Generated 2026-04-10T19:41:07Z from
+      package combination ce01101
+  - name: ln_tcgen000
+    description: LN tcgen000 Generic Parameters table, Generated 2026-04-10T19:41:07Z
+      from package combination ce01101
+  - name: ln_tcibd001
+    description: LN tcibd001 Items table, Generated 2026-04-10T19:41:07Z from package
+      combination ce01101
+  - name: ln_tcibd301
+    description: LN tcibd301 List Groups table, Generated 2026-04-10T19:41:08Z from
+      package combination ce01101
+  - name: ln_tclct020
+    description: LN tclct020 Landed Costs Classifications table, Generated 2026-04-10T19:41:08Z
+      from package combination ce01101
+  - name: ln_tcmcs000
+    description: LN tcmcs000 MCS Parameters table, Generated 2026-04-10T19:41:08Z
+      from package combination ce01101
+  - name: ln_tcmcs001
+    description: LN tcmcs001 Units table, Generated 2026-04-10T19:41:08Z from package
+      combination ce01101
+  - name: ln_tcmcs002
+    description: LN tcmcs002 Currencies table, Generated 2026-04-10T19:41:08Z from
+      package combination ce01101
+  - name: ln_tcmcs003
+    description: LN tcmcs003 Warehouses table, Generated 2026-04-10T19:41:09Z from
+      package combination ce01101
+  - name: ln_tcmcs005
+    description: LN tcmcs005 Reasons table, Generated 2026-04-10T19:41:09Z from package
+      combination ce01101
+  - name: ln_tcmcs010
+    description: LN tcmcs010 Countries table, Generated 2026-04-10T19:41:09Z from
+      package combination ce01101
+  - name: ln_tcmcs013
+    description: LN tcmcs013 Payment Terms table, Generated 2026-04-10T19:41:10Z from
+      package combination ce01101
+  - name: ln_tcmcs015
+    description: LN tcmcs015 Product Types table, Generated 2026-04-10T19:41:10Z from
+      package combination ce01101
+  - name: ln_tcmcs023
+    description: LN tcmcs023 Item Groups table, Generated 2026-04-10T19:41:10Z from
+      package combination ce01101
+  - name: ln_tcmcs024
+    description: LN tcmcs024 Price Groups table, Generated 2026-04-10T19:41:10Z from
+      package combination ce01101
+  - name: ln_tcmcs028
+    description: LN tcmcs028 Harmonized System Codes table, Generated 2026-04-10T19:41:11Z
+      from package combination ce01101
+  - name: ln_tcmcs029
+    description: LN tcmcs029 Business Partner Types table, Generated 2026-04-10T19:41:11Z
+      from package combination ce01101
+  - name: ln_tcmcs031
+    description: LN tcmcs031 Lines of Business table, Generated 2026-04-10T19:41:11Z
+      from package combination ce01101
+  - name: ln_tcmcs041
+    description: LN tcmcs041 Delivery Terms table, Generated 2026-04-10T19:41:11Z
+      from package combination ce01101
+  - name: ln_tcmcs044
+    description: LN tcmcs044 Statistical Groups table, Generated 2026-04-10T19:41:12Z
+      from package combination ce01101
+  - name: ln_tcmcs045
+    description: LN tcmcs045 Areas table, Generated 2026-04-10T19:41:12Z from package
+      combination ce01101
+  - name: ln_tcmcs048
+    description: LN tcmcs048 Cost Components table, Generated 2026-04-10T19:41:12Z
+      from package combination ce01101
+  - name: ln_tcmcs052
+    description: LN tcmcs052 Projects table, Generated 2026-04-10T19:41:12Z from package
+      combination ce01101
+  - name: ln_tcmcs060
+    description: LN tcmcs060 Manufacturers table, Generated 2026-04-10T19:41:12Z from
+      package combination ce01101
+  - name: ln_tcmcs061
+    description: LN tcmcs061 Product Lines table, Generated 2026-04-10T19:41:13Z from
+      package combination ce01101
+  - name: ln_tcmcs062
+    description: LN tcmcs062 Product Classes table, Generated 2026-04-10T19:41:13Z
+      from package combination ce01101
+  - name: ln_tcmcs064
+    description: LN tcmcs064 Credit Ratings table, Generated 2026-04-10T19:41:13Z
+      from package combination ce01101
+  - name: ln_tcmcs065
+    description: LN tcmcs065 Departments table, Generated 2026-04-10T19:41:13Z from
+      package combination ce01101
+  - name: ln_tcmcs066
+    description: LN tcmcs066 Channels table, Generated 2026-04-10T19:41:14Z from package
+      combination ce01101
+  - name: ln_tcmcs080
+    description: LN tcmcs080 Carriers/LSP table, Generated 2026-04-10T19:41:14Z from
+      package combination ce01101
+  - name: ln_tcmcs122
+    description: LN tcmcs122 Attention table, Generated 2026-04-10T19:41:14Z from
+      package combination ce01101
+  - name: ln_tcmcs124
+    description: LN tcmcs124 Sources table, Generated 2026-04-10T19:41:14Z from package
+      combination ce01101
+  - name: ln_tcmcs125
+    description: LN tcmcs125 Industry Codes table, Generated 2026-04-10T19:41:15Z
+      from package combination ce01101
+  - name: ln_tcmcs127
+    description: LN tcmcs127 Sales Territories table, Generated 2026-04-10T19:41:15Z
+      from package combination ce01101
+  - name: ln_tcmcs143
+    description: LN tcmcs143 States/Provinces table, Generated 2026-04-10T19:41:15Z
+      from package combination ce01101
+  - name: ln_tcmcs145
+    description: LN tcmcs145 Routing Groups table, Generated 2026-04-10T19:41:15Z
+      from package combination ce01101
+  - name: ln_tcppl040
+    description: LN tcppl040 Teams table, Generated 2026-04-10T19:41:16Z from package
+      combination ce01101
+  - name: ln_tcppl090
+    description: LN tcppl090 Labor Rate Codes table, Generated 2026-04-10T19:41:16Z
+      from package combination ce01101
+  - name: ln_tdcms050
+    description: LN tdcms050 Commissions/Rebates table, Generated 2026-04-10T19:41:16Z
+      from package combination ce01101
+  - name: ln_tdipu001
+    description: LN tdipu001 Item - Purchase table, Generated 2026-04-10T19:41:16Z
+      from package combination ce01101
+  - name: ln_tdisa001
+    description: LN tdisa001 Item - Sales table, Generated 2026-04-10T19:41:17Z from
+      package combination ce01101
+  - name: ln_tdpur000
+    description: LN tdpur000 Procurement Parameters table, Generated 2019-05-10T10:44:27Z
+      from package combination 1060016
+  - name: ln_tdpur012
+    description: LN tdpur012 Purchase Offices table, Generated 2026-04-10T19:41:17Z
+      from package combination ce01101
+  - name: ln_tdpur094
+    description: LN tdpur094 Purchase Order Types table, Generated 2026-04-10T19:41:17Z
+      from package combination ce01101
+  - name: ln_tdpur100
+    description: LN tdpur100 Requests for Quotation table, Generated 2026-04-10T19:41:18Z
+      from package combination ce01101
+  - name: ln_tdpur101
+    description: LN tdpur101 Request for Quotation Lines table, Generated 2026-04-10T19:41:18Z
+      from package combination ce01101
+  - name: ln_tdpur105
+    description: LN tdpur105 RFQ Bidders table, Generated 2026-04-10T19:41:18Z from
+      package combination ce01101
+  - name: ln_tdpur106
+    description: LN tdpur106 RFQ Reponses table, Generated 2026-04-10T19:41:19Z from
+      package combination ce01101
+  - name: ln_tdpur200
+    description: LN tdpur200 Purchase Requisitions table, Generated 2026-04-10T19:41:19Z
+      from package combination ce01101
+  - name: ln_tdpur201
+    description: LN tdpur201 Purchase Requisition Lines table, Generated 2026-04-10T19:41:19Z
+      from package combination ce01101
+  - name: ln_tdpur300
+    description: LN tdpur300 Purchase Contracts table, Generated 2026-04-10T19:41:20Z
+      from package combination ce01101
+  - name: ln_tdpur301
+    description: LN tdpur301 Purchase Contract Lines table, Generated 2026-04-10T19:41:20Z
+      from package combination ce01101
+  - name: ln_tdpur303
+    description: LN tdpur303 Purchase Contract Prices table, Generated 2026-04-10T19:41:21Z
+      from package combination ce01101
+  - name: ln_tdpur400
+    description: LN tdpur400 Purchase Orders table, Generated 2026-04-10T19:41:21Z
+      from package combination ce01101
+  - name: ln_tdpur401
+    description: LN tdpur401 Purchase Order Lines table, Generated 2026-04-10T19:41:22Z
+      from package combination ce01101
+  - name: ln_tdpur406
+    description: LN tdpur406 Purchase Actual Receipts table, Generated 2026-04-10T19:41:22Z
+      from package combination ce01101
+  - name: ln_tdpur411
+    description: LN tdpur411 Purchase Order Line Item Data table, Generated 2026-04-10T19:41:22Z
+      from package combination ce01101
+  - name: ln_tdpur430
+    description: LN tdpur430 Purchase Payable Receipts for Orders and Schedules table,
+      Generated 2026-04-10T19:41:23Z from package combination ce01101
+  - name: ln_tdpur456
+    description: LN tdpur456 Purchase Actual Receipt History table, Generated 2026-04-10T19:41:23Z
+      from package combination ce01101
+  - name: ln_tdsls094
+    description: LN tdsls094 Sales Order Types table, Generated 2026-04-10T19:41:23Z
+      from package combination ce01101
+  - name: ln_tdsls300
+    description: LN tdsls300 Sales Contracts table, Generated 2026-04-10T19:41:24Z
+      from package combination ce01101
+  - name: ln_tdsls301
+    description: LN tdsls301 Sales Contract Lines table, Generated 2026-04-10T19:41:24Z
+      from package combination ce01101
+  - name: ln_tdsls307
+    description: LN tdsls307 Sales Schedule Lines table, Generated 2026-04-10T19:41:25Z
+      from package combination ce01101
+  - name: ln_tdsls311
+    description: LN tdsls311 Sales Schedules table, Generated 2026-04-10T19:41:25Z
+      from package combination ce01101
+  - name: ln_tdsls400
+    description: LN tdsls400 Sales Orders table, Generated 2026-04-10T19:41:25Z from
+      package combination ce01101
+  - name: ln_tdsls401
+    description: LN tdsls401 Sales Order Lines table, Generated 2026-04-10T19:41:26Z
+      from package combination ce01101
+  - name: ln_tdsmi003
+    description: LN tdsmi003 Phases table, Generated 2026-04-10T19:41:26Z from package
+      combination ce01101
+  - name: ln_tdsmi007
+    description: LN tdsmi007 Opportunity Types table, Generated 2026-04-10T19:41:26Z
+      from package combination ce01101
+  - name: ln_tdsmi008
+    description: LN tdsmi008 Sales Processes table, Generated 2026-04-10T19:41:27Z
+      from package combination ce01101
+  - name: ln_tdsmi110
+    description: LN tdsmi110 Opportunities table, Generated 2026-04-10T19:41:27Z from
+      package combination ce01101
+  - name: ln_tdsmi113
+    description: LN tdsmi113 Items by Opportunity table, Generated 2026-04-10T19:41:27Z
+      from package combination ce01101
+  - name: ln_tfacp001
+    description: LN tfacp001 Financial Supplier Groups table, Generated 2026-04-10T19:41:28Z
+      from package combination ce01101
+  - name: ln_tfacp200
+    description: LN tfacp200 Open Items (Purchase Invoices and Payments) table, Generated
+      2026-04-10T19:41:28Z from package combination ce01101
+  - name: ln_tfacp240
+    description: LN tfacp240 Order Data for Approval table, Generated 2026-04-10T19:41:28Z
+      from package combination ce01101
+  - name: ln_tfacp245
+    description: LN tfacp245 Goods Receipts table, Generated 2026-04-10T19:41:29Z
+      from package combination ce01101
+  - name: ln_tfacp251
+    description: LN tfacp251 Invoices Related To Purchase Goods Receipt Lines table,
+      Generated 2026-04-10T19:41:29Z from package combination ce01101
+  - name: ln_tfacp256
+    description: LN tfacp256 Matching Data by Invoice table, Generated 2026-04-10T19:41:30Z
+      from package combination ce01101
+  - name: ln_tfacp260
+    description: LN tfacp260 Approval Error Log table, Generated 2026-04-10T19:41:30Z
+      from package combination ce01101
+  - name: ln_tfacp270
+    description: LN tfacp270 Purchase Order Related Financial Transactions table,
+      Generated 2026-04-10T19:41:30Z from package combination ce01101
+  - name: ln_tfacp600
+    description: LN tfacp600 Open Items Payment-related Documents A/P table, Generated
+      2026-04-10T19:41:31Z from package combination ce01101
+  - name: ln_tfacr001
+    description: LN tfacr001 Financial Customer Groups table, Generated 2026-04-10T19:41:31Z
+      from package combination ce01101
+  - name: ln_tffam100
+    description: LN tffam100 Asset table, Generated 2026-04-10T19:41:31Z from package
+      combination ce01101
+  - name: ln_tffam110
+    description: LN tffam110 Asset Book table, Generated 2026-04-10T19:41:32Z from
+      package combination ce01101
+  - name: ln_tffam120
+    description: LN tffam120 Asset Distribution table, Generated 2026-04-10T19:41:32Z
+      from package combination ce01101
+  - name: ln_tffam200
+    description: LN tffam200 Categories table, Generated 2026-04-10T19:41:32Z from
+      package combination ce01101
+  - name: ln_tffam400
+    description: LN tffam400 Asset Groups table, Generated 2026-04-10T19:41:32Z from
+      package combination ce01101
+  - name: ln_tffam500
+    description: LN tffam500 Location table, Generated 2026-04-10T19:41:33Z from package
+      combination ce01101
+  - name: ln_tffam510
+    description: LN tffam510 Location Segments table, Generated 2026-04-10T19:41:33Z
+      from package combination ce01101
+  - name: ln_tffam600
+    description: LN tffam600 Books table, Generated 2026-04-10T19:41:33Z from package
+      combination ce01101
+  - name: ln_tffam650
+    description: LN tffam650 Reasons table, Generated 2026-04-10T19:41:33Z from package
+      combination ce01101
+  - name: ln_tffam700
+    description: LN tffam700 Depreciation Frequency table, Generated 2026-04-10T19:41:34Z
+      from package combination ce01101
+  - name: ln_tffam710
+    description: LN tffam710 Depreciation Method table, Generated 2026-04-10T19:41:34Z
+      from package combination ce01101
+  - name: ln_tffam800
+    description: LN tffam800 Transaction table, Generated 2026-04-10T19:41:34Z from
+      package combination ce01101
+  - name: ln_tffam805
+    description: LN tffam805 Transaction Distribution table, Generated 2026-04-10T19:41:34Z
+      from package combination ce01101
+  - name: ln_tffam807
+    description: LN tffam807 Transaction Summary table, Generated 2026-04-10T19:41:35Z
+      from package combination ce01101
+  - name: ln_tffam808
+    description: LN tffam808 Periodic Book Value Summary table, Generated 2026-04-10T19:41:35Z
+      from package combination ce01101
+  - name: ln_tffam810
+    description: LN tffam810 Acquisition Transaction table, Generated 2026-04-10T19:41:35Z
+      from package combination ce01101
+  - name: ln_tffam820
+    description: LN tffam820 Adjustment Transaction table, Generated 2026-04-10T19:41:36Z
+      from package combination ce01101
+  - name: ln_tffam830
+    description: LN tffam830 Depreciation Transaction table, Generated 2026-04-10T19:41:36Z
+      from package combination ce01101
+  - name: ln_tffam840
+    description: LN tffam840 Disposal Transaction table, Generated 2026-04-10T19:41:36Z
+      from package combination ce01101
+  - name: ln_tffbs001
+    description: LN tffbs001 Budget Distribution table, Generated 2026-04-10T19:41:36Z
+      from package combination ce01101
+  - name: ln_tffbs003
+    description: LN tffbs003 Budget table, Generated 2026-04-10T19:41:37Z from package
+      combination ce01101
+  - name: ln_tffbs005
+    description: LN tffbs005 Budgets per Year table, Generated 2026-04-10T19:41:37Z
+      from package combination ce01101
+  - name: ln_tffbs100
+    description: LN tffbs100 Budget Amounts and Quantities per Year table, Generated
+      2026-04-10T19:41:37Z from package combination ce01101
+  - name: ln_tffbs101
+    description: LN tffbs101 Budget Amounts and Quantities per Period table, Generated
+      2026-04-10T19:41:38Z from package combination ce01101
+  - name: ln_tffst100
+    description: LN tffst100 Financial Statements table, Generated 2026-04-10T19:41:38Z
+      from package combination ce01101
+  - name: ln_tffst120
+    description: LN tffst120 Statement Accounts table, Generated 2026-04-10T19:41:38Z
+      from package combination ce01101
+  - name: ln_tffst121
+    description: LN tffst121 Statement Ledger/Dimension Accounts table, Generated
+      2026-04-10T19:41:39Z from package combination ce01101
+  - name: ln_tfgld003
+    description: LN tfgld003 Group Company Parameters table, Generated 2026-04-10T19:41:39Z
+      from package combination ce01101
+  - name: ln_tfgld004
+    description: LN tfgld004 Financial Companies table, Generated 2026-04-10T19:41:40Z
+      from package combination ce01101
+  - name: ln_tfgld005
+    description: LN tfgld005 Periods table, Generated 2026-04-10T19:41:40Z from package
+      combination ce01101
+  - name: ln_tfgld006
+    description: LN tfgld006 End Dates by Year table, Generated 2026-04-10T19:41:40Z
+      from package combination ce01101
+  - name: ln_tfgld007
+    description: LN tfgld007 Period Status table, Generated 2026-04-10T19:41:41Z from
+      package combination ce01101
+  - name: ln_tfgld008
+    description: LN tfgld008 Chart of Accounts table, Generated 2026-04-10T19:41:41Z
+      from package combination ce01101
+  - name: ln_tfgld010
+    description: LN tfgld010 Dimensions table, Generated 2026-04-10T19:41:41Z from
+      package combination ce01101
+  - name: ln_tfgld100
+    description: LN tfgld100 Financial Batch table, Generated 2026-04-10T19:41:42Z
+      from package combination ce01101
+  - name: ln_tfgld106
+    description: LN tfgld106 Finalized Transactions table, Generated 2026-04-10T19:41:42Z
+      from package combination ce01101
+  - name: ln_tfgld170
+    description: LN tfgld170 Taxonomies table, Generated 2026-04-10T19:41:42Z from
+      package combination ce01101
+  - name: ln_tfgld171
+    description: LN tfgld171 Taxonomy Accounts table, Generated 2026-04-10T19:41:43Z
+      from package combination ce01101
+  - name: ln_tfgld172
+    description: LN tfgld172 Mappings by Taxonomy Account table, Generated 2026-04-10T19:41:43Z
+      from package combination ce01101
+  - name: ln_tfgld201
+    description: LN tfgld201 History - Ledger Account Totals table, Generated 2026-04-10T19:41:43Z
+      from package combination ce01101
+  - name: ln_tfgld202
+    description: LN tfgld202 History - Dimension/Ledger Account Totals table, Generated
+      2026-04-10T19:41:43Z from package combination ce01101
+  - name: ln_tfgld203
+    description: LN tfgld203 Opening Balances - Ledger/Currency table, Generated 2026-04-10T19:41:44Z
+      from package combination ce01101
+  - name: ln_tfgld204
+    description: LN tfgld204 Opening Balances - Dimension/Ledger/Currency table, Generated
+      2026-04-10T19:41:44Z from package combination ce01101
+  - name: ln_tfgld205
+    description: LN tfgld205 History - Dimension/Ledger Account Combination Totals
+      table, Generated 2026-04-10T19:41:44Z from package combination ce01101
+  - name: ln_tfgld206
+    description: LN tfgld206 Opening Balances - Combination of Dimension/Ledger/Currency
+      table, Generated 2026-04-10T19:41:45Z from package combination ce01101
+  - name: ln_tfgld482
+    description: LN tfgld482 Integration Transactions table, Generated 2026-04-10T19:41:45Z
+      from package combination ce01101
+  - name: ln_tfgld495
+    description: LN tfgld495 Reconciliation Data table, Generated 2026-04-10T19:41:45Z
+      from package combination ce01101
+  - name: ln_ticpr050
+    description: LN ticpr050 Operation Rate Codes table, Generated 2026-04-10T19:41:46Z
+      from package combination ce01101
+  - name: ln_ticst001
+    description: LN ticst001 Estimated and Actual Material Costs table, Generated
+      2026-04-10T19:41:46Z from package combination ce01101
+  - name: ln_ticst002
+    description: LN ticst002 Estimated and Actual Hours table, Generated 2026-04-10T19:41:46Z
+      from package combination ce01101
+  - name: ln_ticst010
+    description: LN ticst010 End Item Unit Costs table, Generated 2026-04-10T19:41:47Z
+      from package combination ce01101
+  - name: ln_tiipd001
+    description: LN tiipd001 Items - Production table, Generated 2026-04-10T19:41:47Z
+      from package combination ce01101
+  - name: ln_tipcf500
+    description: LN tipcf500 Product Variant IDs table, Generated 2026-04-10T19:41:47Z
+      from package combination ce01101
+  - name: ln_tipcs020
+    description: LN tipcs020 General Project Data table, Generated 2026-04-10T19:41:47Z
+      from package combination ce01101
+  - name: ln_tipcs030
+    description: LN tipcs030 Project Details table, Generated 2026-04-10T19:41:48Z
+      from package combination ce01101
+  - name: ln_tirou001
+    description: LN tirou001 Work Center table, Generated 2026-04-10T19:41:48Z from
+      package combination ce01101
+  - name: ln_tirou002
+    description: LN tirou002 Machine table, Generated 2026-04-10T19:41:49Z from package
+      combination ce01101
+  - name: ln_tirou003
+    description: LN tirou003 Task table, Generated 2026-04-10T19:41:49Z from package
+      combination ce01101
+  - name: ln_tirou101
+    description: LN tirou101 Routing Codes by Item table, Generated 2026-04-10T19:41:49Z
+      from package combination ce01101
+  - name: ln_tisfc001
+    description: LN tisfc001 Production Orders table, Generated 2026-04-10T19:41:50Z
+      from package combination ce01101
+  - name: ln_tisfc010
+    description: LN tisfc010 Production Order Operations table, Generated 2026-04-10T19:41:50Z
+      from package combination ce01101
+  - name: ln_tpctm010
+    description: LN tpctm010 Programs table, Generated 2026-04-10T19:41:50Z from package
+      combination ce01101
+  - name: ln_tpctm060
+    description: LN tpctm060 Contract Link to Project Structure table, Generated 2026-04-10T19:41:50Z
+      from package combination ce01101
+  - name: ln_tpctm100
+    description: LN tpctm100 Contracts table, Generated 2026-04-10T19:41:51Z from
+      package combination ce01101
+  - name: ln_tpctm110
+    description: LN tpctm110 Contract Lines table, Generated 2026-04-10T19:41:51Z
+      from package combination ce01101
+  - name: ln_tppdm000
+    description: LN tppdm000 General Project Parameters table, Generated 2026-04-10T19:41:52Z
+      from package combination ce01101
+  - name: ln_tppdm001
+    description: LN tppdm001 User Profiles table, Generated 2026-04-10T19:41:52Z from
+      package combination ce01101
+  - name: ln_tppdm002
+    description: LN tppdm002 Map Session Options by User table, Generated 2026-04-10T19:41:52Z
+      from package combination ce01101
+  - name: ln_tppdm005
+    description: LN tppdm005 Item Project Data table, Generated 2026-04-10T19:41:53Z
+      from package combination ce01101
+  - name: ln_tppdm007
+    description: LN tppdm007 Item Project Ordering Data table, Generated 2026-04-10T19:41:53Z
+      from package combination ce01101
+  - name: ln_tppdm010
+    description: LN tppdm010 Project Management Office table, Generated 2026-04-10T19:41:53Z
+      from package combination ce01101
+  - name: ln_tppdm015
+    description: LN tppdm015 Labor table, Generated 2026-04-10T19:41:53Z from package
+      combination ce01101
+  - name: ln_tppdm016
+    description: LN tppdm016 Trade Groups table, Generated 2026-04-10T19:41:54Z from
+      package combination ce01101
+  - name: ln_tppdm025
+    description: LN tppdm025 Equipment table, Generated 2026-04-10T19:41:54Z from
+      package combination ce01101
+  - name: ln_tppdm035
+    description: LN tppdm035 Subcontracting table, Generated 2026-04-10T19:41:55Z
+      from package combination ce01101
+  - name: ln_tppdm040
+    description: LN tppdm040 Sundry Costs table, Generated 2026-04-10T19:41:55Z from
+      package combination ce01101
+  - name: ln_tppdm042
+    description: LN tppdm042 Standard Overhead table, Generated 2026-04-10T19:41:55Z
+      from package combination ce01101
+  - name: ln_tppdm043
+    description: LN tppdm043 Revenues table, Generated 2026-04-10T19:41:55Z from package
+      combination ce01101
+  - name: ln_tppdm045
+    description: LN tppdm045 Third Party Types table, Generated 2026-04-10T19:41:56Z
+      from package combination ce01101
+  - name: ln_tppdm046
+    description: LN tppdm046 Third Parties table, Generated 2026-04-10T19:41:56Z from
+      package combination ce01101
+  - name: ln_tppdm048
+    description: LN tppdm048 Responsibilities table, Generated 2026-04-10T19:41:56Z
+      from package combination ce01101
+  - name: ln_tppdm055
+    description: LN tppdm055 Business Sectors table, Generated 2026-04-10T19:41:56Z
+      from package combination ce01101
+  - name: ln_tppdm059
+    description: LN tppdm059 Financing Methods table, Generated 2026-04-10T19:41:57Z
+      from package combination ce01101
+  - name: ln_tppdm063
+    description: LN tppdm063 Acquiring Methods table, Generated 2026-04-10T19:41:57Z
+      from package combination ce01101
+  - name: ln_tppdm065
+    description: LN tppdm065 Project Groups table, Generated 2026-04-10T19:41:57Z
+      from package combination ce01101
+  - name: ln_tppdm075
+    description: LN tppdm075 Categories table, Generated 2026-04-10T19:41:57Z from
+      package combination ce01101
+  - name: ln_tppdm085
+    description: LN tppdm085 Phases table, Generated 2026-04-10T19:41:57Z from package
+      combination ce01101
+  - name: ln_tppdm095
+    description: LN tppdm095 User Defined Structures table, Generated 2026-04-10T19:41:58Z
+      from package combination ce01101
+  - name: ln_tppdm096
+    description: LN tppdm096 User Defined Structure Elements table, Generated 2026-04-10T19:41:58Z
+      from package combination ce01101
+  - name: ln_tppdm110
+    description: LN tppdm110 Standard Activities table, Generated 2026-04-10T19:41:58Z
+      from package combination ce01101
+  - name: ln_tppdm600
+    description: LN tppdm600 Projects table, Generated 2026-04-10T19:41:59Z from package
+      combination ce01101
+  - name: ln_tppdm601
+    description: LN tppdm601 Cost Control Levels by Project table, Generated 2026-04-10T19:41:59Z
+      from package combination ce01101
+  - name: ln_tppdm605
+    description: LN tppdm605 Project History table, Generated 2026-04-10T19:42:00Z
+      from package combination ce01101
+  - name: ln_tppdm615
+    description: LN tppdm615 Project Labor table, Generated 2026-04-10T19:42:00Z from
+      package combination ce01101
+  - name: ln_tppdm625
+    description: LN tppdm625 Project Equipment table, Generated 2026-04-10T19:42:00Z
+      from package combination ce01101
+  - name: ln_tppdm635
+    description: LN tppdm635 Project Subcontracting table, Generated 2026-04-10T19:42:01Z
+      from package combination ce01101
+  - name: ln_tppdm640
+    description: LN tppdm640 Project Sundry Cost Codes table, Generated 2026-04-10T19:42:01Z
+      from package combination ce01101
+  - name: ln_tppdm643
+    description: LN tppdm643 Project Revenues table, Generated 2026-04-10T19:42:01Z
+      from package combination ce01101
+  - name: ln_tppdm646
+    description: LN tppdm646 Third Parties by Project table, Generated 2026-04-10T19:42:02Z
+      from package combination ce01101
+  - name: ln_tppdm649
+    description: LN tppdm649 Employees Responsible by Contract/Project table, Generated
+      2026-04-10T19:42:02Z from package combination ce01101
+  - name: ln_tppdm700
+    description: LN tppdm700 Deliverables table, Generated 2026-04-10T19:42:03Z from
+      package combination ce01101
+  - name: ln_tppdm790
+    description: LN tppdm790 Archived Projects table, Generated 2026-04-10T19:42:03Z
+      from package combination ce01101
+  - name: ln_tppdm801
+    description: LN tppdm801 Employee Project Data table, Generated 2026-04-10T19:42:03Z
+      from package combination ce01101
+  - name: ln_tppin010
+    description: LN tppin010 Advance Payments table, Generated 2026-04-10T19:42:03Z
+      from package combination ce01101
+  - name: ln_tppin011
+    description: LN tppin011 Settled Advance Payments table, Generated 2026-04-10T19:42:04Z
+      from package combination ce01101
+  - name: ln_tppin020
+    description: LN tppin020 Installments table, Generated 2026-04-10T19:42:04Z from
+      package combination ce01101
+  - name: ln_tppin040
+    description: LN tppin040 Holdback table, Generated 2026-04-10T19:42:05Z from package
+      combination ce01101
+  - name: ln_tppin050
+    description: LN tppin050 Transferred Unit Rate Invoice Lines table, Generated
+      2026-04-10T19:42:05Z from package combination ce01101
+  - name: ln_tppin060
+    description: LN tppin060 Project Shipments table, Generated 2026-04-10T19:42:05Z
+      from package combination ce01101
+  - name: ln_tppin080
+    description: LN tppin080 Fees and Penalties table, Generated 2026-04-10T19:42:06Z
+      from package combination ce01101
+  - name: ln_tpppc000
+    description: LN tpppc000 Parameters Project Production Control (PPC) table, Generated
+      2026-04-10T19:42:06Z from package combination ce01101
+  - name: ln_tpppc160
+    description: LN tpppc160 Activity Physical Progress table, Generated 2026-04-10T19:42:06Z
+      from package combination ce01101
+  - name: ln_tpppc200
+    description: LN tpppc200 Cost Transactions table, Generated 2026-04-10T19:42:07Z
+      from package combination ce01101
+  - name: ln_tpppc205
+    description: LN tpppc205 Cost Entry Defaults table, Generated 2026-04-10T19:42:07Z
+      from package combination ce01101
+  - name: ln_tpppc211
+    description: LN tpppc211 Material Costs table, Generated 2026-04-10T19:42:07Z
+      from package combination ce01101
+  - name: ln_tpppc216
+    description: LN tpppc216 Material Cost Forecast table, Generated 2026-04-10T19:42:08Z
+      from package combination ce01101
+  - name: ln_tpppc231
+    description: LN tpppc231 Labor Costs table, Generated 2026-04-10T19:42:08Z from
+      package combination ce01101
+  - name: ln_tpppc232
+    description: LN tpppc232 Subcontracting Hours table, Generated 2026-04-10T19:42:08Z
+      from package combination ce01101
+  - name: ln_tpppc236
+    description: LN tpppc236 Labor Cost Forecast table, Generated 2026-04-10T19:42:09Z
+      from package combination ce01101
+  - name: ln_tpppc250
+    description: LN tpppc250 Commitments (Equipment) table, Generated 2026-04-10T19:42:09Z
+      from package combination ce01101
+  - name: ln_tpppc251
+    description: LN tpppc251 Equipment Costs table, Generated 2026-04-10T19:42:09Z
+      from package combination ce01101
+  - name: ln_tpppc256
+    description: LN tpppc256 Equipment Cost Forecast table, Generated 2026-04-10T19:42:10Z
+      from package combination ce01101
+  - name: ln_tpppc271
+    description: LN tpppc271 Subcontracting Costs table, Generated 2026-04-10T19:42:10Z
+      from package combination ce01101
+  - name: ln_tpppc276
+    description: LN tpppc276 Subcontracting Cost Forecast table, Generated 2026-04-10T19:42:10Z
+      from package combination ce01101
+  - name: ln_tpppc291
+    description: LN tpppc291 Sundry Costs table, Generated 2026-04-10T19:42:11Z from
+      package combination ce01101
+  - name: ln_tpppc296
+    description: LN tpppc296 Sundry Cost Forecast table, Generated 2026-04-10T19:42:11Z
+      from package combination ce01101
+  - name: ln_tpppc301
+    description: LN tpppc301 Revenues table, Generated 2026-04-10T19:42:11Z from package
+      combination ce01101
+  - name: ln_tpppc305
+    description: LN tpppc305 Revenue Transactions table, Generated 2026-04-10T19:42:12Z
+      from package combination ce01101
+  - name: ln_tpppc350
+    description: LN tpppc350 Interim Results table, Generated 2026-04-10T19:42:12Z
+      from package combination ce01101
+  - name: ln_tpppc400
+    description: LN tpppc400 Cost Control by Project table, Generated 2026-04-10T19:42:12Z
+      from package combination ce01101
+  - name: ln_tpppc401
+    description: LN tpppc401 Cost Control by Project / Cost Type table, Generated
+      2026-04-10T19:42:13Z from package combination ce01101
+  - name: ln_tpppc402
+    description: LN tpppc402 Cost Control by Project / Cost Component table, Generated
+      2026-04-10T19:42:13Z from package combination ce01101
+  - name: ln_tpppc410
+    description: LN tpppc410 Cost Control by Project / Material Control Code table,
+      Generated 2026-04-10T19:42:13Z from package combination ce01101
+  - name: ln_tpppc411
+    description: LN tpppc411 Cost Control by Project / Labor Control Code table, Generated
+      2026-04-10T19:42:14Z from package combination ce01101
+  - name: ln_tpppc413
+    description: LN tpppc413 Cost Control by Project / Subcontracting Control Code
+      table, Generated 2026-04-10T19:42:14Z from package combination ce01101
+  - name: ln_tpppc414
+    description: LN tpppc414 Cost Control by Project / Sundry Cost Control Code table,
+      Generated 2026-04-10T19:42:14Z from package combination ce01101
+  - name: ln_tpppc420
+    description: LN tpppc420 Cost Control by Project / Element table, Generated 2026-04-10T19:42:14Z
+      from package combination ce01101
+  - name: ln_tpppc440
+    description: LN tpppc440 Cost Control by Project / Activity table, Generated 2026-04-10T19:42:15Z
+      from package combination ce01101
+  - name: ln_tpppc441
+    description: LN tpppc441 Cost Control by Project / Activity / Cost Type table,
+      Generated 2026-04-10T19:42:15Z from package combination ce01101
+  - name: ln_tpppc442
+    description: LN tpppc442 Cost Control by Project / Activity / Cost Component table,
+      Generated 2026-04-10T19:42:15Z from package combination ce01101
+  - name: ln_tpppc450
+    description: LN tpppc450 Cost Control by Project / Activity / Material Control
+      Code table, Generated 2026-04-10T19:42:16Z from package combination ce01101
+  - name: ln_tpppc451
+    description: LN tpppc451 Cost Control by Project / Activity / Labor Control Code
+      table, Generated 2026-04-10T19:42:16Z from package combination ce01101
+  - name: ln_tpppc453
+    description: LN tpppc453 Cost Control by Project / Activity / Subcontracting Control
+      Code table, Generated 2026-04-10T19:42:16Z from package combination ce01101
+  - name: ln_tpppc454
+    description: LN tpppc454 Cost Control by Project / Activity / Sundry Cost Control
+      Code table, Generated 2026-04-10T19:42:16Z from package combination ce01101
+  - name: ln_tpppc470
+    description: LN tpppc470 Cost Control by Project / Extension table, Generated
+      2026-04-10T19:42:17Z from package combination ce01101
+  - name: ln_tpppc600
+    description: LN tpppc600 Overhead Cost Transactions table, Generated 2026-04-10T19:42:17Z
+      from package combination ce01101
+  - name: ln_tpppc606
+    description: LN tpppc606 Overhead Cost Forecast table, Generated 2026-04-10T19:42:17Z
+      from package combination ce01101
+  - name: ln_tppss010
+    description: LN tppss010 Project Plans table, Generated 2026-04-10T19:42:18Z from
+      package combination ce01101
+  - name: ln_tppss020
+    description: LN tppss020 Baselines table, Generated 2026-04-10T19:42:18Z from
+      package combination ce01101
+  - name: ln_tppss200
+    description: LN tppss200 Activities table, Generated 2026-04-10T19:42:18Z from
+      package combination ce01101
+  - name: ln_tppss202
+    description: LN tppss202 Activity History table, Generated 2026-04-10T19:42:19Z
+      from package combination ce01101
+  - name: ln_tppss210
+    description: LN tppss210 Activity Relationships table, Generated 2026-04-10T19:42:19Z
+      from package combination ce01101
+  - name: ln_tppss220
+    description: LN tppss220 Activity Baselines table, Generated 2026-04-10T19:42:19Z
+      from package combination ce01101
+  - name: ln_tppss600
+    description: LN tppss600 Planned Material Transactions table, Generated 2026-04-10T19:42:20Z
+      from package combination ce01101
+  - name: ln_tpptc050
+    description: LN tpptc050 Extensions table, Generated 2026-04-10T19:42:20Z from
+      package combination ce01101
+  - name: ln_tpptc100
+    description: LN tpptc100 Elements table, Generated 2026-04-10T19:42:20Z from package
+      combination ce01101
+  - name: ln_tpptc101
+    description: LN tpptc101 Element Relations table, Generated 2026-04-10T19:42:21Z
+      from package combination ce01101
+  - name: ln_tpptc120
+    description: LN tpptc120 Material Budget Lines table, Generated 2026-04-10T19:42:21Z
+      from package combination ce01101
+  - name: ln_tpptc127
+    description: LN tpptc127 Control Data Material Lines table, Generated 2026-04-10T19:42:21Z
+      from package combination ce01101
+  - name: ln_tpptc130
+    description: LN tpptc130 Labor Budget Lines table, Generated 2026-04-10T19:42:21Z
+      from package combination ce01101
+  - name: ln_tpptc137
+    description: LN tpptc137 Control Data Labor Lines table, Generated 2026-04-10T19:42:22Z
+      from package combination ce01101
+  - name: ln_tpptc140
+    description: LN tpptc140 Equipment Budget Lines table, Generated 2026-04-10T19:42:22Z
+      from package combination ce01101
+  - name: ln_tpptc147
+    description: LN tpptc147 Control Data Equipment Lines table, Generated 2026-04-10T19:42:22Z
+      from package combination ce01101
+  - name: ln_tpptc150
+    description: LN tpptc150 Subcontracting Budget Lines table, Generated 2026-04-10T19:42:23Z
+      from package combination ce01101
+  - name: ln_tpptc157
+    description: LN tpptc157 Control Data Subcontracting Lines table, Generated 2026-04-10T19:42:23Z
+      from package combination ce01101
+  - name: ln_tpptc160
+    description: LN tpptc160 Sundry Costs Budget Lines table, Generated 2026-04-10T19:42:23Z
+      from package combination ce01101
+  - name: ln_tpptc220
+    description: LN tpptc220 Material Budget Lines by Activity table, Generated 2026-04-10T19:42:24Z
+      from package combination ce01101
+  - name: ln_tpptc230
+    description: LN tpptc230 Labor Budget Lines by Activity table, Generated 2026-04-10T19:42:24Z
+      from package combination ce01101
+  - name: ln_tpptc240
+    description: LN tpptc240 Equipment Budget Lines by Activity table, Generated 2026-04-10T19:42:24Z
+      from package combination ce01101
+  - name: ln_tpptc250
+    description: LN tpptc250 Subcontracting Budget Lines by Activity table, Generated
+      2026-04-10T19:42:25Z from package combination ce01101
+  - name: ln_tpptc300
+    description: LN tpptc300 Budget Cost Analysis Versions by Project table, Generated
+      2026-04-10T19:42:25Z from package combination ce01101
+  - name: ln_tpptc311
+    description: LN tpptc311 Project Budget (IMS) table, Generated 2026-04-10T19:42:25Z
+      from package combination ce01101
+  - name: ln_tpptc315
+    description: LN tpptc315 Actual Budget by Activity/Cost Type table, Generated
+      2026-04-10T19:42:26Z from package combination ce01101
+  - name: ln_tpptc316
+    description: LN tpptc316 Actual Budget by Activity/Cost Component table, Generated
+      2026-04-10T19:42:26Z from package combination ce01101
+  - name: ln_tpptc350
+    description: LN tpptc350 Actual Budget by Material Control Code table, Generated
+      2026-04-10T19:42:26Z from package combination ce01101
+  - name: ln_tpptc351
+    description: LN tpptc351 Actual Budget by Labor Control Code table, Generated
+      2026-04-10T19:42:26Z from package combination ce01101
+  - name: ln_tpptc352
+    description: LN tpptc352 Actual Budget by Equipment Control Code table, Generated
+      2026-04-10T19:42:27Z from package combination ce01101
+  - name: ln_tpptc353
+    description: LN tpptc353 Actual Budget by Subcontracting Control Code table, Generated
+      2026-04-10T19:42:27Z from package combination ce01101
+  - name: ln_tpptc354
+    description: LN tpptc354 Actual Budget by Sundry Cost Control Code table, Generated
+      2026-04-10T19:42:27Z from package combination ce01101
+  - name: ln_tpptc510
+    description: LN tpptc510 Budget Amounts of Activities by Version table, Generated
+      2026-04-10T19:42:27Z from package combination ce01101
+  - name: ln_tsbsc100
+    description: LN tsbsc100 Installation Group table, Generated 2026-04-10T19:42:28Z
+      from package combination ce01101
+  - name: ln_tscfg200
+    description: LN tscfg200 Serialized Items table, Generated 2026-04-10T19:42:28Z
+      from package combination ce01101
+  - name: ln_tsclm100
+    description: LN tsclm100 Calls table, Generated 2026-04-10T19:42:29Z from package
+      combination ce01101
+  - name: ln_tsclm330
+    description: LN tsclm330 Problems table, Generated 2026-04-10T19:42:29Z from package
+      combination ce01101
+  - name: ln_tsclm335
+    description: LN tsclm335 Solutions table, Generated 2026-04-10T19:42:29Z from
+      package combination ce01101
+  - name: ln_tsclm350
+    description: LN tsclm350 Service Resolution - Probability Analysis table, Generated
+      2026-04-10T19:42:29Z from package combination ce01101
+  - name: ln_tsctm110
+    description: LN tsctm110 Configuration Lines table, Generated 2026-04-10T19:42:30Z
+      from package combination ce01101
+  - name: ln_tsctm111
+    description: LN tsctm111 Fixed Price Terms table, Generated 2026-04-10T19:42:30Z
+      from package combination ce01101
+  - name: ln_tsctm120
+    description: LN tsctm120 Coverage Terms table, Generated 2026-04-10T19:42:30Z
+      from package combination ce01101
+  - name: ln_tsctm130
+    description: LN tsctm130 Traveling Terms table, Generated 2026-04-10T19:42:31Z
+      from package combination ce01101
+  - name: ln_tsctm131
+    description: LN tsctm131 Material Terms table, Generated 2026-04-10T19:42:31Z
+      from package combination ce01101
+  - name: ln_tsctm132
+    description: LN tsctm132 Labor Terms table, Generated 2026-04-10T19:42:31Z from
+      package combination ce01101
+  - name: ln_tsctm135
+    description: LN tsctm135 Helpdesk Terms table, Generated 2026-04-10T19:42:32Z
+      from package combination ce01101
+  - name: ln_tsctm136
+    description: LN tsctm136 Other Terms table, Generated 2026-04-10T19:42:32Z from
+      package combination ce01101
+  - name: ln_tsctm139
+    description: LN tsctm139 Uptime Terms table, Generated 2026-04-10T19:42:32Z from
+      package combination ce01101
+  - name: ln_tsctm200
+    description: LN tsctm200 Contract Quotes table, Generated 2026-04-10T19:42:33Z
+      from package combination ce01101
+  - name: ln_tsctm300
+    description: LN tsctm300 Service Contracts table, Generated 2026-04-10T19:42:33Z
+      from package combination ce01101
+  - name: ln_tsctm320
+    description: LN tsctm320 Contract Changes table, Generated 2026-04-10T19:42:33Z
+      from package combination ce01101
+  - name: ln_tsctm400
+    description: LN tsctm400 Contract Installments table, Generated 2026-04-10T19:42:34Z
+      from package combination ce01101
+  - name: ln_tsctm450
+    description: LN tsctm450 Estimated Contract Revenues per Period table, Generated
+      2026-04-10T19:42:34Z from package combination ce01101
+  - name: ln_tsctm460
+    description: LN tsctm460 Contract Revenues table, Generated 2026-04-10T19:42:34Z
+      from package combination ce01101
+  - name: ln_tsctm480
+    description: LN tsctm480 Contract Cost Coverage - Overview table, Generated 2026-04-10T19:42:35Z
+      from package combination ce01101
+  - name: ln_tsctm500
+    description: LN tsctm500 Generic Warranties table, Generated 2026-04-10T19:42:35Z
+      from package combination ce01101
+  - name: ln_tsctm501
+    description: LN tsctm501 Warranty Transactions table, Generated 2026-04-10T19:42:35Z
+      from package combination ce01101
+  - name: ln_tsmdm000
+    description: LN tsmdm000 General Service Parameters table, Generated 2026-04-10T19:42:35Z
+      from package combination ce01101
+  - name: ln_tsmdm015
+    description: LN tsmdm015 Tasks table, Generated 2026-04-10T19:42:36Z from package
+      combination ce01101
+  - name: ln_tsmdm100
+    description: LN tsmdm100 Service Offices table, Generated 2026-04-10T19:42:36Z
+      from package combination ce01101
+  - name: ln_tsmdm105
+    description: LN tsmdm105 Service Areas table, Generated 2026-04-10T19:42:36Z from
+      package combination ce01101
+  - name: ln_tsmdm140
+    description: LN tsmdm140 Service Employees table, Generated 2026-04-10T19:42:37Z
+      from package combination ce01101
+  - name: ln_tsmdm145
+    description: LN tsmdm145 Service Cars table, Generated 2026-04-10T19:42:37Z from
+      package combination ce01101
+  - name: ln_tssoc200
+    description: LN tssoc200 Service Orders table, Generated 2026-04-10T19:42:37Z
+      from package combination ce01101
+  - name: ln_tssoc205
+    description: LN tssoc205 Service Engineer Assignments table, Generated 2026-04-10T19:42:38Z
+      from package combination ce01101
+  - name: ln_tssoc210
+    description: LN tssoc210 Service Order Activities table, Generated 2026-04-10T19:42:38Z
+      from package combination ce01101
+  - name: ln_ttaad111
+    description: LN ttaad111 Data Languages table, Generated 2026-04-10T19:42:38Z
+      from package combination ce01101
+  - name: ln_ttaad200
+    description: LN ttaad200 User Data table, Generated 2026-04-10T19:42:39Z from
+      package combination ce01101
+  - name: ln_ttaad420
+    description: LN ttaad420 Logical/Physical Company Number table, Generated 2026-04-10T19:42:39Z
+      from package combination ce01101
+  - name: ln_ttams460
+    description: LN ttams460 User AMS Companies table, Generated 2026-04-10T19:42:39Z
+      from package combination ce01101
+  - name: ln_ttdpm510
+    description: LN ttdpm510 Data Set Companies table, Generated 2026-04-10T19:42:40Z
+      from package combination ce01101
+  - name: ln_ttdpm515
+    description: LN ttdpm515 Tables to Publish table, Generated 2026-04-10T19:42:40Z
+      from package combination ce01101
+  - name: ln_ttdpm530
+    description: LN ttdpm530 IMS Parameters table, Generated 2026-04-10T19:42:40Z
+      from package combination ce01101
+  - name: ln_tttxt010
+    description: LN Texts Texts table, Generated 2026-04-10T19:42:40Z from package
+      combination ce01101
+  - name: ln_txpdm901
+    description: LN txpdm901 Local Board Master table, Generated 2026-04-10T19:42:40Z
+      from package combination ce01101
+  - name: ln_txpdm902
+    description: LN txpdm902 Iwi Master table, Generated 2026-04-10T19:42:41Z from
+      package combination ce01101
+  - name: ln_txpdm904
+    description: LN txpdm904 Local Board table, Generated 2026-04-10T19:42:41Z from
+      package combination ce01101
+  - name: ln_txpdm905
+    description: LN txpdm905 Iwi table, Generated 2026-04-10T19:42:41Z from package
+      combination ce01101
+  - name: ln_txpdm907
+    description: LN txpdm907 Project Reporting table, Generated 2026-04-10T19:42:41Z
+      from package combination ce01101
+  - name: ln_txpdm908
+    description: LN txpdm908 Project Reporting table, Generated 2026-04-10T19:42:42Z
+      from package combination ce01101
+  - name: ln_txptc902
+    description: LN txptc902 Project Risks table, Generated 2026-04-10T19:42:42Z from
+      package combination ce01101
+  - name: ln_txptc903
+    description: LN txptc903 Change Request Header table, Generated 2026-04-10T19:42:43Z
+      from package combination ce01101
+  - name: ln_txptc904
+    description: LN txptc904 Change Request Lines table, Generated 2026-04-10T19:42:43Z
+      from package combination ce01101
+  - name: ln_whina112
+    description: LN whina112 Inventory Receipt Transactions table, Generated 2026-04-10T19:42:43Z
+      from package combination ce01101
+  - name: ln_whina113
+    description: LN whina113 Inventory Receipt Transaction - Cost Details table, Generated
+      2026-04-10T19:42:44Z from package combination ce01101
+  - name: ln_whina114
+    description: LN whina114 Inventory Receipt Transaction Consumptions table, Generated
+      2026-04-10T19:42:44Z from package combination ce01101
+  - name: ln_whina115
+    description: LN whina115 Inventory Receipt Transaction Consumptions Cost Details
+      table, Generated 2026-04-10T19:42:44Z from package combination ce01101
+  - name: ln_whina116
+    description: LN whina116 Inventory Variances table, Generated 2026-04-10T19:42:45Z
+      from package combination ce01101
+  - name: ln_whina117
+    description: LN whina117 Inventory Variance Cost Details table, Generated 2026-04-10T19:42:45Z
+      from package combination ce01101
+  - name: ln_whina118
+    description: LN whina118 Market Values table, Generated 2026-04-10T19:42:45Z from
+      package combination ce01101
+  - name: ln_whina122
+    description: LN whina122 Inventory Revaluation Transactions table, Generated 2026-04-10T19:42:46Z
+      from package combination ce01101
+  - name: ln_whina123
+    description: LN whina123 Inventory Revaluation Transaction Cost Details table,
+      Generated 2026-04-10T19:42:46Z from package combination ce01101
+  - name: ln_whina124
+    description: LN whina124 Inventory Integration Transactions table, Generated 2026-04-10T19:42:46Z
+      from package combination ce01101
+  - name: ln_whina126
+    description: LN whina126 Inventory Receipt Transaction Variances table, Generated
+      2026-04-10T19:42:46Z from package combination ce01101
+  - name: ln_whina127
+    description: LN whina127 Inventory Receipt Transaction Variance Cost Details table,
+      Generated 2026-04-10T19:42:47Z from package combination ce01101
+  - name: ln_whinh200
+    description: LN whinh200 Warehousing Orders table, Generated 2026-04-10T19:42:47Z
+      from package combination ce01101
+  - name: ln_whinh210
+    description: LN whinh210 Inbound Order Lines table, Generated 2026-04-10T19:42:47Z
+      from package combination ce01101
+  - name: ln_whinh220
+    description: LN whinh220 Outbound Order Lines table, Generated 2026-04-10T19:42:48Z
+      from package combination ce01101
+  - name: ln_whinh310
+    description: LN whinh310 Receipt Headers table, Generated 2026-04-10T19:42:48Z
+      from package combination ce01101
+  - name: ln_whinh312
+    description: LN whinh312 Receipt Lines table, Generated 2026-04-10T19:42:49Z from
+      package combination ce01101
+  - name: ln_whinh430
+    description: LN whinh430 Shipments table, Generated 2026-04-10T19:42:49Z from
+      package combination ce01101
+  - name: ln_whinh431
+    description: LN whinh431 Shipment Lines table, Generated 2026-04-10T19:42:50Z
+      from package combination ce01101
+  - name: ln_whinh435
+    description: LN whinh435 Delivery Notes table, Generated 2026-04-10T19:42:50Z
+      from package combination ce01101
+  - name: ln_whinh439
+    description: LN whinh439 Deliveries table, Generated 2026-04-10T19:42:50Z from
+      package combination ce01101
+  - name: ln_whinh440
+    description: LN whinh440 Loads table, Generated 2026-04-10T19:42:50Z from package
+      combination ce01101
+  - name: ln_whinh500
+    description: LN whinh500 Cycle Counting Orders table, Generated 2026-04-10T19:42:51Z
+      from package combination ce01101
+  - name: ln_whinh501
+    description: LN whinh501 Cycle Counting Order Lines table, Generated 2026-04-10T19:42:51Z
+      from package combination ce01101
+  - name: ln_whinh520
+    description: LN whinh520 Adjustment Orders table, Generated 2026-04-10T19:42:51Z
+      from package combination ce01101
+  - name: ln_whinh521
+    description: LN whinh521 Adjustment Order Lines table, Generated 2026-04-10T19:42:52Z
+      from package combination ce01101
+  - name: ln_whinh540
+    description: LN whinh540 Cycle Counting Data table, Generated 2026-04-10T19:42:52Z
+      from package combination ce01101
+  - name: ln_whinh600
+    description: LN whinh600 Cross-dock Orders table, Generated 2026-04-10T19:42:52Z
+      from package combination ce01101
+  - name: ln_whinr100
+    description: LN whinr100 Inventory Transactions by Stock Point table, Generated
+      2025-06-12T01:48:43Z from package combination ce01090
+  - name: ln_whinr110
+    description: LN whinr110 Inventory Transactions by Item and Warehouse table, Generated
+      2026-04-10T19:42:53Z from package combination ce01101
+  - name: ln_whinr120
+    description: LN whinr120 Item Issue by Period table, Generated 2025-06-12T01:48:43Z
+      from package combination ce01090
+  - name: ln_whinr130
+    description: LN whinr130 Item Issue by Warehouse and Period table, Generated 2025-06-12T01:48:43Z
+      from package combination ce01090
+  - name: ln_whinr140
+    description: LN whinr140 Inventory table, Generated 2025-06-12T01:48:44Z from
+      package combination ce01090
+  - name: ln_whinr150
+    description: LN whinr150 Inventory Structure table, Generated 2025-06-12T01:48:44Z
+      from package combination ce01090
+  - name: ln_whwmd200
+    description: LN whwmd200 Warehouses table, Generated 2026-04-10T19:42:53Z from
+      package combination ce01101
+  - name: ln_whwmd215
+    description: LN whwmd215 Item Inventory by Warehouse table, Generated 2026-04-10T19:42:53Z
+      from package combination ce01101
+  - name: ln_whwmd217
+    description: LN whwmd217 Item Inventory by Warehouse Cost Details table, Generated
+      2025-06-12T01:48:45Z from package combination ce01090
+  - name: ln_whwmd300
+    description: LN whwmd300 Locations table, Generated 2026-04-10T19:42:54Z from
+      package combination ce01101

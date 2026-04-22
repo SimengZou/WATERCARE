@@ -1,0 +1,38 @@
+version: 2
+models:
+- name: r5glreferencesctrl
+  columns:
+  - name: grc_lastsaved
+    description: GRC_LASTSAVED
+  - name: grc_displayname
+    description: GRC_DISPLAYNAME
+  - name: grc_length
+    description: GRC_LENGTH
+  - name: grc_displayseq
+    description: GRC_DISPLAYSEQ
+  - name: grc_updatecount
+    description: GRC_UPDATECOUNT
+  - name: grc_r5column
+    description: GRC_R5COLUMN
+    data_tests:
+    - unique
+  - name: grc_datatype
+    description: GRC_DATATYPE
+  - name: _deleted
+    description: Deleted Record Indicator
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: eam_R5GLREFERENCESCTRL

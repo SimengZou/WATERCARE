@@ -1,0 +1,158 @@
+version: 2
+models:
+- name: tcemm170
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: comp
+    description: (required) Company
+    data_tests:
+    - not_null
+  - name: desc__en_us
+    description: '(required) Description - base language. Max length: 50'
+    data_tests:
+    - not_null
+  - name: ctyp
+    description: 'Company Type. Allowed values: 1, 2, 3'
+  - name: ctyp_kw
+    description: 'Company Type (keyword). Allowed values: tcemm.ctyp.logistic, tcemm.ctyp.financial,
+      tcemm.ctyp.both'
+  - name: csys
+    description: 'Currency System. Allowed values: 1, 2, 3, 4'
+  - name: csys_kw
+    description: 'Currency System (keyword). Allowed values: tcemm.depe.single, tcemm.depe.dependent,
+      tcemm.depe.independent, tcemm.depe.standard'
+  - name: fcua
+    description: 'Local Currency. Max length: 3'
+  - name: ctya
+    description: 'Currency Type. Allowed values: 0, 1, 2'
+  - name: ctya_kw
+    description: 'Currency Type (keyword). Allowed values: , tcemm.curt.local, tcemm.curt.reporting'
+  - name: lcur
+    description: 'Logistic Currency. Max length: 3'
+  - name: fcub
+    description: 'Reporting Currency 1. Max length: 3'
+  - name: ctyb
+    description: 'Currency Type. Allowed values: 0, 1, 2'
+  - name: ctyb_kw
+    description: 'Currency Type (keyword). Allowed values: , tcemm.curt.local, tcemm.curt.reporting'
+  - name: fcuc
+    description: 'Reporting Currency 2. Max length: 3'
+  - name: ctyc
+    description: 'Currency Type. Allowed values: 0, 1, 2'
+  - name: ctyc_kw
+    description: 'Currency Type (keyword). Allowed values: , tcemm.curt.local, tcemm.curt.reporting'
+  - name: umfc
+    description: 'Use Multiple Functional Currencies. Allowed values: 1, 2'
+  - name: umfc_kw
+    description: 'Use Multiple Functional Currencies (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: clcu
+    description: 'Credit Limit Currency. Max length: 3'
+  - name: expu
+    description: 'Exchange Rate Type Purchase. Max length: 3'
+  - name: exsa
+    description: 'Exchange Rate Type Sales. Max length: 3'
+  - name: exeu
+    description: 'Exchange Rate Type Internal. Max length: 3'
+  - name: exex
+    description: 'Exchange Rate Type External. Max length: 3'
+  - name: ccal
+    description: 'Calendar Code. Max length: 9'
+  - name: tzid
+    description: 'Time Zone Code. Max length: 3'
+  - name: euro
+    description: 'Transition Currency. Max length: 3'
+  - name: tmub
+    description: 'Translation Method 1. Allowed values: 1, 2, 3'
+  - name: tmub_kw
+    description: 'Translation Method 1 (keyword). Allowed values: tcemm.tmrc.transaction,
+      tcemm.tmrc.local, tcemm.tmrc.not.applicable'
+  - name: rdub
+    description: 'Rate Determination Method 1. Allowed values: 1, 2, 3, 10'
+  - name: rdub_kw
+    description: 'Rate Determination Method 1 (keyword). Allowed values: tcrdrc.adopt,
+      tcrdrc.own, tcrdrc.default, tcrdrc.not.applicable'
+  - name: erub
+    description: 'Exchange Rate Type 1. Max length: 3'
+  - name: tmuc
+    description: 'Translation Method 2. Allowed values: 1, 2, 3'
+  - name: tmuc_kw
+    description: 'Translation Method 2 (keyword). Allowed values: tcemm.tmrc.transaction,
+      tcemm.tmrc.local, tcemm.tmrc.not.applicable'
+  - name: rduc
+    description: 'Rate Determination Method 2. Allowed values: 1, 2, 3, 10'
+  - name: rduc_kw
+    description: 'Rate Determination Method 2 (keyword). Allowed values: tcrdrc.adopt,
+      tcrdrc.own, tcrdrc.default, tcrdrc.not.applicable'
+  - name: eruc
+    description: 'Exchange Rate Type 2. Max length: 3'
+  - name: ract
+    description: 'Availability Type. Max length: 6'
+  - name: fcua_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: lcur_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: fcub_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: fcuc_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: clcu_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: ccal_ref_compnr
+    description: company number of primary key of table tcccp010 Calendar Codes
+  - name: tzid_ref_compnr
+    description: company number of primary key of table tcemm100 Time Zones
+  - name: euro_ref_compnr
+    description: company number of primary key of table tcmcs002 Currencies
+  - name: erub_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: eruc_ref_compnr
+    description: company number of primary key of table tcmcs040 Exchange Rate Types
+  - name: ract_ref_compnr
+    description: company number of primary key of table tcccp001 Availability Types
+  - name: dcur_comp
+    description: 'CC: Data Warehouse Currency of Company. Max length: 3'
+  - name: taxo_rcmp
+    description: 'CC: Reference Company of Taxonomy'
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tcemm170 Companies table, Generated 2026-04-10T19:41:07Z from package
+    combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - comp

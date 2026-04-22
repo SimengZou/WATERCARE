@@ -1,0 +1,242 @@
+version: 2
+models:
+- name: qmptc100
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: iorn
+    description: '(required) Inspection Order. Max length: 9'
+    data_tests:
+    - not_null
+  - name: orgn
+    description: 'Origin. Allowed values: 1, 2, 4, 5, 6, 7, 8, 10, 11, 13, 20, 75,
+      80, 90, 100, 110, 120, 130, 140, 150, 200'
+  - name: orgn_kw
+    description: 'Origin (keyword). Allowed values: qmptc.orgn.sales, qmptc.orgn.purchase,
+      qmptc.orgn.production, qmptc.orgn.matl.bom, qmptc.orgn.rou.ti, qmptc.orgn.sales.sched,
+      qmptc.orgn.purchase.sched, qmptc.orgn.cwar.insp, qmptc.orgn.inv.insp, qmptc.orgn.cwar.trans,
+      qmptc.orgn.cwar.trans.man, qmptc.orgn.project, qmptc.orgn.prj.contract, qmptc.orgn.enterprise.plan,
+      qmptc.orgn.prod.repetitive, qmptc.orgn.rou.repetitive, qmptc.orgn.service, qmptc.orgn.maint.sales,
+      qmptc.orgn.batch.repair, qmptc.orgn.maint.work, qmptc.orgn.not.appl'
+  - name: orno
+    description: 'Origin Order. Max length: 9'
+  - name: pono
+    description: Origin Order Line
+  - name: opno
+    description: Operation
+  - name: wstt
+    description: 'Work Station. Max length: 6'
+  - name: seqn
+    description: Origin Order Sequence
+  - name: apno
+    description: 'Inspection. Max length: 9'
+  - name: apsq
+    description: Inspection Sequence
+  - name: huid
+    description: 'Handling Unit. Max length: 25'
+  - name: item
+    description: 'Item. Max length: 47'
+  - name: cwar
+    description: 'Warehouse. Max length: 6'
+  - name: loca
+    description: 'Location. Max length: 10'
+  - name: clot
+    description: 'Lot. Max length: 20'
+  - name: date
+    description: Inventory Date
+  - name: effn
+    description: Effectivity Unit
+  - name: revi
+    description: 'E-Item Revision. Max length: 6'
+  - name: quid
+    description: 'Standard Test Procedure. Max length: 10'
+  - name: vrsn
+    description: Version
+  - name: tstg
+    description: Test Group
+  - name: tsty
+    description: 'Test Type. Allowed values: 1, 2, 3, 40, 50'
+  - name: tsty_kw
+    description: 'Test Type (keyword). Allowed values: qmptc.tsty.hundred.perc, qmptc.tsty.single,
+      qmptc.tsty.continuous, qmptc.tsty.sample.rule, qmptc.tsty.conf.rept'
+  - name: freq
+    description: Frequency
+  - name: cufr
+    description: 'Frequency Unit. Max length: 3'
+  - name: psms
+    description: Percentage
+  - name: sams
+    description: Sample Size
+  - name: cuss
+    description: 'Sample Unit. Max length: 3'
+  - name: aqls
+    description: 'AQL Switching. Allowed values: 1, 2'
+  - name: aqls_kw
+    description: 'AQL Switching (keyword). Allowed values: qmptc.aqls.order, qmptc.aqls.characteristic'
+  - name: aqll
+    description: Order AQL
+  - name: qacc
+    description: Accept Quantity
+  - name: qrej
+    description: Reject Quantity
+  - name: craq
+    description: Critical Characteristic AQL
+  - name: crac
+    description: Critical Characteristics Accepted Quantity
+  - name: crrj
+    description: Critical Characteristic Rejected Quantity
+  - name: mcaq
+    description: Major Characteristic AQL
+  - name: mcac
+    description: Major Characteristics Accepted Quantity
+  - name: mcrj
+    description: Major Characteristic Rejected Quantity
+  - name: miaq
+    description: Minor Characteristic AQL
+  - name: miac
+    description: Minor Characteristics Accepted Quantity
+  - name: mirj
+    description: Minor Characteristic Rejected Quantity
+  - name: saru
+    description: 'Sampling Rule. Max length: 6'
+  - name: inss
+    description: 'Inspection Standard. Max length: 6'
+  - name: inse
+    description: 'Inspection Severity. Allowed values: 10, 20, 30, 40, 100'
+  - name: inse_kw
+    description: 'Inspection Severity (keyword). Allowed values: qmptc.inse.reduced,
+      qmptc.inse.normal, qmptc.inse.tightened, qmptc.inse.first.article, qmptc.inse.not.appl'
+  - name: ilvl
+    description: 'Inspection Level. Max length: 6'
+  - name: sapl
+    description: 'Sampling Plan. Max length: 6'
+  - name: noit
+    description: Number of Iterations
+  - name: iter
+    description: Iteration
+  - name: bpid
+    description: 'Business Partner. Max length: 9'
+  - name: sklo
+    description: 'Skip Lot. Allowed values: 1, 2'
+  - name: sklo_kw
+    description: 'Skip Lot (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: qtst
+    description: Test Quantity
+  - name: tuni
+    description: 'Test Unit. Max length: 3'
+  - name: cvss
+    description: Conversion Factor Sample Size
+  - name: odat
+    description: Order Date
+  - name: cdat
+    description: Completion Date
+  - name: reio
+    description: 'Re-Inspection Order. Max length: 9'
+  - name: orio
+    description: 'Original Inspection Order. Max length: 9'
+  - name: ostp
+    description: 'Order Specific Test Procedure. Allowed values: 1, 2'
+  - name: ostp_kw
+    description: 'Order Specific Test Procedure (keyword). Allowed values: tcyesno.yes,
+      tcyesno.no'
+  - name: pper
+    description: Obsolete
+  - name: acre
+    description: 'Result. Allowed values: 10, 15, 20, 30'
+  - name: acre_kw
+    description: 'Result (keyword). Allowed values: qmptc.acre.accept, qmptc.acre.part.accept,
+      qmptc.acre.reject, qmptc.acre.undefined'
+  - name: conr
+    description: 'Conformance Reporting. Allowed values: 1, 2'
+  - name: conr_kw
+    description: 'Conformance Reporting (keyword). Allowed values: tcyesno.yes, tcyesno.no'
+  - name: cncd
+    description: 'Conformance Code. Max length: 6'
+  - name: team
+    description: 'Team. Max length: 9'
+  - name: cwoc
+    description: 'Work Center. Max length: 6'
+  - name: ownr
+    description: 'Owner. Max length: 9'
+  - name: txta
+    description: Inspection Order Text
+  - name: item_ref_compnr
+    description: company number of primary key of table tcibd001 Items
+  - name: cwar_ref_compnr
+    description: company number of primary key of table tcmcs003 Warehouses
+  - name: effn_ref_compnr
+    description: company number of primary key of table tcuef002 Effectivity Number
+  - name: quid_vrsn_ref_compnr
+    description: company number of primary key of table qmptc010 Standard Test Procedures
+  - name: cufr_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: cuss_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: saru_ref_compnr
+    description: company number of primary key of table qmptc060 Sampling Rules
+  - name: inss_ref_compnr
+    description: company number of primary key of table qmptc074 Inspection Standards
+  - name: ilvl_ref_compnr
+    description: company number of primary key of table qmptc064 Inspection Levels
+  - name: sapl_ref_compnr
+    description: company number of primary key of table qmptc070 Sampling Plans
+  - name: bpid_ref_compnr
+    description: company number of primary key of table tccom100 Business Partners
+  - name: tuni_ref_compnr
+    description: company number of primary key of table tcmcs001 Units
+  - name: reio_ref_compnr
+    description: company number of primary key of table qmptc100 Inspection Orders
+  - name: orio_ref_compnr
+    description: company number of primary key of table qmptc100 Inspection Orders
+  - name: cncd_ref_compnr
+    description: company number of primary key of table qmptc094 Conformance Reporting
+  - name: team_ref_compnr
+    description: company number of primary key of table tcppl040 Teams
+  - name: cwoc_ref_compnr
+    description: company number of primary key of table tcmcs065 Departments
+  - name: ownr_ref_compnr
+    description: company number of primary key of table tccom001 Employees - General
+  - name: txta_ref_compnr
+    description: company number of primary key of table tttxt001 Language Independent
+      Text Data
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN qmptc100 Inspection Orders table, Generated 2022-06-15T01:21:05Z
+    from package combination ce01055
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - iorn

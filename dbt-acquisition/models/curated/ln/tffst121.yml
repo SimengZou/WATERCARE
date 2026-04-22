@@ -1,0 +1,149 @@
+version: 2
+models:
+- name: tffst121
+  columns:
+  - name: compnr
+    description: (required) Company number
+    data_tests:
+    - not_null
+  - name: fstm
+    description: '(required) Financial Statement. Max length: 8'
+    data_tests:
+    - not_null
+  - name: accn
+    description: '(required) Statement Account. Max length: 12'
+    data_tests:
+    - not_null
+  - name: seqn
+    description: (required) Sequence Number
+    data_tests:
+    - not_null
+  - name: cmpm
+    description: 'Company mask. Max length: 20'
+  - name: cmpf
+    description: From Company
+  - name: cmpt
+    description: To Company
+  - name: lacm
+    description: 'Ledger Account / Cash Flow Reason mask. Max length: 20'
+  - name: lacf
+    description: 'From Ledger Account / Cash Flow Reason. Max length: 12'
+  - name: lact
+    description: 'To Ledger Account / Cash Flow Reason. Max length: 12'
+  - name: dimm_1
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_2
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_3
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_4
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_5
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_6
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_7
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_8
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_9
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_10
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_11
+    description: 'Dimension mask. Max length: 20'
+  - name: dimm_12
+    description: 'Dimension mask. Max length: 20'
+  - name: dimf_1
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_2
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_3
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_4
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_5
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_6
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_7
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_8
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_9
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_10
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_11
+    description: 'From Dimension. Max length: 9'
+  - name: dimf_12
+    description: 'From Dimension. Max length: 9'
+  - name: dimt_1
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_2
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_3
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_4
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_5
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_6
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_7
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_8
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_9
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_10
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_11
+    description: 'To Dimension. Max length: 9'
+  - name: dimt_12
+    description: 'To Dimension. Max length: 9'
+  - name: fstm_accn_ref_compnr
+    description: company number of primary key of table tffst120 Statement Accounts
+  - name: fstm_ref_compnr
+    description: company number of primary key of table tffst100 Financial Statements
+  - name: deleted
+    description: (required) Whether record is deleted
+    data_tests:
+    - not_null
+  - name: username
+    description: '(required) User responsible for record action. Max length: 8'
+    data_tests:
+    - not_null
+  - name: timestamp
+    description: (required) Time the action occurred
+    data_tests:
+    - not_null
+  - name: sequencenumber
+    description: (required) Sequence number of the action
+    data_tests:
+    - not_null
+  - name: etl_load_datetime
+    description: The datetime in which the ETL process loaded the data into the curated
+      layer.
+  - name: etl_load_metadatafilename
+    description: The filename of the metadata file that was used to load the data
+      into the curated layer.
+  - name: dbt_record_updated_at
+    description: The datetime in which the record was last updated by dbt.
+  - name: dbt_record_created_at
+    description: The datetime in which the record was created by dbt.
+  - name: dbt_invocation_id
+    description: The invocation ID of the dbt run that created the record.
+  - name: dbt_surrogate_key
+    description: Hashed key based on primary key/s of table, or all keys excluding
+      dbt and etl metadata.
+  description: LN tffst121 Statement Ledger/Dimension Accounts table, Generated 2026-04-10T19:41:39Z
+    from package combination ce01101
+  data_tests:
+  - dbt_utils.unique_combination_of_columns:
+      arguments:
+        combination_of_columns:
+        - compnr
+        - fstm
+        - accn
+        - seqn
